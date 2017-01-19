@@ -763,6 +763,7 @@ function toggleFullscreen() {
       map.addListener('bounds_changed', updateBounds);
 
       $.get('/data/saaristo6.geojson', function(response) {
+        console.log(response);
         data = JSON.parse(response);
         renderData(data, map);
       });
