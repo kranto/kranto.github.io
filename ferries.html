@@ -531,7 +531,6 @@ function toggleFullscreen() {
       line.addListener('click', function(event) {
         select([{name: feature.properties.sname, description: feature.properties.description,
           highlight: function(doHighlight) {
-            console.log('highlight', feature.properties.sname);
             line.setOptions({strokeOpacity: doHighlight? 0.5: 0});
           }
         }], event);
@@ -694,12 +693,12 @@ function toggleFullscreen() {
       });
       var prevZoom = map.getZoom();
       google.maps.event.addListener(map,'zoom_changed',function() {
-        console.log('zoomChanged: ', prevZoom + ' - ' + map.getZoom());
+        //console.log('zoomChanged: ', prevZoom + ' - ' + map.getZoom());
         var t0 = new Date().getTime();
         prevZoom = map.getZoom();
         setTimeout(function() { rerender(map); }, 300);
         var t1 = new Date().getTime();
-        console.log('zoomChanged complete in ' + (t1-t0) + " ms");
+        //console.log('zoomChanged complete in ' + (t1-t0) + " ms");
       });
 
       google.maps.event.addListener(map,'maptypeid_changed',function () {
