@@ -562,6 +562,21 @@
     {
       "type": "Feature",
       "properties": {
+        "stype": "pin", "ssubtype": "e",
+        "sname": "Parainen"
+      },
+      "geometry": {
+        "coordinates": [
+          22.300954,
+          60.306706
+        ],
+        "type": "Point"
+      },
+      "id": "00a98d8d3c2a16fbfc6025e11111111c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Sorpo",
         "labelVisibleFrom": 11,
