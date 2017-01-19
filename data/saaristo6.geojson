@@ -1705,7 +1705,8 @@
       "type": "Feature",
       "properties": {
         "stype": "cableferry",
-        "sname": "Korppoo"
+        "sname": "Nauvo - Korppoo",
+        "description": "<p>puh 0400 864 268, 0400 882 614</p><p>Laiturit: Pärnäinen (Nauvo), Retais (Korppoo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [
@@ -4148,7 +4149,8 @@
       "type": "Feature",
       "properties": {
         "stype": "cableferry",
-        "sname": "Nauvo"
+        "sname": "Parainen - Nauvo",
+        "description": "<p>puh 0400 127 999, 0400 110 114, 0400 152 326, 0400 382 114</p><p>Laiturit: Lillmälö (Parainen), Prostvik (Nauvo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [
@@ -7068,7 +7070,8 @@
       "type": "Feature",
       "properties": {
         "stype": "cableferry",
-        "sname": "Kivimo"
+        "sname": "Kivimo",
+        "description": "<p>puh 0400 292 691, 14 ha</p><p>Laiturit: Roslax (etelä), Kivimo (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot: 09.10–09.30, 11.40–12.00, 17.10–17.30, 20.10–20.30</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kivimo.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [
@@ -27265,7 +27268,8 @@
       "type": "Feature",
       "properties": {
         "stype": "cableferry",
-        "sname": "Skagen"
+        "sname": "Skagen",
+        "description": "<p>puh +358 10 2717915</p><p>Laiturit: Skagen (etelä), Jumo E (pohjoinen)</p><p>Liikennöi tarvittaessa ma-to 6.00-22.00, pe 6.00-23.00, la 7.00-23.00, su 8.30-22.00. Tauot: 9.40 - 9.52, 11.58 - 12.10, 18.20 - 18.32. Lähtee lähtee Skagenista aina 15 ja 30 min ennen Auran lähtöä Kannvikistä Heponiemeen(Kustavi).</p><p><a target=\"info\" href=\"http://www.ncl.fi/fi/aikataulut\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [
