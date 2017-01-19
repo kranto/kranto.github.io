@@ -220,7 +220,7 @@ function toggleFullscreen() {
             var conf = new com.oym.geokit.Config("API_KEY");
             conf.setMapClient( com.oym.geokit.MAPPING_CLIENT.DHTML );
             // Change maps to use Fonecta tiles.
-            conf.setBaseUrl("kartta.fonecta.fi/oym");
+            conf.setBaseUrl("https://kartta.fonecta.fi/oym");
             gk = new com.oym.geokit.GeoKit(conf);
         
             // Map initial position
