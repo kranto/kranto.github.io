@@ -6891,7 +6891,7 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "pier",
+        "stype": "pier_obsolete",
         "sname": "Salavainen",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NW", "x":10 , "y":-5 }
@@ -7422,8 +7422,8 @@
         "stype": "area", "ssubtype": "island1",
         "sname": "Salavainen",
         "labelVisibleFrom": 10,
-        "labelVisibleTo": 10,
-        "labelAnchor": {"dir": "C", "x":0 , "y":0 }
+        "labelVisibleTo": 12,
+        "labelAnchor": {"dir": "C", "x":10 , "y":0 }
       },
       "geometry": {
         "coordinates": [
