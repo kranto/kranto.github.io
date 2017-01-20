@@ -91,7 +91,7 @@
     }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://kartta.fonecta.fi/js3/scripts/oym-1.6.1.js"></script>
+  <!--<script type="text/javascript" src="https://kartta.fonecta.fi/js3/scripts/oym-1.6.1.js"></script> -->
   <script src="https://use.fontawesome.com/aa44d9f2e6.js"></script>
   <script src="/javascripts/lbls.js"></script>
   <script src="/javascripts/txtol.js"></script>
@@ -113,7 +113,7 @@
       <div id="map" class="map" style="height: 100%;  width: 100%; transform: scale(1); position: absolute; left: -0px; top: -0px; "></div>
     </div>
     <div id="buttons" style="position: fixed; left: 35%; top: 10px;">
-      <a id="toggleFonecta" class="togglebutton" title="Fonecta">Fonecta</a>
+      <a id="toggleFonecta" class="togglebutton" title="Fonecta" style="display: none;">Fonecta</a>
       <a id="toggleRengastie" class="togglebutton down" title="Rengastiet">Rengastiet</a>    
       <a id="toggleFullscreen" class="togglebutton up" title="Fullscreen"><i id="toggleFullscreenLabel" class="fa fa-expand" aria-hidden="true"></i></a>    
     </div>
@@ -206,10 +206,11 @@ function toggleFullscreen() {
       rengastieShown = $(this).hasClass("down");
       rerender(map);
     });
+/*
         var gk; // geokit instance, essentially the map-element (com.oym.geokit.Geokit).
 
         function initFonecta() {     
-            com.oym.load("dhtml");
+            //com.oym.load("dhtml");
         }
     
         function pos(lat, lng) {
@@ -246,7 +247,7 @@ function toggleFullscreen() {
           map.addListener("bounds_changed", syncMaps);
           syncMaps();
         }
-
+*/
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
     context.font = 'bold 12px sans-serif';
