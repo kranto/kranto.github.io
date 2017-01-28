@@ -107,7 +107,7 @@
 </head>
 <body>
   <div id="wrapper" style="position: relative; height: 100%; width: 100%">
-    <div id="info" style="height: 100%; overflow-y: auto; width: 25%; transform: scale(1); position: absolute; left: 75%; top: -0px; ">
+    <div id="info" style="overflow-y: auto; width: 100%; position: absolute; top: 90%">
       <h3 id="selectedTitle"></h3>
       <div id="selectedDescription"></div>
       <div id="pano"></div>
@@ -147,9 +147,9 @@ function select(targets, mouseEvent) {
     selected.push(target);
   });
   if (selectedCountWas == 0) {
-    if ($("#map").width()*0.75 < mouseEvent.ua.clientX) map.panBy($("#info").width(), 0);
+    if ($("#map").height()*0.90 < mouseEvent.ua.clientY) map.panBy(0, $("#map").height()*0.1);
     $(function() { 
-      $("#mapcontainer").animate({width: '75%'}, function() { google.maps.event.trigger(map, 'resize'); });
+      $("#mapcontainer").animate({height: '90%'}, function() { google.maps.event.trigger(map, 'resize'); });
       $("#info").show();
       //$("#info").animate({left: '75%'}); 
     });
@@ -159,7 +159,7 @@ function select(targets, mouseEvent) {
 function unselectAll() {
   if (selected.length == 0) return;
   $(function() { 
-    $("#mapcontainer").animate({width: '100%'}, 100, function() {
+    $("#mapcontainer").animate({height: '100%'}, 100, function() {
       google.maps.event.trigger(map, 'resize');
       $("#info").hide();
       $('#selectedTitle').html(' ');
