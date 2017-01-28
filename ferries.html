@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<html> 
+<!-- 
 <html manifest="ferries.appcache">
+-->
+
 <head>
   <title>Saaristolautat 2017 (beta)</title>
   <meta name="viewport" content="initial-scale=1">
@@ -753,6 +757,14 @@ function toggleFullscreen() {
         styles: [],
       });
 
+      map.fitBounds({south: 60, north: 60.5, west: 20, east: 22.3});
+/*
+      google.maps.event.addListenerOnce(map, 'bounds_changed', function() {
+        if (map.getBounds().getNorthEast().lng() < 22.3) { // zoom out if Turku is not visible
+          map.setZoom(8);
+        }
+      });
+*/
       function fullscreenchange(event) {
         var isFullScreen = (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)? true: false;
         $('#toggleFullscreenLabel').toggleClass('fa-expand', !isFullScreen).toggleClass('fa-compress', isFullScreen);
