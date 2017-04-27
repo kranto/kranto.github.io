@@ -148,13 +148,22 @@ function select(targets, mouseEvent) {
     selected.push(target);
   });
   if (selectedCountWas == 0) {
-    if ($("#map").height()*0.90 < mouseEvent.ya.clientY) map.panBy(0, $("#map").height()*0.1);
+    var clientY = latLng2Point(mouseEvent.latLng, map).y;
+    if ($("#map").height()*0.90 < clientY) map.panBy(0, $("#map").height()*0.1);
     $(function() { 
       $("#mapcontainer").animate({height: '90%'}, function() { google.maps.event.trigger(map, 'resize'); });
       $("#info").show();
       //$("#info").animate({left: '75%'}); 
     });
   }
+}
+
+function latLng2Point(latLng, map) {
+  var topRight = map.getProjection().fromLatLngToPoint(map.getBounds().getNorthEast());
+  var bottomLeft = map.getProjection().fromLatLngToPoint(map.getBounds().getSouthWest());
+  var scale = Math.pow(2, map.getZoom());
+  var worldPoint = map.getProjection().fromLatLngToPoint(latLng);
+  return new google.maps.Point((worldPoint.x - bottomLeft.x) * scale, (worldPoint.y - topRight.y) * scale);
 }
 
 function unselectAll() {
