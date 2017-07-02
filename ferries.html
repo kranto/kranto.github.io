@@ -1074,7 +1074,7 @@ function toggleFullscreen() {
 
       var reittiObjects = reitit.map(function(reitti) {
           reitti.legs = typeof reitti.path !== 'undefined'? [{name: reitti.name, path: reitti.path}]: reitti.legs;
-          legObjects = reitti.legs.forEach(function(leg) {
+          legObjects = reitti.legs.map(function(leg) {
             var coords = leg.path.split(" ").map(function(coord) {
               var latLong = coord.split(","); 
               return new google.maps.LatLng(parseFloat(latLong[1]), parseFloat(latLong[0])); 
@@ -1121,6 +1121,16 @@ function toggleFullscreen() {
           return {name: reitti.name, legs: legObjects};
         });
 
+map.addListener('zoom_changed', function() {
+  var zoom = map.getZoom();
+  var mapTypeId = map.getMapTypeId();
+  reittiObjects.forEach(function(reitti) {
+    reitti.legs.forEach(function(leg) {
+      leg.line.setVisible(zoom > 8);
+      leg.lineb.setVisible(zoom > 8);
+    });
+  });
+});
         var lauttaLegs = [
         { id: 1, name: 'Naantali - Airisto', 
         path: "22.0399475,60.4572178,0.0 22.0845795,60.4426562,0.0 22.077713,60.4307989,0.0 22.1003723,60.3836657,0.0" },
@@ -1163,7 +1173,6 @@ function toggleFullscreen() {
         {name: "Helsinki - Mariehamn - Stockholm", operators: ["Viking"], legs: [7, 6, 9, 11, 13]},
         {name: "Helsinki - Mariehamn - Stockholm", operators: ["Tallink"], legs: [7, 6, 9, 11, 12]},
         ];
-
 
 // Define a symbol using SVG path notation, with an opacity of 1.
 var lauttaLineSymbol = {
