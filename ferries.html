@@ -9,106 +9,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="HandheldFriendly" content="true" />
   <meta charset="utf-8">
+
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="theme-color" content="#ffffff">  
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
-    }
 
-    .map div {
-      text-shadow:
-      -1px -1px 0px rgba(255, 255, 255, 0.3),
-      1px -1px 0px rgba(255, 255, 255, 0.3),
-      -1px 1px 0px rgba(255, 255, 255, 0.3),
-      1px 1px 0px rgba(255, 255, 255, 0.3),
-      -1px 0px 0px rgba(255, 255, 255, 0.3),
-      1px 0px 0px rgba(255, 255, 255, 0.3),
-      0px -1px 0px rgba(255, 255, 255, 0.3),
-      0px 1px 0px rgba(255, 255, 255, 0.3);
-    }
-    #map.hide {
-      opacity: 0;
-    }
-
-    #map .gm-iv-address div {
-      text-shadow: none;
-    }
-    #map .gm-style-cc div {
-      text-shadow: none;
-    }
-    #map .gm-style-iw div {
-      text-shadow: none;
-    }
-
-    #pano.visible {
-      height: 30%;
-      width: 100%;
-      transform: scale(1);
-    }
-
-    .map .distancebox {
-      visibility: hidden;
-      background-color:rgba(0, 101, 189, 0.5);
-      border-radius: 3px;
-      border: 2.5px solid white;
-      position: absolute;
-      white-space: nowrap;
-    }
-
-    .map .distancebox div {
-      padding: 4px;
-      font-style: normal;
-      font-family: 'Roboto', sans-serif;
-      white-space: nowrap;
-      color: #ffffff;
-      text-shadow: none;
-      -webkit-touch-callout: none; 
-      -webkit-user-select: none; 
-      -moz-user-select: none; 
-     }
-
-    .togglebutton {
-      background: #eee;
-      cursor: pointer;
-      border-top: solid 2px #eaeaea;
-      border-left: solid 2px #eaeaea;
-      border-bottom: solid 2px #777;
-      border-right: solid 2px #777;
-      padding: 5px 5px;
-      min-width: 70px;
-      height: 30px;
-    }
-
-    .togglebutton.down {
-      background: #ddd;
-      border-top: solid 2px #777;
-      border-left: solid 2px #777;
-      border-bottom:solid 2px  #eaeaea;
-      border-right: solid 2px #eaeaea;
-    }
-
-    #toggleFullscreenLabel {
-      min-width: 30px;
-      text-align: center;
-    }
-  </style>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/ferries.css" rel="stylesheet">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
   <!--<script type="text/javascript" src="https://kartta.fonecta.fi/js3/scripts/oym-1.6.1.js"></script> -->
   <script src="https://use.fontawesome.com/aa44d9f2e6.js"></script>
   <script src="/javascripts/lbls.js"></script>
   <script src="/javascripts/txtol.js"></script>
 </head>
 <body>
-  <div id="wrapper" style="position: relative; height: 100%; width: 100%; overflow-y: scroll;">
-    <div id="info" style="overflow-y: auto; width: 100%; position: absolute; top: 90%">
+
+  <div id="wrapper" style="position: fixed; top: 0px; height: 100%; width: 100%; overflow-y: scroll;">
+    <div id="info" style="overflow-y: auto; width: 90%; position: absolute; top: 90%">
       <h3 id="selectedTitle"></h3>
       <div id="selectedDescription"></div>
       <div id="pano"></div>
@@ -122,14 +43,77 @@
       <div id="mapf" style="height: 100%;  width: 100%; transform: scale(1); opacity: 1; position: absolute; left: -0px; top: -0px; "></div>
       <div id="map" class="map" style="height: 100%;  width: 100%; transform: scale(1); position: absolute; left: -0px; top: -0px; "></div>
     </div>
-    <div id="buttons" style="position: fixed; left: 35%; top: 10px;">
+    <div id="buttons" style="position: fixed; left: 35%; top: 10px; display: none;">
       <a id="toggleFonecta" class="togglebutton" title="Fonecta" style="display: none;">Fonecta</a>
-      <a id="toggleRengastie" class="togglebutton down" title="Rengastiet">Rengastiet</a>    
+      <a id="toggleRengastie1" class="togglebutton down" title="Rengastiet">Rengastiet</a>    
       <a id="toggleFullscreen" class="togglebutton up" title="Fullscreen"><i id="toggleFullscreenLabel" class="fa fa-expand" aria-hidden="true"></i></a>    
     </div>
+    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <div class="container">
+              <form class="nav navbar-nav form-horizontal">
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="email">Kartan tyyppi:</label>
+                  <div class="btn-group col-sm-5">
+                    <button type="button" class="btn btn-default active" id="setMapTypeMap">Kartta</button>
+                    <button type="button" class="btn btn-default" id="setMapTypeSatellite">Satelliitti</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="email">Näytä:</label>
+                  <div class="btn-group col-sm-5">
+                    <button type="button" class="btn btn-default active" id="toggleRengastie">Rengastie</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="email">Koko näyttö:</label>
+                  <div class="btn-group col-sm-5">
+                  <button type="button" class="btn btn-default" onclick="toggleFullscreen()">Vaihda</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </div>
   <canvas id="canvas" style="display: none;"/>
   <script>
+
+    $('#mapcontainer').click(function(){ 
+            $('.navbar-toggle[aria-expanded="true"]').click();
+    });
+
+    $('#setMapTypeMap').click(function() {
+      map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+    });
+    $('#setMapTypeSatellite').click(function() {
+      map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+    });
+
+    function addMapListeners(map) {
+      google.maps.event.addListener(map,'maptypeid_changed',function () {
+        console.log(map.getMapTypeId());
+        var isSatellite = map.getMapTypeId() === 'satellite';
+        if (isSatellite) {
+          $('#setMapTypeMap').removeClass('active');
+          $('#setMapTypeSatellite').addClass('active');
+        } else {
+          $('#setMapTypeMap').addClass('active');
+          $('#setMapTypeSatellite').removeClass('active');          
+        }
+      });
+    }
 
 var selected = [];
 
@@ -221,8 +205,8 @@ function toggleFullscreen() {
     $("#toggleFullscreen").click(toggleFullscreen);
     var rengastieShown = true;
     $("#toggleRengastie").click(function() {
-      $(this).toggleClass("down");
-      rengastieShown = $(this).hasClass("down");
+      $(this).toggleClass("active");
+      rengastieShown = $(this).hasClass("active");
       rerender(map);
     });
 /*
@@ -725,6 +709,8 @@ function toggleFullscreen() {
         rerender(map);
       });
       rerender(map);
+
+      addMapListeners(map);
     }
 
     $("#fonecta").click(function(event) {
@@ -759,7 +745,7 @@ function toggleFullscreen() {
         zoom: 9,
         minZoom: 6,
         maxZoom: 17,
-        //mapTypeControl: false,
+        mapTypeControl: false,
         //mapTypeId: google.maps.MapTypeId.TERRAIN,
         fullscreenControl: false,
         gestureHandling: 'greedy',
@@ -1280,6 +1266,7 @@ var lauttaRoutes = lauttaRoutes.map(function(route) {
 
 
 }
+
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX_N6yFjHfac6v9-xiwA31yg1twAMMyGA&callback=initMap" async defer></script>
