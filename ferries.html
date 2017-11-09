@@ -21,33 +21,23 @@
   <link href="/ferries.css" rel="stylesheet">
   <script src="/js/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  <!--<script type="text/javascript" src="https://kartta.fonecta.fi/js3/scripts/oym-1.6.1.js"></script> -->
   <script src="https://use.fontawesome.com/aa44d9f2e6.js"></script>
   <script src="/javascripts/lbls.js"></script>
   <script src="/javascripts/txtol.js"></script>
 </head>
 <body>
 
-  <div id="wrapper" style="position: fixed; top: 0px; height: 100%; width: 100%; overflow-y: scroll;">
-    <div id="info" style="overflow-y: auto; width: 90%; position: absolute; top: 90%">
+  <div id="wrapper">
+
+    <div id="info">
       <h3 id="selectedTitle"></h3>
       <div id="selectedDescription"></div>
-      <div id="pano"></div>
-      <div style="display:none" id="mapInfo">
-        <div id="coords"></div>
-        <button id="fonecta">Fonecta</button>
-        <button id="openstreetmap">OpenStreetMap</button>
-      </div>
     </div>
-    <div id="mapcontainer" style="height: 100%;  width: 100%; transform: scale(1); opacity: 1; position: absolute; left: -0px; top: -0px;">
-      <div id="mapf" style="height: 100%;  width: 100%; transform: scale(1); opacity: 1; position: absolute; left: -0px; top: -0px; "></div>
-      <div id="map" class="map" style="height: 100%;  width: 100%; transform: scale(1); position: absolute; left: -0px; top: -0px; "></div>
+
+    <div id="mapcontainer">
+      <div id="map" class="map"/>
     </div>
-    <div id="buttons" style="position: fixed; left: 35%; top: 10px; display: none;">
-      <a id="toggleFonecta" class="togglebutton" title="Fonecta" style="display: none;">Fonecta</a>
-      <a id="toggleRengastie1" class="togglebutton down" title="Rengastiet">Rengastiet</a>    
-      <a id="toggleFullscreen" class="togglebutton up" title="Fullscreen"><i id="toggleFullscreenLabel" class="fa fa-expand" aria-hidden="true"></i></a>    
-    </div>
+
     <nav class="navbar navbar-default navbar-transparent navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -77,7 +67,7 @@
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="email">Koko näyttö:</label>
                   <div class="btn-group col-sm-5">
-                  <button type="button" class="btn btn-default" onclick="toggleFullscreen()">Vaihda</button>
+                  <button type="button" class="btn btn-default" id="toggleFullscreen">Vaihda</button>
                   </div>
                 </div>
               </form>
@@ -90,8 +80,8 @@
   <canvas id="canvas" style="display: none;"/>
   <script>
 
-    $('#mapcontainer').click(function(){ 
-            $('.navbar-toggle[aria-expanded="true"]').click();
+    $('div#map').click(function() { // close menu when map clicked
+      $('.navbar-toggle[aria-expanded="true"]').click();
     });
 
     $('#setMapTypeMap').click(function() {
@@ -103,7 +93,6 @@
 
     function addMapListeners(map) {
       google.maps.event.addListener(map,'maptypeid_changed',function () {
-        console.log(map.getMapTypeId());
         var isSatellite = map.getMapTypeId() === 'satellite';
         if (isSatellite) {
           $('#setMapTypeMap').removeClass('active');
@@ -120,9 +109,6 @@ var selected = [];
 function select(targets, mouseEvent) {
   $('#selectedTitle').html(targets.map(function(target) { return target.name; }).join('<br>'));
   $('#selectedDescription').html(targets[0].description? targets[0].description: ' ');
-  //document.getElementById('pano').className = "visible";
-  //panorama.setVisible(true);
-  //panorama.setZoom(0);
   var selectedCountWas = selected.length;
   selected.forEach(function(target) { target.highlight(false); });
   selected = [];
@@ -137,7 +123,6 @@ function select(targets, mouseEvent) {
     $(function() { 
       $("#mapcontainer").animate({height: '90%'}, function() { google.maps.event.trigger(map, 'resize'); });
       $("#info").show();
-      //$("#info").animate({left: '75%'}); 
     });
   }
 }
@@ -158,8 +143,6 @@ function unselectAll() {
       $("#info").hide();
       $('#selectedTitle').html(' ');
       $('#selectedDescription').html(' ');
-      $('#pano').removeClass('visible');
-      panorama.setVisible(false);
       selected.forEach(function(target) { target.highlight(false); });
       selected = [];
     });
@@ -197,11 +180,6 @@ function toggleFullscreen() {
 }
 
     var mapShown = true;
-    $("#toggleFonecta").click(function() {
-      $(this).toggleClass("down");
-      mapShown = !$(this).hasClass("down");
-      $("#map").fadeTo("normal", mapShown? 1: 0);
-    });
     $("#toggleFullscreen").click(toggleFullscreen);
     var rengastieShown = true;
     $("#toggleRengastie").click(function() {
@@ -209,55 +187,13 @@ function toggleFullscreen() {
       rengastieShown = $(this).hasClass("active");
       rerender(map);
     });
-/*
-        var gk; // geokit instance, essentially the map-element (com.oym.geokit.Geokit).
 
-        function initFonecta() {     
-            //com.oym.load("dhtml");
-        }
-    
-        function pos(lat, lng) {
-            return new com.oym.geokit.Position(com.oym.geokit.COORDINATE_SYSTEM.WGS84, lng, lat);
-        }
-        function onModulesLoaded()  {
-            //Here you can instanciate the geokit.
-            var conf = new com.oym.geokit.Config("API_KEY");
-            conf.setMapClient( com.oym.geokit.MAPPING_CLIENT.DHTML );
-            // Change maps to use Fonecta tiles.
-            conf.setBaseUrl("https://kartta.fonecta.fi/oym");
-            gk = new com.oym.geokit.GeoKit(conf);
-        
-            // Map initial position
-            var mapPosition = pos(60.20400, 24.92432);
-
-            // Choosing regular map-tiles
-            var mapConf = new com.oym.geokit.MapConfig(["RM"]);
-            mapConf.setCenter(mapPosition);
-            mapConf.setZoomLevel(12);
-
-            // Trigger onMapLoaded when onMapViewLoaded-event is triggered
-            gk.registerEvent("onMapViewLoaded", onMapLoaded, this);
-            gk.startMapView(mapConf, "mapf");
-        }
-    
-        function syncMaps() {
-          var center = map.getCenter().toJSON();
-          gk.setCenter(pos(center.lat, center.lng));
-          gk.setZoomLevel(map.getZoom());
-        }
-
-        function onMapLoaded() {
-          map.addListener("bounds_changed", syncMaps);
-          syncMaps();
-        }
-*/
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
     context.font = 'bold 12px sans-serif';
 
     var map;
     var tooltip;
-    var panorama;
 
     function createMapStyles(mapTypeId, zoom, settings) {
       return [
@@ -482,7 +418,6 @@ function toggleFullscreen() {
         tooltip.setPosition(event.latLng);
         tooltip.setContent("Laituri: " + feature.properties.sname);
         tooltip.open(map, marker);
-        panorama.setPosition(marker.getPosition());
       });
       label.addListener('click', function(event) {
         google.maps.event.trigger(marker, 'click', event);
@@ -713,28 +648,7 @@ function toggleFullscreen() {
       addMapListeners(map);
     }
 
-    $("#fonecta").click(function(event) {
-      var center = map.getCenter().toJSON();
-      var zoom = map.getZoom();
-      zoom = Math.min(17,zoom);
-      var url = 'https://www.fonecta.fi/kartat?lon=' +center.lng  + '&lat=' + center.lat + '&z=' + zoom; //+ '&l=TOP'; 
-      window.open(url, 'fonecta');
-    });
-
-    $("#openstreetmap").click(function(event) {
-      var center = map.getCenter().toJSON();
-      var zoom = map.getZoom();
-      zoom = Math.min(17,zoom);
-      var url = 'http://www.openstreetmap.org/#map=' + zoom + '/' + center.lat + '/' + center.lng ; //+ '&layers=C'; 
-      window.open(url, 'openstreetmap');
-    });
-
-    function updateBounds() {
-      $("#coords").text(map.getBounds().toString() + " " + map.getCenter().toString());
-    }
-
     function initMap() {
-      //initFonecta();
 
       var data = {};
       lbls.init();
@@ -754,13 +668,7 @@ function toggleFullscreen() {
       });
 
       map.fitBounds({south: 60, north: 60.5, west: 20, east: 22.3});
-/*
-      google.maps.event.addListenerOnce(map, 'bounds_changed', function() {
-        if (map.getBounds().getNorthEast().lng() < 22.3) { // zoom out if Turku is not visible
-          map.setZoom(8);
-        }
-      });
-*/
+
       function fullscreenchange(event) {
         var isFullScreen = (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)? true: false;
         $('#toggleFullscreenLabel').toggleClass('fa-expand', !isFullScreen).toggleClass('fa-compress', isFullScreen);
@@ -773,11 +681,7 @@ function toggleFullscreen() {
       updateMapStyles();
       map.addListener('zoom_changed', updateMapStyles);
 
-      map.addListener('bounds_changed', updateBounds);
-
       $.get('/data/saaristo6.geojson', function(response) {
-        // console.log(response);
-        // data = JSON.parse(response);
         data = response;
         renderData(data, map);
       });
@@ -793,36 +697,6 @@ function toggleFullscreen() {
           }
 
           map.addListener('click', function() { tooltip.close(); });
-      var streetViewLayer = new google.maps.StreetViewCoverageLayer();
-        //streetViewLayer.setMap(map);
-
-        var lappo = {lat: 60.3174497, lng: 20.9958386};
-
-        panorama = new google.maps.StreetViewPanorama(
-          document.getElementById('pano'), {
-            position: lappo,
-            // addressControl: false,
-            // clickToGo: false,
-            disableDefaultUI: true,
-            fullscreenControl: false,
-            motionTracking: false,
-            pov: {
-              heading: 90,
-              pitch: 0
-            }
-          });
-        panorama.setZoom(0);
-
-        panorama.addListener('pov_changed', function() {
-          var width = $('#pano .gm-fullscreen-control').parent().parent().width();
-          panorama.setOptions({disableDefaultUI: width < 300});
-        });
-        //map.setStreetView(panorama);
-
-        // panorama.addListener('zoom_changed', function() { console.log('zoom_changed'); });
-        // panorama.addListener('visible_changed', function() { console.log('visible_changed'); });
-        // panorama.addListener('pano_changed', function() { console.log('pano_changed'); });
-        // panorama.addListener('position_changed', function() { console.log('position_changed'); });
 
         var Alue2 = {
           create: function(target) {
