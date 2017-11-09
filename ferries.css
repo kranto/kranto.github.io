@@ -116,9 +116,26 @@
       left: -0px; 
       top: -0px; 
     }
+
+.btn:focus, .btn.active:focus {outline:0;}
+
+.btn-default.active, .btn-default.active:focus {
+  background-color: #bbb;
+}
+
+.btn-default:focus {
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+
+.btn:hover, .btn.active:hover { 
+  background-color: #8de;
+}
+
     .navbar {
       float: all;
-      width: 600px;
+      width: 500px;
     }
 
     .navbar-toggle {
@@ -136,6 +153,10 @@
       background-color: rgba(255,255,255,0.6);
       border: none;
       padding-left: 15px;
+    }
+
+    .nav-form {
+      margin-left: 15px;
     }
 /*
 @media (max-width: 1991px) {

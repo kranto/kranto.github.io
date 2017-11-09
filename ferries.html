@@ -39,7 +39,6 @@
     </div>
 
     <nav class="navbar navbar-default navbar-transparent navbar-fixed-top">
-      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
             <span class="icon-bar"></span>
@@ -48,37 +47,38 @@
           </button>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-            <div class="container">
-              <form class="nav navbar-nav form-horizontal">
-                <div class="form-group">
-                  <label class="control-label col-sm-2" for="email">Kartan tyyppi:</label>
-                  <div class="btn-group col-sm-5">
+              <form class="form-horizontal nav-form">
+                <div class="form-group row">
+                  <label class="control-label col-xs-3" for="email">Kartan tyyppi:</label>
+                  <div class="btn-group col-xs-9">
                     <button type="button" class="btn btn-default active" id="setMapTypeMap">Kartta</button>
                     <button type="button" class="btn btn-default" id="setMapTypeSatellite">Satelliitti</button>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-2" for="email">Näytä:</label>
-                  <div class="btn-group col-sm-5">
+                <div class="form-group row">
+                  <label class="control-label col-xs-3" for="email">Näytä:</label>
+                  <div class="btn-group col-xs-9">
                     <button type="button" class="btn btn-default active" id="toggleRengastie">Rengastie</button>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-2" for="email">Koko näyttö:</label>
-                  <div class="btn-group col-sm-5">
+                <div class="form-group row">
+                  <label class="control-label col-xs-3" for="email">Koko näyttö:</label>
+                  <div class="btn-group col-xs-9">
                   <button type="button" class="btn btn-default" id="toggleFullscreen">Vaihda</button>
                   </div>
                 </div>
               </form>
-            </div>
-          </ul>
         </div>
-      </div>
     </nav>
   </div>
   <canvas id="canvas" style="display: none;"/>
   <script>
+
+    $("#wrapper").scroll(function () {
+        console.log($(this).scrollTop(), $("#wrapper").height(), $("#map").height(), $("#info").height(), $(window).height());
+      });
+
+//    $('#myNavbar button').click(function() { console.log('button'); $("#myNavbar form").click(); });
 
     $('div#map').click(function() { // close menu when map clicked
       $('.navbar-toggle[aria-expanded="true"]').click();
