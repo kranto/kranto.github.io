@@ -5,6 +5,14 @@
       font-family: 'Roboto', sans-serif;
     }
 
+    h3 {
+      font-size: 20px;
+    }
+
+    #closeInfoButton {
+      float: right;
+    }
+    
     .map div {
       text-shadow:
       -1px -1px 0px rgba(255, 255, 255, 0.3),

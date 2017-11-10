@@ -30,6 +30,7 @@
   <div id="wrapper">
 
     <div id="info">
+      <button type="button" class="btn btn-default" id="closeInfoButton">Sulje</button>
       <h3 id="selectedTitle"></h3>
       <div id="selectedDescription"></div>
     </div>
@@ -93,6 +94,10 @@
     });
     $('#resetViewButton').click(function() {
       resetMap();
+    });
+
+    $('#closeInfoButton').click(function() {
+      unselectAll();
     });
 
     function addMapListeners(map) {
