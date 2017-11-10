@@ -108,6 +108,20 @@
       });
     }
 
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        // "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+      var positionL = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      var iconL = createCircleIcon('#0000e0', 0.8, 5, null);
+      var markerL = createMarker(positionL, true, iconL, map);
+}
+
 var selected = [];
 
 function select(targets, mouseEvent) {
@@ -679,6 +693,8 @@ function toggleFullscreen() {
 
       map = new google.maps.Map(document.getElementById('map'), mapOptions);
       resetMap();
+
+      getLocation();
 
       function fullscreenchange(event) {
         var isFullScreen = (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)? true: false;
