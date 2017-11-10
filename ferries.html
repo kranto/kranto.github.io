@@ -62,9 +62,10 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="control-label col-xs-3" for="email">Koko näyttö:</label>
-                  <div class="btn-group col-xs-9">
-                  <button type="button" class="btn btn-default" id="toggleFullscreen">Vaihda</button>
+                  <label class="control-label col-xs-3" for="email">Näkymä:</label>
+                  <div class="col-xs-9">
+                  <button type="button" class="btn btn-default" id="toggleFullscreen">Vaihda koko ruutu</button>
+                  <button type="button" class="btn btn-default" id="resetViewButton">Alkuun</button>
                   </div>
                 </div>
               </form>
@@ -89,6 +90,9 @@
     });
     $('#setMapTypeSatellite').click(function() {
       map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+    });
+    $('#resetViewButton').click(function() {
+      resetMap();
     });
 
     function addMapListeners(map) {
@@ -648,13 +652,7 @@ function toggleFullscreen() {
       addMapListeners(map);
     }
 
-    function initMap() {
-
-      var data = {};
-      lbls.init();
-      txtol.init();
-
-      map = new google.maps.Map(document.getElementById('map'), {
+    var mapOptions = {
         center: {lat: 60.25, lng: 21.25},
         zoom: 9,
         minZoom: 6,
@@ -662,12 +660,25 @@ function toggleFullscreen() {
         mapTypeControl: false,
         //mapTypeId: google.maps.MapTypeId.TERRAIN,
         fullscreenControl: false,
+        streetViewControl: false,
         gestureHandling: 'greedy',
         scaleControl: true,
         styles: [],
-      });
+      };
 
+    function resetMap() {
+      map.setOptions(mapOptions);
       map.fitBounds({south: 60, north: 60.5, west: 20, east: 22.3});
+    }
+
+    function initMap() {
+
+      var data = {};
+      lbls.init();
+      txtol.init();
+
+      map = new google.maps.Map(document.getElementById('map'), mapOptions);
+      resetMap();
 
       function fullscreenchange(event) {
         var isFullScreen = (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)? true: false;
