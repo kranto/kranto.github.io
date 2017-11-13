@@ -137,9 +137,10 @@
   border-color: #ccc;
 }
 
-
-.btn:hover, .btn.active:hover { 
-  background-color: #8de;
+@media (hover:hover) {
+  .btn:hover, .btn.active:hover { 
+    background-color: #8de;
+  }
 }
 
     .navbar {
