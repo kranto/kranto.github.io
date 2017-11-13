@@ -144,8 +144,9 @@
 }
 
     .navbar {
+      margin-top: 15px;
       float: all;
-      width: 500px;
+      width: 300px;
     }
 
     .navbar-toggle {
@@ -166,6 +167,7 @@
     }
 
     .nav-form {
+      margin-top: 15px;
       margin-left: 15px;
     }
 /*
