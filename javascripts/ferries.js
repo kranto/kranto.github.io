@@ -363,7 +363,7 @@ function pier(feature, map) {
   });
   marker.addListener('click', function(event) {
     tooltip.setPosition(event.latLng);
-    tooltip.setContent("Laituri: " + feature.properties.sname);
+    tooltip.setContent(feature.properties.sname);
     tooltip.open(map, marker);
   });
   label.addListener('click', function(event) {
@@ -749,22 +749,22 @@ function initMap() {
   { name: "Föglön linja: Svinö - Degerby", color: '#004d9d', highlightColor: '#ff0000',weight: 2.5, zIndex: 10,
   path: "20.2676296,60.066551,0.0 20.3229046,60.0594433,0.0 20.3524303,60.0357024,0.0 20.3667641,60.0321869,0.0 20.3858185,60.0321441,0.0" },        
   { name: "Iniö - Kustavi", color: '#f08000', highlightColor: '#ff0000',weight: 2.5, zIndex: 10,
-  description: '<p>m/s Aura, puh 0400 320 093, 52 ha</p><p>Laiturit: Kannvik(Iniö), Heponiemi(Kustavi)</p><p>Aikataulun mukaan, 5-8 päivittäin</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html">Aikataulut ja info</a></p>',
+  description: '<p>m/s Aura, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358400320093">0400 320 093</a>, 52 ha</p><p>Laiturit: Kannvik(Iniö), Heponiemi(Kustavi)</p><p>Aikataulun mukaan, 5-8 päivittäin</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html">Aikataulut ja info</a></p>',
   path: "21.3966036,60.4392476,0.0 21.3996935,60.4402851,0.0 21.4001656,60.4407085,0.0 21.4029121,60.4488584,0.0 21.4069033,60.4547208,0.0 21.4262152,60.4803802,0.0 21.4301205,60.4853067,0.0 21.4317942,60.4858564,0.0 21.4331675,60.4857295,0.0 21.4348412,60.4852697,0.0" },        
   { name: "Houtskari - Iniö", color: '#f08000', highlightColor: '#ff0000', weight: 2.5, zIndex: 10,
-  description: '<p>m/s Antonia, puh 0400 320 049, 27 ha</p><p>Vain kesäisin, maksullinen</p><p>Laiturit: Mossala(Houtskari), Dalen(Iniö)</p><p>Aikataulun mukaan, 3-4 päivittäin</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saariston-rengastie-houtskari-inio.html">Aikataulut ja info</a></p><pre>Aikataulu 25.5. - 27.8.2017\n\nMossalasta\n\nma-la  9.00 12.15 14.15 16.15\nsu    12.15 15.15 17.15\n\nDalenista\n\nma-la 11.15 13.15 15.15 17.45\nsu    13.15 16.15 18.15\n\nHinnasto (ajoneuvot matkustajineen)\n\nhenkilöauto              40e\nasuntoauto               75e\nlinja-auto, kuorma-auto 140e\nmoottoripyörä, mopo      25e\npolkupyörä               15e\naikuinen                 10e\nlapsi                     5e</pre>',
+  description: '<p>m/s Antonia, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358400320049">0400 320 049</a>, 27 ha</p><p>Vain kesäisin, maksullinen</p><p>Laiturit: Mossala(Houtskari), Dalen(Iniö)</p><p>Aikataulun mukaan, 3-4 päivittäin</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saariston-rengastie-houtskari-inio.html">Aikataulut ja info</a></p><pre>Aikataulu 25.5. - 27.8.2017\n\nMossalasta\n\nma-la  9.00 12.15 14.15 16.15\nsu    12.15 15.15 17.15\n\nDalenista\n\nma-la 11.15 13.15 15.15 17.45\nsu    13.15 16.15 18.15\n\nHinnasto (ajoneuvot matkustajineen)\n\nhenkilöauto              40e\nasuntoauto               75e\nlinja-auto, kuorma-auto 140e\nmoottoripyörä, mopo      25e\npolkupyörä               15e\naikuinen                 10e\nlapsi                     5e</pre>',
   path: "21.4391327,60.2890455,0.0 21.4377594,60.2916403,0.0 21.4343262,60.2934693,0.0 21.4275885,60.2960213,0.0 21.4155722,60.3026979,0.0 21.4000368,60.3113288,0.0 21.3890505,60.325758,0.0 21.3836861,60.3335543,0.0 21.3661766,60.3400322,0.0 21.3647175,60.3412851,0.0 21.3653183,60.3427079,0.0 21.3786221,60.3531114,0.0 21.3788795,60.3544912,0.0 21.3683653,60.3730598,0.0 21.3686657,60.3768147,0.0 21.3713586,60.3815766,0.0" },
   { name: "Korppoo - Houtskari", color: '#f08000', highlightColor: '#ff0000',weight: 2.5, zIndex: 10,
-  description: '<p>m/s Stella, puh 0400 114 291, 65 ha<br/>m/s Mergus, puh 0400 533 461, 27 ha</p><p>Laiturit: Galtby(Korppoo), Kittuis(Houtskari)</p><p>Aikataulun mukaan, 11-12 päivittäin, osa vuoroista vain tilauksesta</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-houtskari.html">Aikataulut ja info</a></p>',
+  description: '<p>m/s Stella, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358400114291">0400 114 291</a>, 65 ha<br/>m/s Mergus, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358400533461">0400 533 461</a>, 27 ha</p><p>Laiturit: Galtby(Korppoo), Kittuis(Houtskari)</p><p>Aikataulun mukaan, 11-12 päivittäin, osa vuoroista vain tilauksesta</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-houtskari.html">Aikataulut ja info</a></p>',
   path: "21.584959,60.1859156,0.0 21.5822554,60.1881986,0.0 21.5651751,60.1910574,0.0 21.4995575,60.1910361,0.0 21.4633369,60.180709,0.0 21.4513206,60.1808797,0.0 21.4386606,60.1867051,0.0" },        
   { name: "Korppoo - Norrskata", color: '#f08000', highlightColor: '#ff0000',weight: 2.5, zIndex: 10,
-  description: '<p>m/s Stella, puh 0400 114 291, 65 ha<br/>m/s Mergus, puh 0400 533 461, 27 ha</p><p>Laiturit: Galtby(Korppoo), Olofsnäs(Norrskata)</p><p>Aikataulun mukaan, 13-14 päivittäin, osa vuoroista vain tilauksesta</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-norrskata.html">Aikataulut ja info</a></p>',
+  description: '<p>m/s Stella, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358400114291">0400 114 291</a>, 65 ha<br/>m/s Mergus, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358400533461">0400 533 461</a>, 27 ha</p><p>Laiturit: Galtby(Korppoo), Olofsnäs(Norrskata)</p><p>Aikataulun mukaan, 13-14 päivittäin, osa vuoroista vain tilauksesta</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-norrskata.html">Aikataulut ja info</a></p>',
   path: "21.584959,60.1859156,0.0 21.5829849,60.189244,0.0 21.5580082,60.2164559,0.0" },        
   { name: "Hakkenpää - Teersalo", color: '#f08000', highlightColor: '#ff0000',weight: 2.5, zIndex: 10,
-  description: '<p>m/s Kivimo, puh 0400 320 095, 8 ha</p><p>Vain kesäisin, osa Velkuan reittialuetta</p><p>Vain henkilöautoja, moottoripyöriä ja polkupyöriä</p><p>Laiturit: Teersalo(Velkua), Hakkenpää(Taivassalo)</p><p>Aikataulun mukaan, 1-2 päivittäin</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html">Aikataulut ja info</a></p><pre>Aikataulu 1.6.-31.8.2017 (tark. 20.1.)\n\nTeersalo - Hakkenpää  päivät\n\n  8.15   -   9.00     12345..\n 15.00   -  15.45     1234567\n\nHakkenpää - Teersalo  päivät\n\n  9.15   -  10.30     12345..\n 16.00   -  17.00     1234567</pre>',
+  description: '<p>m/s Kivimo, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358400320095">0400 320 095</a>, 8 ha</p><p>Vain kesäisin, osa Velkuan reittialuetta</p><p>Vain henkilöautoja, moottoripyöriä ja polkupyöriä</p><p>Laiturit: Teersalo(Velkua), Hakkenpää(Taivassalo)</p><p>Aikataulun mukaan, 1-2 päivittäin</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html">Aikataulut ja info</a></p><pre>Aikataulu 1.6.-31.8.2017 (tark. 20.1.)\n\nTeersalo - Hakkenpää  päivät\n\n  8.15   -   9.00     12345..\n 15.00   -  15.45     1234567\n\nHakkenpää - Teersalo  päivät\n\n  9.15   -  10.30     12345..\n 16.00   -  17.00     1234567</pre>',
   path: "21.61354,60.499274 21.634397,60.493272 21.64635,60.482305 21.657599,60.479591 21.672129,60.478783 21.694042,60.467349" },        
   { name: "Nauvo - Seili - Hanka", color: '#f08000', highlightColor: '#ff0000',weight: 2.5, zIndex: 10,
-  description: '<p>m/s Östern, puh 0400 720606, 15 ha</p><p>Vain kesäisin, maksullinen</p><p>Aikataulun mukaan, 3 päivittäin</p><p>Laiturit: Nauvo, Seili, Hanka(Aaslaluoto, Rymättylä)</p><p><a target="info" href="http://www.ostern.fi/">Aikataulut ja info</a></p><pre>Aikataulu 19.5.-3.9.2017 (tark. 18.1.)\n\nNauvo - Seili - Hanka   päivät\n\n 8.40    9.10    9.40   12345..\n 9.00    9.30   10.00   .....67\n12.10   12.40   13.10   1234567\n15.25   15.55   16.25   123456.\n16.20   16.50   17.20   ......7\n\nHanka - Seili - Nauvo   päivät\n\n10.20   10.50   11.20   1234567\n13.50   14.20   14.50   1234567\n16.55   17.25   17.55   12.4.6.\n17.35   18.05   18.35   ..3.5..\n17.40   18.10   18.40   ......7</pre>',
+  description: '<p>m/s Östern, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358400720606">0400 720606</a>, 15 ha</p><p>Vain kesäisin, maksullinen</p><p>Aikataulun mukaan, 3 päivittäin</p><p>Laiturit: Nauvo, Seili, Hanka(Aaslaluoto, Rymättylä)</p><p><a target="info" href="http://www.ostern.fi/">Aikataulut ja info</a></p><pre>Aikataulu 19.5.-3.9.2017 (tark. 18.1.)\n\nNauvo - Seili - Hanka   päivät\n\n 8.40    9.10    9.40   12345..\n 9.00    9.30   10.00   .....67\n12.10   12.40   13.10   1234567\n15.25   15.55   16.25   123456.\n16.20   16.50   17.20   ......7\n\nHanka - Seili - Nauvo   päivät\n\n10.20   10.50   11.20   1234567\n13.50   14.20   14.50   1234567\n16.55   17.25   17.55   12.4.6.\n17.35   18.05   18.35   ..3.5..\n17.40   18.10   18.40   ......7</pre>',
   legs: [
   { name: "Nauvo - Seili",
   path: "21.9118452,60.1941507,0.0 21.9155788,60.1973502,0.0 21.9130039,60.2006135,0.0 21.9075108,60.2050493,0.0 21.9065237,60.2160509,0.0 21.9081974,60.2180334,0.0 21.949439,60.232376,0.0 21.9551468,60.2363814,0.0" },
@@ -777,7 +777,7 @@ function initMap() {
   { name: "Paraisten reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
   path: "22.2613478,60.1963691,0.0 22.2624636,60.1810078,0.0 22.258966,60.1771343,0.0 22.2594166,60.1806663,0.0 22.2352123,60.1826722,0.0 22.2337961,60.1842726,0.0 22.2360706,60.1852115,0.0 22.2017384,60.1821174,0.0 22.1841002,60.1699944,0.0 22.1737576,60.1696101,0.0 22.1708393,60.1676034,0.0 22.1754313,60.1655965,0.0 22.1653461,60.165383,0.0 22.1642303,60.1635469,0.0 22.1632004,60.1611981,0.0 22.1642303,60.1602159,0.0 22.1616554,60.1594898,0.0 22.1595955,60.1514597,0.0 22.159338,60.1494091,0.0 22.1612263,60.1478711,0.0 22.1554756,60.1513743,0.0 22.1368396,60.1479673,0.0" },
 
-  { name: "Nauvon eteläinen<br>reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
+  { name: "Nauvon eteläinen reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
   legs: [
   { name: "Kirjais - Pensar", 
   path: "22.0181894,60.1212758,0.0 22.0263863,60.1203885,0.0 22.0488739,60.1349234,0.0 22.0581436,60.1491101,0.0 22.078743,60.1513315,0.0 22.1098351,60.151166,0.0 22.1008015,60.144154,0.0" },        
@@ -794,7 +794,7 @@ function initMap() {
   { name: "Utön reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
   path: "21.7047143,60.1637924,0.0 21.6961098,60.1618387,0.0 21.675,60.125 21.7045212,60.0945519,0.0 21.7017746,60.0792286,0.0 21.8063164,60.0588435,0.0 21.8073463,60.054388,0.0 21.8016386,60.0543987,0.0 21.8056297,60.0529312,0.0 21.808033,60.0482178,0.0 21.785202,60.0022476,0.0 21.731987,59.9708208,0.0 21.7419434,59.9562135,0.0 21.7464066,59.9521739,0.0 21.7557406,59.95385,0.0 21.7251205,59.947618,0.0 21.6731071,59.9452968,0.0 21.6185188,59.9495951,0.0 21.6142917,59.9515185,0.0 21.6185188,59.9495092,0.0 21.6461563,59.9473601,0.0 21.6528511,59.9439212,0.0 21.6502762,59.9384183,0.0 21.6353416,59.9257753,0.0 21.6349983,59.9069308,0.0 21.5738869,59.8295481,0.0 21.5824699,59.8261833,0.0 21.5847659,59.8270893,0.0 21.5822983,59.8261833,0.0 21.4971542,59.8499884,0.0 21.430378,59.8449873,0.0 21.3989639,59.8392955,0.0 21.3363075,59.8139291,0.0 21.3589668,59.7912211,0.0 21.3721848,59.7858656,0.0 21.3709188,59.7824424,0.0" },        
 
-  { name: "Nauvon pohjoinen<br>reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
+  { name: "Nauvon pohjoinen reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
   legs: [
   { name: "Nauvo - Houtsala",  
   path: "21.902355,60.22144 21.825065,60.23071 21.778392,60.228856 21.755242,60.240535 21.744787,60.247576 21.752628,60.249615 21.747027,60.250541 21.748148,60.263137 21.733586,60.266841 21.696247,60.264619 21.695785,60.261193 21.69214,60.264619 21.646587,60.259063 21.612236,60.256284 21.598824,60.256949"},
@@ -807,7 +807,7 @@ function initMap() {
   ]},        
 
   { name: "Rymättylän reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
-  description: '<p>m/s Isla, puh 040-6736697, 8 ha</p><p>Päälaituri: Haapala(Rymättylä)</p><p>Aikataulun mukaan</p><p><a target="info" href="https://kuljetus-savolainen.fi/yhteysalusliikenne/">Aikataulut ja info</a></p><p><a href="https://www.facebook.com/MS-Isla-401567819993437/">M/S Islan Facebook</a></p>',
+  description: '<p>m/s Isla, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:040">040</a>-6736697, 8 ha</p><p>Päälaituri: Haapala(Rymättylä)</p><p>Aikataulun mukaan</p><p><a target="info" href="https://kuljetus-savolainen.fi/yhteysalusliikenne/">Aikataulut ja info</a></p><p><a href="https://www.facebook.com/MS-Isla-401567819993437/">M/S Islan Facebook</a></p>',
   legs: [
   { name: "Haapala - Korvenmaa",  
   path: "21.809382,60.394549 21.807792,60.395497 21.790773,60.392749 21.802313,60.369929 21.789344,60.366271 21.767544,60.365681 21.7646,60.36808 21.764085,60.365557 21.744441,60.362584 21.727069,60.363207 21.725044,60.359283 21.67942,60.363236 21.680695,60.365591"},
@@ -822,7 +822,7 @@ function initMap() {
   ]},        
 
   { name: "Velkuan reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
-  description: '<p>m/s Kivimo, puh 0400 320 095, 8 ha</p><p>Päälaiturit: Teersalo(Velkua), kesäisin myös Hakkenpää(Taivassalo)</p><p>Aikataulun mukaan</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html">Aikataulut ja info</a></p>',
+  description: '<p>m/s Kivimo, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358400320095">0400 320 095</a>, 8 ha</p><p>Päälaiturit: Teersalo(Velkua), kesäisin myös Hakkenpää(Taivassalo)</p><p>Aikataulun mukaan</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html">Aikataulut ja info</a></p>',
   legs: [
   { name: "Hakkenpää - Teersalo",
   path: ""},
@@ -834,7 +834,7 @@ function initMap() {
   path: "21.693799,60.467429 21.712032,60.448165 21.756471,60.427136 21.754734,60.424019"},
   ]},        
 
-  { name: "Nauvon poikittainen<br>reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
+  { name: "Nauvon poikittainen reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
   legs: [
   { name: "Pärnäs - Berghamn",  
   path: "21.70495,60.16376 21.703,60.163 21.685,60.131 21.731,60.125 21.735627,60.127517 21.741452,60.121369 21.698206,60.112071 21.693763,60.11094 21.703933,60.1041 21.723779,60.104346 21.736121,60.103608 21.747673,60.104641 21.753202,60.104346 21.752511,60.105675 21.749746,60.105773 21.753004,60.105625 21.753893,60.104247 21.772653,60.095831 21.769789,60.087413 21.806815,60.059237 21.808198,60.054752 21.801681,60.054456"},
@@ -855,7 +855,7 @@ function initMap() {
   ]},
 
   { name: "Houtskarin ja Iniön reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
-  description: '<p><i class="fa fa-ship" aria-hidden="true"></i>m/s Karolina, puh 040 717 3455, 0 <i class="fa fa-car" aria-hidden="true"></i><br/><i class="fa fa-ship" aria-hidden="true"></i>m/s Satava, puh 040 849 5140, 8 <i class="fa fa-car" aria-hidden="true"></i></p><p>Tärkeimmät laiturit: Roslax(Houtskari), Torsholma(Brändö), Norrby(Iniö), Kannvik (Iniö)</p><p>Aikataulut ja info: <a target="info" href="http://www.ferryway.fi/7">Houtskarin reitti</a>, <a target="info" href="http://www.ferryway.fi/8">Iniön lisäreitti</a></p>',
+  description: '<p><i class="fa fa-ship" aria-hidden="true"></i>m/s Karolina, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358407173455">040 717 3455</a>, 0 <i class="fa fa-car" aria-hidden="true"></i><br/><i class="fa fa-ship" aria-hidden="true"></i>m/s Satava, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358408495140">040 849 5140</a>, 8 <i class="fa fa-car" aria-hidden="true"></i></p><p>Tärkeimmät laiturit: Roslax(Houtskari), Torsholma(Brändö), Norrby(Iniö), Kannvik (Iniö)</p><p>Aikataulut ja info: <a target="info" href="http://www.ferryway.fi/7">Houtskarin reitti</a>, <a target="info" href="http://www.ferryway.fi/8">Iniön lisäreitti</a></p>',
   legs: [
   { name: "Perkala",  
   path: "21.382087,60.412578 21.415426,60.398378 21.465435,60.377682 21.475437,60.379124 21.465643,60.377682 21.473978,60.367381"},
@@ -884,7 +884,7 @@ function initMap() {
   ]},
 
   { name: "<b>Polkupyörälautta:</b><br>Skarpnåtö - Hällö", color: '#e7883e', highlightColor: '#ff0000',weight: 2, zIndex: 10, opacity: 1,
-  description: '<p><i class="fa fa-ship" aria-hidden="true"></i>M/S Silvana, puh 040 717 3455, 50 <i class="fa fa-bicycle" aria-hidden="true"></i></p><p>Laiturit: Skarpnåtö(Hammarland), Hällö(Geta)</p><p><a target="info" href="http://www.aland.com/fi/skarpnato">Aikataulut ja info</a></p><pre>Aikataulu 19.6.-19.8.2017\n\nSkarpnåtöstä klo 11.00 ja\nHällöstä klo 11.30\n\nHuom! Ei sunnuntaisin\n\nExtra vuoroja tilauksesta puh. 0400 229 149 / Jan-Anders Häger\n\nHinta:\n12 euroa / henkilö / pyörä\n6 euroa alle 12 vuotta\n6 euroa / kärry</pre>',
+  description: '<p><i class="fa fa-ship" aria-hidden="true"></i>M/S Silvana, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358407173455">040 717 3455</a>, 50 <i class="fa fa-bicycle" aria-hidden="true"></i></p><p>Laiturit: Skarpnåtö(Hammarland), Hällö(Geta)</p><p><a target="info" href="http://www.aland.com/fi/skarpnato">Aikataulut ja info</a></p><pre>Aikataulu 19.6.-19.8.2017\n\nSkarpnåtöstä klo 11.00 ja\nHällöstä klo 11.30\n\nHuom! Ei sunnuntaisin\n\nExtra vuoroja tilauksesta puh. 0400 229 149 / Jan-Anders Häger\n\nHinta:\n12 euroa / henkilö / pyörä\n6 euroa alle 12 vuotta\n6 euroa / kärry</pre>',
   path: "19.761529,60.326862,0 19.763889,60.327287,0 19.777021,60.336804,0 19.784402,60.357017,0 19.783802,60.359139,0 19.780368,60.360243,0 19.773931,60.36037,0 19.769554,60.362365,0 19.766378,60.365294,0 19.768009,60.3661,0" },
   ];
 
