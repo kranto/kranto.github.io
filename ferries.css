@@ -115,11 +115,12 @@
     }
 
     div#info {
-/*      border-top: solid 1px; */
       overflow-y: auto; 
       width: 100%; 
-      position: absolute; 
-      top: 90%      
+      min-height: 10%;
+      position: absolute;
+      top: 100%;
+      display: none;
     }
 
     div#wrapper {

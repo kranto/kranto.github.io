@@ -77,9 +77,9 @@ function select(targets, mouseEvent) {
     var clientY = latLng2Point(mouseEvent.latLng, map).y;
     if ($("#map").height()*0.90 < clientY) map.panBy(0, $("#map").height()*0.1);
     $(function() { 
-      $("#mapcontainer").animate({height: '90%'}, function() { google.maps.event.trigger(map, 'resize'); });
       $("#info").show();
-      toggleScrollArrow();
+      $("#mapcontainer").animate({height: '90%'}, function() { google.maps.event.trigger(map, 'resize'); });
+      $("#info").animate({top: '90%'}, toggleScrollArrow);
     });
   } else {
       toggleScrollArrow();
@@ -99,11 +99,13 @@ function unselectAll() {
   $(function() { 
     $("#mapcontainer").animate({height: '100%'}, 100, function() {
       google.maps.event.trigger(map, 'resize');
+      selected.forEach(function(target) { target.highlight(false); });
+      selected = [];
+    });
+    $("#info").animate({top: '100%'}, 100, function() {
       $("#info").hide();
       $('#selectedTitle').html(' ');
       $('#selectedDescription').html(' ');
-      selected.forEach(function(target) { target.highlight(false); });
-      selected = [];
       toggleScrollArrow();
     });
   });
