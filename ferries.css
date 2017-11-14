@@ -13,6 +13,30 @@
       float: right;
     }
 
+    #scrollArrow {
+      height: 30px;
+      width: 30px;
+      display: none;
+      border: solid 1px;
+      border-radius: 15px;
+      padding-left: 5px;
+      z-index: 1000;
+      background-color: white;
+      bottom: -15px;
+      position: absolute;
+      left: 50%;
+    }
+
+    #scrollArrow.can-scroll {
+      display: block;
+    }
+
+    #scrollArrow i {
+      position: relative;
+      top: -3px;
+      font-size: 30px;
+    }
+
     .map div {
       text-shadow:
       -1px -1px 0px rgba(255, 255, 255, 0.3),

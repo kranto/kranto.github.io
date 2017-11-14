@@ -1,6 +1,15 @@
-$("#wrapper").scroll(function () {
-  console.log($(this).scrollTop(), $("#wrapper").height(), $("#map").height(), $("#info").height(), $(window).height());
+
+$(document).ready(function(){
+    $('#wrapper').bind('scroll',toggleScrollArrow);
 });
+
+function toggleScrollArrow()
+{
+    var elem = $("#wrapper");
+    var infoVisible = $("#info").is(":visible"); 
+    var isBottom = (elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight());
+    $('#scrollArrow').toggleClass('can-scroll', !isBottom && infoVisible);
+}
 
 $('div#map').click(function() { // close menu when map clicked
   $('.navbar-toggle[aria-expanded="true"]').click();
@@ -70,7 +79,10 @@ function select(targets, mouseEvent) {
     $(function() { 
       $("#mapcontainer").animate({height: '90%'}, function() { google.maps.event.trigger(map, 'resize'); });
       $("#info").show();
+      toggleScrollArrow();
     });
+  } else {
+      toggleScrollArrow();
   }
 }
 
@@ -92,6 +104,7 @@ function unselectAll() {
       $('#selectedDescription').html(' ');
       selected.forEach(function(target) { target.highlight(false); });
       selected = [];
+      toggleScrollArrow();
     });
   });
 }
