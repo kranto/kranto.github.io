@@ -412,6 +412,18 @@ function cableferrySymbol() {
   return _cableferrySymbol;
 }
 
+function createDescription(prop) {
+  if (!prop.info) {
+    return prop.description;
+  } else {
+    return "<p>" + prop.info.phone.map(
+      function(phone) { 
+        return '<i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:' + phone.replace(/ /g,'') + '">' + phone + '</a>';
+      }).join(", ") + "</p>" +
+      '<p><a target="info" href="' + prop.info.infolink + '">Aikataulut ja info <i class="fa fa-external-link" aria-hidden="true"></i></a></p>'
+  }
+}
+
 function cableferry(feature, map) {
   var coords = feature.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
   var line = new google.maps.Polyline({
@@ -429,8 +441,9 @@ function cableferry(feature, map) {
     }],
     map: map
   });
+  var description = createDescription(feature.properties);
   line.addListener('click', function(event) {
-    select([{name: feature.properties.sname, description: feature.properties.description,
+    select([{name: feature.properties.sname, description: description,
       highlight: function(doHighlight) {
         line.setOptions({strokeOpacity: doHighlight? 0.5: 0});
       }
@@ -441,6 +454,60 @@ function cableferry(feature, map) {
       line.setVisible(zoom >= 9);
     }
   };
+}
+
+function connection(feature, map) {
+  var features = feature.type === 'FeatureCollection'? feature.features: [feature];
+  var connectionObject = { name: feature.properties.sname, description: feature.properties.description};
+  var legObjects = features.map(function(leg) {
+    var coords = leg.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
+    var weight = leg.properties.weight || feature.properties.weight || 3;
+    var opacity = leg.properties.opacity || feature.properties.opacity || 0.7;
+    var color = leg.properties.color || feature.properties.color || '#ff00000';
+    var highlightColor = leg.properties.highlightColor || feature.properties.highlightColor || '#00ff000';
+    var zIndex = leg.properties.zIndex || feature.properties.zIndex || 1;
+
+    var line = new google.maps.Polyline({
+      path: new google.maps.MVCArray(coords),
+      geodesic: false,
+      strokeColor: color,
+      strokeOpacity: opacity,
+      strokeWeight: weight,
+      zIndex: zIndex,
+      clickable: false,
+      map: map
+    });
+    var lineb = new google.maps.Polyline({
+      path: new google.maps.MVCArray(coords),
+      geodesic: false,
+      strokeOpacity: 0,
+      strokeWeight: 12,
+      strokeColor: '#ffff00',
+      zIndex: zIndex - 1,
+      cursor: 'context-menu',
+      map: map
+    });
+    var highlight = function(doHighlight) {
+      lineb.setOptions({strokeOpacity: doHighlight? 0.5: 0});
+    };
+    lineb.addListener('click', function(event) {
+      select([connectionObject], event);
+    });
+    var rerender = function(zoom, mapTypeId) {
+      line.setVisible(zoom > 8);
+      lineb.setVisible(zoom > 8);
+    }
+    return {highlight: highlight, rerender: rerender };
+  });
+  connectionObject.highlight = function(doHighlight) {
+    legObjects.forEach(function(leg) { leg.highlight(doHighlight); });
+  }
+
+  connectionObject.rerender = function(zoom, mapTypeId) {
+    legObjects.forEach(function(leg) { leg.rerender(zoom, mapTypeId); });
+  }
+
+  return connectionObject;
 }
 
 var _pinPaths = {
@@ -572,6 +639,7 @@ var renderers = {
   border: border,
   pier: pier,
   cableferry: cableferry,
+  connection: connection,
   area: area,
   box: box,
   pin: pin
@@ -807,7 +875,7 @@ function initMap() {
 
   { name: "Utön reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
   path: "21.7047143,60.1637924,0.0 21.6961098,60.1618387,0.0 21.675,60.125 21.7045212,60.0945519,0.0 21.7017746,60.0792286,0.0 21.8063164,60.0588435,0.0 21.8073463,60.054388,0.0 21.8016386,60.0543987,0.0 21.8056297,60.0529312,0.0 21.808033,60.0482178,0.0 21.785202,60.0022476,0.0 21.731987,59.9708208,0.0 21.7419434,59.9562135,0.0 21.7464066,59.9521739,0.0 21.7557406,59.95385,0.0 21.7251205,59.947618,0.0 21.6731071,59.9452968,0.0 21.6185188,59.9495951,0.0 21.6142917,59.9515185,0.0 21.6185188,59.9495092,0.0 21.6461563,59.9473601,0.0 21.6528511,59.9439212,0.0 21.6502762,59.9384183,0.0 21.6353416,59.9257753,0.0 21.6349983,59.9069308,0.0 21.5738869,59.8295481,0.0 21.5824699,59.8261833,0.0 21.5847659,59.8270893,0.0 21.5822983,59.8261833,0.0 21.4971542,59.8499884,0.0 21.430378,59.8449873,0.0 21.3989639,59.8392955,0.0 21.3363075,59.8139291,0.0 21.3589668,59.7912211,0.0 21.3721848,59.7858656,0.0 21.3709188,59.7824424,0.0" },        
-
+/*
   { name: "Nauvon pohjoinen reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
   legs: [
   { name: "Nauvo - Houtsala",  
@@ -819,7 +887,7 @@ function initMap() {
   { name: "Åvensor",  
   path: "21.67123,60.262026 21.659282,60.268323 21.587219,60.284429 21.587219,60.297197 21.578203,60.29831"}
   ]},        
-
+*/
   { name: "Rymättylän reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
   description: '<p>m/s Isla, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:040">040</a>-6736697, 8 <i class="fa fa-car" aria-hidden="true"></i></p><p>Päälaituri: Haapala(Rymättylä)</p><p>Aikataulun mukaan</p><p><a target="info" href="https://kuljetus-savolainen.fi/yhteysalusliikenne/">Aikataulut ja info <i class="fa fa-external-link" aria-hidden="true"></i></a></p><p><a href="https://www.facebook.com/MS-Isla-401567819993437/">M/S Islan Facebook<i class="fa fa-external-link" aria-hidden="true"></i></a></p>',
   legs: [
@@ -904,7 +972,7 @@ function initMap() {
 
   var reittiObjects = reitit.map(function(reitti) {
     reitti.legs = typeof reitti.path !== 'undefined'? [{name: reitti.name, path: reitti.path}]: reitti.legs;
-    legObjects = reitti.legs.map(function(leg) {
+    var legObjects = reitti.legs.map(function(leg) {
       var coords = leg.path.split(" ").map(function(coord) {
         var latLong = coord.split(","); 
         return new google.maps.LatLng(parseFloat(latLong[1]), parseFloat(latLong[0])); 
@@ -937,14 +1005,13 @@ function initMap() {
         map: map
       });
       leg.highlight = function(doHighlight) {
-              //linec.setVisible(doHighlight);
-              lineb.setOptions({strokeOpacity: doHighlight? 0.5: 0});
-            };
-            lineb.addListener('click', function(event) {
-              select([reitti], event);
-            });
-            return {name: leg.name, line: line, lineb: lineb };
-          });
+        lineb.setOptions({strokeOpacity: doHighlight? 0.5: 0});
+      };
+      lineb.addListener('click', function(event) {
+        select([reitti], event);
+      });
+      return {name: leg.name, line: line, lineb: lineb };
+    });
     reitti.highlight = function(doHighlight) {
       reitti.legs.forEach(function(leg) { leg.highlight(doHighlight); });
     };
@@ -1055,9 +1122,8 @@ function initMap() {
     var that = this;
     this.line.addListener('click', function(event) {
       var routeNames = that.routes.map(function(route) { return route.operator + ": " + route.name; }).join('<br>');
-    // openTooltip(that.line, event.latLng, routeNames);
-    select(that.routes, event);
-  });
+      select(that.routes, event);
+    });
     this.rerender = function(zoom, mapTypeId) {
       this.line.setVisible(zoom >= 7 && zoom <= 11);
       this.line.setOptions({icons: [{

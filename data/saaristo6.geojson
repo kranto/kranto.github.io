@@ -1282,44 +1282,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "yhteysleg",
-        "sname": "Nauvo - Seili",
-        "spartof": "Nauvon pohjoinen"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            21.911727,
-            60.194024
-          ],
-          [
-            21.914394,
-            60.197389
-          ],
-          [
-            21.905162,
-            60.205698
-          ],
-          [
-            21.901982,
-            60.220883
-          ],
-          [
-            21.947908,
-            60.232008
-          ],
-          [
-            21.955376,
-            60.236642
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "02781c9deff3c1e8515aead6c3e8bb1c"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "pier",
         "sname": "Åva",
         "ssubtype": "2",
@@ -4165,7 +4127,13 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Parainen - Nauvo",
-        "description": "<p>puh 0400 127 999, 0400 110 114, 0400 152 326, 0400 382 114</p><p>Laiturit: Lillmälö (Parainen), Prostvik (Nauvo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html\">Aikataulut ja info</a></p>"
+        "description": "<p>puh 0400 127 999, 0400 110 114, 0400 152 326, 0400 382 114</p><p>Laiturit: Lillmälö (Parainen), Prostvik (Nauvo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html\">Aikataulut ja info</a></p>",
+        "info": {
+          "name": "Parainen - Nauvo",
+          "phone": ["+358 400 127999", "+358 400 110114", "+358 400 152326", "+358 400 382114"],
+          "descr": "Laiturit: Lillmälö (Parainen), Prostvitk (Nauvo)<br>Liikennöi aikataulun mukaan 15-60 minuutin välein.",
+          "infolink": "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html"        
+        }
       },
       "geometry": {
         "coordinates": [
@@ -7008,77 +6976,189 @@
       "id": "40dfc56c20fe74f91d261ae19f6c92a2"
     },
     {
-      "type": "Feature",
+      "type": "FeatureCollection",
       "properties": {
-        "stype": "yhteysleg",
-        "sname": "Nauvo - Houtsala",
-        "spartof": "Nauvon pohjoinen"
+        "stype": "connection",
+        "sname": "Nauvon pohjoinen reittialue",
+        "description": "<p>m/s Falkö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320097\">+358 400 320097</a>, 8 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Tärkeimmät laiturit Nauvo, Lavarn(Houtsala)</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables\">Aikataulut ja info</a></p>",
+        "color": "#90c0f0",
+        "weight": 1.5,
+        "zIndex": 8, 
+        "opacity": 0.8
       },
-      "geometry": {
-        "coordinates": [
-          [
-            21.902355,
-            60.22144
+      "features": [{
+        "type": "Feature",
+        "properties": {
+          "stype": "leg",
+          "sname": "Nauvo - Seili"
+        },
+        "geometry": {
+          "coordinates": [
+            [
+              21.911727,
+              60.194024
+            ],
+            [
+              21.914394,
+              60.197389
+            ],
+            [
+              21.905162,
+              60.205698
+            ],
+            [
+              21.901982,
+              60.220883
+            ],
+            [
+              21.947908,
+              60.232008
+            ],
+            [
+              21.955376,
+              60.236642
+            ]
           ],
-          [
-            21.825065,
-            60.23071
+          "type": "LineString"
+        },
+        "id": "02781c9deff3c1e8515aead6c3e8bb1c"
+      },{
+        "type": "Feature",
+        "properties": {
+          "stype": "leg",
+          "sname": "Åvensor"
+        },
+        "geometry": {
+          "coordinates": [
+            [
+              21.67123,
+              60.262026
+            ],
+            [
+              21.659282,
+              60.268323
+            ],
+            [
+              21.587219,
+              60.284429
+            ],
+            [
+              21.587219,
+              60.297197
+            ],
+            [
+              21.578203,
+              60.29831
+            ]
           ],
-          [
-            21.778392,
-            60.228856
+          "type": "LineString"
+        },
+        "id": "93387f459602d4e7acba56ac35e93a53"
+      },{
+        "type": "Feature",
+        "properties": {
+          "sname": "Maskinnamo",
+          "stype": "leg"
+        },
+        "geometry": {
+          "coordinates": [
+            [
+              21.617506,
+              60.277892
+            ],
+            [
+              21.622228,
+              60.283542
+            ],
+            [
+              21.637166,
+              60.283342
+            ],
+            [
+              21.636067,
+              60.273694
+            ],
+            [
+              21.638021,
+              60.258433
+            ]
           ],
-          [
-            21.755242,
-            60.240535
+          "type": "LineString"
+        },
+        "id": "5ad96fd95d4ab863e0c701b867712f5b"
+      },{
+        "type": "Feature",
+        "properties": {
+          "stype": "leg",
+          "sname": "Nauvo - Houtsala"
+        },
+        "geometry": {
+          "coordinates": [
+            [
+              21.902355,
+              60.22144
+            ],
+            [
+              21.825065,
+              60.23071
+            ],
+            [
+              21.778392,
+              60.228856
+            ],
+            [
+              21.755242,
+              60.240535
+            ],
+            [
+              21.744787,
+              60.247576
+            ],
+            [
+              21.752628,
+              60.249615
+            ],
+            [
+              21.747027,
+              60.250541
+            ],
+            [
+              21.748148,
+              60.263137
+            ],
+            [
+              21.733586,
+              60.266841
+            ],
+            [
+              21.696247,
+              60.264619
+            ],
+            [
+              21.695785,
+              60.261193
+            ],
+            [
+              21.69214,
+              60.264619
+            ],
+            [
+              21.646587,
+              60.259063
+            ],
+            [
+              21.612236,
+              60.256284
+            ],
+            [
+              21.598824,
+              60.256949
+            ]
           ],
-          [
-            21.744787,
-            60.247576
-          ],
-          [
-            21.752628,
-            60.249615
-          ],
-          [
-            21.747027,
-            60.250541
-          ],
-          [
-            21.748148,
-            60.263137
-          ],
-          [
-            21.733586,
-            60.266841
-          ],
-          [
-            21.696247,
-            60.264619
-          ],
-          [
-            21.695785,
-            60.261193
-          ],
-          [
-            21.69214,
-            60.264619
-          ],
-          [
-            21.646587,
-            60.259063
-          ],
-          [
-            21.612236,
-            60.256284
-          ],
-          [
-            21.598824,
-            60.256949
-          ]
-        ],
-        "type": "LineString"
-      },
+          "type": "LineString"
+        },
+        "id": "40fb4375d49688a96531df71fdce48c8"
+      }],
       "id": "40fb4375d49688a96531df71fdce48c8"
     },
     {
@@ -9861,40 +9941,6 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Maskinnamo",
-        "stype": "yhteysleg",
-        "spartof": "Nauvon pohjoinen"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            21.617506,
-            60.277892
-          ],
-          [
-            21.622228,
-            60.283542
-          ],
-          [
-            21.637166,
-            60.283342
-          ],
-          [
-            21.636067,
-            60.273694
-          ],
-          [
-            21.638021,
-            60.258433
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "5ad96fd95d4ab863e0c701b867712f5b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "pier",
         "sname": "Torsholma I",
         "ssubtype": "4",
@@ -11585,40 +11631,6 @@
         "type": "LineString"
       },
       "id": "8f383e058991f5e5051db5a8e91ba37e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "yhteysleg",
-        "sname": "Åvensor",
-        "spartof": "Nauvon pohjoinen"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            21.67123,
-            60.262026
-          ],
-          [
-            21.659282,
-            60.268323
-          ],
-          [
-            21.587219,
-            60.284429
-          ],
-          [
-            21.587219,
-            60.297197
-          ],
-          [
-            21.578203,
-            60.29831
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "93387f459602d4e7acba56ac35e93a53"
     },
     {
       "type": "Feature",
