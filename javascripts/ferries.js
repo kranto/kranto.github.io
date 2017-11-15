@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('#wrapper').bind('scroll',toggleScrollArrow);
 });
 
-var scrollLimit = 10; 
+var scrollLimit = 30; 
 
 function toggleScrollArrow()
 {
@@ -489,7 +489,7 @@ function connection(connection, map) {
   var legFeatures = connection.type === 'FeatureCollection'? connection.features: [connection];
   var connectionObject = { name: connection.properties.sname, description: connection.properties.description};
   var legObjects = legFeatures.map(function(leg) {
-    
+
     var legStyler = leg.properties.ssubtype? connectionStylers[leg.properties.ssubtype]: {};
     var coords = leg.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
     var weight = leg.properties.weight || legStyler.weight || connection.properties.weight || connectionStyler.weight;
