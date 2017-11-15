@@ -124,12 +124,15 @@
       display: none;
       padding-left: 10px;
       padding-right: 10px;
-      padding-bottom: 30px
+      padding-bottom: 30px;
+      background-color: #fcfdfe;
     }
 
     div#infocontent {
       max-width: 600px;
       margin: 0 auto;
+      background-color: white;
+      padding: 0 5px;
     }
     div#wrapper {
       position: fixed; 
