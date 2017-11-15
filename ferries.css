@@ -124,9 +124,13 @@
       display: none;
       padding-left: 10px;
       padding-right: 10px;
-      padding-bottom: 10px;
+      padding-bottom: 30px
     }
 
+    div#infocontent {
+      max-width: 600px;
+      margin: 0 auto;
+    }
     div#wrapper {
       position: fixed; 
       top: 0px; 

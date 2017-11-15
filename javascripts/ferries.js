@@ -3,11 +3,13 @@ $(document).ready(function(){
     $('#wrapper').bind('scroll',toggleScrollArrow);
 });
 
+var scrollLimit = 10; 
+
 function toggleScrollArrow()
 {
     var elem = $("#wrapper");
-    var infoVisible = $("#info").is(":visible"); 
-    var isBottom = (elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight());
+    var infoVisible = $("#info").is(":visible");
+    var isBottom = (elem[0].scrollHeight - elem.scrollTop() - scrollLimit <= elem.outerHeight());
     $('#scrollArrow').toggleClass('can-scroll', !isBottom && infoVisible);
 }
 
