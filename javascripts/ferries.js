@@ -77,7 +77,7 @@ function select(targets, mouseEvent) {
   });
   if (selectedCountWas == 0) {
     var clientY = latLng2Point(mouseEvent.latLng, map).y;
-    if ($("#map").height()*0.90 < clientY) map.panBy(0, $("#map").height()*0.1);
+    if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
     $(function() { 
       $("#info").show();
       $("#mapcontainer").animate({height: '80%'}, function() { google.maps.event.trigger(map, 'resize'); });
@@ -921,6 +921,7 @@ function initMap() {
   path: "21.67123,60.262026 21.659282,60.268323 21.587219,60.284429 21.587219,60.297197 21.578203,60.29831"}
   ]},        
 */
+/*
   { name: "Rymättylän reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
   description: '<p>m/s Isla, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:040">040</a>-6736697, 8 <i class="fa fa-car" aria-hidden="true"></i></p><p>Päälaituri: Haapala(Rymättylä)</p><p>Aikataulun mukaan</p><p><a target="info" href="https://kuljetus-savolainen.fi/yhteysalusliikenne/">Aikataulut ja info <i class="fa fa-external-link" aria-hidden="true"></i></a></p><p><a href="https://www.facebook.com/MS-Isla-401567819993437/">M/S Islan Facebook<i class="fa fa-external-link" aria-hidden="true"></i></a></p>',
   legs: [
@@ -935,7 +936,8 @@ function initMap() {
   { name: "Samsaari",  
   path: "21.775188,60.366025 21.811059,60.357286 21.820819,60.342019 21.846931,60.31891 21.83849,60.316951 21.827676,60.319041"},
   ]},        
-
+*/
+/*
   { name: "Velkuan reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
   description: '<p>m/s Kivimo, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358400320095">0400 320 095</a>, 8 <i class="fa fa-car" aria-hidden="true"></i></p><p>Päälaiturit: Teersalo(Velkua), kesäisin myös Hakkenpää(Taivassalo)</p><p>Aikataulun mukaan</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html">Aikataulut ja info <i class="fa fa-external-link" aria-hidden="true"></i></a></p>',
   legs: [
@@ -948,7 +950,7 @@ function initMap() {
   { name: "Liettinen",  
   path: "21.693799,60.467429 21.712032,60.448165 21.756471,60.427136 21.754734,60.424019"},
   ]},        
-
+*/
   { name: "Nauvon poikittainen reittialue", color: '#90c0f0', highlightColor: '#ff0000',weight: 1.5, zIndex: 8, opacity: 0.8,
   legs: [
   { name: "Pärnäs - Berghamn",  

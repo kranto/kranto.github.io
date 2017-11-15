@@ -1626,44 +1626,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "yhteysleg",
-        "sname": "Pähkinäinen",
-        "spartof": "Rymättylä"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            21.725122,
-            60.359377
-          ],
-          [
-            21.735618,
-            60.337703
-          ],
-          [
-            21.726835,
-            60.33666
-          ],
-          [
-            21.69908,
-            60.338138
-          ],
-          [
-            21.69662,
-            60.333617
-          ],
-          [
-            21.692932,
-            60.33127
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "086c0876bc4cd2c4ba55fcfc5f6f4292"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Nötö",
         "labelVisibleTo": 10,
@@ -3934,40 +3896,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "yhteysleg",
-        "sname": "Rauhala",
-        "spartof": "Velkuan reittialue"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            21.672409,
-            60.452641
-          ],
-          [
-            21.695536,
-            60.451279
-          ],
-          [
-            21.697825,
-            60.448904
-          ],
-          [
-            21.698535,
-            60.45124
-          ],
-          [
-            21.708007,
-            60.452369
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "17fb80aa4678137f7dffe5dae042fbb7"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "pier",
         "sname": "Pensar I",
         "ssubtype": "4",
@@ -4592,40 +4520,6 @@
         "type": "Point"
       },
       "id": "226a8880d8ba478b896dd420ff237871"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "yhteysleg",
-        "sname": "Mais1",
-        "spartof": "Rymättylä"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            21.802355,
-            60.370068
-          ],
-          [
-            21.820819,
-            60.342019
-          ],
-          [
-            21.878582,
-            60.340323
-          ],
-          [
-            21.885176,
-            60.335363
-          ],
-          [
-            21.894407,
-            60.332229
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "242486cf81ea7d86a63bd93dccc89a31"
     },
     {
       "type": "Feature",
@@ -6359,104 +6253,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "yhteysleg",
-        "sname": "Salavaisen kierros",
-        "spartof": "Velkuan reittialue"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            21.693871,
-            60.467422
-          ],
-          [
-            21.678319,
-            60.459975
-          ],
-          [
-            21.681626,
-            60.457023
-          ],
-          [
-            21.672867,
-            60.454775
-          ],
-          [
-            21.666521,
-            60.454907
-          ],
-          [
-            21.672509,
-            60.452615
-          ],
-          [
-            21.673582,
-            60.440271
-          ],
-          [
-            21.680732,
-            60.435597
-          ],
-          [
-            21.684575,
-            60.421261
-          ],
-          [
-            21.680911,
-            60.420423
-          ],
-          [
-            21.685816,
-            60.419131
-          ],
-          [
-            21.695057,
-            60.405117
-          ],
-          [
-            21.690879,
-            60.403418
-          ],
-          [
-            21.70304,
-            60.402031
-          ],
-          [
-            21.737776,
-            60.411013
-          ],
-          [
-            21.73194,
-            60.412822
-          ],
-          [
-            21.724384,
-            60.428664
-          ],
-          [
-            21.70854,
-            60.431492
-          ],
-          [
-            21.714786,
-            60.432633
-          ],
-          [
-            21.712666,
-            60.442615
-          ],
-          [
-            21.712055,
-            60.44805
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "2fb0702bec2a4f31b8e803e4b7feccda"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Borstö",
         "labelVisibleTo": 10,
@@ -6979,6 +6775,126 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
+        "sname": "Velkuan reittialue",
+        "description": "<p>m/s Kivimo, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320095\">0400 320 095</a>, 8 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Päälaiturit: Teersalo(Velkua), kesäisin myös Hakkenpää(Taivassalo)</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "ssubtype": "conn4"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Salavaisen kierros"
+          },
+          "geometry": {
+            "coordinates": [[21.693871, 60.467422 ], [21.678319, 60.459975 ], [21.681626, 60.457023 ], [21.672867, 60.454775 ], [21.666521, 60.454907 ], [21.672509, 60.452615 ], [21.673582, 60.440271 ], [21.680732, 60.435597 ], [21.684575, 60.421261 ], [21.680911, 60.420423 ], [21.685816, 60.419131 ], [21.695057, 60.405117 ], [21.690879, 60.403418 ], [21.70304, 60.402031 ], [21.737776, 60.411013 ], [21.73194, 60.412822 ], [21.724384, 60.428664 ], [21.714786, 60.432633 ], [21.712666, 60.442615 ], [21.712055, 60.44805 ] ],
+            "type": "LineString"
+          },
+          "id": "2fb0702bec2a4f31b8e803e4b7feccda"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Rauhala"
+          },
+          "geometry": {
+            "coordinates": [[21.672409, 60.452641 ], [21.695536, 60.451279 ], [21.697825, 60.448904 ], [21.698535, 60.45124 ], [21.708007, 60.452369 ] ],
+            "type": "LineString"
+          },
+          "id": "17fb80aa4678137f7dffe5dae042fbb7"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "yhteysleg",
+            "sname": "Liettinen"
+          },
+          "geometry": {
+            "coordinates": [[21.693799, 60.467429 ], [21.712032, 60.448165 ], [21.756471, 60.427136 ], [21.754734, 60.424019 ] ],
+            "type": "LineString"
+          },
+          "id": "afc0e424ffdcd811e524a132ab6eb6c0"
+        }
+      ],
+      "id": "40dfc56c20fe74f91d261ae19f6c92a2"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "sname": "Rymättylän reittialue",
+        "description": "<p>m/s Isla, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:040\">040</a>-6736697, 8 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Päälaituri: Haapala(Rymättylä)</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"https://kuljetus-savolainen.fi/yhteysalusliikenne/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p><a target=\"other\" href=\"https://www.facebook.com/MS-Isla-401567819993437/\">M/S Islan Facebook<i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "ssubtype": "conn4"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Pakinainen"
+          },
+          "geometry": {
+            "coordinates": [[21.703635, 60.361151 ], [21.699843, 60.3565 ], [21.688316, 60.3565 ], [21.687709, 60.3553 ] ],
+            "type": "LineString"
+          },
+          "id": "b701be6d8efcef10663d474629c67e83"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Mais1"
+          },
+          "geometry": {
+            "coordinates": [[21.802355, 60.370068 ], [21.820819, 60.342019 ], [21.878582, 60.340323 ], [21.885176, 60.335363 ], [21.894407, 60.332229 ] ],
+            "type": "LineString"
+          },
+          "id": "242486cf81ea7d86a63bd93dccc89a31"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Pähkinäinen"
+          },
+          "geometry": {
+            "coordinates": [[21.725122, 60.359377 ], [21.735618, 60.337703 ], [21.726835, 60.33666 ], [21.69908, 60.338138 ], [21.69662, 60.333617 ], [21.692932, 60.33127 ] ],
+            "type": "LineString"
+          },
+          "id": "086c0876bc4cd2c4ba55fcfc5f6f4292"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Haapala - Korvenmaa"
+          },
+          "geometry": {
+            "coordinates": [[21.809382, 60.394549 ], [21.807792, 60.395497 ], [21.790773, 60.392749 ], [21.802313, 60.369929 ], [21.789344, 60.366271 ], [21.767544, 60.365681 ], [21.7646, 60.36808 ], [21.764085, 60.365557 ], [21.744441, 60.362584 ], [21.727069, 60.363207 ], [21.725044, 60.359283 ], [21.67942, 60.363236 ], [21.680695, 60.365591 ] ],
+            "type": "LineString"
+          },
+          "id": "e6c3f7b771293ebd3caf05a52a81fffb"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Sams1"
+          },
+          "geometry": {
+            "coordinates": [[21.775188, 60.366025 ], [21.811059, 60.357286 ], [21.820819, 60.342019 ], [21.846931, 60.31891 ], [21.83849, 60.316951 ], [21.827676, 60.319041 ] ],
+            "type": "LineString"
+          },
+          "id": "69b323dab9ca74047297d156231867a0"
+        }
+      ],
+      "id": "5ad96fd95d4ab863e0c701b867712f5b"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
         "sname": "Nauvon pohjoinen reittialue",
         "description": "<p>m/s Falkö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320097\">+358 400 320097</a>, 8 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Tärkeimmät laiturit Nauvo, Lavarn(Houtsala)</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables\">Aikataulut ja info</a></p>",
         "ssubtype": "conn4"
@@ -6990,32 +6906,7 @@
           "sname": "Nauvo - Seili"
         },
         "geometry": {
-          "coordinates": [
-            [
-              21.911727,
-              60.194024
-            ],
-            [
-              21.914394,
-              60.197389
-            ],
-            [
-              21.905162,
-              60.205698
-            ],
-            [
-              21.901982,
-              60.220883
-            ],
-            [
-              21.947908,
-              60.232008
-            ],
-            [
-              21.955376,
-              60.236642
-            ]
-          ],
+          "coordinates": [[21.911727, 60.194024 ], [21.914394, 60.197389 ], [21.905162, 60.205698 ], [21.901982, 60.220883 ], [21.947908, 60.232008 ], [21.955376, 60.236642 ] ],
           "type": "LineString"
         },
         "id": "02781c9deff3c1e8515aead6c3e8bb1c"
@@ -7026,28 +6917,7 @@
           "sname": "Åvensor"
         },
         "geometry": {
-          "coordinates": [
-            [
-              21.67123,
-              60.262026
-            ],
-            [
-              21.659282,
-              60.268323
-            ],
-            [
-              21.587219,
-              60.284429
-            ],
-            [
-              21.587219,
-              60.297197
-            ],
-            [
-              21.578203,
-              60.29831
-            ]
-          ],
+          "coordinates": [[21.67123, 60.262026 ], [21.659282, 60.268323 ], [21.587219, 60.284429 ], [21.587219, 60.297197 ], [21.578203, 60.29831 ] ],
           "type": "LineString"
         },
         "id": "93387f459602d4e7acba56ac35e93a53"
@@ -7058,28 +6928,7 @@
           "stype": "leg"
         },
         "geometry": {
-          "coordinates": [
-            [
-              21.617506,
-              60.277892
-            ],
-            [
-              21.622228,
-              60.283542
-            ],
-            [
-              21.637166,
-              60.283342
-            ],
-            [
-              21.636067,
-              60.273694
-            ],
-            [
-              21.638021,
-              60.258433
-            ]
-          ],
+          "coordinates": [[21.617506, 60.277892 ], [21.622228, 60.283542 ], [21.637166, 60.283342 ], [21.636067, 60.273694 ], [21.638021, 60.258433 ] ],
           "type": "LineString"
         },
         "id": "5ad96fd95d4ab863e0c701b867712f5b"
@@ -7090,68 +6939,7 @@
           "sname": "Nauvo - Houtsala"
         },
         "geometry": {
-          "coordinates": [
-            [
-              21.902355,
-              60.22144
-            ],
-            [
-              21.825065,
-              60.23071
-            ],
-            [
-              21.778392,
-              60.228856
-            ],
-            [
-              21.755242,
-              60.240535
-            ],
-            [
-              21.744787,
-              60.247576
-            ],
-            [
-              21.752628,
-              60.249615
-            ],
-            [
-              21.747027,
-              60.250541
-            ],
-            [
-              21.748148,
-              60.263137
-            ],
-            [
-              21.733586,
-              60.266841
-            ],
-            [
-              21.696247,
-              60.264619
-            ],
-            [
-              21.695785,
-              60.261193
-            ],
-            [
-              21.69214,
-              60.264619
-            ],
-            [
-              21.646587,
-              60.259063
-            ],
-            [
-              21.612236,
-              60.256284
-            ],
-            [
-              21.598824,
-              60.256949
-            ]
-          ],
+          "coordinates": [[21.902355, 60.22144 ], [21.825065, 60.23071 ], [21.778392, 60.228856 ], [21.755242, 60.240535 ], [21.744787, 60.247576 ], [21.752628, 60.249615 ], [21.747027, 60.250541 ], [21.748148, 60.263137 ], [21.733586, 60.266841 ], [21.696247, 60.264619 ], [21.695785, 60.261193 ], [21.69214, 60.264619 ], [21.646587, 60.259063 ], [21.612236, 60.256284 ], [21.598824, 60.256949 ] ],
           "type": "LineString"
         },
         "id": "40fb4375d49688a96531df71fdce48c8"
@@ -10428,44 +10216,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "yhteysleg",
-        "sname": "Sams1",
-        "spartof": "Rymättylä"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            21.775188,
-            60.366025
-          ],
-          [
-            21.811059,
-            60.357286
-          ],
-          [
-            21.820819,
-            60.342019
-          ],
-          [
-            21.846931,
-            60.31891
-          ],
-          [
-            21.83849,
-            60.316951
-          ],
-          [
-            21.827676,
-            60.319041
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "69b323dab9ca74047297d156231867a0"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "cableferry",
         "sname": "Kokkila"
       },
@@ -12682,36 +12432,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "yhteysleg",
-        "sname": "Liettinen",
-        "spartof": "Velkuan reittialue"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            21.693799,
-            60.467429
-          ],
-          [
-            21.712032,
-            60.448165
-          ],
-          [
-            21.756471,
-            60.427136
-          ],
-          [
-            21.754734,
-            60.424019
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "afc0e424ffdcd811e524a132ab6eb6c0"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Bergö",
         "labelVisibleTo": 9,
@@ -13052,36 +12772,6 @@
         "type": "LineString"
       },
       "id": "b6a0cebfd93345304c1d4b03cf0866c5"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "yhteysleg",
-        "sname": "Pakinainen",
-        "spartof": ""
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            21.703635,
-            60.361151
-          ],
-          [
-            21.699843,
-            60.3565
-          ],
-          [
-            21.688316,
-            60.3565
-          ],
-          [
-            21.687709,
-            60.3553
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "b701be6d8efcef10663d474629c67e83"
     },
     {
       "type": "Feature",
@@ -27343,72 +27033,6 @@
         "type": "Point"
       },
       "id": "e6a3d43c0fc32142991a882800613d7e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "yhteysleg",
-        "sname": "Haapala - Korvenmaa",
-        "spartof": "Rymättylä"
-      },
-      "geometry": {
-        "coordinates": [
-          [
-            21.809382,
-            60.394549
-          ],
-          [
-            21.807792,
-            60.395497
-          ],
-          [
-            21.790773,
-            60.392749
-          ],
-          [
-            21.802313,
-            60.369929
-          ],
-          [
-            21.789344,
-            60.366271
-          ],
-          [
-            21.767544,
-            60.365681
-          ],
-          [
-            21.7646,
-            60.36808
-          ],
-          [
-            21.764085,
-            60.365557
-          ],
-          [
-            21.744441,
-            60.362584
-          ],
-          [
-            21.727069,
-            60.363207
-          ],
-          [
-            21.725044,
-            60.359283
-          ],
-          [
-            21.67942,
-            60.363236
-          ],
-          [
-            21.680695,
-            60.365591
-          ]
-        ],
-        "type": "LineString"
-      },
-      "id": "e6c3f7b771293ebd3caf05a52a81fffb"
     },
     {
       "type": "Feature",
