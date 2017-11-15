@@ -80,8 +80,8 @@ function select(targets, mouseEvent) {
     if ($("#map").height()*0.90 < clientY) map.panBy(0, $("#map").height()*0.1);
     $(function() { 
       $("#info").show();
-      $("#mapcontainer").animate({height: '90%'}, function() { google.maps.event.trigger(map, 'resize'); });
-      $("#info").animate({top: '90%'}, toggleScrollArrow);
+      $("#mapcontainer").animate({height: '80%'}, function() { google.maps.event.trigger(map, 'resize'); });
+      $("#info").animate({top: '80%'}, toggleScrollArrow);
     });
   } else {
       toggleScrollArrow();
