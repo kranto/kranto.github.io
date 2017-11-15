@@ -458,16 +458,47 @@ function cableferry(feature, map) {
   };
 }
 
-function connection(feature, map) {
-  var features = feature.type === 'FeatureCollection'? feature.features: [feature];
-  var connectionObject = { name: feature.properties.sname, description: feature.properties.description};
-  var legObjects = features.map(function(leg) {
+var connectionStylers = {
+  "conn1": {
+    visibleFrom: 9,
+    visibleTo: 30,
+    weight: 2.5,
+    color: '#db0a00',
+    opacity: 0.7,
+    highlightColor: '#ffff00',
+    zIndex: 10
+  },
+  "conn1b": {
+    weight: 1.5,
+    zIndex: 9
+  },
+  "conn4": {
+    visibleFrom: 9,
+    visibleTo: 30,
+    weight: 1.5,
+    color: '#90c0f0',
+    opacity: 0.8,
+    highlightColor: '#ffff00',
+    zIndex: 8
+  },
+};
+
+function connection(connection, map) {
+  var connectionStyler = connection.properties.ssubtype? connectionStylers[connection.properties.ssubtype]: connectionStylers["conn4"];
+
+  var legFeatures = connection.type === 'FeatureCollection'? connection.features: [connection];
+  var connectionObject = { name: connection.properties.sname, description: connection.properties.description};
+  var legObjects = legFeatures.map(function(leg) {
+    
+    var legStyler = leg.properties.ssubtype? connectionStylers[leg.properties.ssubtype]: {};
     var coords = leg.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
-    var weight = leg.properties.weight || feature.properties.weight || 3;
-    var opacity = leg.properties.opacity || feature.properties.opacity || 0.7;
-    var color = leg.properties.color || feature.properties.color || '#ff00000';
-    var highlightColor = leg.properties.highlightColor || feature.properties.highlightColor || '#00ff000';
-    var zIndex = leg.properties.zIndex || feature.properties.zIndex || 1;
+    var weight = leg.properties.weight || legStyler.weight || connection.properties.weight || connectionStyler.weight;
+    var opacity = leg.properties.opacity || legStyler.opacity || connection.properties.opacity || connectionStyler.opacity;
+    var color = leg.properties.color || legStyler.color || connection.properties.color || connectionStyler.color;
+    var highlightColor = leg.properties.highlightColor || legStyler.highlightColor || connection.properties.highlightColor || connectionStyler.highlightColor;
+    var zIndex = leg.properties.zIndex || legStyler.zIndex || connection.properties.zIndex || connectionStyler.zIndex;
+    var visibleFrom = leg.properties.visibleFrom || legStyler.visibleFrom || connection.properties.visibleFrom || connectionStyler.visibleFrom;
+    var visibleTo = leg.properties.visibleTo || legStyler.visibleTo || connection.properties.visibleTo || connectionStyler.visibleTo;
 
     var line = new google.maps.Polyline({
       path: new google.maps.MVCArray(coords),
@@ -484,7 +515,7 @@ function connection(feature, map) {
       geodesic: false,
       strokeOpacity: 0,
       strokeWeight: 12,
-      strokeColor: '#ffff00',
+      strokeColor: highlightColor,
       zIndex: zIndex - 1,
       cursor: 'context-menu',
       map: map
@@ -496,8 +527,8 @@ function connection(feature, map) {
       select([connectionObject], event);
     });
     var rerender = function(zoom, mapTypeId) {
-      line.setVisible(zoom > 8);
-      lineb.setVisible(zoom > 8);
+      line.setVisible(zoom >= visibleFrom && zoom <= visibleTo);
+      lineb.setVisible(zoom >= visibleFrom && zoom <= visibleTo);
     }
     return {highlight: highlight, rerender: rerender };
   });
@@ -983,7 +1014,6 @@ function initMap() {
       leg.weight = leg.weight || reitti.weight || 3;
       leg.opacity = leg.opacity || reitti.opacity || 0.7;
       leg.color = leg.color || reitti.color || '#ff00000';
-      leg.highlightColor = leg.highlightColor || reitti.highlightColor || '#00ff000';
       leg.zIndex = leg.zIndex || reitti.zIndex || 1;
 
       var line = new google.maps.Polyline({

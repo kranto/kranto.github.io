@@ -6981,10 +6981,7 @@
         "stype": "connection",
         "sname": "Nauvon pohjoinen reittialue",
         "description": "<p>m/s Falkö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320097\">+358 400 320097</a>, 8 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Tärkeimmät laiturit Nauvo, Lavarn(Houtsala)</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables\">Aikataulut ja info</a></p>",
-        "color": "#90c0f0",
-        "weight": 1.5,
-        "zIndex": 8, 
-        "opacity": 0.8
+        "ssubtype": "conn4"
       },
       "features": [{
         "type": "Feature",
