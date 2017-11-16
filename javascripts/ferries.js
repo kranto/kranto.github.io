@@ -460,7 +460,7 @@ function cableferry(feature, map) {
 
 var connectionStylers = {
   "conn1": {
-    visibleFrom: 9,
+    visibleFrom: 8,
     visibleTo: 30,
     weight: 2.5,
     color: '#f08000',
@@ -473,7 +473,7 @@ var connectionStylers = {
     zIndex: 9
   },
   "conn2": {
-    visibleFrom: 9,
+    visibleFrom: 8,
     visibleTo: 30,
     weight: 2.5,
     color: '#f08000',
