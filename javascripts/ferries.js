@@ -145,7 +145,7 @@ function toggleFullscreen() {
 
 var mapShown = true;
 $("#toggleFullscreen").click(toggleFullscreen);
-var rengastieShown = true;
+var rengastieShown = false;
 $("#toggleRengastie").click(function() {
   $(this).toggleClass("active");
   rengastieShown = $(this).hasClass("active");
