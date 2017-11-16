@@ -463,7 +463,7 @@ var connectionStylers = {
     visibleFrom: 9,
     visibleTo: 30,
     weight: 2.5,
-    color: '#db0a00',
+    color: '#f08000',
     opacity: 0.7,
     highlightColor: '#ffff00',
     zIndex: 10
@@ -471,6 +471,28 @@ var connectionStylers = {
   "conn1b": {
     weight: 1.5,
     zIndex: 9
+  },
+  "conn2": {
+    visibleFrom: 9,
+    visibleTo: 30,
+    weight: 2.5,
+    color: '#f08000',
+    opacity: 0.7,
+    highlightColor: '#ffff00',
+    zIndex: 10
+  },
+  "conn2b": {
+    weight: 1.5,
+    zIndex: 9
+  },
+  "conn3": {
+    visibleFrom: 9,
+    visibleTo: 30,
+    weight: 2,
+    color: '#e7883e',
+    opacity: 1,
+    highlightColor: '#ffff00',
+    zIndex: 10
   },
   "conn4": {
     visibleFrom: 9,
@@ -815,10 +837,13 @@ function initMap() {
   }
 
   var reitit = [
+/*
   { name: "<b>Pohjoinen reitti:</b><br>Åva - Vuosnainen", color: '#db0a00', highlightColor: '#800080', weight: 2.5, zIndex: 10,
   path: "21.058141,60.5032778,0.0 21.0631943,60.5031457,0.0 21.0666275,60.5025329,0.0 21.0694599,60.5016982,0.0 21.073451,60.5002401,0.0 21.0770988,60.4982748,0.0 21.0795665,60.4964889,0.0 21.0837644,60.4935569,0.0 21.0889916,60.4913856,0.0 21.0972133,60.4901709,0.0 21.1100505,60.4897698,0.0 21.1360658,60.4900626,0.0 21.1839765,60.4930855,0.0 21.2237429,60.4970253,0.0 21.2355631,60.4997952,0.0 21.2449934,60.5033775,0.0 21.2467933,60.5046322,0.0 21.2477351,60.5059714,0.0 21.2472153,60.5071285,0.0" },
   { name: "<b>Pohjoinen reitti:</b><br>Åva - Jurmo", color: '#db0a00', highlightColor: '#800080', weight: 1.5, zIndex: 9,
   path: "21.058141,60.5032778,0.0 21.0621214,60.5036106,0.0 21.0642672,60.5043712,0.0 21.0641813,60.5074983,0.0 21.0652542,60.5116813,0.0 21.0687304,60.5133712,0.0 21.0740519,60.5159482,0.0" },
+*/
+/*
   { name: "<b>Pohjoinen reitti:</b><br>Hummelvik - Torsholma", color: '#db0a00', highlightColor: '#800080', weight: 2.5, zIndex: 10,
   legs: [
   { name: "Torsholma - Lappo", 
@@ -830,8 +855,12 @@ function initMap() {
   { name: "Enklinge - Hummelvik", 
   path: "20.751425,60.3182838,0.0 20.7531309,60.3174285,0.0 20.7538605,60.3165784,0.0 20.7535172,60.3155583,0.0 20.7514143,60.3138368,0.0 20.7473803,60.3119026,0.0 20.7415867,60.3101172,0.0 20.734849,60.3089268,0.0 20.7144642,60.3063971,0.0 20.6941223,60.302464,0.0 20.6694031,60.2931078,0.0 20.6117249,60.2655338,0.0 20.5962753,60.2602546,0.0 20.5791092,60.2554856,0.0 20.5626297,60.2524195,0.0 20.5369663,60.2482456,0.0 20.5137062,60.2449232,0.0 20.4970551,60.2402372,0.0 20.4857254,60.2358914,0.0 20.4697609,60.2312041,0.0 20.4534531,60.2283913,0.0 20.434227,60.2260046,0.0 20.4179192,60.2237882,0.0 20.4151726,60.22398,0.0 20.4137778,60.224289,0.0" }
   ]},
+*/
+/*
   { name: "<b>Pohjoinen reitti:</b><br>Asterholmalinjen", color: '#db0a00', highlightColor: '#800080', weight: 1.5, zIndex: 9,
   path: "20.9960747,60.3174497,0.0 20.9996367,60.3175985,0.0 21.0026407,60.3174922,0.0 21.0070181,60.3163871,0.0 21.0093355,60.3148145,0.0 21.0108805,60.3126891,0.0 21.0119963,60.3106698,0.0 21.0158157,60.3085229,0.0 21.022253,60.3052704,0.0 21.0266733,60.303931,0.0 21.0297203,60.3035271,0.0 21.0317373,60.3035909,0.0 21.0340977,60.3041224,0.0" },
+*/
+/*
   { name: "<b>Poikittainen reitti:</b><br>Långnäs - Överö - Snäckö", color: '#f7c71a', highlightColor: '#800080', weight: 3, zIndex: 10,
   legs: [
   { name: "Långnäs - Överö",
@@ -845,7 +874,8 @@ function initMap() {
   { name: "Sottunga - Snäckö", weight: 1.5, zIndex: 9,
   path: "20.682224,60.1099751,0.0 20.7006454,60.1079861,0.0 20.704937,60.1095259,0.0 20.7047653,60.1156847,0.0 20.6996155,60.1279988,0.0 20.6944656,60.1332138,0.0 20.6939507,60.1748185,0.0 20.6912041,60.1804529,0.0 20.694809,60.1847207,0.0 20.7413292,60.1854889,0.0 20.7471657,60.1889027,0.0 20.7461357,60.19334,0.0 20.7432175,60.1963264,0.0 20.7209015,60.2112541,0.0 20.7198715,60.21458,0.0 20.7257509,60.219291,0.0" }
   ]},
-
+*/
+/*
   { name: "<b>Eteläinen reitti:</b><br>Långnäs - Överö - Sottunga - Kökar", color: '#00a000', highlightColor: '#0000ff', weight: 2.5, zIndex: 10,
   legs: [
   { name: "Långnäs - Överö",
@@ -861,8 +891,11 @@ function initMap() {
   ]},
   { name: "<b>Eteläinen reitti:</b><br>Kökar - Galtby", color: '#00a000', highlightColor: '#0000ff', weight: 2.5, zIndex: 10, // #19961c
   path: "21.584959,60.1859156,0.0 21.5804529,60.1874518,0.0 21.5653038,60.1902681,0.0 21.5007591,60.1895854,0.0 21.4746666,60.1807944,0.0 21.4396477,60.1740501,0.0 21.276741,60.1063606,0.0 21.160183,60.0441036,0.0 21.039505,59.9837043,0.0 21.0108376,59.9718517,0.0 20.9991646,59.969704,0.0 20.900631,59.9631743,0.0 20.8937645,59.9603386,0.0 20.8932495,59.9574167,0.0 20.8938932,59.9479403,0.0" },
+*/
+/*
   { name: "Föglön linja: Svinö - Degerby", color: '#004d9d', highlightColor: '#ff0000',weight: 2.5, zIndex: 10,
   path: "20.2676296,60.066551,0.0 20.3229046,60.0594433,0.0 20.3524303,60.0357024,0.0 20.3667641,60.0321869,0.0 20.3858185,60.0321441,0.0" },        
+ */
   { name: "Iniö - Kustavi", color: '#f08000', highlightColor: '#ff0000',weight: 2.5, zIndex: 10,
   description: '<p>m/s Aura, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358400320093">0400 320 093</a>, 52 <i class="fa fa-car" aria-hidden="true"></i></p><p>Laiturit: Kannvik(Iniö), Heponiemi(Kustavi)</p><p>Aikataulun mukaan, 5-8 päivittäin</p><p><a target="info" href="http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html">Aikataulut ja info <i class="fa fa-external-link" aria-hidden="true"></i></a></p>',
   path: "21.3966036,60.4392476,0.0 21.3996935,60.4402851,0.0 21.4001656,60.4407085,0.0 21.4029121,60.4488584,0.0 21.4069033,60.4547208,0.0 21.4262152,60.4803802,0.0 21.4301205,60.4853067,0.0 21.4317942,60.4858564,0.0 21.4331675,60.4857295,0.0 21.4348412,60.4852697,0.0" },        
@@ -1007,9 +1040,11 @@ function initMap() {
   path: "22.409111,59.917863 22.401698,59.919194 22.388088,59.931892 22.377157,59.998927 22.290432,60.03394 22.282125,60.030755"},
   ]},
 */
+/*
   { name: "<b>Polkupyörälautta:</b><br>Skarpnåtö - Hällö", color: '#e7883e', highlightColor: '#ff0000',weight: 2, zIndex: 10, opacity: 1,
   description: '<p><i class="fa fa-ship" aria-hidden="true"></i>M/S Silvana, <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+358407173455">040 717 3455</a>, 50 <i class="fa fa-bicycle" aria-hidden="true"></i></p><p>Laiturit: Skarpnåtö(Hammarland), Hällö(Geta)</p><p><a target="info" href="http://www.aland.com/fi/skarpnato">Aikataulut ja info <i class="fa fa-external-link" aria-hidden="true"></i></a></p><pre>Aikataulu 19.6.-19.8.2017\n\nSkarpnåtöstä klo 11.00 ja\nHällöstä klo 11.30\n\nHuom! Ei sunnuntaisin\n\nExtra vuoroja tilauksesta puh. 0400 229 149 / Jan-Anders Häger\n\nHinta:\n12 euroa / henkilö / pyörä\n6 euroa alle 12 vuotta\n6 euroa / kärry</pre>',
   path: "19.761529,60.326862,0 19.763889,60.327287,0 19.777021,60.336804,0 19.784402,60.357017,0 19.783802,60.359139,0 19.780368,60.360243,0 19.773931,60.36037,0 19.769554,60.362365,0 19.766378,60.365294,0 19.768009,60.3661,0" },
+*/
   ];
 
   var reittiObjects = reitit.map(function(reitti) {

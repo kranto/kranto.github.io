@@ -575,18 +575,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "Reitti",
-        "sname": "Hummelvik - Enklinge"
-      },
-      "geometry": {
-        "coordinates": [[20.751425, 60.318283 ], [20.75313, 60.317428 ], [20.75386, 60.316578 ], [20.753517, 60.315558 ], [20.751414, 60.313836 ], [20.74738, 60.311902 ], [20.741586, 60.310117 ], [20.734849, 60.308926 ], [20.714464, 60.306397 ], [20.694122, 60.302464 ], [20.669403, 60.293107 ], [20.611724, 60.265533 ], [20.596275, 60.260254 ], [20.579109, 60.255485 ], [20.562629, 60.252419 ], [20.536966, 60.248245 ], [20.513706, 60.244923 ], [20.497055, 60.240237 ], [20.485725, 60.235891 ], [20.46976, 60.231204 ], [20.453453, 60.228391 ], [20.434227, 60.226004 ], [20.417919, 60.223788 ], [20.415172, 60.22398 ], [20.413777, 60.224289 ] ],
-        "type": "LineString"
-      },
-      "id": "055a928dfce263429718527bdc78065e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Kopparholm",
         "labelVisibleTo": -1,
@@ -681,18 +669,6 @@
         "type": "Point"
       },
       "id": "0783d49adc1926b9f9b8a5497ed20275"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Lappo - Torsholma"
-      },
-      "geometry": {
-        "coordinates": [[21.038045, 60.356571 ], [21.038088, 60.353939 ], [21.037101, 60.350988 ], [21.029162, 60.337568 ], [21.022682, 60.329114 ], [21.021137, 60.327478 ], [21.018948, 60.325673 ], [21.014614, 60.322868 ], [21.009292, 60.320276 ], [21.004357, 60.318597 ], [21.001353, 60.318023 ], [20.996074, 60.317449 ] ],
-        "type": "LineString"
-      },
-      "id": "082b75a191e341a1eab31d6e54451b5e"
     },
     {
       "type": "Feature",
@@ -953,18 +929,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "Reitti",
-        "sname": "Åva - Osnäs"
-      },
-      "geometry": {
-        "coordinates": [[21.058141, 60.503277 ], [21.063194, 60.503145 ], [21.066627, 60.502532 ], [21.069459, 60.501698 ], [21.073451, 60.50024 ], [21.077098, 60.498274 ], [21.079566, 60.496488 ], [21.083764, 60.493556 ], [21.088991, 60.491385 ], [21.097213, 60.49017 ], [21.11005, 60.489769 ], [21.136065, 60.490062 ], [21.183976, 60.493085 ], [21.223742, 60.497025 ], [21.235563, 60.499795 ], [21.244993, 60.503377 ], [21.246793, 60.504632 ], [21.247735, 60.505971 ], [21.247215, 60.507128 ] ],
-        "type": "LineString"
-      },
-      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Björkholm",
         "labelVisibleTo": -1,
@@ -1167,18 +1131,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "Reitti",
-        "sname": "Föglölinjen"
-      },
-      "geometry": {
-        "coordinates": [[20.267629, 60.066551 ], [20.322904, 60.059443 ], [20.35243, 60.035702 ], [20.366764, 60.032186 ], [20.385818, 60.032144 ] ],
-        "type": "LineString"
-      },
-      "id": "2b5822af7d89d208888a9b5e51817148"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Pensar",
         "labelVisibleTo": 10,
@@ -1301,18 +1253,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "Reitti",
-        "sname": "Åva - Jurmo"
-      },
-      "geometry": {
-        "coordinates": [[21.058141, 60.503277 ], [21.062121, 60.50361 ], [21.064267, 60.504371 ], [21.064181, 60.507498 ], [21.065254, 60.511681 ], [21.06873, 60.513371 ], [21.074051, 60.515948 ] ],
-        "type": "LineString"
-      },
-      "id": "34f646dd0447e5be6c957dba27d7e908"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Helsingholmen",
         "labelVisibleTo": 10,
@@ -1323,18 +1263,6 @@
         "type": "Point"
       },
       "id": "3675b28220129f2224c006149315171f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Överö - Sottunga"
-      },
-      "geometry": {
-        "coordinates": [[20.510718, 60.111536 ], [20.512504, 60.115 ], [20.556793, 60.119447 ], [20.582027, 60.124151 ], [20.60194, 60.122697 ], [20.63713, 60.111493 ], [20.664081, 60.109782 ], [20.675067, 60.10867 ], [20.682106, 60.10867 ], [20.682224, 60.109975 ] ],
-        "type": "LineString"
-      },
-      "id": "37d186c9c15779b9d24c46d0fb0c8f2e"
     },
     {
       "type": "Feature",
@@ -1543,6 +1471,345 @@
         "type": "LineString"
       },
       "id": "40dfc56c20fe74f91d261ae19f6c92a2"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "sname": "Eteläinen linja: Långnäs - Kökar - Galtby",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i>m/s Gudingen, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358407693687\"> +358 (0)40 769 3687</a>, 25 <i class=\"fa fa-car\" aria-hidden=\"true\"></i><br/><i class=\"fa fa-ship\" aria-hidden=\"true\"></i>m/s Skiftet, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400350265\"> +358 (0)400 350 265</a>, 25 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>3-4 vuoroa päivässä, Överö vain tilauksesta, Galtby 0-2 vuoroa päivässä, maksullinen</p><p>Laiturit: Långnäs, Överö(Föglö), Sottunga, Kökar, Galtby(Korppoo)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/sodralinjen_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 (0)18 25 600</a></p>",
+        "ssubtype": "conn2",
+        "color": "#00a000"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Kyrkogårdslinjen",
+            "ssubtype": "conn2b"
+          },
+          "geometry": {
+            "coordinates": [[20.789265, 60.040567 ], [20.792784, 60.03896 ], [20.812439, 60.03448 ], [20.820593, 60.030707 ], [20.82261, 60.030579 ], [20.825057, 60.031007 ], [20.821319, 60.027102 ], [20.818955, 60.026112 ], [20.808134, 60.024518 ], [20.802887, 60.022831 ], [20.798831, 60.020571 ], [20.796987, 60.01841 ], [20.79596, 60.01559 ] ],
+            "type": "LineString"
+          },
+          "id": "4a66f8e5e9f659774e753f49d9685ffb"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Husölinjen",
+            "ssubtype": "conn2b"
+          },
+          "geometry": {
+            "coordinates": [[20.779867, 60.05533 ], [20.781412, 60.059143 ], [20.787506, 60.060471 ], [20.805358, 60.062484 ], [20.806421, 60.063164 ], [20.80729, 60.064637 ], [20.805498, 60.063544 ], [20.804243, 60.063041 ], [20.801292, 60.062789 ], [20.786433, 60.062056 ], [20.77918, 60.063062 ], [20.774288, 60.064476 ], [20.772271, 60.065011 ] ],
+            "type": "LineString"
+          },
+          "id": "6ae2fae22d39b86dd8f906a97d8ddf27"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Galtby - Kökar"
+          },
+          "geometry": {
+            "coordinates": [[21.584959, 60.185915 ], [21.580452, 60.187451 ], [21.565303, 60.190268 ], [21.500759, 60.189585 ], [21.474666, 60.180794 ], [21.439647, 60.17405 ], [21.276741, 60.10636 ], [21.160183, 60.044103 ], [21.039505, 59.983704 ], [21.010837, 59.971851 ], [20.999164, 59.969704 ], [20.900631, 59.963174 ], [20.893764, 59.960338 ], [20.893249, 59.957416 ], [20.893893, 59.94794 ] ],
+            "type": "LineString"
+          },
+          "id": "d9ccf0dc21c6cc6ac56d2d9b43d8c057"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Sottunga - Kökar"
+          },
+          "geometry": {
+            "coordinates": [[20.682224, 60.109975 ], [20.683994, 60.108756 ], [20.726738, 60.10328 ], [20.775489, 60.062356 ], [20.789737, 60.039646 ], [20.796604, 60.012888 ], [20.823555, 59.986194 ], [20.887928, 59.959393 ], [20.893893, 59.94794 ], [20.892342, 59.945804 ] ],
+            "type": "LineString"
+          },
+          "id": "8f383e058991f5e5051db5a8e91ba37e"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Överö - Sottunga"
+          },
+          "geometry": {
+            "coordinates": [[20.510718, 60.111536 ], [20.512504, 60.115 ], [20.556793, 60.119447 ], [20.582027, 60.124151 ], [20.60194, 60.122697 ], [20.63713, 60.111493 ], [20.664081, 60.109782 ], [20.675067, 60.10867 ], [20.682106, 60.10867 ], [20.682224, 60.109975 ] ],
+            "type": "LineString"
+          },
+          "id": "37d186c9c15779b9d24c46d0fb0c8f2e"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Långnäs - Överö"
+          },
+          "geometry": {
+            "coordinates": [[20.300213, 60.117069 ], [20.320587, 60.11423 ], [20.362644, 60.113375 ], [20.392856, 60.110894 ], [20.435943, 60.100713 ], [20.450534, 60.100114 ], [20.465126, 60.10251 ], [20.474052, 60.110295 ], [20.493278, 60.114401 ], [20.505638, 60.11423 ], [20.510718, 60.111536 ] ],
+            "type": "LineString"
+          },
+          "id": "a0734f71fdbbda349cc54fe11e6c5d83"
+        }
+      ],
+      "id": "40dfc56c20fe74f91d261ae19f6c92a2"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "sname": "Föglön linja: Svinö - Degerby",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i>m/s Skarven, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358401733600\"> +358 (0)40 173 3600</a>, 60 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>8-12 vuoroa päivässä, maksullinen</p><p>Laiturit: Svinö(Lumparland), Degerby(Föglö)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/foglolinjen.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 (0)18 25 600</a></p>",
+        "ssubtype": "conn2",
+        "color": "#004d9d"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Föglölinjen"
+          },
+          "geometry": {
+            "coordinates": [[20.267629, 60.066551 ], [20.322904, 60.059443 ], [20.35243, 60.035702 ], [20.366764, 60.032186 ], [20.385818, 60.032144 ] ],
+            "type": "LineString"
+          },
+          "id": "2b5822af7d89d208888a9b5e51817148"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "sname": "Pohjoinen linja: Osnäs/Vuosnainen - Åva",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i>m/s Viggen, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400330455\"> +358 (0)40 033 0455</a>, 50 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>3-4 vuoroa päivässä, maksullinen</p><p>Laiturit: Osnäs/Vuosnainen(Kustavi), Åva(Brändö)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/osnas-ava_2.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 (0)18 25 600</a></p>",
+        "ssubtype": "conn2",
+        "color": "#db0a00"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Åva - Osnäs"
+          },
+          "geometry": {
+            "coordinates": [[21.058141, 60.503277 ], [21.063194, 60.503145 ], [21.066627, 60.502532 ], [21.069459, 60.501698 ], [21.073451, 60.50024 ], [21.077098, 60.498274 ], [21.079566, 60.496488 ], [21.083764, 60.493556 ], [21.088991, 60.491385 ], [21.097213, 60.49017 ], [21.11005, 60.489769 ], [21.136065, 60.490062 ], [21.183976, 60.493085 ], [21.223742, 60.497025 ], [21.235563, 60.499795 ], [21.244993, 60.503377 ], [21.246793, 60.504632 ], [21.247735, 60.505971 ], [21.247215, 60.507128 ] ],
+            "type": "LineString"
+          },
+          "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "sname": "Pohjoinen linja: Åva - Jurmo",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i>m/s Doppingen, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358407082136\"> +358 (0)40 708 2136</a>, 18 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>10-15 vuoroa päivässä, osa vain tilauksesta lautalle</p><p>Laiturit: Åva(Brändö), Jurmo(Brändö)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/ava-jurmo.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 (0)18 25 600</a></p>",
+        "ssubtype": "conn2",
+        "color": "#db0a00"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Åva - Jurmo",
+            "ssubtype": "conn2b"
+          },
+          "geometry": {
+            "coordinates": [[21.058141, 60.503277 ], [21.062121, 60.50361 ], [21.064267, 60.504371 ], [21.064181, 60.507498 ], [21.065254, 60.511681 ], [21.06873, 60.513371 ], [21.074051, 60.515948 ] ],
+            "type": "LineString"
+          },
+          "id": "34f646dd0447e5be6c957dba27d7e908"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "sname": "Pohjoinen linja: Hummelvik - Torsholma",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i>m/s Alfågeln, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358407682108\"> +358 (0)40 768 2108</a>, 50 <i class=\"fa fa-car\" aria-hidden=\"true\"></i><br/><i class=\"fa fa-ship\" aria-hidden=\"true\"></i>m/s Knipan, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400229261\"> +358 (0)40 0229 261</a>, 25 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>3-4 vuoroa päivässä, Enklinge - Kumlinge välillä lisäksi n. 10 vuoroa päivässä</p><p>Laiturit: Hummelvik(Vårdö), Enklinge, Kumlinge, Lappo, Torsholma(Brändö)</p><p>Aikataulut ja info: <a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/hummelvik-torsholma_1.pdf\">Hummelvik - Torsholma<i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/enklinge-kumlinge.pdf\">Enklinge - Kumlinge<i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 (0)18 25 600</a></p>",
+        "ssubtype": "conn2",
+        "color": "#db0a00"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Lappo - Torsholma"
+          },
+          "geometry": {
+            "coordinates": [[21.038045, 60.356571 ], [21.038088, 60.353939 ], [21.037101, 60.350988 ], [21.029162, 60.337568 ], [21.022682, 60.329114 ], [21.021137, 60.327478 ], [21.018948, 60.325673 ], [21.014614, 60.322868 ], [21.009292, 60.320276 ], [21.004357, 60.318597 ], [21.001353, 60.318023 ], [20.996074, 60.317449 ] ],
+            "type": "LineString"
+          },
+          "id": "082b75a191e341a1eab31d6e54451b5e"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Kumlinge - Lappo"
+          },
+          "geometry": {
+            "coordinates": [[20.996074, 60.317449 ], [20.999851, 60.317364 ], [21.00337, 60.317024 ], [21.006074, 60.316132 ], [21.008219, 60.315112 ], [21.009464, 60.313114 ], [21.010236, 60.309798 ], [21.00852, 60.306758 ], [21.006503, 60.304505 ], [21.003112, 60.301677 ], [20.996246, 60.296148 ], [20.992169, 60.293745 ], [20.988607, 60.292512 ], [20.984273, 60.291725 ], [20.972857, 60.290853 ], [20.969295, 60.290789 ], [20.964703, 60.290938 ], [20.958952, 60.291385 ], [20.948395, 60.292958 ], [20.942001, 60.293724 ], [20.937752, 60.294149 ], [20.923333, 60.295043 ], [20.911874, 60.295064 ], [20.907154, 60.294724 ], [20.895566, 60.293235 ], [20.885009, 60.29164 ], [20.865225, 60.289534 ], [20.860934, 60.289109 ], [20.84763, 60.287088 ], [20.841622, 60.286301 ], [20.834283, 60.285663 ], [20.830164, 60.285727 ], [20.827031, 60.285897 ], [20.82437, 60.286301 ], [20.820078, 60.287365 ], [20.804929, 60.292469 ], [20.802698, 60.292873 ], [20.795531, 60.293001 ], [20.792913, 60.292703 ], [20.790853, 60.292172 ], [20.789823, 60.291512 ], [20.789415, 60.290699 ] ],
+            "type": "LineString"
+          },
+          "id": "c6a84a40bb08ffd0a7573025e9c073f9"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Enklinge - Kumlinge"
+          },
+          "geometry": {
+            "coordinates": [[20.789415, 60.290699 ], [20.766735, 60.31152 ], [20.762872, 60.314155 ], [20.75908, 60.315874 ], [20.754858, 60.317348 ], [20.751425, 60.318283 ] ],
+            "type": "LineString"
+          },
+          "id": "6ecf9c96cf70d083cfe847c3f7f941bb"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Hummelvik - Enklinge"
+          },
+          "geometry": {
+            "coordinates": [[20.751425, 60.318283 ], [20.75313, 60.317428 ], [20.75386, 60.316578 ], [20.753517, 60.315558 ], [20.751414, 60.313836 ], [20.74738, 60.311902 ], [20.741586, 60.310117 ], [20.734849, 60.308926 ], [20.714464, 60.306397 ], [20.694122, 60.302464 ], [20.669403, 60.293107 ], [20.611724, 60.265533 ], [20.596275, 60.260254 ], [20.579109, 60.255485 ], [20.562629, 60.252419 ], [20.536966, 60.248245 ], [20.513706, 60.244923 ], [20.497055, 60.240237 ], [20.485725, 60.235891 ], [20.46976, 60.231204 ], [20.453453, 60.228391 ], [20.434227, 60.226004 ], [20.417919, 60.223788 ], [20.415172, 60.22398 ], [20.413777, 60.224289 ] ],
+            "type": "LineString"
+          },
+          "id": "055a928dfce263429718527bdc78065e"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "sname": "Pohjoinen linja: Asterholma - Lappo - Torsholma",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i>m/s Frida, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+3584573613394\"> +358 (0)457 3613 394</a>, 16 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>n. 10 vuoroa päivässä, osa vain tilauksesta lautalle</p><p>Laiturit: Asterholma, Lappo, Torsholma(Brändö)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/asterholmalinjen_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 (0)18 25 600</a></p>",
+        "ssubtype": "conn2",
+        "color": "#db0a00"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Lappo - Torsholma",
+            "ssubtype": "conn2b"
+          },
+          "geometry": {
+            "coordinates": [[21.038045, 60.356571 ], [21.038088, 60.353939 ], [21.037101, 60.350988 ], [21.029162, 60.337568 ], [21.022682, 60.329114 ], [21.021137, 60.327478 ], [21.018948, 60.325673 ], [21.014614, 60.322868 ], [21.009292, 60.320276 ], [21.004357, 60.318597 ], [21.001353, 60.318023 ], [20.996074, 60.317449 ] ],
+            "type": "LineString"
+          },
+          "id": "082b75a191e341a1eab31d6e54451b5e"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Asterholmalinjen",
+            "ssubtype": "conn2b"
+          },
+          "geometry": {
+            "coordinates": [[20.996074, 60.317449 ], [20.999636, 60.317598 ], [21.00264, 60.317492 ], [21.007018, 60.316387 ], [21.009335, 60.314814 ], [21.01088, 60.312689 ], [21.011996, 60.310669 ], [21.015815, 60.308522 ], [21.022253, 60.30527 ], [21.026673, 60.303931 ], [21.02972, 60.303527 ], [21.031737, 60.30359 ], [21.033808, 60.304032 ] ],
+            "type": "LineString"
+          },
+          "id": "ddbaf2892c4d94395dff28d05e0dfc50"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "sname": "Poikittainen linja: Långnäs - Snäckö",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i>m/s Odin, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358404840352\"> +358 (0)404 840 352</a>, 45 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>1-2 vuoroa päivässä, Överö vain tilauksesta, Bergö ja Sottunga harvoin</p><p>Laiturit: Långnäs, Överö(Föglö), Snäckö(Kumlinge)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/tvargaendelinjen_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 (0)18 25 600</a></p>",
+        "ssubtype": "conn2",
+        "color": "#f7c71a"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Sottunga - Snäckö",
+            "ssubtype": "conn2b"
+          },
+          "geometry": {
+            "coordinates": [[20.682224, 60.109975 ], [20.700645, 60.107986 ], [20.704937, 60.109525 ], [20.704765, 60.115684 ], [20.699615, 60.127998 ], [20.694465, 60.133213 ], [20.69395, 60.174818 ], [20.691204, 60.180452 ], [20.694809, 60.18472 ], [20.741329, 60.185488 ], [20.747165, 60.188902 ], [20.746135, 60.19334 ], [20.743217, 60.196326 ], [20.720901, 60.211254 ], [20.719871, 60.21458 ], [20.72575, 60.219291 ] ],
+            "type": "LineString"
+          },
+          "id": "ed94a9dd04fbef408a946a3e6c7208ed"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Överö - Sottunga  (tvärg)",
+            "ssubtype": "conn2b"
+          },
+          "geometry": {
+            "coordinates": [[20.510718, 60.111536 ], [20.510616, 60.116368 ], [20.55439, 60.120987 ], [20.581512, 60.126117 ], [20.60297, 60.124578 ], [20.639362, 60.112434 ], [20.658931, 60.110894 ], [20.680389, 60.109269 ], [20.682224, 60.109975 ] ],
+            "type": "LineString"
+          },
+          "id": "bfee6b7ef6821d4b21c32507133e422a"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Långnäs - Överö (tvärg)"
+          },
+          "geometry": {
+            "coordinates": [[20.300213, 60.117069 ], [20.308399, 60.117053 ], [20.322132, 60.11577 ], [20.355777, 60.115342 ], [20.395774, 60.112348 ], [20.437316, 60.102938 ], [20.451393, 60.102339 ], [20.462722, 60.104221 ], [20.470447, 60.111493 ], [20.490875, 60.116368 ], [20.508384, 60.115941 ], [20.510718, 60.111536 ] ],
+            "type": "LineString"
+          },
+          "id": "a959e6d2688f7350079804ec76c33296"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Överö - Snäckö"
+          },
+          "geometry": {
+            "coordinates": [[20.510718, 60.111536 ], [20.510616, 60.116368 ], [20.55439, 60.120987 ], [20.581512, 60.126117 ], [20.607433, 60.130649 ], [20.614471, 60.133983 ], [20.63816, 60.167219 ], [20.694809, 60.18472 ], [20.741329, 60.185488 ], [20.747165, 60.188902 ], [20.746135, 60.19334 ], [20.743217, 60.196326 ], [20.720901, 60.211254 ], [20.719871, 60.21458 ], [20.72575, 60.219291 ] ],
+            "type": "LineString"
+          },
+          "id": "6292eca6a3f0f86b944807d1bf78657f"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Långnäs - Bergö",
+            "ssubtype": "conn2b"
+          },
+          "geometry": {
+            "coordinates": [[20.300213, 60.117069 ], [20.298442, 60.128853 ], [20.301876, 60.142017 ], [20.350112, 60.159105 ], [20.36642, 60.160472 ], [20.383243, 60.15919 ], [20.390292, 60.163002 ], [20.392738, 60.162682 ] ],
+            "type": "LineString"
+          },
+          "id": "d904501bdea86a915eef6160190cad8e"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
     },
     {
       "type": "FeatureCollection",
@@ -2032,7 +2299,8 @@
         "description": "<p>m/s Falkö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320097\">+358 400 320097</a>, 8 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Tärkeimmät laiturit Nauvo, Lavarn(Houtsala)</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables\">Aikataulut ja info</a></p>",
         "ssubtype": "conn4"
       },
-      "features": [{
+      "features": [
+      {
         "type": "Feature",
         "properties": {
           "stype": "leg",
@@ -2078,6 +2346,30 @@
         "id": "40fb4375d49688a96531df71fdce48c8"
       }],
       "id": "40fb4375d49688a96531df71fdce48c8"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "sname": "Polkupyörälautta Skarpnåtö - Hällö",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i>M/S Silvana, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358407173455\">040 717 3455</a>, 50 <i class=\"fa fa-bicycle\" aria-hidden=\"true\"></i></p><p>Laiturit: Skarpnåtö(Hammarland), Hällö(Geta)</p><p><a target=\"info\" href=\"http://www.aland.com/fi/skarpnato\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><pre>Aikataulu 19.6.-19.8.2017\n\nSkarpnåtöstä klo 11.00 ja\nHällöstä klo 11.30\n\nHuom! Ei sunnuntaisin\n\nExtra vuoroja tilauksesta puh. 0400 229 149 / Jan-Anders Häger\n\nHinta:\n12 euroa / henkilö / pyörä\n6 euroa alle 12 vuotta\n6 euroa / kärry</pre>",
+        "ssubtype": "conn3"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Skarpnåtö - Hällö"
+          },
+          "geometry": {
+            "coordinates": [[19.761529, 60.326862 ], [19.763889, 60.327287 ], [19.777021, 60.336804 ], [19.784402, 60.357017 ], [19.783802, 60.359139 ], [19.780368, 60.360243 ], [19.773931, 60.36037 ], [19.769554, 60.362365 ], [19.766378, 60.365294 ], [19.768009, 60.3661 ] ],
+            "type": "LineString"
+          },
+          "id": "9927a80991803333afcd3b9359e95db3"
+        }
+      ],
+      "id": "40dfc56c20fe74f91d261ae19f6c92a2"
     },
     {
       "type": "Feature",
@@ -2199,18 +2491,6 @@
         "type": "Point"
       },
       "id": "485cf55bcc220e9f4abf4a5e702351cb"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Kyrkogårdslinjen"
-      },
-      "geometry": {
-        "coordinates": [[20.789265, 60.040567 ], [20.792784, 60.03896 ], [20.812439, 60.03448 ], [20.820593, 60.030707 ], [20.82261, 60.030579 ], [20.825057, 60.031007 ], [20.821319, 60.027102 ], [20.818955, 60.026112 ], [20.808134, 60.024518 ], [20.802887, 60.022831 ], [20.798831, 60.020571 ], [20.796987, 60.01841 ], [20.79596, 60.01559 ] ],
-        "type": "LineString"
-      },
-      "id": "4a66f8e5e9f659774e753f49d9685ffb"
     },
     {
       "type": "Feature",
@@ -2503,18 +2783,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "Reitti",
-        "sname": "Överö - Snäckö"
-      },
-      "geometry": {
-        "coordinates": [[20.510718, 60.111536 ], [20.510616, 60.116368 ], [20.55439, 60.120987 ], [20.581512, 60.126117 ], [20.607433, 60.130649 ], [20.614471, 60.133983 ], [20.63816, 60.167219 ], [20.694809, 60.18472 ], [20.741329, 60.185488 ], [20.747165, 60.188902 ], [20.746135, 60.19334 ], [20.743217, 60.196326 ], [20.720901, 60.211254 ], [20.719871, 60.21458 ], [20.72575, 60.219291 ] ],
-        "type": "LineString"
-      },
-      "id": "6292eca6a3f0f86b944807d1bf78657f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "pier",
         "sname": "Tammisluoto",
         "ssubtype": "4",
@@ -2681,18 +2949,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "Reitti",
-        "sname": "Husölinjen"
-      },
-      "geometry": {
-        "coordinates": [[20.779867, 60.05533 ], [20.781412, 60.059143 ], [20.787506, 60.060471 ], [20.805358, 60.062484 ], [20.806421, 60.063164 ], [20.80729, 60.064637 ], [20.805498, 60.063544 ], [20.804243, 60.063041 ], [20.801292, 60.062789 ], [20.786433, 60.062056 ], [20.77918, 60.063062 ], [20.774288, 60.064476 ], [20.772271, 60.065011 ] ],
-        "type": "LineString"
-      },
-      "id": "6ae2fae22d39b86dd8f906a97d8ddf27"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "pier",
         "sname": "Lempnäs",
         "ssubtype": "4",
@@ -2717,18 +2973,6 @@
         "type": "Point"
       },
       "id": "6dab4612deb21889ed037c1dc289fe58"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Enklinge - Kumlinge"
-      },
-      "geometry": {
-        "coordinates": [[20.789415, 60.290699 ], [20.766735, 60.31152 ], [20.762872, 60.314155 ], [20.75908, 60.315874 ], [20.754858, 60.317348 ], [20.751425, 60.318283 ] ],
-        "type": "LineString"
-      },
-      "id": "6ecf9c96cf70d083cfe847c3f7f941bb"
     },
     {
       "type": "Feature",
@@ -3057,18 +3301,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "Reitti",
-        "sname": "Sottunga - Kökar"
-      },
-      "geometry": {
-        "coordinates": [[20.682224, 60.109975 ], [20.683994, 60.108756 ], [20.726738, 60.10328 ], [20.775489, 60.062356 ], [20.789737, 60.039646 ], [20.796604, 60.012888 ], [20.823555, 59.986194 ], [20.887928, 59.959393 ], [20.893893, 59.94794 ], [20.892342, 59.945804 ] ],
-        "type": "LineString"
-      },
-      "id": "8f383e058991f5e5051db5a8e91ba37e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "pier",
         "sname": "Borstö",
         "ssubtype": "4",
@@ -3121,18 +3353,6 @@
         "type": "Point"
       },
       "id": "97cc98fcc0f52f0f69365dfba1a62b87"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Skarpnåtö - Hällö"
-      },
-      "geometry": {
-        "coordinates": [[19.761529, 60.326862 ], [19.763889, 60.327287 ], [19.777021, 60.336804 ], [19.784402, 60.357017 ], [19.783802, 60.359139 ], [19.780368, 60.360243 ], [19.773931, 60.36037 ], [19.769554, 60.362365 ], [19.766378, 60.365294 ], [19.768009, 60.3661 ] ],
-        "type": "LineString"
-      },
-      "id": "9927a80991803333afcd3b9359e95db3"
     },
     {
       "type": "Feature",
@@ -3218,18 +3438,6 @@
         "type": "Point"
       },
       "id": "9fd6b3ff9c24b758f91779ca63a0f450"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Långnäs - Överö"
-      },
-      "geometry": {
-        "coordinates": [[20.300213, 60.117069 ], [20.320587, 60.11423 ], [20.362644, 60.113375 ], [20.392856, 60.110894 ], [20.435943, 60.100713 ], [20.450534, 60.100114 ], [20.465126, 60.10251 ], [20.474052, 60.110295 ], [20.493278, 60.114401 ], [20.505638, 60.11423 ], [20.510718, 60.111536 ] ],
-        "type": "LineString"
-      },
-      "id": "a0734f71fdbbda349cc54fe11e6c5d83"
     },
     {
       "type": "Feature",
@@ -3330,18 +3538,6 @@
         "type": "Point"
       },
       "id": "a7da6e1895bbacb3f4500eb5b8b18289"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Långnäs - Överö (tvärg)"
-      },
-      "geometry": {
-        "coordinates": [[20.300213, 60.117069 ], [20.308399, 60.117053 ], [20.322132, 60.11577 ], [20.355777, 60.115342 ], [20.395774, 60.112348 ], [20.437316, 60.102938 ], [20.451393, 60.102339 ], [20.462722, 60.104221 ], [20.470447, 60.111493 ], [20.490875, 60.116368 ], [20.508384, 60.115941 ], [20.510718, 60.111536 ] ],
-        "type": "LineString"
-      },
-      "id": "a959e6d2688f7350079804ec76c33296"
     },
     {
       "type": "Feature",
@@ -3887,18 +4083,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "Reitti",
-        "sname": "Överö - Sottunga  (tvärg)"
-      },
-      "geometry": {
-        "coordinates": [[20.510718, 60.111536 ], [20.510616, 60.116368 ], [20.55439, 60.120987 ], [20.581512, 60.126117 ], [20.60297, 60.124578 ], [20.639362, 60.112434 ], [20.658931, 60.110894 ], [20.680389, 60.109269 ], [20.682224, 60.109975 ] ],
-        "type": "LineString"
-      },
-      "id": "bfee6b7ef6821d4b21c32507133e422a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "cableferry",
         "sname": "Saverkeit"
       },
@@ -4085,18 +4269,6 @@
         "type": "Point"
       },
       "id": "c6207bd64f0aa868277ec5ba20073729"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Kumlinge - Lappo"
-      },
-      "geometry": {
-        "coordinates": [[20.996074, 60.317449 ], [20.999851, 60.317364 ], [21.00337, 60.317024 ], [21.006074, 60.316132 ], [21.008219, 60.315112 ], [21.009464, 60.313114 ], [21.010236, 60.309798 ], [21.00852, 60.306758 ], [21.006503, 60.304505 ], [21.003112, 60.301677 ], [20.996246, 60.296148 ], [20.992169, 60.293745 ], [20.988607, 60.292512 ], [20.984273, 60.291725 ], [20.972857, 60.290853 ], [20.969295, 60.290789 ], [20.964703, 60.290938 ], [20.958952, 60.291385 ], [20.948395, 60.292958 ], [20.942001, 60.293724 ], [20.937752, 60.294149 ], [20.923333, 60.295043 ], [20.911874, 60.295064 ], [20.907154, 60.294724 ], [20.895566, 60.293235 ], [20.885009, 60.29164 ], [20.865225, 60.289534 ], [20.860934, 60.289109 ], [20.84763, 60.287088 ], [20.841622, 60.286301 ], [20.834283, 60.285663 ], [20.830164, 60.285727 ], [20.827031, 60.285897 ], [20.82437, 60.286301 ], [20.820078, 60.287365 ], [20.804929, 60.292469 ], [20.802698, 60.292873 ], [20.795531, 60.293001 ], [20.792913, 60.292703 ], [20.790853, 60.292172 ], [20.789823, 60.291512 ], [20.789415, 60.290699 ] ],
-        "type": "LineString"
-      },
-      "id": "c6a84a40bb08ffd0a7573025e9c073f9"
     },
     {
       "type": "Feature",
@@ -4385,18 +4557,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "Reitti",
-        "sname": "Galtby - Kökar"
-      },
-      "geometry": {
-        "coordinates": [[21.584959, 60.185915 ], [21.580452, 60.187451 ], [21.565303, 60.190268 ], [21.500759, 60.189585 ], [21.474666, 60.180794 ], [21.439647, 60.17405 ], [21.276741, 60.10636 ], [21.160183, 60.044103 ], [21.039505, 59.983704 ], [21.010837, 59.971851 ], [20.999164, 59.969704 ], [20.900631, 59.963174 ], [20.893764, 59.960338 ], [20.893249, 59.957416 ], [20.893893, 59.94794 ] ],
-        "type": "LineString"
-      },
-      "id": "d9ccf0dc21c6cc6ac56d2d9b43d8c057"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "pier",
         "sname": "Verkan",
         "ssubtype": "3",
@@ -4421,18 +4581,6 @@
         "type": "Point"
       },
       "id": "dcb8344068d6c24c880155cc04709eb9"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Asterholmalinjen"
-      },
-      "geometry": {
-        "coordinates": [[20.996074, 60.317449 ], [20.999636, 60.317598 ], [21.00264, 60.317492 ], [21.007018, 60.316387 ], [21.009335, 60.314814 ], [21.01088, 60.312689 ], [21.011996, 60.310669 ], [21.015815, 60.308522 ], [21.022253, 60.30527 ], [21.026673, 60.303931 ], [21.02972, 60.303527 ], [21.031737, 60.30359 ], [21.033808, 60.304032 ] ],
-        "type": "LineString"
-      },
-      "id": "ddbaf2892c4d94395dff28d05e0dfc50"
     },
     {
       "type": "Feature",
@@ -4866,18 +5014,6 @@
         "type": "Point"
       },
       "id": "ec4fd5654ff43536a719f423f3d7323e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Sottunga - Snäckö"
-      },
-      "geometry": {
-        "coordinates": [[20.682224, 60.109975 ], [20.700645, 60.107986 ], [20.704937, 60.109525 ], [20.704765, 60.115684 ], [20.699615, 60.127998 ], [20.694465, 60.133213 ], [20.69395, 60.174818 ], [20.691204, 60.180452 ], [20.694809, 60.18472 ], [20.741329, 60.185488 ], [20.747165, 60.188902 ], [20.746135, 60.19334 ], [20.743217, 60.196326 ], [20.720901, 60.211254 ], [20.719871, 60.21458 ], [20.72575, 60.219291 ] ],
-        "type": "LineString"
-      },
-      "id": "ed94a9dd04fbef408a946a3e6c7208ed"
     },
     {
       "type": "Feature",
