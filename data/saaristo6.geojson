@@ -689,7 +689,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Nauvo - Korppoo",
-        "description": "<p>puh 0400 864 268, 0400 882 614</p><p>Laiturit: Pärnäinen (Nauvo), Retais (Korppoo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html\">Aikataulut ja info</a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+358400864268\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 864 268</a> <a class=\"tel\" href=\"tel:+358400882614\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 882 614</a></p><p>Laiturit: Pärnäinen (Nauvo), Retais (Korppoo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[21.69141, 60.165927 ], [21.704714, 60.163792 ] ],
@@ -807,18 +807,6 @@
         "type": "LineString"
       },
       "id": "1336e0d0c93e62e8d5d264b40fe9f95d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Iniö - Kustavi"
-      },
-      "geometry": {
-        "coordinates": [[21.396603, 60.439247 ], [21.399693, 60.440285 ], [21.400165, 60.440708 ], [21.402912, 60.448858 ], [21.406903, 60.45472 ], [21.426215, 60.48038 ], [21.43012, 60.485306 ], [21.431794, 60.485856 ], [21.433167, 60.485729 ], [21.434841, 60.485269 ] ],
-        "type": "LineString"
-      },
-      "id": "133b8f706163d96e5575fa985c521714"
     },
     {
       "type": "Feature",
@@ -945,8 +933,8 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Parainen - Nauvo",
-        "description": "<p>puh 0400 127 999, 0400 110 114, 0400 152 326, 0400 382 114</p><p>Laiturit: Lillmälö (Parainen), Prostvik (Nauvo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html\">Aikataulut ja info</a></p>",
-        "info": {
+        "description": "<p><a class=\"tel\" href=\"tel:+3580400127999\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 127 999</a>, <a class=\"tel\" href=\"tel:+358400110114\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 110 114</a>, <a class=\"tel\" href=\"tel:+3580400152326\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 152 326</a>, <a class=\"tel\" href=\"tel:+358400382114\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 382 114</a></p><p>Laiturit: Lillmälö (Parainen), Prostvik (Nauvo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html\">Aikataulut ja info</a></p>",
+        "info1": {
           "name": "Parainen - Nauvo",
           "phone": ["+358 400 127999", "+358 400 110114", "+358 400 152326", "+358 400 382114"],
           "descr": "Laiturit: Lillmälö (Parainen), Prostvitk (Nauvo)<br>Liikennöi aikataulun mukaan 15-60 minuutin välein.",
@@ -1815,6 +1803,186 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
+        "ssubtype": "conn2",
+        "sname": "Iniö - Kustavi",
+        "description": "<p>m/s Aura, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320093\">0400 320 093</a>, 52 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Kannvik(Iniö), Heponiemi(Kustavi)</p><p>Aikataulun mukaan, 5-8 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Iniö - Kustavi"
+          },
+          "geometry": {
+            "coordinates": [[21.396603, 60.439247 ], [21.399693, 60.440285 ], [21.400165, 60.440708 ], [21.402912, 60.448858 ], [21.406903, 60.45472 ], [21.426215, 60.48038 ], [21.43012, 60.485306 ], [21.431794, 60.485856 ], [21.433167, 60.485729 ], [21.434841, 60.485269 ] ],
+            "type": "LineString"
+          },
+          "id": "133b8f706163d96e5575fa985c521714"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "ssubtype": "conn2",
+        "sname": "Houtskari - Iniö",
+        "description": "<p>m/s Antonia, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320049\">0400 320 049</a>, 27 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Vain kesäisin, maksullinen</p><p>Laiturit: Mossala(Houtskari), Dalen(Iniö)</p><p>Aikataulun mukaan, 3-4 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saariston-rengastie-houtskari-inio.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><pre>Aikataulu 25.5. - 27.8.2017\n\nMossalasta\n\nma-la  9.00 12.15 14.15 16.15\nsu    12.15 15.15 17.15\n\nDalenista\n\nma-la 11.15 13.15 15.15 17.45\nsu    13.15 16.15 18.15\n\nHinnasto (ajoneuvot matkustajineen)\n\nhenkilöauto              40e\nasuntoauto               75e\nlinja-auto, kuorma-auto 140e\nmoottoripyörä, mopo      25e\npolkupyörä               15e\naikuinen                 10e\nlapsi                     5e</pre>"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Houtskari - Iniö"
+          },
+          "geometry": {
+            "coordinates": [[21.439132, 60.289045 ], [21.437759, 60.29164 ], [21.434326, 60.293469 ], [21.427588, 60.296021 ], [21.415572, 60.302697 ], [21.400036, 60.311328 ], [21.38905, 60.325758 ], [21.383686, 60.333554 ], [21.366176, 60.340032 ], [21.364717, 60.341285 ], [21.365318, 60.342707 ], [21.378622, 60.353111 ], [21.378879, 60.354491 ], [21.368365, 60.373059 ], [21.368665, 60.376814 ], [21.371358, 60.381576 ] ],
+            "type": "LineString"
+          },
+          "id": "557e0ac1fbf1dfba1a3d3afa1bbd1e33"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "ssubtype": "conn2",
+        "sname": "Korppoo - Houtskari",
+        "description": "<p>m/s Stella, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400114291\">0400 114 291</a>, 65 <i class=\"fa fa-car\" aria-hidden=\"true\"></i><br/>m/s Mergus, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400533461\">0400 533 461</a>, 27 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Galtby(Korppoo), Kittuis(Houtskari)</p><p>Aikataulun mukaan, 11-12 päivittäin, osa vuoroista vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-houtskari.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Korppoo - Houtskari"
+          },
+          "geometry": {
+            "coordinates": [[21.584959, 60.185915 ], [21.582255, 60.188198 ], [21.565175, 60.191057 ], [21.499557, 60.191036 ], [21.463336, 60.180709 ], [21.45132, 60.180879 ], [21.43866, 60.186705 ] ],
+            "type": "LineString"
+          },
+          "id": "46324a5f1053e1cfbe58a23662c7c39a"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "ssubtype": "conn2",
+        "sname": "Korppoo - Norrskata",
+        "description": "<p>m/s Stella, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400114291\">0400 114 291</a>, 65 <i class=\"fa fa-car\" aria-hidden=\"true\"></i><br/>m/s Mergus, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400533461\">0400 533 461</a>, 27 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Galtby(Korppoo), Olofsnäs(Norrskata)</p><p>Aikataulun mukaan, 13-14 päivittäin, osa vuoroista vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-norrskata.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Korppoo - Norrskata"
+          },
+          "geometry": {
+            "coordinates": [[21.584959, 60.185915 ], [21.582984, 60.189244 ], [21.558718, 60.216558 ] ],
+            "type": "LineString"
+          },
+          "id": "5e1f717619ee9ca1ef0f954ee48cfbc3"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "ssubtype": "conn2",
+        "sname": "Hakkenpää - Teersalo",
+        "description": "<p>m/s Kivimo, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320095\">0400 320 095</a>, 8 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Vain kesäisin, osa Velkuan reittialuetta</p><p>Vain henkilöautoja, moottoripyöriä ja polkupyöriä</p><p>Laiturit: Teersalo(Velkua), Hakkenpää(Taivassalo)</p><p>Aikataulun mukaan, 1-2 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><pre>Aikataulu 1.6.-31.8.2017 (tark. 20.1.)\n\nTeersalo - Hakkenpää  päivät\n\n  8.15   -   9.00     12345..\n 15.00   -  15.45     1234567\n\nHakkenpää - Teersalo  päivät\n\n  9.15   -  10.30     12345..\n 16.00   -  17.00     1234567</pre>"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Hakkenpää - Teersalo"
+          },
+          "geometry": {
+            "coordinates": [[21.61354, 60.499274 ], [21.634397, 60.493272 ], [21.64635, 60.482305 ], [21.657599, 60.479591 ], [21.672129, 60.478783 ], [21.694042, 60.467349 ] ],
+            "type": "LineString"
+          },
+          "id": "b570717e58877ed53855dd06279a3130"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "ssubtype": "conn2",
+        "sname": "Nauvo - Seili - Hanka",
+        "description": "<p>m/s Östern, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400720606\">0400 720606</a>, 15 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Vain kesäisin <i class=\"fa fa-calendar\" aria-hidden=\"true\"></i>, maksullinen <i class=\"fa fa-eur\" aria-hidden=\"true\"></i></p><p>Aikataulun mukaan, 3 päivittäin</p><p>Laiturit: Nauvo, Seili, Hanka(Aaslaluoto, Rymättylä)</p><p><a target=\"info\" href=\"http://www.ostern.fi/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><pre>Aikataulu 19.5.-3.9.2017 (tark. 18.1.)\n\nNauvo - Seili - Hanka   päivät\n\n 8.40    9.10    9.40   12345..\n 9.00    9.30   10.00   .....67\n12.10   12.40   13.10   1234567\n15.25   15.55   16.25   123456.\n16.20   16.50   17.20   ......7\n\nHanka - Seili - Nauvo   päivät\n\n10.20   10.50   11.20   1234567\n13.50   14.20   14.50   1234567\n16.55   17.25   17.55   12.4.6.\n17.35   18.05   18.35   ..3.5..\n17.40   18.10   18.40   ......7</pre>"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Nauvo - Seili"
+          },
+          "geometry": {
+            "coordinates": [[21.911845, 60.19415 ], [21.915578, 60.19735 ], [21.913003, 60.200613 ], [21.90751, 60.205049 ], [21.906523, 60.21605 ], [21.908197, 60.218033 ], [21.949439, 60.232376 ], [21.955146, 60.236381 ] ],
+            "type": "LineString"
+          },
+          "id": "c2792156310d27cffd226667a5cdc33b"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Seili - Hanka"
+          },
+          "geometry": {
+            "coordinates": [[21.955146, 60.236381 ], [21.949632, 60.236189 ], [21.946435, 60.236381 ], [21.944825, 60.237467 ], [21.944739, 60.238341 ], [21.947207, 60.247628 ], [21.951627, 60.252483 ], [21.959695, 60.26234 ], [21.970853, 60.276302 ], [21.971197, 60.277919 ], [21.970167, 60.280047 ], [21.966304, 60.283897 ], [21.966261, 60.284961 ], [21.968665, 60.285769 ] ],
+            "type": "LineString"
+          },
+          "id": "b6a0cebfd93345304c1d4b03cf0866c5"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "ssubtype": "conn2",
+        "sname": "Kasnäs - Hiittinen",
+        "description": "<p>m/s Aurora, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320092\">0400 320 092</a>, 52 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Kasnäs(Kemiönsaari), Långnäs(Hiittinen)</p><p>Aikataulun mukaan, 4-8 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kasnas-hiittinen-aurora.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Kasnäs - Hiittinen"
+          },
+          "geometry": {
+            "coordinates": [[22.412173, 59.921022 ], [22.412495, 59.919914 ], [22.412152, 59.918871 ], [22.411272, 59.917892 ], [22.409491, 59.916429 ], [22.409212, 59.915268 ], [22.409899, 59.913536 ], [22.411873, 59.910513 ], [22.418611, 59.904423 ], [22.422108, 59.902454 ], [22.42537, 59.900754 ], [22.433373, 59.898408 ], [22.440948, 59.895233 ], [22.442901, 59.894082 ], [22.450325, 59.886622 ], [22.453587, 59.882811 ], [22.454145, 59.881497 ], [22.454252, 59.880657 ], [22.453072, 59.879214 ], [22.451355, 59.878504 ], [22.449982, 59.877685 ], [22.448523, 59.875672 ], [22.44863, 59.87271 ] ],
+            "type": "LineString"
+          },
+          "id": "432edd7173c8ac7e134e027447e90803"
+        }
+      ],
+      "id": "1c007ab4010cf471774a01bf8e3b0e0c"
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
         "sname": "Hiittisten reittialue",
         "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i>m/s Stella, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358406756441\">040 6756441</a>, 8 <i class=\"fa fa-car\" aria-hidden=\"true\"></i><br/><i class=\"fa fa-ship\" aria-hidden=\"true\"></i>m/s Alva, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358404131574\">040 4131 574</a>, 0 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Päälaiturit: Kasnäs(Kemiönsaari), Taalintehdas(Kemiönsaari)</p><p><a target=\"info\" href=\"https://kuljetus-savolainen.fi/yhteysalusliikenne/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
         "ssubtype": "conn4"
@@ -2376,7 +2544,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Kivimo",
-        "description": "<p>puh 0400 292 691, 14 ha</p><p>Laiturit: Roslax (etelä), Kivimo (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot: 09.10–09.30, 11.40–12.00, 17.10–17.30, 20.10–20.30</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kivimo.html\">Aikataulut ja info</a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+3580400292691\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 292 691</a>, 14 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Roslax (etelä), Kivimo (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot: 09.10–09.30, 11.40–12.00, 17.10–17.30, 20.10–20.30</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kivimo.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[21.334794, 60.233712 ], [21.335631, 60.235044 ] ],
@@ -2411,18 +2579,6 @@
         "type": "Point"
       },
       "id": "42aca197e9f0e4283e317ec18a0eb885"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Kasnäs - Hiittinen"
-      },
-      "geometry": {
-        "coordinates": [[22.412173, 59.921022 ], [22.412495, 59.919914 ], [22.412152, 59.918871 ], [22.411272, 59.917892 ], [22.409491, 59.916429 ], [22.409212, 59.915268 ], [22.409899, 59.913536 ], [22.411873, 59.910513 ], [22.418611, 59.904423 ], [22.422108, 59.902454 ], [22.42537, 59.900754 ], [22.433373, 59.898408 ], [22.440948, 59.895233 ], [22.442901, 59.894082 ], [22.450325, 59.886622 ], [22.453587, 59.882811 ], [22.454145, 59.881497 ], [22.454252, 59.880657 ], [22.453072, 59.879214 ], [22.451355, 59.878504 ], [22.449982, 59.877685 ], [22.448523, 59.875672 ], [22.44863, 59.87271 ] ],
-        "type": "LineString"
-      },
-      "id": "432edd7173c8ac7e134e027447e90803"
     },
     {
       "type": "Feature",
@@ -2511,7 +2667,8 @@
       "type": "Feature",
       "properties": {
         "stype": "cableferry",
-        "sname": "Våno"
+        "sname": "Våno",
+        "description": "<p><a class=\"tel\" href=\"tel:+358500827157\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0500 827 157</a>, 21 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Våno(mantere), Mielisholm(saari)</p><p>Liikennöi 15 minuutin välein (05.30-22.15), yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vano.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[22.303866, 60.216839 ], [22.306484, 60.215294 ] ],
@@ -2632,18 +2789,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "Reitti",
-        "sname": "Houtskari - Iniö"
-      },
-      "geometry": {
-        "coordinates": [[21.439132, 60.289045 ], [21.437759, 60.29164 ], [21.434326, 60.293469 ], [21.427588, 60.296021 ], [21.415572, 60.302697 ], [21.400036, 60.311328 ], [21.38905, 60.325758 ], [21.383686, 60.333554 ], [21.366176, 60.340032 ], [21.364717, 60.341285 ], [21.365318, 60.342707 ], [21.378622, 60.353111 ], [21.378879, 60.354491 ], [21.368365, 60.373059 ], [21.368665, 60.376814 ], [21.371358, 60.381576 ] ],
-        "type": "LineString"
-      },
-      "id": "557e0ac1fbf1dfba1a3d3afa1bbd1e33"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "pier",
         "sname": "Haapala",
         "ssubtype": "3",
@@ -2659,7 +2804,8 @@
       "type": "Feature",
       "properties": {
         "stype": "cableferry",
-        "sname": "Keistiö"
+        "sname": "Keistiö",
+        "description": "<p><a class=\"tel\" href=\"tel:+358408469500\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i>040 846 9500</a>, 14 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Keistiö, Dalen(Iniö)</p><p>Liikennöi aikataulun mukaan, 13-17 vuoroa päivässä, osa vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/keistio.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[21.371358, 60.381576 ], [21.34945, 60.372322 ] ],
@@ -2710,18 +2856,6 @@
         "type": "Point"
       },
       "id": "5d675233fa3949d15c3b0f87ecdce294"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Korppoo - Norrskata"
-      },
-      "geometry": {
-        "coordinates": [[21.584959, 60.185915 ], [21.582984, 60.189244 ], [21.558718, 60.216558 ] ],
-        "type": "LineString"
-      },
-      "id": "5e1f717619ee9ca1ef0f954ee48cfbc3"
     },
     {
       "type": "Feature",
@@ -2979,7 +3113,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Mossala",
-        "description": "<p>puh 040 553 1534, 14 ha</p><p>Laiturit: Björkö (etelä), Mossala (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot: 09.10–09.30, 11.40–12.00, 17.10–17.30, 20.10–20.30</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/mossala.html\">Aikataulut ja info</a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+358405531534\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i>040 553 1534</a>, 14 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Björkö (etelä), Mossala (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot: 09.10–09.30, 11.40–12.00, 17.10–17.30, 20.10–20.30</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/mossala.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[21.405916, 60.265682 ], [21.406002, 60.268705 ] ],
@@ -3005,7 +3139,8 @@
       "type": "Feature",
       "properties": {
         "stype": "cableferry",
-        "sname": "Palva"
+        "sname": "Palva",
+        "description": "<p><a class=\"tel\" href=\"tel:+358400525901\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 525 901</a>, 10 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Teersalo(itä), Palva(länsi)</p><p>Liikennöi 30-60 minuutin välein, yövuorot vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/palva.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[21.67566, 60.46787 ], [21.69362, 60.467426 ] ],
@@ -3104,7 +3239,8 @@
       "type": "Feature",
       "properties": {
         "stype": "cableferry",
-        "sname": "Pettu"
+        "sname": "Pettu",
+        "description": "<p><a class=\"tel\" href=\"tel:+358503542488\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i>050 354 2488</a>, 10 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Ulkoluoto (länsi), Pettu (itä)</p><p>Liikennöi tarvittaessa 6.00-22.00, tauot: 08.30-08.50, 11.00-11.30, 16.30-16.50, 19.00-19.30</p><p><a target=\"info\" href=\"http://www.petunlossi.com/lossi.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[22.915098, 60.041173 ], [22.92293, 60.038488 ] ],
@@ -3726,19 +3862,6 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "yhteysleg",
-        "sname": "Hakkenpää - Teersalo",
-        "spartof": "Velkuan reittialue"
-      },
-      "geometry": {
-        "coordinates": [[21.61354, 60.499274 ], [21.634397, 60.493272 ], [21.64635, 60.482305 ], [21.657599, 60.479591 ], [21.672129, 60.478783 ], [21.694042, 60.467349 ] ],
-        "type": "LineString"
-      },
-      "id": "b570717e58877ed53855dd06279a3130"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Ängsö",
         "labelVisibleTo": -1,
@@ -3749,18 +3872,6 @@
         "type": "Point"
       },
       "id": "b5ba51d57c96e72ac052e39feb83edd3"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Seili - Hanka"
-      },
-      "geometry": {
-        "coordinates": [[21.955146, 60.236381 ], [21.949632, 60.236189 ], [21.946435, 60.236381 ], [21.944825, 60.237467 ], [21.944739, 60.238341 ], [21.947207, 60.247628 ], [21.951627, 60.252483 ], [21.959695, 60.26234 ], [21.970853, 60.276302 ], [21.971197, 60.277919 ], [21.970167, 60.280047 ], [21.966304, 60.283897 ], [21.966261, 60.284961 ], [21.968665, 60.285769 ] ],
-        "type": "LineString"
-      },
-      "id": "b6a0cebfd93345304c1d4b03cf0866c5"
     },
     {
       "type": "Feature",
@@ -4084,7 +4195,8 @@
       "type": "Feature",
       "properties": {
         "stype": "cableferry",
-        "sname": "Saverkeit"
+        "sname": "Saverkeit",
+        "description": "<p><a class=\"tel\" href=\"tel:+3580405531072\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 040 553 1072</a>, 10 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Näsby I (länsi), Saverkeit (itä)</p><p>Liikennöi tarvittaessa, tauot: 09.10–09.30, 11.40–12.00, 17.10–17.30, 20.10–20.30</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saverkeit.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[21.39553, 60.217457 ], [21.403148, 60.216807 ] ],
@@ -4097,7 +4209,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Högsåra",
-        "description": "<p>puh 040 706 6291, 14 ha</p><p>Laiturit: Svartnäs (itä), Högsåra (länsi)</p><p>Liikennöi aikataulun mukaan, 4-11 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsara.html\">Aikataulut ja info</a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+35840 706 6291\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 040 706 6291</a>, 14 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Svartnäs (itä), Högsåra (länsi)</p><p>Liikennöi aikataulun mukaan, 4-11 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsara.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[22.369194, 59.954602 ], [22.3952, 59.9491 ] ],
@@ -4116,18 +4228,6 @@
         "type": "LineString"
       },
       "id": "c23fa9dd3968d44c1133975a64a96356"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "Reitti",
-        "sname": "Nauvo - Seili"
-      },
-      "geometry": {
-        "coordinates": [[21.911845, 60.19415 ], [21.915578, 60.19735 ], [21.913003, 60.200613 ], [21.90751, 60.205049 ], [21.906523, 60.21605 ], [21.908197, 60.218033 ], [21.949439, 60.232376 ], [21.955146, 60.236381 ] ],
-        "type": "LineString"
-      },
-      "id": "c2792156310d27cffd226667a5cdc33b"
     },
     {
       "type": "Feature",
@@ -4355,7 +4455,8 @@
       "type": "Feature",
       "properties": {
         "stype": "cableferry",
-        "sname": "Velkuanmaa"
+        "sname": "Velkuanmaa",
+        "description": "<p><a class=\"tel\" href=\"tel:+358400525902\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 525 902</a>, 10 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Palva(itä), Velkuanmaa(länsi)</p><p>Liikennöi 30-60 minuutin välein, yövuorot vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuanmaa.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[21.6365, 60.455059 ], [21.648259, 60.461174 ] ],
@@ -4630,7 +4731,7 @@
         "stype": "pier",
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 },
-        "labelVisibleFrom": 11
+        "labelVisibleFrom": 10
       },
       "geometry": {
         "coordinates": [21.558736, 60.216566 ],
@@ -4897,7 +4998,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Skagen",
-        "description": "<p>puh +358 10 2717915</p><p>Laiturit: Skagen (etelä), Jumo E (pohjoinen)</p><p>Liikennöi tarvittaessa ma-to 6.00-22.00, pe 6.00-23.00, la 7.00-23.00, su 8.30-22.00. Tauot: 9.40 - 9.52, 11.58 - 12.10, 18.20 - 18.32. Lähtee lähtee Skagenista aina 15 ja 30 min ennen Auran lähtöä Kannvikistä Heponiemeen(Kustavi).</p><p><a target=\"info\" href=\"http://www.ncl.fi/fi/aikataulut\">Aikataulut ja info</a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+358102717915\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 10 2717915</a></p><p>Laiturit: Skagen (etelä), Jumo E (pohjoinen)</p><p>Liikennöi tarvittaessa ma-to 6.00-22.00, pe 6.00-23.00, la 7.00-23.00, su 8.30-22.00. Tauot: 9.40 - 9.52, 11.58 - 12.10, 18.20 - 18.32. Lähtee lähtee Skagenista aina 15 ja 30 min ennen Auran lähtöä Kannvikistä Heponiemeen(Kustavi).</p><p><a target=\"info\" href=\"http://www.ncl.fi/fi/aikataulut\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[21.368536, 60.406191 ], [21.369953, 60.411532 ] ],
@@ -5033,7 +5134,8 @@
       "type": "Feature",
       "properties": {
         "stype": "cableferry",
-        "sname": "Hämmärönsalmi"
+        "sname": "Hämmärönsalmi",
+        "description": "<p><a class=\"tel\" href=\"tel:+358405582773\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i>040 558 2773</a>, 14 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Airismaa(pohjoinen), Aasla(etelä)</p><p>Liikennöi 20 minuutin välein (06.00-23.00), yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hammaronsalmi.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[21.963268, 60.316201 ], [21.961557, 60.313804 ] ],
@@ -5046,7 +5148,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Vartsala",
-        "description": "<p>puh 0400 138 239, 36 ha</p><p>Laiturit: Kivimaa (itä), Vartsala (länsi)</p><p>Liikennöi päivällä aikataulun mukaan n. 20-40 minuutin välein, yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vartsala.html\">Aikataulut ja info</a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+358400138239\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 138 239</a>, 36 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Kivimaa (itä), Vartsala (länsi)</p><p>Liikennöi päivällä aikataulun mukaan n. 20-40 minuutin välein, yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vartsala.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[21.320343, 60.541058 ], [21.335878, 60.542561 ] ],
