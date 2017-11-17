@@ -784,7 +784,7 @@ function initMap() {
   updateMapStyles();
   map.addListener('zoom_changed', updateMapStyles);
 
-  $.get('/data/saaristo6.geojson', function(response) {
+  $.get('/data/saaristo.json', function(response) {
     data = response;
     renderData(data, map);
   });
