@@ -689,7 +689,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Nauvo - Korppoo",
-        "description": "<p><a class=\"tel\" href=\"tel:+358400864268\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 864 268</a> <a class=\"tel\" href=\"tel:+358400882614\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 882 614</a></p><p>Laiturit: Pärnäinen (Nauvo), Retais (Korppoo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html\">Aikataulut ja info</a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+358400864268\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 864 268</a> <a class=\"tel\" href=\"tel:+358400882614\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0400 882 614</a></p><p>Laiturit: Pärnäs (Nauvo), Retais (Korppoo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[21.69141, 60.165927 ], [21.704714, 60.163792 ] ],
@@ -1829,7 +1829,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "ssubtype": "conn2",
+        "ssubtype": "conn2m",
         "sname": "Houtskari - Iniö",
         "description": "<p>m/s Antonia, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320049\">0400 320 049</a>, 27 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Vain kesäisin, maksullinen</p><p>Laiturit: Mossala(Houtskari), Dalen(Iniö)</p><p>Aikataulun mukaan, 3-4 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saariston-rengastie-houtskari-inio.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><pre>Aikataulu 25.5. - 27.8.2017\n\nMossalasta\n\nma-la  9.00 12.15 14.15 16.15\nsu    12.15 15.15 17.15\n\nDalenista\n\nma-la 11.15 13.15 15.15 17.45\nsu    13.15 16.15 18.15\n\nHinnasto (ajoneuvot matkustajineen)\n\nhenkilöauto              40e\nasuntoauto               75e\nlinja-auto, kuorma-auto 140e\nmoottoripyörä, mopo      25e\npolkupyörä               15e\naikuinen                 10e\nlapsi                     5e</pre>"
       },
@@ -1925,7 +1925,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "ssubtype": "conn2",
+        "ssubtype": "conn2m",
         "sname": "Nauvo - Seili - Hanka",
         "description": "<p>m/s Östern, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400720606\">0400 720606</a>, 15 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Vain kesäisin <i class=\"fa fa-calendar\" aria-hidden=\"true\"></i>, maksullinen <i class=\"fa fa-eur\" aria-hidden=\"true\"></i></p><p>Aikataulun mukaan, 3 päivittäin</p><p>Laiturit: Nauvo, Seili, Hanka(Aaslaluoto, Rymättylä)</p><p><a target=\"info\" href=\"http://www.ostern.fi/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><pre>Aikataulu 19.5.-3.9.2017 (tark. 18.1.)\n\nNauvo - Seili - Hanka   päivät\n\n 8.40    9.10    9.40   12345..\n 9.00    9.30   10.00   .....67\n12.10   12.40   13.10   1234567\n15.25   15.55   16.25   123456.\n16.20   16.50   17.20   ......7\n\nHanka - Seili - Nauvo   päivät\n\n10.20   10.50   11.20   1234567\n13.50   14.20   14.50   1234567\n16.55   17.25   17.55   12.4.6.\n17.35   18.05   18.35   ..3.5..\n17.40   18.10   18.40   ......7</pre>"
       },
@@ -2130,7 +2130,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Utön reittialue",
-        "description": "<p>m/s Eivor, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358445000503\">044 5000 503</a>, 19 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Päälaituri: Pärnäinen(Nauvo)</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"http://www.rosita.fi/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p>m/s Eivor, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358445000503\">044 5000 503</a>, 19 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Päälaituri: Pärnäs(Nauvo)</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"http://www.rosita.fi/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
         "ssubtype": "conn4"
       },
       "features": [
@@ -2250,7 +2250,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Nauvon poikittainen reittialue",
-        "description": "<p>m/s Myrskylintu, m/s Cheri, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400217053\">0400 217 053</a>, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400227722\">0400 227722</a>, 0 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Päälaiturit: Pärnäinen(Nauvo), Kirjais(Nauvo)</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"https://www.ferryway.fi/5\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p>m/s Myrskylintu, m/s Cheri, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400217053\">0400 217 053</a>, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400227722\">0400 227722</a>, 0 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Päälaiturit: Pärnäs(Nauvo), Kirjais(Nauvo)</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"https://www.ferryway.fi/5\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
         "ssubtype": "conn4"
       },
       "features": [
@@ -5071,7 +5071,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Pärnäinen",
+        "sname": "Pärnäs",
         "ssubtype": "3",
         "labelAnchor": {"dir": "NE", "x":-3 , "y":-8 }
       },
@@ -5559,7 +5559,7 @@
         "stype": "box",
         "ssubtype": "distance",
         "sname": "",
-        "description": "Nauvo - Pärnäinen 13 km",
+        "description": "Nauvo - Pärnäs 13 km",
         "anchor": { "dir": "NW", "x": 0, "y": 0 }
       }
     },

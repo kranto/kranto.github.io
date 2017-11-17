@@ -183,13 +183,13 @@ function createMapStyles(mapTypeId, zoom, settings) {
     { featureType: 'road', elementType: 'labels.text.fill', stylers: [{color: '#000000'}]},
     //      { featureType: 'road', elementType: 'geometry', stylers: [{color: '#808080'}]},
     //      { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{color: '#a0a0a0'}, {weight: zoom <= 10? 1: 3.5}]},
-    { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{color: '#808080'}, {weight: zoom <= 8? 0: Math.max(2, (zoom-5)*0.5)}]},
+    { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{color: '#9e4900'}, {weight: zoom <= 8? 0: Math.max(2, (zoom-5)*0.5)}]},
     //      { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{color: '#808080'}, {weight: 5}]},
-    { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{color: '#606060'}, {weight: 0.5}]},
-    { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{color: '#808080'}, {weight: Math.max(1.5, (zoom-5)*0.6)}]},
-    { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{color: '#303030'}, {weight: zoom <= 6? 0: 1}]},
-    { featureType: 'road.arterial', elementType: 'geometry', stylers: [{color: '#808080'}, {weight: Math.max(1, (zoom-6)*0.5)}, {lightness: (zoom - 6)*5}]},
-    { featureType: 'road.local', elementType: 'geometry', stylers: [{weight: 1.5}, {color: '#a0a0a0'}, {lightness: (zoom-12)*5}]},
+    { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{color: '#9e4900'}, {weight: 0.5}]},
+    { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{color: '#9e4900'}, {weight: Math.max(1.5, (zoom-5)*0.6)}]},
+    { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{color: '#9e4900'}, {weight: zoom <= 6? 0: 1}]},
+    { featureType: 'road.arterial', elementType: 'geometry', stylers: [{color: '#9e4900'}, {weight: Math.max(1, (zoom-7)*0.4)}, {lightness: (zoom - 6)*0}]},
+    { featureType: 'road.local', elementType: 'geometry', stylers: [{weight: 1}, {color: '#9e4900'}, {lightness: (zoom-12)*0}]},
   ];
 }
 
@@ -459,27 +459,28 @@ function cableferry(feature, map) {
 }
 
 var connectionStylers = {
-  "conn1": {
+  "base": {
     visibleFrom: 8,
     visibleTo: 30,
     weight: 2.5,
     color: '#f08000',
     opacity: 0.7,
-    highlightColor: '#ffff00',
-    zIndex: 10
+    zIndex: 10,
+    highlightColor: '#f97cdc',
+    highlightWeight: 10,
+    highlightOpacity: .6
+  },
+  "conn1": {
   },
   "conn1b": {
     weight: 1.5,
     zIndex: 9
   },
   "conn2": {
-    visibleFrom: 8,
-    visibleTo: 30,
-    weight: 2.5,
-    color: '#f08000',
-    opacity: 0.7,
-    highlightColor: '#ffff00',
-    zIndex: 10
+    color: '#005dd8',
+  },
+  "conn2m": {
+    color: '#ff7c0a',
   },
   "conn2b": {
     weight: 1.5,
@@ -487,40 +488,39 @@ var connectionStylers = {
   },
   "conn3": {
     visibleFrom: 9,
-    visibleTo: 30,
     weight: 2,
     color: '#e7883e',
-    opacity: 1,
-    highlightColor: '#ffff00',
-    zIndex: 10
+    opacity: 1
   },
   "conn4": {
     visibleFrom: 9,
-    visibleTo: 30,
     weight: 1.5,
     color: '#90c0f0',
     opacity: 0.8,
-    highlightColor: '#ffff00',
     zIndex: 8
-  },
+  }
 };
 
 function connection(connection, map) {
-  var connectionStyler = connection.properties.ssubtype? connectionStylers[connection.properties.ssubtype]: connectionStylers["conn4"];
+  var baseStyler = connectionStylers["base"];
+  var connectionStyler = connection.properties.ssubtype? connectionStylers[connection.properties.ssubtype]: baseStyler;
 
   var legFeatures = connection.type === 'FeatureCollection'? connection.features: [connection];
   var connectionObject = { name: connection.properties.sname, description: connection.properties.description};
   var legObjects = legFeatures.map(function(leg) {
 
-    var legStyler = leg.properties.ssubtype? connectionStylers[leg.properties.ssubtype]: {};
     var coords = leg.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
-    var weight = leg.properties.weight || legStyler.weight || connection.properties.weight || connectionStyler.weight;
-    var opacity = leg.properties.opacity || legStyler.opacity || connection.properties.opacity || connectionStyler.opacity;
-    var color = leg.properties.color || legStyler.color || connection.properties.color || connectionStyler.color;
-    var highlightColor = leg.properties.highlightColor || legStyler.highlightColor || connection.properties.highlightColor || connectionStyler.highlightColor;
-    var zIndex = leg.properties.zIndex || legStyler.zIndex || connection.properties.zIndex || connectionStyler.zIndex;
-    var visibleFrom = leg.properties.visibleFrom || legStyler.visibleFrom || connection.properties.visibleFrom || connectionStyler.visibleFrom;
-    var visibleTo = leg.properties.visibleTo || legStyler.visibleTo || connection.properties.visibleTo || connectionStyler.visibleTo;
+
+    var legStyler = leg.properties.ssubtype? connectionStylers[leg.properties.ssubtype]: {};
+    var weight = leg.properties.weight || legStyler.weight || connection.properties.weight || connectionStyler.weight || baseStyler.weight;
+    var opacity = leg.properties.opacity || legStyler.opacity || connection.properties.opacity || connectionStyler.opacity || baseStyler.opacity;
+    var color = leg.properties.color || legStyler.color || connection.properties.color || connectionStyler.color || baseStyler.color;
+    var zIndex = leg.properties.zIndex || legStyler.zIndex || connection.properties.zIndex || connectionStyler.zIndex || baseStyler.zIndex;
+    var visibleFrom = leg.properties.visibleFrom || legStyler.visibleFrom || connection.properties.visibleFrom || connectionStyler.visibleFrom || baseStyler.visibleFrom;
+    var visibleTo = leg.properties.visibleTo || legStyler.visibleTo || connection.properties.visibleTo || connectionStyler.visibleTo || baseStyler.visibleTo;
+    var highlightColor = leg.properties.highlightColor || legStyler.highlightColor || connection.properties.highlightColor || connectionStyler.highlightColor || baseStyler.highlightColor;
+    var highlightWeight = leg.properties.highlightWeight || legStyler.highlightWeight || connection.properties.highlightWeight || connectionStyler.highlightWeight || baseStyler.highlightWeight;
+    var highlightOpacity = leg.properties.highlightOpacity || legStyler.highlightOpacity || connection.properties.highlightOpacity || connectionStyler.highlightOpacity || baseStyler.highlightOpacity;
 
     var line = new google.maps.Polyline({
       path: new google.maps.MVCArray(coords),
@@ -536,14 +536,14 @@ function connection(connection, map) {
       path: new google.maps.MVCArray(coords),
       geodesic: false,
       strokeOpacity: 0,
-      strokeWeight: 12,
+      strokeWeight: highlightWeight,
       strokeColor: highlightColor,
       zIndex: zIndex - 1,
       cursor: 'context-menu',
       map: map
     });
     var highlight = function(doHighlight) {
-      lineb.setOptions({strokeOpacity: doHighlight? 0.5: 0});
+      lineb.setOptions({strokeOpacity: doHighlight? highlightOpacity: 0});
     };
     lineb.addListener('click', function(event) {
       select([connectionObject], event);
@@ -597,9 +597,7 @@ function pin(feature, map) {
   return {
     rerender: function(zoom, mapTypeId) {
       marker.setVisible(zoom >= 12);
-          // marker.getIcon().scale = (zoom-10)/7 + 0.6;
-          // marker.setIcon(marker.getIcon());
-      }
+    }
   };
 }
 
@@ -934,7 +932,7 @@ function initMap() {
       select(that.routes, event);
     });
     this.rerender = function(zoom, mapTypeId) {
-      this.line.setVisible(zoom >= 7 && zoom <= 11);
+      this.line.setVisible(zoom >= 7 && zoom <= 9);
       this.line.setOptions({icons: [{
         icon: zoom <= 9? lauttaLineSymbol: lauttaLineSymbolDimmed,
         offset: '4',
