@@ -2807,7 +2807,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Keistiö",
-        "description": "<p><a class=\"tel\" href=\"tel:+358408469500\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i>040 846 9500</a>, 14 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Keistiö, Dalen(Iniö)</p><p>Liikennöi aikataulun mukaan, 13-17 vuoroa päivässä, osa vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/keistio.html\">Aikataulut ja info</a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+358408469500\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i>040 846 9500</a>, 10 <i class=\"fa fa-car\" aria-hidden=\"true\"></i></p><p>Laiturit: Keistiö, Dalen(Iniö)</p><p>Liikennöi aikataulun mukaan, 13-17 vuoroa päivässä, osa vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/keistio.html\">Aikataulut ja info</a></p>"
       },
       "geometry": {
         "coordinates": [[21.371358, 60.381576 ], [21.34945, 60.372322 ] ],
