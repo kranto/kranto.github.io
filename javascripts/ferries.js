@@ -407,6 +407,12 @@ function pier(feature, map) {
   };
 }
 
+var cableferryStyler = {
+  highlightColor: '#f97cdc',
+  highlightWeight: 17,
+  highlightOpacity: .6
+}
+
 var _cableferrySymbol;
 function cableferrySymbol() {
   _cableferrySymbol = _cableferrySymbol || {
@@ -434,14 +440,19 @@ function createDescription(prop) {
 }
 
 function cableferry(feature, map) {
+  var styler = cableferryStyler;
+  var highlightColor = feature.properties.highlightColor || styler.highlightColor;
+  var highlightWeight = feature.properties.highlightWeight || styler.highlightWeight;
+  var highlightOpacity = feature.properties.highlightOpacity || styler.highlightOpacity;
+
   var coords = feature.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
   var line = new google.maps.Polyline({
     path: new google.maps.MVCArray(coords),
     geodesic: false,
     zIndex: 11,
     strokeOpacity: 0,
-    strokeWeight: 20,
-    strokeColor: '#ffff00',
+    strokeWeight: highlightWeight,
+    strokeColor: highlightColor,
     cursor: 'context-menu',
     icons: [{
       icon: cableferrySymbol(),
@@ -454,7 +465,7 @@ function cableferry(feature, map) {
   line.addListener('click', function(event) {
     select([{name: feature.properties.sname, description: description,
       highlight: function(doHighlight) {
-        line.setOptions({strokeOpacity: doHighlight? 0.5: 0});
+        line.setOptions({strokeOpacity: doHighlight? highlightOpacity: 0});
       }
     }], event);
   });
