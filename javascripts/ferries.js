@@ -252,7 +252,7 @@ function road(feature, map) {
   var roadObject = new google.maps.Polyline({
     path: new google.maps.MVCArray(roadCoords),
     geodesic: false,
-    strokeColor: '#808080',
+    strokeColor: '#9e4900',
     strokeOpacity: 1,
     strokeWeight: 1,
     zIndex: 0,

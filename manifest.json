@@ -1,6 +1,7 @@
 {
-    "name": "",
-    "icons": [
+    "name": "Saaristolautat",
+    "start_url": "ferries.html",
+      "icons": [
         {
             "src": "/android-chrome-192x192.png",
             "sizes": "192x192",
@@ -12,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#0000ff",
+    "background_color": "#a0a0ff",
     "display": "standalone"
 }
