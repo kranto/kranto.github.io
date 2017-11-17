@@ -34,7 +34,6 @@ $('#closeInfoButton').click(function() {
   unselectAll();
 });
 
-
 function addMapListeners(map) {
   google.maps.event.addListener(map,'maptypeid_changed',function () {
     var isSatellite = map.getMapTypeId() === 'satellite';
@@ -46,6 +45,10 @@ function addMapListeners(map) {
       $('#setMapTypeSatellite').removeClass('active');          
     }
   });
+}
+
+function hideLoader() {
+  $("#loader").fadeOut(1000);
 }
 
 function getLocation() {
@@ -143,8 +146,16 @@ function toggleFullscreen() {
   }
 }
 
-var mapShown = true;
+function fullscreenchange(event) {
+  var isFullScreen = (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)? true: false;
+  $('#toggleFullscreen').toggleClass('active', isFullScreen);
+}
+
+document.onfullscreenchange = fullscreenchange;
+document.onwebkitfullscreenchange = fullscreenchange;
+
 $("#toggleFullscreen").click(toggleFullscreen);
+
 var rengastieShown = false;
 $("#toggleRengastie").click(function() {
   $(this).toggleClass("active");
@@ -755,15 +766,9 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
   resetMap();
 
+  google.maps.event.addListenerOnce(map, 'idle', hideLoader);
+
   getLocation();
-
-  function fullscreenchange(event) {
-    var isFullScreen = (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)? true: false;
-    $('#toggleFullscreen').toggleClass('active', isFullScreen);
-  }
-
-  document.onfullscreenchange = fullscreenchange;
-  document.onwebkitfullscreenchange = fullscreenchange;
 
   updateMapStyles();
   map.addListener('zoom_changed', updateMapStyles);
