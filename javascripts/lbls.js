@@ -5,7 +5,11 @@
 var lbls = {};
 
 // call this after google maps loaded
-lbls.init = function() {
+lbls.init = function(canvasElementId) {
+
+  var canvas = document.getElementById(canvasElementId);
+  var context = canvas.getContext('2d');
+  context.font = 'bold 12px sans-serif';
 
   var directions = { 'N': {y: -1, x: 0}, 'NE': {y: -1, x: 1}, 'E': {y: 0, x: 1}, 'SE': {y: 1, x: 1},
       'S': {x: 0, y: 1}, 'SW': {x: -1, y: 1}, 'W': {x: -1, y: 0}, 'NW': {x: -1, y: -1}, 'C': {x: 0, y: 0}};

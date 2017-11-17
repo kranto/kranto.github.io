@@ -152,10 +152,6 @@ $("#toggleRengastie").click(function() {
   rerender(map);
 });
 
-var canvas = document.getElementById('canvas');
-var context = canvas.getContext('2d');
-context.font = 'bold 12px sans-serif';
-
 var map;
 var tooltip;
 
@@ -753,7 +749,7 @@ function resetMap() {
 function initMap() {
 
   var data = {};
-  lbls.init();
+  lbls.init('canvas');
   txtol.init();
 
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -776,45 +772,13 @@ function initMap() {
     data = response;
     renderData(data, map);
   });
+
   tooltip = new google.maps.InfoWindow({
     content: "",
     disableAutoPan: true
   });
 
-  function openTooltip(object, position, content) {
-    tooltip.setPosition(position);
-    tooltip.setContent(content);
-    tooltip.open(map, object);
-  }
-
   map.addListener('click', function() { tooltip.close(); });
-
-  var Alue2 = {
-    create: function(target) {
-      sanitizeZoomLevels(target);
-      target.label = new lbls.Label({
-        map: map,
-        position: getPosition(target.location),
-        labelAnchor: target.labelOrigin,
-        label: {
-          text: target.name,
-          color: '#202030',
-          fontSize: '14px',
-          fontWeight: 'bold',
-          fontFamily: 'Roboto'
-        },
-        background: target.background? target.background: 'none',
-        opacity: 0.7,
-        clickable: false
-      });
-      return target;
-    },
-    zoomChanged: function(object, zoom, mapTypeId) {
-      object.label.setVisible(zoom >= object.minZoom && zoom <= object.maxZoom);
-      object.label.getLabel().fontSize = Math.max(12, Math.floor((zoom-6)*2.2+8)) + 'px';
-      object.label.setLabel(object.label.getLabel());
-    }
-  }
 
   function getShortName(object) {
     var name = object.name;

@@ -619,7 +619,7 @@
       "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Seglinge",
-        "labelVisibleTo": 11,
+        "labelVisibleTo": 12,
         "labelAnchor": {"dir": "NW", "x":0 , "y":0 }
       },
       "geometry": {
