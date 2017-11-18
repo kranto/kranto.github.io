@@ -1,7 +1,6 @@
 {
-    "name": "Saaristolautat demo",
-    "start_url": "index.html",
-      "icons": [
+    "name": "Saaristolautat",
+    "icons": [
         {
             "src": "/android-chrome-192x192.png",
             "sizes": "192x192",
