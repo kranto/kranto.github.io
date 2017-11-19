@@ -26,6 +26,7 @@ $('#setMapTypeSatellite').click(function() {
 });
 
 $('#resetViewButton').click(function() {
+  google.maps.event.addListenerOnce(map, 'idle', hideLoader);
   resetMap();
 });
 
@@ -49,6 +50,10 @@ function addMapListeners(map) {
 
 function hideLoader() {
   $("#loader").fadeOut(1000);
+  if (map.getZoom() < 8) {
+    map.setZoom(8);
+    map.panToBounds({south: 60, west: 21.4, east: 22.4, north: 60.5})
+  }
 }
 
 function getLocation() {
