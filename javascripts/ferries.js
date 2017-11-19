@@ -190,13 +190,13 @@ function createMapStyles(mapTypeId, zoom, settings) {
     { featureType: 'road', elementType: 'labels.text.fill', stylers: [{color: '#000000'}]},
     //      { featureType: 'road', elementType: 'geometry', stylers: [{color: '#808080'}]},
     //      { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{color: '#a0a0a0'}, {weight: zoom <= 10? 1: 3.5}]},
-    { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{color: '#8e4200'}, {weight: zoom <= 8? 0: Math.max(2, (zoom-5)*0.5)}]},
+    { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{color: '#91755d'}, {weight: zoom <= 8? 0: Math.max(2, (zoom-5)*0.5)}]},
     //      { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{color: '#808080'}, {weight: 5}]},
-    { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{color: '#8e4200'}, {weight: 0.5}]},
-    { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{color: '#8e4200'}, {weight: Math.max(1.5, (zoom-5)*0.6)}]},
-    { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{color: '#8e4200'}, {weight: zoom <= 6? 0: 1}]},
-    { featureType: 'road.arterial', elementType: 'geometry', stylers: [{color: '#8e4200'}, {weight: Math.max(1, (zoom-7)*0.4)}, {lightness: (zoom - 6)*0}]},
-    { featureType: 'road.local', elementType: 'geometry', stylers: [{weight: 1}, {color: '#8e4200'}, {lightness: (zoom-12)*0}]},
+    { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{color: '#91755d'}, {weight: 0.5}]},
+    { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{color: '#91755d'}, {weight: Math.max(1.5, (zoom-5)*0.6)}]},
+    { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{color: '#91755d'}, {weight: zoom <= 6? 0: 1}]},
+    { featureType: 'road.arterial', elementType: 'geometry', stylers: [{color: '#91755d'}, {weight: Math.max(1, (zoom-7)*0.4)}, {lightness: (zoom - 6)*0}]},
+    { featureType: 'road.local', elementType: 'geometry', stylers: [{weight: 1}, {color: '#91755d'}, {lightness: (zoom-12)*0}]},
   ];
 }
 
@@ -252,7 +252,7 @@ function road(feature, map) {
   var roadObject = new google.maps.Polyline({
     path: new google.maps.MVCArray(roadCoords),
     geodesic: false,
-    strokeColor: '#8e4200',
+    strokeColor: '#91755d',
     strokeOpacity: 1,
     strokeWeight: 1,
     zIndex: 0,
@@ -272,8 +272,8 @@ function route(feature, map) {
   var object = new google.maps.Polyline({
     path: new google.maps.MVCArray(coords),
     geodesic: false,
-    strokeColor: '#803090',
-    strokeOpacity: 0.5,
+    strokeColor: '#5040c0',
+    strokeOpacity: 0.4,
     strokeWeight: 4,
     zIndex: 0,
     map: map,
@@ -283,7 +283,7 @@ function route(feature, map) {
   return {
     rerender: function(zoom, mapTypeId) {
       object.setVisible(rengastieShown && zoom >= 8);
-      object.setOptions({strokeWeight: (zoom<=8? 2: zoom<=9? 3: 4)});
+      object.setOptions({strokeWeight: (zoom<=8? 4: zoom<=9? 5: 6)});
     }
   };
 }
@@ -505,15 +505,15 @@ var connectionStylers = {
     zIndex: 9
   },
   "conn3": {
-    visibleFrom: 9,
+    // visibleFrom: 9,
     weight: 2,
     color: '#e7883e',
     opacity: 1
   },
   "conn4": {
-    visibleFrom: 9,
+    // visibleFrom: 9,
     weight: 1.5,
-    color: '#90c0f0',
+    color: '#7fb3e8',
     opacity: 0.8,
     zIndex: 8
   }
