@@ -231,6 +231,13 @@
   border-color: #ccc;
 }
 
+.lastrow {
+  margin-top: 30px;
+}
+.feedbackbutton img {
+  margin-right: 20px;
+}
+
 @media (hover:hover) {
   .btn:hover, .btn.active:hover { 
     background-color: #8de;
@@ -240,7 +247,7 @@
     .navbar {
       margin-top: 15px;
       float: all;
-      width: 300px;
+      width: 280px;
     }
 
     .navbar-toggle {
@@ -255,15 +262,25 @@
     }
 
     .navbar-transparent .navbar-collapse {
-      background-color: rgba(255,255,255,0.6);
+      background-color: rgba(255,255,255,0.7);
       border: none;
+      margin-left: 10px;
       padding-left: 15px;
+      border-radius: 10px;
     }
 
     .nav-form {
       margin-top: 15px;
-      margin-left: 15px;
     }
+
+@media (max-height: 400px) {
+    .navbar-transparent .navbar-collapse {
+      position: relative;
+      top: -50px;
+      left: 80px;
+    }
+}
+
 /*
 @media (max-width: 1991px) {
 */
