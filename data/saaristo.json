@@ -2322,7 +2322,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Korppoon reittialue",
-        "description": "<p>y/a Fiskö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358447618000\">+358 44 761 8000</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 2</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Verkan(Korppoo)</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"http://www.saaristolinjat.fi/Korppoon_reittialue\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> y/a Fiskö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358447618000\">+358 44 761 8000</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 2</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Verkan(Korppoo)</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"http://www.saaristolinjat.fi/Korppoon_reittialue\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
         "ssubtype": "conn4"
       },
       "features": [
@@ -3073,7 +3073,9 @@
       "type": "Feature",
       "properties": {
         "stype": "cableferry",
-        "sname": "Kokkila"
+        "sname": "Kokkila",
+        "description": "<p><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358405684911\">+358 40 568 4911</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Kokkila (mantere), Angelniemi (saari)</p><p>Liikennöi 20-30 minuutin välein, yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kokkila.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+
       },
       "geometry": {
         "coordinates": [[22.943401, 60.318236 ], [22.943916, 60.312752 ] ],
@@ -4224,7 +4226,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Högsåra",
-        "description": "<p><a class=\"tel\" href=\"tel:+35840 706 6291\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 706 6291</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Svartnäs (itä), Högsåra (länsi)</p><p>Liikennöi aikataulun mukaan, 4-11 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsara.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+358407066291\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 706 6291</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Svartnäs (itä), Högsåra (länsi)</p><p>Liikennöi aikataulun mukaan, 4-11 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsara.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
         "coordinates": [[22.369194, 59.954602 ], [22.3952, 59.9491 ] ],
