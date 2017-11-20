@@ -26,7 +26,8 @@ $('#setMapTypeSatellite').click(function() {
 });
 
 $('#resetViewButton').click(function() {
-  google.maps.event.addListenerOnce(map, 'idle', hideLoader);
+  google.maps.event.addListenerOnce(map, 'idle', onMapIdle);
+  $('.navbar-toggle').click();
   resetMap();
 });
 
@@ -48,11 +49,23 @@ function addMapListeners(map) {
   });
 }
 
-function hideLoader() {
-  $("#loader").fadeOut(1000);
+var timeout = false;
+var mapInitialized = false;
+
+setTimeout(function() { timeout = true; hideLoader(); }, 4000);
+
+function onMapIdle() {
   if (map.getZoom() < 8) {
     map.setZoom(8);
-    map.panToBounds({south: 60, west: 21.4, east: 22.4, north: 60.5})
+    map.panToBounds({south: 60, west: 21.4, east: 22.4, north: 60.5});
+  }
+  mapInitialized = true;
+  hideLoader();
+}
+
+function hideLoader() {
+  if (timeout && mapInitialized ) {
+    $("#loader").fadeOut(1000);
   }
 }
 
@@ -769,10 +782,12 @@ var mapOptions = {
 };
 
 function resetMap() {
+  unselectAll();
+  map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
   map.setOptions(mapOptions);
   map.fitBounds({south: 60, north: 60.5, west: 20, east: 22.3});
 }
-
+  
 function initMap() {
 
   var data = {};
@@ -782,7 +797,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
   resetMap();
 
-  google.maps.event.addListenerOnce(map, 'idle', hideLoader);
+  google.maps.event.addListenerOnce(map, 'idle', onMapIdle);
 
   getLocation();
 
