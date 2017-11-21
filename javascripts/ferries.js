@@ -98,6 +98,7 @@ function showPosition(position) {
 var selected = [];
 
 function select(targets, mouseEvent) {
+  if (!targets.length) return;
   $('#selectedTitle').html(targets.map(function(target) { return target.name; }).join('<br>'));
   $('#selectedDescription').html(targets[0].description? targets[0].description: ' ');
   var selectedCountWas = selected.length;
