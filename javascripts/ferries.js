@@ -881,7 +881,7 @@ function initMap() {
   // Define a symbol using SVG path notation, with an opacity of 1.
   var lauttaLineSymbol = {
     path: 'M 0,-1 0,1',
-    strokeOpacity: 0.6,
+    strokeOpacity: 0.4,
     strokeColor: '#d00000',
     scale: 1
   };
@@ -932,7 +932,7 @@ function initMap() {
       select(that.routes, event);
     });
     this.rerender = function(zoom, mapTypeId) {
-      this.line.setVisible(zoom >= 7 && zoom <= 9);
+      this.line.setVisible(zoom >= 7 && zoom <= 11);
       this.line.setOptions({icons: [{
         icon: zoom <= 9? lauttaLineSymbol: lauttaLineSymbolDimmed,
         offset: '4',
