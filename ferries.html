@@ -47,9 +47,64 @@
     
   <div id="wrapper">
 
+    <div id="infopage" style="display: none;">
+      <div id="infopagecontent">
+        <button type="button" class="btn btn-default closeInfoButton" id="closeInfoPageButton"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <h2>Ahvenanmaan lautat <img src="img/alandstrafiken.png" width="120px"/></h2>
+        <h3>Lauttareitit</h3>
+        <p>
+          <ul>
+            <li>Pohjoinen linja</li>
+            <li>Eteläinen linja</li>
+            <li>Poikittainen linja</li>
+            <li>Föglön linja</li>
+            <li>Vaijerilossit</li>
+          </ul>
+        </p>
+        <h3>Hinnat</h3>
+        <p>
+          Ajoneuvojen kuljettaminen Ålandstrafikenin lautoilla on maksullista paitsi vaijerilosseilla. Hinnoittelusta johtuen käytännössä maksullista on ainoastaan lähtö saaristoon Ahvenanmantereelta tai Manner-Suomesta eli Hummelvikistä, Långnäsistä, Svinöstä, Vuonaisista ja Galtbystä. Saarten välillä kulkeminen sekä saaristosta poistuminen on maksutonta. Matkustajista ei peritä erikseen maksua.
+        </p>
+        <p>
+          Maksu määräytyy vuodenajan, ajoneuvon sekä matkan pituuden ja keston mukaan. Jos matkustaa saman vuorokauden aikana koko matkan Suomesta Ahvenanmantereelle, on maksu huomattavasti korkeampi kuin saaristossa yövyttäessä. Verkosta etukäteen ostettuna maksuista saa 10 % alennuksen.
+        </p>
+        <p>
+          Esimerkkihintoja kesällä 2017:
+          <table>
+            <tr><th>Yhteys</th><th>polkupyörä</th><th>moottoripyörä</th><th>henkilöauto</th></tr>
+            <tr><td>Manner-Suomi - saaristo - Manner-Suomi</td><td>6</td><td>21</td><td>34</td></tr>
+            <tr><td>Vuosnainen - Brändö - Vuosnainen<br/>(poikkeus edelliseen)</td><td>6</td><td>16</td><td>22</td></tr>
+            <tr><td>Manner-Suomi - Ahvenanmanner<br/>(yöpyminen saaristossa)</td><td>6</td><td>21</td><td>34</td></tr>
+            <tr><td>Manner-Suomi - Ahvenanmanner<br/>(saman vuorokauden aikana)</td><td>24</td><td>74</td><td>122</td></tr>
+          </table>
+        </p>
+        <p>
+          Useimmille lautoille voi varata paikan moottoriajoneuvolle ja suosituimpiin aikoihin se on ehdottomasti suositeltavaa. Varauksen voi tehdä <a href="http://online.alandstrafiken.ax/Login/Customer.aspx" target="other">verkossa</a> tai puhelimitse <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:+3581825600">+358 18 25 600</a>.
+        </p>
+        <h2>Suomen lautat</h2>
+        <p>
+          Tulossa...
+        </p>
+        <h2>Tietoja sovelluksesta</h2>
+        <p>
+          Saaristolautat on epävirallinen, harrastuspohjalta tehty sovellus, jonka tarkoitus on auttaa saaristoon suuntaavien matkojen suunnittelussa.
+        </p>
+        <div class="alert alert-danger" role="alert">
+          <strong>Tarkista aina aikataulut palveluntarjoajien palveluista!</strong>
+        </div>
+        <p>
+          Seuraa Saaristolauttoja <a href="https://www.facebook.com/saaristolautat/" target="facebook">Facebookissa <img src="facebook.svg" height="20"/></a>.
+        </p>
+        <p>
+          Anna palautetta Facebookissa tai
+          <a href="mailto:feedback@saaristolautat.fi?subject=Palautetta Saaristolautat-sovelluksesta">sähköpostilla <img src="sendemail.svg" height="30"/></a>.
+        </p>
+      </div>
+    </div>
+
     <div id="info">
       <div id="infocontent">
-        <button type="button" class="btn btn-default" id="closeInfoButton"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-default closeInfoButton" id="closeInfoButton"><i class="fa fa-times" aria-hidden="true"></i></button>
         <h3 id="selectedTitle"></h3>
         <div id="selectedDescription"></div>
       </div>
@@ -90,10 +145,8 @@
             </div>
           </div>
           <div class="form-group row lastrow">
-            <label class="control-label col-xs-3" for="email">Palaute:</label>
-            <div class="col-xs-9">
-              <a href="https://www.facebook.com/saaristolautat/" target="facebook" class="feedbackbutton"><img src="facebook.svg" height="30"/></a>
-              <a href="mailto:feedback@saaristolautat.fi" class="feedbackbutton"><img src="sendemail.svg" height="40"/></a>
+            <div class="col-xs-12">
+              <button type="button" class="btn btn-default" id="showInfoPageButton">Tietoja lautoista ja sovelluksesta</button>
             </div>
           </div>
         </form>

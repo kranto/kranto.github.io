@@ -8,9 +8,8 @@ var scrollLimit = 30;
 function toggleScrollArrow()
 {
     var elem = $("#wrapper");
-    var infoVisible = $("#info").is(":visible");
     var isBottom = (elem[0].scrollHeight - elem.scrollTop() - scrollLimit <= elem.outerHeight());
-    $('#scrollArrow').toggleClass('can-scroll', !isBottom && infoVisible);
+    $('#scrollArrow').toggleClass('can-scroll', !isBottom);
 }
 
 $('div#map').click(function() { // close menu when map clicked
@@ -29,6 +28,19 @@ $('#resetViewButton').click(function() {
   google.maps.event.addListenerOnce(map, 'idle', onMapIdle);
   $('.navbar-toggle').click();
   resetMap();
+});
+
+var wasSelected = [];
+$('#showInfoPageButton').click(function() {
+  $('#infopage').fadeIn();
+  $('.navbar-toggle[aria-expanded="true"]').click();
+  wasSelected = selected.slice();
+  unselectAll();
+});
+
+$('#closeInfoPageButton').click(function() {
+  $('#infopage').fadeOut();
+  select(wasSelected);
 });
 
 
@@ -97,7 +109,7 @@ function select(targets, mouseEvent) {
     selected.push(target);
   });
   if (selectedCountWas == 0) {
-    var clientY = latLng2Point(mouseEvent.latLng, map).y;
+    var clientY = mouseEvent? latLng2Point(mouseEvent.latLng, map).y: 0;
     if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
     $(function() { 
       $("#info").show();
