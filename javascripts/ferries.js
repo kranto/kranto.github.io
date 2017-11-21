@@ -919,9 +919,9 @@ function initMap() {
     this.highlightLine = new google.maps.Polyline({
       path: new google.maps.MVCArray(this.path),
       zIndex: 0,
-      strokeOpacity: 0.3,
+      strokeOpacity: 0.7,
       strokeWeight: 7,
-      strokeColor: '#b00060',
+      strokeColor: '#e0b0d0',
       visible: false,
       map: map,
     });
