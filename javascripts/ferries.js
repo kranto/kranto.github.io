@@ -95,12 +95,18 @@ function showPosition(position) {
   var markerL = createMarker(positionL, true, iconL, map);
 }
 
+function onlyUnique(value, index, self) { 
+    return self.indexOf(value) === index;
+}
+
 var selected = [];
 
 function select(targets, mouseEvent) {
   if (!targets.length) return;
-  $('#selectedTitle').html(targets.map(function(target) { return target.name; }).join('<br>'));
-  $('#selectedDescription').html(targets[0].description? targets[0].description: ' ');
+  $('#selectedTitle').html(targets.map(function(target) { return target.name; }).filter(onlyUnique).join('<br>'));
+  $('#selectedDescription').html(targets.map(function(target) { return target.description? target.description: ' '; }).map(function(desc) {
+    return "<p>" + desc + "</p>";
+  }).filter(onlyUnique).join("\n"));
   var selectedCountWas = selected.length;
   selected.forEach(function(target) { target.highlight(false); });
   selected = [];
@@ -880,16 +886,21 @@ function initMap() {
   ];
 
   var lauttaRoutes = [
-  {name: "Kapellskär - Mariehamn", operators: ["Viking"], legs: [9, 10]},
-  {name: "Eckerö - Grisslehamn", operators: ["Eckerölinjen"], legs: [14]},
-  {name: "Naantali - Långnäs - Kapellskär", operators: ["Finnlines"], legs: [1, 3, 4, 5, 8, 10]},
-  {name: "Turku - Mariehamn - Stockholm", operators: ["Viking"], legs: [2, 3, 5, 6, 9, 11, 13]},
-  {name: "Turku - Mariehamn - Stockholm", operators: ["Tallink"], legs: [2, 3, 5, 6, 9, 11, 12]},
-  {name: "Turku - Långnäs - Stockholm", operators: ["Viking"], legs: [2, 3, 4, 5, 8, 11, 13]},
-  {name: "Turku - Långnäs - Stockholm", operators: ["Tallink"], legs: [2, 3, 4, 5, 8, 11, 12]},
+  {name: "Turku - Mariehamn/Långnäs - Stockholm", operators: ["Viking"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 13]},
+  {name: "Turku - Mariehamn/Långnäs - Stockholm", operators: ["Silja"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 12]},
   {name: "Helsinki - Mariehamn - Stockholm", operators: ["Viking"], legs: [7, 6, 9, 11, 13]},
-  {name: "Helsinki - Mariehamn - Stockholm", operators: ["Tallink"], legs: [7, 6, 9, 11, 12]},
+  {name: "Helsinki - Mariehamn - Stockholm", operators: ["Silja"], legs: [7, 6, 9, 11, 12]},
+  {name: "Kapellskär - Mariehamn", operators: ["Viking"], legs: [9, 10]},
+  {name: "Eckerö - Grisslehamn", operators: ["Eckerolinjen"], legs: [14]},
+  {name: "Naantali - Långnäs - Kapellskär", operators: ["Finnlines"], legs: [1, 3, 4, 5, 8, 10]},
   ];
+
+  var operators = {
+    Viking: {name: "Viking Line", logo: "img/vikingline.png", height: 15, link: "https://www.vikingline.fi/"},
+    Silja: {name: "Tallink / Silja Line", logo: "img/siljaline.png", height: 20, link: "https://www.tallinksilja.fi/"},
+    Finnlines: {name: "Tallink / Silja Line", logo: "img/finnlines.png", height: 20, link: "https://www.finnlines.com/"},
+    Eckerolinjen: {name: "Eckerölinjen", logo: "img/eckerolinjen.png", height: 20, link: "https://www.eckerolinjen.ax/"}
+  };
 
   // Define a symbol using SVG path notation, with an opacity of 1.
   var lauttaLineSymbol = {
@@ -965,8 +976,15 @@ function initMap() {
 
   function Route(object) {
     this.name = object.name;
-    this.operator = object.operators[0];
+    this.operators = object.operators;
     this.legs = object.legs.map(function(id) { return lauttaLegIndex[id]; });
+
+    var that = this;
+    this.description = this.operators.map(function(operator) {
+      var op = operators[operator];
+      return that.name + '&nbsp;&nbsp; <a href="' + op.link + '" target="info"><img src="' + operators[operator].logo + '" height="' + op.height + '"/></a>' ;
+    }).join(" ");
+
     var that = this;
   }
 
