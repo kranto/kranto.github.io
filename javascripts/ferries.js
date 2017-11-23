@@ -823,8 +823,15 @@ function initMap() {
   updateMapStyles();
   map.addListener('zoom_changed', updateMapStyles);
 
-  $.get('/data/saaristo.json', function(response) {
-    data = response;
+  $.get('/data/saaristo.json', function(data) {
+    renderData(data, map);
+  });
+
+  $.get('/data/roads.json', function(data) {
+    renderData(data, map);
+  });
+
+  $.get('/data/routes.json', function(data) {
     renderData(data, map);
   });
 
