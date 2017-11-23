@@ -886,13 +886,13 @@ function initMap() {
   ];
 
   var lauttaRoutes = [
-  {name: "Turku - Mariehamn/Långnäs - Stockholm", operators: ["Viking"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 13]},
-  {name: "Turku - Mariehamn/Långnäs - Stockholm", operators: ["Silja"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 12]},
-  {name: "Helsinki - Mariehamn - Stockholm", operators: ["Viking"], legs: [7, 6, 9, 11, 13]},
-  {name: "Helsinki - Mariehamn - Stockholm", operators: ["Silja"], legs: [7, 6, 9, 11, 12]},
-  {name: "Kapellskär - Mariehamn", operators: ["Viking"], legs: [9, 10]},
-  {name: "Eckerö - Grisslehamn", operators: ["Eckerolinjen"], legs: [14]},
-  {name: "Naantali - Långnäs - Kapellskär", operators: ["Finnlines"], legs: [1, 3, 4, 5, 8, 10]},
+  {name: "Turku - Mariehamn/Långnäs - Stockholm", operators: ["Viking"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 13], description: "2 kertaa päivässä, kesto n. 11 tuntia"},
+  {name: "Turku - Mariehamn/Långnäs - Stockholm", operators: ["Silja"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 12], description: "2 kertaa päivässä, kesto n. 11 tuntia"},
+  {name: "Helsinki - Mariehamn - Stockholm", operators: ["Viking"], legs: [7, 6, 9, 11, 13], description: "kerran päivässä, kesto n. 17,5 tuntia"},
+  {name: "Helsinki - Mariehamn - Stockholm", operators: ["Silja"], legs: [7, 6, 9, 11, 12], description: "kerran päivässä, kesto n. 17,5 tuntia"},
+  {name: "Kapellskär - Mariehamn", operators: ["Viking"], legs: [9, 10], description: "2-3 kertaa päivässä, kesto n. 2,5 tuntia, linja-autoyhteys Tukholmaan"},
+  {name: "Eckerö - Grisslehamn", operators: ["Eckerolinjen"], legs: [14], description: "2-3 kertaa päivässä, kesto n. 2 tuntia"},
+  {name: "Naantali - Långnäs - Kapellskär", operators: ["Finnlines"], legs: [1, 3, 4, 5, 8, 10], description: "2 kertaa päivässä, kesto n. 8,5 tuntia"},
   ];
 
   var operators = {
@@ -979,10 +979,9 @@ function initMap() {
     this.operators = object.operators;
     this.legs = object.legs.map(function(id) { return lauttaLegIndex[id]; });
 
-    var that = this;
     this.description = this.operators.map(function(operator) {
       var op = operators[operator];
-      return that.name + '&nbsp;&nbsp; <a href="' + op.link + '" target="info"><img src="' + operators[operator].logo + '" height="' + op.height + '"/></a>' ;
+      return object.name + ', ' + object.description + '&nbsp;&nbsp; <a href="' + op.link + '" target="info"><img src="' + operators[operator].logo + '" height="' + op.height + '"/></a>' ;
     }).join(" ");
 
     var that = this;
