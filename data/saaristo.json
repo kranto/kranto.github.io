@@ -1949,7 +1949,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Nauvon eteläinen reittialue",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Nordep, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358451294779\">+358 45 129 4779</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 2</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Kirjais(Nauvo)</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"https://www.ferryway.fi/6\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Nordep, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358451294779\">+358 45 129 4779</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 2</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Kirjais/Kirjainen</strong>, Pensar, Peno, Brännskär, Stenskär, Gullkrona, Grötö, Knivskär, Kopparholm, Träskholm, Björkö, Gloskär, Trunsö, Sandholm, Lökholm, Borstö, </p><p>Lähisaariin 1-3 kertaa päivässä, Borstö 4 kertaa viikossa. Kirjais - Borstö 3-5 tuntia.</p><p><a target=\"info\" href=\"https://www.ferryway.fi/6\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
         "ssubtype": "conn4"
       },
       "features": [
