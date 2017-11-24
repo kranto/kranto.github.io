@@ -484,7 +484,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Nauvo - Korppoo",
-        "description": "<p><a class=\"tel\" href=\"tel:+358400864268\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 864 268</a> <a class=\"tel\" href=\"tel:+358400882614\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 882 614</a></p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Pärnäs (Nauvo), Retais (Korppoo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+358400864268\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 864 268</a> <a class=\"tel\" href=\"tel:+358400882614\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 882 614</a></p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Pärnäs/Pärnäinen (Nauvo), Retais (Korppoo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
         "coordinates": [[21.69141, 60.165927 ], [21.704714, 60.163792 ] ],
@@ -1901,7 +1901,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Utön reittialue",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Eivor, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358445000503\">+358 44 5000 503</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 19</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Pärnäs(Nauvo)</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"http://www.rosita.fi/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Eivor, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358445000503\">+358 44 5000 503</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 19</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Pärnäs/Pärnäinen</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"http://www.rosita.fi/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
         "ssubtype": "conn4"
       },
       "features": [
@@ -2021,7 +2021,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Nauvon poikittainen reittialue",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Myrskylintu, m/s Cheri, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400217053\">+358 400 217 053</a>, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400227722\">+358 400 227 722</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 0</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Pärnäs(Nauvo)</strong>, <strong>Kirjais(Nauvo)</strong>, Krok, Mattnäs, Lånholm, Fagerholm, Killingholm, Ängsö, Tveskiftsholm, Berghamn, Hummelholm, Rockelholm, Ytterstholm, Byskär, Brännskär, Grötö, Stenskär, Gullkrona </p><p>3 kertaa viikossa (ma, ke, pe), vain tilauksesta</p><p><a target=\"info\" href=\"https://www.ferryway.fi/5\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Myrskylintu, m/s Cheri, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400217053\">+358 400 217 053</a>, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400227722\">+358 400 227 722</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 0</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Pärnäs/Pärnäinen</strong>, <strong>Kirjais/Kirjainen</strong>, Krok, Mattnäs, Lånholm, Fagerholm, Killingholm, Ängsö, Tveskiftsholm, Berghamn, Hummelholm, Rockelholm, Ytterstholm, Byskär, Brännskär, Grötö, Stenskär, Gullkrona </p><p>3 kertaa viikossa (ma, ke, pe), vain tilauksesta</p><p><a target=\"info\" href=\"https://www.ferryway.fi/5\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
         "ssubtype": "conn4"
       },
       "features": [
