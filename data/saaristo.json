@@ -2081,7 +2081,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Korppoon reittialue",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> y/a Fiskö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358447618000\">+358 44 761 8000</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 2</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Verkan</strong>(Korpo/Korppoo), Finnö, Käldersö, Elvsö, Berghamn(Korpo/Korppoo), <strong>Kittuis</strong>(Houtskari/Houtskär), Lillpensar, Storpensar, <strong>Havträsk</strong>(Norrskata), Brunskär, Österskär, Kälö</p><p>0-4 lähtöä Korppoosta päivittäin. Österskär 2 kertaa viikossa. Vain tilauksesta.</p><p><a target=\"info\" href=\"http://www.saaristolinjat.fi/Korppoon_reittialue\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/archipelagolines.jpg\" height=\"20\" alt=\"Archipelago lines Oy\"/></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> y/a Fiskö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358447618000\">+358 44 761 8000</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 2</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Verkan</strong>(Korpo/Korppoo), Finnö, Käldersö, Elvsö, Berghamn(Korpo/Korppoo), <strong>Kittuis</strong>(Houtskari/Houtskär), Lillpensor, Storpensor, <strong>Havträsk</strong>(Norrskata), Brunskär, Österskär, Kälö</p><p>0-4 lähtöä Korppoosta päivittäin. Österskär 2 kertaa viikossa. Vain tilauksesta.</p><p><a target=\"info\" href=\"http://www.saaristolinjat.fi/Korppoon_reittialue\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/archipelagolines.jpg\" height=\"20\" alt=\"Archipelago lines Oy\"/></p>",
         "ssubtype": "conn4"
       },
       "features": [
@@ -3383,7 +3383,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Storpensar",
+        "sname": "Storpensor",
         "stype": "pier",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
@@ -4577,7 +4577,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Lillpensar",
+        "sname": "Lillpensor",
         "stype": "pier",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NW", "x":5 , "y":-5 }
