@@ -205,13 +205,19 @@ var tooltip;
 
 function createMapStyles(mapTypeId, zoom, settings) {
   return [
-    { featureType: 'landscape.natural', elementType: 'geometry.fill', stylers: [{color: '#b8cbb8'}, 
-          {lightness: 20}, // {lightness: -10 + 20 + (zoom < 7? 0: (zoom-7)*4)}, 
-          {saturation: 0}, //{saturation: 10 + (zoom - 8)*2}
+    // forests visible
+    { featureType: 'landscape.natural', elementType: 'geometry.fill', stylers: [ 
+          {lightness: -15},
+          {saturation: -50},
+          {hue: '#00ff3b'},
+          {gamma: 1.2}
           ]},
+    // flat style
+    // { featureType: 'landscape.natural', elementType: 'geometry.fill', stylers: [{color: '#b8cbb8'}, {lightness: 20} ]},
+
     { featureType: 'water', elementType: 'geometry.fill', stylers: [{color: '#ececff'}, {lightness: 30}]},
 
-    { featureType: 'all', elementType: 'labels', stylers: [{ "visibility": "off" }]},
+    { elementType: 'labels', stylers: [{ "visibility": "off" }]},
     { featureType: 'administrative', elementType: 'labels', stylers: [{ "visibility": zoom <= 7 || zoom >= 13? 'on': 'off' }]},
     { featureType: 'landscape', elementType: 'labels', stylers: [{ "visibility": zoom >= 13? 'on': 'off' }]},
     { featureType: 'poi', elementType: 'labels', stylers: [{ "visibility": zoom >= 10? 'on': 'off' }]},
