@@ -59,7 +59,6 @@ function inIframe () {
 $(document).ready(function() {
   var hostname = window.location.hostname;
   var framed = inIframe();
-  console.log(framed);
   var title = framed? '<a href="https://' + hostname + '" target="saaristolautat">' + hostname + '</a>': hostname;
   $("#navbartitle").html(title);
   if (!framed) {
