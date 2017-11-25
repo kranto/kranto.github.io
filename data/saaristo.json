@@ -1901,7 +1901,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Utön reittialue",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Eivor, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358445000503\">+358 44 5000 503</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 19</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Pärnäs/Pärnäinen</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"http://www.rosita.fi/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Eivor, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358445000503\">+358 44 5000 503</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 19</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Pärnäs/Pärnäinen</strong>, Berghamn, Nötö, Aspo, Jurmo, Utö</p><p>5 kertaa viikossa. Pärnäs - Utö 4,5 - 5,5 tuntia. Linja-autoyhteys Pärnäisissä.</p><p><a target=\"info\" href=\"http://www.rosita.fi/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/rosita.png\" height=\"20\" alt=\"Rosita\"/></p>",
         "ssubtype": "conn4"
       },
       "features": [
@@ -1949,7 +1949,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Nauvon eteläinen reittialue",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Nordep, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358451294779\">+358 45 129 4779</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 2</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Kirjais/Kirjainen</strong>, Pensar, Peno, Brännskär, Stenskär, Gullkrona, Grötö, Knivskär, Kopparholm, Träskholm, Björkö, Gloskär, Trunsö, Sandholm, Lökholm, Borstö, </p><p>Lähisaariin 1-3 kertaa päivässä, Borstö 4 kertaa viikossa. Kirjais - Borstö 3-5 tuntia.</p><p><a target=\"info\" href=\"https://www.ferryway.fi/6\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Nordep, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358451294779\">+358 45 129 4779</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 2</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Kirjais/Kirjainen</strong>, Pensar, Peno, Brännskär, Stenskär, Gullkrona, Grötö, Knivskär, Kopparholm, Träskholm, Björkö, Gloskär, Trunsö, Sandholm, Lökholm, Borstö.</p><p>Lähisaariin 1-3 kertaa päivässä, Borstö 4 kertaa viikossa. Kirjais - Borstö 3-5 tuntia. Vain tilauksesta.</p><p><a target=\"info\" href=\"https://www.ferryway.fi/6\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/ferryway.png\" height=\"20\" alt=\"JS Ferryway Ltd Oy\"/></p>",
         "ssubtype": "conn4"
       },
       "features": [
@@ -2021,7 +2021,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Nauvon poikittainen reittialue",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Myrskylintu, m/s Cheri, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400217053\">+358 400 217 053</a>, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400227722\">+358 400 227 722</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 0</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Pärnäs/Pärnäinen</strong>, <strong>Kirjais/Kirjainen</strong>, Krok, Mattnäs, Lånholm, Fagerholm, Killingholm, Ängsö, Tveskiftsholm, Berghamn, Hummelholm, Rockelholm, Ytterstholm, Byskär, Brännskär, Grötö, Stenskär, Gullkrona </p><p>3 kertaa viikossa (ma, ke, pe), vain tilauksesta</p><p><a target=\"info\" href=\"https://www.ferryway.fi/5\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Myrskylintu, m/s Cheri, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400217053\">+358 400 217 053</a>, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400227722\">+358 400 227 722</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 0</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Pärnäs/Pärnäinen</strong>, <strong>Kirjais/Kirjainen</strong>, Krok, Mattnäs, Lånholm, Fagerholm, Killingholm, Ängsö, Tveskiftsholm, Berghamn, Hummelholm, Rockelholm, Ytterstholm, Byskär, Brännskär, Grötö, Stenskär, Gullkrona </p><p>3 kertaa viikossa (ma, ke, pe), vain tilauksesta</p><p><a target=\"info\" href=\"https://www.ferryway.fi/5\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/ferryway.png\" height=\"20\" alt=\"JS Ferryway Ltd Oy\"/></p>",
         "ssubtype": "conn4"
       },
       "features": [
@@ -2081,7 +2081,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Korppoon reittialue",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> y/a Fiskö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358447618000\">+358 44 761 8000</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 2</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Verkan(Korppoo)</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"http://www.saaristolinjat.fi/Korppoon_reittialue\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> y/a Fiskö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358447618000\">+358 44 761 8000</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 2</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Verkan</strong>(Korpo/Korppoo), Finnö, Käldersö, Elvsö, Berghamn(Korpo/Korppoo), <strong>Kittuis</strong>(Houtskari/Houtskär), Lillpensar, Storpensar, <strong>Havträsk</strong>(Norrskata), Brunskär, Österskär, Kälö</p><p>0-4 lähtöä Korppoosta päivittäin. Österskär 2 kertaa viikossa. Vain tilauksesta.</p><p><a target=\"info\" href=\"http://www.saaristolinjat.fi/Korppoon_reittialue\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/archipelagolines.jpg\" height=\"20\" alt=\"Archipelago lines Oy\"/></p>",
         "ssubtype": "conn4"
       },
       "features": [
@@ -2104,7 +2104,7 @@
             "stype": "leg"
           },
           "geometry": {
-            "coordinates": [[21.354443, 60.080155 ], [21.318246, 60.11114 ], [21.303904, 60.148895 ], [21.304799, 60.147413 ], [21.313432, 60.151889 ], [21.321105, 60.151531 ], [21.313432, 60.151889 ], [21.30468, 60.147354 ], [21.305159, 60.145384 ], [21.311993, 60.145384 ], [21.318827, 60.143594 ], [21.329737, 60.145563 ], [21.418711, 60.170997 ], [21.446717, 60.178871 ], [21.438194, 60.187105 ], [21.446961, 60.179234 ], [21.465957, 60.18323 ], [21.495668, 60.192432 ], [21.53366, 60.200905 ] ],
+            "coordinates": [[21.354443, 60.080155 ], [21.318246, 60.11114 ], [21.303904, 60.148895 ], [21.305159, 60.145384 ], [21.311993, 60.145384 ], [21.318827, 60.143594 ], [21.329737, 60.145563 ], [21.418711, 60.170997 ], [21.446717, 60.178871 ], [21.438194, 60.187105 ], [21.446961, 60.179234 ], [21.465957, 60.18323 ], [21.495668, 60.192432 ], [21.53366, 60.200905 ] ],
             "type": "LineString"
           },
           "id": "8088e041101ab309fcccf75c900d4886"
@@ -2237,7 +2237,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Nauvon pohjoinen reittialue",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Falkö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320097\">+358 400 320097</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Nauvo, Lavarn(Houtsala)</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Falkö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320097\">+358 400 320097</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Nauvo/Nagu</strong>, Seili/Själö, Innamo, Järvsor, Maskinnamo, Åvensor/Ahvensaari, <strong>Lavarn</strong>(Houtsala).</p><div class=\"alert alert-danger\"><strong>Huom!</strong> Nauvon sataman muutostöiden ajan (-> kevät 2018) liikennöidään Keson telakalta</div><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/finferries.png\" height=\"20\" alt=\"FinFerries\"/></p>",
         "ssubtype": "conn4"
       },
       "features": [
@@ -3495,20 +3495,6 @@
         "type": "Point"
       },
       "id": "ac5c65a4fc031caf7cc402da9b588bb2"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "sname": "Luk",
-        "stype": "pier",
-        "ssubtype": "4",
-        "labelAnchor": {"dir": "E", "x":7 , "y":0 }
-      },
-      "geometry": {
-        "coordinates": [21.32105, 60.151441 ],
-        "type": "Point"
-      },
-      "id": "ac9ba1e5bea251fb0944435b57878840"
     },
     {
       "type": "Feature",
