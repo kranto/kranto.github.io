@@ -209,7 +209,6 @@ function createMapStyles(mapTypeId, zoom, settings) {
           {lightness: 20}, // {lightness: -10 + 20 + (zoom < 7? 0: (zoom-7)*4)}, 
           {saturation: 0}, //{saturation: 10 + (zoom - 8)*2}
           ]},
-    //{ featureType: 'landscape.man_made', elementType: 'geometry.fill', stylers: [{color: '#808080'}, {lightness: 20 + (zoom < 7? 0: (zoom-7)*4)}, {saturation: 10 + (zoom - 8)*2}]},
     { featureType: 'water', elementType: 'geometry.fill', stylers: [{color: '#ececff'}, {lightness: 30}]},
 
     { featureType: 'all', elementType: 'labels', stylers: [{ "visibility": "off" }]},
@@ -218,20 +217,16 @@ function createMapStyles(mapTypeId, zoom, settings) {
     { featureType: 'poi', elementType: 'labels', stylers: [{ "visibility": zoom >= 10? 'on': 'off' }]},
     { featureType: 'poi.park', elementType: 'geometry', stylers: [{ saturation: -10}]},
 
-    //      { featureType: 'administrative', stylers: [{ "visibility": "off" }, {color: '#000000'}]},
     { featureType: 'administrative.country', elementType: 'geometry.stroke', stylers: [{color: '#000040'}, {weight: 2}]},
     { featureType: 'transit', stylers: [{ "visibility": "off" }]},
 
     { featureType: 'road', elementType: 'labels', stylers: [{visibility: 'on'}]},
     { featureType: 'road', elementType: 'labels.text.stroke', stylers: [{color: '#ffffff'}, {weight: 3}]},
     { featureType: 'road', elementType: 'labels.text.fill', stylers: [{color: '#000000'}]},
-    //      { featureType: 'road', elementType: 'geometry', stylers: [{color: '#808080'}]},
-    //      { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{color: '#a0a0a0'}, {weight: zoom <= 10? 1: 3.5}]},
-    { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{color: '#91755d'}, {weight: zoom <= 8? 0: Math.max(2, (zoom-5)*0.5)}]},
-    //      { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{color: '#808080'}, {weight: 5}]},
-    { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{color: '#91755d'}, {weight: 0.5}]},
-    { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{color: '#91755d'}, {weight: Math.max(1.5, (zoom-5)*0.6)}]},
-    { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{color: '#91755d'}, {weight: zoom <= 6? 0: 1}]},
+    { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{visibility: "on"}, {color: '#91755d'}, {weight: zoom <= 8? 0: Math.max(2, (zoom-5)*0.5)}]},
+    { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{visibility: "on"}, {color: '#91755d'}, {weight: 0.5}]},
+    { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{visibility: "on"}, {color: '#91755d'}, {weight: Math.max(1.5, (zoom-5)*0.6)}]},
+    { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{visibility: "simplified"}, {color: '#91755d'}, {weight: zoom <= 6? 0: 1}]},
     { featureType: 'road.arterial', elementType: 'geometry', stylers: [{color: '#91755d'}, {weight: Math.max(1, (zoom-7)*0.4)}, {lightness: (zoom - 6)*0}]},
     { featureType: 'road.local', elementType: 'geometry', stylers: [{weight: 1}, {color: '#91755d'}, {lightness: (zoom-12)*0}]},
   ];
