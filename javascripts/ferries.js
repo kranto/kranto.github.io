@@ -48,6 +48,25 @@ $('#closeInfoButton').click(function() {
   unselectAll();
 });
 
+function inIframe () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+
+$(document).ready(function() {
+  var hostname = window.location.hostname;
+  var framed = inIframe();
+  console.log(framed);
+  var title = framed? '<a href="https://' + hostname + '" target="saaristolautat">' + hostname + '</a>': hostname;
+  $("#navbartitle").html(title);
+  if (!framed) {
+    setTimeout(function() { $("#navbartitle").hide(); }, 15000);
+  }
+});
+
 function addMapListeners(map) {
   google.maps.event.addListener(map,'maptypeid_changed',function () {
     var isSatellite = map.getMapTypeId() === 'satellite';
