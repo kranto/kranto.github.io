@@ -357,7 +357,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Bergö",
+        "sname": "Vänoxa släten (Bergö)",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -1734,7 +1734,7 @@
         "stype": "connection",
         "ssubtype": "conn2",
         "sname": "Kasnäs - Hiittinen",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Aurora, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320092\">+358 400 320 092</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 52</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Kasnäs(Kemiönsaari), Långnäs(Hiittinen)</p><p>Aikataulun mukaan, 4-8 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kasnas-hiittinen-aurora.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Aurora, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320092\">+358 400 320 092</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 52</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Kasnäs</strong>, <strong>Långnäs</strong>(Hitis/Hiittinen)</p><p>Aikataulun mukaan, 4-8 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kasnas-hiittinen-aurora.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "features": [
         {
@@ -1757,7 +1757,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Hiittisten reittialue",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Stella, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358406756441\"> +358 40 675 6441</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8<br/><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Alva, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358404131574\"> +358 40 413 1574</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 0</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Kasnäs(Kemiönsaari), Taalintehdas(Kemiönsaari)</p><p><a target=\"info\" href=\"https://kuljetus-savolainen.fi/yhteysalusliikenne/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Stella, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358406756441\"> +358 40 675 6441</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8<br/><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Alva, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358404131574\"> +358 40 413 1574</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 0</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Kasnäs</strong>, Tunnhamn, Vänö, Holma, Helsingholm, Ängesö, Bolax, Botesö, Djupö, Vänoxa by, Vänoxa släten (Bergö), <strong>Taalintehdas/Dalsbruk</strong></p><p>Osa vuoroista vain tilauksesta. Käsnäs - Vänö n. 1 tunti</p><p><a target=\"info\" href=\"https://kuljetus-savolainen.fi/yhteysalusliikenne/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/kuljetussavolainen.png\" height=\"20\" alt=\"Kuljetus Savolainen Oy\"/></p>",
         "ssubtype": "conn4"
       },
       "features": [
@@ -2165,7 +2165,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Rymättylän reittialue",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Isla, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358406736697\">+358 40 673 6697</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Haapala(Rymättylä)</p><p>Aikataulun mukaan</p><p><a target=\"info\" href=\"https://kuljetus-savolainen.fi/yhteysalusliikenne/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p><a target=\"other\" href=\"https://www.facebook.com/MS-Isla-401567819993437/\"> m/s Islan Facebook <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Isla, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358406736697\">+358 40 673 6697</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Haapala</strong>(Rymättylä), Ruotsalainen, Korvenmaa, Pakinainen, Pähkinäinen, Samsaari, Maisaari</p><p>3-5 lähtöä päivässä. Osa vain tilauksesta.</p><p><a target=\"info\" href=\"https://kuljetus-savolainen.fi/yhteysalusliikenne/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/kuljetussavolainen.png\" height=\"20\" alt=\"Kuljetus Savolainen Oy\"/></p><p><a target=\"other\" href=\"https://www.facebook.com/MS-Isla-401567819993437/\"> m/s Islan Facebook <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
         "ssubtype": "conn4"
       },
       "features": [
@@ -4870,7 +4870,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Vänoxa",
+        "sname": "Vänoxa by",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
