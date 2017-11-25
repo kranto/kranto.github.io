@@ -609,7 +609,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Ängösundslinjen",
-        "description": "<p><a class=\"tel\" href=\"tel:+3584575295082\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 529 5082</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Ängö (itä), Norrboda (länsi)</p><p>Liikennöi tarvittaessa 6.00-22.00, yöllä vain etukäteistilauksesta, tauot Ängössä: 11.00-11.30, 19.00-19.30</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/info_farjor_vajerfarjor_1.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+3584575295082\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 529 5082</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Ängö (itä), Norrboda (länsi)</p><p>Liikennöi tarvittaessa 6.00-22.00, yöllä vain etukäteistilauksesta, tauot Ängössä: 11.00-11.30, 19.00-19.30</p><p><a target=\"ango\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
         "coordinates": [[20.289602, 60.153104 ], [20.294537, 60.154129 ] ],
@@ -1225,7 +1225,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Embarsundslinjen",
-        "description": "<p><a class=\"tel\" href=\"tel:+3584573798871\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 379 8871</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Finholma (etelä), Jyddö (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot Finholmassa: 10.25–11.00, 17.50–18.25</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/info_farjor_vajerfarjor_1.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+3584573798871\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 379 8871</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Finholma (etelä), Jyddö (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot Finholmassa: 10.25–11.00, 17.50–18.25</p><p><a target=\"embarsund\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
        "geometry": {
         "coordinates": [[20.526409, 60.074604 ], [20.527128, 60.076483 ] ],
@@ -3771,7 +3771,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Seglingelinjen",
-        "description": "<p><a class=\"tel\" href=\"tel:+358407685792\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 768 5792</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Snäckö (itä), Seglinge (länsi)</p><p>Liikennöi tarvittaessa, tarkista tauot aikataulusta</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/info_farjor_vajerfarjor_1.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+358407685792\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 768 5792</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Snäckö (itä), Seglinge (länsi)</p><p>Liikennöi tarvittaessa, tarkista tauot aikataulusta</p><p><a target=\"Seglinge\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
         "coordinates": [[20.710151, 60.215518 ], [20.72575, 60.219291 ] ],
@@ -4105,7 +4105,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Björkölinjen",
-        "description": "<p><a class=\"tel\" href=\"tel:+3584575242854\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 524 2854</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Lappo (itä), Björkö (länsi)</p><p>Liikennöi tarvittaessa 6.00-22.00, yöllä vain etukäteistilauksesta, tauot Björkössä: 11.10–11.45, 17.30–18.05</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/info_farjor_vajerfarjor_1.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+3584575242854\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 524 2854</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Lappo (itä), Björkö (länsi)</p><p>Liikennöi tarvittaessa 6.00-22.00, yöllä vain etukäteistilauksesta, tauot Björkössä: 11.10–11.45, 17.30–18.05</p><p><a target=\"bjorko\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
         "coordinates": [[20.941593, 60.311052 ], [20.952172, 60.311419 ] ],
@@ -4147,7 +4147,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Töftölinjen",
-        "description": "<p><a class=\"tel\" href=\"tel:+3584573421279\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 342 1279</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Prästö (länsi), Töftö (itä)</p><p>Liikennöi tarvittaessa, tarkista tauot aikataulusta</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/info_farjor_vajerfarjor_1.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+3584573421279\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 342 1279</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Prästö (länsi), Töftö (itä)</p><p>Liikennöi tarvittaessa, tarkista tauot aikataulusta</p><p><a target=\"tofto\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
         "coordinates": [[20.2722, 60.207997 ], [20.277661, 60.20571 ] ],
@@ -4885,7 +4885,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Simskälalinjen",
-        "description": "<p><a class=\"tel\" href=\"tel:+3584573798869\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 379 8869</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Sandö (etelä), Simskäla (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot Simskälassa: 11.30–12.05, 14.00–14.15, 17.00–17.35</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/info_farjor_vajerfarjor_1.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "description": "<p><a class=\"tel\" href=\"tel:+3584573798869\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 379 8869</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Sandö (etelä), Simskäla (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot Simskälassa: 11.30–12.05, 14.00–14.15, 17.00–17.35</p><p><a target=\"simskala\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
         "coordinates": [[20.372257, 60.322485 ], [20.365369, 60.331536 ] ],
