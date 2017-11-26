@@ -82,6 +82,18 @@
     {
       "type": "Feature",
       "properties": {
+        "stype": "pin", "ssubtype": "w",
+        "sname": "Mietoinen"
+      },
+      "geometry": {
+        "coordinates": [21.916, 60.617],
+        "type": "Point"
+      },
+      "id": "00a98d8d3c2a16fbfc6025e111111111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stype": "pin", "ssubtype": "se",
         "sname": "Geta"
       },
@@ -5053,7 +5065,7 @@
       "id": "9e752a9b1c3d3478c083913ad7e00000",
       "type": "Feature",
       "geometry": {
-        "coordinates": [ 21.425, 60.199 ],
+        "coordinates": [ 21.378, 60.190, 21.425, 60.199 ],
         "type": "Point"
       },
       "properties": {
@@ -5061,7 +5073,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Kittuis - Roslax 12 km<br>Kittuis - Näsby 11 km",
-        "anchor": { "dir": "NW", "x": 0, "y": 0 }
+        "anchor": { "dir": "W", "x": 0, "y": 0 }
       }
     },
     {
@@ -5158,7 +5170,7 @@
       "id": "9e752a9b1c3d3478c083913ad7e00007",
       "type": "Feature",
       "geometry": {
-        "coordinates": [ 21.725, 60.496 ],
+        "coordinates": [ 21.735, 60.486 ],
         "type": "Point"
       },
       "properties": {
@@ -5166,7 +5178,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Teersalo - Rauduinen 11 km",
-        "anchor": { "dir": "NW", "x": 0, "y": 0 }
+        "anchor": { "dir": "SE", "x": 0, "y": 0 }
       }
     },
     {
