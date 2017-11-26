@@ -110,7 +110,7 @@ function getLocation() {
 function showPosition(position) {
   var positionL = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   var iconL = createCircleIcon('#0000e0', 0.8, 5, null);
-  var markerL = createMarker(positionL, true, iconL, map);
+  var markerL = createMarker(positionL, false, iconL, map);
 }
 
 function onlyUnique(value, index, self) { 
@@ -375,6 +375,33 @@ function border(feature, map) {
   };
 }
 
+var pierIcons;
+function getPierIcons() {
+  if (pierIcons) return pierIcons;
+  pierIcons = {
+    a1_08: createCircleIcon('#e00000', 1, 3, null),
+    a1_10: createCircleIcon('#e00000', 1, 4, null),
+    a1_11: createCircleIcon('#e00000', 0.8, 5, null),
+    a1_30: createCircleIcon('#e00000', 0.8, 6, null),
+    a2_09: createCircleIcon('#e00000', 0.5, 3, null),
+    a2_10: createCircleIcon('#e00000', 0.5, 3.5, null),
+    a2_11: createCircleIcon('#e00000', 0.5, 4, null),
+    a2_12: createCircleIcon('#e00000', 0.8, 4, null),
+    a2_30: createCircleIcon('#e00000', 0.8, 5, null),
+    a3_09: createCircleIcon('#e00000', 0.5, 2.5, null),
+    a3_10: createCircleIcon('#e00000', 0.5, 3, null),
+    a3_12: createCircleIcon('#e00000', 0.5, 3.5, null),
+    a3_30: createCircleIcon('#e00000', 0.8, 4.5, null),
+    a4_09: createCircleIcon('#e00000', 0.5, 1, null),
+    a4_10: createCircleIcon('#e00000', 0.5, 2, null),
+    a4_11: createCircleIcon('#e00000', 0.5, 3, null),
+    a4_12: createCircleIcon('#e00000', 0.5, 4, null),
+    a4_30: createCircleIcon('#e00000', 0.8, 4, null),
+    a5_30: createCircleIcon('#e00000', 0, 0, null),
+  }
+  return pierIcons;
+}
+
 var pierStylers = {
   "1": {
     markerVisibleFrom: 8,
@@ -383,6 +410,7 @@ var pierStylers = {
     fontWeight: function(zoom) {return 'bold';},
     markerScale: function(zoom) {return zoom <= 8? 3: zoom <= 10? 4: zoom <= 11? 5: 6;},
     markerOpacity: function(zoom) {return zoom <= 10? 1 : 0.8;},
+    icon: function(zoom) { return getPierIcons()[zoom <= 8? "a1_08": zoom <= 10? "a1_10": zoom <= 11? "a1_11": "a1_30"]; },
     clickable: function(zoom) { return true; }
   },
   "2":  {
@@ -392,6 +420,7 @@ var pierStylers = {
     fontWeight: function(zoom) {return 'bold';},
     markerScale:  function(zoom) {return zoom <= 9? 3: zoom <= 10? 3.5: zoom <= 12? 4: 5;},
     markerOpacity: function(zoom) {return zoom <= 11? 0.5: 0.8; },
+    icon: function(zoom) { return getPierIcons()[zoom <= 9? "a2_09": zoom <= 10? "a2_10": zoom <= 11? "a2_11": zoom <= 12? "a2_12": "a2_30"]; },
     clickable: function(zoom) { return true; }
   },
   "3": {
@@ -401,6 +430,7 @@ var pierStylers = {
     fontWeight: function(zoom) {return zoom <= 10? 'normal': 'bold';},
     markerScale:  function(zoom) {return (zoom <= 9? 2.5: zoom <= 10? 3: zoom <= 12? 3.5: 4.5);},
     markerOpacity: function(zoom) {return zoom <= 12? 0.5: 0.8; },
+    icon: function(zoom) { return getPierIcons()[zoom <= 9? "a3_09": zoom <= 10? "a3_10": zoom <= 12? "a3_12": "a3_30"]; },
     clickable: function(zoom) { return true; }
   },
   "4": {
@@ -410,6 +440,7 @@ var pierStylers = {
     fontWeight: function(zoom) {return 'normal'},
     markerScale:  function(zoom) {return (zoom <= 9? 1: zoom <= 10? 2: zoom <= 11? 3: 4);},
     markerOpacity: function(zoom) {return  zoom <= 12? 0.5: 0.8},
+    icon: function(zoom) { return getPierIcons()[zoom <= 9? "a4_09": zoom <= 10? "a4_10": zoom <= 11? "a4_11": zoom <= 12? "a4_12": "a4_30"]; },
     clickable: function(zoom) { return zoom >= 10; }
   },
   "5": {
@@ -419,6 +450,7 @@ var pierStylers = {
     fontWeight: function(zoom) {return 'normal'},
     markerScale:  function(zoom) {return 0;},
     markerOpacity: function(zoom) {return  0;},
+    icon: function(zoom) { return getPierIcons()["a5_30"]; },
     clickable: function(zoom) { return true; }
   }
 };
@@ -429,8 +461,9 @@ function pier(feature, map) {
   var labelVisibleFrom = feature.properties.labelVisibleFrom || styler.labelVisibleFrom;
   var coords = feature.geometry.coordinates;
   var position = new google.maps.LatLng(coords[1], coords[0]);
-  var icon = createCircleIcon('#e00000', 0.8, 3, null);
+  var icon = getPierIcons().a1_30;
   var marker = createMarker(position, true, icon, map);
+
   var label = new lbls.Label({
     map: map,
     position: position,
@@ -450,15 +483,17 @@ function pier(feature, map) {
     google.maps.event.trigger(marker, 'click', event);
   });
   return {
+    hide: function() {
+      marker.setVisible(false);
+      label.setVisible(false);
+    },
     rerender: function(zoom, mapTypeId) {
-      marker.setVisible(zoom >= markerVisibleFrom);
-      marker.getIcon().scale = styler.markerScale(zoom);
-      marker.getIcon().fillOpacity = styler.markerOpacity(zoom);
-      marker.setIcon(marker.getIcon());
+      marker.setIcon(styler.icon(zoom));
       marker.setClickable(styler.clickable(zoom));
-      label.setVisible(zoom >= labelVisibleFrom);
+      marker.setVisible(zoom >= markerVisibleFrom);
       label.setLabel(createLabel(feature.properties.sname, getLabelColor(mapTypeId), styler.fontSize(zoom), styler.fontWeight(zoom)));
       label.setClickable(styler.clickable(zoom));
+      label.setVisible(zoom >= labelVisibleFrom);
     }
   };
 }
@@ -669,6 +704,9 @@ function pin(feature, map) {
   var position = new google.maps.LatLng(coords[1], coords[0]);
   var marker = createMarker(position, false, pinSymbol(feature.properties.ssubtype), map);
   return {
+    hide: function() {
+      marker.setVisible(false);
+    },
     rerender: function(zoom, mapTypeId) {
       marker.setVisible(zoom >= 12);
     }
@@ -729,6 +767,9 @@ function area(feature, map) {
     clickable: false
   });
   return {
+    // hide: function() {
+    //   label.setVisible(false);
+    // },
     rerender: function(zoom, mapTypeId) {
       label.setVisible(zoom >= labelVisibleFrom && zoom <= labelVisibleTo);
       label.getLabel().fontSize = styler.fontSize(zoom) + 'px';
@@ -754,6 +795,9 @@ function box(feature, map) {
   var box = new txtol.TxtOverlay(
     position, '<div>' + feature.properties.description + '</div>', "distancebox", map, feature.properties.anchor);
   return {
+    hide: function() {
+      box.hide();
+    },
     rerender: function(zoom, mapTypeId) {
       if (zoom >= visibleFrom && zoom <= visibleTo) box.show(); else box.hide();
     }
@@ -773,10 +817,32 @@ var renderers = {
 };
 
 var objects = [];
+var prevRerender = "";
+var hidden = true;
+var prevRenderZoom = 0; 
 function rerender(map) {
   var zoom = map.getZoom();
   var mapTypeId = map.getMapTypeId();
+  var newRerender = mapTypeId + ":" + zoom;
+  if (prevRerender === newRerender) return;
+  prevRerender = newRerender;
+  var t0 = new Date().getTime();
+  console.log('rerender started at', newRerender);
   objects.forEach(function(object){ object.rerender(zoom, mapTypeId); }); 
+  console.log('rerender finished at', zoom, 'in', new Date().getTime() - t0, 'ms');
+  hidden = false;
+  prevRenderZoom = zoom;
+}
+
+function hideObjects(map) {
+  if (hidden) return;
+  var zoom = map.getZoom();
+  if (zoom > prevRenderZoom) return; // hide only when zooming out
+  var t0 = new Date().getTime();
+  console.log('hide started');
+  objects.forEach(function(object){ if (object.hide) object.hide(); }); 
+  console.log('hide finished in', new Date().getTime() - t0, 'ms');
+  hidden = true;
 }
 
 function renderData(data, map) {
@@ -787,22 +853,6 @@ function renderData(data, map) {
       objects.push(renderers[type](feature, map));
     }
   });
-  var prevZoom = map.getZoom();
-  google.maps.event.addListener(map,'zoom_changed',function() {
-        //console.log('zoomChanged: ', prevZoom + ' - ' + map.getZoom());
-        var t0 = new Date().getTime();
-        prevZoom = map.getZoom();
-        setTimeout(function() { rerender(map); }, 300);
-        var t1 = new Date().getTime();
-        //console.log('zoomChanged complete in ' + (t1-t0) + " ms");
-      });
-
-  google.maps.event.addListener(map,'maptypeid_changed',function () {
-    rerender(map);
-  });
-  rerender(map);
-
-  addMapListeners(map);
 }
 
 var mapOptions = {
@@ -842,17 +892,43 @@ function initMap() {
   updateMapStyles();
   map.addListener('zoom_changed', updateMapStyles);
 
+  var loaded = 0;
   $.get('/data/saaristo.json', function(data) {
     renderData(data, map);
+    if (++loaded >= 3) rerender(map);
   });
 
   $.get('/data/roads.json', function(data) {
     renderData(data, map);
+    if (++loaded >= 3) rerender(map);
   });
 
   $.get('/data/routes.json', function(data) {
     renderData(data, map);
+    if (++loaded >= 3) rerender(map);
   });
+
+  map.addListener('idle', function() {
+    console.log('idle at', map.getZoom());
+  });
+
+  var oldZoom = map.getZoom();
+  map.addListener('zoom_changed', function() {
+    var newZoom = map.getZoom();
+    console.log('zoom_changed: ', oldZoom, newZoom);
+    oldZoom = newZoom;    
+  });
+  
+  map.addListener('zoom_changed',function() {
+    hideObjects(map);
+    setTimeout(function() { rerender(map); }, 500);
+  });
+
+  map.addListener('maptypeid_changed',function () {
+    rerender(map);
+  });
+
+  addMapListeners(map);
 
   tooltip = new google.maps.InfoWindow({
     content: "",
@@ -861,24 +937,7 @@ function initMap() {
 
   map.addListener('click', function() { tooltip.close(); });
 
-  function getShortName(object) {
-    var name = object.name;
-    if (typeof name === 'string') return name;
-    return name.sv;
-  }
-
-  function getNameAndVariants(object) {
-    var name = object.name;
-    if (typeof name === 'string') return {name: name, aka: []};
-    return {name: name.sv, aka: [name.fi]};
-  }
-
-  function getAllNames(object) {
-    var names = getNameAndVariants(object);
-    names.aka.unshift(names.name);
-    return names.aka.join('/');
-  }
-
+  // ----------
 
   var lauttaLegs = [
   { id: 1, name: 'Naantali - Airisto', 
