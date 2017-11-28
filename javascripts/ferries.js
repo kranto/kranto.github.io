@@ -215,7 +215,7 @@ var rengastieShown = false;
 $("#toggleRengastie").click(function() {
   $(this).toggleClass("active");
   rengastieShown = $(this).hasClass("active");
-  rerender(map);
+  rerender(map, true);
 });
 
 var map;
@@ -820,11 +820,11 @@ var objects = [];
 var prevRerender = "";
 var hidden = true;
 var prevRenderZoom = 0; 
-function rerender(map) {
+function rerender(map, force) {
   var zoom = map.getZoom();
   var mapTypeId = map.getMapTypeId();
   var newRerender = mapTypeId + ":" + zoom;
-  if (prevRerender === newRerender) return;
+  if (prevRerender === newRerender && !force) return;
   prevRerender = newRerender;
   var t0 = new Date().getTime();
   console.log('rerender started at', newRerender);
@@ -895,17 +895,17 @@ function initMap() {
   var loaded = 0;
   $.get('/data/saaristo.json', function(data) {
     renderData(data, map);
-    if (++loaded >= 3) rerender(map);
+    if (++loaded >= 3) rerender(map, true);
   });
 
   $.get('/data/roads.json', function(data) {
     renderData(data, map);
-    if (++loaded >= 3) rerender(map);
+    if (++loaded >= 3) rerender(map, true);
   });
 
   $.get('/data/routes.json', function(data) {
     renderData(data, map);
-    if (++loaded >= 3) rerender(map);
+    if (++loaded >= 3) rerender(map, true);
   });
 
   map.addListener('idle', function() {
