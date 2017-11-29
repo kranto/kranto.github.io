@@ -218,37 +218,10 @@ $("#toggleRengastie").click(function() {
   rerender(map, true);
 });
 
-function offsetCenter(map, offsetx, offsety) {
-    var latlng = map.getCenter();
-    var scale = Math.pow(2, map.getZoom());
-    var worldCoordinateCenter = map.getProjection().fromLatLngToPoint(latlng);
-    var pixelOffset = new google.maps.Point((offsetx/scale) || 0,(offsety/scale) ||0);
-    var worldCoordinateNewCenter = new google.maps.Point(
-        worldCoordinateCenter.x - pixelOffset.x,
-        worldCoordinateCenter.y + pixelOffset.y
-    );
-    return map.getProjection().fromPointToLatLng(worldCoordinateNewCenter);
-}
-
-function setVesselMap(map) {
-  var center = offsetCenter(map, -51.6, -20/2);
-  var srcUri =  "https://www.marinetraffic.com/en/ais/embed/centerx:" + center.lng() + "/centery:" + center.lat() + "/zoom:" + map.getZoom();
-  srcUri += "/maptype:0/showmenu:true/shownames:true"
-  $("#map1").attr("src", srcUri);
-}
-
-var vesselsShown = false;
-$("#toggleVessels").click(function() {
-  $(this).toggleClass("active");
-  vesselsShown = $(this).hasClass("active");
-  if (vesselsShown) {
-    setVesselMap(map);
-    $("#map").hide();
-    $("#map1").show();
-  } else {
-    $("#map1").hide();
-    $("#map").show();
-  }
+$("#showLive").click(function() {
+  var liveMapUri =  "live.html?lng=" + map.getCenter().lng() + "&lat=" + map.getCenter().lat() + "&zoom=" + map.getZoom();
+  window.open(liveMapUri, "livemap");
+  $('.navbar-toggle').click();
 });
 
 var map;

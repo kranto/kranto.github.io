@@ -1913,7 +1913,7 @@
       "properties": {
         "stype": "connection",
         "sname": "Utön reittialue",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> <a href=\"https://www.marinetraffic.com/en/ais/embed/shipid:6385/centerx:21/centery:60.2/zoom:9\" target=\"marinetraffic\">m/s Eivor</a>, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358445000503\">+358 44 5000 503</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 19</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Pärnäs/Pärnäinen</strong>, Berghamn, Nötö, Aspo, Jurmo, Utö</p><p>5 kertaa viikossa. Pärnäs - Utö 4,5 - 5,5 tuntia. Linja-autoyhteys Pärnäisissä.</p><p><a target=\"info\" href=\"http://www.rosita.fi/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/rosita.png\" height=\"20\" alt=\"Rosita\"/></p>",
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Eivor, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358445000503\">+358 44 5000 503</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 19</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Pärnäs/Pärnäinen</strong>, Berghamn, Nötö, Aspo, Jurmo, Utö</p><p>5 kertaa viikossa. Pärnäs - Utö 4,5 - 5,5 tuntia. Linja-autoyhteys Pärnäisissä.</p><p><a target=\"info\" href=\"http://www.rosita.fi/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/rosita.png\" height=\"20\" alt=\"Rosita\"/></p>",
         "ssubtype": "conn4"
       },
       "features": [
