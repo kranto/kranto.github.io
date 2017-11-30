@@ -3,13 +3,14 @@ $(document).ready(function(){
     $('#wrapper').bind('scroll',toggleScrollArrow);
 });
 
-var scrollLimit = 30; 
+var scrollLimit = 10; 
 
 function toggleScrollArrow()
 {
     var elem = $("#wrapper");
     var isBottom = (elem[0].scrollHeight - elem.scrollTop() - scrollLimit <= elem.outerHeight());
-    $('#scrollArrow').toggleClass('can-scroll', !isBottom);
+    // $('#scrollArrow').toggleClass('can-scroll', !isBottom);
+    $("#fadeout").toggleClass('can-scroll', !isBottom);
 }
 
 $('div#map').click(function() { // close menu when map clicked
