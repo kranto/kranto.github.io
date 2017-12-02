@@ -593,6 +593,7 @@ var connectionStylers = {
     zIndex: 9
   },
   "conn2": {
+    weight: 2,
     color: '#005dd8',
   },
   "conn2m": {
@@ -746,7 +747,7 @@ var areaStylers = {
     color: '#202030',
     opacity: 0.7,
     fontSize: function(zoom) {return Math.max(12, Math.floor((zoom-6)*2.2+8));},
-    fontWeight: function(zoom) {return 'bold';},
+    fontWeight: function(zoom) {return zoom >= 8? 'bold': 'normal';},
   },
   "island1": {
     labelVisibleFrom: 9,
