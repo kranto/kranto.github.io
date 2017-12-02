@@ -538,6 +538,7 @@
         "stype": "area", "ssubtype": "island1",
         "sname": "Jurmo",
         "sname1": "Korppoo",
+        "labelVisibleFrom": 8,
         "labelVisibleTo": 10,
         "labelAnchor": {"dir": "E", "x":0 , "y":0 }
       },
@@ -607,7 +608,8 @@
       "type": "Feature",
       "properties": {
         "stype": "area", "ssubtype": "island1",
-        "sname": "Hiittinen",
+        "sname": "Hitis",
+        "labelVisibleFrom": 8,
         "labelAnchor": {"dir": "SE", "x":0 , "y":10 }
       },
       "geometry": {
@@ -4758,6 +4760,7 @@
       "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Utö",
+        "labelVisibleFrom": 8,
         "labelVisibleTo": 10,
         "labelAnchor": {"dir": "W", "x":-10 , "y":0 }
       },
@@ -6122,7 +6125,7 @@
         "ssubtype": "mun2",
         "sname": "Hanko",
         "labelAnchor": {"dir": "S", "x": 0, "y": 5 },
-        "labelVisibleFrom": 8
+        "labelVisibleFrom": 7
       }
     },
     {
