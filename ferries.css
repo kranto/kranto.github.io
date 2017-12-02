@@ -89,30 +89,27 @@
       padding: 0;
     }
 
-    #scrollArrow {
-      height: 60px;
-      width: 60px;
+    #scrollIndicator {
+      height: 25px;
+      width: 100%;
       display: none;
       z-index: 1;
-      background-color: white;
-      border-radius: 10px;
-      opacity: 0.7;
-      color: blue;
+      background-color: #ecececad;
       position: fixed;
-      transform: translate(-50%, -110%);
-      top: 100%;
-      left: 50%;
+      bottom: 0px;
+      padding-left: 50%;
     }
 
-    #scrollArrow.can-scroll {
+    #scrollIndicator.can-scroll {
       display: block;
     }
 
-    #scrollArrow i {
+    #scrollIndicator i {
       position: relative;
-      opacity: 1;
-      font-size: 60px;
-      left: 10px;
+      font-size: 40px;
+      left: -20px;
+      top: -6px;
+      color: #822928;
     }
 
     .map div {

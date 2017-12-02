@@ -1,16 +1,15 @@
 
 $(document).ready(function(){
-    $('#wrapper').bind('scroll',toggleScrollArrow);
+    $('#wrapper').bind('scroll',toggleScrollIndicator);
 });
 
-var scrollLimit = 10; 
+var scrollLimit = 20; 
 
-function toggleScrollArrow()
+function toggleScrollIndicator()
 {
     var elem = $("#wrapper");
     var isBottom = (elem[0].scrollHeight - elem.scrollTop() - scrollLimit <= elem.outerHeight());
-    // $('#scrollArrow').toggleClass('can-scroll', !isBottom);
-    $("#fadeout").toggleClass('can-scroll', !isBottom);
+    $('#scrollIndicator').toggleClass('can-scroll', !isBottom);
 }
 
 $('div#map').click(function() { // close menu when map clicked
@@ -140,10 +139,10 @@ function select(targets, mouseEvent) {
     $(function() { 
       $("#info").show();
       $("#mapcontainer").animate({height: '80%'}, function() { google.maps.event.trigger(map, 'resize'); });
-      $("#info").animate({top: '80%'}, toggleScrollArrow);
+      $("#info").animate({top: '80%'}, toggleScrollIndicator);
     });
   } else {
-      toggleScrollArrow();
+      toggleScrollIndicator();
   }
 }
 
@@ -167,7 +166,7 @@ function unselectAll() {
       $("#info").hide();
       $('#selectedTitle').html(' ');
       $('#selectedDescription').html(' ');
-      toggleScrollArrow();
+      toggleScrollIndicator();
     });
   });
 }
@@ -593,6 +592,7 @@ var connectionStylers = {
     zIndex: 9
   },
   "conn2": {
+    weight: 2,
     color: '#005dd8',
   },
   "conn2m": {
@@ -746,7 +746,7 @@ var areaStylers = {
     color: '#202030',
     opacity: 0.7,
     fontSize: function(zoom) {return Math.max(12, Math.floor((zoom-6)*2.2+8));},
-    fontWeight: function(zoom) {return 'bold';},
+    fontWeight: function(zoom) {return zoom >= 8? 'bold': 'normal';},
   },
   "island1": {
     labelVisibleFrom: 9,
