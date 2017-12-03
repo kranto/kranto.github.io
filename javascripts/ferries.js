@@ -117,32 +117,79 @@ function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
 }
 
+function setInfoContent(targets) {
+  $(".infocontent:last #selectedTitle").html(targets.map(function(target) { return target.name; }).filter(onlyUnique).join('<br>'));
+  $(".infocontent:last #selectedDescription").html(targets.map(function(target) { return target.description? target.description: ' '; }).map(function(desc) {
+    return "<p>" + desc + "</p>";
+  }).filter(onlyUnique).join("\n"));
+} 
+
 var selected = [];
 
 function select(targets, mouseEvent) {
+
   if (!targets.length) return;
-  $('#selectedTitle').html(targets.map(function(target) { return target.name; }).filter(onlyUnique).join('<br>'));
-  $('#selectedDescription').html(targets.map(function(target) { return target.description? target.description: ' '; }).map(function(desc) {
-    return "<p>" + desc + "</p>";
-  }).filter(onlyUnique).join("\n"));
+
   var selectedCountWas = selected.length;
   selected.forEach(function(target) { target.highlight(false); });
   selected = [];
+
+  var bounds = null;
   targets = (targets.constructor === Array)? targets: [targets];
   targets.forEach(function(target) {
     target.highlight(true);
     selected.push(target);
+    if (!bounds) bounds = target.bounds;
+    if (bounds && target.bounds) bounds.union(target.bounds);
   });
+
   if (selectedCountWas == 0) {
+
+    var newElem = $(".infocontent.template").clone(true);
+    newElem.removeClass("template");
+    newElem.appendTo($("#info"));
+    newElem.addClass("active-info");
+    setInfoContent(targets);
+
     var clientY = mouseEvent? latLng2Point(mouseEvent.latLng, map).y: 0;
     if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
     $(function() { 
       $("#info").show();
-      $("#mapcontainer").animate({height: '80%'}, function() { google.maps.event.trigger(map, 'resize'); });
+      $("#mapcontainer").animate({height: '80%'});
       $("#info").animate({top: '80%'}, toggleScrollIndicator);
     });
-  } else {
-      toggleScrollIndicator();
+  } else { // swap content of #info
+    
+    // all this just calculate needed scroll animation
+    var wrapper = $("#wrapper");
+    var wrapperHeight0 = wrapper[0].scrollHeight;
+    var visibleHeight = wrapper.outerHeight();
+    var scrolled0 = wrapper.scrollTop();
+
+    var newElem = $(".infocontent.template").clone(true);
+    newElem.removeClass("template");
+    newElem.addClass("hidden-info");
+    newElem.appendTo($("#info"));
+    setInfoContent(targets);
+
+    var infoContentHeight0 = $(".infocontent.active-info")[0].scrollHeight;
+    var infoContentHeight1 = $(".infocontent.hidden-info")[0].scrollHeight;
+
+    var wrapperHeight1 = wrapperHeight0 + infoContentHeight1 - infoContentHeight0;
+    var maxScroll1 = wrapperHeight1 - visibleHeight;
+    var scrolled1 = Math.min(scrolled0, maxScroll1);
+
+    wrapper.animate({scrollTop: scrolled1}, (scrolled0 - scrolled1)*2, function() {
+      $("#info").animate({opacity: 0.3}, 'fast', function() {
+        newElem.removeClass("hidden-info")
+        $("#info").height(1000); // need to manually set info height or chrome will sometimes scroll to 0
+        $(".infocontent.active-info").remove();
+        newElem.addClass("active-info");
+        $("#info").css('height', ''); // remove manually set height
+        toggleScrollIndicator();
+        $("#info").animate({opacity: 1}, 'fast');
+      });
+    });
   }
 }
 
@@ -158,15 +205,16 @@ function unselectAll() {
   if (selected.length == 0) return;
   $(function() { 
     $("#mapcontainer").animate({height: '100%'}, 100, function() {
-      google.maps.event.trigger(map, 'resize');
       selected.forEach(function(target) { target.highlight(false); });
       selected = [];
     });
-    $("#info").animate({top: '100%'}, 100, function() {
-      $("#info").hide();
-      $('#selectedTitle').html(' ');
-      $('#selectedDescription').html(' ');
-      toggleScrollIndicator();
+    var scrolled = $("#wrapper")[0].scrollTop;
+    $("#wrapper").animate({scrollTop: 0}, scrolled*2, function() {
+      $("#info").animate({top: '100%'}, 100, function() {
+        $("#info").hide();
+        $(".infocontent.active-info").remove();
+        toggleScrollIndicator();
+      });
     });
   });
 }

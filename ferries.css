@@ -190,7 +190,7 @@
     }
 
     div#info {
-      overflow-y: auto; 
+      overflow-y: hidden; 
       width: 100%; 
       min-height: 10%;
       position: absolute;
@@ -222,11 +222,19 @@ div#fadeout.can-scroll {
   display: block;
 }
 
-    div#infocontent {
+    .infocontent {
       max-width: 600px;
       margin: 0 auto;
       background-color: #fcfdfe;
       padding: 0 5px;
+    }
+
+    .infocontent.hidden-info {
+      opacity: 0;
+    }
+
+    .infocontent.template {
+      display: none;
     }
 
     div#wrapper {
