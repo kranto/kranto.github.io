@@ -1,15 +1,15 @@
 
 $(document).ready(function(){
-    $('#wrapper').bind('scroll',toggleScrollIndicator);
+    $('#wrapper').bind('scroll',toggleScrollIndicator); 
 });
 
-var scrollLimit = 20; 
+var scrollLimit = 22;
 
 function toggleScrollIndicator()
 {
-    var elem = $("#wrapper");
-    var isBottom = (elem[0].scrollHeight - elem.scrollTop() - scrollLimit <= elem.outerHeight());
-    $('#scrollIndicator').toggleClass('can-scroll', !isBottom);
+  var elem = $("#wrapper");
+  var isBottom = (elem[0].scrollHeight - elem.scrollTop() - scrollLimit <= elem.outerHeight());
+  $('#scrollIndicator').toggleClass('can-scroll', !isBottom);
 }
 
 $('div#map').click(function() { // close menu when map clicked
@@ -179,15 +179,22 @@ function select(targets, mouseEvent) {
     var maxScroll1 = wrapperHeight1 - visibleHeight;
     var scrolled1 = Math.min(scrolled0, maxScroll1);
 
-    wrapper.animate({scrollTop: scrolled1}, (scrolled0 - scrolled1)*2, function() {
-      $("#info").animate({opacity: 0.3}, 'fast', function() {
-        newElem.removeClass("hidden-info")
-        $("#info").height(1000); // need to manually set info height or chrome will sometimes scroll to 0
-        $(".infocontent.active-info").remove();
-        newElem.addClass("active-info");
-        $("#info").css('height', ''); // remove manually set height
+    if (maxScroll1 + 25 > scrolled0) { // skip animations in certain conditions. This is needed to avoid jumping in Chrome.
+      newElem.removeClass("hidden-info") // show new infocontent
+      $(".infocontent.active-info").remove(); // remove old infocontent
+      newElem.addClass("active-info"); // make new infocontent active
+      wrapper.scrollTop(scrolled1);
+      toggleScrollIndicator();
+      return;
+    }
+    // scroll smoothly down;
+    wrapper.animate({scrollTop: scrolled1}, 1+(scrolled0 - scrolled1)*2, function() {
+      $("#info").animate({opacity: 0.3}, 'fast', function() { // hide info during the swap
+        newElem.removeClass("hidden-info") // show new infocontent
+        $(".infocontent.active-info").remove(); // remove old infocontent
+        newElem.addClass("active-info"); // make new infocontent active
         toggleScrollIndicator();
-        $("#info").animate({opacity: 1}, 'fast');
+        $("#info").animate({opacity: 1}, 'fast'); // show info again
       });
     });
   }
