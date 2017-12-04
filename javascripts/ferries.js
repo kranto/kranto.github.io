@@ -1042,6 +1042,7 @@ function initMap() {
   {name: "Turku - Mariehamn/Långnäs - Stockholm", operators: ["Silja"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 12], description: "2 kertaa päivässä, kesto n. 11 tuntia"},
   {name: "Helsinki - Mariehamn - Stockholm", operators: ["Viking"], legs: [7, 6, 9, 11, 13], description: "kerran päivässä, kesto n. 17,5 tuntia"},
   {name: "Helsinki - Mariehamn - Stockholm", operators: ["Silja"], legs: [7, 6, 9, 11, 12], description: "kerran päivässä, kesto n. 17,5 tuntia"},
+  {name: "Mariehamn - Stockholm", operators: ["Viking"], legs: [9, 11, 13], description: "kerran päivässä, kesto 7-12 tuntia"},
   {name: "Kapellskär - Mariehamn", operators: ["Viking"], legs: [9, 10], description: "2-3 kertaa päivässä, kesto n. 2,5 tuntia, linja-autoyhteys Tukholmaan"},
   {name: "Eckerö - Grisslehamn", operators: ["Eckerolinjen"], legs: [14], description: "2-3 kertaa päivässä, kesto n. 2 tuntia"},
   {name: "Naantali - Långnäs - Kapellskär", operators: ["Finnlines"], legs: [1, 3, 4, 5, 8, 10], description: "2 kertaa päivässä, kesto n. 8,5 tuntia"},
