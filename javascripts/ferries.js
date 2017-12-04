@@ -562,7 +562,8 @@ function pier(feature, map) {
 var cableferryStyler = {
   highlightColor: '#f97cdc',
   highlightWeight: 17,
-  highlightOpacity: .6
+  highlightOpacity: .6,
+  visibleFrom: 9
 }
 
 var _cableferrySymbol;
@@ -571,9 +572,9 @@ function cableferrySymbol() {
     path: google.maps.SymbolPath.CIRCLE,
     strokeOpacity: 1,
     strokeColor: '#00a000',
-    strokeWeight: 2.5,
+    strokeWeight: 2,
     fillColor: '#00a000',
-    fillOpacity: 0.5,
+    fillOpacity: 0.3,
     scale: 2
   };
   return _cableferrySymbol;
@@ -596,6 +597,7 @@ function cableferry(feature, map) {
   var highlightColor = feature.properties.highlightColor || styler.highlightColor;
   var highlightWeight = feature.properties.highlightWeight || styler.highlightWeight;
   var highlightOpacity = feature.properties.highlightOpacity || styler.highlightOpacity;
+  var visibleFrom = feature.properties.visibleFrom || styler.visibleFrom;
 
   var coords = feature.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
   var line = new google.maps.Polyline({
@@ -622,8 +624,11 @@ function cableferry(feature, map) {
     }], event);
   });
   return {
+    hide: function(zoom, mapTypeId) {
+      line.setVisible(zoom >= visibleFrom);
+    },
     rerender: function(zoom, mapTypeId) {
-      line.setVisible(zoom >= 9);
+      line.setVisible(zoom >= visibleFrom);
     }
   };
 }
