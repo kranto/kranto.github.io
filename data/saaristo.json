@@ -4849,6 +4849,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Vartsala",
+        "visibleFrom": 8,
         "description": "<p><a class=\"tel\" href=\"tel:+358400138239\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 138 239</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 36</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Kivimaa (itä), Vartsala (länsi)</p><p>Liikennöi päivällä aikataulun mukaan n. 20-40 minuutin välein, yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vartsala.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
