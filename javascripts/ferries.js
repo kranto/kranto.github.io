@@ -335,7 +335,8 @@ function createMapStyles(mapTypeId, zoom, settings) {
 }
 
 function updateMapStyles() {
-  map.setOptions({styles: createMapStyles(map.getMapTypeId(), map.getZoom(), {})});        
+  map.setOptions({styles: createMapStyles(map.getMapTypeId(), map.getZoom(), {})});
+  $("div.gm-style").css({'font-size': map.getZoom()});
 }
 
 function sanitizeZoomLevels(object) {
@@ -841,6 +842,11 @@ function area(feature, map) {
   var labelVisibleTo = feature.properties.labelVisibleTo || styler.labelVisibleTo;
   var coords = feature.geometry.coordinates;
   var position = new google.maps.LatLng(coords[1], coords[0]);
+  var shortName_ = shortName(feature.properties);
+  var longName_ = longName(feature.properties);
+  var label = new txtol.TxtOverlay(
+    position, '<div>' + longName_.replace('/', '<br/>') + '</div>', "area " + feature.properties.ssubtype + (feature.properties.background? " bg": ""), map, feature.properties.labelAnchor);
+/*
   var label = new lbls.Label({
     map: map,
     position: position,
@@ -850,15 +856,19 @@ function area(feature, map) {
     opacity: styler.opacity || 0.9,
     clickable: false
   });
+  */
   return {
-    // hide: function() {
-    //   label.setVisible(false);
-    // },
+    hide: function(zoom) {
+      if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo) label.show(); else label.hide();
+    },
     rerender: function(zoom, mapTypeId) {
+      if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo) label.show(); else label.hide();
+/*
       label.setVisible(zoom >= labelVisibleFrom && zoom <= labelVisibleTo);
       label.getLabel().fontSize = styler.fontSize(zoom) + 'px';
       label.getLabel().fontWeight = styler.fontWeight(zoom);
       label.setLabel(label.getLabel());
+      */  
     }
   };
 }
