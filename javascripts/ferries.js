@@ -56,6 +56,23 @@ function inIframe () {
     }
 }
 
+var currentLang = "_" + window.navigator.language.split("-")[0];
+console.log(currentLang);
+
+function shortName(props) {
+  return props["sname" + currentLang] || props.sname;
+}
+
+function longName(props) {
+  var localName = props.sname;
+  var currLocaleName = props["sname" + currentLang];
+  var firstName = currLocaleName? currLocaleName: localName;
+  var otherNames = ["", "_fi", "_sv", "_en"].map(function(l) {
+    return props["sname" + l];
+  }).filter(function(name) { return typeof name !== 'undefined' && name != firstName; }).filter(onlyUnique);
+  return firstName + ((otherNames.length > 0)? "/" + otherNames.join("/"): "");
+}
+
 $(document).ready(function() {
   var hostname = window.location.hostname;
   var framed = inIframe();
@@ -529,7 +546,7 @@ function pier(feature, map) {
     map: map,
     position: position,
     labelAnchor: feature.properties.labelAnchor,
-    label: createLabel(feature.properties.sname, getLabelColor('roadmap'), styler.fontSize(9), styler.fontWeight(9)),
+    label: createLabel(shortName(feature.properties), getLabelColor('roadmap'), styler.fontSize(9), styler.fontWeight(9)),
     background: 'none',
     opacity: 0.9,
     clickable: true,
@@ -537,7 +554,7 @@ function pier(feature, map) {
   });
   marker.addListener('click', function(event) {
     tooltip.setPosition(event.latLng);
-    tooltip.setContent(feature.properties.sname);
+    tooltip.setContent(longName(feature.properties));
     tooltip.open(map, marker);
   });
   label.addListener('click', function(event) {
@@ -552,7 +569,7 @@ function pier(feature, map) {
       marker.setIcon(styler.icon(zoom));
       marker.setClickable(styler.clickable(zoom));
       marker.setVisible(zoom >= markerVisibleFrom);
-      label.setLabel(createLabel(feature.properties.sname, getLabelColor(mapTypeId), styler.fontSize(zoom), styler.fontWeight(zoom)));
+      label.setLabel(createLabel(shortName(feature.properties), getLabelColor(mapTypeId), styler.fontSize(zoom), styler.fontWeight(zoom)));
       label.setClickable(styler.clickable(zoom));
       label.setVisible(zoom >= labelVisibleFrom);
     }
@@ -828,7 +845,7 @@ function area(feature, map) {
     map: map,
     position: position,
     labelAnchor: feature.properties.labelAnchor,
-    label: {text: feature.properties.sname, fontSize: '9px', fontWeight: 'normal', fontFamily: styler.fontFamily, color: styler.color},
+    label: {text: shortName(feature.properties), fontSize: '9px', fontWeight: 'normal', fontFamily: styler.fontFamily, color: styler.color},
     background: feature.properties.background || 'none',
     opacity: styler.opacity || 0.9,
     clickable: false
