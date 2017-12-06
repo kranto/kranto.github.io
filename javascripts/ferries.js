@@ -699,7 +699,7 @@ function connection(connection, map) {
   var connectionStyler = connection.properties.ssubtype? connectionStylers[connection.properties.ssubtype]: baseStyler;
 
   var legFeatures = connection.type === 'FeatureCollection'? connection.features: [connection];
-  var connectionObject = { name: connection.properties.sname, description: connection.properties.description};
+  var connectionObject = { name: shortName(connection.properties), description: connection.properties.description};
   var legObjects = legFeatures.map(function(leg) {
 
     var coords = leg.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
