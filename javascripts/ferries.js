@@ -57,7 +57,6 @@ function inIframe () {
 }
 
 var currentLang = "_" + window.navigator.language.split("-")[0];
-console.log(currentLang);
 
 function shortName(props) {
   return props["sname" + currentLang] || props.sname;
@@ -486,8 +485,6 @@ var pierStylers = {
   "1": {
     markerVisibleFrom: 8,
     labelVisibleFrom: 8,
-    fontSize: function(zoom) {return zoom + 2;},
-    fontWeight: function(zoom) {return 'bold';},
     markerScale: function(zoom) {return zoom <= 8? 3: zoom <= 10? 4: zoom <= 11? 5: 6;},
     markerOpacity: function(zoom) {return zoom <= 10? 1 : 0.8;},
     icon: function(zoom) { return getPierIcons()[zoom <= 8? "a1_08": zoom <= 10? "a1_10": zoom <= 11? "a1_11": "a1_30"]; },
@@ -496,8 +493,6 @@ var pierStylers = {
   "2":  {
     markerVisibleFrom: 9,
     labelVisibleFrom: 9,
-    fontSize: function(zoom) {return zoom + 1;},
-    fontWeight: function(zoom) {return 'bold';},
     markerScale:  function(zoom) {return zoom <= 9? 3: zoom <= 10? 3.5: zoom <= 12? 4: 5;},
     markerOpacity: function(zoom) {return zoom <= 11? 0.5: 0.8; },
     icon: function(zoom) { return getPierIcons()[zoom <= 9? "a2_09": zoom <= 10? "a2_10": zoom <= 11? "a2_11": zoom <= 12? "a2_12": "a2_30"]; },
@@ -506,8 +501,6 @@ var pierStylers = {
   "3": {
     markerVisibleFrom: 9,
     labelVisibleFrom: 10,
-    fontSize: function(zoom) {return zoom;},
-    fontWeight: function(zoom) {return zoom <= 10? 'normal': 'bold';},
     markerScale:  function(zoom) {return (zoom <= 9? 2.5: zoom <= 10? 3: zoom <= 12? 3.5: 4.5);},
     markerOpacity: function(zoom) {return zoom <= 12? 0.5: 0.8; },
     icon: function(zoom) { return getPierIcons()[zoom <= 9? "a3_09": zoom <= 10? "a3_10": zoom <= 12? "a3_12": "a3_30"]; },
@@ -516,8 +509,6 @@ var pierStylers = {
   "4": {
     markerVisibleFrom: 9,
     labelVisibleFrom: 11,
-    fontSize: function(zoom) {return zoom-1;},
-    fontWeight: function(zoom) {return 'normal'},
     markerScale:  function(zoom) {return (zoom <= 9? 1: zoom <= 10? 2: zoom <= 11? 3: 4);},
     markerOpacity: function(zoom) {return  zoom <= 12? 0.5: 0.8},
     icon: function(zoom) { return getPierIcons()[zoom <= 9? "a4_09": zoom <= 10? "a4_10": zoom <= 11? "a4_11": zoom <= 12? "a4_12": "a4_30"]; },
@@ -526,8 +517,6 @@ var pierStylers = {
   "5": {
     markerVisibleFrom: 30,
     labelVisibleFrom: 11,
-    fontSize: function(zoom) {return zoom-1;},
-    fontWeight: function(zoom) {return 'normal'},
     markerScale:  function(zoom) {return 0;},
     markerOpacity: function(zoom) {return  0;},
     icon: function(zoom) { return getPierIcons()["a5_30"]; },
@@ -548,18 +537,6 @@ function pier(feature, map) {
   var label = new txtol.TxtOverlay(
     position, longName_, "pier pier-" + feature.properties.ssubtype, map, feature.properties.labelAnchor);
 
-/*
-  var label = new lbls.Label({
-    map: map,
-    position: position,
-    labelAnchor: feature.properties.labelAnchor,
-    label: createLabel(shortName(feature.properties), getLabelColor('roadmap'), styler.fontSize(9), styler.fontWeight(9)),
-    background: 'none',
-    opacity: 0.9,
-    clickable: true,
-    cursor: 'context-menu',
-  });
-*/
   marker.addListener('click', function(event) {
     tooltip.setPosition(marker.getPosition());
     tooltip.setContent(longName_);
@@ -572,7 +549,6 @@ function pier(feature, map) {
   return {
     hide: function() {
       marker.setVisible(false);
-      // label.setVisible(false);
       label.hide();
     },
     rerender: function(zoom, mapTypeId) {
@@ -580,11 +556,6 @@ function pier(feature, map) {
       marker.setClickable(styler.clickable(zoom));
       marker.setVisible(zoom >= markerVisibleFrom);
       if (zoom >= labelVisibleFrom) label.show(); else label.hide();
-/*
-      label.setLabel(createLabel(shortName(feature.properties), getLabelColor(mapTypeId), styler.fontSize(zoom), styler.fontWeight(zoom)));
-      label.setClickable(styler.clickable(zoom));
-      label.setVisible(zoom >= labelVisibleFrom);
-      */
     }
   };
 }
@@ -813,38 +784,19 @@ function pin(feature, map) {
 var areaStylers = {
   "province": {
     labelVisibleFrom: 1,
-    labelVisibleTo: 10,
-    fontFamily: 'Roboto',
-    color: '#202030',
-    opacity: 0.7,
-    fontSize: function(zoom) {return Math.max(12, Math.floor((zoom-6)*3+8));},
-    fontWeight: function(zoom) {return zoom <= 7? 'normal': 'bold';},
+    labelVisibleTo: 10
   },
   "mun1": {
     labelVisibleFrom: 1,
-    labelVisibleTo: 30,
-    fontFamily: 'Roboto',
-    color: '#202030',
-    opacity: 0.7,
-    fontSize: function(zoom) {return Math.max(14, Math.floor((zoom-6)*2.5+12));},
-    fontWeight: function(zoom) {return 'bold';},
+    labelVisibleTo: 30
   },
   "mun2": {
     labelVisibleFrom: 8,
-    labelVisibleTo: 30,
-    fontFamily: 'Roboto',
-    color: '#202030',
-    opacity: 0.7,
-    fontSize: function(zoom) {return Math.max(12, Math.floor((zoom-6)*2.2+8));},
-    fontWeight: function(zoom) {return zoom >= 8? 'bold': 'normal';},
+    labelVisibleTo: 30
   },
   "island1": {
     labelVisibleFrom: 9,
-    labelVisibleTo: 30,
-    fontFamily: 'Courier',
-    color: '#202030',
-    fontSize: function(zoom) {return zoom; },
-    fontWeight: function(zoom) {return 'normal';},
+    labelVisibleTo: 30
   },
 };
 
@@ -852,35 +804,20 @@ function area(feature, map) {
   var styler = areaStylers[feature.properties.ssubtype];
   var labelVisibleFrom = feature.properties.labelVisibleFrom || styler.labelVisibleFrom;
   var labelVisibleTo = feature.properties.labelVisibleTo || styler.labelVisibleTo;
+  var longNameFrom = feature.properties.longNameFrom || styler.longNameFrom || 9;
   var coords = feature.geometry.coordinates;
   var position = new google.maps.LatLng(coords[1], coords[0]);
   var shortName_ = shortName(feature.properties);
-  var longName_ = longName(feature.properties);
+  var longName_ = longName(feature.properties).replace('/', '<br/>');
   var label = new txtol.TxtOverlay(
-    position, '<div>' + longName_.replace('/', '<br/>') + '</div>', "area " + feature.properties.ssubtype + (feature.properties.background? " bg": ""), map, feature.properties.labelAnchor);
-/*
-  var label = new lbls.Label({
-    map: map,
-    position: position,
-    labelAnchor: feature.properties.labelAnchor,
-    label: {text: shortName(feature.properties), fontSize: '9px', fontWeight: 'normal', fontFamily: styler.fontFamily, color: styler.color},
-    background: feature.properties.background || 'none',
-    opacity: styler.opacity || 0.9,
-    clickable: false
-  });
-  */
+    position, longName_, "area " + feature.properties.ssubtype + (feature.properties.background? " bg": ""), map, feature.properties.labelAnchor);
   return {
     hide: function(zoom) {
       if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo) label.show(); else label.hide();
     },
     rerender: function(zoom, mapTypeId) {
-      if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo) label.show(); else label.hide();
-/*
-      label.setVisible(zoom >= labelVisibleFrom && zoom <= labelVisibleTo);
-      label.getLabel().fontSize = styler.fontSize(zoom) + 'px';
-      label.getLabel().fontWeight = styler.fontWeight(zoom);
-      label.setLabel(label.getLabel());
-      */  
+      label.setInnerHTML(zoom >= longNameFrom? longName_: shortName_);
+      if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo) label.show(); else label.hide();      
     }
   };
 }

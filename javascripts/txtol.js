@@ -38,6 +38,12 @@ txtol.init = function() {
     TxtOverlay.prototype = new google.maps.OverlayView();
 
 
+    TxtOverlay.prototype.setInnerHTML = function(innerHTML) {
+      if (this.div_) {
+        this.div_.innerHTML = innerHTML;
+        this.draw();
+      }
+    }
 
     TxtOverlay.prototype.onAdd = function() {
 
@@ -54,7 +60,7 @@ txtol.init = function() {
       // Set the overlay's div_ property to this DIV
       this.div_ = div;
 
-      this.draw();
+      // this.draw();
 
       // We add an overlay to a map via one of the map's panes.
 
