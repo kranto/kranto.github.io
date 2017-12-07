@@ -4572,7 +4572,7 @@
         "sname": "Vuosnainen",
         "sname_sv": "Osnäs",
         "ssubtype": "2",
-        "labelAnchor": {"dir": "NW", "x":10 , "y":-5 }
+        "labelAnchor": {"dir": "NW", "x":20 , "y":0 }
       },
       "geometry": {
         "coordinates": [21.247129, 60.507276 ],

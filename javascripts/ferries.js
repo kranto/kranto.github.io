@@ -106,6 +106,7 @@ function onMapIdle() {
     map.setZoom(8);
     map.panToBounds({south: 60, west: 21.4, east: 22.4, north: 60.5});
   }
+  rerender(map, true);
   mapInitialized = true;
   hideLoader();
 }
@@ -370,7 +371,7 @@ function createMarker(position, clickable, icon, map) {
     clickable: clickable,
     icon: icon,
     map: map,
-    cursor: clickable? 'context-menu': 'default',
+    cursor: clickable? 'pointer': 'default',
   });
 }
 
@@ -542,7 +543,12 @@ function pier(feature, map) {
   var position = new google.maps.LatLng(coords[1], coords[0]);
   var icon = getPierIcons().a1_30;
   var marker = createMarker(position, true, icon, map);
+  var shortName_ = shortName(feature.properties);
+  var longName_ = longName(feature.properties).replace('/', '<br/>');
+  var label = new txtol.TxtOverlay(
+    position, longName_, "pier pier-" + feature.properties.ssubtype, map, feature.properties.labelAnchor);
 
+/*
   var label = new lbls.Label({
     map: map,
     position: position,
@@ -553,26 +559,32 @@ function pier(feature, map) {
     clickable: true,
     cursor: 'context-menu',
   });
+*/
   marker.addListener('click', function(event) {
-    tooltip.setPosition(event.latLng);
-    tooltip.setContent(longName(feature.properties));
+    tooltip.setPosition(marker.getPosition());
+    tooltip.setContent(longName_);
     tooltip.open(map, marker);
   });
   label.addListener('click', function(event) {
-    google.maps.event.trigger(marker, 'click', event);
+    event.stopPropagation();
+    google.maps.event.trigger(marker, 'click');
   });
   return {
     hide: function() {
       marker.setVisible(false);
-      label.setVisible(false);
+      // label.setVisible(false);
+      label.hide();
     },
     rerender: function(zoom, mapTypeId) {
       marker.setIcon(styler.icon(zoom));
       marker.setClickable(styler.clickable(zoom));
       marker.setVisible(zoom >= markerVisibleFrom);
+      if (zoom >= labelVisibleFrom) label.show(); else label.hide();
+/*
       label.setLabel(createLabel(shortName(feature.properties), getLabelColor(mapTypeId), styler.fontSize(zoom), styler.fontWeight(zoom)));
       label.setClickable(styler.clickable(zoom));
       label.setVisible(zoom >= labelVisibleFrom);
+      */
     }
   };
 }

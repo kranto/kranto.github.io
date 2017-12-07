@@ -143,21 +143,21 @@
       transform: scale(1);
     }
 
-    .map .area {
+    .map .txtol {
       visibility: hidden;
       position: absolute;
       white-space: nowrap;
       font-style: normal;
       font-family: 'Roboto', sans-serif;
-      font-family: 'Roboto';
-      white-space: nowrap;
-      color: #202030;
-      opacity: 0.7;
       line-height: 1;
-      text-shadow: none;
       -webkit-touch-callout: none; 
       -webkit-user-select: none; 
       -moz-user-select: none; 
+    }
+
+    .map .area {
+      color: #202030;
+      opacity: 0.7;
     }
 
     .map .area.bg {
@@ -182,6 +182,31 @@
       font-weight: normal;
       font-size: 1em;
       font-family: 'Courier';
+    }
+
+    .map .pier {
+      color: #002080;
+      opacity: 0.9;
+      cursor: pointer;
+    }
+
+    .map .pier-1 {
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+
+    .map .pier-2 {
+      font-size: 1.25em;
+      font-weight: 600;
+    }
+
+    .map .pier-3 {
+      font-size: 1.15em;
+      font-weight: 500;
+    }
+
+    .map .pier-4 {
+      font-size: 1em;
     }
 
     .map .distancebox {

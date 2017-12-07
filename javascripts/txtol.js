@@ -47,7 +47,7 @@ txtol.init = function() {
 
       // Create the DIV and set some basic attributes.
       var div = document.createElement('DIV');
-      div.className = this.cls_;
+      div.className = "txtol " + this.cls_;
 
       div.innerHTML = this.txt_;
 
@@ -70,9 +70,9 @@ txtol.init = function() {
 
       // Add a listener - we'll accept clicks anywhere on this div, but you may want
       // to validate the click i.e. verify it occurred in some portion of your overlay.
-      google.maps.event.addDomListener(div, 'click', function() {
+      google.maps.event.addDomListener(div, 'click', function(event) {
         //console.log('clicked');
-        google.maps.event.trigger(me, 'click');
+        google.maps.event.trigger(me, 'click', event);
       });
     }
     TxtOverlay.prototype.draw = function() {
