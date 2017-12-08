@@ -537,15 +537,14 @@ function pier(feature, map) {
   var label = new txtol.TxtOverlay(
     position, longName_, "pier pier-" + feature.properties.ssubtype, map, feature.properties.labelAnchor);
 
-  marker.addListener('click', function(event) {
+  function showTooltip() {
+    tooltip.openedAt = new Date().getTime();
     tooltip.setPosition(marker.getPosition());
     tooltip.setContent(longName_);
     tooltip.open(map, marker);
-  });
-  label.addListener('click', function(event) {
-    event.stopPropagation();
-    google.maps.event.trigger(marker, 'click');
-  });
+  }
+  marker.addListener('click', showTooltip);
+  label.addListener('click', showTooltip);
   return {
     hide: function() {
       marker.setVisible(false);
@@ -978,7 +977,13 @@ function initMap() {
     disableAutoPan: true
   });
 
-  map.addListener('click', function() { tooltip.close(); });
+  map.addListener('click', function() {
+    // hack to prevent closing when opening. event.stopPropagation had no desired effect.
+    var now = new Date().getTime();
+    if (tooltip.openedAt && now - tooltip.openedAt > 200) {
+      tooltip.close(); 
+    }
+  });
 
   // ----------
 
