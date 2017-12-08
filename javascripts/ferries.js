@@ -105,13 +105,13 @@ function onMapIdle() {
     map.setZoom(8);
     map.panToBounds({south: 60, west: 21.4, east: 22.4, north: 60.5});
   }
-  rerender(map, true);
   mapInitialized = true;
   hideLoader();
 }
 
 function hideLoader() {
   if (timeout && mapInitialized ) {
+    rerender(map, true);
     $("#loader").fadeOut(1000);
   }
 }
@@ -824,7 +824,7 @@ function area(feature, map) {
 
 var boxStylers = {
   "distance": {
-    visibleFrom: 12,
+    visibleFrom: 11,
     visibleTo: 15,
   },
 };
@@ -880,7 +880,7 @@ function rerender(map, force) {
 function hideObjects(map) {
   if (hidden) return;
   var zoom = map.getZoom();
-  if (zoom > prevRenderZoom) return; // hide only when zooming out
+  // if (zoom > prevRenderZoom) return; // hide only when zooming out
   var t0 = new Date().getTime();
   console.log('hide started');
   objects.forEach(function(object){ if (object.hide) object.hide(); }); 
@@ -964,7 +964,7 @@ function initMap() {
   
   map.addListener('zoom_changed',function() {
     hideObjects(map);
-    setTimeout(function() { rerender(map); }, 500);
+    setTimeout(function() { rerender(map); }, 50);
   });
 
   map.addListener('maptypeid_changed',function () {

@@ -191,7 +191,7 @@
     }
 
     .map .pier-1 {
-      font-size: 1.5em;
+      font-size: 1.35em;
       font-weight: 600;
     }
 
@@ -223,6 +223,8 @@
       font-style: normal;
       font-family: 'Roboto', sans-serif;
       white-space: nowrap;
+      font-size: 0.9em;
+      line-height: 1.1;
       color: #ffffff;
       text-shadow: none;
       -webkit-touch-callout: none; 

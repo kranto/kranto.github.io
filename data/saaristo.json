@@ -2794,7 +2794,9 @@
         "stype": "pier",
         "sname": "Roslax",
         "ssubtype": "4",
-        "labelAnchor": {"dir": "S", "x":0 , "y":7 }
+        "labelAnchor": {"dir": "S", "x":0 , "y":7 },
+        "markerVisibleFrom": 12,
+        "labelVisibleFrom": 11
       },
       "geometry": {
         "coordinates": [21.335171, 60.233416 ],
