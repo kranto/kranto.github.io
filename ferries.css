@@ -181,7 +181,9 @@
     .map .area.island1 {
       font-weight: normal;
       font-size: 1em;
-      font-family: 'Courier';
+      font-family: 'Trebuchet MS';
+      color: #101010;
+      opacity: 0.8;
     }
 
     .map .pier {
