@@ -2632,6 +2632,7 @@
         "sname1": "Korppoo",
         "stype": "pier",
         "ssubtype": "4",
+        "labelVisibleFrom": 10,
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
       "geometry": {
