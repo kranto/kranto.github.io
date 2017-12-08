@@ -1235,7 +1235,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "area", "ssubtype": "island1",
+        "stype": "area",
+        "ssubtype": "island1",
         "sname": "Mossala",
         "labelVisibleFrom": 10,
         "labelAnchor": {"dir": "N", "x":0 , "y":0 }
@@ -2423,6 +2424,23 @@
         "type": "Point"
       },
       "id": "483b50dcd8b7090e7514345b26f7e87e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "area",
+        "ssubtype": "island1",
+        "sname": "Åvensor",
+        "sname_fi": "Ahvensaari",
+        "labelVisibleFrom": 10,
+        "labelVisibleTo": 10,
+        "labelAnchor": {"dir": "N", "x":5 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [21.555850, 60.302160],
+        "type": "Point"
+      },
+      "id": "485cf55bcc220e9f4abf4a5e702351cb"
     },
     {
       "type": "Feature",
