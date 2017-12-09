@@ -56,7 +56,29 @@ function inIframe () {
     }
 }
 
-var currentLang = "_" + window.navigator.language.split("-")[0];
+$('.lang-button').click(function(event) {
+  setLanguage(event.currentTarget.lang);
+});
+
+var currentLang;
+
+function setLanguage(lang) {
+  if (lang != 'fi' && lang != 'sv') lang = 'en';
+  $(".lang-button").toggleClass('active', false);
+  $(".lang-button[lang=" + lang +"]").toggleClass('active', true);
+  currentLang = "_" + lang;
+
+  if (objects) {
+    objects.forEach(function(object){ if (object.init) object.init(); });
+    rerender(map, true);
+  }
+
+  if (selected) {
+    select(selected);
+  }
+}
+
+setLanguage(window.navigator.language.split("-")[0]);
 
 function shortName(props) {
   return props["sname" + currentLang] || props.sname;
@@ -546,6 +568,10 @@ function pier(feature, map) {
   marker.addListener('click', showTooltip);
   label.addEventListener('click', function(event) { event.stopPropagation(); event.preventDefault(); showTooltip(); });
   return {
+    init: function() {
+      shortName_ = shortName(feature.properties);
+      longName_ = longName(feature.properties).replace('/', '<br/>');
+    },
     hide: function() {
       marker.setVisible(false);
       label.hide();
@@ -738,6 +764,10 @@ function connection(connection, map) {
     legObjects.forEach(function(leg) { leg.rerender(zoom, mapTypeId); });
   }
 
+  connectionObject.init = function() {
+    connectionObject.name = shortName(connection.properties);
+  }
+
   return connectionObject;
 }
 
@@ -811,6 +841,10 @@ function area(feature, map) {
   var label = new txtol.TxtOverlay(
     position, longName_, "area " + feature.properties.ssubtype + (feature.properties.background? " bg": ""), map, feature.properties.labelAnchor);
   return {
+    init: function() {
+      shortName_ = shortName(feature.properties);
+      longName_ = longName(feature.properties).replace('/', '<br/>');
+    },
     hide: function(zoom) {
       if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo) label.show(); else label.hide();
     },
