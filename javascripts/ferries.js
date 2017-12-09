@@ -94,6 +94,10 @@ function longName(props) {
   return firstName + ((otherNames.length > 0)? "/" + otherNames.join("/"): "");
 }
 
+function description(props) {
+  return props["description" + currentLang] || props.description;
+}
+
 $(document).ready(function() {
   var hostname = window.location.hostname;
   var framed = inIframe();
@@ -870,8 +874,11 @@ function box(feature, map) {
   var coords = feature.geometry.coordinates;
   var position = new google.maps.LatLng(coords[1], coords[0]);
   var box = new txtol.TxtOverlay(
-    position, '<div>' + feature.properties.description + '</div>', "distancebox", map, feature.properties.anchor);
+    position, '<div>' + description(feature.properties) + '</div>', "distancebox", map, feature.properties.anchor);
   return {
+    init: function() {
+      box.setInnerHTML('<div>' + description(feature.properties) + '</div>');
+    },
     hide: function() {
       box.hide();
     },
