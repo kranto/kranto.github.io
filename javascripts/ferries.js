@@ -544,7 +544,7 @@ function pier(feature, map) {
   }
 
   marker.addListener('click', showTooltip);
-  label.addEventListener('click', function(event) { event.stopPropagation(); showTooltip(); });
+  label.addEventListener('click', function(event) { event.stopPropagation(); event.preventDefault(); showTooltip(); });
   return {
     hide: function() {
       marker.setVisible(false);
@@ -974,10 +974,11 @@ function initMap() {
   });
 
   map.addListener('click', function() {
-    // hack to prevent closing when opening. event.stopPropagation had no desired effect.
+    // hack to prevent closing tooltip or unselecting when opening tooltip. event.stopPropagation had no desired effect.
     var now = new Date().getTime();
-    if (tooltip.openedAt && now - tooltip.openedAt > 200) {
-      tooltip.close(); 
+    if (!tooltip.openedAt || now - tooltip.openedAt > 200) {
+      tooltip.close();
+      unselectAll();
     }
   });
 
@@ -1046,9 +1047,6 @@ function initMap() {
     strokeColor: '#d00000',
     scale: 1
   };
-
-  map.addListener('click', unselectAll);
-
 
   function Leg(object) {
     this.id = object.id;
