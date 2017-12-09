@@ -35,7 +35,7 @@ txtol.init = function() {
     TxtOverlay.prototype = new google.maps.OverlayView();
 
     TxtOverlay.prototype.setInnerHTML = function(innerHTML) {
-      if (this.div_) {
+      if (this.div_ && this.div_.innerHTML != innerHTML) {
         this.div_.innerHTML = innerHTML;
         this.draw();
       }
