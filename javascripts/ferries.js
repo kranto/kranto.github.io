@@ -534,8 +534,7 @@ function pier(feature, map) {
   var marker = createMarker(position, true, icon, map);
   var shortName_ = shortName(feature.properties);
   var longName_ = longName(feature.properties).replace('/', '<br/>');
-  var label = new txtol.TxtOverlay(
-    position, longName_, "pier pier-" + feature.properties.ssubtype, map, feature.properties.labelAnchor);
+  var label = new txtol.TxtOverlay(position, longName_, "pier pier-" + feature.properties.ssubtype, map, feature.properties.labelAnchor);
 
   function showTooltip() {
     tooltip.openedAt = new Date().getTime();
@@ -543,8 +542,9 @@ function pier(feature, map) {
     tooltip.setContent(longName_);
     tooltip.open(map, marker);
   }
+  
   marker.addListener('click', showTooltip);
-  label.addListener('click', showTooltip);
+  label.addEventListener('click', showTooltip);
   return {
     hide: function() {
       marker.setVisible(false);
@@ -950,15 +950,11 @@ function initMap() {
     if (++loaded >= 3) rerender(map, true);
   });
 
-  map.addListener('idle', function() {
-    console.log('idle at', map.getZoom());
-  });
-
   var oldZoom = map.getZoom();
   map.addListener('zoom_changed', function() {
     var newZoom = map.getZoom();
     console.log('zoom_changed: ', oldZoom, newZoom);
-    oldZoom = newZoom;    
+    oldZoom = newZoom;
   });
   
   map.addListener('zoom_changed',function() {
