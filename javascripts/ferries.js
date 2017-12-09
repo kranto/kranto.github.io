@@ -571,6 +571,7 @@ function pier(feature, map) {
     init: function() {
       shortName_ = shortName(feature.properties);
       longName_ = longName(feature.properties).replace('/', '<br/>');
+      label.setInnerHTML(longName_);
     },
     hide: function() {
       marker.setVisible(false);
