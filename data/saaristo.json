@@ -2632,7 +2632,7 @@
         "sname1": "Korppoo",
         "stype": "pier",
         "ssubtype": "4",
-        "labelVisibleFrom": 10,
+        "labelVisibleFrom ": 10,
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
       "geometry": {
@@ -5226,6 +5226,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Hämmärönsalmi - Hanka 5,4 km",
+        "description_en": "Hämmärönsalmi - Hanka 5.4 km",
         "anchor": { "dir": "E", "x": 0, "y": 0 }
       }
     },
@@ -5241,6 +5242,8 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Rymättylä - Hämmärönsalmi 8,7 km",
+        "description_sv": "Rimito - Hämmärönsalmi 8,7 km",
+        "description_en": "Rymättylä - Hämmärönsalmi 8.7 km",
         "anchor": { "dir": "E", "x": 0, "y": 0 }
       }
     },
@@ -5256,6 +5259,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Meripirtti - Rymättylä 11 km<br>Meripirtti - Haapala 12 km",
+        "description_sv": "Meripirtti - Rimito 11 km<br>Meripirtti - Haapala 12 km",
         "anchor": { "dir": "E", "x": 0, "y": 0 }
       }
     },
@@ -5301,6 +5305,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Taivassalo - Hakkenpää 8,0 km",
+        "description_en": "Taivassalo - Hakkenpää 8.0 km",
         "anchor": { "dir": "E", "x": 0, "y": 0 }
       }
     },
@@ -5315,7 +5320,9 @@
         "stype": "box",
         "ssubtype": "distance",
         "sname": "",
-        "description": "Retais - Galtby 6,9 km<br>Retais - Korppoo 9,2 km",
+        "description": "Retais - Galtby 6,9 km<br>Retais - Korpo 9,2 km",
+        "description_fi": "Retais - Galtby 6,9 km<br>Retais - Korppoo 9,2 km",
+        "description_en": "Retais - Galtby 6.9 km<br>Retais - Korpo 9.2 km",
         "anchor": { "dir": "SW", "x": 0, "y": 0 }
       }
     },
@@ -5330,7 +5337,8 @@
         "stype": "box",
         "ssubtype": "distance",
         "sname": "",
-        "description": "Nauvo - Pärnäs 13 km",
+        "description": "Nagu - Pärnäs 13 km",
+        "description_fi": "Nauvo - Pärnäinen 13 km",
         "anchor": { "dir": "NW", "x": 0, "y": 0 }
       }
     },
@@ -5345,7 +5353,8 @@
         "stype": "box",
         "ssubtype": "distance",
         "sname": "",
-        "description": "Prostvik - Nauvo 14 km<br>Prostvik - Kirjais 21 km",
+        "description": "Prostvik - Nagu 14 km<br>Prostvik - Kirjais 21 km",
+        "description_fi": "Prostvik - Nauvo 14 km<br>Prostvik - Kirjais 21 km",
         "anchor": { "dir": "NW", "x": 0, "y": 0 }
       }
     },
@@ -5360,7 +5369,9 @@
         "stype": "box",
         "ssubtype": "distance",
         "sname": "",
-        "description": "Korppoo - Korpoström 8,8 km",
+        "description": "Korpo - Korpoström 8,8 km",
+        "description_fi": "Korppoo - Korpoström 8,8 km",
+        "description_en": "Korpo - Korpoström 8.8 km",
         "anchor": { "dir": "E", "x": 0, "y": 0 }
       }
     },
@@ -5375,7 +5386,8 @@
         "stype": "box",
         "ssubtype": "distance",
         "sname": "",
-        "description": "Parainen - Lillmälö 17 km",
+        "description": "Pargas - Lillmälö 17 km",
+        "description_fi": "Parainen - Lillmälö 17 km",
         "anchor": { "dir": "E", "x": 0, "y": 0 }
       }
     },
@@ -5391,6 +5403,8 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Kaarina - Parainen 14 km",
+        "description_sv": "S:t Karins - Pargas 14 km",
+        "description_en": "Kaarina - Pargas 14 km",
         "anchor": { "dir": "E", "x": 0, "y": 0 }
       }
     },
@@ -5406,6 +5420,8 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Turku - Kaarina 9,5 km",
+        "description_sv": "Åbo - Kaarina 9,5 km",
+        "description_en": "Turku - Kaarina 9.5 km",
         "anchor": { "dir": "SW", "x": 0, "y": 0 }
       }
     },
@@ -5421,6 +5437,8 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Meripirtti - Naantali 7,1 km",
+        "description_sv": "Meripirtti - Nådendal 7,1 km",
+        "description_en": "Meripirtti - Naantali 7.1 km",
         "anchor": { "dir": "N", "x": 0, "y": 0 }
       }
     },
@@ -5436,6 +5454,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Naantali - Turku 16 km",
+        "description_sv": "Nådendal - Åbo 16 km",
         "anchor": { "dir": "SW", "x": 0, "y": 0 }
       }
     },
@@ -5451,6 +5470,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Taivassalo - Heponiemi 17 km<br>Taivassalo - Kivimaa 17 km",
+        "description_sv": "Tövsala - Heponiemi 17 km<br>Tövsala - Kivimaa 17 km",
         "anchor": { "dir": "NW", "x": 0, "y": 0 }
       }
     },
@@ -5466,6 +5486,8 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Vartsala - Vuosnainen 6,4 km",
+        "description_sv": "Vartsala - Osnäs 6,4 km",
+        "description_en": "Vartsala - Vuosnainen 6.4 km",
         "anchor": { "dir": "NW", "x": 0, "y": 0 }
       }
     },
@@ -5481,6 +5503,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Dalen - Skagen 4,4 km",
+        "description_en": "Dalen - Skagen 4.4 km",
         "anchor": { "dir": "W", "x": 0, "y": 0 }
       }
     },
@@ -5496,6 +5519,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Jumo E - Kannvik 4,1 km",
+        "description_en": "Jumo E - Kannvik 4.1 km",
         "anchor": { "dir": "W", "x": 0, "y": 0 }
       }
     },
@@ -5511,6 +5535,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Mietoinen - Taivassalo 23 km",
+        "description_sv": "Mietoinen - Tövsala 23 km",
         "anchor": { "dir": "SE", "x": 0, "y": 0 }
       }
     },
@@ -5556,6 +5581,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Brändö by - Torsholma 9,6 km",
+        "description_en": "Brändö by - Torsholma 9.6 km",
         "anchor": { "dir": "E", "x": 0, "y": 0 }
       }
     },
@@ -5586,6 +5612,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Överö - Embarsund 5,0 km",
+        "description_en": "Överö - Embarsund 5.0 km",
         "anchor": { "dir": "NW", "x": 0, "y": 0 }
       }
     },
@@ -5616,6 +5643,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Töftö - Vårdö 7,7 km",
+        "description_en": "Töftö - Vårdö 7.7 km",
         "anchor": { "dir": "E", "x": 0, "y": 0 }
       }
     },
@@ -5631,6 +5659,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Vårdö - Hummelvik 3,5 km",
+        "description_en": "Vårdö - Hummelvik 3.5 km",
         "anchor": { "dir": "NE", "x": 0, "y": 0 }
       }
     },
@@ -5646,6 +5675,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Vårdö - Simskälalinjen 9,9 km",
+        "description_en": "Vårdö - Simskälalinjen 9.9 km",
         "anchor": { "dir": "W", "x": 0, "y": 0 }
       }
     },
@@ -5661,6 +5691,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Mariehamn - Svinö 25 km<br>Mariehamn - Långnäs 27 km",
+        "description_fi": "Maarianhamina - Svinö 25 km<br>Maarianhamina - Långnäs 27 km",
         "anchor": { "dir": "N", "x": 0, "y": 0 }
       }
     },
@@ -5676,6 +5707,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Långnäs - Svinö 7,1 km",
+        "description_en": "Långnäs - Svinö 7.1 km",
         "anchor": { "dir": "E", "x": 0, "y": 0 }
       }
     },
@@ -5691,6 +5723,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Mariehamn - Godby 14 km",
+        "description_fi": "Maarianhamina - Godby 14 km",
         "anchor": { "dir": "W", "x": 0, "y": 0 }
       }
     },
@@ -5736,6 +5769,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Geta - Hällö 5,1 km",
+        "description_en": "Geta - Hällö 5.1 km",
         "anchor": { "dir": "NW", "x": 0, "y": 0 }
       }
     },
@@ -5751,6 +5785,7 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Mariehamn - Hammarland 19 km",
+        "description_fi": "Maarianhamina - Hammarland 19 km",
         "anchor": { "dir": "E", "x": 0, "y": 0 }
       }
     },
