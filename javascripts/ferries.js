@@ -542,9 +542,9 @@ function pier(feature, map) {
     tooltip.setContent(longName_);
     tooltip.open(map, marker);
   }
-  
+
   marker.addListener('click', showTooltip);
-  label.addEventListener('click', showTooltip);
+  label.addEventListener('click', function(event) { event.stopPropagation(); showTooltip(); });
   return {
     hide: function() {
       marker.setVisible(false);
@@ -775,7 +775,7 @@ function pin(feature, map) {
       marker.setVisible(false);
     },
     rerender: function(zoom, mapTypeId) {
-      marker.setVisible(zoom >= 12);
+      marker.setVisible(zoom >= 11);
     }
   };
 }
