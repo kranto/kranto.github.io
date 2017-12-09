@@ -874,10 +874,10 @@ function box(feature, map) {
   var coords = feature.geometry.coordinates;
   var position = new google.maps.LatLng(coords[1], coords[0]);
   var box = new txtol.TxtOverlay(
-    position, '<div>' + description(feature.properties) + '</div>', "distancebox", map, feature.properties.anchor);
+    position, description(feature.properties), "distancebox", map, feature.properties.anchor);
   return {
     init: function() {
-      box.setInnerHTML('<div>' + description(feature.properties) + '</div>');
+      box.setInnerHTML(description(feature.properties));
     },
     hide: function() {
       box.hide();
