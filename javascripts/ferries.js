@@ -358,6 +358,9 @@ $("#showLive").click(function() {
 var map;
 var tooltip;
 
+//var roadColor = '#91755d';
+var roadColor = '#696d4b';
+
 function createMapStyles(mapTypeId, zoom, settings) {
   return [
     // forests visible
@@ -378,18 +381,20 @@ function createMapStyles(mapTypeId, zoom, settings) {
     { featureType: 'poi', elementType: 'labels', stylers: [{ "visibility": zoom >= 10? 'on': 'off' }]},
     { featureType: 'poi.park', elementType: 'geometry', stylers: [{ saturation: -10}]},
 
-    { featureType: 'administrative.country', elementType: 'geometry.stroke', stylers: [{color: '#000040'}, {weight: 2}]},
+    { featureType: 'administrative.country', elementType: 'geometry.stroke', stylers: [{color: '#400040'}, {weight: 1}]},
     { featureType: 'transit', stylers: [{ "visibility": "off" }]},
 
     { featureType: 'road', elementType: 'labels', stylers: [{visibility: 'on'}]},
     { featureType: 'road', elementType: 'labels.text.stroke', stylers: [{color: '#ffffff'}, {weight: 3}]},
     { featureType: 'road', elementType: 'labels.text.fill', stylers: [{color: '#000000'}]},
-    { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{visibility: "on"}, {color: '#91755d'}, {weight: zoom <= 8? 0: Math.max(2, (zoom-5)*0.5)}]},
-    { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{visibility: "on"}, {color: '#91755d'}, {weight: 0.5}]},
-    { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{visibility: "on"}, {color: '#91755d'}, {weight: Math.max(1.5, (zoom-5)*0.6)}]},
-    { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{visibility: "simplified"}, {color: '#91755d'}, {weight: zoom <= 6? 0: 1}]},
-    { featureType: 'road.arterial', elementType: 'geometry', stylers: [{color: '#91755d'}, {weight: Math.max(1, (zoom-7)*0.4)}, {lightness: (zoom - 6)*0}]},
-    { featureType: 'road.local', elementType: 'geometry', stylers: [{weight: 1}, {color: '#91755d'}, {lightness: (zoom-12)*0}]},
+    { featureType: 'road', elementType: 'geometry.fill', stylers: [{color: roadColor}]},
+    { featureType: 'road', elementType: 'geometry.stroke', stylers: [{color: roadColor}]},
+    { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{visibility: "on"}, {weight: zoom <= 8? 0: Math.max(1.5, (zoom-5)*0.4)}]},
+    { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{visibility: "simplified"}, {weight: zoom <= 6? 0: 1}]},
+    { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{visibility: "on"}, {weight: zoom <= 8? 0: Math.max(1.3, (zoom-5)*0.4)}]},
+    { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{visibility: "on"}, {weight: 0.5}]},
+    { featureType: 'road.arterial', elementType: 'geometry', stylers: [{weight: Math.max(1, (zoom-7)*0.4)}]},
+    { featureType: 'road.local', elementType: 'geometry', stylers: [{weight: 1}, {lightness: (zoom-12)*0}]},
   ];
 }
 
@@ -446,7 +451,7 @@ function road(feature, map) {
   var roadObject = new google.maps.Polyline({
     path: new google.maps.MVCArray(roadCoords),
     geodesic: false,
-    strokeColor: '#91755d',
+    strokeColor: roadColor,
     strokeOpacity: 1,
     strokeWeight: 1,
     zIndex: 0,
@@ -975,10 +980,10 @@ function renderData(data, map) {
 var mapOptions = {
   center: {lat: 60.25, lng: 21.25},
   zoom: 9,
-  minZoom: 6,
+  minZoom: 4,
   maxZoom: 17,
   mapTypeControl: false,
-  //mapTypeId: google.maps.MapTypeId.TERRAIN,
+  // mapTypeId: google.maps.MapTypeId.TERRAIN,
   fullscreenControl: false,
   streetViewControl: false,
   gestureHandling: 'greedy',
