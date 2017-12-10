@@ -86,6 +86,10 @@ function setLanguage(lang) {
     rerender(map, true);
   }
 
+  if (typeof lauttaRoutes !== 'undefined') {
+    lauttaRoutes.forEach(function(route) { if(route.init) route.init(); });
+  }
+
   if (selected) {
     select(selected);
   }
@@ -988,7 +992,9 @@ function resetMap() {
   map.setOptions(mapOptions);
   map.fitBounds({south: 60, north: 60.5, west: 20, east: 22.3});
 }
-  
+
+var lauttaRoutes;
+
 function initMap() {
 
   var data = {};
@@ -1086,15 +1092,57 @@ function initMap() {
   path: "19.5357513,60.2258341,0.0 19.5304298,60.2283061,0.0 19.5201302,60.226857,0.0 19.4531822,60.1805383,0.0 18.8297379,60.094225,0.0 18.8154602,60.0981463,0.0" },
   ];
 
-  var lauttaRoutes = [
-  {name: "Turku - Mariehamn/Långnäs - Stockholm", operators: ["Viking"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 13], description: "2 kertaa päivässä, kesto n. 11 tuntia"},
-  {name: "Turku - Mariehamn/Långnäs - Stockholm", operators: ["Silja"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 12], description: "2 kertaa päivässä, kesto n. 11 tuntia"},
-  {name: "Helsinki - Mariehamn - Stockholm", operators: ["Viking"], legs: [7, 6, 9, 11, 13], description: "kerran päivässä, kesto n. 17,5 tuntia"},
-  {name: "Helsinki - Mariehamn - Stockholm", operators: ["Silja"], legs: [7, 6, 9, 11, 12], description: "kerran päivässä, kesto n. 17,5 tuntia"},
-  {name: "Mariehamn - Stockholm", operators: ["Viking"], legs: [9, 11, 13], description: "kerran päivässä, kesto 7-12 tuntia"},
-  {name: "Kapellskär - Mariehamn", operators: ["Viking"], legs: [9, 10], description: "2-3 kertaa päivässä, kesto n. 2,5 tuntia, linja-autoyhteys Tukholmaan"},
-  {name: "Eckerö - Grisslehamn", operators: ["Eckerolinjen"], legs: [14], description: "2-3 kertaa päivässä, kesto n. 2 tuntia"},
-  {name: "Naantali - Långnäs - Kapellskär", operators: ["Finnlines"], legs: [1, 3, 4, 5, 8, 10], description: "2 kertaa päivässä, kesto n. 8,5 tuntia"},
+  var lauttaRoutesList = [
+  { sname: "Turku - Maarianhamina/Långnäs - Tukholma", 
+    sname_sv: "Åbo - Mariehamn/Långnäs - Stockholm",
+    sname_en: "Turku - Mariehamn/Långnäs - Stockholm",
+    operators: ["Viking"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 13],
+    description_fi: "2 kertaa päivässä, kesto n. 11 tuntia",
+    description_sv: "2 gånger om dagen, längd ca 11 timmar",
+    description_en: "twice a day, duration about 11 hours"},
+  { sname: "Turku - Maarianhamina/Långnäs - Tukholma", 
+    sname_sv: "Åbo - Mariehamn/Långnäs - Stockholm",
+    sname_en: "Turku - Mariehamn/Långnäs - Stockholm",
+    operators: ["Silja"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 12],
+    description_fi: "2 kertaa päivässä, kesto n. 11 tuntia",
+    description_sv: "2 gånger om dagen, längd ca 11 timmar",
+    description_en: "twice a day, duration about 11 hours"},
+  { sname: "Helsinki - Maarianhamina - Tukholma",
+    sname_sv: "Helsingfors - Mariehamn - Stockholm",
+    sname_en: "Helsinki - Mariehamn - Stockholm",
+    operators: ["Viking"], legs: [7, 6, 9, 11, 13],
+    description_fi: "kerran päivässä, kesto n. 17,5 tuntia",
+    description_sv: "en gång om dagen, längd ca 17,5 timmar",
+    description_en: "once a day, duration about 17,5 hours"},
+  { sname: "Helsinki - Maarianhamina - Tukholma",
+    sname_sv: "Helsingfors - Mariehamn - Stockholm",
+    sname_en: "Helsinki - Mariehamn - Stockholm",
+    operators: ["Silja"], legs: [7, 6, 9, 11, 12],
+    description_fi: "kerran päivässä, kesto n. 17,5 tuntia",
+    description_sv: "en gång om dagen, längd ca 17,5 timmar",
+    description_en: "once a day, duration about 17,5 hours"},
+  { sname: "Mariehamn - Stockholm",
+    sname_fi: "Maarianhamina - Tukholma",
+    operators: ["Viking"], legs: [9, 11, 13],
+    description_fi: "kerran päivässä, kesto 7-12 tuntia",
+    description_sv: "en gång om dagen, längd 7-12 timmar",
+    description_en: "once a day, duration 7-12 hours"},
+  { sname: "Kapellskär - Mariehamn",
+    sname_fi: "Kapellskär - Maarianhamina",
+    operators: ["Viking"], legs: [9, 10],
+    description_fi: "2-3 kertaa päivässä, kesto n. 2,5 tuntia, linja-autoyhteys Tukholmaan",
+    description_sv: "2-3 gånger om dagen, längd ca 2,5 timmar, bussförbindelse till Stockholm",
+    description_en: "2-3 times a day, duration about 2.5 hours, bus connection to Stockholm"},
+  { sname: "Eckerö - Grisslehamn", operators: ["Eckerolinjen"], legs: [14],
+    description_fi: "2-3 kertaa päivässä, kesto n. 2 tuntia",
+    description_sv: "2-3 gånger om dagen, längd ca 2 timmar",
+    description_en: "2-3 times a day, duration about 2 hours"},
+  { sname: "Naantali - Långnäs - Kapellskär",
+    sname_sv: "Nådendal - Långnäs - Kapellskär",
+    operators: ["Finnlines"], legs: [1, 3, 4, 5, 8, 10],
+    description_fi: "2 kertaa päivässä, kesto n. 8,5 tuntia",
+    description_sv: "2 gånger om dagen, längd ca 8,5 timmar",
+    description_en: "twice a day, duration about 8.5 hours"},
   ];
 
   var operators = {
@@ -1151,7 +1199,6 @@ function initMap() {
     this.routes = [];
     var that = this;
     this.line.addListener('click', function(event) {
-      var routeNames = that.routes.map(function(route) { return route.operator + ": " + route.name; }).join('<br>');
       select(that.routes, event);
     });
     this.rerender = function(zoom, mapTypeId) {
@@ -1174,16 +1221,16 @@ function initMap() {
   }
 
   function Route(object) {
-    this.name = object.name;
     this.operators = object.operators;
     this.legs = object.legs.map(function(id) { return lauttaLegIndex[id]; });
-
-    this.description = this.operators.map(function(operator) {
-      var op = operators[operator];
-      return object.name + ', ' + object.description + '&nbsp;&nbsp; <a href="' + op.link + '" target="info"><img src="' + operators[operator].logo + '" height="' + op.height + '"/></a>' ;
-    }).join(" ");
-
-    var that = this;
+    this.init = function() {
+      this.name = shortName(object);
+      this.description = this.operators.map(function(operator) {
+        var op = operators[operator];
+        return shortName(object) + ', ' + description(object) + '&nbsp;&nbsp; <a href="' + op.link + '" target="info"><img src="' + operators[operator].logo + '" height="' + op.height + '"/></a>' ;
+      }).join(" ");
+    }
+    this.init();
   }
 
   Route.prototype.highlight = function(doHighlight) {
@@ -1204,7 +1251,7 @@ function initMap() {
   lauttaLegIndex = {};
   lauttaLegs.forEach(function(leg) { lauttaLegIndex[leg.id] = leg});
 
-  var lauttaRoutes = lauttaRoutes.map(function(route) {
+  lauttaRoutes = lauttaRoutesList.map(function(route) {
     route = new Route(route);
     route.legs.forEach(function(leg) { leg.addRoute(route); });
     return route;

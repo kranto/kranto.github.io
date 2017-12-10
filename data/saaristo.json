@@ -1269,7 +1269,7 @@
         "stype": "connection",
         "sname": "Södra linjen: Långnäs - Överö - Sottunga - Kökar - Galtby",
         "sname_fi": "Eteläinen linja: Långnäs - Överö - Sottunga - Kökar - Galtby",
-        "sname_en": "Eteläinen linja: Långnäs - Överö - Sottunga - Kökar - Galtby",
+        "sname_en": "Southern line: Långnäs - Överö - Sottunga - Kökar - Galtby",
         "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Gudingen, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358407693687\"> +358 40 769 3687</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 25<br/><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Skiftet, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400350265\"> +358 400 350 265</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 25</p><p>3-4 vuoroa päivässä, Överö vain tilauksesta, Galtby 0-2 vuoroa päivässä, maksullinen</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Långnäs, Överö(Föglö), Sottunga, Kökar, Galtby(Korppoo)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/sodralinjen_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 18 25 600</a></p>",
         "ssubtype": "conn2",
         "color": "#00a000"
@@ -5340,8 +5340,9 @@
         "ssubtype": "distance",
         "sname": "",
         "description": "Taivassalo - Hakkenpää 8,0 km",
+        "description_sv": "Tövsala - Hakkenpää 8,0 km",
         "description_en": "Taivassalo - Hakkenpää 8.0 km",
-        "anchor": { "dir": "E", "x": 0, "y": 0 }
+        "anchor": { "dir": "E", "x": 0, "y": 10 }
       }
     },
     {
@@ -5358,7 +5359,7 @@
         "description": "Retais - Galtby 6,9 km<br>Retais - Korpo 9,2 km",
         "description_fi": "Retais - Galtby 6,9 km<br>Retais - Korppoo 9,2 km",
         "description_en": "Retais - Galtby 6.9 km<br>Retais - Korpo 9.2 km",
-        "anchor": { "dir": "SW", "x": 0, "y": 0 }
+        "anchor": { "dir": "SW", "x": 10, "y": 0 }
       }
     },
     {
@@ -5407,7 +5408,7 @@
         "description": "Korpo - Korpoström 8,8 km",
         "description_fi": "Korppoo - Korpoström 8,8 km",
         "description_en": "Korpo - Korpoström 8.8 km",
-        "anchor": { "dir": "E", "x": 0, "y": 0 }
+        "anchor": { "dir": "C", "x": 0, "y": 0 }
       }
     },
     {
@@ -5506,7 +5507,7 @@
         "sname": "",
         "description": "Taivassalo - Heponiemi 17 km<br>Taivassalo - Kivimaa 17 km",
         "description_sv": "Tövsala - Heponiemi 17 km<br>Tövsala - Kivimaa 17 km",
-        "anchor": { "dir": "NW", "x": 0, "y": 0 }
+        "anchor": { "dir": "NW", "x": 20, "y": 0 }
       }
     },
     {
