@@ -63,6 +63,9 @@ $('.lang-button').click(function(event) {
 var currentLang;
 
 function setLanguage(lang) {
+  if (typeof Storage !== 'undefined') {
+    localStorage.setItem('language', lang);
+  }
   if (lang != 'fi' && lang != 'sv') lang = 'en';
   $(".lang-button").toggleClass('active', false);
   $(".lang-button[lang=" + lang +"]").toggleClass('active', true);
@@ -78,7 +81,16 @@ function setLanguage(lang) {
   }
 }
 
-setLanguage(window.navigator.language.split("-")[0]);
+function initLanguage() {
+  var lang;
+  if (typeof Storage !== 'undefined') {
+    lang = localStorage.getItem('language');
+  }
+  lang = lang || window.navigator.language.split("-")[0];
+  setLanguage(lang);
+}
+
+initLanguage();
 
 function shortName(props) {
   return props["sname" + currentLang] || props.sname;
