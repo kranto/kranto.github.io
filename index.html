@@ -5,7 +5,7 @@
 -->
 
 <head>
-  <title>Saaristolautat demo</title>
+  <title>Saaristolautat.fi demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="HandheldFriendly" content="true" />
   <meta charset="utf-8">
@@ -33,8 +33,15 @@
         <img src="/mstile-70x70.png"/>
       </div>
       <div id="loadercontent">
-        <h1>Saaristolautat demo</h1>
-        <p>26000 saarta<br/>50 lauttaa<br/>190 laituria</p>
+        <h1>Saaristolautat.fi (demo)</h1>
+        <p>
+          <span lang="fi">Turun saariston ja Ahvenanmaan lauttareitit</span>
+          <span lang="sv">Skärgårdsfärjorna i Skärgårdshavet</span>
+          <span lang="en">Ferry routes in the Finnish archipelago</span>
+        </p>
+        <p lang="fi">26000 saarta<br/>50 lauttaa<br/>190 laituria</p>
+        <p lang="sv">26000 öar<br/>50 färjor<br/>190 bryggor</p>
+        <p lang="en">26000 islands<br/>50 ferries<br/>190 piers</p>
       </div>
     </div>
     <div id="loaderfooter">
@@ -102,7 +109,7 @@
     </div>
 
     <div id="info">
-      <div id="infocontent">
+      <div class="infocontent template">
         <button type="button" class="btn btn-default closeInfoButton" id="closeInfoButton"><i class="fa fa-times" aria-hidden="true"></i></button>
         <h3 id="selectedTitle"></h3>
         <div id="selectedDescription"></div>
@@ -127,29 +134,39 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <form class="form-horizontal nav-form">
           <div class="form-group row">
-            <label class="control-label col-xs-3">Kartta:</label>
+            <label class="control-label col-xs-3"><span lang="fi">Kartta</span><span lang="sv">Karta</span><span lang="en">Map</span>:</label>
             <div class="btn-group col-xs-9">
-              <button type="button" class="btn btn-default active" id="setMapTypeMap">Tiekartta</button>
-              <button type="button" class="btn btn-default" id="setMapTypeSatellite">Satelliitti</button>
+              <button type="button" class="btn btn-default active" id="setMapTypeMap">
+                <span lang="fi">Tiekartta</span><span lang="sv">Vägkarta</span><span lang="en">Roadmap</span></button>
+              <button type="button" class="btn btn-default" id="setMapTypeSatellite">
+                <span lang="fi">Satelliitti</span><span lang="sv">Satellit</span><span lang="en">Satellite</span></button>
             </div>
           </div>
           <div class="form-group row">
-            <label class="control-label col-xs-3">Näytä:</label>
+            <label class="control-label col-xs-3"><span lang="fi">Näytä</span><span lang="sv">Visa</span><span lang="en">Show</span>:</label>
             <div class="col-xs-9">
-              <button type="button" class="btn btn-default" id="toggleRengastie">Rengastie</button>
+              <button type="button" class="btn btn-default" id="toggleRengastie"><span lang="fi">Rengastiet</span><span lang="sv">Ringvägarna</span><span lang="en">Ring roads</span></button>
               <button type="button" class="btn btn-default" id="showLive">Live</button>
             </div>
           </div>
           <div class="form-group row">
-            <label class="control-label col-xs-3">Näkymä:</label>
+            <label class="control-label col-xs-3"><span lang="fi">Näkymä</span><span lang="sv">Vy</span><span lang="en">View</span>:</label>
             <div class="col-xs-9">
-              <button type="button" class="btn btn-default" id="toggleFullscreen">Koko ruutu</button>
-              <button type="button" class="btn btn-default" id="resetViewButton">Alkuun</button>
+              <button type="button" class="btn btn-default" id="toggleFullscreen"><span lang="fi">Koko ruutu</span><span lang="sv">Full screen</span><span lang="en">Full screen</span></button>
+              <button type="button" class="btn btn-default" id="resetViewButton"><span lang="fi">Alkuun</span><span lang="sv">Reset</span><span lang="en">Reset</span></button>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="control-label col-xs-3"><span lang="fi">Kieli</span><span lang="sv">Språk</span><span lang="en">Language</span>:</label>
+            <div class="btn-group col-xs-9">
+              <button type="button" class="btn btn-default lang-button active" setlang="fi"">FI</button>
+              <button type="button" class="btn btn-default lang-button" setlang="sv"">SV</button>
+              <button type="button" class="btn btn-default lang-button" setlang="en"">EN</button>
             </div>
           </div>
           <div class="form-group row lastrow">
             <div class="col-xs-12">
-              <button type="button" class="btn btn-default" id="showInfoPageButton">Tietoja lautoista ja sovelluksesta</button>
+              <button type="button" class="btn btn-default" id="showInfoPageButton"><span lang="fi">Tietoja lautoista ja sovelluksesta</span><span lang="sv">Info om färjör och applikationen</span><span lang="en">Info about ferries and the application</span></button>
             </div>
           </div>
         </form>

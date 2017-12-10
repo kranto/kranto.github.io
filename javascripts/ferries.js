@@ -1,15 +1,15 @@
 
 $(document).ready(function(){
-    $('#wrapper').bind('scroll',toggleScrollIndicator);
+    $('#wrapper').bind('scroll',toggleScrollIndicator); 
 });
 
-var scrollLimit = 20; 
+var scrollLimit = 22;
 
 function toggleScrollIndicator()
 {
-    var elem = $("#wrapper");
-    var isBottom = (elem[0].scrollHeight - elem.scrollTop() - scrollLimit <= elem.outerHeight());
-    $('#scrollIndicator').toggleClass('can-scroll', !isBottom);
+  var elem = $("#wrapper");
+  var isBottom = (elem[0].scrollHeight - elem.scrollTop() - scrollLimit <= elem.outerHeight());
+  $('#scrollIndicator').toggleClass('can-scroll', !isBottom);
 }
 
 $('div#map').click(function() { // close menu when map clicked
@@ -56,6 +56,77 @@ function inIframe () {
     }
 }
 
+
+function showLanguage(lang) {
+  $("[lang]").each(function () {
+    if ($(this).attr("lang") == lang)
+      $(this).show();
+    else
+      $(this).hide();
+  })
+}
+
+$('.lang-button').click(function(event) {
+  setLanguage(event.currentTarget.getAttribute("setlang"));
+});
+
+var currentLang;
+
+function setLanguage(lang) {
+  if (typeof Storage !== 'undefined') {
+    localStorage.setItem('language', lang);
+  }
+  if (lang != 'fi' && lang != 'sv') lang = 'en';
+  $(".lang-button").toggleClass('active', false);
+  $(".lang-button[setlang=" + lang +"]").toggleClass('active', true);
+  currentLang = lang;
+
+  if (objects) {
+    objects.forEach(function(object){ if (object.init) object.init(); });
+    rerender(map, true);
+  }
+
+  if (selected) {
+    select(selected);
+  }
+
+  showLanguage(lang);
+}
+
+function initLanguage() {
+  var lang;
+  if (typeof Storage !== 'undefined') {
+    lang = localStorage.getItem('language');
+  }
+  lang = lang || window.navigator.language.split("-")[0];
+  setLanguage(lang);
+}
+
+initLanguage();
+
+$(document).ready(function() {
+  showLanguage(currentLang);
+});
+
+
+function shortName(props) {
+  return props["sname_" + currentLang] || props.sname;
+}
+
+function longName(props) {
+  var localName = props.sname;
+  var currLocaleName = props["sname_" + currentLang];
+  var firstName = currLocaleName? currLocaleName: localName;
+  var otherNames = ["", "_fi", "_sv", "_en"].map(function(l) {
+    return props["sname" + l];
+  }).filter(function(name) { return typeof name !== 'undefined' && name != firstName; }).filter(onlyUnique);
+  return firstName + ((otherNames.length > 0)? "/" + otherNames.join("/"): "");
+}
+
+function description(props) {
+  return props["description_" + currentLang] || props.description;
+}
+
 $(document).ready(function() {
   var hostname = window.location.hostname;
   var framed = inIframe();
@@ -95,6 +166,7 @@ function onMapIdle() {
 
 function hideLoader() {
   if (timeout && mapInitialized ) {
+    rerender(map, true);
     $("#loader").fadeOut(1000);
   }
 }
@@ -117,32 +189,86 @@ function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
 }
 
+function setInfoContent(targets) {
+  $(".infocontent:last #selectedTitle").html(targets.map(function(target) { return target.name; }).filter(onlyUnique).join('<br>'));
+  $(".infocontent:last #selectedDescription").html(targets.map(function(target) { return target.description? target.description: ' '; }).map(function(desc) {
+    return "<p>" + desc + "</p>";
+  }).filter(onlyUnique).join("\n"));
+} 
+
 var selected = [];
 
 function select(targets, mouseEvent) {
+
   if (!targets.length) return;
-  $('#selectedTitle').html(targets.map(function(target) { return target.name; }).filter(onlyUnique).join('<br>'));
-  $('#selectedDescription').html(targets.map(function(target) { return target.description? target.description: ' '; }).map(function(desc) {
-    return "<p>" + desc + "</p>";
-  }).filter(onlyUnique).join("\n"));
+
   var selectedCountWas = selected.length;
   selected.forEach(function(target) { target.highlight(false); });
   selected = [];
+
+  var bounds = null;
   targets = (targets.constructor === Array)? targets: [targets];
   targets.forEach(function(target) {
     target.highlight(true);
     selected.push(target);
+    if (!bounds) bounds = target.bounds;
+    if (bounds && target.bounds) bounds.union(target.bounds);
   });
+
   if (selectedCountWas == 0) {
+
+    var newElem = $(".infocontent.template").clone(true);
+    newElem.removeClass("template");
+    newElem.appendTo($("#info"));
+    newElem.addClass("active-info");
+    setInfoContent(targets);
+
     var clientY = mouseEvent? latLng2Point(mouseEvent.latLng, map).y: 0;
     if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
     $(function() { 
       $("#info").show();
-      $("#mapcontainer").animate({height: '80%'}, function() { google.maps.event.trigger(map, 'resize'); });
+      $("#mapcontainer").animate({height: '80%'});
       $("#info").animate({top: '80%'}, toggleScrollIndicator);
     });
-  } else {
+  } else { // swap content of #info
+    
+    // all this just calculate needed scroll animation
+    var wrapper = $("#wrapper");
+    var wrapperHeight0 = wrapper[0].scrollHeight;
+    var visibleHeight = wrapper.outerHeight();
+    var scrolled0 = wrapper.scrollTop();
+
+    var newElem = $(".infocontent.template").clone(true);
+    newElem.removeClass("template");
+    newElem.addClass("hidden-info");
+    newElem.appendTo($("#info"));
+    setInfoContent(targets);
+
+    var infoContentHeight0 = $(".infocontent.active-info")[0].scrollHeight;
+    var infoContentHeight1 = $(".infocontent.hidden-info")[0].scrollHeight;
+
+    var wrapperHeight1 = wrapperHeight0 + infoContentHeight1 - infoContentHeight0;
+    var maxScroll1 = wrapperHeight1 - visibleHeight;
+    var scrolled1 = Math.min(scrolled0, maxScroll1);
+
+    if (maxScroll1 + 25 > scrolled0) { // skip animations in certain conditions. This is needed to avoid jumping in Chrome.
+      newElem.removeClass("hidden-info") // show new infocontent
+      $(".infocontent.active-info").remove(); // remove old infocontent
+      newElem.addClass("active-info"); // make new infocontent active
+      wrapper.scrollTop(scrolled1);
       toggleScrollIndicator();
+      return;
+    }
+    // scroll smoothly down;
+    wrapper.animate({scrollTop: scrolled1}, 1+(scrolled0 - scrolled1)*2, function() {
+      $("#info").animate({opacity: 0.3}, 'fast', function() { // hide info during the swap
+        newElem.removeClass("hidden-info") // show new infocontent
+        $(".infocontent.active-info").remove(); // remove old infocontent
+        newElem.addClass("active-info"); // make new infocontent active
+        toggleScrollIndicator();
+        $("#info").animate({opacity: 1}, 'fast'); // show info again
+      });
+    });
   }
 }
 
@@ -158,15 +284,16 @@ function unselectAll() {
   if (selected.length == 0) return;
   $(function() { 
     $("#mapcontainer").animate({height: '100%'}, 100, function() {
-      google.maps.event.trigger(map, 'resize');
       selected.forEach(function(target) { target.highlight(false); });
       selected = [];
     });
-    $("#info").animate({top: '100%'}, 100, function() {
-      $("#info").hide();
-      $('#selectedTitle').html(' ');
-      $('#selectedDescription').html(' ');
-      toggleScrollIndicator();
+    var scrolled = $("#wrapper")[0].scrollTop;
+    $("#wrapper").animate({scrollTop: 0}, scrolled*2, function() {
+      $("#info").animate({top: '100%'}, 100, function() {
+        $("#info").hide();
+        $(".infocontent.active-info").remove();
+        toggleScrollIndicator();
+      });
     });
   });
 }
@@ -239,7 +366,7 @@ function createMapStyles(mapTypeId, zoom, settings) {
     // flat style
     // { featureType: 'landscape.natural', elementType: 'geometry.fill', stylers: [{color: '#b8cbb8'}, {lightness: 20} ]},
 
-    { featureType: 'water', elementType: 'geometry.fill', stylers: [{color: '#ececff'}, {lightness: 30}]},
+    { featureType: 'water', elementType: 'geometry.fill', stylers: [{color: '#edf3ff'}, {lightness: 40}]},
 
     { elementType: 'labels', stylers: [{ "visibility": "off" }]},
     { featureType: 'administrative', elementType: 'labels', stylers: [{ "visibility": zoom <= 7 || zoom >= 13? 'on': 'off' }]},
@@ -263,7 +390,8 @@ function createMapStyles(mapTypeId, zoom, settings) {
 }
 
 function updateMapStyles() {
-  map.setOptions({styles: createMapStyles(map.getMapTypeId(), map.getZoom(), {})});        
+  map.setOptions({styles: createMapStyles(map.getMapTypeId(), map.getZoom(), {})});
+  $("div.gm-style").css({'font-size': map.getZoom()});
 }
 
 function sanitizeZoomLevels(object) {
@@ -297,7 +425,7 @@ function createMarker(position, clickable, icon, map) {
     clickable: clickable,
     icon: icon,
     map: map,
-    cursor: clickable? 'context-menu': 'default',
+    cursor: clickable? 'pointer': 'default',
   });
 }
 
@@ -412,8 +540,6 @@ var pierStylers = {
   "1": {
     markerVisibleFrom: 8,
     labelVisibleFrom: 8,
-    fontSize: function(zoom) {return zoom + 2;},
-    fontWeight: function(zoom) {return 'bold';},
     markerScale: function(zoom) {return zoom <= 8? 3: zoom <= 10? 4: zoom <= 11? 5: 6;},
     markerOpacity: function(zoom) {return zoom <= 10? 1 : 0.8;},
     icon: function(zoom) { return getPierIcons()[zoom <= 8? "a1_08": zoom <= 10? "a1_10": zoom <= 11? "a1_11": "a1_30"]; },
@@ -422,8 +548,6 @@ var pierStylers = {
   "2":  {
     markerVisibleFrom: 9,
     labelVisibleFrom: 9,
-    fontSize: function(zoom) {return zoom + 1;},
-    fontWeight: function(zoom) {return 'bold';},
     markerScale:  function(zoom) {return zoom <= 9? 3: zoom <= 10? 3.5: zoom <= 12? 4: 5;},
     markerOpacity: function(zoom) {return zoom <= 11? 0.5: 0.8; },
     icon: function(zoom) { return getPierIcons()[zoom <= 9? "a2_09": zoom <= 10? "a2_10": zoom <= 11? "a2_11": zoom <= 12? "a2_12": "a2_30"]; },
@@ -432,8 +556,6 @@ var pierStylers = {
   "3": {
     markerVisibleFrom: 9,
     labelVisibleFrom: 10,
-    fontSize: function(zoom) {return zoom;},
-    fontWeight: function(zoom) {return zoom <= 10? 'normal': 'bold';},
     markerScale:  function(zoom) {return (zoom <= 9? 2.5: zoom <= 10? 3: zoom <= 12? 3.5: 4.5);},
     markerOpacity: function(zoom) {return zoom <= 12? 0.5: 0.8; },
     icon: function(zoom) { return getPierIcons()[zoom <= 9? "a3_09": zoom <= 10? "a3_10": zoom <= 12? "a3_12": "a3_30"]; },
@@ -442,8 +564,6 @@ var pierStylers = {
   "4": {
     markerVisibleFrom: 9,
     labelVisibleFrom: 11,
-    fontSize: function(zoom) {return zoom-1;},
-    fontWeight: function(zoom) {return 'normal'},
     markerScale:  function(zoom) {return (zoom <= 9? 1: zoom <= 10? 2: zoom <= 11? 3: 4);},
     markerOpacity: function(zoom) {return  zoom <= 12? 0.5: 0.8},
     icon: function(zoom) { return getPierIcons()[zoom <= 9? "a4_09": zoom <= 10? "a4_10": zoom <= 11? "a4_11": zoom <= 12? "a4_12": "a4_30"]; },
@@ -452,8 +572,6 @@ var pierStylers = {
   "5": {
     markerVisibleFrom: 30,
     labelVisibleFrom: 11,
-    fontSize: function(zoom) {return zoom-1;},
-    fontWeight: function(zoom) {return 'normal'},
     markerScale:  function(zoom) {return 0;},
     markerOpacity: function(zoom) {return  0;},
     icon: function(zoom) { return getPierIcons()["a5_30"]; },
@@ -469,37 +587,34 @@ function pier(feature, map) {
   var position = new google.maps.LatLng(coords[1], coords[0]);
   var icon = getPierIcons().a1_30;
   var marker = createMarker(position, true, icon, map);
+  var shortName_ = shortName(feature.properties);
+  var longName_ = longName(feature.properties).replace('/', '<br/>');
+  var label = new txtol.TxtOverlay(position, longName_, "pier pier-" + feature.properties.ssubtype, map, feature.properties.labelAnchor);
 
-  var label = new lbls.Label({
-    map: map,
-    position: position,
-    labelAnchor: feature.properties.labelAnchor,
-    label: createLabel(feature.properties.sname, getLabelColor('roadmap'), styler.fontSize(9), styler.fontWeight(9)),
-    background: 'none',
-    opacity: 0.9,
-    clickable: true,
-    cursor: 'context-menu',
-  });
-  marker.addListener('click', function(event) {
-    tooltip.setPosition(event.latLng);
-    tooltip.setContent(feature.properties.sname);
+  function showTooltip() {
+    tooltip.openedAt = new Date().getTime();
+    tooltip.setPosition(marker.getPosition());
+    tooltip.setContent(longName_);
     tooltip.open(map, marker);
-  });
-  label.addListener('click', function(event) {
-    google.maps.event.trigger(marker, 'click', event);
-  });
+  }
+
+  marker.addListener('click', showTooltip);
+  label.addEventListener('click', function(event) { event.stopPropagation(); event.preventDefault(); showTooltip(); });
   return {
+    init: function() {
+      shortName_ = shortName(feature.properties);
+      longName_ = longName(feature.properties).replace('/', '<br/>');
+      label.setInnerHTML(longName_);
+    },
     hide: function() {
       marker.setVisible(false);
-      label.setVisible(false);
+      label.hide();
     },
     rerender: function(zoom, mapTypeId) {
       marker.setIcon(styler.icon(zoom));
       marker.setClickable(styler.clickable(zoom));
       marker.setVisible(zoom >= markerVisibleFrom);
-      label.setLabel(createLabel(feature.properties.sname, getLabelColor(mapTypeId), styler.fontSize(zoom), styler.fontWeight(zoom)));
-      label.setClickable(styler.clickable(zoom));
-      label.setVisible(zoom >= labelVisibleFrom);
+      if (zoom >= labelVisibleFrom) label.show(); else label.hide();
     }
   };
 }
@@ -507,7 +622,8 @@ function pier(feature, map) {
 var cableferryStyler = {
   highlightColor: '#f97cdc',
   highlightWeight: 17,
-  highlightOpacity: .6
+  highlightOpacity: .6,
+  visibleFrom: 9
 }
 
 var _cableferrySymbol;
@@ -516,9 +632,9 @@ function cableferrySymbol() {
     path: google.maps.SymbolPath.CIRCLE,
     strokeOpacity: 1,
     strokeColor: '#00a000',
-    strokeWeight: 2.5,
+    strokeWeight: 2,
     fillColor: '#00a000',
-    fillOpacity: 0.5,
+    fillOpacity: 0.3,
     scale: 2
   };
   return _cableferrySymbol;
@@ -541,6 +657,7 @@ function cableferry(feature, map) {
   var highlightColor = feature.properties.highlightColor || styler.highlightColor;
   var highlightWeight = feature.properties.highlightWeight || styler.highlightWeight;
   var highlightOpacity = feature.properties.highlightOpacity || styler.highlightOpacity;
+  var visibleFrom = feature.properties.visibleFrom || styler.visibleFrom;
 
   var coords = feature.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
   var line = new google.maps.Polyline({
@@ -567,8 +684,11 @@ function cableferry(feature, map) {
     }], event);
   });
   return {
+    hide: function(zoom, mapTypeId) {
+      line.setVisible(zoom >= visibleFrom);
+    },
     rerender: function(zoom, mapTypeId) {
-      line.setVisible(zoom >= 9);
+      line.setVisible(zoom >= visibleFrom);
     }
   };
 }
@@ -622,7 +742,7 @@ function connection(connection, map) {
   var connectionStyler = connection.properties.ssubtype? connectionStylers[connection.properties.ssubtype]: baseStyler;
 
   var legFeatures = connection.type === 'FeatureCollection'? connection.features: [connection];
-  var connectionObject = { name: connection.properties.sname, description: connection.properties.description};
+  var connectionObject = { name: shortName(connection.properties), description: connection.properties.description};
   var legObjects = legFeatures.map(function(leg) {
 
     var coords = leg.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
@@ -678,6 +798,10 @@ function connection(connection, map) {
     legObjects.forEach(function(leg) { leg.rerender(zoom, mapTypeId); });
   }
 
+  connectionObject.init = function() {
+    connectionObject.name = shortName(connection.properties);
+  }
+
   return connectionObject;
 }
 
@@ -715,7 +839,7 @@ function pin(feature, map) {
       marker.setVisible(false);
     },
     rerender: function(zoom, mapTypeId) {
-      marker.setVisible(zoom >= 12);
+      marker.setVisible(zoom >= 11);
     }
   };
 }
@@ -723,38 +847,19 @@ function pin(feature, map) {
 var areaStylers = {
   "province": {
     labelVisibleFrom: 1,
-    labelVisibleTo: 10,
-    fontFamily: 'Roboto',
-    color: '#202030',
-    opacity: 0.7,
-    fontSize: function(zoom) {return Math.max(12, Math.floor((zoom-6)*3+8));},
-    fontWeight: function(zoom) {return zoom <= 7? 'normal': 'bold';},
+    labelVisibleTo: 10
   },
   "mun1": {
     labelVisibleFrom: 1,
-    labelVisibleTo: 30,
-    fontFamily: 'Roboto',
-    color: '#202030',
-    opacity: 0.7,
-    fontSize: function(zoom) {return Math.max(14, Math.floor((zoom-6)*2.5+12));},
-    fontWeight: function(zoom) {return 'bold';},
+    labelVisibleTo: 30
   },
   "mun2": {
     labelVisibleFrom: 8,
-    labelVisibleTo: 30,
-    fontFamily: 'Roboto',
-    color: '#202030',
-    opacity: 0.7,
-    fontSize: function(zoom) {return Math.max(12, Math.floor((zoom-6)*2.2+8));},
-    fontWeight: function(zoom) {return zoom >= 8? 'bold': 'normal';},
+    labelVisibleTo: 30
   },
   "island1": {
     labelVisibleFrom: 9,
-    labelVisibleTo: 30,
-    fontFamily: 'Courier',
-    color: '#202030',
-    fontSize: function(zoom) {return zoom; },
-    fontWeight: function(zoom) {return 'normal';},
+    labelVisibleTo: 30
   },
 };
 
@@ -762,33 +867,31 @@ function area(feature, map) {
   var styler = areaStylers[feature.properties.ssubtype];
   var labelVisibleFrom = feature.properties.labelVisibleFrom || styler.labelVisibleFrom;
   var labelVisibleTo = feature.properties.labelVisibleTo || styler.labelVisibleTo;
+  var longNameFrom = feature.properties.longNameFrom || styler.longNameFrom || 9;
   var coords = feature.geometry.coordinates;
   var position = new google.maps.LatLng(coords[1], coords[0]);
-  var label = new lbls.Label({
-    map: map,
-    position: position,
-    labelAnchor: feature.properties.labelAnchor,
-    label: {text: feature.properties.sname, fontSize: '9px', fontWeight: 'normal', fontFamily: styler.fontFamily, color: styler.color},
-    background: feature.properties.background || 'none',
-    opacity: styler.opacity || 0.9,
-    clickable: false
-  });
+  var shortName_ = shortName(feature.properties);
+  var longName_ = longName(feature.properties).replace('/', '<br/>');
+  var label = new txtol.TxtOverlay(
+    position, longName_, "area " + feature.properties.ssubtype + (feature.properties.background? " bg": ""), map, feature.properties.labelAnchor);
   return {
-    // hide: function() {
-    //   label.setVisible(false);
-    // },
+    init: function() {
+      shortName_ = shortName(feature.properties);
+      longName_ = longName(feature.properties).replace('/', '<br/>');
+    },
+    hide: function(zoom) {
+      if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo) label.show(); else label.hide();
+    },
     rerender: function(zoom, mapTypeId) {
-      label.setVisible(zoom >= labelVisibleFrom && zoom <= labelVisibleTo);
-      label.getLabel().fontSize = styler.fontSize(zoom) + 'px';
-      label.getLabel().fontWeight = styler.fontWeight(zoom);
-      label.setLabel(label.getLabel());
+      label.setInnerHTML(zoom >= longNameFrom? longName_: shortName_);
+      if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo) label.show(); else label.hide();      
     }
   };
 }
 
 var boxStylers = {
   "distance": {
-    visibleFrom: 12,
+    visibleFrom: 11,
     visibleTo: 15,
   },
 };
@@ -800,8 +903,11 @@ function box(feature, map) {
   var coords = feature.geometry.coordinates;
   var position = new google.maps.LatLng(coords[1], coords[0]);
   var box = new txtol.TxtOverlay(
-    position, '<div>' + feature.properties.description + '</div>', "distancebox", map, feature.properties.anchor);
+    position, description(feature.properties), "distancebox", map, feature.properties.anchor);
   return {
+    init: function() {
+      box.setInnerHTML(description(feature.properties));
+    },
     hide: function() {
       box.hide();
     },
@@ -844,7 +950,7 @@ function rerender(map, force) {
 function hideObjects(map) {
   if (hidden) return;
   var zoom = map.getZoom();
-  if (zoom > prevRenderZoom) return; // hide only when zooming out
+  // if (zoom > prevRenderZoom) return; // hide only when zooming out
   var t0 = new Date().getTime();
   console.log('hide started');
   objects.forEach(function(object){ if (object.hide) object.hide(); }); 
@@ -915,20 +1021,16 @@ function initMap() {
     if (++loaded >= 3) rerender(map, true);
   });
 
-  map.addListener('idle', function() {
-    console.log('idle at', map.getZoom());
-  });
-
   var oldZoom = map.getZoom();
   map.addListener('zoom_changed', function() {
     var newZoom = map.getZoom();
     console.log('zoom_changed: ', oldZoom, newZoom);
-    oldZoom = newZoom;    
+    oldZoom = newZoom;
   });
   
   map.addListener('zoom_changed',function() {
     hideObjects(map);
-    setTimeout(function() { rerender(map); }, 500);
+    setTimeout(function() { rerender(map); }, 50);
   });
 
   map.addListener('maptypeid_changed',function () {
@@ -942,7 +1044,14 @@ function initMap() {
     disableAutoPan: true
   });
 
-  map.addListener('click', function() { tooltip.close(); });
+  map.addListener('click', function() {
+    // hack to prevent closing tooltip or unselecting when opening tooltip. event.stopPropagation had no desired effect.
+    var now = new Date().getTime();
+    if (!tooltip.openedAt || now - tooltip.openedAt > 200) {
+      tooltip.close();
+      unselectAll();
+    }
+  });
 
   // ----------
 
@@ -982,6 +1091,7 @@ function initMap() {
   {name: "Turku - Mariehamn/Långnäs - Stockholm", operators: ["Silja"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 12], description: "2 kertaa päivässä, kesto n. 11 tuntia"},
   {name: "Helsinki - Mariehamn - Stockholm", operators: ["Viking"], legs: [7, 6, 9, 11, 13], description: "kerran päivässä, kesto n. 17,5 tuntia"},
   {name: "Helsinki - Mariehamn - Stockholm", operators: ["Silja"], legs: [7, 6, 9, 11, 12], description: "kerran päivässä, kesto n. 17,5 tuntia"},
+  {name: "Mariehamn - Stockholm", operators: ["Viking"], legs: [9, 11, 13], description: "kerran päivässä, kesto 7-12 tuntia"},
   {name: "Kapellskär - Mariehamn", operators: ["Viking"], legs: [9, 10], description: "2-3 kertaa päivässä, kesto n. 2,5 tuntia, linja-autoyhteys Tukholmaan"},
   {name: "Eckerö - Grisslehamn", operators: ["Eckerolinjen"], legs: [14], description: "2-3 kertaa päivässä, kesto n. 2 tuntia"},
   {name: "Naantali - Långnäs - Kapellskär", operators: ["Finnlines"], legs: [1, 3, 4, 5, 8, 10], description: "2 kertaa päivässä, kesto n. 8,5 tuntia"},
@@ -1008,9 +1118,6 @@ function initMap() {
     strokeColor: '#d00000',
     scale: 1
   };
-
-  map.addListener('click', unselectAll);
-
 
   function Leg(object) {
     this.id = object.id;

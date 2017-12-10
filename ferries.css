@@ -143,20 +143,86 @@
       transform: scale(1);
     }
 
+    .map .txtol {
+      visibility: hidden;
+      position: absolute;
+      white-space: nowrap;
+      font-style: normal;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1;
+      -webkit-touch-callout: none; 
+      -webkit-user-select: none; 
+      -moz-user-select: none; 
+    }
+
+    .map .area {
+      color: #202030;
+      opacity: 0.7;
+    }
+
+    .map .area.bg {
+      background-color: white;
+    }
+    .map .area.province {
+      font-weight: bold;
+      font-size: 2.2em;
+    }
+
+    .map .area.mun1 {
+      font-weight: bold;
+      font-size: 2em;
+    }
+
+    .map .area.mun2 {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    .map .area.island1 {
+      font-weight: normal;
+      font-size: 1em;
+      font-family: 'Trebuchet MS';
+      color: #101010;
+      opacity: 0.8;
+    }
+
+    .map .pier {
+      color: #002080;
+      opacity: 0.9;
+      cursor: pointer;
+    }
+
+    .map .pier-1 {
+      font-size: 1.35em;
+      font-weight: 600;
+    }
+
+    .map .pier-2 {
+      font-size: 1.25em;
+      font-weight: 600;
+    }
+
+    .map .pier-3 {
+      font-size: 1.15em;
+      font-weight: 500;
+    }
+
+    .map .pier-4 {
+      font-size: 1em;
+    }
+
     .map .distancebox {
       visibility: hidden;
       background-color:rgba(0, 101, 189, 0.7);
       border-radius: 3px;
       border: 2.5px solid white;
       position: absolute;
-      white-space: nowrap;
-    }
-
-    .map .distancebox div {
       padding: 4px;
       font-style: normal;
       font-family: 'Roboto', sans-serif;
       white-space: nowrap;
+      font-size: 0.9em;
+      line-height: 1.1;
       color: #ffffff;
       text-shadow: none;
       -webkit-touch-callout: none; 
@@ -190,7 +256,7 @@
     }
 
     div#info {
-      overflow-y: auto; 
+      overflow-y: hidden; 
       width: 100%; 
       min-height: 10%;
       position: absolute;
@@ -222,11 +288,19 @@ div#fadeout.can-scroll {
   display: block;
 }
 
-    div#infocontent {
+    .infocontent {
       max-width: 600px;
       margin: 0 auto;
       background-color: #fcfdfe;
       padding: 0 5px;
+    }
+
+    .infocontent.hidden-info {
+      opacity: 0;
+    }
+
+    .infocontent.template {
+      display: none;
     }
 
     div#wrapper {
