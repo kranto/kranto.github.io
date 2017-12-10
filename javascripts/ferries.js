@@ -458,10 +458,11 @@ function road(feature, map) {
     map: map,
     clickable: false
   });
-  var maxZ = typeof feature.properties.maxZ === 'undefined'? 8: feature.properties.maxZ;
+  var minZ = feature.properties.minZ || 8;
+  var maxZ = feature.properties.maxZ || 8;
   return {
     rerender: function(zoom, mapTypeId) {
-      roadObject.setVisible(zoom >= 8 && zoom <= maxZ);
+      roadObject.setVisible(zoom >= minZ && zoom <= maxZ);
     }
   };
 }
