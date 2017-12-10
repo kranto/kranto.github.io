@@ -972,11 +972,28 @@
         "stype": "pier",
         "sname": "Nagu",
         "sname_fi": "Nauvo",
+        "labelVisibleFrom": 12,
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
       "geometry": {
         "coordinates": [21.911652, 60.194044 ],
+        "type": "Point"
+      },
+      "id": "2ca9b593ea2d9ffc181523817b91f7ce"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "sname": "Keso varvet",
+        "sname_fi": "Keson telakka",
+        "labelVisibleFrom": 10,
+        "ssubtype": "3",
+        "labelAnchor": {"dir": "E", "x":7 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [21.941702, 60.192928 ],
         "type": "Point"
       },
       "id": "2ca9b593ea2d9ffc181523817b91f7ce"
@@ -1722,7 +1739,7 @@
         "stype": "connection",
         "ssubtype": "conn2",
         "sname": "Hakkenpää - Teersalo",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Kivimo, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320095\">+358 400 320 095</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8</p><p>Vain kesäisin, osa Velkuan reittiä</p><p>Vain henkilöautoja, moottoripyöriä ja polkupyöriä</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Teersalo(Velkua), Hakkenpää(Taivassalo)</p><p>Aikataulun mukaan, 1-2 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/finferries.png\" height=\"20\" alt=\"FinFerries\"/></p><pre>Aikataulu 1.6.-31.8.2017 (tark. 20.1.)\n\nTeersalo - Hakkenpää  päivät\n\n  8.15   -   9.00     12345..\n 15.00   -  15.45     1234567\n\nHakkenpää - Teersalo  päivät\n\n  9.15   -  10.30     12345..\n 16.00   -  17.00     1234567</pre>"
+        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Kivimo, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320095\">+358 400 320 095</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8</p><p>Vain kesäisin, osa Velkuan reittiä</p><p>Vain henkilöautoja, moottoripyöriä ja polkupyöriä</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Teersalo(Velkua), Hakkenpää(Taivassalo)</p><p>Aikataulun mukaan, 1-2 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/finferries.png\" height=\"20\" alt=\"FinFerries\"/></p><pre>Aikataulu 1.6.-31.8.2017\n\nTeersalo - Hakkenpää  päivät\n\n  8.15   -   9.00     12345..\n 15.00   -  15.45     1234567\n\nHakkenpää - Teersalo  päivät\n\n  9.15   -  10.30     12345..\n 16.00   -  17.00     1234567</pre>"
       },
       "features": [
         {
@@ -2303,6 +2320,17 @@
       },
       "features": [
       {
+        "type": "Feature",
+        "properties": {
+          "stype": "leg",
+          "sname": "Keson telakka"
+        },
+        "geometry": {
+          "coordinates": [[21.941702, 60.192928 ], [21.932614, 60.195711], [21.914394, 60.197389 ] ],
+          "type": "LineString"
+        },
+        "id": "02781c9deff3c1e8515aead6c3e8bb1c"
+      },{
         "type": "Feature",
         "properties": {
           "stype": "leg",
