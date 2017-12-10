@@ -56,8 +56,18 @@ function inIframe () {
     }
 }
 
+
+function showLanguage(lang) {
+  $("[lang]").each(function () {
+    if ($(this).attr("lang") == lang)
+      $(this).show();
+    else
+      $(this).hide();
+  })
+}
+
 $('.lang-button').click(function(event) {
-  setLanguage(event.currentTarget.lang);
+  setLanguage(event.currentTarget.getAttribute("setlang"));
 });
 
 var currentLang;
@@ -68,8 +78,8 @@ function setLanguage(lang) {
   }
   if (lang != 'fi' && lang != 'sv') lang = 'en';
   $(".lang-button").toggleClass('active', false);
-  $(".lang-button[lang=" + lang +"]").toggleClass('active', true);
-  currentLang = "_" + lang;
+  $(".lang-button[setlang=" + lang +"]").toggleClass('active', true);
+  currentLang = lang;
 
   if (objects) {
     objects.forEach(function(object){ if (object.init) object.init(); });
@@ -79,6 +89,8 @@ function setLanguage(lang) {
   if (selected) {
     select(selected);
   }
+
+  showLanguage(lang);
 }
 
 function initLanguage() {
@@ -92,13 +104,18 @@ function initLanguage() {
 
 initLanguage();
 
+$(document).ready(function() {
+  showLanguage(currentLang);
+});
+
+
 function shortName(props) {
-  return props["sname" + currentLang] || props.sname;
+  return props["sname_" + currentLang] || props.sname;
 }
 
 function longName(props) {
   var localName = props.sname;
-  var currLocaleName = props["sname" + currentLang];
+  var currLocaleName = props["sname_" + currentLang];
   var firstName = currLocaleName? currLocaleName: localName;
   var otherNames = ["", "_fi", "_sv", "_en"].map(function(l) {
     return props["sname" + l];
@@ -107,7 +124,7 @@ function longName(props) {
 }
 
 function description(props) {
-  return props["description" + currentLang] || props.description;
+  return props["description_" + currentLang] || props.description;
 }
 
 $(document).ready(function() {
