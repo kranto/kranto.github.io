@@ -3130,6 +3130,19 @@
     {
       "type": "Feature",
       "properties": {
+        "stype": "cableferry",
+        "sname": "Sorpo",
+        "description": "<p><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358405692620\">+358 40 569 2620</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> ?</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Sorpo (länsi), Jermo (itä)</p><p>Liikennöi n. 15 minuutin välein 7.30-19.30</p><p><a target=\"info\" href=\"http://lautta.net/db/aikataulut/sorpo/sorpo.php?lang=finferries\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+      },
+      "geometry": {
+        "coordinates": [[22.285522, 60.150366], [22.281830, 60.150910] ],
+        "type": "LineString"
+      },
+      "id": "7a4d754310fce39d5b648530c87e01d2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Knivskär",
         "labelVisibleTo": -1,
