@@ -256,9 +256,9 @@
       "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Sorpo",
-        "labelVisibleFrom": 11,
+        "labelVisibleFrom": 10,
         "labelVisibleTo": 12,
-        "labelAnchor": {"dir": "C", "x":0 , "y":0 }
+        "labelAnchor": {"dir": "S", "x":0 , "y":0 }
       },
       "geometry": {
         "coordinates": [22.265, 60.146 ],
