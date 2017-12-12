@@ -389,12 +389,12 @@ function createMapStyles(mapTypeId, zoom, settings) {
     { featureType: 'road', elementType: 'labels.text.fill', stylers: [{color: '#000000'}]},
     { featureType: 'road', elementType: 'geometry.fill', stylers: [{color: roadColor}]},
     { featureType: 'road', elementType: 'geometry.stroke', stylers: [{color: roadColor}]},
-    { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{visibility: "on"}, {weight: zoom <= 8? 0: Math.max(1.5, (zoom-5)*0.4)}]},
-    { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{visibility: "simplified"}, {weight: zoom <= 6? 0: 1}]},
-    { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{visibility: "on"}, {weight: zoom <= 8? 0: Math.max(1.3, (zoom-5)*0.4)}]},
-    { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{visibility: "on"}, {weight: 0.5}]},
-    { featureType: 'road.arterial', elementType: 'geometry', stylers: [{weight: Math.max(1, (zoom-7)*0.4)}]},
-    { featureType: 'road.local', elementType: 'geometry', stylers: [{weight: 1}, {lightness: (zoom-12)*0}]},
+    { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{visibility: "simplified"}, {weight: zoom <= 7? 0.5: Math.max(0.6, 0.6 + (zoom-7)*0.4)}]},
+    { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{visibility: "simplified"}, {weight: 0.1}]},
+    { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{visibility: "simplified"}, {weight: zoom <= 6? 0.7: Math.max(0.8, 0.8 + (zoom-6)*0.55)}]},
+    { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{visibility: "simplified"}, {weight: 0.2}]},
+    { featureType: 'road.arterial', elementType: 'geometry', stylers: [{weight: Math.max(0.8, 0.8 + (zoom-9)*0.3)}]},
+    { featureType: 'road.local', elementType: 'geometry', stylers: [{weight: 0.8}]},
   ];
 }
 
