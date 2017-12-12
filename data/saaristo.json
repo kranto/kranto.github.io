@@ -4632,6 +4632,22 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
+        "sname": "Tallinn",
+        "sname_fi": "Tallinna",
+        "labelVisibleFrom": 30,
+        "ssubtype": "1",
+        "labelAnchor": {"dir": "N", "x":0 , "y":-10 }
+      },
+      "geometry": {
+        "coordinates": [24.770607,59.443868],
+        "type": "Point"
+      },
+      "id": "e1a55ccaf401d6f64b3765eeb5cbf211"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
         "sname": "Stockholm Stadsgården",
         "ssubtype": "1",
         "labelVisibleFrom": 30,
@@ -6376,6 +6392,22 @@
         "labelAnchor": {"dir": "NE", "x": 10, "y": 0 },
         "labelVisibleFrom": 8,
         "background": "white"
+      }
+    },
+    {
+      "id": "9e752a9b1c3d3478c083913ad7d0001e",
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [24.757,59.5],
+        "type": "Point"
+      },
+      "properties": {
+        "stype": "area",
+        "ssubtype": "mun1",
+        "sname": "Tallinn",
+        "sname_fi": "Tallinna",
+        "labelAnchor": {"dir": "C", "x": 0, "y": 0 },
+        "labelVisibleFrom": 8
       }
     },
     {

@@ -1080,8 +1080,8 @@ function initMap() {
   path: "20.1375961,59.9568151,0.0 20.185318,59.9679858,0.0 20.2611923,60.0075683,0.0 20.3768921,60.0949798,0.0" },
   { id: 6, name: "Herröskatan - Mariehamn",
   path: "19.9276543,60.0920271,0.0 19.9265383,60.0896932,0.0 19.9267959,60.0724635,0.0 19.9263668,60.0541738,0.0 19.9403572,60.0321012,0.0 19.9405289,60.0009602,0.0 20.0013828,59.971551,0.0 20.0325394,59.9568581,0.0 20.1375961,59.9568151,0.0" },
-  { id: 7, name: "Herröskatan - Helsinki",
-  path: "20.1375961,59.9568151,0.0 20.1618004,59.9589636,0.0 20.1935577,59.9587917,0.0 20.3082275,59.9231945,0.0 20.5149078,59.8009796,0.0 21.6616058,59.7044776,0.0 23.6027527,59.7256004,0.0 24.8881531,59.9869673,0.0 24.9904633,60.1510752,0.0 24.9568176,60.1661089,0.0" },
+  { id: 7, name: "Herröskatan - Hanko",
+  path: "20.1375961,59.9568151,0.0 20.1618004,59.9589636,0.0 20.1935577,59.9587917,0.0 20.3082275,59.9231945,0.0 20.5149078,59.8009796,0.0 21.6616058,59.7044776,0.0 23.6027527,59.7256004,0.0" },
   { id: 8, name: "Herröskatan - Fejan",
   path: "19.1717434,59.7310521,0.0 19.342804,59.7643486,0.0 20.1375961,59.9568151,0.0" },
   { id: 9, name: "Mariehamn - Fejan",
@@ -1096,6 +1096,10 @@ function initMap() {
   path: "18.0965424,59.3170755,0.0 18.1075287,59.318477,0.0 18.1597137,59.3205792,0.0 18.2084656,59.3335396,0.0" },
   { id: 14, name: "Grisslehamn - Eckerö",
   path: "19.5357513,60.2258341,0.0 19.5304298,60.2283061,0.0 19.5201302,60.226857,0.0 19.4531822,60.1805383,0.0 18.8297379,60.094225,0.0 18.8154602,60.0981463,0.0" },
+  { id: 15, name: "Hanko - Helsinki",
+  path: "23.6027527,59.7256004,0.0 24.8881531,59.9869673,0.0 24.9904633,60.1510752,0.0 24.9568176,60.1661089,0.0" },
+  { id: 16, name: "Hanko - Tallinn",
+  path: "23.6027527,59.7256004,0.0 24.555864,59.632669,0.0 24.784230,59.456251,0.0 24.770607,59.443868,0.0" },
   ];
 
   var lauttaRoutesList = [
@@ -1116,14 +1120,21 @@ function initMap() {
   { sname: "Helsinki - Maarianhamina - Tukholma",
     sname_sv: "Helsingfors - Mariehamn - Stockholm",
     sname_en: "Helsinki - Mariehamn - Stockholm",
-    operators: ["Viking"], legs: [7, 6, 9, 11, 13],
+    operators: ["Viking"], legs: [7, 6, 9, 11, 13, 15],
     description_fi: "kerran päivässä, kesto n. 17,5 tuntia",
     description_sv: "en gång om dagen, längd ca 17,5 timmar",
     description_en: "once a day, duration about 17,5 hours"},
   { sname: "Helsinki - Maarianhamina - Tukholma",
     sname_sv: "Helsingfors - Mariehamn - Stockholm",
     sname_en: "Helsinki - Mariehamn - Stockholm",
-    operators: ["Silja"], legs: [7, 6, 9, 11, 12],
+    operators: ["Silja"], legs: [7, 6, 9, 11, 12, 15],
+    description_fi: "kerran päivässä, kesto n. 17,5 tuntia",
+    description_sv: "en gång om dagen, längd ca 17,5 timmar",
+    description_en: "once a day, duration about 17,5 hours"},
+  { sname: "Tallinna - Maarianhamina - Tukholma",
+    sname_sv: "Tallinn - Mariehamn - Stockholm",
+    sname_en: "Tallinn - Mariehamn - Stockholm",
+    operators: ["Tallink"], legs: [7, 6, 9, 11, 12, 16],
     description_fi: "kerran päivässä, kesto n. 17,5 tuntia",
     description_sv: "en gång om dagen, längd ca 17,5 timmar",
     description_en: "once a day, duration about 17,5 hours"},
@@ -1154,6 +1165,7 @@ function initMap() {
   var operators = {
     Viking: {name: "Viking Line", logo: "img/vikingline.png", height: 15, link: "https://www.vikingline.fi/"},
     Silja: {name: "Tallink / Silja Line", logo: "img/siljaline.png", height: 20, link: "https://www.tallinksilja.fi/"},
+    Tallink: {name: "Tallink / Silja Line", logo: "img/tallink.png", height: 20, link: "https://www.tallink.ee/"},
     Finnlines: {name: "Tallink / Silja Line", logo: "img/finnlines.png", height: 20, link: "https://www.finnlines.com/"},
     Eckerolinjen: {name: "Eckerölinjen", logo: "img/eckerolinjen.png", height: 20, link: "https://www.eckerolinjen.ax/"}
   };
