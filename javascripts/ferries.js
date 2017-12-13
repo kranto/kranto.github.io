@@ -1057,14 +1057,24 @@ function initMap() {
   });
 
   map.addListener('click', function() {
+      toggleHeaderbar();
     // hack to prevent closing tooltip or unselecting when opening tooltip. event.stopPropagation had no desired effect.
     var now = new Date().getTime();
     if (!tooltip.openedAt || now - tooltip.openedAt > 200) {
-      tooltip.close();
-      unselectAll();
+      // tooltip.close();
+      // unselectAll();
     }
   });
 
+  function toggleHeaderbar() {
+    if ($("#headerbar").is(":hidden")) {
+      $("#headerbar").slideDown();
+    } else {
+      $("#headerbar").slideUp();      
+    }
+
+  }
+s
   // ----------
 
   var lauttaLegs = [

@@ -173,9 +173,18 @@
         </form>
       </div>
     </nav>
-    
   </div>
   <div id="scrollIndicator"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+  <div id="headerbar" style="position: fixed; top: 0px; height: 50px; width: 100%; background-color: white; border-bottom: solid 1px;">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle2" data-toggle="collapse" data-target="#myNavbar" style="float: left; margin: 5px; border: none; outline: 0;">
+          <i class="fa fa-bars" aria-hidden="true" style="font-size: 30px;"></i>
+        </button>
+        <div id="navbartitle" style="margin-left: 20px; font-size: 20px;">
+          Saaristolautat
+        </div>
+      </div>
+  </div>
   <canvas id="canvas" style="display: none;"/>
   <script src="/javascripts/ferries.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX_N6yFjHfac6v9-xiwA31yg1twAMMyGA&callback=initMap" async defer></script>
