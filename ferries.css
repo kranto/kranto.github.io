@@ -137,12 +137,6 @@
       text-shadow: none;
     }
 
-    #pano.visible {
-      height: 30%;
-      width: 100%;
-      transform: scale(1);
-    }
-
     .map .txtol {
       visibility: hidden;
       position: absolute;
