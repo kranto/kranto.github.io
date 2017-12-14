@@ -53,10 +53,12 @@
   </div>
     
   <div id="wrapper">
+  <div id="wrapper2">
 
     <div id="infopage" style="display: none;">
       <div id="infopagecontent">
         <button type="button" class="btn btn-default closeInfoButton" id="closeInfoPageButton"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <div id="ferriesinfo" class="infosection">
         <h2>Ahvenanmaan lautat <img src="img/alandstrafiken.png" width="120px"/></h2>
         <h3>Lauttareitit</h3>
         <p>
@@ -92,7 +94,12 @@
         <p>
           Tulossa...
         </p>
-        <h2>Tietoja sovelluksesta</h2>
+        </div>
+
+        <div id="appinfo" class="infosection">
+        <h2 lang="fi">Tietoja sovelluksesta</h2>
+        <h2 lang="sv">Info om applikationen</h2>
+        <h2 lang="en">About the Application</h2>
         <p>
           Saaristolautat on epävirallinen, harrastuspohjalta tehty sovellus, jonka tarkoitus on auttaa saaristoon suuntaavien matkojen suunnittelussa.
         </p>
@@ -106,6 +113,7 @@
           Anna palautetta Facebookissa tai
           <a href="mailto:feedback@saaristolautat.fi?subject=Palautetta Saaristolautat-sovelluksesta">sähköpostilla <img src="sendemail.svg" height="30"/></a>.
         </p>
+        </div>
       </div>
     </div>
 
@@ -120,20 +128,56 @@
     <div id="mapcontainer">
       <div id="map" class="map"/>
     </div>
+  </div>
 
-    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
+  <div id="scrollIndicator"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+
+</div>  
+  <div id="topbar">
+        <button id="menubutton" type="button" class="topbarbutton">
+          <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
-        <div id="navbartitle">
-          Title
+        <div id="topbartitle">
+          Saaristolautat.fi
+        </div>
+        <button id="settingsbutton" type="button" class="topbarbutton right">
+          <i class="fa fa-sliders" aria-hidden="true"></i>
+        </button>
+  </div>
+
+      <div class="" id="menu">
+      <div class="menucontainer" id="menucontainer">
+            <div class="box">
+              Getting there
+            </div>
+            <div class="box">
+              <span lang="fi">Pyöräily</span><span lang="sv">Cykling</span><span lang="en">Cycling</span>
+            </div>
+            <div class="box">
+              Links
+            </div>
+            <div class="box" data-target="#ferriesinfo">
+              Ferries
+            </div>
+            <div class="box">
+              Accommodation
+            </div>
+            <div class="box">
+              Something here
+            </div>
+            <div class="box">
+              Tips
+            </div>
+            <div id="about" class="box" data-target="#appinfo">
+              About the Application
+            </div>
+          </div>
         </div>
       </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <form class="form-horizontal nav-form">
+      </div>
+  
+      <div class="" id="settings">
+        <form class="form-horizontal">
           <div class="form-group row">
             <label class="control-label col-xs-3"><span lang="fi">Kartta</span><span lang="sv">Karta</span><span lang="en">Map</span>:</label>
             <div class="btn-group col-xs-9">
@@ -165,26 +209,10 @@
               <button type="button" class="btn btn-default lang-button" setlang="en"">EN</button>
             </div>
           </div>
-          <div class="form-group row lastrow">
-            <div class="col-xs-12">
-              <button type="button" class="btn btn-default" id="showInfoPageButton"><span lang="fi">Tietoja lautoista ja sovelluksesta</span><span lang="sv">Info om färjör och applikationen</span><span lang="en">Info about ferries and the application</span></button>
-            </div>
-          </div>
         </form>
       </div>
-    </nav>
   </div>
-  <div id="scrollIndicator"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
-  <div id="headerbar" style="position: fixed; top: 0px; height: 50px; width: 100%; background-color: white; border-bottom: solid 1px;">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle2" data-toggle="collapse" data-target="#myNavbar" style="float: left; margin: 5px; border: none; outline: 0;">
-          <i class="fa fa-bars" aria-hidden="true" style="font-size: 30px;"></i>
-        </button>
-        <div id="navbartitle" style="margin-left: 20px; font-size: 20px;">
-          Saaristolautat
-        </div>
-      </div>
-  </div>
+  
   <canvas id="canvas" style="display: none;"/>
   <script src="/javascripts/ferries.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX_N6yFjHfac6v9-xiwA31yg1twAMMyGA&callback=initMap" async defer></script>

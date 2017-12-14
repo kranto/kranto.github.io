@@ -12,9 +12,37 @@ function toggleScrollIndicator()
   $('#scrollIndicator').toggleClass('can-scroll', !isBottom);
 }
 
-$('div#map').click(function() { // close menu when map clicked
-  $('.navbar-toggle[aria-expanded="true"]').click();
+$('#menubutton').click(function() {
+  if ($("#menu").is(":hidden")) {
+    $("#settings").slideUp("fast", function() {
+      $("#menu").slideDown("fast");
+      $("#menu").scrollTop(0);
+    });
+  } else {
+    $("#menu").slideUp("fast");
+  }
 });
+
+$('#settingsbutton').click(function() {
+  if ($("#settings").is(":hidden")) {
+    $("#menu").slideUp("fast", function() {
+      $("#settings").slideDown("fast");
+    });
+  } else {
+    $("#settings").slideUp("fast");
+  }
+});
+
+function toggleHeaderbar() {
+  if ($("#topbar").is(":hidden")) {
+    $("#topbar").slideDown('fast');
+  } else if ($("#menu").is(":hidden") && $("#settings").is(":hidden")) {
+    $("#topbar").slideUp('fast');      
+  } else {
+    $("#menu").slideUp('fast');
+    $("#settings").slideUp('fast');
+  }
+}
 
 $('#setMapTypeMap').click(function() {
   map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
@@ -31,9 +59,11 @@ $('#resetViewButton').click(function() {
 });
 
 var wasSelected = [];
-$('#showInfoPageButton').click(function() {
+$('.box').click(function(event) {
   $('#infopage').fadeIn();
-  $('.navbar-toggle[aria-expanded="true"]').click();
+  $(".infosection").hide();
+  $(this.getAttribute("data-target")) .show();
+  $("#menu").slideUp("fast");
   wasSelected = selected.slice();
   unselectAll();
 });
@@ -42,7 +72,6 @@ $('#closeInfoPageButton').click(function() {
   $('#infopage').fadeOut();
   select(wasSelected);
 });
-
 
 $('#closeInfoButton').click(function() {
   unselectAll();
@@ -55,7 +84,6 @@ function inIframe () {
         return true;
     }
 }
-
 
 function showLanguage(lang) {
   $("[lang]").each(function () {
@@ -135,10 +163,6 @@ $(document).ready(function() {
   var hostname = window.location.hostname;
   var framed = inIframe();
   var title = framed? '<a href="https://' + hostname + '" target="saaristolautat">' + hostname + '</a>': hostname;
-  $("#navbartitle").html(title);
-  if (!framed) {
-    setTimeout(function() { $("#navbartitle").hide(); }, 15000);
-  }
 });
 
 function addMapListeners(map) {
@@ -152,6 +176,8 @@ function addMapListeners(map) {
       $('#setMapTypeSatellite').removeClass('active');          
     }
   });
+
+  if (!inIframe()) map.addListener('click', toggleHeaderbar);
 }
 
 var timeout = false;
@@ -1056,25 +1082,7 @@ function initMap() {
     disableAutoPan: true
   });
 
-  map.addListener('click', function() {
-      toggleHeaderbar();
-    // hack to prevent closing tooltip or unselecting when opening tooltip. event.stopPropagation had no desired effect.
-    var now = new Date().getTime();
-    if (!tooltip.openedAt || now - tooltip.openedAt > 200) {
-      // tooltip.close();
-      // unselectAll();
-    }
-  });
 
-  function toggleHeaderbar() {
-    if ($("#headerbar").is(":hidden")) {
-      $("#headerbar").slideDown();
-    } else {
-      $("#headerbar").slideUp();      
-    }
-
-  }
-s
   // ----------
 
   var lauttaLegs = [
