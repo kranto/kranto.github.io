@@ -51,7 +51,9 @@ $('#settingsbutton').click(function() {
 });
 
 function toggleHeaderbar() {
-  if ($("#topbar").is(":hidden")) {
+  if (selected.length > 0) {
+    $("#topbar").slideDown('fast');
+  } else if ($("#topbar").is(":hidden")) {
     $("#topbar").slideDown('fast');
   } else if ($("#menu").is(":hidden") && $("#settings").is(":hidden")) {
     $("#topbar").slideUp('fast');      
@@ -261,6 +263,8 @@ function select(targets, mouseEvent) {
     if (!bounds) bounds = target.bounds;
     if (bounds && target.bounds) bounds.union(target.bounds);
   });
+
+  toggleHeaderbar();
 
   if (selectedCountWas == 0) {
 
