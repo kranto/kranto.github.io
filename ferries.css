@@ -71,12 +71,23 @@
       position: fixed;
       top: 50px;
       width: 100%;
+      text-align: center;
       bottom: 0px;
-      background-color: white;
+      background-color: rgba(0,0,0, 0.1);
       z-index: 4;
       overflow-y: scroll;
+    }
+
+    div#infopagecontent {
+      position: inline-block;
+      max-width:600px;
+      min-height: 100%;
+      margin: auto;
+      text-align: left;
+      background-color: white;
       padding: 15px;
     }
+
     #infopage td, #infopage th {
       padding: 5px;
     }
