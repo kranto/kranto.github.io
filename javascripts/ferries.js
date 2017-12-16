@@ -12,24 +12,41 @@ function toggleScrollIndicator()
   $('#scrollIndicator').toggleClass('can-scroll', !isBottom);
 }
 
+function showMenu() {
+  hideSettings(function() {
+    $("#menu").slideDown("fast");
+    $("#menu").scrollTop(0);
+  });
+}
+
+function hideMenu(cb) {
+  $("#menu").slideUp("fast", cb);
+}
+
+function showSettings() {
+  hideMenu(function() {
+    $("#settings").slideDown("fast");
+    $("#settings").scrollTop(0);
+  });
+}
+
+function hideSettings(cb) {
+  $("#settings").slideUp("fast", cb);
+}
+
 $('#menubutton').click(function() {
   if ($("#menu").is(":hidden")) {
-    $("#settings").slideUp("fast", function() {
-      $("#menu").slideDown("fast");
-      $("#menu").scrollTop(0);
-    });
+    showMenu();
   } else {
-    $("#menu").slideUp("fast");
+    hideMenu();
   }
 });
 
 $('#settingsbutton').click(function() {
   if ($("#settings").is(":hidden")) {
-    $("#menu").slideUp("fast", function() {
-      $("#settings").slideDown("fast");
-    });
+    showSettings();
   } else {
-    $("#settings").slideUp("fast");
+    hideSettings();
   }
 });
 
@@ -39,8 +56,8 @@ function toggleHeaderbar() {
   } else if ($("#menu").is(":hidden") && $("#settings").is(":hidden")) {
     $("#topbar").slideUp('fast');      
   } else {
-    $("#menu").slideUp('fast');
-    $("#settings").slideUp('fast');
+    hideMenu();
+    hideSettings();
   }
 }
 
@@ -54,7 +71,7 @@ $('#setMapTypeSatellite').click(function() {
 
 $('#resetViewButton').click(function() {
   google.maps.event.addListenerOnce(map, 'idle', onMapIdle);
-  $('.navbar-toggle').click();
+  hideSettings();
   resetMap();
 });
 
@@ -63,7 +80,7 @@ $('.box').click(function(event) {
   $('#infopage').fadeIn();
   $(".infosection").hide();
   $(this.getAttribute("data-target")) .show();
-  $("#menu").slideUp("fast");
+  hideMenu();
   wasSelected = selected.slice();
   unselectAll();
 });

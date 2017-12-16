@@ -73,7 +73,7 @@
       width: 100%;
       text-align: center;
       bottom: 0px;
-      background-color: rgba(0,0,0, 0.1);
+      background-color: rgba(0,0,0, 0.3);
       z-index: 4;
       overflow-y: scroll;
     }
@@ -384,13 +384,13 @@
     #settings {
       display: none;
       position: fixed;
-      left: 0px;
-      top: 52px;
-      width: 100%;
-      background-color: white;
-      border: solid #aaa 1px;
-      padding: 10px;
-      padding-left: 20px;
+      right: 0px;
+      top: 0px;
+      width: 200px;
+      max-height: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      box-shadow: -2px 2px #ddd;
     }
 
     #menu .col-sm-3 {
@@ -412,4 +412,16 @@
       cursor: inherit;
       color: #ccc;
       pointer-events: none;
+    }
+
+    .boxs {
+      margin: 5px;
+      height: 40px;
+      border-bottom: solid #ddd 1px;
+      overflow: hidden;
+    }
+
+    .boxs button{
+      height: 30px;
+      padding-top: 4px;
     }
