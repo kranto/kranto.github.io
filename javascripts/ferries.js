@@ -51,16 +51,13 @@ $('#settingsbutton').click(function() {
 });
 
 function toggleHeaderbar() {
-  if (selected.length > 0) {
+  if (selected.length > 0 || $("#topbar").is(":hidden")) {
     $("#topbar").slideDown('fast');
-  } else if ($("#topbar").is(":hidden")) {
-    $("#topbar").slideDown('fast');
-  } else if ($("#menu").is(":hidden") && $("#settings").is(":hidden")) {
+  } else if (selected.length == 0 && $("#menu").is(":hidden") && $("#settings").is(":hidden")) {
     $("#topbar").slideUp('fast');      
-  } else {
-    hideMenu();
-    hideSettings();
   }
+  hideMenu();
+  hideSettings();
 }
 
 $('#setMapTypeMap').click(function() {
