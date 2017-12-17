@@ -394,12 +394,16 @@ document.onwebkitfullscreenchange = fullscreenchange;
 
 $("#toggleFullscreen").click(toggleFullscreen);
 
-var layers = {
+var localStorgageLayers = localStorage.getItem("layers");
+
+var layers = localStorgageLayers? JSON.parse(localStorgageLayers): {
   ringroads: false,
   distances: true,
   conn4: true,
   longdistanceferries: true,
-}
+};
+
+localStorage.setItem("layers", JSON.stringify(layers));
 
 for (var key in layers) {
   $(".layercheckbox[data-target=" +  key +"]").toggleClass("active", layers[key]);
@@ -409,11 +413,9 @@ $(".layercheckbox:not([data-target])").prop("disabled", true);
 
 $(".layercheckbox").click(function(event) {
   var layer = this.getAttribute("data-target");
-  console.log(event);
-  console.log(this);
   layers[layer] = !layers[layer];
-  console.log(layers);
   $(this).toggleClass("active", layers[layer]);
+  localStorage.setItem("layers", JSON.stringify(layers));
   rerender(map, true);
 });
 
