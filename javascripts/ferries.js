@@ -289,7 +289,7 @@ function select(targets, mouseEvent) {
   } else { // swap content of #info
     
     // all this just calculate needed scroll animation
-    var wrapper = $("#wrapper");
+    var wrapper = $("#wrapper2");
     var wrapperHeight0 = wrapper[0].scrollHeight;
     var visibleHeight = wrapper.outerHeight();
     var scrolled0 = wrapper.scrollTop();
