@@ -394,10 +394,26 @@ document.onwebkitfullscreenchange = fullscreenchange;
 
 $("#toggleFullscreen").click(toggleFullscreen);
 
-var rengastieShown = false;
-$("#toggleRengastie").click(function() {
-  $(this).toggleClass("active");
-  rengastieShown = $(this).hasClass("active");
+var layers = {
+  ringroads: false,
+  distances: true,
+  conn4: true,
+  longdistanceferries: true,
+}
+
+for (var key in layers) {
+  $(".layercheckbox[data-target=" +  key +"]").toggleClass("active", layers[key]);
+}
+
+$(".layercheckbox:not([data-target])").prop("disabled", true);
+
+$(".layercheckbox").click(function(event) {
+  var layer = this.getAttribute("data-target");
+  console.log(event);
+  console.log(this);
+  layers[layer] = !layers[layer];
+  console.log(layers);
+  $(this).toggleClass("active", layers[layer]);
   rerender(map, true);
 });
 
@@ -534,7 +550,7 @@ function route(feature, map) {
   });
   return {
     rerender: function(zoom, mapTypeId) {
-      object.setVisible(rengastieShown && zoom >= 8);
+      object.setVisible(layers.ringroads && zoom >= 8);
       object.setOptions({strokeWeight: (zoom<=8? 4: zoom<=9? 5: 6)});
     }
   };
@@ -801,7 +817,11 @@ var connectionStylers = {
 
 function connection(connection, map) {
   var baseStyler = connectionStylers["base"];
-  var connectionStyler = connection.properties.ssubtype? connectionStylers[connection.properties.ssubtype]: baseStyler;
+  var subtype = connection.properties.ssubtype;
+  var connectionStyler = subtype? connectionStylers[subtype]: baseStyler;
+  var layerSelector = function() {
+    return subtype? !(layers[subtype] === false): true; 
+  };
 
   var legFeatures = connection.type === 'FeatureCollection'? connection.features: [connection];
   var connectionObject = { name: shortName(connection.properties), description: connection.properties.description};
@@ -847,8 +867,8 @@ function connection(connection, map) {
       select([connectionObject], event);
     });
     var rerender = function(zoom, mapTypeId) {
-      line.setVisible(zoom >= visibleFrom && zoom <= visibleTo);
-      lineb.setVisible(zoom >= visibleFrom && zoom <= visibleTo);
+      line.setVisible(layerSelector() && zoom >= visibleFrom && zoom <= visibleTo);
+      lineb.setVisible(layerSelector() && zoom >= visibleFrom && zoom <= visibleTo);
     }
     return {highlight: highlight, rerender: rerender };
   });
@@ -901,7 +921,7 @@ function pin(feature, map) {
       marker.setVisible(false);
     },
     rerender: function(zoom, mapTypeId) {
-      marker.setVisible(zoom >= 11);
+      marker.setVisible(layers.distances && zoom >= 11);
     }
   };
 }
@@ -974,7 +994,7 @@ function box(feature, map) {
       box.hide();
     },
     rerender: function(zoom, mapTypeId) {
-      if (zoom >= visibleFrom && zoom <= visibleTo) box.show(); else box.hide();
+      if (layers.distances && zoom >= visibleFrom && zoom <= visibleTo) box.show(); else box.hide();
     }
   };
 }
@@ -1004,6 +1024,7 @@ function rerender(map, force) {
   var t0 = new Date().getTime();
   console.log('rerender started at', newRerender);
   objects.forEach(function(object){ object.rerender(zoom, mapTypeId); }); 
+  lauttaLegs.forEach(function(leg) { leg.rerender(zoom, mapTypeId); });
   console.log('rerender finished at', zoom, 'in', new Date().getTime() - t0, 'ms');
   hidden = false;
   prevRenderZoom = zoom;
@@ -1052,6 +1073,7 @@ function resetMap() {
 }
 
 var lauttaRoutes;
+var lauttaLegs;
 
 function initMap() {
 
@@ -1111,7 +1133,7 @@ function initMap() {
 
   // ----------
 
-  var lauttaLegs = [
+  var lauttaLegsList = [
   { id: 1, name: 'Naantali - Airisto', 
   path: "22.0399475,60.4572178,0.0 22.0845795,60.4426562,0.0 22.077713,60.4307989,0.0 22.1003723,60.3836657,0.0" },
   { id: 2, name: "Turku - Airisto",
@@ -1264,7 +1286,7 @@ function initMap() {
       select(that.routes, event);
     });
     this.rerender = function(zoom, mapTypeId) {
-      this.line.setVisible(zoom >= 7 && zoom <= 11);
+      this.line.setVisible(layers.longdistanceferries && zoom >= 7 && zoom <= 11);
       this.line.setOptions({icons: [{
         icon: zoom <= 9? lauttaLineSymbol: lauttaLineSymbolDimmed,
         offset: '4',
@@ -1299,15 +1321,9 @@ function initMap() {
     this.legs.forEach(function(leg) { leg.highlight(doHighlight); });
   }
 
-  var lauttaLegs =
-  lauttaLegs.map(function(leg) {
+  lauttaLegs =
+  lauttaLegsList.map(function(leg) {
     return new Leg(leg);
-  });
-
-  map.addListener('zoom_changed', function() {
-    var zoom = map.getZoom();
-    var mapTypeId = map.getMapTypeId();
-    lauttaLegs.forEach(function(leg) { leg.rerender(zoom, mapTypeId); });
   });
 
   lauttaLegIndex = {};
