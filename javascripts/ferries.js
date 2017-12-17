@@ -1,13 +1,13 @@
 
 $(document).ready(function(){
-    $('#wrapper').bind('scroll',toggleScrollIndicator); 
+    $('#wrapper2').bind('scroll',toggleScrollIndicator); 
 });
 
 var scrollLimit = 22;
 
 function toggleScrollIndicator()
 {
-  var elem = $("#wrapper");
+  var elem = $("#wrapper2");
   var isBottom = (elem[0].scrollHeight - elem.scrollTop() - scrollLimit <= elem.outerHeight());
   $('#scrollIndicator').toggleClass('can-scroll', !isBottom);
 }
@@ -50,11 +50,19 @@ $('#settingsbutton').click(function() {
   }
 });
 
+function hideHeaderbar() {
+  $("#topbar").slideUp('fast');
+}
+
+function showHeaderbar() {
+  $("#topbar").slideDown('fast');
+}
+
 function toggleHeaderbar() {
   if (selected.length > 0 || $("#topbar").is(":hidden")) {
-    $("#topbar").slideDown('fast');
+    showHeaderbar();
   } else if (selected.length == 0 && $("#menu").is(":hidden") && $("#settings").is(":hidden")) {
-    $("#topbar").slideUp('fast');      
+    hideHeaderbar();
   }
   hideMenu();
   hideSettings();
@@ -261,7 +269,7 @@ function select(targets, mouseEvent) {
     if (bounds && target.bounds) bounds.union(target.bounds);
   });
 
-  toggleHeaderbar();
+  showHeaderbar();
 
   if (selectedCountWas == 0) {
 
