@@ -399,6 +399,7 @@ var localStorgageLayers = localStorage.getItem("layers");
 var layers = localStorgageLayers? JSON.parse(localStorgageLayers): {
   ringroads: false,
   distances: true,
+  roadferries: true,
   conn4: true,
   longdistanceferries: true,
 };
@@ -793,7 +794,8 @@ var connectionStylers = {
     zIndex: 10,
     highlightColor: '#f97cdc',
     highlightWeight: 10,
-    highlightOpacity: .6
+    highlightOpacity: .6,
+    layer: "roadferries"
   },
   "conn1": {
   },
@@ -803,7 +805,7 @@ var connectionStylers = {
   },
   "conn2": {
     weight: 2,
-    color: '#005dd8',
+    color: '#005dd8'
   },
   "conn2m": {
     color: '#ff7c0a',
@@ -823,7 +825,8 @@ var connectionStylers = {
     weight: 1.5,
     color: '#7fb3e8',
     opacity: 0.8,
-    zIndex: 8
+    zIndex: 8,
+    layer: "conn4"
   }
 };
 
@@ -831,8 +834,9 @@ function connection(connection, map) {
   var baseStyler = connectionStylers["base"];
   var subtype = connection.properties.ssubtype;
   var connectionStyler = subtype? connectionStylers[subtype]: baseStyler;
+  var layer = connectionStyler.layer || baseStyler.layer;
   var layerSelector = function() {
-    return subtype? !(layers[subtype] === false): true; 
+    return layers[layer]; 
   };
 
   var legFeatures = connection.type === 'FeatureCollection'? connection.features: [connection];
