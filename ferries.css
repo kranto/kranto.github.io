@@ -415,8 +415,9 @@
     }
 
     .boxs {
+      user-select: none;
       margin: 5px;
-      height: 40px;
+      min-height: 40px;
       border-bottom: solid #ddd 1px;
       overflow: hidden;
     }
@@ -425,3 +426,36 @@
       height: 30px;
       padding-top: 4px;
     }
+
+    .layerselector {
+      font-weight: normal;
+      cursor: pointer; 
+    }
+
+.layer input[type=checkbox] { display:none; }
+.layer input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+.layer input[type=checkbox] + label:before { 
+  width: 20px;
+  content: "\f096";
+  letter-spacing: 10px;
+}
+
+.layer input[type=checkbox]:checked + label { 
+  font-weight: bold;
+}
+
+.layer input[type=checkbox]:checked + label:before { 
+  content: "\f046";
+}
+
+.layer input[type=checkbox][disabled] {
+    color: #ddd;
+    cursor: initial;
+}
+.layer input[type=checkbox][disabled] + label {
+  color: #ddd; 
+}

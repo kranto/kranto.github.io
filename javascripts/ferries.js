@@ -407,14 +407,24 @@ localStorage.setItem("layers", JSON.stringify(layers));
 
 for (var key in layers) {
   $(".layercheckbox[data-target=" +  key +"]").toggleClass("active", layers[key]);
+  $("input[type=checkbox][data-target=" +  key +"]").prop("checked", layers[key]);
 }
 
 $(".layercheckbox:not([data-target])").prop("disabled", true);
 
-$(".layercheckbox").click(function(event) {
+$(".boxs input[type=checkbox]:not([data-target])").prop("disabled", true);
+
+$(".layercheckbox").click(function() {
   var layer = this.getAttribute("data-target");
   layers[layer] = !layers[layer];
   $(this).toggleClass("active", layers[layer]);
+  localStorage.setItem("layers", JSON.stringify(layers));
+  rerender(map, true);
+});
+
+$("input[type=checkbox]").change(function() {
+  var layer = this.getAttribute("data-target");
+  layers[layer] = this.checked; 
   localStorage.setItem("layers", JSON.stringify(layers));
   rerender(map, true);
 });
