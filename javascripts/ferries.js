@@ -940,7 +940,7 @@ function pin(feature, map) {
 
 var areaStylers = {
   "province": {
-    labelVisibleFrom: 1,
+    labelVisibleFrom: 5,
     labelVisibleTo: 10
   },
   "mun1": {

@@ -18,6 +18,24 @@
     {
       "type": "Feature",
       "properties": {
+        "sname": "Turun<br>saaristo",
+        "sname_sv": "Åbolands<br>skärgård",
+        "sname_en": "Turku<br>Archipelago",
+        "stype": "area",
+        "ssubtype": "mun1",
+        "labelVisibleFrom": 6,
+        "labelVisibleTo": 7,
+        "labelAnchor": {"dir": "C", "x":0 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [21.625112, 60.064714],
+        "type": "Point"
+      },
+      "id": "200bcc3e536038d6624ff8ccc5513627"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stype": "border",
         "sname": "Ahvenanmaa"
       },
