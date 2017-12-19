@@ -776,10 +776,10 @@ function cableferry(feature, map) {
   });
   return {
     hide: function(zoom, mapTypeId) {
-      line.setVisible(zoom >= visibleFrom);
+      line.setVisible(layers.roadferries && zoom >= visibleFrom);
     },
     rerender: function(zoom, mapTypeId) {
-      line.setVisible(zoom >= visibleFrom);
+      line.setVisible(layers.roadferries && zoom >= visibleFrom);
     }
   };
 }
