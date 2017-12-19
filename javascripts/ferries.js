@@ -73,7 +73,7 @@ $('#setMapTypeMap').click(function() {
 });
 
 $('#setMapTypeSatellite').click(function() {
-  map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+  map.setMapTypeId(google.maps.MapTypeId.HYBRID);
 });
 
 $('#resetViewButton').click(function() {
@@ -191,7 +191,7 @@ $(document).ready(function() {
 
 function addMapListeners(map) {
   google.maps.event.addListener(map,'maptypeid_changed',function () {
-    var isSatellite = map.getMapTypeId() === 'satellite';
+    var isSatellite = map.getMapTypeId() === 'satellite' || map.getMapTypeId() == 'hybrid';
     if (isSatellite) {
       $('#setMapTypeMap').removeClass('active');
       $('#setMapTypeSatellite').addClass('active');
@@ -440,7 +440,9 @@ var map;
 var tooltip;
 
 //var roadColor = '#91755d';
-var roadColor = '#696d4b';
+//var roadColor = '#696d4b';
+var roadColor = '#8a7d6a';
+var roadColorSatellite = '#c0c0c0';
 
 function createMapStyles(mapTypeId, zoom, settings) {
   return [
@@ -468,14 +470,16 @@ function createMapStyles(mapTypeId, zoom, settings) {
     { featureType: 'road', elementType: 'labels', stylers: [{visibility: 'on'}]},
     { featureType: 'road', elementType: 'labels.text.stroke', stylers: [{color: '#ffffff'}, {weight: 3}]},
     { featureType: 'road', elementType: 'labels.text.fill', stylers: [{color: '#000000'}]},
-    { featureType: 'road', elementType: 'geometry.fill', stylers: [{color: roadColor}]},
-    { featureType: 'road', elementType: 'geometry.stroke', stylers: [{color: roadColor}]},
+    { featureType: 'road', elementType: 'geometry.fill', stylers: [{color: mapTypeId == google.maps.MapTypeId.ROADMAP? roadColor: roadColorSatellite}]},
+    { featureType: 'road', elementType: 'geometry.stroke', stylers: [{color: mapTypeId == google.maps.MapTypeId.ROADMAP? roadColor: roadColorSatellite}]},
     { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{visibility: "simplified"}, {weight: zoom <= 7? 0.5: Math.max(0.6, 0.6 + (zoom-7)*0.4)}]},
     { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{visibility: "simplified"}, {weight: 0.1}]},
     { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{visibility: "simplified"}, {weight: zoom <= 6? 0.7: Math.max(0.8, 0.8 + (zoom-6)*0.55)}]},
     { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{visibility: "simplified"}, {weight: 0.2}]},
-    { featureType: 'road.arterial', elementType: 'geometry', stylers: [{weight: Math.max(0.8, 0.8 + (zoom-9)*0.3)}]},
-    { featureType: 'road.local', elementType: 'geometry', stylers: [{weight: 0.8}]},
+    { featureType: 'road.arterial', elementType: 'geometry.fill', stylers: [{visiblity: "simplified"}, {weight: Math.max(0.8, 0.8 + (zoom-9)*0.3)}]},
+    { featureType: 'road.arterial', elementType: 'geometry.stroke', stylers: [{visiblity: "simplified"}, {weight: 0.1}]},
+    { featureType: 'road.local', elementType: 'geometry.fill', stylers: [{visiblity: "simplified"}, {weight: 0.8}]},
+    { featureType: 'road.local', elementType: 'geometry.stroke', stylers: [{visiblity: "simplified"}, {weight: 0.1}]}
   ];
 }
 
@@ -520,7 +524,7 @@ function createMarker(position, clickable, icon, map) {
 }
 
 function getLabelColor(mapTypeId) {
-  return '#002080';
+  //return '#002080';
   return mapTypeId == 'hybrid' || mapTypeId == 'satellite'? '#aaaa00': '#002080';
 }
 
@@ -543,7 +547,9 @@ function road(feature, map) {
   var maxZ = feature.properties.maxZ || 8;
   return {
     rerender: function(zoom, mapTypeId) {
-      roadObject.setVisible(zoom >= minZ && zoom <= maxZ);
+      var addZ = mapTypeId == 'hybrid'? 2: 0;
+      roadObject.setVisible(zoom >= minZ + addZ && zoom <= maxZ + addZ);
+      roadObject.setOptions({strokeColor: mapTypeId == google.maps.MapTypeId.ROADMAP? roadColor: roadColorSatellite});
     }
   };
 }
@@ -553,8 +559,8 @@ function route(feature, map) {
   var object = new google.maps.Polyline({
     path: new google.maps.MVCArray(coords),
     geodesic: false,
-    strokeColor: '#5040c0',
-    strokeOpacity: 0.4,
+    strokeColor: '#a16bc4',
+    strokeOpacity: 0.7,
     strokeWeight: 4,
     zIndex: 0,
     map: map,
@@ -1136,7 +1142,9 @@ function initMap() {
   });
 
   map.addListener('maptypeid_changed',function () {
-    rerender(map);
+    $(".map").toggleClass("satellite", map.getMapTypeId() == 'satellite' || map.getMapTypeId() == 'hybrid');
+    updateMapStyles();
+    rerender(map, true);
   });
 
   addMapListeners(map);
