@@ -1264,7 +1264,7 @@ function initMap() {
   var lauttaLineSymbol = {
     path: 'M 0,-1 0,1',
     strokeOpacity: 0.4,
-    strokeColor: '#d00000',
+    strokeColor: '#e08080',
     scale: 1
   };
 
