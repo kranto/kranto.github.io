@@ -158,7 +158,6 @@
     }
 
     .map .txtol {
-      visibility: hidden;
       position: absolute;
       white-space: nowrap;
       font-style: normal;
