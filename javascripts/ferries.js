@@ -1317,7 +1317,7 @@ function initMap() {
       zIndex: 0,
       strokeOpacity: 0.7,
       strokeWeight: 7,
-      strokeColor: '#e0b0d0',
+      strokeColor: '#f97cdc',
       visible: false,
       map: map,
     });
