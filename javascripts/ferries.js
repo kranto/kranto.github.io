@@ -58,14 +58,28 @@ function showHeaderbar() {
   $("#topbar").slideDown('fast');
 }
 
-function toggleHeaderbar() {
-  if (selected.length > 0 || $("#topbar").is(":hidden")) {
-    showHeaderbar();
-  } else if (selected.length == 0 && $("#menu").is(":hidden") && $("#settings").is(":hidden")) {
-    hideHeaderbar();
+
+function doToggleHeaderbar() {
+  if (!inIframe()) {
+    if (selected.length > 0 || $("#topbar").is(":hidden")) {
+      showHeaderbar();
+    } else if (selected.length == 0 && $("#menu").is(":hidden") && $("#settings").is(":hidden")) {
+      hideHeaderbar();
+    }
   }
   hideMenu();
   hideSettings();
+}
+
+var headerBarTimeout = null;
+function toggleHeaderbar() {
+  if (new Date().getTime() - latestHandledMapClickAt < 200) return; // too short time since a label was clicked
+  headerBarTimeout = setTimeout(doToggleHeaderbar, 200);
+}
+
+function cancelHeaderBarToggle() {
+  if (headerBarTimeout) clearTimeout(headerBarTimeout);
+  headerBarTimeout = null;
 }
 
 $('#setMapTypeMap').click(function() {
@@ -201,7 +215,7 @@ function addMapListeners(map) {
     }
   });
 
-  if (!inIframe()) map.addListener('click', toggleHeaderbar);
+  map.addListener('click', toggleHeaderbar);
 }
 
 var timeout = false;
@@ -689,7 +703,7 @@ function pier(feature, map) {
   var label = new txtol.TxtOverlay(position, longName_, "pier pier-" + feature.properties.ssubtype, map, feature.properties.labelAnchor);
 
   function showTooltip() {
-    tooltip.openedAt = new Date().getTime();
+    latestHandledMapClickAt = new Date().getTime();
     tooltip.setPosition(marker.getPosition());
     tooltip.setContent(longName_);
     tooltip.open(map, marker);
@@ -1097,6 +1111,8 @@ function resetMap() {
 var lauttaRoutes;
 var lauttaLegs;
 
+var latestHandledMapClickAt = 0;
+
 function initMap() {
 
   var data = {};
@@ -1137,6 +1153,7 @@ function initMap() {
   });
   
   map.addListener('zoom_changed',function() {
+    cancelHeaderBarToggle();
     hideObjects(map);
     setTimeout(function() { rerender(map); }, 50);
   });
