@@ -799,8 +799,8 @@ var connectionStylers = {
     opacity: 0.7,
     zIndex: 10,
     highlightColor: '#f97cdc',
-    highlightWeight: 10,
-    highlightOpacity: .6,
+    highlightWeight: 8,
+    highlightOpacity: .7,
     layer: "roadferries"
   },
   "conn1": {
