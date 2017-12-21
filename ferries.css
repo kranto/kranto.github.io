@@ -170,7 +170,7 @@
 
     .map .area {
       color: #202030;
-      opacity: 0.7;
+      opacity: 0.6;
     }
 
     .map.satellite .area {
@@ -178,25 +178,26 @@
     }
 
     .map .area.bg {
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.5);
     }
+
     .map.satellite .area.bg {
       background-color: transparent;
     }
 
     .map .area.province {
       font-weight: bold;
-      font-size: 2.2em;
+      font-size: 2em;
     }
 
     .map .area.mun1 {
       font-weight: bold;
-      font-size: 2em;
+      font-size: 1.8em;
     }
 
     .map .area.mun2 {
       font-weight: bold;
-      font-size: 1.5em;
+      font-size: 1.4em;
     }
 
     .map .area.island1 {
@@ -221,17 +222,17 @@
       color: #6ac1fc;
     }
     .map .pier-1 {
-      font-size: 1.35em;
+      font-size: 1.2em;
       font-weight: 600;
     }
 
     .map .pier-2 {
-      font-size: 1.25em;
+      font-size: 1.1em;
       font-weight: 600;
     }
 
     .map .pier-3 {
-      font-size: 1.15em;
+      font-size: 1.1em;
       font-weight: 500;
     }
 
