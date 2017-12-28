@@ -87,7 +87,7 @@ $('#setMapTypeMap').click(function() {
 });
 
 $('#setMapTypeSatellite').click(function() {
-  map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+  map.setMapTypeId('MML'); //google.maps.MapTypeId.HYBRID);
 });
 
 $('#resetViewButton').click(function() {
@@ -1375,5 +1375,66 @@ function initMap() {
     route.legs.forEach(function(leg) { leg.addRoute(route); });
     return route;
   });
+
+            //Define OSM map type pointing at the OpenStreetMap tile server
+            map.mapTypes.set("OSM", new google.maps.ImageMapType({
+                getTileUrl: function(coord, zoom) {
+                    // "Wrap" x (logitude) at 180th meridian properly
+                    // NB: Don't touch coord.x because coord param is by reference, and changing its x property breakes something in Google's lib 
+                    var tilesPerGlobe = 1 << zoom;
+                    var x = coord.x % tilesPerGlobe;
+                    if (x < 0) {
+                        x = tilesPerGlobe+x;
+                    }
+                    // Wrap y (latitude) in a like manner if you want to enable vertical infinite scroll
+
+                    return "http://tile.openstreetmap.org/" + zoom + "/" + x + "/" + coord.y + ".png";
+                },
+                tileSize: new google.maps.Size(256, 256),
+                name: "OpenStreetMap",
+                maxZoom: 18
+            }));
+
+            //Define OSM map type pointing at the OpenStreetMap tile server
+            map.mapTypes.set("MML", new google.maps.ImageMapType({
+                getTileUrl: function(coord, zoom) {
+                    var tilesPerGlobe = 1 << zoom;
+                    var x = coord.x % tilesPerGlobe;
+                    if (x < 0) {
+                        x = tilesPerGlobe+x;
+                    }
+
+                    return "http://localhost:3000/pk/" + zoom + "/" + x + "/" + coord.y + ".png";
+                },
+                tileSize: new google.maps.Size(256, 256),
+                name: "Maanmittauslaitos",
+                maxZoom: 18
+            }));
+
+            map.addListener('maptypeid_changed', function() {
+              console.log(map.getMapTypeId());
+              if (map.getMapTypeId() == 'MML') {
+                setCopyrights('Taustakartan lähde <a href="http://www.maanmittauslaitos.fi/" target="_blank">Maanmittauslaitos</a> 12/2017');
+              }
+            });
+
+            map.setMapTypeId("MML");
+
+    function setCopyrights(innerHTML) {
+      var control = map.controls[google.maps.ControlPosition.BOTTOM_RIGHT];
+      if (control.getLength() > 0) control.pop();
+
+      var outerdiv = document.createElement("div");
+      outerdiv.style.fontSize = "11px";
+      outerdiv.style.whiteSpace = "nowrap";
+      outerdiv.style.padding = "2px";
+      var copyright = document.createElement("span");
+      copyright.style.color = "#000";
+      copyright.style.background="#fff";
+      copyright.style.opacity =0.8;
+      copyright.innerHTML = innerHTML;
+      outerdiv.appendChild(copyright);
+      control.push(outerdiv);
+    }
 
 }
