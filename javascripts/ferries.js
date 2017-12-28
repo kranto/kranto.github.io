@@ -1404,7 +1404,7 @@ function initMap() {
                         x = tilesPerGlobe+x;
                     }
 
-                    return "http://localhost:3000/pk/" + zoom + "/" + x + "/" + coord.y + ".png";
+                    return "/peruskartta/" + zoom + "/" + x + "/" + coord.y + ".png";
                 },
                 tileSize: new google.maps.Size(256, 256),
                 name: "Maanmittauslaitos",
