@@ -1408,13 +1408,15 @@ function initMap() {
                 },
                 tileSize: new google.maps.Size(256, 256),
                 name: "Maanmittauslaitos",
-                maxZoom: 18
+                maxZoom: 15
             }));
 
             map.addListener('maptypeid_changed', function() {
               console.log(map.getMapTypeId());
               if (map.getMapTypeId() == 'MML') {
                 setCopyrights('Taustakartan lähde <a href="http://www.maanmittauslaitos.fi/" target="_blank">Maanmittauslaitos</a> 12/2017');
+              } else {
+                setCopyrights('');                
               }
             });
 
