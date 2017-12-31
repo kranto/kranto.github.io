@@ -1416,7 +1416,35 @@ function initMap() {
                     if (zoom < 8 || x1 < 141 || x1 > 144 || y1 < 73 || y1 > 74)
                       return "http://tile.openstreetmap.org/" + zoom + "/" + x + "/" + coord.y + ".png";
                     else
-                      return "/peruskartta/" + zoom + "/" + x + "/" + coord.y + ".png";
+                      return "http://tiles.saaristolautat.fi/taustakartta/" + zoom + "/" + x + "/" + coord.y + ".png";
+
+                },
+                tileSize: new google.maps.Size(256, 256),
+                name: "MML tausta",
+                minZoom: 4,
+                maxZoom: 15,
+                opacity: 1
+            }));
+
+
+            //Define OSM map type pointing at the OpenStreetMap tile server
+            map.mapTypes.set("MMLMAASTO", new google.maps.ImageMapType({
+                getTileUrl: function(coord, zoom) {
+                    var tilesPerGlobe = 1 << zoom;
+                    var x = coord.x % tilesPerGlobe;
+                    if (x < 0) {
+                        x = tilesPerGlobe+x;
+                    }
+
+                    x1 =  x >> (zoom - 8)
+                    y1 =  coord.y >> (zoom - 8)
+
+                    console.log(x1, y1)
+
+                    if (zoom < 8 || x1 < 141 || x1 > 144 || y1 < 73 || y1 > 74)
+                      return "http://tile.openstreetmap.org/" + zoom + "/" + x + "/" + coord.y + ".png";
+                    else
+                      return "http://tiles.saaristolautat.fi/peruskartta/" + zoom + "/" + x + "/" + coord.y + ".png";
 
                 },
                 tileSize: new google.maps.Size(256, 256),
@@ -1428,22 +1456,14 @@ function initMap() {
 
 
             map.addListener('maptypeid_changed', function() {
-              if (map.getMapTypeId() == 'MML') {
+              if (map.getMapTypeId().startsWith('MML')) {
                 setCopyrights('Taustakartan lähde <a href="http://www.maanmittauslaitos.fi/" target="_blank">Maanmittauslaitos</a> 12/2017');
+              } else if (map.getMapTypeId().startsWith('OSM')) {
+                setCopyrights('© <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors');
               } else {
                 setCopyrights('');                
               }
             });
-/*
-            map.addListener('zoom_changed', function() {
-              if (map.getMapTypeId() == 'MML' && map.getZoom() == 7) {
-                map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
-              }
-              if (map.getMapTypeId() == 'roadmap' && map.getZoom() == 8) {
-                map.setMapTypeId("MML");
-              }
-            });
-*/
 
     function setCopyrights(innerHTML) {
       var control = map.controls[google.maps.ControlPosition.BOTTOM_RIGHT];
