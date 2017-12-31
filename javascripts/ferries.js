@@ -82,12 +82,17 @@ function cancelHeaderBarToggle() {
   headerBarTimeout = null;
 }
 
+$(".mapTypeSelect").bind('change', function() {
+  newValue = this.options[this.selectedIndex].value;
+  map.setMapTypeId(newValue);
+});
+
 $('#setMapTypeMap').click(function() {
   map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
 });
 
 $('#setMapTypeSatellite').click(function() {
-  map.setMapTypeId('MML'); //google.maps.MapTypeId.HYBRID);
+  map.setMapTypeId('MMLTAUSTA'); //google.maps.MapTypeId.HYBRID);
 });
 
 $('#resetViewButton').click(function() {
@@ -1091,9 +1096,8 @@ var mapOptions = {
   center: {lat: 60.25, lng: 21.25},
   zoom: 9,
   minZoom: 4,
-  maxZoom: 17,
+  maxZoom: 15,
   mapTypeControl: false,
-  // mapTypeId: google.maps.MapTypeId.TERRAIN,
   fullscreenControl: false,
   streetViewControl: false,
   gestureHandling: 'greedy',
@@ -1396,7 +1400,7 @@ function initMap() {
             }));
 
             //Define OSM map type pointing at the OpenStreetMap tile server
-            map.mapTypes.set("MML", new google.maps.ImageMapType({
+            map.mapTypes.set("MMLTAUSTA", new google.maps.ImageMapType({
                 getTileUrl: function(coord, zoom) {
                     var tilesPerGlobe = 1 << zoom;
                     var x = coord.x % tilesPerGlobe;
@@ -1404,23 +1408,42 @@ function initMap() {
                         x = tilesPerGlobe+x;
                     }
 
-                    return "/peruskartta/" + zoom + "/" + x + "/" + coord.y + ".png";
+                    x1 =  x >> (zoom - 8)
+                    y1 =  coord.y >> (zoom - 8)
+
+                    console.log(x1, y1)
+
+                    if (zoom < 8 || x1 < 141 || x1 > 144 || y1 < 73 || y1 > 74)
+                      return "http://tile.openstreetmap.org/" + zoom + "/" + x + "/" + coord.y + ".png";
+                    else
+                      return "/peruskartta/" + zoom + "/" + x + "/" + coord.y + ".png";
+
                 },
                 tileSize: new google.maps.Size(256, 256),
-                name: "Maanmittauslaitos",
-                maxZoom: 15
+                name: "MML tausta",
+                minZoom: 4,
+                maxZoom: 15,
+                opacity: 1
             }));
 
+
             map.addListener('maptypeid_changed', function() {
-              console.log(map.getMapTypeId());
               if (map.getMapTypeId() == 'MML') {
                 setCopyrights('Taustakartan lähde <a href="http://www.maanmittauslaitos.fi/" target="_blank">Maanmittauslaitos</a> 12/2017');
               } else {
                 setCopyrights('');                
               }
             });
-
-            map.setMapTypeId("MML");
+/*
+            map.addListener('zoom_changed', function() {
+              if (map.getMapTypeId() == 'MML' && map.getZoom() == 7) {
+                map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+              }
+              if (map.getMapTypeId() == 'roadmap' && map.getZoom() == 8) {
+                map.setMapTypeId("MML");
+              }
+            });
+*/
 
     function setCopyrights(innerHTML) {
       var control = map.controls[google.maps.ControlPosition.BOTTOM_RIGHT];

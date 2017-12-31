@@ -260,14 +260,35 @@
   <div class="" id="settings">
     <div class="menucontainer" id="menucontainer">
       <div class="boxs">
-        <div class="btn-group" style="width: 100%;">
-          <button type="button" class="btn btn-default active" id="setMapTypeMap" style="width: 50%;">
-            <span lang="fi">Kartta</span><span lang="sv">Karta</span><span lang="en">Map</span>
-          </button>
-          <button type="button" class="btn btn-default" id="setMapTypeSatellite" style="width: 50%;">
-            <span lang="fi">Satelliitti</span><span lang="sv">Satellit</span><span lang="en">Satellite</span></button>
-          </div>
-        </div>
+        <select class="mapTypeSelect" lang="fi">
+          <option value="roadmap">Google tiekartta</option>
+          <option value="satellite">Google satelliitti</option>
+          <option value="hybrid">Google hybridi</option>
+          <option value="terrain">Google maasto</option>
+          <option value="OSM">OpenStreetMap</option>
+          <option value="MMLTAUSTA">MML taustakartta</option>
+          <option value="MMLMAASTO">MML maastokartta</option>
+        </select>
+        <select class="mapTypeSelect" lang="sv">
+          <option value="roadmap">Google vägkarta</option>
+          <option value="satellite">Google satellit</option>
+          <option value="hybrid">Google hybrid</option>
+          <option value="terrain">Google terräng</option>
+          <option value="OSM">OpenStreetMap</option>
+          <option value="MMLTAUSTA">LMV bakgrundskarta</option>
+          <option value="MMLMAASTO">LMV terrängkarta</option>
+        </select>
+        <select class="mapTypeSelect" lang="en">
+          <option value="roadmap">Google Roadmap</option>
+          <option value="satellite">Google Satellite</option>
+          <option value="hybrid">Google Hybrid</option>
+          <option value="terrain">Google Terrain</option>
+          <option value="OSM">OpenStreetMap</option>
+          <option value="MMLTAUSTA">NLS Background Map</option>
+          <option value="MMLMAASTO">NLS Terrain Map</option>
+        </select>
+      </div>
+
         <div class="boxs">
           <button type="button" class="btn btn-default" id="toggleFullscreen">
             <span lang="fi">Koko ruutu</span><span lang="sv">Full screen</span><span lang="en">Full screen</span>

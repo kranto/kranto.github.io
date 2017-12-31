@@ -450,6 +450,12 @@
       padding-top: 4px;
     }
 
+    .mapTypeSelect {
+      height: 30px;
+      width: 100%;
+      background-color: white;
+    }
+
     .layerselector {
       font-weight: normal;
       cursor: pointer; 
