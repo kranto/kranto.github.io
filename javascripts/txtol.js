@@ -6,10 +6,12 @@ txtol.init = function() {
   var _referencePoint = new google.maps.LatLng(60, 20);
   var _referencePos = null;
   var _referenceZoom = null;
+  var _referenceMapTypeId = null;
 
   function initReferencePos(txtOverlay) {
-    if (txtOverlay.map.zoom == _referenceZoom) return;
+//    if (txtOverlay.map.mapTypeId == _referenceMapTypeId && txtOverlay.map.zoom == _referenceZoom) return;
     _referenceZoom = txtOverlay.map.zoom;
+    _referenceMapTypeId = txtOverlay.map.mapTypeId;
     var overlayProjection = txtOverlay.getProjection();
     var pos = overlayProjection.fromLatLngToDivPixel(_referencePoint);
     _referencePos = {x: Math.floor(pos.x), y: Math.floor(pos.y)};

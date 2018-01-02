@@ -221,6 +221,7 @@ function addMapListeners(map) {
   });
 
   map.addListener('click', toggleHeaderbar);
+
 }
 
 var timeout = false;
