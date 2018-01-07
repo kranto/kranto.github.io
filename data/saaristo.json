@@ -2445,7 +2445,7 @@
         "labelAnchor": {"dir": "NW", "x":-10 , "y":-10 }
       },
       "geometry": {
-        "coordinates": [19.536266, 60.225407 ],
+        "coordinates": [19.535583,60.225623],
         "type": "Point"
       },
       "id": "4292d7588f34e564447cc936d11388ce"

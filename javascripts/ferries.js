@@ -1008,7 +1008,7 @@ function area(feature, map) {
     },
     rerender: function(zoom, mapTypeId) {
       label.setInnerHTML(zoom >= longNameFrom? longName_: shortName_);
-      if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo) label.show(); else label.hide();      
+      if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo && ["roadmap", "hybrid", "terrain", "satellite"].indexOf(mapTypeId)>=0) label.show(); else label.hide();      
     }
   };
 }
@@ -1207,7 +1207,7 @@ function initMap() {
   { id: 13, name: "Stockholm Stadsgården",
   path: "18.0965424,59.3170755,0.0 18.1075287,59.318477,0.0 18.1597137,59.3205792,0.0 18.2084656,59.3335396,0.0" },
   { id: 14, name: "Grisslehamn - Eckerö",
-  path: "19.5357513,60.2258341,0.0 19.5304298,60.2283061,0.0 19.5201302,60.226857,0.0 19.4531822,60.1805383,0.0 18.8297379,60.094225,0.0 18.8154602,60.0981463,0.0" },
+  path: "19.535583,60.225623,0.0 19.5304298,60.2283061,0.0 19.5201302,60.226857,0.0 19.4531822,60.1805383,0.0 18.8297379,60.094225,0.0 18.8154602,60.0981463,0.0" },
   { id: 15, name: "Hanko - Helsinki",
   path: "23.6027527,59.7256004,0.0 24.8881531,59.9869673,0.0 24.9904633,60.1510752,0.0 24.9568176,60.1661089,0.0" },
   { id: 16, name: "Hanko - Tallinn",
