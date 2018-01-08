@@ -245,6 +245,8 @@ function hideLoader() {
   }
 }
 
+if (window.location.hostname == "localhost") $("#loader").fadeOut(500);
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
