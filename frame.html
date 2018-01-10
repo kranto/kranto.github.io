@@ -15,6 +15,7 @@
   <script src="/js/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/typeahead.bundle.min.js"></script>
+  <script src="/js/handlebars-v4.0.11.js"></script>
 
   <style>
 /* scaffolding */
@@ -252,7 +253,7 @@ var substringMatcher = function(data) {
 
 var data = [
   {name: "Mariehamn", aliases: ["Maarianhamina"], type: "pier", targets: ["Turku - Åland - Stockholm", "Helsinki-Mariehamn-Stockholm", "Kapellskär - Mariehamn"]},
-  {name: "Berghamn", type: "pier", targets: ["nauvon poikittainen reittialue", "utön reittialue"]},
+  {name: "Berghamn", type: "pier", targets: ["Nauvon poikittainen reittialue", "Utön reittialue"]},
   {name: "Berghamn", type: "pier", targets: ["korppoon reittialue"]},
   {name: "m/s Kivimo", type: "vessel", targets: ["velkuan reittialue", "hakkenpää - teersalo"]},
   {name: "Kivimo", type: "cableferry", targets: ["Kivimo"]},
@@ -263,11 +264,11 @@ $.get('/data/saaristo.json', function(geojson) {
   geojson.features.forEach(function(fea) {
     var props = fea.properties;
     if (props.stype == 'pier') {
-      data.push({name: props.sname, type: "pier", targets: ["unknown"]});
+      data.push({name: props.sname, type: "pier", targets: [ "Hiittisten reittialue", "Kasnäs - Hiittinen" ]});
     } else if (props.stype == 'cableferry') {
       data.push({name: props.sname, type: "cableferry", targets: ["unknown"]});      
     } else if (props.stype == 'area') {
-      data.push({name: props.sname, type: props.ssubtype, targets: ["unknown"]});      
+      data.push({name: props.sname, type: props.ssubtype, id: "123", targets: ["unknown"]});      
     }
   });
 });
@@ -288,13 +289,17 @@ $('#the-basics .typeahead').typeahead({
       '</div>'
     ].join('\n'),
     suggestion: function(s) {
-      return '<div><a href="#' + s.target.substring(0,3) + '">' + (s.first? '<div><strong>' + s.name + '</strong> – ' + s.type + '<br><small>&nbsp;&nbsp;&nbsp;&nbsp;' + s.target + '</small>':
+      return '<div><a onclick="searchSelection(\'' + s.target + '\')">' + (s.first? '<div><strong>' + s.name + '</strong> – ' + s.type + '<br><small>&nbsp;&nbsp;&nbsp;&nbsp;' + s.target + '</small>':
        '&nbsp;&nbsp;&nbsp;&nbsp;<small>' + s.target + '</small>') + '</div></a></div>';
      }
+    // suggestion: Handlebars.compile('<a href="#{{ id }}"><p> xx {{ name }} - {{ type }}</p></a>')
   }
 });
 
-
+function searchSelection(object) {
+  console.log(object)
+  alert(object);
+}
 
 </script>
 

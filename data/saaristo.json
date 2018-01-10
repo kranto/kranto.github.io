@@ -1395,6 +1395,7 @@
         "sname_fi": "Föglön linja: Svinö - Degerby",
         "sname_en": "Föglö line: Svinö - Degerby",
         "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Skarven, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358401733600\"> +358 40 173 3600</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 60</p><p>8-12 vuoroa päivässä, maksullinen</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Svinö(Lumparland), Degerby(Föglö)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/foglolinjen.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 18 25 600</a></p>",
+        "timetable": "img/FoglolinjenVinter2018.png",
         "ssubtype": "conn2",
         "color": "#004d9d"
       },
