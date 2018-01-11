@@ -493,3 +493,8 @@
 .layer input[type=checkbox][disabled] + label {
   color: #ddd; 
 }
+
+.modal-dialog {
+  max-width: 1000px;
+
+}
