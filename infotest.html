@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/ferries.css" rel="stylesheet">
+	<link href="/infotest.css" rel="stylesheet">
 	<script src="/js/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/aa44d9f2e6.js"></script>
@@ -14,172 +14,171 @@
 
 </head>
 <body>
-<div id="wrapper">
-	<div id="wrapper2">
+	<div id="wrapper">
+		<div id="wrapper2">
 
-		<div id="info" style="display: block; height: 100%; top: 0px; overflow-y: scroll; padding: 5px;">
+			<div class="info" style="display: block; top: 80%;">
 
-			<div style="display: inline-block; float: right; ">
-				<button type="button" class="btn btn-default closeInfoButton" id="closeInfoButton"><i class="fa fa-times" aria-hidden="true"></i></button>
-			</div>
+				<div class="infocontent">
 
-			<div class="infocontent" style="display: block; overflow-x: show;">
+					<button type="button" class="btn btn-default closeInfoButton2" id="closeInfoButton"><i class="fa fa-times" aria-hidden="true"></i></button>
 
-				<div class="row">
-					<div class="col-11 col-sm-11">
-						<h3 id="selectedTitle" style="margin-top: 10px;">Föglölinjen: Svinö - Degerby - Hammarby - Godby</h3>
+					<div class="row infotitlerow">
+						<div class="col-11 col-sm-11">
+							<div class="infotitle">
+								Föglölinjen: <span class="specifier">Svinö - Degerby - Hammarby - Godby</span>
+							</div>
+						</div>
 					</div>
-				</div>
 
-				<div id="selectedDescription" style="margin-top: 30px;">
-
-					<div class="row" style="margin-top: 10px;">
-						<div class="col-12 col-sm-6" style="padding: 0px 0px;">
-							<div style="border: 0px solid; margin: 2px 0px; padding: 5px 0px; background-color: #f8f8f8; display: inline-block; width: 95%">
-								<div style="display: inline-block; margin-right: 15px; margin-left: 5px; margin-bottom: 3px; margin-top: 3px;">
-									<i style="font-size: 25px;" class="fa fa-ship" aria-hidden="true"></i>
+					<div class="row vesselrow spaceabove">
+						<div class="col-12 col-sm-6">
+							<div class="vesselbox">
+								<div class="vesselname">
+									M/S Skarven
 								</div>
-								<div style="display: inline-block;">
-									<span style="font-size: 18px;"> M/S Skarven</span> 
-								</div>
-								<div style="display: inline-block; margin-left: 15px;">
-									<div style="font-size: 12px;">
-										<i class="fa fa-car" aria-hidden="true"></i> 60
-										<i class="fa fa-user" aria-hidden="true"></i> 250
-										<i class="fa fa-coffee" aria-hidden="true"></i>
-									</div>
+								<div class="vesselfeatures">
+										<i class="fa fa-car" aria-hidden="true"></i> 60 
+										<i class="fa fa-user" aria-hidden="true"></i> 250 
+										<i class="fa fa-coffee" aria-hidden="true"></i> 
+										<i class="fa fa-wheelchair" aria-hidden="true"></i>
 								</div>
 							</div>
 						</div>
-						<div class="col-12 col-sm-6" style="padding: 0px 0px;">
-							<div style="border: 0px solid; margin: 2px 0px; padding: 5px 0px; background-color: #f8f8f8; display: inline-block; width: 95%">
-								<div style="display: inline-block; margin-right: 15px; margin-left: 5px; margin-bottom: 3px; margin-top: 3px;">
-									<i style="font-size: 25px;" class="fa fa-ship" aria-hidden="true"></i>
+						<div class="col-12 col-sm-6">
+							<div class="vesselbox">
+								<div class="vesselname">
+									M/S Pitkänniminen
 								</div>
-								<div style="display: inline-block;">
-									<span style="font-size: 18px;"> M/S Gudingen</span> 
-								</div>
-								<div style="display: inline-block; margin-left: 15px;">
-									<div style="font-size: 12px;">
-										<i class="fa fa-car" aria-hidden="true"></i> 60
-										<i class="fa fa-user" aria-hidden="true"></i> 250
-									</div>
+								<div class="vesselfeatures">
+										<i class="fa fa-car" aria-hidden="true"></i> 60 
+										<i class="fa fa-user" aria-hidden="true"></i> 250 
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row" style="margin-top: 30px;">
+
+					<div class="row spaceabove">
 						<div class="col-7 col-sm-9">
 							<div class="row">
-								<div class="col-sm-6"><div style="width: 25px; display: inline-block;"><i class="fa fa-exchange" aria-hidden="true"></i></div> 8-12 vuoroa 	päivässä</div>
-								<div class="col-sm-6"><div style="width: 25px; display: inline-block;"><i class="fa fa-clock-o" aria-hidden="true"></i></div> Kesto 35 minuuttia</div>
-								<div class="col-sm-6"><div style="width: 25px; display: inline-block; color: lightgray;	"><i class="fa fa-file-text-o" aria-hidden="true" style="width: 25px;"></i></div> Ei voi varata</div>
-								<div class="col-sm-6"><div style="width: 25px; display: inline-block;"><i class="fa fa-eur" aria-hidden="true" style="width: 25px;"></i></div> Maksullinen</div>
-								<div class="col-sm-6"><div style="width: 25px; display: inline-block;"><i class="fa fa-sun-o" aria-hidden="true" style="width: 25px;"></i></div> Vain kesäisin</div>								</div>
-							</div>
-							<div class="col-5 col-sm-3">
-								<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#timetableModal" data-backdrop="false" style="height: 50px;"><i class="fa fa-clock-o" aria-hidden="true"></i> Aikataulut</button>
+								<div class="col-sm-6 routefeature interval">8-12 vuoroa päivässä ja höpön löpön</div>
+								<div class="col-sm-6 routefeature duration">Kesto 35 minuuttia</div>
+								<div class="col-sm-6 routefeature booking negative">Ei voi varata</div>
+								<div class="col-sm-6 routefeature cost">Maksullinen</div>
+								<div class="col-sm-6 routefeature seasonal">Vain kesäisin</div>
 							</div>
 						</div>
-						<div style="margin-top: 20px;">
-							<i class="fa fa-anchor" aria-hidden="true"></i> <a href="#svino"><strong>Svinö(Lumparland)</strong></a>, Degerby(Föglö), Hällesö, Simskäla
+						<div class="col-5 col-sm-3">
+							<button type="button" class="btn btn-info btn-md timetablebutton" data-toggle="modal" data-target="#timetableModal" data-backdrop="false">
+								Aikataulut
+							</button>
 						</div>
+					</div>
 
-						<div style="margin-top: 40px; margin-bottom: 30px;">
-							<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#contactModal" data-backdrop="true" style="width: 100%;"><i class="fa fa-phone" aria-hidden="true"></i> &nbsp;<i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp;<i class="fa fa-globe" aria-hidden="true"></i> &nbsp;&nbsp; Yhteystiedot</button>
-						</div>
+					<div class="spaceabove pierrow">
+						<a href="#svino"><strong>Svinö(Lumparland)</strong></a>, 
+						Degerby(Föglö),
+						Hällesö,
+						Simskäla
+					</div>
+
+					<button type="button" class="btn btn-info btn-md contactsbutton" data-toggle="modal" data-target="#contactModal" data-backdrop="true">
+						Yhteystiedot
+					</button>
+
 				</div>
 			</div>
 		</div>
-
-		<div id="mapcontainer" style="height: 0%;">
+		<div id="mapcontainer" style="height: 80%; background-color: #cfc;">
+			Kartta
 		</div>
 	</div>
 
-	<div id="scrollIndicator"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
 
-	<!-- Timetable Modal -->
-	<div class="modal fade" id="timetableModal" role="dialog">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" style="font-size: 20px;">Föglölinjen: Svinö - Degerby</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
+<!-- 			<div id="scrollIndicator"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+-->
+<!-- Timetable Modal -->
+<div class="modal fade" id="timetableModal" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title infotitle">Föglölinjen: <span class="specifier">Svinö - Degerby</span></h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<div class="alert alert-warning">
+					Tämä on epävirallinen kopio. Tarkista muutokset, poikkeukset ja lisätiedot <a target="info" href="http://www.alandstrafiken.ax/sv/turlistor">alkuperäisestä aikataulusta <i class="fa fa-external-link" aria-hidden="true"></i></a>.
 				</div>
-				<div class="modal-body" style="overflow: hidden;">
-					<div class="alert alert-warning">
-						Tämä on epävirallinen kopio. Tarkista muutokset, poikkeukset ja lisätiedot <a target="info" href="http://www.alandstrafiken.ax/sv/turlistor">alkuperäisestä aikataulusta <i class="fa fa-external-link" aria-hidden="true"></i></a>.
-					</div>
-					<ul class="nav nav-tabs" role="tablist">
-						<li class="nav-item" style="font-size: 14px;">
-							<a class="nav-link active" data-toggle="tab" href="#foglovinter" role="tab">1.1.&mdash;31.5.</a>
-						</li>
-						<li class="nav-item" style="font-size: 14px;">
-							<a class="nav-link" data-toggle="tab" href="#foglosommar" role="tab">1.6.&mdash;31.8.</a>
-						</li>
-						<li class="nav-item" style="font-size: 14px;">
-							<a class="nav-link" data-toggle="tab" href="#foglovinter" role="tab">1.9.&mdash;31.12.</a>
-						</li>
-					</ul>
-					<div class="tab-content">
-						<div class="tab-pane fade show active" id="foglovinter" role="tabpanel">
-							<div  style="overflow-x: scroll; margin-bottom: 10px;">
-								<img class="timetable" src="img/FoglolinjenVinter2018.png"/>
-							</div>
-							<div>
-								<a href="img/FoglolinjenVinter2018.png" target="timetable">
-									<button class="btn btn-info">Avaa zoomattava kuva uuteen ikkunaan</button>
-								</a>
-							</div>
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#foglovinter" role="tab">1.1.&mdash;31.5.</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#foglosommar" role="tab">1.6.&mdash;31.8.</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#foglovinter" role="tab">1.9.&mdash;31.12.</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane fade show active" id="foglovinter" role="tabpanel">
+						<div>
+							<img class="timetable" src="img/FoglolinjenVinter2018.png"/>
 						</div>
-						<div class="tab-pane fade" id="foglosommar" role="tabpanel">
-							<div  style="overflow-x: scroll; margin-bottom: 10px;">
-								<img class="timetable" src="img/FoglolinjenSommar2018.png"/>
-							</div>
-							<div>
-								<a href="img/FoglolinjenSommar2018.png" target="timetable">
-									<button class="btn btn-info">Avaa zoomattava kuva uuteen ikkunaan</button>
-								</a>
-							</div>
+						<div>
+							<a href="img/FoglolinjenVinter2018.png" target="timetable">
+								<button class="btn btn-info">Avaa zoomattava kuva uuteen ikkunaan</button>
+							</a>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="foglosommar" role="tabpanel">
+						<div>
+							<img class="timetable" src="img/FoglolinjenSommar2018.png"/>
+						</div>
+						<div>
+							<a href="img/FoglolinjenSommar2018.png" target="timetable">
+								<button class="btn btn-info">Avaa zoomattava kuva uuteen ikkunaan</button>
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
 </div>
 
 <!-- Contact Modal -->
 <div class="modal fade" id="contactModal" role="dialog">
-	<div class="modal-dialog modal-lg"  style="max-width: 400px;">
+	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title" style="font-size: 20px;">Föglölinjen: Svinö - Degerby</h4>
+				<h4 class="modal-title infotitle">Föglölinjen: <span class="specifier">Svinö - Degerby</span></h4>
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 			</div>
-			<div class="modal-body" style="overflow-y: scroll;">
-				<div style="margin-top: 10px; margin-bottom: 15px;">
-					<h3>M/S Skarven</h3>
+			<div class="modal-body">
+				<div class="contactformheader">
+					M/S Skarven
 				</div>
 				<a href="tel:+358401733600">
-					<button type="button" class="btn btn-outline-primary" style="width: 100%; max-width: 400px; margin-top: 10px;"><i class="fa fa-phone" aria-hidden="true"></i> &nbsp;&nbsp;+358 40 173 3600</button>
+					<button type="button" class="btn btn-outline-primary contactbutton phone">+358 40 173 3600</button>
 				</a>
 				<a href="tel:+3584573439301">
-					<button type="button" class="btn btn-outline-primary" style="width: 100%; max-width: 400px; margin-top: 10px;">Café:&nbsp;&nbsp; <i class="fa fa-phone" aria-hidden="true"></i> &nbsp;&nbsp;+358 457 3439 301</button>
+					<button type="button" class="btn btn-outline-primary contactbutton phone">+358 457 3439 301 &ndash; Café</button>
 				</a>
-				<div style="margin-top: 40px; margin-bottom: 15px;">
-					<img src="img/alandstrafiken.png"/ style="height: 20px;">
+				<div class="contactformheader spaceabove">
+					Ålandstrafiken
 				</div>
 
 				<a href="tel:+3581825600">
-					<button type="button" class="btn btn-outline-primary" style="width: 100%; max-width: 400px; margin-top: 10px;"><i class="fa fa-phone" aria-hidden="true"></i> &nbsp;&nbsp;+358 18 25 600</button>
+					<button type="button" class="btn btn-outline-primary contactbutton phone">+358 18 25 600</button>
 				</a>
 				<a href="mailto:info@alandstrafiken.ax">
-					<button type="button" class="btn btn-outline-primary" style="width: 100%; max-width: 400px; margin-top: 10px;"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp;&nbsp;info@alandstrafiken.ax</button>
+					<button type="button" class="btn btn-outline-primary contactbutton email">info@alandstrafiken.ax</button>
 				</a>
 				<a href="http://www.alandstrafiken.ax/fi" target="info">
-					<button type="button" class="btn btn-outline-primary" style="width: 100%; max-width: 400px; margin-top: 10px;"><i class="fa fa-globe" aria-hidden="true"></i> &nbsp;&nbsp;www.alandstrafiken.ax</button>
+					<button type="button" class="btn btn-outline-primary contactbutton www">www.alandstrafiken.ax</button>
 				</a>
 
 			</div>
