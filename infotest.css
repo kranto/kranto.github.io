@@ -226,6 +226,7 @@ div.info {
 .contactformheader {
   font-size: 20px;
   font-weight: normal;
+  margin-top: 20px;
 }
 
 .contactbutton {
@@ -252,6 +253,18 @@ div.info {
   content: "\f0ac\00a0\00a0";
 }
 
+.pier {
+
+}
+
+.mainpier {
+  font-weight: bold;
+}
+
+.pierspecifier {
+  font-size: -2px;
+  font-weight: normal;
+}
 .btn:focus, .btn.active:focus {outline:0;}
 
 .btn-default.active, .btn-default.active:focus {

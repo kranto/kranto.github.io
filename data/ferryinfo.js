@@ -622,7 +622,7 @@ operators = {
 			fax: '+358-18-17815',
 			address: 'Styrmansgatan 1, AX-22100 MARIEHAMN',
 			fb: 'https://www.facebook.com/%C3%85landstrafiken-trafikinformation-159908027409016/',
-			email: 'info@alanstrafiken.ax',
+			email: 'info@alandstrafiken.ax',
 			www: 'http://www.alandstrafiken.ax',
 			www_fi: 'http://www.alandstrafiken.ax/fi',
 			www_sv: 'http://www.alandstrafiken.ax/sv',
@@ -726,15 +726,54 @@ piers = {
 				dist: 17
 			}
 		]
+	},
+	hummelvik: {
+		name: "Hummelvik",
+		mun: "Vårdö",
+		type: "1",
+	},
+	enklinge: {
+		name: "Enklinge",
+		mun: "Kumlinge",
+		type: "2"
+	},
+	kumlinge: {
+		name: "Kumlinge",
+		mun: "Kumlinge",
+		type: "1"
+	},
+	lappo: {
+		name: "Lappo",
+		mun: "Brändö",
+		type: "2"
+	},
+	torsholma: {
+		name: "Torsholma",
+		mun: "Brändö",
+		type: "1"
 	}
 }
 
 timetables = {
 	foglolinjen: [
-		{ validFrom: "2018-01-01", validTo: "2018-05-31", tables: ["FoglolinjenVinter_1.png", "FoglolinjenVinter_2.png"]},
-		{ validFrom: "2018-06-01", validTo: "2018-08-31", tables: ["FoglolinjenSommar_1.png", "FoglolinjenSommar_2.png"]},
-		{ validFrom: "2018-09-01", validTo: "2018-12-31", tables: ["FoglolinjenVinter_1.png", "FoglolinjenVinter_2.png"]}
-	]
+		{ validFrom: "2018-01-01", validTo: "2018-05-31", tables: ["FoglolinjenVinter2018_1.png", "FoglolinjenVinter2018_2.png"]},
+		{ validFrom: "2018-06-01", validTo: "2018-08-31", tables: ["FoglolinjenSommar2018_1.png", "FoglolinjenSommar2018_2.png"]},
+		{ validFrom: "2018-09-01", validTo: "2018-12-31", tables: ["FoglolinjenVinter2018_1.png", "FoglolinjenVinter2018_2.png"]}
+	],
+	norralinjen: [
+		{ validFrom: "2018-01-03", validTo: "2018-04-29", tables: ["NorraVinter2018_1.png", "NorraVinter2018_2.png", "NorraVinter2018_3.png"]},
+		{ validFrom: "2018-04-30", validTo: "2018-06-17", tables: ["NorraVar2018_1.png", "NorraVar2018_2.png", "NorraVar2018_3.png"]},
+		{ validFrom: "2018-06-18", validTo: "2018-08-12", tables: ["NorraSommar2018_1.png", "NorraSommar2018_2.png"]},
+		{ validFrom: "2018-08-13", validTo: "2018-09-30", tables: ["NorraVar2018_1.png", "NorraVar2018_2.png", "NorraVar2018_3.png"]},
+		{ validFrom: "2018-10-01", validTo: "2018-12-31", tables: ["NorraVinter2018_1.png", "NorraVinter2018_2.png", "NorraVinter2018_3.png"]},
+	],	
+	enklingelinjen: [
+		{ validFrom: "2018-01-01", validTo: "2018-04-29", tables: ["EnklingeVinter2018.png"]},
+		{ validFrom: "2018-04-30", validTo: "2018-06-17", tables: ["EnklingeVar2018.png"]},
+		{ validFrom: "2018-06-18", validTo: "2018-08-12", tables: ["EnklingeSommar2018.png"]},
+		{ validFrom: "2018-08-13", validTo: "2018-09-30", tables: ["EnklingeVar2018.png"]},
+		{ validFrom: "2018-10-01", validTo: "2018-12-31", tables: ["EnklingeVinter2018.png"]},
+	],	
 }
 
 pricelists = {
@@ -756,15 +795,79 @@ routes = {
 			interval: "8-12 daily",
 			interval_fi: "8-12 vuoroa päivässä",
 			interval_sv: "8-12 gånger om dagen",
-			booking: false,
-			cost: true,
+			booking: "Cannot be booked",
+			booking_fi: "Ei voi varata",
+			booking_sv: "Kan inte bokas",
+			cost: "Chargeable",
+			cost_fi: "Maksullinen",
+			cost_sv: "Avgiftsbelagd",
 			duration: "35 minutes",
 			duration_fi: "35 minuuttia",
 			duration_sv: "35 minuter"
 		},
 		timetables: "ref_timetables_foglolinjen",
+		timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
+		timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+		timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
+		pricelists: "ref_pricelists_alandstrafiken"
+	},
+	norralinjen: {
+		name: "Norra linjen",
+		name_fi: "Pohjoinen linja",
+		name_en: "Northern line",
+		specifier: "Hummelvik - Enklinge - Kumlinge - Lappo - Torsholma",
+		piers: ["ref_piers_hummelvik", "ref_piers_enklinge", "ref_piers_kumlinge", "ref_piers_lappo", "ref_piers_torsholma"],
+		operator: "ref_operators_alandstrafiken",
+		vessels: ["ref_ferries_alfageln", "ref_ferries_knipan"],
+		features: {
+			interval: "3-4 daily",
+			interval_fi: "3-4 vuoroa päivässä",
+			interval_sv: "3-4 gånger om dagen",
+			Xbooking: "Cannot be booked",
+			Xbooking_fi: "Ei voi varata",
+			Xbooking_sv: "Kan inte bokas",
+			cost: "Chargeable",
+			cost_fi: "Maksullinen",
+			cost_sv: "Avgiftsbelagd",
+			duration: "2.5 hours",
+			duration_fi: "2,5 tuntia",
+			duration_sv: "2,5 timmar"
+		},
+		timetables: "ref_timetables_norralinjen",
+		timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
+		timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+		timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
+		pricelists: "ref_pricelists_alandstrafiken"
+	},
+	enklingelinjen: {
+		name: "Norra linjen",
+		name_fi: "Pohjoinen linja",
+		name_en: "Northern line",
+		specifier: "Enklinge - Kumlinge",
+		piers: ["ref_piers_enklinge", "ref_piers_kumlinge"],
+		operator: "ref_operators_alandstrafiken",
+		vessels: ["ref_ferries_rosala"],
+		features: {
+			interval: "about 10 daily",
+			interval_fi: "noin 10 vuoroa päivässä",
+			interval_sv: "ca 10 gånger om dagen",
+			booking: "Cannot be booked",
+			booking_fi: "Ei voi varata",
+			booking_sv: "Kan inte bokas",
+			Xcost: "Chargeable",
+			Xcost_fi: "Maksullinen",
+			Xcost_sv: "Avgiftsbelagd",
+			duration: "15 minutes",
+			duration_fi: "15 minuuttia",
+			duration_sv: "15 minuter"
+		},
+		timetables: "ref_timetables_enklingelinjen",
+		timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
+		timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+		timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
 		pricelists: "ref_pricelists_alandstrafiken"
 	}
+
 }
 
 ferrydata = {
@@ -781,7 +884,7 @@ function sanitizePhone(num) {
 }
 
 function phoneUri(num) {
-	return num.replace(/\(.*\)/g, "").replace(/[ -]/g, "");
+	return "tel:" + num.replace(/\(.*\)/g, "").replace(/[ -]/g, "");
 }
 
 function getPhones(item) {
@@ -789,9 +892,9 @@ function getPhones(item) {
 		var phones = Array.isArray(item.phones)? item.phones: [item.phones];
 		return phones.map(function(phone) {
 			if (typeof phone === 'object') {
-				return { name: phone.name, tel: sanitizePhone(phone.tel), uri: phoneUri(phone.tel) };
+				return { class: "phone", specifier: " - " + phone.name, text: sanitizePhone(phone.tel), uri: phoneUri(phone.tel) };
 			} else {
-				return { name: "", tel: sanitizePhone(phone), uri: phoneUri(phone) };
+				return { class: "phone", specifier: "", text: sanitizePhone(phone), uri: phoneUri(phone) };
 			}
 		});
 	} else {
@@ -813,8 +916,10 @@ function getLocalizedItem(item, lang) {
 	
 	if (!(item instanceof Object)) {
 		if (typeof item === 'string' && item.startsWith("ref_")) {
+			// console.log(item);
 			var parts = item.split("_");
 			var sub = ferrydata[parts[1]][parts[2]];
+			sub.id = parts[2];
 			return getLocalizedItem(deepCopy(sub));
 		} else {
 			return item;
@@ -836,16 +941,26 @@ function getLocalizedItem(item, lang) {
 	return result;
 }
 
-function getWww(item, lang) {
-	return getLangProperty(item, 'www', lang);
+function getWww(item) {
+	return item.www? [{ class: "www", text: item.www, specifier: "", uri: item.www}]: [];
 }
 
-function getEmail(item, lang) {
-	return getLangProperty(item, 'email', lang);
+function getEmail(item) {
+	return item.email? [{ class: "email", text: item.email, specifier: "", uri: "mailto:" + item.email}]: [];
 }
 
 function deepCopy(object) {
 	return JSON.parse(JSON.stringify(object));
+}
+
+function renderDate(date, lang) {
+	var parts = date.split("-");
+	var currentYear = new Date().getFullYear();
+	return parts[2]+"."+parts[1]+"."+(parts[0] != currentYear? parts[0]: "");
+}
+
+function renderDates(fromD, toD, lang) {
+	return renderDate(fromD, lang) + " - " + renderDate(toD, lang);
 }
 
 function routeInfo(route, lang) {
@@ -854,20 +969,66 @@ function routeInfo(route, lang) {
 	var contacts = [];
 	info.name = route.name;
 	info.specifier = route.specifier? route.specifier: "";
+	
 	info.vessels = route.vessels;
 	info.vessels.forEach(function(vessel) {
 		vessel.contact.name = vessel.name;
 		contacts.push(vessel.contact);
+		var features = [];
+		if (vessel.capacity.cars) features.push({icon: "car", value: vessel.capacity.cars});
+		if (vessel.capacity.persons) features.push({icon: "user", value: vessel.capacity.persons});
+		if (vessel.features.cafe) features.push({icon: "coffee"});
+		if (vessel.features.access) features.push({icon: "wheelchair"});
+		vessel.features = features;
 	});
-	info.piers = route.piers;
+
+	var features =[];
+	if (route.features.interval) features.push({class: "interval", value: route.features.interval});
+	if (route.features.duration) features.push({class: "duration", value: route.features.duration});
+	if (route.features.booking) features.push({class: "booking", value: route.features.booking});
+	if (route.features.cost) features.push({class: "cost", value: route.features.cost});
+	if (route.features.seasonal) features.push({class: "seasonal", value: route.features.seasonal});
+	info.features = features;
+
+	var piers = route.piers;
+	piers.forEach(function(pier) {
+		pier.class = pier.type == 1? "mainpier": "";
+		pier.specifier = pier.type == 1 && pier.mun != pier.name ? "(" + pier.mun  + ")": "";
+		pier.link = "#" + pier.id;
+	});
+	piers[piers.length - 1].last = true;
+	info.piers = piers;
 
 	info.operator = route.operator;
 	info.operator.contact.name = info.operator.name;
 	contacts.push(info.operator.contact);
-	info.features = route.features;
 
-	info.timetables = route.timetables;
+	var timetables = route.timetables;
+	var first = true;
+	var id = 1;
+	timetables.forEach(function(timetable) {
+		timetable.dates = renderDates(timetable.validFrom, timetable.validTo, lang);
+		timetable.active = first? "active": "";
+		timetable.show = first? "show": "";
+		timetable.tabid = "tab" + id;
+		id++;
+		first = false;
+	});
+	info.timetables = timetables;
+	info.timetableslink = route.timetableslink;
 	info.pricelists = route.pricelists;
+
+	contacts = contacts.map(function(contact) {
+		var items = [];
+		items = items.concat(getPhones(contact));
+		items = items.concat(getEmail(contact));
+		items = items.concat(getWww(contact));
+
+		return {
+			name: contact.name,
+			items: items
+		};
+	});
 
 	info.contacts = contacts;
 

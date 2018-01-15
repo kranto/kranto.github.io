@@ -1,0 +1,23 @@
+
+<div id="contactstemplate">
+	<div class="modal-content">
+		<div class="modal-header">
+			<div class="infotitle">
+				{{ name }}: <span class="specifier">{{ specifier }}</span>
+			</div>
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+		</div>
+		<div class="modal-body">
+			{{ #contacts }}
+			<div class="contactformheader">
+				{{ name }}
+			</div>
+			{{ #items }}
+			<a href="{{uri}}">
+				<button type="button" class="btn btn-outline-primary contactbutton {{class}}">{{ text }}{{ specifier }}</button>
+			</a>
+			{{ /items }}
+			{{ /contacts }}
+		</div>
+	</div>
+</div>

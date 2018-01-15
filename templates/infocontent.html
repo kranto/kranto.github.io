@@ -1,0 +1,57 @@
+
+<div id="infocontenttemplate">
+	<div class="infocontent">
+
+		<button type="button" class="btn btn-default closeInfoButton2" id="closeInfoButton"><i class="fa fa-times" aria-hidden="true"></i></button>
+
+		<div class="row">
+			<div class="col-11 col-sm-11">
+				<div class="infotitle">
+					{{ name }}: <span class="specifier">{{ specifier }}</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row vesselrow spaceabove">
+			{{ #vessels }}
+			<div class="col-12 col-sm-6">
+				<div class="vesselbox">
+					<div class="vesselname">
+						{{ name }}
+					</div>
+					<div class="vesselfeatures">
+						{{ #features }}
+							<i class="fa fa-{{ icon }}" aria-hidden="true"></i> {{ value }} 
+						{{ /features }}
+					</div>
+				</div>
+			</div>
+			{{ /vessels }}
+		</div>
+
+		<div class="row spaceabove">
+			<div class="col-7 col-sm-9">
+				<div class="row">
+					{{ #features }}
+					<div class="col-sm-6 routefeature {{ class }}">{{ value }}</div>
+					{{ /features}}
+				</div>
+			</div>
+			<div class="col-5 col-sm-3">
+				<button type="button" class="btn btn-info btn-md timetablebutton" data-toggle="modal" data-target="#timetableModal" data-backdrop="false">
+					Aikataulut
+				</button>
+			</div>
+		</div>
+
+		<div class="spaceabove pierrow">
+			{{ #piers }}
+				<a href="{{ link }}"><span class="pier {{ class }}">{{ name }}</span><span class="pierspecifier">{{ specifier }}</span></a>{{^last}}, {{/last}}
+			{{ /piers }}
+		</div>
+
+		<button type="button" class="btn btn-info btn-md contactsbutton" data-toggle="modal" data-target="#contactModal" data-backdrop="true">
+			Yhteystiedot
+		</button>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+
+<div id="timetabletemplate">
+	<div class="modal-content">
+		<div class="modal-header">
+			<div class="infotitle">
+				{{ name }}: <span class="specifier">{{ specifier }}</span>
+			</div>
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+		</div>
+		<div class="modal-body">
+			<div class="alert alert-warning">
+				Tämä on epävirallinen kopio. Tarkista muutokset, poikkeukset ja lisätiedot <a target="info" href="{{ timetableslink }}">alkuperäisestä aikataulusta <i class="fa fa-external-link" aria-hidden="true"></i></a>.
+			</div>
+			<ul class="nav nav-tabs" role="tablist">
+				{{ #timetables }}
+				<li class="nav-item">
+					<a class="nav-link {{active}}" data-toggle="tab" href="#{{tabid}}" role="tab">{{dates}}</a>
+				</li>
+				{{ /timetables }}
+			</ul>
+			<div class="tab-content">
+				{{ #timetables }}
+				<div class="tab-pane fade {{show}} {{active}}" id="{{tabid}}" role="tabpanel">
+					{{ #tables }}
+					<a href="timetables/{{.}}" target="timetable">
+						<div>
+							<img class="timetable" src="timetables/{{.}}"/>
+						</div>
+					</a>
+					{{ /tables }}
+					<div class="alert alert-info">
+						Avaa zoomattava aikataulu uuteen ikkunaan klikkaamalla
+					</div>
+				</div>
+				{{ /timetables }}
+			</div>
+		</div>
+	</div>
+</div>
