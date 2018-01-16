@@ -9,7 +9,7 @@
 		</div>
 		<div class="modal-body">
 			<div class="alert alert-warning">
-				Tämä on epävirallinen kopio. Tarkista muutokset, poikkeukset ja lisätiedot <a target="info" href="{{ timetableslink }}">alkuperäisestä aikataulusta <i class="fa fa-external-link" aria-hidden="true"></i></a>.
+				{{#L}}unofficialcopy{{/L}} <a target="info" href="{{ timetableslink }}">{{#L}}fromoriginal{{/L}} <i class="fa fa-external-link" aria-hidden="true"></i></a>.
 			</div>
 			<div class="navtabswrapper">
 				<ul class="nav nav-tabs" role="tablist">
@@ -31,7 +31,7 @@
 					</a>
 					{{ /tables }}
 					<div class="alert alert-info">
-						Avaa zoomattava aikataulu uuteen ikkunaan klikkaamalla
+						{{#L}}openzoomable{{/L}}
 					</div>
 				</div>
 				{{ /timetables }}

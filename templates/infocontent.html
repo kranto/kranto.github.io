@@ -28,7 +28,6 @@
 			</div>
 			{{ /vessels }}
 		</div>
-
 		<div class="row spaceabove">
 			<div class="col-7 col-sm-9">
 				<div class="row">
@@ -39,7 +38,7 @@
 			</div>
 			<div class="col-5 col-sm-3">
 				<button type="button" class="btn btn-info btn-md timetablebutton" data-toggle="modal" data-target="#timetableModal" data-backdrop="false">
-					Aikataulut
+					{{#L}}timetables{{/L}}
 				</button>
 			</div>
 		</div>
@@ -55,7 +54,7 @@
 				{{{ content }}}
 			{{ /notes }}
 		</div>
-		<div class="spaceabove"><h4>Yhteystiedot</h4></div>
+		<div class="spaceabove"><h4>{{#L}}contactinfo{{/L}}</h4></div>
 
 		<div id="contactslist" class=""></div>
 

@@ -153,6 +153,10 @@ div.info {
   content: "\f0f6";
 }
 
+.routefeature.order:before {
+  content: "\f095";
+}
+
 .routefeature.seasonal:before {
   content: "\f185";
 }
