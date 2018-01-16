@@ -11,13 +11,15 @@
 			<div class="alert alert-warning">
 				Tämä on epävirallinen kopio. Tarkista muutokset, poikkeukset ja lisätiedot <a target="info" href="{{ timetableslink }}">alkuperäisestä aikataulusta <i class="fa fa-external-link" aria-hidden="true"></i></a>.
 			</div>
-			<ul class="nav nav-tabs" role="tablist">
-				{{ #timetables }}
-				<li class="nav-item">
-					<a class="nav-link {{active}}" data-toggle="tab" href="#{{tabid}}" role="tab">{{dates}}</a>
-				</li>
-				{{ /timetables }}
-			</ul>
+			<div class="navtabswrapper">
+				<ul class="nav nav-tabs" role="tablist">
+					{{ #timetables }}
+					<li class="nav-item">
+						<a class="nav-link {{active}}" data-toggle="tab" href="#{{tabid}}" role="tab">{{dates}}</a>
+					</li>
+					{{ /timetables }}
+				</ul>
+			</div>
 			<div class="tab-content">
 				{{ #timetables }}
 				<div class="tab-pane fade {{show}} {{active}}" id="{{tabid}}" role="tabpanel">

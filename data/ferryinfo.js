@@ -751,7 +751,60 @@ piers = {
 		name: "Torsholma",
 		mun: "Brändö",
 		type: "1"
-	}
+	},
+
+
+	nagu: {
+		name: "Nagu",
+		name_fi: "Nauvo",
+		mun: "Nagu",
+		mun_fi: "Nauvo",
+		type: "1"
+	},
+	keso: {
+		name: "Keso varvet",
+		name_fi: "Keson telakka",
+		mun: "Nagu",
+		mun_fi: "Nauvo",
+		type: "1"
+	},
+	seili: {
+		name: "Själö",
+		name_fi: "Seili",
+		mun: "Nagu",
+		mun: "Nauvo",
+		type: "2"
+	},
+	innamo: {
+		name: "Innamo",
+		mun: "Nagu",
+		mun: "Nauvo",
+		type: "2"
+	},
+	jarvsor: {
+		name: "Järvsor",
+		mun: "Nagu",
+		mun: "Nauvo",
+		type: "2"
+	},
+	maskinnamo: {
+		name: "Maskinnamo",
+		mun: "Nagu",
+		mun: "Nauvo",
+		type: "2"
+	},
+	avensor: {
+		name: "Åvensor",
+		name_fi: "Ahvensaari",
+		mun: "Nagu",
+		mun: "Nauvo",
+		type: "2"
+	},
+	lavarn: {
+		name: "Lavarn",
+		mun: "Houtsala",
+		type: "1"
+	},
 }
 
 timetables = {
@@ -774,6 +827,9 @@ timetables = {
 		{ validFrom: "2018-08-13", validTo: "2018-09-30", tables: ["EnklingeVar2018.png"]},
 		{ validFrom: "2018-10-01", validTo: "2018-12-31", tables: ["EnklingeVinter2018.png"]},
 	],	
+	nagunorra: [
+		{ validFrom: "2017-10-02", validTo: "2018-05-17", tables: ["FalkoVinter2018.png"]}
+	]
 }
 
 pricelists = {
@@ -866,6 +922,38 @@ routes = {
 		timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
 		timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
 		pricelists: "ref_pricelists_alandstrafiken"
+	},
+
+
+	nagunorra: {
+		name: "Nagu norra rutt",
+		name_fi: "Nauvon pohjoinen reitti",
+		name_en: "Nagu Northern Route",
+		specifier: "",
+		piers: ["ref_piers_nagu", "ref_piers_keso", "ref_piers_innamo", "ref_piers_jarvsor", "ref_piers_maskinnamo", "ref_piers_avensor", "ref_piers_lavarn"],
+		operator: "ref_operators_finferries",
+		vessels: ["ref_ferries_falko"],
+		features: {
+			interval: "1-2 daily",
+			interval_fi: "1-2 vuoroa päivittäin",
+			interval_sv: "1-2 om dagen",
+			booking: "Some ",
+			booking_fi: "Osa varauksesta lautalle",
+			booking_sv: "Vissa beställningtur",
+			duration: "Nagu - Åvensor 2 hours",
+			duration_fi: "Nauvo - Ahvensaari 2 tuntia",
+			duration_sv: "Nagu - Åvensor 2 timmar"
+		},
+		notes: [
+			{ 
+				content: "<div class=\"alert alert-danger\"><strong>Note!</strong> Nauvon sataman muutostöiden ajan (-> kevät 2018) liikennöidään Keson telakalta</div>",
+				content_fi: "<div class=\"alert alert-danger\"><strong>Huom!</strong> Nauvon sataman muutostöiden ajan (-> kevät 2018) liikennöidään Keson telakalta</div>",
+			}
+		],
+		timetables: "ref_timetables_nagunorra",
+		timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables",
+		timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-norra-rutt-falko.html#timetables",
+		timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
 	}
 
 }
@@ -920,7 +1008,7 @@ function getLocalizedItem(item, lang) {
 			var parts = item.split("_");
 			var sub = ferrydata[parts[1]][parts[2]];
 			sub.id = parts[2];
-			return getLocalizedItem(deepCopy(sub));
+			return getLocalizedItem(deepCopy(sub), lang);
 		} else {
 			return item;
 		}
@@ -942,7 +1030,7 @@ function getLocalizedItem(item, lang) {
 }
 
 function getWww(item) {
-	return item.www? [{ class: "www", text: item.www, specifier: "", uri: item.www}]: [];
+	return item.www? [{ class: "www", text: item.www, specifier: "", uri: item.www, target: "info"}]: [];
 }
 
 function getEmail(item) {
@@ -950,6 +1038,7 @@ function getEmail(item) {
 }
 
 function deepCopy(object) {
+	console.log(JSON.stringify(object));
 	return JSON.parse(JSON.stringify(object));
 }
 
@@ -998,6 +1087,8 @@ function routeInfo(route, lang) {
 	});
 	piers[piers.length - 1].last = true;
 	info.piers = piers;
+
+	info.notes = route.notes;
 
 	info.operator = route.operator;
 	info.operator.contact.name = info.operator.name;
@@ -1051,3 +1142,5 @@ console.log(getLocalizedItem(operators.alandstrafiken, "en"));
 route = routeInfo(routes.foglolinjen, "fi");
 console.log(route);
 console.log(route.contacts[1].phones)
+
+console.log(routeInfo(routes.nagunorra, "fi"));

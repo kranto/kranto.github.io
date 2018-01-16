@@ -50,8 +50,14 @@
 			{{ /piers }}
 		</div>
 
-		<button type="button" class="btn btn-info btn-md contactsbutton" data-toggle="modal" data-target="#contactModal" data-backdrop="true">
-			Yhteystiedot
-		</button>
+		<div class="spaceabove">
+			{{ #notes }}
+				{{{ content }}}
+			{{ /notes }}
+		</div>
+		<div class="spaceabove"><h4>Yhteystiedot</h4></div>
+
+		<div id="contactslist" class=""></div>
+
 	</div>
 </div>

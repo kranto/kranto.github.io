@@ -202,6 +202,10 @@ div.info {
   font-size: 14px;
 }
 
+#timetableModal .nav-tabs {
+  overflow-x: scroll;
+}
+
 #timetableModal .tab-pane div {
   overflow-x: scroll;
   margin-bottom: 10px;
@@ -280,6 +284,10 @@ div.info {
   .btn:hover, .btn.active:hover { 
     background-color: #8de;
   }
+}
+
+.collapsing {
+    transition: height 0.4s;
 }
 
 
