@@ -930,19 +930,19 @@ routes = {
 		name_fi: "Nauvon pohjoinen reitti",
 		name_en: "Nagu Northern Route",
 		specifier: "",
-		piers: ["ref_piers_nagu", "ref_piers_keso", "ref_piers_innamo", "ref_piers_jarvsor", "ref_piers_maskinnamo", "ref_piers_avensor", "ref_piers_lavarn"],
+		piers: ["ref_piers_nagu", "ref_piers_keso", "ref_piers_seili", "ref_piers_innamo", "ref_piers_jarvsor", "ref_piers_maskinnamo", "ref_piers_avensor", "ref_piers_lavarn"],
 		operator: "ref_operators_finferries",
 		vessels: ["ref_ferries_falko"],
 		features: {
-			interval: "1-2 daily",
-			interval_fi: "1-2 vuoroa päivittäin",
-			interval_sv: "1-2 om dagen",
+			interval: "1-2 times daily",
+			interval_fi: "1-2 vuoroa päivässä",
+			interval_sv: "1-2 gånger om dagen",
 			booking: "Some ",
 			booking_fi: "Osa varauksesta lautalle",
 			booking_sv: "Vissa beställningtur",
-			duration: "Nagu - Åvensor 2 hours",
-			duration_fi: "Nauvo - Ahvensaari 2 tuntia",
-			duration_sv: "Nagu - Åvensor 2 timmar"
+			duration: "Nagu - Åvensor 2&nbsp;hours",
+			duration_fi: "Nauvo - Ahvensaari 2&nbsp;tuntia",
+			duration_sv: "Nagu - Åvensor 2&nbsp;timmar"
 		},
 		notes: [
 			{ 
