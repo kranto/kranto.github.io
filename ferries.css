@@ -3,6 +3,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
+      font-size: 14px;
     }
 
     h3 {
@@ -453,6 +454,10 @@
     .boxs button{
       height: 30px;
       padding-top: 4px;
+    }
+
+    .boxs h4 {
+      font-size: 18px; 
     }
 
     .mapTypeSelect {
