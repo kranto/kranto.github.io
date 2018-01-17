@@ -19,13 +19,16 @@ messages = {
     cost: {
         applies: [ "Maksullinen", "Avgiftsbelagd", "Fee applies" ],
     },
+    seasonal: {
+        summers: [ "Vain kesäisin", "Under sommar", "Summer only"]
+    },
     contactinfo: [ "Yhteystiedot", "Kontaktuppgifter", "Contact Information"],
     timetables: [ "Aikataulut", "Tidtabeller", "Schedules"],
     unofficialcopy: ["Tämä on epävirallinen kopio. Tarkista muutokset, poikkeukset ja lisätiedot",
         "Detta är en inofficiell kopia. Kontrollera om ändringar, undantag och ytterligare information",
         "This is an unofficial copy. Check for changes, exceptions, and additional information"],
     fromoriginal: ["alkuperäisestä aikataulusta", "från den ursprungliga tidtabellen", "in the original schedule"],
-    openzoomable: ["Avaa zoomattava aikataulu uuteen ikkunaan klikkaamalla", "Klicka för att öppna tidtabellen i ett nytt fönster", "Click a timetable image to open it in another window"]
+    openzoomable: ["Avaa zoomattava aikataulu uuteen ikkunaan klikkaamalla", "Klicka för att öppna tidtabellen i ett nytt fönster", "Click a timetable image to open it in a new window"]
 }
 
 function deepGet (obj, properties) {
@@ -313,7 +316,7 @@ ferries = {
             phones: ['+358 40 568 4911']
         },
     },
-    stella_korppoo: {
+    stellakorppoo: {
         name: "M/S Stella",
         features: {
         },
@@ -879,8 +882,52 @@ piers = {
         mun: "Kumlinge",
         type: "1"
     },
-
-
+    kannvik: {
+        name: "Kannvik",
+        mun: "Iniö",
+        type: "1"
+    },
+    heponiemi: {
+        name: "Heponiemi",
+        mun: "Kustavi",
+        mun_sv: "Gustavs",
+        type: "1"
+    },
+    dalen: {
+        name: "Dalen",
+        mun: "Iniö",
+        type: "1"
+    },
+    mossala: {
+        name: "Mossala",
+        mun: "Houtskär",
+        mun_fi: "Houtskari",
+        type: "1"
+    },
+    kittuis: {
+        name: "Kittuis",
+        mun: "Houtskär",
+        mun_fi: "Houtskari",
+        type: "1"
+    },
+    olofsnas: {
+        name: "Olofsnäs",
+        mun: "Norrskata",
+        type: "1"
+    },
+    retais: {
+        name: "Retais",
+        mun: "Korpo",
+        mun_fi: "Korppoo",
+        type: "1"
+    },
+    parnas: {
+        name: "Pärnäs",
+        name_fi: "Pärnäinen",
+        mun: "Nagu",
+        mun_fi: "Nauvo",
+        type: "1"
+    },
     nagu: {
         name: "Nagu",
         name_fi: "Nauvo",
@@ -888,6 +935,79 @@ piers = {
         mun_fi: "Nauvo",
         type: "1"
     },
+    hanka: {
+        name: "Hanka",
+        mun: "Rymättylä",
+        mun_fi: "Rimito",
+        type: "1"
+    },
+    teersalo: {
+        name: "Teersalo",
+        mun: "Velkua",
+        type: "1"
+    },
+    hakkenpää: {
+        name: "Hakkenpää",
+        mun: "Taivassalo",
+        mun_sv: "Tövsala",
+        type: "1"
+    },
+    kasnäs: {
+        name: "Kasnäs",
+        mun: "Kimitoön",
+        mun_fi: "Kemiönsaari",
+        type: "1"
+    },
+    långnäsh: {
+        name: "Långnäs",
+        mun: "Hitis",
+        mun_fi: "Hiittinen",
+        type: "1"
+    },
+    haapala: {
+        name: "Haapala",
+        mun: "Rymättylä",
+        mun_fi: "Rimito",
+        type: "1"
+    },
+    verkan: {
+        name: "Verkan",
+        mun: "Korpo",
+        mun_fi: "Korppoo",
+        type: "1"
+    },
+    kirjais: {
+        name: "Kirjais",
+        mun: "Nagu",
+        mun_fi: "Nauvo",
+        type: "1"
+    },
+    granvik: {
+        name: "Granvik",
+        mun: "Pargas",
+        mun_fi: "Parainen",
+        type: "1"
+    },
+    prostvik: {
+        name: "Prostvik",
+        mun: "Nagu",
+        mun_fi: "Nauvo",
+        type: "1"
+    },
+    lillmalo: {
+        name: "Lillmälö",
+        mun: "Pargas",
+        mun_fi: "Parainen",
+        type: "1"
+    },
+    dalsbruk: {
+        name: "Dalsbruk",
+        name_fi: "Taalintehdas",
+        mun: "Kimitoön",
+        mun_fi: "Kemiönsaari",
+        type: "1"
+    },
+
     keso: {
         name: "Keso varvet",
         name_fi: "Keson telakka",
@@ -935,6 +1055,7 @@ piers = {
 }
 
 timetables = {
+    none: [],
     foglolinjen: [
         { validFrom: "2018-01-01", validTo: "2018-05-31", tables: ["FoglolinjenVinter2018_1.png", "FoglolinjenVinter2018_2.png"]},
         { validFrom: "2018-06-01", validTo: "2018-08-31", tables: ["FoglolinjenSommar2018_1.png", "FoglolinjenSommar2018_2.png"]},
@@ -989,6 +1110,15 @@ timetables = {
         { validFrom: "2018-08-13", validTo: "2018-09-30", tables: ["OdinVar2018_1.png", "OdinVar2018_2.png"]},
         { validFrom: "2018-10-01", validTo: "2018-12-31", tables: ["OdinVinter2018_1.png", "OdinVinter2018_2.png"]},
     ],  
+
+    iniokustavi: [
+        { validFrom: "2018-01-01", validTo: "2018-06-18", tables: ["AuraVinter2018.png"]},
+        { validFrom: "2018-06-19", validTo: "2018-08-14", tables: ["AuraSommar2018.png"]},
+        { validFrom: "2018-08-15", validTo: "2018-12-31", tables: ["AuraVinter2018.png"]},
+    ],
+    houtskarinio: [
+        { validFrom: "2018-05-25", validTo: "2018-08-26", tables: ["AntoniaSommar2018.png"]},
+    ],
 
     nagunorra: [
         { validFrom: "2017-10-02", validTo: "2018-05-17", tables: ["FalkoVinter2018.png"]}
@@ -1166,6 +1296,62 @@ routes = {
         pricelists: "ref_pricelists_alandstrafiken"
     },
 
+    iniokustavi: {
+        name: "Iniö - Kustavi",
+        name_sv: "Iniö - Gustavs",
+        specifier: "",
+        piers: ["ref_piers_kannvik", "ref_piers_heponiemi"],
+        operator: "ref_operators_finferries",
+        vessels: ["ref_ferries_aura"],
+        features: {
+            interval_L: ["times.aday", "5-8"],
+            duration_L: ["duration.minutes", "25"],
+        },
+        timetables: "ref_timetables_iniokustavi",
+        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html#timetables",
+        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/inio-gustavs-aura.html#timetables",
+        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/inio-kustavi-aura.html#timetables",
+    },
+
+
+    houtskarinio: {
+        name: "Houtskär - Iniö",
+        name_fi: "Houtskari - Iniö",
+        specifier: "",
+        piers: ["ref_piers_mossala", "ref_piers_dalen"],
+        operator: "ref_operators_finferries",
+        vessels: ["ref_ferries_antonia"],
+        features: {
+            interval_L: ["times.aday", "3-4"],
+            duration_L: ["duration.minutes", "50"],
+            seasonal_L: "seasonal.summers",
+            cost_L: "cost.applies",
+        },
+        timetables: "ref_timetables_houtskarinio",
+        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saariston-rengastie-houtskari-inio.html#timetables",
+        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/skargardens-ringvag-houtskar-inio.html#timetables",
+        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/the-archipelago-houtskari-inio.html#timetables",
+    },
+
+
+    korpohoutskar: {
+        name: "Korpo - Houtskär",
+        name_fi: "Korppoo Houtskari",
+        specifier: "",
+        piers: ["ref_piers_galtby", "ref_piers_kittuis"],
+        operator: "ref_operators_finferries",
+        vessels: ["ref_ferries_stellakorppoo", "ref_ferries_mergus"],
+        features: {
+            interval_L: ["times.aday", "10-12"],
+            order_L: "order.partly",
+            duration_L: ["duration.minutes", "35"],
+        },
+
+        timetables: null,
+        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-houtskari.html#timetables",
+        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/korpo-houtskar.html#timetables",
+        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/korppoo-houtskari.html#timetables",
+    },
 
 
     nagunorra: {
@@ -1234,7 +1420,7 @@ function getLocalizedItem(item, lang) {
     
     if (!(item instanceof Object)) {
         if (typeof item === 'string' && item.startsWith("ref_")) {
-            // console.log(item);
+            console.log(item);
             var parts = item.split("_");
             var sub = ferrydata[parts[1]][parts[2]];
             sub.id = parts[2];
@@ -1332,7 +1518,7 @@ function routeInfo(route, lang) {
     var timetables = route.timetables;
     var first = true;
     var id = 1;
-    timetables.forEach(function(timetable) {
+    if (timetables) timetables.forEach(function(timetable) {
         timetable.dates = renderDates(timetable.validFrom, timetable.validTo, lang);
         timetable.active = first? "active": "";
         timetable.show = first? "show": "";
