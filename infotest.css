@@ -148,6 +148,14 @@ div.info {
   content: "\f185";
 }
 
+.routefeature.limit:before {
+  content: "\f256";
+}
+
+.routefeature.note:before {
+  content: "\f06e";
+}
+
 .timetablebutton {
   height: 60px;
 }

@@ -23,6 +23,9 @@ messages = {
     seasonal: {
         summers: [ "Vain kesäisin", "Under sommar", "Summer only"]
     },
+    limit: {
+        cars_mc_bikes_only: ["Vain henkilöautoja, moottoripyöriä ja polkupyöriä", "Bara personbilar, motorcyklar och cyklar", "Only cars, motorcycles, and bicycles"],
+    },
     contactinfo: [ "Yhteystiedot", "Kontaktuppgifter", "Contact Information"],
     timetables: [ "Aikataulut", "Tidtabeller", "Schedules"],
     unofficialcopy: ["Tämä on epävirallinen kopio. Tarkista muutokset, poikkeukset ja lisätiedot",
@@ -973,7 +976,7 @@ piers = {
         mun: "Velkua",
         type: "1"
     },
-    hakkenpää: {
+    hakkenpaa: {
         name: "Hakkenpää",
         mun: "Taivassalo",
         mun_sv: "Tövsala",
@@ -1441,6 +1444,29 @@ routes = {
         timetableslink_en: "http://www.ostern.fi/en/schedule-fahrplan",
     },
 
+    velkuataivassalo: {
+        name: "Velkuan reitti",
+        name_sv: "Velkua rutt",
+        name_en: "Velkua route",
+        specifier: "Teersalo - Hakkenpää",
+        piers: ["ref_piers_teersalo", "ref_piers_hakkenpaa"],
+        operator: "ref_operators_finferries",
+        vessels: ["ref_ferries_mskivimo"],
+        features: {
+            interval_L: ["times.aday", "1-2"],
+            duration_L: ["duration.minutes", "50"],
+            seasonal_L: "seasonal.summers",
+            note_fi: 'Osa <a href="#velkuanreitti">Velkuan reittiä</a>',
+            note_sv: "Del av Velkua rutt",
+            note_en: "Part of Velkua route",
+            limit_L: "limit.cars_mc_bikes_only"
+        },
+
+        timetables: null,
+        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
+        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
+        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
+    },
 
     nagunorra: {
         name: "Nagu norra rutt",
@@ -1579,14 +1605,10 @@ function routeInfo(route, lang) {
         vessel.features = features;
     });
 
-    var features =[];
-    if (route.features.interval) features.push({class: "interval", value: route.features.interval});
-    if (route.features.duration) features.push({class: "duration", value: route.features.duration});
-    if (route.features.order) features.push({class: "order", value: route.features.order});
-    if (route.features.booking) features.push({class: "booking", value: route.features.booking});
-    if (route.features.cost) features.push({class: "cost", value: route.features.cost});
-    if (route.features.seasonal) features.push({class: "seasonal", value: route.features.seasonal});
-    info.features = features;
+    info.features =
+    ["interval", "duration", "order", "booking", "cost", "seasonal", "note", "limit"]
+        .filter(function(type) { return route.features[type]; })
+        .map(function(type) { return { class: type, value: route.features[type]}; });
 
     var piers = route.piers;
     piers.forEach(function(pier) {
