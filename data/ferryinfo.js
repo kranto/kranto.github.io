@@ -9,6 +9,7 @@ messages = {
         aday: ["{0} kertaa päivässä", "{0} gånger om dagen", "{0} times a day"],
         aweek: ["{0} kertaa viikossa", "{0} gånger om vecka", "{0} times a week"],
         onceaday: ["kerran päivässä", "en gång om dagen", "once a day"],
+        anhour: ["{0} kertaa tunnissa", "{0} gånger om timme", "{0} times an hour"],
     },
     booking: {
         cannot: ["ei voi varata", "kan inte bokas", "booking not possible"],
@@ -663,6 +664,21 @@ ferries = {
             fb: 'https://www.facebook.com/mseivor/'
         }
     },
+    ostern: {
+        name: "M/S Östern",
+        features: {
+            cafe: true
+        },
+        capacity: {
+            cars: 17,
+            persons: 126
+        },
+        contact: {
+            phones: ['+358 400 720 606'],
+            email: 'info@ostern.fi',
+            fb: 'https://www.facebook.com/YhteysalusOstern'
+        }
+    },
     silvana: {
         name: "M/S Silvana",
         capacity: {
@@ -746,6 +762,17 @@ operators = {
             fax: '+358 6 5350500',
             email: 'info@kuljetus-savolainen.fi',
             www: 'https://kuljetus-savolainen.fi/yhteysalusliikenne/'
+        },
+    },
+    sinv: {
+        name: "Sundqvist Investment Oy",
+        logo: "sinv.png",
+        contact: {
+            phones: [{name: "CEO", tel: '+358 442 510 297'}],
+            email: 'mats.sundqvist@sinv.eu',
+            www: 'http://www.ostern.fi/en',
+            www_fi: 'http://www.ostern.fi/',
+            www_sv: 'http://www.ostern.fi/',
         },
     },
     rosita: {
@@ -1119,6 +1146,12 @@ timetables = {
     houtskarinio: [
         { validFrom: "2018-05-25", validTo: "2018-08-26", tables: ["AntoniaSommar2018.png"]},
     ],
+    nauvohanka: [
+        { validFrom: "2018-05-18", validTo: "2018-09-02", tables: ["Ostern2018_fisv.png"]},
+    ],
+    nauvohankaen: [
+        { validFrom: "2018-05-18", validTo: "2018-09-02", tables: ["Ostern2018_ende.png"]},
+    ],
 
     nagunorra: [
         { validFrom: "2017-10-02", validTo: "2018-05-17", tables: ["FalkoVinter2018.png"]}
@@ -1313,7 +1346,6 @@ routes = {
         timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/inio-kustavi-aura.html#timetables",
     },
 
-
     houtskarinio: {
         name: "Houtskär - Iniö",
         name_fi: "Houtskari - Iniö",
@@ -1333,10 +1365,9 @@ routes = {
         timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/the-archipelago-houtskari-inio.html#timetables",
     },
 
-
     korpohoutskar: {
         name: "Korpo - Houtskär",
-        name_fi: "Korppoo Houtskari",
+        name_fi: "Korppoo - Houtskari",
         specifier: "",
         piers: ["ref_piers_galtby", "ref_piers_kittuis"],
         operator: "ref_operators_finferries",
@@ -1351,6 +1382,63 @@ routes = {
         timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-houtskari.html#timetables",
         timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/korpo-houtskar.html#timetables",
         timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/korppoo-houtskari.html#timetables",
+    },
+
+    nagukorpo: {
+        name: "Nagu - Korpo",
+        name_fi: "Nauvo - Korppoo",
+        specifier: "",
+        piers: ["ref_piers_parnas", "ref_piers_retais"],
+        operator: "ref_operators_finferries",
+        vessels: ["ref_ferries_prostvik1", "ref_ferries_nagu2"],
+        features: {
+            interval_L: ["times.anhour", "1-4"],
+            duration_L: ["duration.minutes", "5"],
+        },
+
+        timetables: null,
+        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html#timetables",
+        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-korpo.html#timetables",
+        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-korppoo.html#timetables",
+    },
+
+    pargasnagu: {
+        name: "Pargas - Nagu",
+        name_fi: "Parainen - Nauvo",
+        specifier: "",
+        piers: ["ref_piers_lillmalo", "ref_piers_prostvik"],
+        operator: "ref_operators_finferries",
+        vessels: ["ref_ferries_elektra", "ref_ferries_sterna", "ref_ferries_falco"],
+        features: {
+            interval_L: ["times.anhour", "1-4"],
+            duration_L: ["duration.minutes", "10"],
+        },
+
+        timetables: null,
+        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html#timetables",
+        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-nagu.html#timetables",
+        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-nauvo.html#timetables",
+    },
+
+    nauvohanka: {
+        name: "Lilla ringvägen",
+        name_fi: "Pieni rengastie",
+        specifier: "Nagu - Själö - Hanka",
+        specifier_fi: "Nauvo - Seili - Hanka",
+        piers: ["ref_piers_nagu", "ref_piers_seili", "ref_piers_hanka"],
+        operator: "ref_operators_sinv",
+        vessels: ["ref_ferries_ostern"],
+        features: {
+            interval_L: ["times.aday", "3"],
+            duration_L: ["duration.minutes", "60"],
+            seasonal_L: "seasonal.summers",
+            cost_L: "cost.applies",
+        },
+        timetables: "ref_timetables_nauvohanka",
+//        timetables_en: "ref_timetables_nauvohankaen",
+        timetableslink: "http://www.ostern.fi/aikataulu",
+        timetableslink_sv: "http://www.ostern.fi/aikataulu",
+        timetableslink_en: "http://www.ostern.fi/en/schedule-fahrplan",
     },
 
 
@@ -1518,6 +1606,7 @@ function routeInfo(route, lang) {
     var timetables = route.timetables;
     var first = true;
     var id = 1;
+    console.log(timetables);
     if (timetables) timetables.forEach(function(timetable) {
         timetable.dates = renderDates(timetable.validFrom, timetable.validTo, lang);
         timetable.active = first? "active": "";
@@ -1529,6 +1618,7 @@ function routeInfo(route, lang) {
     info.timetables = timetables;
     info.timetableslink = route.timetableslink;
     info.pricelists = route.pricelists;
+    info.exttimetables = timetables? false: "external";
 
     contacts = contacts.map(function(contact) {
         var items = [];

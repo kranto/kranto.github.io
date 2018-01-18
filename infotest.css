@@ -44,19 +44,6 @@ div.info {
   padding: 0;
 }
 
-.closeInfoButton2 {
-  right: 10px;
-  top: 5px;
-  position: absolute;
-
-  background-color: #eee;
-  font-size: 20px;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  z-index: 3;
-}
-
 .infocontent {
   max-width: 640px;
   margin: 0 auto;
@@ -168,6 +155,12 @@ div.info {
 .timetablebutton:before {
   font-family: FontAwesome;
   content: "\f017";
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.timetablebutton.external:after {
+  font-family: FontAwesome;
+  content: " \f08e";
   -moz-osx-font-smoothing: grayscale;
 }
 

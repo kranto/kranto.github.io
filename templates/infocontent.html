@@ -2,12 +2,12 @@
 <div id="infocontenttemplate">
 	<div class="infocontent">
 
-		<button type="button" class="btn btn-secondary closeInfoButton2" id="closeInfoButton"><i class="fa fa-times" aria-hidden="true"></i></button>
+		<button type="button" class="btn btn-secondary closeInfoButton" id="closeInfoButton"><i class="fa fa-times" aria-hidden="true"></i></button>
 
 		<div class="row">
 			<div class="col-11 col-sm-11">
 				<div class="infotitle">
-					{{ name }}: <span class="specifier">{{ specifier }}</span>
+					{{ name }}{{#specifier}}: {{/specifier}}<span class="specifier">{{ specifier }}</span>
 				</div>
 			</div>
 		</div>
@@ -37,8 +37,8 @@
 				</div>
 			</div>
 			<div class="col-5 col-sm-3">
-				<button type="button" class="btn btn-info btn-md timetablebutton" data-toggle="modal" data-target="#timetableModal" data-backdrop="false">
-					{{#L}}timetables{{/L}}
+				<button id="timetablesbutton" type="button" linktype="{{exttimetables}}" class="btn btn-info btn-md timetablebutton {{exttimetables}}" href="{{timetableslink}} data-toggle="modal" data-backdrop="false">
+				{{#L}}timetables{{/L}}
 				</button>
 			</div>
 		</div>
