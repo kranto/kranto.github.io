@@ -1456,9 +1456,9 @@ routes = {
             interval_L: ["times.aday", "1-2"],
             duration_L: ["duration.minutes", "50"],
             seasonal_L: "seasonal.summers",
-            note_fi: 'Osa <a href="#velkuanreitti">Velkuan reittiä</a>',
-            note_sv: "Del av Velkua rutt",
-            note_en: "Part of Velkua route",
+            seealso_fi: 'Osa <a href="#velkuanreitti">Velkuan reittiä</a>',
+            seealso_sv: "Del av Velkua rutt",
+            seealso_en: "Part of Velkua route",
             limit_L: "limit.cars_mc_bikes_only"
         },
 
@@ -1606,7 +1606,7 @@ function routeInfo(route, lang) {
     });
 
     info.features =
-    ["interval", "duration", "order", "booking", "cost", "seasonal", "note", "limit"]
+    ["interval", "duration", "order", "booking", "cost", "seasonal", "limit", "seealso"]
         .filter(function(type) { return route.features[type]; })
         .map(function(type) { return { class: type, value: route.features[type]}; });
 

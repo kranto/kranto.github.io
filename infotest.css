@@ -152,11 +152,12 @@ div.info {
   content: "\f256";
 }
 
-.routefeature.note:before {
+.routefeature.seealso:before {
   content: "\f06e";
 }
 
 .timetablebutton {
+  float: right;
   height: 60px;
 }
 

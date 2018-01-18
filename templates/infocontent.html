@@ -29,14 +29,14 @@
 			{{ /vessels }}
 		</div>
 		<div class="row spaceabove">
-			<div class="col-7 col-sm-9">
+			<div class="col-7 col-sm-8">
 				<div class="row">
 					{{ #features }}
 					<div class="col-sm-6 routefeature {{ class }}">{{{ value }}}</div>
 					{{ /features}}
 				</div>
 			</div>
-			<div class="col-5 col-sm-3">
+			<div class="col-5 col-sm-4">
 				<button id="timetablesbutton" type="button" linktype="{{exttimetables}}" class="btn btn-info btn-md timetablebutton {{exttimetables}}" href="{{timetableslink}} data-toggle="modal" data-backdrop="false">
 				{{#L}}timetables{{/L}}
 				</button>
