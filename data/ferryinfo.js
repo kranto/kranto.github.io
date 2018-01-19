@@ -64,6 +64,44 @@ console.log(L("fi", ["duration.hours", "10"]));
 console.log(L("en", ["times.aday", "10"]));
 console.log(L("sv", ["booking.cannot"]));
 
+mun = {
+    eckero: { name: "Eckerö"},
+    hammarland: { name: "Hammarland"},
+    geta: { name: "Geta"},
+    finstrom: { name: "Finström"},
+    saltvik: { name: "Saltvik"},
+    sund: { name: "Sund"},
+    vardo: { name: "Vårdö"},
+    jomala: { name: "Jomala"},
+    mariehamn: { name: "Mariehamn", name_fi: "Maarianhamina"},
+    lemland: { name: "Lemland"},
+    lumparland: { name: "Lumparland"},
+    foglo: { name: "Föglö"},
+    kumlinge: { name: "Kumlinge"},
+    sottunga: { name: "Sottunga"},
+    kokar: { name: "Kökar"},
+    brando: { name: "Brändö"},
+    inio: { name: "Iniö"},
+    houtskar: { name: "Houtskär", name_fi: "Houtskari"},
+    korpo: { name: "Korpo", name_fi: "Korppoo"},
+    nagu: { name: "Nagu", name_fi: "Nauvo"},
+    pargas: { name: "Pargas", name_fi: "Parainen"},
+    kaarina: { name: "Kaarina", name_sv: "S:t Karins"},
+    turku: { name: "Turku", name_sv: "Åbo"},
+    raisio: { name: "Raisio", name_sv: "Reso"},
+    rymattyla: { name: "Rymättylä", name_sv: "Rimito"},
+    merimasku: { name: "Merimasku"},
+    askainen: { name: "Askainen", name_sv: "Villnäs"},
+    mietoinen: { name: "Mietoinen"},
+    velkua: { name: "Velkua" },
+    taivassalo: { name: "Taivassalo", name_sv: "Tövsala" },
+    kustavi: { name: "Kustavi", name_sv: "Gustavs" },
+    kimitoon: { name: "Kimitoön", name_fi: "Kemiönsaari"},
+    hitis: { name: "Hitis", name_fi: "Hiittinen"},
+    norrskata: { name: "Norrskata"},
+    hanko: { name: "Hanko", name_sv: "Hangö"},
+},
+
 ferries = {
     skiftet: {
         name: "M/S Skiftet",
@@ -719,7 +757,7 @@ operators = {
             www: 'http://www.finferries.fi/',
             www_fi: 'http://www.finferries.fi/',
             www_sv: 'http://www.finferries.fi/sv',
-            www_ev: 'http://www.finferries.fi/en'
+            www_en: 'http://www.finferries.fi/en'
         },
     },
     ncl: {
@@ -795,286 +833,260 @@ operators = {
 piers = {
     svino: {
         name: "Svinö",
-        mun: "Lumparland",
+        mun: "ref_mun_lumparland",
         type: "1",
         distances: [
             {
-                to: "Mariehamn",
-                to_fi: "Maarianhamina",
+                to: "ref_mun_mariehamn",
                 dist: 27
             },{
-                to: "Långnäs",
+                to: "ref_piers_langnas",
                 dist: 7.1
             }
         ]
     },
     degerby: {
         name: "Degerby",
-        mun: "Föglö",
+        mun: "ref_mun_foglo",
         type: "1",
         distances: [
             {
-                to: "Överö",
+                to: "ref_piers_overo",
                 dist: 17
             }
         ]
     },
     hummelvik: {
         name: "Hummelvik",
-        mun: "Vårdö",
+        mun: "ref_mun_vardo",
         type: "1",
     },
     enklinge: {
         name: "Enklinge",
-        mun: "Kumlinge",
+        mun: "ref_mun_kumlinge",
         type: "2"
     },
     kumlinge: {
         name: "Kumlinge",
-        mun: "Kumlinge",
+        mun: "ref_mun_kumlinge",
         type: "1",
     },
     lappo: {
         name: "Lappo",
-        mun: "Brändö",
+        mun: "ref_mun_brando",
         type: "2"
     },
     torsholma: {
         name: "Torsholma",
-        mun: "Brändö",
+        mun: "ref_mun_brando",
         type: "1",
     },
     asterholma: {
         name: "Asterholma",
-        mun: "Brändö",
+        mun: "ref_mun_brando",
         type: "2"
     },
     ava: {
         name: "Åva",
-        mun: "Brändö",
+        mun: "ref_mun_brando",
         type: "1",
     },
     jurmob: {
         name: "Jurmo",
-        mun: "Brändö",
+        mun: "ref_mun_brando",
         type: "2"
     },
     vuosnainen: {
         name: "Vuosnainen",
         name_sv: "Osnäs",
-        mun: "Kustavi",
-        mun_sv: "Gustavs",
+        mun: "ref_mun_kustavi",
         type: "1",
     },
     langnas: {
         name: "Långnäs",
-        mun: "Lumparland",
+        mun: "ref_mun_lumparland",
         type: "1"
     },
     overo: {
         name: "Överö",
-        mun: "Föglö",
+        mun: "ref_mun_foglo",
         type: "1"
     },
     sottunga: {
         name: "Sottunga",
-        mun: "Sottunga",
+        mun: "ref_mun_sottunga",
         type: "2"
     },
     huso: {
         name: "Husö",
-        mun: "Sottunga",
+        mun: "ref_mun_sottunga",
         type: "2"
     },
     kyrkogardso: {
         name: "Kyrkogårdsö",
-        mun: "Kökar",
+        mun: "ref_mun_kokar",
         type: "2"
     },
     kokar: {
         name: "Kökar",
-        mun: "Kökar",
+        mun: "ref_mun_kokar",
         type: "2"
     },
     galtby: {
         name: "Galtby",
-        mun: "Korpo",
-        mun_fi: "Korppoo",
+        mun: "ref_mun_korpo",
         type: "1"
     },
     bergo: {
         name: "Bergö",
-        mun: "Lumparland",
+        mun: "ref_mun_lumparland",
         type: "2"
     },
     snacko: {
         name: "Snäckö",
-        mun: "Kumlinge",
+        mun: "ref_mun_kumlinge",
         type: "1"
     },
     kannvik: {
         name: "Kannvik",
-        mun: "Iniö",
+        mun: "ref_mun_inio",
         type: "1"
     },
     heponiemi: {
         name: "Heponiemi",
-        mun: "Kustavi",
-        mun_sv: "Gustavs",
+        mun: "ref_mun_kustavi",
         type: "1"
     },
     dalen: {
         name: "Dalen",
-        mun: "Iniö",
+        mun: "ref_mun_inio",
         type: "1"
     },
     mossala: {
         name: "Mossala",
-        mun: "Houtskär",
-        mun_fi: "Houtskari",
+        mun: "ref_mun_houtskar",
         type: "1"
     },
     kittuis: {
         name: "Kittuis",
-        mun: "Houtskär",
-        mun_fi: "Houtskari",
+        mun: "ref_mun_houtskar",
         type: "1"
     },
     olofsnas: {
         name: "Olofsnäs",
-        mun: "Norrskata",
+        mun: "ref_mun_norrskata",
         type: "1"
     },
     retais: {
         name: "Retais",
-        mun: "Korpo",
-        mun_fi: "Korppoo",
+        mun: "ref_mun_korpo",
         type: "1"
     },
     parnas: {
         name: "Pärnäs",
         name_fi: "Pärnäinen",
-        mun: "Nagu",
-        mun_fi: "Nauvo",
+        mun: "ref_mun_nagu",
         type: "1"
     },
     nagu: {
         name: "Nagu",
         name_fi: "Nauvo",
-        mun: "Nagu",
-        mun_fi: "Nauvo",
+        mun: "ref_mun_nagu",
         type: "1"
     },
     hanka: {
         name: "Hanka",
-        mun: "Rymättylä",
-        mun_fi: "Rimito",
+        mun: "ref_mun_rymattyla",
         type: "1"
     },
     teersalo: {
         name: "Teersalo",
-        mun: "Velkua",
+        mun: "ref_mun_velkua",
         type: "1"
     },
     hakkenpaa: {
         name: "Hakkenpää",
-        mun: "Taivassalo",
-        mun_sv: "Tövsala",
+        mun: "ref_mun_taivassalo",
         type: "1"
     },
     kasnäs: {
         name: "Kasnäs",
-        mun: "Kimitoön",
-        mun_fi: "Kemiönsaari",
+        mun: "ref_mun_kimitoon",
         type: "1"
     },
     långnäsh: {
         name: "Långnäs",
-        mun: "Hitis",
-        mun_fi: "Hiittinen",
+        mun: "ref_mun_hitis",
         type: "1"
     },
     haapala: {
         name: "Haapala",
-        mun: "Rymättylä",
-        mun_fi: "Rimito",
+        mun: "ref_mun_rymattyla",
         type: "1"
     },
     verkan: {
         name: "Verkan",
-        mun: "Korpo",
-        mun_fi: "Korppoo",
+        mun: "ref_mun_korpo",
         type: "1"
     },
     kirjais: {
         name: "Kirjais",
-        mun: "Nagu",
-        mun_fi: "Nauvo",
+        mun: "ref_mun_nagu",
         type: "1"
     },
     granvik: {
         name: "Granvik",
-        mun: "Pargas",
-        mun_fi: "Parainen",
+        mun: "ref_mun_pargas",
         type: "1"
     },
     prostvik: {
         name: "Prostvik",
-        mun: "Nagu",
-        mun_fi: "Nauvo",
+        mun: "ref_mun_nagu",
         type: "1"
     },
     lillmalo: {
         name: "Lillmälö",
-        mun: "Pargas",
-        mun_fi: "Parainen",
+        mun: "ref_mun_pargas",
         type: "1"
     },
     dalsbruk: {
         name: "Dalsbruk",
         name_fi: "Taalintehdas",
-        mun: "Kimitoön",
-        mun_fi: "Kemiönsaari",
+        mun: "ref_mun_kimitoon",
         type: "1"
     },
 
     keso: {
         name: "Keso varvet",
         name_fi: "Keson telakka",
-        mun: "Nagu",
-        mun_fi: "Nauvo",
+        mun: "ref_mun_nagu",
         type: "1"
     },
     seili: {
         name: "Själö",
         name_fi: "Seili",
-        mun: "Nagu",
-        mun: "Nauvo",
+        mun: "ref_mun_nagu",
         type: "2"
     },
     innamo: {
         name: "Innamo",
-        mun: "Nagu",
-        mun_fi: "Nauvo",
+        mun: "ref_mun_nagu",
         type: "2"
     },
     jarvsor: {
         name: "Järvsor",
-        mun: "Nagu",
-        mun_fi: "Nauvo",
+        mun: "ref_mun_nagu",
         type: "2"
     },
     maskinnamo: {
         name: "Maskinnamo",
-        mun: "Nagu",
-        mun_fi: "Nauvo",
+        mun: "ref_mun_nagu",
         type: "2"
     },
     avensor: {
         name: "Åvensor",
         name_fi: "Ahvensaari",
-        mun: "Nagu",
-        mun_fi: "Nauvo",
+        mun: "ref_mun_nagu",
         type: "2"
     },
     lavarn: {
@@ -1503,6 +1515,7 @@ ferrydata = {
     ferries: ferries,
     operators: operators,
     piers: piers,
+    mun: mun,
     timetables: timetables,
     pricelists: pricelists,
 }
@@ -1613,7 +1626,7 @@ function routeInfo(route, lang) {
     var piers = route.piers;
     piers.forEach(function(pier) {
         pier.class = pier.type == 1? "mainpier": "";
-        pier.specifier = pier.type == 1 && pier.mun != pier.name ? "(" + pier.mun  + ")": "";
+        pier.specifier = pier.type == 1 && pier.mun.name != pier.name ? "(" + pier.mun.name  + ")": "";
         pier.link = "#" + pier.id;
     });
     piers[piers.length - 1].last = true;
