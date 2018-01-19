@@ -5,7 +5,9 @@
 		var template = document.getElementById('infocontenttemplate').innerHTML;
 		var data = routeInfo(routes.velkuataivassalo, "en");
 		var output = Mustache.render(template, data);
-		$("#info").html(output);
+
+		$(".info").html(output);
+		$("#wrapper2").toggleClass("info-open", true);
 
 		$("#timetablesbutton").click(function() {
 			console.log(this);
@@ -15,18 +17,20 @@
 				$("#timetableModal").modal();
 			}	
 		});
+		$("#timetabletemplateholder").load("templates/timetabledialog.html #timetabletemplate", function() {
+			var template = document.getElementById('timetabletemplate').innerHTML;
+			var data = routeInfo(routes.velkuataivassalo, "en");
+			var output = Mustache.render(template, data);
+			$("#timetabledialog").html(output);
+		});
+		$("#contactstemplateholder").load("templates/contactsdialog.html #contactstemplate", function() {
+			var template = document.getElementById('contactstemplate').innerHTML;
+			var data = routeInfo(routes.velkuataivassalo, "en");
+			var output = Mustache.render(template, data);
+			$("#contactslist").html(output);
+		});
+
 	});
-	$("#timetabletemplateholder").load("templates/timetabledialog.html #timetabletemplate", function() {
-		var template = document.getElementById('timetabletemplate').innerHTML;
-		var data = routeInfo(routes.velkuataivassalo, "en");
-		var output = Mustache.render(template, data);
-		$("#timetabledialog").html(output);
-	});
-	$("#contactstemplateholder").load("templates/contactsdialog.html #contactstemplate", function() {
-		var template = document.getElementById('contactstemplate').innerHTML;
-		var data = routeInfo(routes.velkuataivassalo, "en");
-		var output = Mustache.render(template, data);
-		$("#contactslist").html(output);
-	});
+	
 });
 
