@@ -144,6 +144,7 @@ div#wrapper2 {
 
 .timetablebutton {
   width: 100%;
+  margin-top: 5px;
 }
 
 .timetablebutton:before {
@@ -209,6 +210,14 @@ div#wrapper2 {
 
 .timetable {
   max-width: 600px;
+}
+
+div.timetablelink {
+  border-bottom: 2px solid black;
+}
+
+div.timetablelink:last-of-type {
+  border-bottom: none;
 }
 
 #contactModal .modal-dialog {
@@ -294,6 +303,9 @@ h4 {
     transition: height 0.4s;
 }
 
+.center {
+  text-align: center;
+}
 
 .info {
   overflow-y: hidden; 

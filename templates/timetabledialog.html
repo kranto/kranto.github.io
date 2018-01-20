@@ -9,32 +9,36 @@
 		</div>
 		<div class="modal-body">
 			<div class="alert alert-warning">
-				{{#L}}unofficialcopy{{/L}} <a target="info" href="{{ timetableslink }}">{{#L}}fromoriginal{{/L}} <i class="fa fa-external-link" aria-hidden="true"></i></a>.
+				{{#L}}unofficialcopy{{/L}} <a target="info" href="{{ link }}">{{#L}}fromoriginal{{/L}} <i class="fa fa-external-link" aria-hidden="true"></i></a>.
 			</div>
 			<div class="navtabswrapper">
 				<ul class="nav nav-tabs" role="tablist">
-					{{ #timetables }}
+					{{ #tables }}
 					<li class="nav-item">
 						<a class="nav-link {{active}}" data-toggle="tab" href="#{{tabid}}" role="tab">{{dates}}</a>
 					</li>
-					{{ /timetables }}
+					{{ /tables }}
 				</ul>
 			</div>
 			<div class="tab-content">
-				{{ #timetables }}
+				{{ #tables }}
 				<div class="tab-pane fade {{show}} {{active}}" id="{{tabid}}" role="tabpanel">
 					{{ #tables }}
-					<a href="timetables/{{.}}" target="timetable">
-						<div>
-							<img class="timetable" src="timetables/{{.}}"/>
-						</div>
-					</a>
-					{{ /tables }}
-					<div class="alert alert-info">
+					<div>
+						<div class="timetablelink">
+							<a href="timetables/{{.}}" target="timetable">
+								<div>
+									<img class="timetable" src="timetables/{{.}}"/>
+								</div>
+							</a>
+							</div>
+						{{ /tables }}
+					</div>
+					<div class="alert alert-info center">
 						{{#L}}openzoomable{{/L}}
 					</div>
 				</div>
-				{{ /timetables }}
+				{{ /tables }}
 			</div>
 		</div>
 	</div>

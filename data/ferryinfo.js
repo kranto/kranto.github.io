@@ -4,18 +4,23 @@ messages = {
         minutes: ["{0} minuuttia", "{0} minuter", "{0} minutes"],
         hours: ["{0} tuntia", "{0} timmar", "{0} hours"],
         hoursminutes: ["{0} tuntia {1} minuuttia", "{0} timmar {1} minuter", "{0} hours {1} minutes"],
+        hourminutes: ["1 tunti {0} minuuttia", "1 timme {0} minuter", "1 hour {0} minutes"],
     },
     times: {
         aday: ["{0} kertaa päivässä", "{0} gånger om dagen", "{0} times a day"],
         aweek: ["{0} kertaa viikossa", "{0} gånger om vecka", "{0} times a week"],
         onceaday: ["kerran päivässä", "en gång om dagen", "once a day"],
         anhour: ["{0} kertaa tunnissa", "{0} gånger om timme", "{0} times an hour"],
+        adayaweek: ["{0} kertaa päivässä, {1} {2} kertaa viikossa",
+                "{0} gånger om dagen, {1} {2} gånger om vecka", "{0} times a day, {1} {2} times a week"],
     },
     booking: {
         cannot: ["ei voi varata", "kan inte bokas", "booking not possible"],
     },
     order: {
-        partly: ["osa vuoroista vain tilauksesta", "delvis beställningturer", "Pre-order required for certain trips"],
+        pieronly: ["{0} vain tilauksesta", "{0} bara på beställning", "{0} on demand only"],
+        only: ["vain tilauksesta", "bara på beställning", "On demand only"],
+        partly: ["osa vuoroista vain tilauksesta", "några turer bara på beställning", "Pre-order required for certain trips"],
     },
     cost: {
         applies: [ "Maksullinen", "Avgiftsbelagd", "Fee applies" ],
@@ -61,10 +66,6 @@ function localize(lang, args) {
 
 L = localize;
 
-console.log(L("fi", ["duration.hours", "10"]));
-console.log(L("en", ["times.aday", "10"]));
-console.log(L("sv", ["booking.cannot"]));
-
 mun = {
     eckero: { name: "Eckerö"},
     hammarland: { name: "Hammarland"},
@@ -100,6 +101,7 @@ mun = {
     kimitoon: { name: "Kimitoön", name_fi: "Kemiönsaari"},
     hitis: { name: "Hitis", name_fi: "Hiittinen"},
     norrskata: { name: "Norrskata"},
+    houtsala: { name: "Houtsala"},
     hanko: { name: "Hanko", name_sv: "Hangö"},
 },
 
@@ -1122,6 +1124,84 @@ piers = {
         mun: "ref_mun_rymattyla",
         type: "2"
     },
+    finno: {
+        name: "Finnö",
+        mun: "ref_mun_korpo",
+        type: "2"
+    },
+    kalderso: {
+        name: "Käldersö",
+        mun: "ref_mun_korpo",
+        type: "2"
+    },
+    elvso: {
+        name: "Elvsö",
+        mun: "ref_mun_korpo",
+        type: "2"
+    },
+    berghamnk: {
+        name: "Berghamn",
+        mun: "ref_mun_korpo",
+        type: "2"
+    },
+    luk: {
+        name: "Luk",
+        mun: "ref_mun_korpo",
+        type: "2"
+    },
+    lillpensor: {
+        name: "Lillpensor",
+        mun: "ref_mun_korpo",
+        type: "2"
+    },
+    storpensor: {
+        name: "Storpensor",
+        mun: "ref_mun_korpo",
+        type: "2"
+    },
+    havtrask: {
+        name: "Havträsk",
+        mun: "ref_mun_norrskata",
+        type: "1"
+    },
+    brunskar: {
+        name: "Brunskär",
+        mun: "ref_mun_korpo",
+        type: "2"
+    },
+    osterskar: {
+        name: "Österskär",
+        mun: "ref_mun_korpo",
+        type: "2"
+    },
+    kalo: {
+        name: "Kälö",
+        mun: "ref_mun_korpo",
+        type: "2"
+    },
+
+    nasby: { name: "Näsby", mun: "ref_mun_houtskar", type: "1" },
+    roslax: { name: "Roslax", mun: "ref_mun_houtskar", type: "1" },
+    sordo: { name: "Sördö", mun: "ref_mun_houtskar", type: "2" },
+    lempnas: { name: "Lempnäs", mun: "ref_mun_houtskar", type: "2" },
+    applo: { name: "Äpplö", mun: "ref_mun_houtskar", type: "2" },
+    bockholm: { name: "Bockholm", mun: "ref_mun_houtskar", type: "2" },
+    sodo: { name: "Södö", mun: "ref_mun_houtskar", type: "2" },
+    nato: { name: "Nåtö", mun: "ref_mun_houtskar", type: "2" },
+    harklot: { name: "Härklot", mun: "ref_mun_houtskar", type: "2" },
+    sjalo: { name: "Själö", mun: "ref_mun_houtskar", type: "2" },
+
+    norrby: { name: "Norrby", mun: "ref_mun_inio", type: "1" },
+    yttersto: { name: "Ytterstö", mun: "ref_mun_inio", type: "2" },
+    lempmo: { name: "Lempmo", mun: "ref_mun_inio", type: "2" },
+    salmis: { name: "Salmis", mun: "ref_mun_inio", type: "2" },
+    lammholm: { name: "Lammholm", mun: "ref_mun_inio", type: "2" },
+    kvarnholm: { name: "Kvarnholm", mun: "ref_mun_inio", type: "2" },
+    aselholm: { name: "Åselholm", mun: "ref_mun_inio", type: "2" },
+    perkala: { name: "Perkala", mun: "ref_mun_inio", type: "2" },
+    kolko: { name: "Kolko", mun: "ref_mun_inio", type: "2" },
+
+    torsholmai: { name: "Torsholma I", mun: "ref_mun_brando", type: "1" },
 
     keso: {
         name: "Keso varvet",
@@ -1158,7 +1238,7 @@ piers = {
     },
     lavarn: {
         name: "Lavarn",
-        mun: "Houtsala",
+        mun: "ref_mun_houtsala",
         type: "1"
     },
 }
@@ -1240,6 +1320,23 @@ timetables = {
     ],
     rymattylanreitti: [
         { validFrom: "2017-09-04", validTo: "2018-06-03", tables: ["IslaVinter2018_1.png", "IslaVinter2018_2.png"]}
+    ],
+    houtskarrutt: { name: "Houtskarin reitti", name_sv: "Houtskär rutt", name_en: "Houtskär Route", specifier: "",
+        link: "http://www.ferryway.fi/7",
+        tables: 
+        [
+            { validFrom: "2017-10-01", validTo: "2018-04-15", tables: ["KarolinaVinter2018_1.png", "KarolinaVinter2018_2.png"]}
+        ],
+    },
+    iniorutt: { name: "Iniön lisäreitti", name_sv: "Iniö tilläggsrutt", name_en: "Iniö Additional Route", specifier: "",
+        link: "http://www.ferryway.fi/8",
+        tables: 
+        [
+            { validFrom: "2017-14-08", validTo: "2018-05-13", tables: ["SatavaVinter2018_1.png", "SatavaVinter2018_2.png"]}
+        ],
+    },
+    korporutt: [
+        { validFrom: "2017-09-01", validTo: "2018-05-31", tables: ["FiskoVinter2018_1.png", "FiskoVinter2018_2.png"]},
     ],
     nagunorra: [
         { validFrom: "2017-10-02", validTo: "2018-05-17", tables: ["FalkoVinter2018.png"]}
@@ -1401,13 +1498,14 @@ routes = {
         features: {
             interval_L: ["times.aday", "1-2"],
             cost_L: "cost.applies",
-            duration_L: ["duration.hoursminutes", "1", "45"],
+            duration_L: ["duration.hourminutes", "45"],
+            order_L: ["order.pieronly", "Överö"],
         },
         notes: [
             { 
                 content: "<div>Bergö and Sottunga are not served regularly</div>",
                 content_fi: "Bergössä ja Sottungassa poiketaan vain harvoin",
-                content_sv: "Bergö och Sottunga trafikeras onvanligen"
+                content_sv: "Bergö och Sottunga trafikeras ovanligen"
             }
         ],
         timetables: "ref_timetables_tvarlinjen",
@@ -1608,6 +1706,42 @@ routes = {
         timetables: "ref_timetables_rymattylanreitti",
         timetableslink: "https://kuljetus-savolainen.fi/yhteysalusliikenne/"
     },
+    korporutt: {
+        name: "Korppoon reitti",
+        name_sv: "Korpo rutt",
+        name_en: "Korpo Route",
+        specifier: "",
+        piers: ["ref_piers_verkan", "ref_piers_finno", "ref_piers_kalderso", "ref_piers_elvso", "ref_piers_berghamnk", "ref_piers_luk", "ref_piers_kittuis", "ref_piers_lillpensor", "ref_piers_storpensor", "ref_piers_havtrask", "ref_piers_brunskar", "ref_piers_osterskar", "ref_piers_kalo"],
+        operator: "ref_operators_al",
+        vessels: ["ref_ferries_fisko"],
+        features: {
+            interval_L: ["times.adayaweek", "0-4", "Österskär", "2"],
+            order_L: "order.only",
+            duration_fi: "Haapala-Pakinainen 40 minuuttia",
+            duration_sv: "Haapala-Pakinainen 40 minuter",
+            duration_en: "Haapala-Pakinainen 40 minutes",
+        },
+        timetables: "ref_timetables_korporutt",
+        timetableslink: "http://skargardslinjer.fi/Korpo_ruttomrade",
+        timetableslink_fi: "http://www.saaristolinjat.fi/Korppoon_reittialue"
+    },
+    houtskarrutt: {
+        name: "Houtskarin reitti ja Iniön lisäreitti",
+        name_sv: "Houtskär rutt och Iniö tilläggsrutt",
+        name_en: "Houtskär Route and Iniö Additional Route",
+        specifier: "",
+        piers: ["ref_piers_nasby","ref_piers_roslax","ref_piers_yttersto","ref_piers_lempmo","ref_piers_salmis","ref_piers_lammholm","ref_piers_norrby","ref_piers_sordo","ref_piers_lempnas","ref_piers_applo","ref_piers_nato","ref_piers_torsholmai","ref_piers_sjalo","ref_piers_harklot","ref_piers_kvarnholm","ref_piers_aselholm","ref_piers_perkala","ref_piers_kolko","ref_piers_kannvik"],
+        operator: "ref_operators_ferryway",
+        vessels: ["ref_ferries_karolina", "ref_ferries_satava"],
+        features: {
+            interval_L: ["times.aday", "1-4"],
+            order_L: "order.only",
+            duration_fi: "Roslax - Torsholma " + L("fi", ["duration.hoursminutes", "2", "20"]),
+            duration_sv: "Roslax - Torsholma " + L("sv", ["duration.hoursminutes", "2", "20"]),
+            duration_en: "Roslax - Torsholma " + L("en", ["duration.hoursminutes", "2", "20"]),
+        },
+        timetables: ["ref_timetables_houtskarrutt", "ref_timetables_iniorutt"]
+    },
 
     nagunorra: {
         name: "Nagu norra rutt",
@@ -1620,9 +1754,9 @@ routes = {
         features: {
             interval_L: ["times.aday", "1-2"],
             order_L: "order.partly",
-            duration: "Nagu - Åvensor 2&nbsp;hours",
-            duration_fi: "Nauvo - Ahvensaari 2&nbsp;tuntia",
-            duration_sv: "Nagu - Åvensor 2&nbsp;timmar"
+            duration_fi: "Nauvo - Ahvensaari " + L("fi", ["duration.hours", "2"]),
+            duration_sv: "Nagu - Åvensor " + L("sv", ["duration.hours", "2"]),
+            duration_en: "Nagu - Åvensor " + L("en", ["duration.hours", "2"]),
         },
         notes: [
             { 
@@ -1706,7 +1840,7 @@ function getLocalizedItem(item, lang) {
 }
 
 function getWww(item) {
-    return item.www? [{ class: "www", text: item.www.replace(/^http(s):\/\//,"").replace(/\/$/, ""), specifier: "", uri: item.www, target: "info"}]: [];
+    return item.www? [{ class: "www", text: item.www.replace(/^http(s?):\/\//,"").replace(/\/$/, ""), specifier: "", uri: item.www, target: "info"}]: [];
 }
 
 function getEmail(item) {
@@ -1714,11 +1848,11 @@ function getEmail(item) {
 }
 
 function getFb(item) {
-    return item.fb? [{ class: "facebook", text: item.name,  uri: item.fb, target:"facebook" }]: [];
+    console.log(item);
+    return item.fb? [{ class: "facebook", text: item.name,  specifier: "", uri: item.fb, target:"facebook" }]: [];
 }
 
 function deepCopy(object) {
-    console.log(JSON.stringify(object));
     return JSON.parse(JSON.stringify(object));
 }
 
@@ -1772,17 +1906,29 @@ function routeInfo(route, lang) {
     contacts.push(info.operator.contact);
 
     var timetables = route.timetables;
-    var first = true;
-    var id = 1;
+
     console.log(timetables);
-    if (timetables) timetables.forEach(function(timetable) {
-        timetable.dates = renderDates(timetable.validFrom, timetable.validTo, lang);
-        timetable.active = first? "active": "";
-        timetable.show = first? "show": "";
-        timetable.tabid = "tab" + id;
-        id++;
-        first = false;
+
+    // Backward compatibility
+    if (timetables.length > 0 && timetables[0].validFrom) timetables = [{link: route.timetableslink, name: route.name, specifier: route.specifier, tables: timetables}];
+ 
+    var index = 0;
+    timetables.forEach(function(timetable) {
+        timetable.buttonspecifier = timetables.length > 1? timetable.name? timetable.name: timetable.specifier: "";
+        timetable.name1 = timetable.name;
+        timetable.index = index++;
+        var first = true;
+        var id = 1;
+        if (timetable.tables) timetable.tables.forEach(function(table) {
+            table.dates = renderDates(table.validFrom, table.validTo, lang);
+            table.active = first? "active": "";
+            table.show = first? "show": "";
+            table.tabid = "tab" + id;
+            id++;
+            first = false;
+        });
     });
+
     info.timetables = timetables;
     info.timetableslink = route.timetableslink;
     info.pricelists = route.pricelists;
