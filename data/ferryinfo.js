@@ -1203,6 +1203,12 @@ piers = {
 
     torsholmai: { name: "Torsholma I", mun: "ref_mun_brando", type: "1" },
 
+    berghamn: { name: "Berghamn", mun: "ref_mun_nagu", type: "2" },
+    noto: { name: "Nötö", mun: "ref_mun_nagu", type: "2" },
+    aspo: { name: "Aspö", mun: "ref_mun_nagu", type: "2" },
+    jurmo: { name: "Jurmo", mun: "ref_mun_nagu", type: "2" },
+    uto: { name: "Utö", mun: "ref_mun_nagu", type: "2" },
+
     keso: {
         name: "Keso varvet",
         name_fi: "Keson telakka",
@@ -1241,6 +1247,15 @@ piers = {
         mun: "ref_mun_houtsala",
         type: "1"
     },
+
+    heisala: { name: "Heisala", mun: "ref_mun_pargas", type: "2" },
+    bjorkholm: { name: "Björkholm", mun: "ref_mun_pargas", type: "2" },
+    ramsholm: { name: "Ramsholm", mun: "ref_mun_pargas", type: "2" },
+    aspholm: { name: "Aspholm", mun: "ref_mun_pargas", type: "2" },
+    ostratallholm: { name: "Östra Tallholm", mun: "ref_mun_pargas", type: "2" },
+    kuggo: { name: "Kuggö", mun: "ref_mun_pargas", type: "2" },
+    pensari: { name: "Pensar I", mun: "ref_mun_pargas", type: "2" },
+
 }
 
 timetables = {
@@ -1335,12 +1350,31 @@ timetables = {
             { validFrom: "2017-14-08", validTo: "2018-05-13", tables: ["SatavaVinter2018_1.png", "SatavaVinter2018_2.png"]}
         ],
     },
+    utorutt: { 
+        link: "http://www.rosita.fi/",
+        link_sv: "http://www.rosita.fi/Hemsida",
+        link_en: "http://www.rosita.fi/Hemsida",
+        tables: 
+        [
+            { validFrom: "2017-08-08", validTo: "2018-05-31", tables: ["EivorVinter2018_1.png", "EivorVinter2018_2.png", "EivorVinter2018_3.png"]}
+        ],
+    },
     korporutt: [
         { validFrom: "2017-09-01", validTo: "2018-05-31", tables: ["FiskoVinter2018_1.png", "FiskoVinter2018_2.png"]},
     ],
     nagunorra: [
         { validFrom: "2017-10-02", validTo: "2018-05-17", tables: ["FalkoVinter2018.png"]}
-    ]
+    ],
+    pargasrutt: {
+        
+        link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/paraisten-reittialue-viken.html#timetables",
+        link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-ruttomrade-viken.html#timetables",
+        link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-route-viken.html#timetables",
+        tables: [
+        { validFrom: "2017-11-01", validTo: "2018-03-31", tables: ["VikenVinter2018_1.png", "VikenVinter2018_2.png"]}
+        ],
+    },
+
 }
 
 pricelists = {
@@ -1743,6 +1777,22 @@ routes = {
         timetables: ["ref_timetables_houtskarrutt", "ref_timetables_iniorutt"]
     },
 
+    utorutt: {
+        name: "Utön reitti",
+        name_sv: "Utö rutt",
+        name_en: "Utö Route",
+        specifier: "",
+        piers: ["ref_piers_parnas", "ref_piers_berghamn", "ref_piers_noto", "ref_piers_aspo", "ref_piers_jurmo", "ref_piers_uto"],
+        operator: "ref_operators_rosita",
+        vessels: ["ref_ferries_eivor"],
+        features: {
+            interval_L: ["times.aweek", "5"],
+            duration_L: ["duration.hours", "4.5-5.5"],
+        },
+        notes: [ {content: "Bus connection in Pärnäs", content_sv: "Bussförbindelse i Pärnäs", content_fi: "Linja-autoyhteys Pärnäisissä" }],
+        timetables: ["ref_timetables_utorutt"],
+    },
+
     nagunorra: {
         name: "Nagu norra rutt",
         name_fi: "Nauvon pohjoinen reitti",
@@ -1769,7 +1819,24 @@ routes = {
         timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables",
         timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-norra-rutt-falko.html#timetables",
         timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
-    }
+    },
+
+    pargasrutt: {
+        name: "Paraisten reitti",
+        name_sv: "Pargas rutt",
+        name_en: "Pargas Route",
+        specifier: "",
+        piers: ["ref_piers_granvik", "ref_piers_heisala", "ref_piers_bjorkholm", "ref_piers_ramsholm", "ref_piers_aspholm", "ref_piers_ostratallholm", "ref_piers_kuggo", "ref_piers_pensari"],
+        operator: "ref_operators_finferries",
+        vessels: ["ref_ferries_viken"],
+        features: {
+            interval_L: ["times.aday", "3-8"],
+            duration_fi: "Granvik - Pensar n. tunti", 
+            duration_sv: "Granvik - Pensar ca en timme", 
+            duration_en: "Granvik - Pensar about an hour", 
+        },
+        timetables: ["ref_timetables_pargasrutt"],
+    },
 
 }
 
