@@ -21,7 +21,8 @@ messages = {
         applies: [ "Maksullinen", "Avgiftsbelagd", "Fee applies" ],
     },
     seasonal: {
-        summers: [ "Vain kesäisin", "Under sommar", "Summer only"]
+        summers: [ "Vain kesäisin", "Bara på sommaren", "Only in summer"],
+        summerspier: [ "{0} vain kesäisin", "{0} bara på sommaren", "{0} only in summer"]
     },
     limit: {
         cars_mc_bikes_only: ["Vain henkilöautoja, moottoripyöriä ja polkupyöriä", "Bara personbilar, motorcyklar och cyklar", "Only cars, motorcycles, and bicycles"],
@@ -1009,12 +1010,12 @@ piers = {
         mun: "ref_mun_taivassalo",
         type: "1"
     },
-    kasnäs: {
+    kasnas: {
         name: "Kasnäs",
         mun: "ref_mun_kimitoon",
         type: "1"
     },
-    långnäsh: {
+    langnash: {
         name: "Långnäs",
         mun: "ref_mun_hitis",
         type: "1"
@@ -1054,6 +1055,72 @@ piers = {
         name_fi: "Taalintehdas",
         mun: "ref_mun_kimitoon",
         type: "1"
+    },
+
+    rauhala: {
+        name: "Rauhala",
+        mun: "ref_mun_velkua",
+        type: "2"
+    },
+    lailuoto: {
+        name: "Lailuoto",
+        mun: "ref_mun_velkua",
+        type: "2"
+    },
+    talosmeri: {
+        name: "Talosmeri",
+        mun: "ref_mun_velkua",
+        type: "2"
+    },
+    munninmaa: {
+        name: "Munninmaa",
+        mun: "ref_mun_velkua",
+        type: "2"
+    },
+    tammisluoto: {
+        name: "Tammisluoto", 
+        mun: "ref_mun_velkua",
+        type: "2"
+    },
+    liettinen: {
+        name: "Liettinen", 
+        mun: "ref_mun_velkua",
+        type: "2"
+    },
+    kettumaa: {
+        name: "Kettumaa",
+        mun: "ref_mun_velkua",
+        type: "2"
+    },
+    ruotsalainen: {
+        name: "Ruotsalainen",
+        mun: "ref_mun_rymattyla",
+        type: "2"
+    },
+    korvenmaa: {
+        name: "Korvenmaa",
+        mun: "ref_mun_rymattyla",
+        type: "2"
+    },
+    pakinainen: {
+        name: "Pakinainen",
+        mun: "ref_mun_rymattyla",
+        type: "2"
+    },
+    pahkinainen: {
+        name: "Pähkinäinen",
+        mun: "ref_mun_rymattyla",
+        type: "2"
+    },
+    samsaari: {
+        name: "Samsaari",
+        mun: "ref_mun_rymattyla",
+        type: "2"
+    },
+    maisaari: {
+        name: "Maisaari",
+        mun: "ref_mun_rymattyla",
+        type: "2"
     },
 
     keso: {
@@ -1162,12 +1229,18 @@ timetables = {
         { validFrom: "2018-05-25", validTo: "2018-08-26", tables: ["AntoniaSommar2018.png"]},
     ],
     nauvohanka: [
-        { validFrom: "2018-05-18", validTo: "2018-09-02", tables: ["Ostern2018_fisv.png"]},
+        { validFrom: "2018-05-18", validTo: "2018-09-02", tables: ["Ostern2018_fisv.png"], tables_en: ["Ostern2018_ende.png"]},
     ],
-    nauvohankaen: [
-        { validFrom: "2018-05-18", validTo: "2018-09-02", tables: ["Ostern2018_ende.png"]},
+    kasnashitis: [
+        { validFrom: "2018-01-01", validTo: "2018-12-31", tables: ["Aurora2018.png"]},
     ],
 
+    velkuanreitti: [
+        { validFrom: "2017-09-01", validTo: "2018-05-31", tables: ["KivimoVinter2018_1.png", "KivimoVinter2018_2.png"]}
+    ],
+    rymattylanreitti: [
+        { validFrom: "2017-09-04", validTo: "2018-06-03", tables: ["IslaVinter2018_1.png", "IslaVinter2018_2.png"]}
+    ],
     nagunorra: [
         { validFrom: "2017-10-02", validTo: "2018-05-17", tables: ["FalkoVinter2018.png"]}
     ]
@@ -1450,7 +1523,6 @@ routes = {
             cost_L: "cost.applies",
         },
         timetables: "ref_timetables_nauvohanka",
-//        timetables_en: "ref_timetables_nauvohankaen",
         timetableslink: "http://www.ostern.fi/aikataulu",
         timetableslink_sv: "http://www.ostern.fi/aikataulu",
         timetableslink_en: "http://www.ostern.fi/en/schedule-fahrplan",
@@ -1478,6 +1550,63 @@ routes = {
         timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
         timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
         timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
+    },
+
+    kasnashitis: {
+        name: "Kasnäs - Hitis",
+        name_fi: "Kasnäs - Hiittinen",
+        specifier: "",
+        piers: ["ref_piers_kasnas", "ref_piers_langnash"],
+        operator: "ref_operators_finferries",
+        vessels: ["ref_ferries_aurora"],
+        features: {
+            interval_L: ["times.aday", "4-8"],
+            duration_L: ["duration.minutes", "25"],
+        },
+        timetables: "ref_timetables_kasnashitis",
+        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kasnas-hiittinen-aurora.html#timetables",
+        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kasnas-hitis-aurora.html#timetables",
+        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kasnas-hiittinen-aurora.html#timetables",
+    },
+    velkuanreitti: {
+        name: "Velkuan reitti",
+        name_sv: "Velkua rutt",
+        name_en: "Velkua Route",
+        specifier: "",
+        piers: ["ref_piers_teersalo", "ref_piers_rauhala", "ref_piers_lailuoto", "ref_piers_talosmeri", "ref_piers_munninmaa", "ref_piers_tammisluoto", "ref_piers_liettinen", "ref_piers_kettumaa", "ref_piers_hakkenpaa"],
+        operator: "ref_operators_finferries",
+        vessels: ["ref_ferries_mskivimo"],
+        features: {
+            interval_L: ["times.aday", "3-9"],
+            order_L: "order.partly",
+            duration_fi: "Teersalo - Teersalo 1-2 tuntia",
+            duration_sv: "Teersalo - Teersalo 1-2 timmar",
+            duration_en: "Teersalo - Teersalo 1-2 hours",
+            seasonal_L: ["seasonal.summerspier", "Hakkenpää"],
+            seealso: "#velkuataivassalo"
+        },
+        timetables: "ref_timetables_velkuanreitti",
+        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
+        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
+        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
+    },
+    rymattylanreitti: {
+        name: "Rymättylän reitti",
+        name_sv: "Rimito rutt",
+        name_en: "Rymättylä Route",
+        specifier: "",
+        piers: ["ref_piers_haapala", "ref_piers_ruotsalainen", "ref_piers_korvenmaa", "ref_piers_pakinainen", "ref_piers_pahkinainen", "ref_piers_samsaari", "ref_piers_maisaari"],
+        operator: "ref_operators_savolainen",
+        vessels: ["ref_ferries_isla"],
+        features: {
+            interval_L: ["times.aday", "3-5"],
+            order_L: "order.partly",
+            duration_fi: "Haapala-Pakinainen 40 minuuttia",
+            duration_sv: "Haapala-Pakinainen 40 minuter",
+            duration_en: "Haapala-Pakinainen 40 minutes",
+        },
+        timetables: "ref_timetables_rymattylanreitti",
+        timetableslink: "https://kuljetus-savolainen.fi/yhteysalusliikenne/"
     },
 
     nagunorra: {
@@ -1577,11 +1706,15 @@ function getLocalizedItem(item, lang) {
 }
 
 function getWww(item) {
-    return item.www? [{ class: "www", text: item.www, specifier: "", uri: item.www, target: "info"}]: [];
+    return item.www? [{ class: "www", text: item.www.replace(/^http(s):\/\//,"").replace(/\/$/, ""), specifier: "", uri: item.www, target: "info"}]: [];
 }
 
 function getEmail(item) {
     return item.email? [{ class: "email", text: item.email, specifier: "", uri: "mailto:" + item.email}]: [];
+}
+
+function getFb(item) {
+    return item.fb? [{ class: "facebook", text: item.name,  uri: item.fb, target:"facebook" }]: [];
 }
 
 function deepCopy(object) {
@@ -1660,6 +1793,7 @@ function routeInfo(route, lang) {
         items = items.concat(getPhones(contact));
         items = items.concat(getEmail(contact));
         items = items.concat(getWww(contact));
+        items = items.concat(getFb(contact));
 
         return {
             name: contact.name,

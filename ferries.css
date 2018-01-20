@@ -358,6 +358,8 @@
     background-color: white;
     border-bottom: solid #aaa 1px;
     z-index: 10;
+    box-shadow: 4px 4px grey;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
     div#topbartitle {
@@ -390,12 +392,13 @@
       display: none;
       position: fixed;
       left: 0px;
-      top: 0px;
+      top: 50px;
       width: 200px;
       max-height: 100%;
       overflow-y: scroll;
       overflow-x: hidden;
       box-shadow: 2px 2px #ddd;
+      z-index: 11;
     }
 
     .menucontainer {
@@ -406,7 +409,7 @@
       padding: 10px;
       padding-left: 20px;
       padding-top: 5px;
-      margin-top: 50px;
+      margin-top: 0px;
       background-color: white;
     }
 
