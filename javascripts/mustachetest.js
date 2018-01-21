@@ -1,6 +1,6 @@
 
 
-var route="hitisrutt";
+var route="korponorrskata";
 var lang="fi";
 
 $(document).ready(function(){
@@ -12,7 +12,6 @@ $(document).ready(function(){
 		$(".info").html(output);
 
 		$(".timetablebutton").click(function() {
-			console.log(this);
 			if (this.getAttribute("linktype") === "external") {
 				window.open(this.getAttribute("href"), "info");
 			} else {

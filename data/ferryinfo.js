@@ -105,6 +105,11 @@ mun = {
     Hanko: { name_sv: "Hangö"},
 },
 
+Object.keys(mun).forEach(function(key) {
+    var m = mun[key];
+    m.name = m.name? m.name: key;
+});
+
 ferries = {
     skiftet: {
         name: "M/S Skiftet",
@@ -999,7 +1004,7 @@ piers = {
 Object.keys(piers).forEach(function(key) {
     var pier = piers[key];
     pier.name = pier.name? pier.name: key;
-    pier.mun = pier.mun.startsWith("ref_mun_")? pier.mun: "ref_mun_" + pier.mun;
+    pier.mun = mun[pier.mun];
     pier.type = pier.type? pier.type: "2";
 });
 
@@ -1167,19 +1172,19 @@ routes = {
         name_en: "Föglo line",
         specifier: "Svinö - Degerby",
         piers: ["Svinö", "Degerby"],
-        operator: "ref_operators_alandstrafiken",
-        vessels: ["ref_ferries_skarven"],
+        operator: "alandstrafiken",
+        vessels: ["skarven"],
         features: {
             interval_L: ["times.aday", "8-12"],
             booking_L: "booking.cannot",
             cost_L: "cost.applies",
             duration_L: ["duration.minutes", "35"]
         },
-        timetables: "ref_timetables_foglolinjen",
+        timetables: "foglolinjen",
         timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
         timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
         timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
-        pricelists: "ref_pricelists_alandstrafiken"
+        pricelists: "alandstrafiken"
     },
     norralinjen: {
         name: "Norra linjen",
@@ -1187,18 +1192,18 @@ routes = {
         name_en: "Northern line",
         specifier: "Hummelvik - Enklinge - Kumlinge - Lappo - Torsholma",
         piers: ["Hummelvik", "Enklinge", "Kumlinge", "Lappo", "Torsholma"],
-        operator: "ref_operators_alandstrafiken",
-        vessels: ["ref_ferries_alfageln", "ref_ferries_knipan"],
+        operator: "alandstrafiken",
+        vessels: ["alfageln", "knipan"],
         features: {
             interval_L: ["times.aday", "3-4"],
             cost_L: "cost.applies",
             duration_L: ["duration.hours", "2.5"],
         },
-        timetables: "ref_timetables_norralinjen",
+        timetables: "norralinjen",
         timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
         timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
         timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
-        pricelists: "ref_pricelists_alandstrafiken"
+        pricelists: "alandstrafiken"
     },
     enklingelinjen: {
         name: "Norra linjen",
@@ -1206,18 +1211,18 @@ routes = {
         name_en: "Northern line",
         specifier: "Enklinge - Kumlinge",
         piers: ["Enklinge", "Kumlinge"],
-        operator: "ref_operators_alandstrafiken",
-        vessels: ["ref_ferries_rosala"],
+        operator: "alandstrafiken",
+        vessels: ["rosala"],
         features: {
             interval_L: ["times.aday", "~ 10"],
             booking_L: "booking.cannot",
             duration_L: ["duration.minutes", "15"]
         },
-        timetables: "ref_timetables_enklingelinjen",
+        timetables: "enklingelinjen",
         timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
         timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
         timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
-        pricelists: "ref_pricelists_alandstrafiken"
+        pricelists: "alandstrafiken"
     },
     asterholmalinjen: {
         name: "Norra linjen",
@@ -1225,18 +1230,18 @@ routes = {
         name_en: "Northern line",
         specifier: "Asterholma - Lappo - Torsholma",
         piers: ["Asterholma", "Lappo", "Torsholma"],
-        operator: "ref_operators_alandstrafiken",
-        vessels: ["ref_ferries_frida"],
+        operator: "alandstrafiken",
+        vessels: ["frida"],
         features: {
             interval_L: ["times.aday", "~ 10"],
             order_L: "order.partly",
             duration_L: ["duration.minutes", "35"]
         },
-        timetables: "ref_timetables_asterholmalinjen",
+        timetables: "asterholmalinjen",
         timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
         timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
         timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
-        pricelists: "ref_pricelists_alandstrafiken"
+        pricelists: "alandstrafiken"
     },
     avajurmo: {
         name: "Norra linjen",
@@ -1244,18 +1249,18 @@ routes = {
         name_en: "Northern line",
         specifier: "Åva - Jurmo",
         piers: ["Åva", "JurmoB"],
-        operator: "ref_operators_alandstrafiken",
-        vessels: ["ref_ferries_doppingen"],
+        operator: "alandstrafiken",
+        vessels: ["doppingen"],
         features: {
             interval_L: ["times.aday", "10-15"],
             order_L: "order.partly",
             duration_L: ["duration.minutes", "10"]
         },
-        timetables: "ref_timetables_avajurmo",
+        timetables: "avajurmo",
         timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
         timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
         timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
-        pricelists: "ref_pricelists_alandstrafiken"
+        pricelists: "alandstrafiken"
     },
     osnasava: {
         name: "Norra linjen",
@@ -1264,18 +1269,18 @@ routes = {
         specifier: "Vuosnainen - Åva",
         specifier_sv: "Osnäs - Åva",
         piers: ["Vuosnainen", "Åva"],
-        operator: "ref_operators_alandstrafiken",
-        vessels: ["ref_ferries_viggen"],
+        operator: "alandstrafiken",
+        vessels: ["viggen"],
         features: {
             interval_L: ["times.aday", "3-4"],
             cost_L: "cost.applies",
             duration_L: ["duration.minutes", "40"]
         },
-        timetables: "ref_timetables_osnasava",
+        timetables: "osnasava",
         timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
         timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
         timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
-        pricelists: "ref_pricelists_alandstrafiken"
+        pricelists: "alandstrafiken"
     },
     sodralinjen: {
         name: "Södra linjen",
@@ -1283,8 +1288,8 @@ routes = {
         name_en: "Southern line",
         specifier: "Långnäs - Överö - Sottunga - Kökar - Galtby",
         piers: ["Långnäs", "Överö", "Sottunga", "Husö", "Kyrkogårdsö", "Kökar", "Galtby"],
-        operator: "ref_operators_alandstrafiken",
-        vessels: ["ref_ferries_gudingen", "ref_ferries_skiftet"],
+        operator: "alandstrafiken",
+        vessels: ["gudingen", "skiftet"],
         features: {
             interval_L: ["times.aday", "Långnäs - Kökar 3-4, Kökar - Galtby 0-2 "],
             cost_L: "cost.applies",
@@ -1292,11 +1297,11 @@ routes = {
             duration_fi: "Långnäs - Kökar 2,5&nbsp;tuntia, Kökar - Galtby 2,5&nbsp;tuntia",
             duration_sv: "Långnäs - Kökar 2,5&nbsp;timmar, Kökar - Galtby 2,5&nbsp;timmar",
         },
-        timetables: "ref_timetables_sodralinjen",
+        timetables: "sodralinjen",
         timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
         timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
         timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
-        pricelists: "ref_pricelists_alandstrafiken"
+        pricelists: "alandstrafiken"
     },
     tvarlinjen: {
         name: "Tvärgående linjen",
@@ -1304,8 +1309,8 @@ routes = {
         name_en: "Cross line",
         specifier: "Långnäs - Överö - Sottunga - Snäckö",
         piers: ["Långnäs", "Bergö", "Överö", "Sottunga", "Snäckö" ],
-        operator: "ref_operators_alandstrafiken",
-        vessels: ["ref_ferries_odin"],
+        operator: "alandstrafiken",
+        vessels: ["odin"],
         features: {
             interval_L: ["times.aday", "1-2"],
             cost_L: "cost.applies",
@@ -1319,11 +1324,11 @@ routes = {
                 content_sv: "Bergö och Sottunga trafikeras ovanligen"
             }
         ],
-        timetables: "ref_timetables_tvarlinjen",
+        timetables: "tvarlinjen",
         timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
         timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
         timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
-        pricelists: "ref_pricelists_alandstrafiken"
+        pricelists: "alandstrafiken"
     },
 
     iniokustavi: {
@@ -1331,13 +1336,13 @@ routes = {
         name_sv: "Iniö - Gustavs",
         specifier: "",
         piers: ["Kannvik", "Heponiemi"],
-        operator: "ref_operators_finferries",
-        vessels: ["ref_ferries_aura"],
+        operator: "finferries",
+        vessels: ["aura"],
         features: {
             interval_L: ["times.aday", "5-8"],
             duration_L: ["duration.minutes", "25"],
         },
-        timetables: "ref_timetables_iniokustavi",
+        timetables: "iniokustavi",
         timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html#timetables",
         timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/inio-gustavs-aura.html#timetables",
         timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/inio-kustavi-aura.html#timetables",
@@ -1348,15 +1353,15 @@ routes = {
         name_fi: "Houtskari - Iniö",
         specifier: "",
         piers: ["Mossala", "Dalen"],
-        operator: "ref_operators_finferries",
-        vessels: ["ref_ferries_antonia"],
+        operator: "finferries",
+        vessels: ["antonia"],
         features: {
             interval_L: ["times.aday", "3-4"],
             duration_L: ["duration.minutes", "50"],
             seasonal_L: "seasonal.summers",
             cost_L: "cost.applies",
         },
-        timetables: "ref_timetables_houtskarinio",
+        timetables: "houtskarinio",
         timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saariston-rengastie-houtskari-inio.html#timetables",
         timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/skargardens-ringvag-houtskar-inio.html#timetables",
         timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/the-archipelago-houtskari-inio.html#timetables",
@@ -1367,8 +1372,8 @@ routes = {
         name_fi: "Korppoo - Houtskari",
         specifier: "",
         piers: ["Galtby", "Kittuis"],
-        operator: "ref_operators_finferries",
-        vessels: ["ref_ferries_stellakorppoo", "ref_ferries_mergus"],
+        operator: "finferries",
+        vessels: ["stellakorppoo", "mergus"],
         features: {
             interval_L: ["times.aday", "10-12"],
             order_L: "order.partly",
@@ -1381,13 +1386,32 @@ routes = {
         timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/korppoo-houtskari.html#timetables",
     },
 
+    korponorrskata: {
+        name: "Korpo - Norrskata",
+        name_fi: "Korppoo - Norrskata",
+        specifier: "",
+        piers: ["Galtby", "Olofsnäs"],
+        operator: "finferries",
+        vessels: ["stellakorppoo", "mergus"],
+        features: {
+            interval_L: ["times.aday", "13-14"],
+            order_L: "order.partly",
+            duration_L: ["duration.minutes", "15"],
+        },
+
+        timetables: null,
+        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-norrskata.html#timetables",
+        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/korpo-norrskata.html#timetables",
+        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/korppoo-norrskata.html#timetables",
+    },
+
     nagukorpo: {
         name: "Nagu - Korpo",
         name_fi: "Nauvo - Korppoo",
         specifier: "",
         piers: ["Pärnäs", "Retais"],
-        operator: "ref_operators_finferries",
-        vessels: ["ref_ferries_prostvik1", "ref_ferries_nagu2"],
+        operator: "finferries",
+        vessels: ["prostvik1", "nagu2"],
         features: {
             interval_L: ["times.anhour", "1-4"],
             duration_L: ["duration.minutes", "5"],
@@ -1404,8 +1428,8 @@ routes = {
         name_fi: "Parainen - Nauvo",
         specifier: "",
         piers: ["Lillmälö", "Prostvik"],
-        operator: "ref_operators_finferries",
-        vessels: ["ref_ferries_elektra", "ref_ferries_sterna", "ref_ferries_falco"],
+        operator: "finferries",
+        vessels: ["elektra", "sterna", "falco"],
         features: {
             interval_L: ["times.anhour", "1-4"],
             duration_L: ["duration.minutes", "10"],
@@ -1423,15 +1447,15 @@ routes = {
         specifier: "Nagu - Själö - Hanka",
         specifier_fi: "Nauvo - Seili - Hanka",
         piers: ["Nagu", "Seili", "Hanka"],
-        operator: "ref_operators_sinv",
-        vessels: ["ref_ferries_ostern"],
+        operator: "sinv",
+        vessels: ["ostern"],
         features: {
             interval_L: ["times.aday", "3"],
             duration_L: ["duration.minutes", "60"],
             seasonal_L: "seasonal.summers",
             cost_L: "cost.applies",
         },
-        timetables: "ref_timetables_nauvohanka",
+        timetables: "nauvohanka",
         timetableslink: "http://www.ostern.fi/aikataulu",
         timetableslink_sv: "http://www.ostern.fi/aikataulu",
         timetableslink_en: "http://www.ostern.fi/en/schedule-fahrplan",
@@ -1443,8 +1467,8 @@ routes = {
         name_en: "Velkua route",
         specifier: "Teersalo - Hakkenpää",
         piers: ["Teersalo", "Hakkenpää"],
-        operator: "ref_operators_finferries",
-        vessels: ["ref_ferries_mskivimo"],
+        operator: "finferries",
+        vessels: ["mskivimo"],
         features: {
             interval_L: ["times.aday", "1-2"],
             duration_L: ["duration.minutes", "50"],
@@ -1466,13 +1490,13 @@ routes = {
         name_fi: "Kasnäs - Hiittinen",
         specifier: "",
         piers: ["Kasnäs", "LångnäsH"],
-        operator: "ref_operators_finferries",
-        vessels: ["ref_ferries_aurora"],
+        operator: "finferries",
+        vessels: ["aurora"],
         features: {
             interval_L: ["times.aday", "4-8"],
             duration_L: ["duration.minutes", "25"],
         },
-        timetables: "ref_timetables_kasnashitis",
+        timetables: "kasnashitis",
         timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kasnas-hiittinen-aurora.html#timetables",
         timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kasnas-hitis-aurora.html#timetables",
         timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kasnas-hiittinen-aurora.html#timetables",
@@ -1483,8 +1507,8 @@ routes = {
         name_en: "Velkua Route",
         specifier: "",
         piers: ["Teersalo", "Rauhala", "Lailuoto", "Talosmeri", "Munninmaa", "Tammisluoto", "Liettinen", "Kettumaa", "Hakkenpää"],
-        operator: "ref_operators_finferries",
-        vessels: ["ref_ferries_mskivimo"],
+        operator: "finferries",
+        vessels: ["mskivimo"],
         features: {
             interval_L: ["times.aday", "3-9"],
             order_L: "order.partly",
@@ -1494,7 +1518,7 @@ routes = {
             seasonal_L: ["seasonal.summerspier", "Hakkenpää"],
             seealso: "#velkuataivassalo"
         },
-        timetables: "ref_timetables_velkuanreitti",
+        timetables: "velkuanreitti",
         timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
         timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
         timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
@@ -1505,8 +1529,8 @@ routes = {
         name_en: "Rymättylä Route",
         specifier: "",
         piers: ["Haapala", "Ruotsalainen", "Korvenmaa", "Pakinainen", "Pähkinäinen", "Samsaari", "Maisaari"],
-        operator: "ref_operators_savolainen",
-        vessels: ["ref_ferries_isla"],
+        operator: "savolainen",
+        vessels: ["isla"],
         features: {
             interval_L: ["times.aday", "3-5"],
             order_L: "order.partly",
@@ -1514,7 +1538,7 @@ routes = {
             duration_sv: "Haapala-Pakinainen 40 minuter",
             duration_en: "Haapala-Pakinainen 40 minutes",
         },
-        timetables: "ref_timetables_rymattylanreitti",
+        timetables: "rymattylanreitti",
         timetableslink: "https://kuljetus-savolainen.fi/yhteysalusliikenne/"
     },
     korporutt: {
@@ -1523,8 +1547,8 @@ routes = {
         name_en: "Korpo Route",
         specifier: "",
         piers: ["Verkan", "Finnö", "Käldersö", "Elvsö", "BerghamnK", "Luk", "Kittuis", "Lillpensor", "Storpensor", "Havträsk", "Brunskär", "Österskär", "Kälö"],
-        operator: "ref_operators_al",
-        vessels: ["ref_ferries_fisko"],
+        operator: "al",
+        vessels: ["fisko"],
         features: {
             interval_L: ["times.adayaweek", "0-4", "Österskär", "2"],
             order_L: "order.only",
@@ -1532,7 +1556,7 @@ routes = {
             duration_sv: "Haapala-Pakinainen 40 minuter",
             duration_en: "Haapala-Pakinainen 40 minutes",
         },
-        timetables: "ref_timetables_korporutt",
+        timetables: "korporutt",
         timetableslink: "http://skargardslinjer.fi/Korpo_ruttomrade",
         timetableslink_fi: "http://www.saaristolinjat.fi/Korppoon_reittialue"
     },
@@ -1542,8 +1566,8 @@ routes = {
         name_en: "Houtskär Route and Iniö Additional Route",
         specifier: "",
         piers: ["Näsby","Roslax","Ytterstö","Lempmo","Salmis","Lammholm","Norrby","Sördö","Lempnäs","Äpplö","Nåtö","TorsholmaI","Själö","Härklot","Kvarnholm","Åselholm","Perkala","Kolko","Kannvik"],
-        operator: "ref_operators_ferryway",
-        vessels: ["ref_ferries_karolina", "ref_ferries_satava"],
+        operator: "ferryway",
+        vessels: ["karolina", "satava"],
         features: {
             interval_L: ["times.aday", "1-4"],
             order_L: "order.only",
@@ -1551,7 +1575,7 @@ routes = {
             duration_sv: "Roslax - Torsholma " + L("sv", ["duration.hoursminutes", "2", "20"]),
             duration_en: "Roslax - Torsholma " + L("en", ["duration.hoursminutes", "2", "20"]),
         },
-        timetables: ["ref_timetables_houtskarrutt", "ref_timetables_iniorutt"]
+        timetables: ["houtskarrutt", "iniorutt"]
     },
 
     utorutt: {
@@ -1560,14 +1584,14 @@ routes = {
         name_en: "Utö Route",
         specifier: "",
         piers: ["Pärnäs", "Berghamn", "Nötö", "Aspö", "Jurmo", "Utö"],
-        operator: "ref_operators_rosita",
-        vessels: ["ref_ferries_eivor"],
+        operator: "rosita",
+        vessels: ["eivor"],
         features: {
             interval_L: ["times.aweek", "5"],
             duration_L: ["duration.hours", "4.5-5.5"],
         },
         notes: [ {content: "Bus connection in Pärnäs", content_sv: "Bussförbindelse i Pärnäs", content_fi: "Linja-autoyhteys Pärnäisissä" }],
-        timetables: ["ref_timetables_utorutt"],
+        timetables: ["utorutt"],
     },
 
     nagunorra: {
@@ -1576,8 +1600,8 @@ routes = {
         name_en: "Nagu Northern Route",
         specifier: "",
         piers: ["Nagu", "Keso", "Seili", "Innamo", "Järvsor", "Maskinnamo", "Åvensor", "Lavarn"],
-        operator: "ref_operators_finferries",
-        vessels: ["ref_ferries_falko"],
+        operator: "finferries",
+        vessels: ["falko"],
         features: {
             interval_L: ["times.aday", "1-2"],
             order_L: "order.partly",
@@ -1592,7 +1616,7 @@ routes = {
                 content_sv: "<div class=\"alert alert-danger\"><strong>Obs!</strong> Under Nagu hamns renovering (vår 2018), används Keso varvet i stället</div>",
             }
         ],
-        timetables: "ref_timetables_nagunorra",
+        timetables: "nagunorra",
         timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables",
         timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-norra-rutt-falko.html#timetables",
         timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
@@ -1604,14 +1628,14 @@ routes = {
         name_en: "Nagu Cross Route",
         specifier: "",
         piers: ["Pärnäs", "Krok", "Mattnäs", "Lånholm", "Fagerholm", "Killingholm", "Ängsö", "Tveskiftsholm", "Berghamn", "Hummelholm", "Rockelholm", "Ytterstholm", "Byskär", "Brännskär", "Grötö", "Stenskär", "Gullkrona", "Kirjais"],
-        operator: "ref_operators_ferryway",
-        vessels: ["ref_ferries_myrskylintu", "ref_ferries_cheri"],
+        operator: "ferryway",
+        vessels: ["myrskylintu", "cheri"],
         features: {
             interval_L: ["times.aweek", "3"],
             order_L: ["order.only"],
             duration_L: ["duration.hoursminutes", "2", "30"], 
         },
-        timetables: ["ref_timetables_nagutvar"],
+        timetables: ["nagutvar"],
     },
  
     nagusodra: {
@@ -1620,8 +1644,8 @@ routes = {
         name_en: "Nagu Southern Route",
         specifier: "",
         piers: ["Kirjais", "PensarL", "Peno", "Brännskär", "Stenskär", "Gullkrona", "Grötö", "Knivskär", "Kopparholm", "Träskholm", "Björkö", "Gloskär", "Trunsö", "Sandholm", "Lökholm", "Borstö"],
-        operator: "ref_operators_ferryway",
-        vessels: ["ref_ferries_nordep"],
+        operator: "ferryway",
+        vessels: ["nordep"],
         features: {
             interval_L: ["times.adayaweek", "1-3", "Borstö", "4"],
             order_L: ["order.only"],
@@ -1629,7 +1653,7 @@ routes = {
             duration_en: "Kirjais - Borstö " + L("sv", ["duration.hours", "3-5"]),
             duration_en: "Kirjais - Borstö " + L("en", ["duration.hours", "3-5"]),
         },
-        timetables: ["ref_timetables_nagusodra"],
+        timetables: ["nagusodra"],
     },
  
      pargasrutt: {
@@ -1638,8 +1662,8 @@ routes = {
         name_en: "Pargas Route",
         specifier: "",
         piers: ["Granvik", "Heisala", "Björkholm", "Ramsholm", "Aspholm", "ÖstraTallholm", "Kuggö", "PensarI"],
-        operator: "ref_operators_finferries",
-        vessels: ["ref_ferries_viken"],
+        operator: "finferries",
+        vessels: ["viken"],
         features: {
             interval_L: ["times.aday", "3-8"],
             order_L: ["order.partly"],
@@ -1647,7 +1671,7 @@ routes = {
             duration_sv: "Granvik - Pensar ca en timme", 
             duration_en: "Granvik - Pensar about an hour", 
         },
-        timetables: ["ref_timetables_pargasrutt"],
+        timetables: ["pargasrutt"],
     },
 
     hitisrutt: {
@@ -1656,8 +1680,8 @@ routes = {
         name_en: "Hitis Route",
         specifier: "",
         piers: ["Kasnäs", "Tunnhamn", "Vänö", "Holma", "Helsingholm", "Ängesö", "Bolax", "Botesö", "Djupö", "Vänoxaby", "Vänoxasläten", "Dalsbruk"],
-        operator: "ref_operators_savolainen",
-        vessels: ["ref_ferries_stellahiittinen", "ref_ferries_alva"],
+        operator: "savolainen",
+        vessels: ["stellahiittinen", "alva"],
         features: {
             interval_L: ["times.aday", "1-3"],
             order_L: ["order.partly"],
@@ -1665,7 +1689,7 @@ routes = {
             duration_en: "Kasnäs - Vänö " + L("sv", ["duration.minutes", "60"]),
             duration_en: "Kasnäs - Vänö " + L("en", ["duration.minutes", "60"]),
         },
-        timetables: ["ref_timetables_hitisstella", "ref_timetables_hitisalva"],
+        timetables: ["hitisstella", "hitisalva"],
     },
 }
 
@@ -1673,11 +1697,29 @@ Object.keys(routes).forEach(function(key) {
     var route = routes[key];
     route.piers = route.piers.map(function(pier) {
         if (!piers[pier]) { console.log(pier, "does not exist"); exit(); }
-        return pier.startsWith("ref_piers_")? pier: "ref_piers_" + pier;
-    })
+        return piers[pier];
+    });
     route.vessels = route.vessels.map(function(vessel) {
-        return vessel.startsWith("ref_ferries_")? vessel: "ref_ferries_" + vessel;
-    })
+        return ferries[vessel];
+    });
+
+    route.operator = operators[route.operator];
+    route.pricelists = pricelists[route.pricelists];
+
+    if (route.timetables && !Array.isArray(route.timetables)) route.timetables = [route.timetables];
+
+    if (route.timetables) route.timetables = route.timetables.map(function(timetable) {
+
+        timetable = timetables[timetable];
+
+        // Backward compatibility
+        if (Array.isArray(timetable) && timetable.length > 0 && timetable[0].validFrom) timetable = {link: route.timetableslink, name: route.name, specifier: route.specifier, tables: timetable};
+
+        return timetable;
+    });
+
+    if (!route.timetables) route.timetables = [{ link: route.timetableslink }];
+
 });
 
 console.log(routes);
@@ -1816,11 +1858,6 @@ function routeInfo(route, lang) {
 
     var timetables = route.timetables;
 
-    console.log(timetables);
-
-    // Backward compatibility
-    if (timetables.length > 0 && timetables[0].validFrom) timetables = [{link: route.timetableslink, name: route.name, specifier: route.specifier, tables: timetables}];
- 
     var index = 0;
     timetables.forEach(function(timetable) {
         timetable.buttonspecifier = timetables.length > 1? timetable.name? timetable.name: timetable.specifier: "";
@@ -1839,9 +1876,9 @@ function routeInfo(route, lang) {
     });
 
     info.timetables = timetables;
-    info.timetableslink = route.timetableslink;
+    info.exttimetables = timetables.tables? false: "external";
+    
     info.pricelists = route.pricelists;
-    info.exttimetables = timetables? false: "external";
 
     contacts = contacts.map(function(contact) {
         var items = [];
@@ -1863,6 +1900,8 @@ function routeInfo(route, lang) {
             return L(lang, render(val));
         };
     }
+
+    console.log(info);
     
     return info;
 }
