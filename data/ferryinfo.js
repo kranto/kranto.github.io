@@ -1,5 +1,5 @@
 
-messages = {
+messages = { // FI SV EN
     duration: {
         minutes: ["{0} minuuttia", "{0} minuter", "{0} minutes"],
         hours: ["{0} tuntia", "{0} timmar", "{0} hours"],
@@ -67,42 +67,42 @@ function localize(lang, args) {
 L = localize;
 
 mun = {
-    eckero: { name: "Eckerö"},
-    hammarland: { name: "Hammarland"},
-    geta: { name: "Geta"},
-    finstrom: { name: "Finström"},
-    saltvik: { name: "Saltvik"},
-    sund: { name: "Sund"},
-    vardo: { name: "Vårdö"},
-    jomala: { name: "Jomala"},
-    mariehamn: { name: "Mariehamn", name_fi: "Maarianhamina"},
-    lemland: { name: "Lemland"},
-    lumparland: { name: "Lumparland"},
-    foglo: { name: "Föglö"},
-    kumlinge: { name: "Kumlinge"},
-    sottunga: { name: "Sottunga"},
-    kokar: { name: "Kökar"},
-    brando: { name: "Brändö"},
-    inio: { name: "Iniö"},
-    houtskar: { name: "Houtskär", name_fi: "Houtskari"},
-    korpo: { name: "Korpo", name_fi: "Korppoo"},
-    nagu: { name: "Nagu", name_fi: "Nauvo"},
-    pargas: { name: "Pargas", name_fi: "Parainen"},
-    kaarina: { name: "Kaarina", name_sv: "S:t Karins"},
-    turku: { name: "Turku", name_sv: "Åbo"},
-    raisio: { name: "Raisio", name_sv: "Reso"},
-    rymattyla: { name: "Rymättylä", name_sv: "Rimito"},
-    merimasku: { name: "Merimasku"},
-    askainen: { name: "Askainen", name_sv: "Villnäs"},
-    mietoinen: { name: "Mietoinen"},
-    velkua: { name: "Velkua" },
-    taivassalo: { name: "Taivassalo", name_sv: "Tövsala" },
-    kustavi: { name: "Kustavi", name_sv: "Gustavs" },
-    kimitoon: { name: "Kimitoön", name_fi: "Kemiönsaari"},
-    hitis: { name: "Hitis", name_fi: "Hiittinen"},
-    norrskata: { name: "Norrskata"},
-    houtsala: { name: "Houtsala"},
-    hanko: { name: "Hanko", name_sv: "Hangö"},
+    Eckerö: { },
+    Hammarland: { },
+    Geta: { },
+    Finstrom: { },
+    Saltvik: { },
+    Sund: { },
+    Vårdö: { },
+    Jomala: { },
+    Mariehamn: { name_fi: "Maarianhamina"},
+    Lemland: { },
+    Lumparland: { },
+    Föglö: { },
+    Kumlinge: { },
+    Sottunga: { },
+    Kökar: { },
+    Brändö: { },
+    Iniö: { },
+    Houtskär: { name_fi: "Houtskari"},
+    Korpo: { name_fi: "Korppoo"},
+    Nagu: { name_fi: "Nauvo"},
+    Pargas: { name_fi: "Parainen"},
+    Kaarina: { name_sv: "S:t Karins"},
+    Turku: { name_sv: "Åbo"},
+    Raisio: { name_sv: "Reso"},
+    Rymattylä: { name_sv: "Rimito"},
+    Merimasku: { },
+    Askainen: { name_sv: "Villnäs"},
+    Mietoinen: { },
+    Velkua: {  },
+    Taivassalo: { name_sv: "Tövsala" },
+    Kustavi: { name_sv: "Gustavs" },
+    Kimitoön: { name_fi: "Kemiönsaari"},
+    Hitis: { name_fi: "Hiittinen"},
+    Norrskata: { },
+    Houtsala: { },
+    Hanko: { name_sv: "Hangö"},
 },
 
 ferries = {
@@ -669,7 +669,7 @@ ferries = {
             fb: 'https://www.facebook.com/MS-Isla-401567819993437/'
         },
     },
-    stella_hiittinen: {
+    stellahiittinen: {
         name: "M/S Stella",
         features: {
         },
@@ -834,429 +834,176 @@ operators = {
 }
 
 piers = {
-    svino: {
-        name: "Svinö",
-        mun: "ref_mun_lumparland",
-        type: "1",
+    Svinö: { name: "Svinö", mun: "Lumparland", type: "1",
         distances: [
             {
-                to: "ref_mun_mariehamn",
+                to: "ref_mun_Mariehamn",
                 dist: 27
             },{
-                to: "ref_piers_langnas",
+                to: "ref_piers_Långnäs",
                 dist: 7.1
             }
         ]
     },
-    degerby: {
-        name: "Degerby",
-        mun: "ref_mun_foglo",
-        type: "1",
+    Degerby: { name: "Degerby", mun: "Föglö", type: "1",
         distances: [
             {
-                to: "ref_piers_overo",
+                to: "ref_piers_Överö",
                 dist: 17
             }
         ]
     },
-    hummelvik: {
-        name: "Hummelvik",
-        mun: "ref_mun_vardo",
-        type: "1",
-    },
-    enklinge: {
-        name: "Enklinge",
-        mun: "ref_mun_kumlinge",
-        type: "2"
-    },
-    kumlinge: {
-        name: "Kumlinge",
-        mun: "ref_mun_kumlinge",
-        type: "1",
-    },
-    lappo: {
-        name: "Lappo",
-        mun: "ref_mun_brando",
-        type: "2"
-    },
-    torsholma: {
-        name: "Torsholma",
-        mun: "ref_mun_brando",
-        type: "1",
-    },
-    asterholma: {
-        name: "Asterholma",
-        mun: "ref_mun_brando",
-        type: "2"
-    },
-    ava: {
-        name: "Åva",
-        mun: "ref_mun_brando",
-        type: "1",
-    },
-    jurmob: {
-        name: "Jurmo",
-        mun: "ref_mun_brando",
-        type: "2"
-    },
-    vuosnainen: {
-        name: "Vuosnainen",
-        name_sv: "Osnäs",
-        mun: "ref_mun_kustavi",
-        type: "1",
-    },
-    langnas: {
-        name: "Långnäs",
-        mun: "ref_mun_lumparland",
-        type: "1"
-    },
-    overo: {
-        name: "Överö",
-        mun: "ref_mun_foglo",
-        type: "1"
-    },
-    sottunga: {
-        name: "Sottunga",
-        mun: "ref_mun_sottunga",
-        type: "2"
-    },
-    huso: {
-        name: "Husö",
-        mun: "ref_mun_sottunga",
-        type: "2"
-    },
-    kyrkogardso: {
-        name: "Kyrkogårdsö",
-        mun: "ref_mun_kokar",
-        type: "2"
-    },
-    kokar: {
-        name: "Kökar",
-        mun: "ref_mun_kokar",
-        type: "2"
-    },
-    galtby: {
-        name: "Galtby",
-        mun: "ref_mun_korpo",
-        type: "1"
-    },
-    bergo: {
-        name: "Bergö",
-        mun: "ref_mun_lumparland",
-        type: "2"
-    },
-    snacko: {
-        name: "Snäckö",
-        mun: "ref_mun_kumlinge",
-        type: "1"
-    },
-    kannvik: {
-        name: "Kannvik",
-        mun: "ref_mun_inio",
-        type: "1"
-    },
-    heponiemi: {
-        name: "Heponiemi",
-        mun: "ref_mun_kustavi",
-        type: "1"
-    },
-    dalen: {
-        name: "Dalen",
-        mun: "ref_mun_inio",
-        type: "1"
-    },
-    mossala: {
-        name: "Mossala",
-        mun: "ref_mun_houtskar",
-        type: "1"
-    },
-    kittuis: {
-        name: "Kittuis",
-        mun: "ref_mun_houtskar",
-        type: "1"
-    },
-    olofsnas: {
-        name: "Olofsnäs",
-        mun: "ref_mun_norrskata",
-        type: "1"
-    },
-    retais: {
-        name: "Retais",
-        mun: "ref_mun_korpo",
-        type: "1"
-    },
-    parnas: {
-        name: "Pärnäs",
-        name_fi: "Pärnäinen",
-        mun: "ref_mun_nagu",
-        type: "1"
-    },
-    nagu: {
-        name: "Nagu",
-        name_fi: "Nauvo",
-        mun: "ref_mun_nagu",
-        type: "1"
-    },
-    hanka: {
-        name: "Hanka",
-        mun: "ref_mun_rymattyla",
-        type: "1"
-    },
-    teersalo: {
-        name: "Teersalo",
-        mun: "ref_mun_velkua",
-        type: "1"
-    },
-    hakkenpaa: {
-        name: "Hakkenpää",
-        mun: "ref_mun_taivassalo",
-        type: "1"
-    },
-    kasnas: {
-        name: "Kasnäs",
-        mun: "ref_mun_kimitoon",
-        type: "1"
-    },
-    langnash: {
-        name: "Långnäs",
-        mun: "ref_mun_hitis",
-        type: "1"
-    },
-    haapala: {
-        name: "Haapala",
-        mun: "ref_mun_rymattyla",
-        type: "1"
-    },
-    verkan: {
-        name: "Verkan",
-        mun: "ref_mun_korpo",
-        type: "1"
-    },
-    kirjais: {
-        name: "Kirjais",
-        mun: "ref_mun_nagu",
-        type: "1"
-    },
-    granvik: {
-        name: "Granvik",
-        mun: "ref_mun_pargas",
-        type: "1"
-    },
-    prostvik: {
-        name: "Prostvik",
-        mun: "ref_mun_nagu",
-        type: "1"
-    },
-    lillmalo: {
-        name: "Lillmälö",
-        mun: "ref_mun_pargas",
-        type: "1"
-    },
-    dalsbruk: {
-        name: "Dalsbruk",
-        name_fi: "Taalintehdas",
-        mun: "ref_mun_kimitoon",
-        type: "1"
-    },
+    Hummelvik: { mun: "Vårdö", type: "1" },
+    Enklinge: { mun: "Kumlinge" },
+    Kumlinge: { mun: "Kumlinge", type: "1" },
+    Lappo: { mun: "Brändö" },
+    Torsholma: { mun: "Brändö", type: "1" },
+    Asterholma: { mun: "Brändö" },
+    Åva: { mun: "Brändö", type: "1" },
+    JurmoB: { name: "Jurmo", mun: "Brändö" },
+    Vuosnainen: {  name_sv: "Osnäs", mun: "Kustavi", type: "1" },
+    Långnäs: { mun: "Lumparland", type: "1" },
+    Överö: { mun: "Föglö", type: "1" },
+    Sottunga: { mun: "Sottunga", type: "1" },
+    Husö: { mun: "Sottunga" },
+    Kyrkogårdsö: { mun: "Kökar" },
+    Kökar: { mun: "Kökar" },
+    Galtby: { mun: "Korpo", type: "1" }, 
+    Bergö: { mun: "Lumparland" },
+    Snäckö: { mun: "Kumlinge", type: "1" }, 
+    Kannvik: { mun: "Iniö", type: "1" }, 
+    Heponiemi: { mun: "Kustavi", type: "1" }, 
+    Dalen: { mun: "Iniö", type: "1" }, 
+    Mossala: { mun: "Houtskär", type: "1" }, 
+    Kittuis: { mun: "Houtskär", type: "1" }, 
+    Olofsnäs: { mun: "Norrskata", type: "1" }, 
+    Retais: { mun: "Korpo", type: "1" }, 
+    Pärnäs: { name_fi: "Pärnäinen", mun: "Nagu", type: "1" }, 
+    Nagu: { name_fi: "Nauvo", mun: "Nagu", type: "1" }, 
+    Hanka: { mun: "Rymättylä", type: "1" }, 
+    Teersalo: { mun: "Velkua", type: "1" }, 
+    Hakkenpää: { mun: "Taivassalo", type: "1" }, 
+    Kasnäs: { mun: "Kimitoön", type: "1" }, 
+    LångnäsH: { mun: "Hitis", type: "1" }, 
+    Haapala: { mun: "Rymättylä", type: "1" }, 
+    Verkan: { mun: "Korpo", type: "1" }, 
+    Kirjais: { mun: "Nagu", type: "1" }, 
+    Granvik: { mun: "Pargas", type: "1" }, 
+    Prostvik: { mun: "Nagu", type: "1" }, 
+    Lillmälö: { mun: "Pargas", type: "1" }, 
+    Dalsbruk: { name_fi: "Taalintehdas", mun: "Kimitoön", type: "1" }, 
 
-    rauhala: {
-        name: "Rauhala",
-        mun: "ref_mun_velkua",
-        type: "2"
-    },
-    lailuoto: {
-        name: "Lailuoto",
-        mun: "ref_mun_velkua",
-        type: "2"
-    },
-    talosmeri: {
-        name: "Talosmeri",
-        mun: "ref_mun_velkua",
-        type: "2"
-    },
-    munninmaa: {
-        name: "Munninmaa",
-        mun: "ref_mun_velkua",
-        type: "2"
-    },
-    tammisluoto: {
-        name: "Tammisluoto", 
-        mun: "ref_mun_velkua",
-        type: "2"
-    },
-    liettinen: {
-        name: "Liettinen", 
-        mun: "ref_mun_velkua",
-        type: "2"
-    },
-    kettumaa: {
-        name: "Kettumaa",
-        mun: "ref_mun_velkua",
-        type: "2"
-    },
-    ruotsalainen: {
-        name: "Ruotsalainen",
-        mun: "ref_mun_rymattyla",
-        type: "2"
-    },
-    korvenmaa: {
-        name: "Korvenmaa",
-        mun: "ref_mun_rymattyla",
-        type: "2"
-    },
-    pakinainen: {
-        name: "Pakinainen",
-        mun: "ref_mun_rymattyla",
-        type: "2"
-    },
-    pahkinainen: {
-        name: "Pähkinäinen",
-        mun: "ref_mun_rymattyla",
-        type: "2"
-    },
-    samsaari: {
-        name: "Samsaari",
-        mun: "ref_mun_rymattyla",
-        type: "2"
-    },
-    maisaari: {
-        name: "Maisaari",
-        mun: "ref_mun_rymattyla",
-        type: "2"
-    },
-    finno: {
-        name: "Finnö",
-        mun: "ref_mun_korpo",
-        type: "2"
-    },
-    kalderso: {
-        name: "Käldersö",
-        mun: "ref_mun_korpo",
-        type: "2"
-    },
-    elvso: {
-        name: "Elvsö",
-        mun: "ref_mun_korpo",
-        type: "2"
-    },
-    berghamnk: {
-        name: "Berghamn",
-        mun: "ref_mun_korpo",
-        type: "2"
-    },
-    luk: {
-        name: "Luk",
-        mun: "ref_mun_korpo",
-        type: "2"
-    },
-    lillpensor: {
-        name: "Lillpensor",
-        mun: "ref_mun_korpo",
-        type: "2"
-    },
-    storpensor: {
-        name: "Storpensor",
-        mun: "ref_mun_korpo",
-        type: "2"
-    },
-    havtrask: {
-        name: "Havträsk",
-        mun: "ref_mun_norrskata",
-        type: "1"
-    },
-    brunskar: {
-        name: "Brunskär",
-        mun: "ref_mun_korpo",
-        type: "2"
-    },
-    osterskar: {
-        name: "Österskär",
-        mun: "ref_mun_korpo",
-        type: "2"
-    },
-    kalo: {
-        name: "Kälö",
-        mun: "ref_mun_korpo",
-        type: "2"
-    },
-
-    nasby: { name: "Näsby", mun: "ref_mun_houtskar", type: "1" },
-    roslax: { name: "Roslax", mun: "ref_mun_houtskar", type: "1" },
-    sordo: { name: "Sördö", mun: "ref_mun_houtskar", type: "2" },
-    lempnas: { name: "Lempnäs", mun: "ref_mun_houtskar", type: "2" },
-    applo: { name: "Äpplö", mun: "ref_mun_houtskar", type: "2" },
-    bockholm: { name: "Bockholm", mun: "ref_mun_houtskar", type: "2" },
-    sodo: { name: "Södö", mun: "ref_mun_houtskar", type: "2" },
-    nato: { name: "Nåtö", mun: "ref_mun_houtskar", type: "2" },
-    harklot: { name: "Härklot", mun: "ref_mun_houtskar", type: "2" },
-    sjalo: { name: "Själö", mun: "ref_mun_houtskar", type: "2" },
-
-    norrby: { name: "Norrby", mun: "ref_mun_inio", type: "1" },
-    yttersto: { name: "Ytterstö", mun: "ref_mun_inio", type: "2" },
-    lempmo: { name: "Lempmo", mun: "ref_mun_inio", type: "2" },
-    salmis: { name: "Salmis", mun: "ref_mun_inio", type: "2" },
-    lammholm: { name: "Lammholm", mun: "ref_mun_inio", type: "2" },
-    kvarnholm: { name: "Kvarnholm", mun: "ref_mun_inio", type: "2" },
-    aselholm: { name: "Åselholm", mun: "ref_mun_inio", type: "2" },
-    perkala: { name: "Perkala", mun: "ref_mun_inio", type: "2" },
-    kolko: { name: "Kolko", mun: "ref_mun_inio", type: "2" },
-
-    torsholmai: { name: "Torsholma I", mun: "ref_mun_brando", type: "1" },
-
-    berghamn: { name: "Berghamn", mun: "ref_mun_nagu", type: "2" },
-    noto: { name: "Nötö", mun: "ref_mun_nagu", type: "2" },
-    aspo: { name: "Aspö", mun: "ref_mun_nagu", type: "2" },
-    jurmo: { name: "Jurmo", mun: "ref_mun_nagu", type: "2" },
-    uto: { name: "Utö", mun: "ref_mun_nagu", type: "2" },
-
-    keso: {
-        name: "Keso varvet",
-        name_fi: "Keson telakka",
-        mun: "ref_mun_nagu",
-        type: "1"
-    },
-    seili: {
-        name: "Själö",
-        name_fi: "Seili",
-        mun: "ref_mun_nagu",
-        type: "2"
-    },
-    innamo: {
-        name: "Innamo",
-        mun: "ref_mun_nagu",
-        type: "2"
-    },
-    jarvsor: {
-        name: "Järvsor",
-        mun: "ref_mun_nagu",
-        type: "2"
-    },
-    maskinnamo: {
-        name: "Maskinnamo",
-        mun: "ref_mun_nagu",
-        type: "2"
-    },
-    avensor: {
-        name: "Åvensor",
-        name_fi: "Ahvensaari",
-        mun: "ref_mun_nagu",
-        type: "2"
-    },
-    lavarn: {
-        name: "Lavarn",
-        mun: "ref_mun_houtsala",
-        type: "1"
-    },
-
-    heisala: { name: "Heisala", mun: "ref_mun_pargas", type: "2" },
-    bjorkholm: { name: "Björkholm", mun: "ref_mun_pargas", type: "2" },
-    ramsholm: { name: "Ramsholm", mun: "ref_mun_pargas", type: "2" },
-    aspholm: { name: "Aspholm", mun: "ref_mun_pargas", type: "2" },
-    ostratallholm: { name: "Östra Tallholm", mun: "ref_mun_pargas", type: "2" },
-    kuggo: { name: "Kuggö", mun: "ref_mun_pargas", type: "2" },
-    pensari: { name: "Pensar I", mun: "ref_mun_pargas", type: "2" },
+    Rauhala: { mun: "Velkua" },
+    Lailuoto: { mun: "Velkua" },
+    Talosmeri: { mun: "Velkua" },
+    Munninmaa: { mun: "Velkua" },
+    Tammisluoto: { mun: "Velkua" },
+    Liettinen: { mun: "Velkua" },
+    Kettumaa: { mun: "Velkua" },
+    Ruotsalainen: { mun: "Rymättylä" },
+    Korvenmaa: { mun: "Rymättylä" },
+    Pakinainen: { mun: "Rymättylä" },
+    Pähkinäinen: { mun: "Rymättylä" },
+    Samsaari: { mun: "Rymättylä" },
+    Maisaari: { mun: "Rymättylä" },
+    Finnö: { mun: "Korpo" },
+    Käldersö: { mun: "Korpo" },
+    Elvsö: { mun: "Korpo" },
+    BerghamnK: { name: "Berghamn", mun: "Korpo" },
+    Luk: { mun: "Korpo" },
+    Lillpensor: { mun: "Korpo" },
+    Storpensor: { mun: "Korpo" },
+    Havträsk: { mun: "Norrskata", type: "1" }, 
+    Brunskär: { mun: "Korpo" },
+    Österskär: { mun: "Korpo" },
+    Kälö: { mun: "Korpo" },
+    Näsby: { mun: "Houtskär", type: "1" },
+    Roslax: { mun: "Houtskär", type: "1" },
+    Sördö: { mun: "Houtskär" },
+    Lempnäs: { mun: "Houtskär" },
+    Äpplö: { mun: "Houtskär" },
+    Bockholm: { mun: "Houtskär" },
+    Södö: { mun: "Houtskär" },
+    Nåtö: { mun: "Houtskär" },
+    Härklot: { mun: "Houtskär" },
+    Själö: { mun: "Houtskär" },
+    Norrby: { mun: "Iniö", type: "1" },
+    Ytterstö: { mun: "Iniö" },
+    Lempmo: { mun: "Iniö" },
+    Salmis: { mun: "Iniö" },
+    Lammholm: { mun: "Iniö" },
+    Kvarnholm: { mun: "Iniö" },
+    Åselholm: { mun: "Iniö" },
+    Perkala: { mun: "Iniö" },
+    Kolko: { mun: "Iniö" },
+    TorsholmaI: { name: "Torsholma I", mun: "Brändö", type: "1" },
+    Berghamn: { mun: "Nagu" },
+    Nötö: { mun: "Nagu" },
+    Aspö: { mun: "Nagu" },
+    Jurmo: { mun: "Nagu" },
+    Utö: { mun: "Nagu" },
+    Keso: { name: "Keso varvet", name_fi: "Keson telakka", mun: "Nagu", type: "1" }, 
+    Seili: { name: "Själö", name_fi: "Seili", mun: "Nagu" },
+    Innamo: { mun: "Nagu" },
+    Järvsor: { mun: "Nagu" },
+    Maskinnamo: { mun: "Nagu" },
+    Åvensor: { name_fi: "Ahvensaari", mun: "Nagu" },
+    Lavarn: { mun: "Houtsala", type: "1" }, 
+    Heisala: { mun: "Pargas" },
+    Björkholm: { mun: "Pargas" },
+    Ramsholm: { mun: "Pargas" },
+    Aspholm: { mun: "Pargas" },
+    ÖstraTallholm: { name: "Östra Tallholm", mun: "Pargas" },
+    Kuggö: { mun: "Pargas" },
+    PensarI: { name: "Pensar I", mun: "Pargas" },
+    Krok: { mun: "Nagu"},
+    Mattnäs: { mun: "Nagu"},
+    Lånholm: { mun: "Nagu"},
+    Fagerholm: { mun: "Nagu"},
+    Killingholm: { mun: "Nagu"},
+    Ängsö: { mun: "Nagu"},
+    Tveskiftsholm: { mun: "Nagu"},
+    Berghamn: { mun: "Nagu"},
+    Hummelholm: { mun: "Nagu"},
+    Rockelholm: { mun: "Nagu"},
+    Ytterstholm: { mun: "Nagu"},
+    Byskär: { mun: "Nagu"},
+    Brännskär: { mun: "Nagu"},
+    Grötö: { mun: "Nagu"},
+    Stenskär: { mun: "Nagu"},
+    Gullkrona: { mun: "Nagu"},
+    PensarL: { name: "Pensar L", mun: "Nagu"},
+    Peno: { mun: "Nagu"},
+    Knivskär: { mun: "Nagu"},
+    Kopparholm: { mun: "Nagu"},
+    Träskholm: { mun: "Nagu"},
+    Björkö: { mun: "Nagu"},
+    Gloskär: { mun: "Nagu"},
+    Trunsö: { mun: "Nagu"},
+    Sandholm: { mun: "Nagu"},
+    Lökholm: { mun: "Nagu"},
+    Borstö: { mun: "Nagu"},
+    Tunnhamn: { mun: "Kimitoön"},
+    Vänö: { mun: "Kimitoön"},
+    Holma: { mun: "Kimitoön"},
+    Helsingholm: { mun: "Kimitoön"},
+    Ängesö: { mun: "Kimitoön"},
+    Bolax: { mun: "Kimitoön"},
+    Botesö: { mun: "Kimitoön"},
+    Djupö: { mun: "Kimitoön"},
+    Vänoxaby: { name: "Vänoxa by", mun: "Kimitoön"},
+    Vänoxasläten: { name: "Vänoxa släten (Bergö)", mun: "Kimitoön"},
 
 }
+
+Object.keys(piers).forEach(function(key) {
+    var pier = piers[key];
+    pier.name = pier.name? pier.name: key;
+    pier.mun = pier.mun.startsWith("ref_mun_")? pier.mun: "ref_mun_" + pier.mun;
+    pier.type = pier.type? pier.type: "2";
+});
+
+console.log(piers);
 
 timetables = {
     none: [],
@@ -1365,6 +1112,36 @@ timetables = {
     nagunorra: [
         { validFrom: "2017-10-02", validTo: "2018-05-17", tables: ["FalkoVinter2018.png"]}
     ],
+    nagutvar: { 
+        link: "https://www.ferryway.fi/5",
+        tables: 
+        [
+            { validFrom: "2017-11-01", validTo: "2018-03-31", tables: ["MyrskylintuVinter2018.png"]}
+        ],
+    },
+    nagusodra: { 
+        link: "https://www.ferryway.fi/6",
+        tables: 
+        [
+            { validFrom: "2017-11-01", validTo: "2018-03-31", tables: ["NordepVinter2018.png"]}
+        ],
+    },
+    hitisstella: {
+        name: "M/S Stella",
+        link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
+        tables: 
+        [
+            { validFrom: "2017-08-14", validTo: "2018-06-04", tables: ["StellaVinter2018_1.png", "StellaVinter2018_2.png"]}
+        ],
+    },
+    hitisalva: { 
+        name: "M/S Alva",
+        link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
+        tables: 
+        [
+            { validFrom: "2017-08-14", validTo: null, tables: ["AlvaHost2017.png"]}
+        ],
+    },
     pargasrutt: {
         
         link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/paraisten-reittialue-viken.html#timetables",
@@ -1389,7 +1166,7 @@ routes = {
         name_fi: "Föglön linja",
         name_en: "Föglo line",
         specifier: "Svinö - Degerby",
-        piers: ["ref_piers_svino", "ref_piers_degerby"],
+        piers: ["Svinö", "Degerby"],
         operator: "ref_operators_alandstrafiken",
         vessels: ["ref_ferries_skarven"],
         features: {
@@ -1409,7 +1186,7 @@ routes = {
         name_fi: "Pohjoinen linja",
         name_en: "Northern line",
         specifier: "Hummelvik - Enklinge - Kumlinge - Lappo - Torsholma",
-        piers: ["ref_piers_hummelvik", "ref_piers_enklinge", "ref_piers_kumlinge", "ref_piers_lappo", "ref_piers_torsholma"],
+        piers: ["Hummelvik", "Enklinge", "Kumlinge", "Lappo", "Torsholma"],
         operator: "ref_operators_alandstrafiken",
         vessels: ["ref_ferries_alfageln", "ref_ferries_knipan"],
         features: {
@@ -1428,7 +1205,7 @@ routes = {
         name_fi: "Pohjoinen linja",
         name_en: "Northern line",
         specifier: "Enklinge - Kumlinge",
-        piers: ["ref_piers_enklinge", "ref_piers_kumlinge"],
+        piers: ["Enklinge", "Kumlinge"],
         operator: "ref_operators_alandstrafiken",
         vessels: ["ref_ferries_rosala"],
         features: {
@@ -1447,7 +1224,7 @@ routes = {
         name_fi: "Pohjoinen linja",
         name_en: "Northern line",
         specifier: "Asterholma - Lappo - Torsholma",
-        piers: ["ref_piers_asterholma", "ref_piers_lappo", "ref_piers_torsholma"],
+        piers: ["Asterholma", "Lappo", "Torsholma"],
         operator: "ref_operators_alandstrafiken",
         vessels: ["ref_ferries_frida"],
         features: {
@@ -1466,7 +1243,7 @@ routes = {
         name_fi: "Pohjoinen linja",
         name_en: "Northern line",
         specifier: "Åva - Jurmo",
-        piers: ["ref_piers_ava", "ref_piers_jurmob"],
+        piers: ["Åva", "JurmoB"],
         operator: "ref_operators_alandstrafiken",
         vessels: ["ref_ferries_doppingen"],
         features: {
@@ -1486,7 +1263,7 @@ routes = {
         name_en: "Northern line",
         specifier: "Vuosnainen - Åva",
         specifier_sv: "Osnäs - Åva",
-        piers: ["ref_piers_vuosnainen", "ref_piers_ava"],
+        piers: ["Vuosnainen", "Åva"],
         operator: "ref_operators_alandstrafiken",
         vessels: ["ref_ferries_viggen"],
         features: {
@@ -1505,7 +1282,7 @@ routes = {
         name_fi: "Eteläinen linja",
         name_en: "Southern line",
         specifier: "Långnäs - Överö - Sottunga - Kökar - Galtby",
-        piers: ["ref_piers_langnas", "ref_piers_overo", "ref_piers_sottunga", "ref_piers_huso", "ref_piers_kyrkogardso", "ref_piers_kokar", "ref_piers_galtby"],
+        piers: ["Långnäs", "Överö", "Sottunga", "Husö", "Kyrkogårdsö", "Kökar", "Galtby"],
         operator: "ref_operators_alandstrafiken",
         vessels: ["ref_ferries_gudingen", "ref_ferries_skiftet"],
         features: {
@@ -1526,7 +1303,7 @@ routes = {
         name_fi: "Poikittainen linja",
         name_en: "Cross line",
         specifier: "Långnäs - Överö - Sottunga - Snäckö",
-        piers: ["ref_piers_langnas", "ref_piers_bergo", "ref_piers_overo", "ref_piers_sottunga", "ref_piers_snacko" ],
+        piers: ["Långnäs", "Bergö", "Överö", "Sottunga", "Snäckö" ],
         operator: "ref_operators_alandstrafiken",
         vessels: ["ref_ferries_odin"],
         features: {
@@ -1553,7 +1330,7 @@ routes = {
         name: "Iniö - Kustavi",
         name_sv: "Iniö - Gustavs",
         specifier: "",
-        piers: ["ref_piers_kannvik", "ref_piers_heponiemi"],
+        piers: ["Kannvik", "Heponiemi"],
         operator: "ref_operators_finferries",
         vessels: ["ref_ferries_aura"],
         features: {
@@ -1570,7 +1347,7 @@ routes = {
         name: "Houtskär - Iniö",
         name_fi: "Houtskari - Iniö",
         specifier: "",
-        piers: ["ref_piers_mossala", "ref_piers_dalen"],
+        piers: ["Mossala", "Dalen"],
         operator: "ref_operators_finferries",
         vessels: ["ref_ferries_antonia"],
         features: {
@@ -1589,7 +1366,7 @@ routes = {
         name: "Korpo - Houtskär",
         name_fi: "Korppoo - Houtskari",
         specifier: "",
-        piers: ["ref_piers_galtby", "ref_piers_kittuis"],
+        piers: ["Galtby", "Kittuis"],
         operator: "ref_operators_finferries",
         vessels: ["ref_ferries_stellakorppoo", "ref_ferries_mergus"],
         features: {
@@ -1608,7 +1385,7 @@ routes = {
         name: "Nagu - Korpo",
         name_fi: "Nauvo - Korppoo",
         specifier: "",
-        piers: ["ref_piers_parnas", "ref_piers_retais"],
+        piers: ["Pärnäs", "Retais"],
         operator: "ref_operators_finferries",
         vessels: ["ref_ferries_prostvik1", "ref_ferries_nagu2"],
         features: {
@@ -1626,7 +1403,7 @@ routes = {
         name: "Pargas - Nagu",
         name_fi: "Parainen - Nauvo",
         specifier: "",
-        piers: ["ref_piers_lillmalo", "ref_piers_prostvik"],
+        piers: ["Lillmälö", "Prostvik"],
         operator: "ref_operators_finferries",
         vessels: ["ref_ferries_elektra", "ref_ferries_sterna", "ref_ferries_falco"],
         features: {
@@ -1645,7 +1422,7 @@ routes = {
         name_fi: "Pieni rengastie",
         specifier: "Nagu - Själö - Hanka",
         specifier_fi: "Nauvo - Seili - Hanka",
-        piers: ["ref_piers_nagu", "ref_piers_seili", "ref_piers_hanka"],
+        piers: ["Nagu", "Seili", "Hanka"],
         operator: "ref_operators_sinv",
         vessels: ["ref_ferries_ostern"],
         features: {
@@ -1665,7 +1442,7 @@ routes = {
         name_sv: "Velkua rutt",
         name_en: "Velkua route",
         specifier: "Teersalo - Hakkenpää",
-        piers: ["ref_piers_teersalo", "ref_piers_hakkenpaa"],
+        piers: ["Teersalo", "Hakkenpää"],
         operator: "ref_operators_finferries",
         vessels: ["ref_ferries_mskivimo"],
         features: {
@@ -1688,7 +1465,7 @@ routes = {
         name: "Kasnäs - Hitis",
         name_fi: "Kasnäs - Hiittinen",
         specifier: "",
-        piers: ["ref_piers_kasnas", "ref_piers_langnash"],
+        piers: ["Kasnäs", "LångnäsH"],
         operator: "ref_operators_finferries",
         vessels: ["ref_ferries_aurora"],
         features: {
@@ -1705,7 +1482,7 @@ routes = {
         name_sv: "Velkua rutt",
         name_en: "Velkua Route",
         specifier: "",
-        piers: ["ref_piers_teersalo", "ref_piers_rauhala", "ref_piers_lailuoto", "ref_piers_talosmeri", "ref_piers_munninmaa", "ref_piers_tammisluoto", "ref_piers_liettinen", "ref_piers_kettumaa", "ref_piers_hakkenpaa"],
+        piers: ["Teersalo", "Rauhala", "Lailuoto", "Talosmeri", "Munninmaa", "Tammisluoto", "Liettinen", "Kettumaa", "Hakkenpää"],
         operator: "ref_operators_finferries",
         vessels: ["ref_ferries_mskivimo"],
         features: {
@@ -1727,7 +1504,7 @@ routes = {
         name_sv: "Rimito rutt",
         name_en: "Rymättylä Route",
         specifier: "",
-        piers: ["ref_piers_haapala", "ref_piers_ruotsalainen", "ref_piers_korvenmaa", "ref_piers_pakinainen", "ref_piers_pahkinainen", "ref_piers_samsaari", "ref_piers_maisaari"],
+        piers: ["Haapala", "Ruotsalainen", "Korvenmaa", "Pakinainen", "Pähkinäinen", "Samsaari", "Maisaari"],
         operator: "ref_operators_savolainen",
         vessels: ["ref_ferries_isla"],
         features: {
@@ -1745,7 +1522,7 @@ routes = {
         name_sv: "Korpo rutt",
         name_en: "Korpo Route",
         specifier: "",
-        piers: ["ref_piers_verkan", "ref_piers_finno", "ref_piers_kalderso", "ref_piers_elvso", "ref_piers_berghamnk", "ref_piers_luk", "ref_piers_kittuis", "ref_piers_lillpensor", "ref_piers_storpensor", "ref_piers_havtrask", "ref_piers_brunskar", "ref_piers_osterskar", "ref_piers_kalo"],
+        piers: ["Verkan", "Finnö", "Käldersö", "Elvsö", "BerghamnK", "Luk", "Kittuis", "Lillpensor", "Storpensor", "Havträsk", "Brunskär", "Österskär", "Kälö"],
         operator: "ref_operators_al",
         vessels: ["ref_ferries_fisko"],
         features: {
@@ -1764,7 +1541,7 @@ routes = {
         name_sv: "Houtskär rutt och Iniö tilläggsrutt",
         name_en: "Houtskär Route and Iniö Additional Route",
         specifier: "",
-        piers: ["ref_piers_nasby","ref_piers_roslax","ref_piers_yttersto","ref_piers_lempmo","ref_piers_salmis","ref_piers_lammholm","ref_piers_norrby","ref_piers_sordo","ref_piers_lempnas","ref_piers_applo","ref_piers_nato","ref_piers_torsholmai","ref_piers_sjalo","ref_piers_harklot","ref_piers_kvarnholm","ref_piers_aselholm","ref_piers_perkala","ref_piers_kolko","ref_piers_kannvik"],
+        piers: ["Näsby","Roslax","Ytterstö","Lempmo","Salmis","Lammholm","Norrby","Sördö","Lempnäs","Äpplö","Nåtö","TorsholmaI","Själö","Härklot","Kvarnholm","Åselholm","Perkala","Kolko","Kannvik"],
         operator: "ref_operators_ferryway",
         vessels: ["ref_ferries_karolina", "ref_ferries_satava"],
         features: {
@@ -1782,7 +1559,7 @@ routes = {
         name_sv: "Utö rutt",
         name_en: "Utö Route",
         specifier: "",
-        piers: ["ref_piers_parnas", "ref_piers_berghamn", "ref_piers_noto", "ref_piers_aspo", "ref_piers_jurmo", "ref_piers_uto"],
+        piers: ["Pärnäs", "Berghamn", "Nötö", "Aspö", "Jurmo", "Utö"],
         operator: "ref_operators_rosita",
         vessels: ["ref_ferries_eivor"],
         features: {
@@ -1798,7 +1575,7 @@ routes = {
         name_fi: "Nauvon pohjoinen reitti",
         name_en: "Nagu Northern Route",
         specifier: "",
-        piers: ["ref_piers_nagu", "ref_piers_keso", "ref_piers_seili", "ref_piers_innamo", "ref_piers_jarvsor", "ref_piers_maskinnamo", "ref_piers_avensor", "ref_piers_lavarn"],
+        piers: ["Nagu", "Keso", "Seili", "Innamo", "Järvsor", "Maskinnamo", "Åvensor", "Lavarn"],
         operator: "ref_operators_finferries",
         vessels: ["ref_ferries_falko"],
         features: {
@@ -1821,16 +1598,51 @@ routes = {
         timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
     },
 
-    pargasrutt: {
+    nagutvar: {
+        name: "Nauvon poikittainen reitti",
+        name_sv: "Nagu tvärgående rutt",
+        name_en: "Nagu Cross Route",
+        specifier: "",
+        piers: ["Pärnäs", "Krok", "Mattnäs", "Lånholm", "Fagerholm", "Killingholm", "Ängsö", "Tveskiftsholm", "Berghamn", "Hummelholm", "Rockelholm", "Ytterstholm", "Byskär", "Brännskär", "Grötö", "Stenskär", "Gullkrona", "Kirjais"],
+        operator: "ref_operators_ferryway",
+        vessels: ["ref_ferries_myrskylintu", "ref_ferries_cheri"],
+        features: {
+            interval_L: ["times.aweek", "3"],
+            order_L: ["order.only"],
+            duration_L: ["duration.hoursminutes", "2", "30"], 
+        },
+        timetables: ["ref_timetables_nagutvar"],
+    },
+ 
+    nagusodra: {
+        name: "Nauvon eteläinen reitti",
+        name_sv: "Nagu södra rutt",
+        name_en: "Nagu Southern Route",
+        specifier: "",
+        piers: ["Kirjais", "PensarL", "Peno", "Brännskär", "Stenskär", "Gullkrona", "Grötö", "Knivskär", "Kopparholm", "Träskholm", "Björkö", "Gloskär", "Trunsö", "Sandholm", "Lökholm", "Borstö"],
+        operator: "ref_operators_ferryway",
+        vessels: ["ref_ferries_nordep"],
+        features: {
+            interval_L: ["times.adayaweek", "1-3", "Borstö", "4"],
+            order_L: ["order.only"],
+            duration_fi: "Kirjais - Borstö " + L("fi", ["duration.hours", "3-5"]),
+            duration_en: "Kirjais - Borstö " + L("sv", ["duration.hours", "3-5"]),
+            duration_en: "Kirjais - Borstö " + L("en", ["duration.hours", "3-5"]),
+        },
+        timetables: ["ref_timetables_nagusodra"],
+    },
+ 
+     pargasrutt: {
         name: "Paraisten reitti",
         name_sv: "Pargas rutt",
         name_en: "Pargas Route",
         specifier: "",
-        piers: ["ref_piers_granvik", "ref_piers_heisala", "ref_piers_bjorkholm", "ref_piers_ramsholm", "ref_piers_aspholm", "ref_piers_ostratallholm", "ref_piers_kuggo", "ref_piers_pensari"],
+        piers: ["Granvik", "Heisala", "Björkholm", "Ramsholm", "Aspholm", "ÖstraTallholm", "Kuggö", "PensarI"],
         operator: "ref_operators_finferries",
         vessels: ["ref_ferries_viken"],
         features: {
             interval_L: ["times.aday", "3-8"],
+            order_L: ["order.partly"],
             duration_fi: "Granvik - Pensar n. tunti", 
             duration_sv: "Granvik - Pensar ca en timme", 
             duration_en: "Granvik - Pensar about an hour", 
@@ -1838,14 +1650,43 @@ routes = {
         timetables: ["ref_timetables_pargasrutt"],
     },
 
+    hitisrutt: {
+        name: "Hiittisten reitti",
+        name_sv: "Hitis rutt",
+        name_en: "Hitis Route",
+        specifier: "",
+        piers: ["Kasnäs", "Tunnhamn", "Vänö", "Holma", "Helsingholm", "Ängesö", "Bolax", "Botesö", "Djupö", "Vänoxaby", "Vänoxasläten", "Dalsbruk"],
+        operator: "ref_operators_savolainen",
+        vessels: ["ref_ferries_stellahiittinen", "ref_ferries_alva"],
+        features: {
+            interval_L: ["times.aday", "1-3"],
+            order_L: ["order.partly"],
+            duration_fi: "Kasnäs - Vänö " + L("fi", ["duration.minutes", "60"]),
+            duration_en: "Kasnäs - Vänö " + L("sv", ["duration.minutes", "60"]),
+            duration_en: "Kasnäs - Vänö " + L("en", ["duration.minutes", "60"]),
+        },
+        timetables: ["ref_timetables_hitisstella", "ref_timetables_hitisalva"],
+    },
 }
+
+Object.keys(routes).forEach(function(key) {
+    var route = routes[key];
+    route.piers = route.piers.map(function(pier) {
+        if (!piers[pier]) { console.log(pier, "does not exist"); exit(); }
+        return pier.startsWith("ref_piers_")? pier: "ref_piers_" + pier;
+    })
+    route.vessels = route.vessels.map(function(vessel) {
+        return vessel.startsWith("ref_ferries_")? vessel: "ref_ferries_" + vessel;
+    })
+});
+
+console.log(routes);
 
 ferrydata = {
     routes: routes,
     ferries: ferries,
     operators: operators,
-    piers: piers,
-    mun: mun,
+    piers: piers, mun: mun,
     timetables: timetables,
     pricelists: pricelists,
 }
@@ -1924,9 +1765,10 @@ function deepCopy(object) {
 }
 
 function renderDate(date, lang) {
+    if (!date) return "";
     var parts = date.split("-");
-    var currentYear = new Date().getFullYear();
-    return parts[2]+"."+parts[1]+"."+(parts[0] != currentYear? parts[0]: "");
+    // var currentYear = new Date().getFullYear();
+    return parts[2]+"."+parts[1]+"."; //+(parts[0] != currentYear? parts[0]: "");
 }
 
 function renderDates(fromD, toD, lang) {

@@ -1,6 +1,6 @@
 
 
-var route="pargasrutt";
+var route="hitisrutt";
 var lang="fi";
 
 $(document).ready(function(){
