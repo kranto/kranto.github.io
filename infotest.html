@@ -1,0 +1,192 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta charset="utf-8">
+
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/infotest.css" rel="stylesheet">
+	<script src="/js/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/mustache.min.js"></script>
+	<script src="/javascripts/mustachetest.js"></script>
+	<script src="https://use.fontawesome.com/aa44d9f2e6.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+	<div id="wrapper">
+		<div id="wrapper2">
+
+			<div class="info" style="display: block; top: 80%;">
+
+				<div class="infocontent">
+
+					<button type="button" class="btn btn-secondary closeInfoButton2" id="closeInfoButton"><i class="fa fa-times" aria-hidden="true"></i></button>
+
+					<div class="row">
+						<div class="col-11 col-sm-11">
+							<div class="infotitle">
+								Föglölinjen: <span class="specifier">Svinö - Degerby - Hammarby - Godby</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="row vesselrow spaceabove">
+						<div class="col-12 col-sm-6">
+							<div class="vesselbox">
+								<div class="vesselname">
+									M/S Skarven
+								</div>
+								<div class="vesselfeatures">
+										<i class="fa fa-car" aria-hidden="true"></i> 60 
+										<i class="fa fa-user" aria-hidden="true"></i> 250 
+										<i class="fa fa-coffee" aria-hidden="true"></i> 
+										<i class="fa fa-wheelchair" aria-hidden="true"></i>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-sm-6">
+							<div class="vesselbox">
+								<div class="vesselname">
+									M/S Pitkänniminen
+								</div>
+								<div class="vesselfeatures">
+										<i class="fa fa-car" aria-hidden="true"></i> 60 
+										<i class="fa fa-user" aria-hidden="true"></i> 250 
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row spaceabove">
+						<div class="col-7 col-sm-9">
+							<div class="row">
+								<div class="col-sm-6 routefeature interval">8-12 vuoroa päivässä ja höpön löpön</div>
+								<div class="col-sm-6 routefeature duration">Kesto 35 minuuttia</div>
+								<div class="col-sm-6 routefeature booking negative">Ei voi varata</div>
+								<div class="col-sm-6 routefeature cost">Maksullinen</div>
+								<div class="col-sm-6 routefeature seasonal">Vain kesäisin</div>
+							</div>
+						</div>
+						<div class="col-5 col-sm-3">
+							<button type="button" class="btn btn-info btn-md timetablebutton" data-toggle="modal" data-target="#timetableModal" data-backdrop="false">
+								Aikataulut
+							</button>
+						</div>
+					</div>
+
+					<div class="spaceabove pierrow">
+						<a href="#svino"><strong>Svinö(Lumparland)</strong></a>, 
+						Degerby(Föglö),
+						Hällesö,
+						Simskäla
+					</div>
+
+					<button type="button" class="btn btn-info btn-md contactsbutton" data-toggle="modal" data-target="#contactModal" data-backdrop="true">
+						Yhteystiedot
+					</button>
+
+				</div>
+			</div>
+		</div>
+		<div id="mapcontainer" style="height: 80%; background-color: #cfc;">
+			Kartta
+		</div>
+	</div>
+
+
+<!-- 			<div id="scrollIndicator"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+-->
+<!-- Timetable Modal -->
+<div class="modal fade" id="timetableModal" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title infotitle">Föglölinjen: <span class="specifier">Svinö - Degerby</span></h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<div class="alert alert-warning">
+					Tämä on epävirallinen kopio. Tarkista muutokset, poikkeukset ja lisätiedot <a target="info" href="http://www.alandstrafiken.ax/sv/turlistor">alkuperäisestä aikataulusta <i class="fa fa-external-link" aria-hidden="true"></i></a>.
+				</div>
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#foglovinter" role="tab">1.1.&mdash;31.5.</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#foglosommar" role="tab">1.6.&mdash;31.8.</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#foglovinter" role="tab">1.9.&mdash;31.12.</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane fade show active" id="foglovinter" role="tabpanel">
+						<div>
+							<img class="timetable" src="img/FoglolinjenVinter2018.png"/>
+						</div>
+						<div>
+							<a href="img/FoglolinjenVinter2018.png" target="timetable">
+								<button class="btn btn-info">Avaa zoomattava kuva uuteen ikkunaan</button>
+							</a>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="foglosommar" role="tabpanel">
+						<div>
+							<img class="timetable" src="img/FoglolinjenSommar2018.png"/>
+						</div>
+						<div>
+							<a href="img/FoglolinjenSommar2018.png" target="timetable">
+								<button class="btn btn-info">Avaa zoomattava kuva uuteen ikkunaan</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<!-- Contact Modal -->
+<div class="modal fade" id="contactModal" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title infotitle">Föglölinjen: <span class="specifier">Svinö - Degerby</span></h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<div class="contactformheader">
+					M/S Skarven
+				</div>
+				<a href="tel:+358401733600">
+					<button type="button" class="btn btn-outline-primary contactbutton phone">+358 40 173 3600</button>
+				</a>
+				<a href="tel:+3584573439301">
+					<button type="button" class="btn btn-outline-primary contactbutton phone">+358 457 3439 301 &ndash; Café</button>
+				</a>
+				<div class="contactformheader spaceabove">
+					Ålandstrafiken
+				</div>
+
+				<a href="tel:+3581825600">
+					<button type="button" class="btn btn-outline-primary contactbutton phone">+358 18 25 600</button>
+				</a>
+				<a href="mailto:info@alandstrafiken.ax">
+					<button type="button" class="btn btn-outline-primary contactbutton email">info@alandstrafiken.ax</button>
+				</a>
+				<a href="http://www.alandstrafiken.ax/fi" target="info">
+					<button type="button" class="btn btn-outline-primary contactbutton www">www.alandstrafiken.ax</button>
+				</a>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

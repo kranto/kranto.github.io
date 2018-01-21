@@ -1,0 +1,45 @@
+
+<div id="timetabletemplate">
+	<div class="modal-content">
+		<div class="modal-header">
+			<div class="infotitle">
+				{{ name }}{{#specifier}}: {{/specifier}}<span class="specifier">{{ specifier }}</span>
+			</div>
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+		</div>
+		<div class="modal-body">
+			<div class="alert alert-warning">
+				{{#L}}unofficialcopy{{/L}} <a target="info" href="{{ link }}">{{#L}}fromoriginal{{/L}} <i class="fa fa-external-link" aria-hidden="true"></i></a>.
+			</div>
+			<div class="navtabswrapper">
+				<ul class="nav nav-tabs" role="tablist">
+					{{ #tables }}
+					<li class="nav-item">
+						<a class="nav-link {{active}}" data-toggle="tab" href="#{{tabid}}" role="tab">{{dates}}</a>
+					</li>
+					{{ /tables }}
+				</ul>
+			</div>
+			<div class="tab-content">
+				{{ #tables }}
+				<div class="tab-pane fade {{show}} {{active}}" id="{{tabid}}" role="tabpanel">
+					{{ #images }}
+					<div>
+						<div class="timetablelink">
+							<a href="timetables/{{.}}" target="timetable">
+								<div>
+									<img class="timetable" src="timetables/{{.}}"/>
+								</div>
+							</a>
+						</div>
+					</div>
+					{{ /images }}
+					<div class="alert alert-info center">
+						{{#L}}openzoomable{{/L}}
+					</div>
+				</div>
+				{{ /tables }}
+			</div>
+		</div>
+	</div>
+</div>

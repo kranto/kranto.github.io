@@ -3,6 +3,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
+      font-size: 14px;
     }
 
     h3 {
@@ -119,6 +120,11 @@
       color: #822928;
     }
 
+    .timetable {
+      max-width: 600px;
+      border-bottom: 1px solid;
+    }
+    
     .map div {
       text-shadow:
       -1px -1px 0px rgba(255, 255, 255, 0.3),
@@ -266,6 +272,7 @@
       position: absolute;
       top: 100%;
       display: none;
+      padding-top: 20px;
       padding-left: 10px;
       padding-right: 10px;
       padding-bottom: 30px;
@@ -352,6 +359,8 @@
     background-color: white;
     border-bottom: solid #aaa 1px;
     z-index: 10;
+    box-shadow: 4px 4px grey;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
     div#topbartitle {
@@ -384,12 +393,13 @@
       display: none;
       position: fixed;
       left: 0px;
-      top: 0px;
+      top: 50px;
       width: 200px;
       max-height: 100%;
       overflow-y: scroll;
       overflow-x: hidden;
       box-shadow: 2px 2px #ddd;
+      z-index: 11;
     }
 
     .menucontainer {
@@ -400,7 +410,7 @@
       padding: 10px;
       padding-left: 20px;
       padding-top: 5px;
-      margin-top: 50px;
+      margin-top: 0px;
       background-color: white;
     }
 
@@ -408,12 +418,14 @@
       display: none;
       position: fixed;
       right: 0px;
-      top: 0px;
+      top: 50px;
       width: 200px;
       max-height: 100%;
       overflow-y: scroll;
       overflow-x: hidden;
       box-shadow: -2px 2px #ddd;
+      box-shadow: 2px 2px #ddd;
+      z-index: 11;
     }
 
     #menu .col-sm-3 {
@@ -445,9 +457,13 @@
       overflow: hidden;
     }
 
-    .boxs button{
+    .boxs button {
       height: 30px;
       padding-top: 4px;
+    }
+
+    .boxs h4 {
+      font-size: 18px; 
     }
 
     .mapTypeSelect {
@@ -487,4 +503,9 @@
 }
 .layer input[type=checkbox][disabled] + label {
   color: #ddd; 
+}
+
+.modal-dialog {
+  max-width: 1000px;
+
 }

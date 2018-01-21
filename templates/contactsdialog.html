@@ -1,0 +1,15 @@
+
+<div id="contactstemplate">
+	<div class="contactsbox">
+		{{ #contacts }}
+		<div class="contactformheader">
+			{{ name }}
+		</div>
+		{{ #items }}
+		<a href="{{uri}}" target="{{ target }}">
+			<button type="button" class="btn btn-outline-primary contactbutton {{class}}">{{ text }}{{ specifier }}</button>
+		</a>
+		{{ /items }}
+		{{ /contacts }}
+	</div>
+</div>

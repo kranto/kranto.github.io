@@ -267,7 +267,7 @@ function onlyUnique(value, index, self) {
 
 function setInfoContent(targets) {
   $(".infocontent:last #selectedTitle").html(targets.map(function(target) { return target.name; }).filter(onlyUnique).join('<br>'));
-  $(".infocontent:last #selectedDescription").html(targets.map(function(target) { return target.description? target.description: ' '; }).map(function(desc) {
+  $(".infocontent:last #selectedDescription").html(targets.map(function(target) { return (target.description? target.description: ' ') + (target.timetable? '<img class="timetable" src="' + target.timetable + '"/>': ''); }).map(function(desc) {
     return "<p>" + desc + "</p>";
   }).filter(onlyUnique).join("\n"));
 } 
@@ -868,7 +868,7 @@ function connection(connection, map) {
   };
 
   var legFeatures = connection.type === 'FeatureCollection'? connection.features: [connection];
-  var connectionObject = { name: shortName(connection.properties), description: connection.properties.description};
+  var connectionObject = { name: shortName(connection.properties), description: connection.properties.description, timetable: connection.properties.timetable};
   var legObjects = legFeatures.map(function(leg) {
 
     var coords = leg.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
