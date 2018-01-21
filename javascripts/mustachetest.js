@@ -1,7 +1,7 @@
 
 
-var route="houtskarrutt";
-var lang="fi";
+var route="hitisrutt";
+var lang="sv";
 
 $(document).ready(function(){
 	$("#infotemplateholder").load("templates/infocontent.html #infocontenttemplate", function() {

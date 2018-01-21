@@ -165,19 +165,6 @@ div#wrapper2 {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.contactsbutton {
-  margin-top: 40px;
-  margin-bottom: 30px;
-  width: 100%;
-}
-
-.contactsbutton:before {
-  font-family: FontAwesome;
-  font-weight: normal;
-  content: "\f095\00a0\00a0\00a0\f003\00a0\00a0\00a0\f0ac\00a0\00a0";
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .modal-dialog {
   max-width: 1000px;
 }
@@ -220,20 +207,15 @@ div.timetablelink:last-of-type {
   border-bottom: none;
 }
 
-#contactModal .modal-dialog {
+.contactsbox {
   max-width: 400px;
-}
-
-#contactModal .modal-title {
-  font-size: 20px;
-}
-
-#contactModal .modal-body {
-  padding-top: 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 .contactformheader {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: normal;
   margin-top: 20px;
 }
@@ -241,7 +223,9 @@ div.timetablelink:last-of-type {
 .contactbutton {
   width: 100%;
   max-width: 400px;
-  margin-top: 10px; 
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 .contactbutton:before {
@@ -282,6 +266,7 @@ div.timetablelink:last-of-type {
 h4 {
   font-size: 20px;
 }
+
 .btn:focus, .btn.active:focus {outline:0;}
 
 .btn-default.active, .btn-default.active:focus {

@@ -1,10 +1,10 @@
 
 messages = { // FI SV EN
     duration: {
-        minutes: ["{0} minuuttia", "{0} minuter", "{0} minutes"],
-        hours: ["{0} tuntia", "{0} timmar", "{0} hours"],
-        hoursminutes: ["{0} tuntia {1} minuuttia", "{0} timmar {1} minuter", "{0} hours {1} minutes"],
-        hourminutes: ["1 tunti {0} minuuttia", "1 timme {0} minuter", "1 hour {0} minutes"],
+        minutes: ["{1} {0} minuuttia", "{1} {0} minuter", "{1} {0} minutes"],
+        hours: ["{1} {0} tuntia", "{1} {0} timmar", "{1} {0} hours"],
+        hoursminutes: ["{2} {0} tuntia {1} minuuttia", "{2} {0} timmar {1} minuter", "{2} {0} hours {1} minutes"],
+        hourminutes: ["{1} 1 tunti {0} minuuttia", "{1} 1 timme {0} minuter", "{1} 1 hour {0} minutes"],
     },
     times: {
         aday: ["{0} kertaa päivässä", "{0} gånger om dagen", "{0} times a day"],
@@ -54,13 +54,13 @@ var localize_languages = ["fi", "sv", "en"];
 function localize(lang, args) {
     console.log('localize', lang, args, typeof args);
     if (!(args instanceof Array)) args = [args];
+
     var message = deepGet(messages, args[0].split("."))[localize_languages.indexOf(lang)];
-    var i = 0;
-    args.slice(1).forEach(function(arg) {
+    for (var i = 0; i < 5; i++) {
+        var arg = i < args.length - 1? args[i+1]: "";
         var str = "{" + i + "}";
         message = message.replace(str, arg);
-        i++;
-    });
+    }
     return message;
 }
 
@@ -91,7 +91,7 @@ mun = {
     Kaarina: { name_sv: "S:t Karins"},
     Turku: { name_sv: "Åbo"},
     Raisio: { name_sv: "Reso"},
-    Rymattylä: { name_sv: "Rimito"},
+    Rymättylä: { name_sv: "Rimito"},
     Merimasku: { },
     Askainen: { name_sv: "Villnäs"},
     Mietoinen: { },
@@ -1150,7 +1150,6 @@ timetables = {
         link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
     },
 
-
     nauvohanka: {
         link: "http://www.ostern.fi/aikataulu",
         link_sv: "http://www.ostern.fi/aikataulu",
@@ -1220,31 +1219,27 @@ timetables = {
     },
     nagutvar: {
         link: "https://www.ferryway.fi/5",
-        tables: 
-        [
+        tables: [
         { validFrom: "2017-11-01", validTo: "2018-03-31", images: ["MyrskylintuVinter2018.png"]}
         ],
     },
     nagusodra: { 
         link: "https://www.ferryway.fi/6",
-        tables: 
-        [
+        tables: [
         { validFrom: "2017-11-01", validTo: "2018-03-31", images: ["NordepVinter2018.png"]}
         ],
     },
     hitisstella: {
         name: "M/S Stella",
         link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
-        tables: 
-        [
+        tables: [
         { validFrom: "2017-08-14", validTo: "2018-06-04", images: ["StellaVinter2018_1.png", "StellaVinter2018_2.png"]}
         ],
     },
     hitisalva: { 
         name: "M/S Alva",
         link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
-        tables: 
-        [
+        tables: [
         { validFrom: "2017-08-14", validTo: null, images: ["AlvaHost2017.png"]}
         ],
     },
@@ -1400,8 +1395,8 @@ routes = {
         notes: [
             { 
                 content: "<div>Bergö and Sottunga are not served regularly</div>",
-                content_fi: "Bergössä ja Sottungassa poiketaan vain harvoin",
-                content_sv: "Bergö och Sottunga trafikeras ovanligen"
+                content_fi: "<div>Bergössä ja Sottungassa poiketaan vain harvoin</div>",
+                content_sv: "<div>Bergö och Sottunga trafikeras ovanligen</div>"
             }
         ],
         timetables: "tvarlinjen",
@@ -1529,8 +1524,8 @@ routes = {
             duration_L: ["duration.minutes", "50"],
             seasonal_L: "seasonal.summers",
             seealso_fi: 'Osa <a href="#velkuanreitti">Velkuan reittiä</a>',
-            seealso_sv: "Del av Velkua rutt",
-            seealso_en: "Part of Velkua route",
+            seealso_sv: 'Del av <a href="#velkuanreitti">Velkua rutt</a>',
+            seealso_en: 'Part of <a href="#velkuanreitti">Velkua route</a>',
             limit_L: "limit.cars_mc_bikes_only"
         },
 
@@ -1561,9 +1556,7 @@ routes = {
         features: {
             interval_L: ["times.aday", "3-9"],
             order_L: "order.partly",
-            duration_fi: "Teersalo - Teersalo 1-2 tuntia",
-            duration_sv: "Teersalo - Teersalo 1-2 timmar",
-            duration_en: "Teersalo - Teersalo 1-2 hours",
+            duration_L: ["duration.hours", "1-2", "Teersalo - Teersalo"],
             seasonal_L: ["seasonal.summerspier", "Hakkenpää"],
             seealso: "#velkuataivassalo"
         },
@@ -1580,9 +1573,7 @@ routes = {
         features: {
             interval_L: ["times.aday", "3-5"],
             order_L: "order.partly",
-            duration_fi: "Haapala-Pakinainen 40 minuuttia",
-            duration_sv: "Haapala-Pakinainen 40 minuter",
-            duration_en: "Haapala-Pakinainen 40 minutes",
+            duration_L: ["duration.minutes", "40", "Haapala-Pakinainen"],
         },
         timetables: "rymattylanreitti",
     },
@@ -1597,9 +1588,7 @@ routes = {
         features: {
             interval_L: ["times.adayaweek", "0-4", "Österskär", "2"],
             order_L: "order.only",
-            duration_fi: "Haapala-Pakinainen 40 minuuttia",
-            duration_sv: "Haapala-Pakinainen 40 minuter",
-            duration_en: "Haapala-Pakinainen 40 minutes",
+            duration_L: ["duration.minutes", "Haapala-Pakinainen 40 minuuttia"],
         },
         timetables: "korporutt",
     },
@@ -1614,9 +1603,7 @@ routes = {
         features: {
             interval_L: ["times.aday", "1-4"],
             order_L: "order.only",
-            duration_fi: "Roslax - Torsholma " + L("fi", ["duration.hoursminutes", "2", "20"]),
-            duration_sv: "Roslax - Torsholma " + L("sv", ["duration.hoursminutes", "2", "20"]),
-            duration_en: "Roslax - Torsholma " + L("en", ["duration.hoursminutes", "2", "20"]),
+            duration_L: ["duration.hoursminutes", "2", "20", "Roslax - Torsholma"],
         },
         timetables: ["houtskarrutt", "iniorutt"]
     },
@@ -1648,9 +1635,8 @@ routes = {
         features: {
             interval_L: ["times.aday", "1-2"],
             order_L: "order.partly",
-            duration_fi: "Nauvo - Ahvensaari " + L("fi", ["duration.hours", "2"]),
-            duration_sv: "Nagu - Åvensor " + L("sv", ["duration.hours", "2"]),
-            duration_en: "Nagu - Åvensor " + L("en", ["duration.hours", "2"]),
+            duration_L: ["duration.hours", "2", "Nagu - Åvensor"],
+            duration_fi: "Nauvo - Ahvensaari 2 tuntia",
         },
         notes: [
             { 
@@ -1689,9 +1675,7 @@ routes = {
         features: {
             interval_L: ["times.adayaweek", "1-3", "Borstö", "4"],
             order_L: ["order.only"],
-            duration_fi: "Kirjais - Borstö " + L("fi", ["duration.hours", "3-5"]),
-            duration_en: "Kirjais - Borstö " + L("sv", ["duration.hours", "3-5"]),
-            duration_en: "Kirjais - Borstö " + L("en", ["duration.hours", "3-5"]),
+            duration_L: ["duration.hours", "3-5", "Kirjais - Borstö"],
         },
         timetables: ["nagusodra"],
     },
@@ -1707,9 +1691,7 @@ routes = {
         features: {
             interval_L: ["times.aday", "3-8"],
             order_L: ["order.partly"],
-            duration_fi: "Granvik - Pensar n. tunti", 
-            duration_sv: "Granvik - Pensar ca en timme", 
-            duration_en: "Granvik - Pensar about an hour", 
+            duration_L: ["duration.minutes", "60", "Granvik - Pensar"],
         },
         timetables: ["pargasrutt"],
     },
@@ -1725,9 +1707,7 @@ routes = {
         features: {
             interval_L: ["times.aday", "1-3"],
             order_L: ["order.partly"],
-            duration_fi: "Kasnäs - Vänö " + L("fi", ["duration.minutes", "60"]),
-            duration_en: "Kasnäs - Vänö " + L("sv", ["duration.minutes", "60"]),
-            duration_en: "Kasnäs - Vänö " + L("en", ["duration.minutes", "60"]),
+            duration_L: ["duration.minutes", "60", "Kasnäs - Vänö"],
         },
         timetables: ["hitisstella", "hitisalva"],
     },
@@ -1849,6 +1829,10 @@ function renderDates(fromD, toD, lang) {
     return renderDate(fromD, lang) + " - " + renderDate(toD, lang);
 }
 
+function flatten(array) {
+    return array.reduce(function(a, b) { return a.concat(b); }, []);
+}
+
 function routeInfo(route, lang) {
     route = getLocalizedItem(deepCopy(route), lang);
     var info = {};
@@ -1875,6 +1859,7 @@ function routeInfo(route, lang) {
 
     var piers = route.piers;
     piers.forEach(function(pier) {
+        console.log(pier);
         pier.class = pier.type == 1? "mainpier": "";
         pier.specifier = pier.type == 1 && pier.mun.name != pier.name ? "(" + pier.mun.name  + ")": "";
         pier.link = "#" + pier.id;
@@ -1913,15 +1898,12 @@ function routeInfo(route, lang) {
     info.pricelists = route.pricelists;
 
     contacts = contacts.map(function(contact) {
-        var items = [];
-        items = items.concat(getPhones(contact));
-        items = items.concat(getEmail(contact));
-        items = items.concat(getWww(contact));
-        items = items.concat(getFb(contact));
+
+        var contactItems = flatten([getPhones, getEmail, getWww, getFb].map(function(f) { return f(contact); }));
 
         return {
             name: contact.name,
-            items: items
+            items: contactItems
         };
     });
 
