@@ -1011,124 +1011,225 @@ Object.keys(piers).forEach(function(key) {
 console.log(piers);
 
 timetables = {
-    none: [],
-    foglolinjen: [
-        { validFrom: "2018-01-01", validTo: "2018-05-31", tables: ["FoglolinjenVinter2018_1.png", "FoglolinjenVinter2018_2.png"]},
-        { validFrom: "2018-06-01", validTo: "2018-08-31", tables: ["FoglolinjenSommar2018_1.png", "FoglolinjenSommar2018_2.png"]},
-        { validFrom: "2018-09-01", validTo: "2018-12-31", tables: ["FoglolinjenVinter2018_1.png", "FoglolinjenVinter2018_2.png"]}
-    ],
-    norralinjen: [
-        { validFrom: "2018-01-03", validTo: "2018-04-29", tables: ["NorraVinter2018_1.png", "NorraVinter2018_2.png", "NorraVinter2018_3.png"]},
-        { validFrom: "2018-04-30", validTo: "2018-06-17", tables: ["NorraVar2018_1.png", "NorraVar2018_2.png", "NorraVar2018_3.png"]},
-        { validFrom: "2018-06-18", validTo: "2018-08-12", tables: ["NorraSommar2018_1.png", "NorraSommar2018_2.png"]},
-        { validFrom: "2018-08-13", validTo: "2018-09-30", tables: ["NorraVar2018_1.png", "NorraVar2018_2.png", "NorraVar2018_3.png"]},
-        { validFrom: "2018-10-01", validTo: "2018-12-31", tables: ["NorraVinter2018_1.png", "NorraVinter2018_2.png", "NorraVinter2018_3.png"]},
-    ],  
-    enklingelinjen: [
-        { validFrom: "2018-01-01", validTo: "2018-04-29", tables: ["EnklingeVinter2018.png"]},
-        { validFrom: "2018-04-30", validTo: "2018-06-17", tables: ["EnklingeVar2018.png"]},
-        { validFrom: "2018-06-18", validTo: "2018-08-12", tables: ["EnklingeSommar2018.png"]},
-        { validFrom: "2018-08-13", validTo: "2018-09-30", tables: ["EnklingeVar2018.png"]},
-        { validFrom: "2018-10-01", validTo: "2018-12-31", tables: ["EnklingeVinter2018.png"]},
-    ],
-    asterholmalinjen: [
-        { validFrom: "2018-01-01", validTo: "2018-04-29", tables: ["FridaVinter2018_1.png", "FridaVinter2018_2.png", "FridaVinter2018_3.png"]},
-        { validFrom: "2018-04-30", validTo: "2018-06-17", tables: ["FridaVar2018_1.png", "FridaVar2018_2.png", "FridaVar2018_3.png"]},
-        { validFrom: "2018-06-18", validTo: "2018-08-12", tables: ["FridaSommar2018_1.png", "FridaSommar2018_2.png", "FridaSommar2018_3.png"]},
-        { validFrom: "2018-08-13", validTo: "2018-09-30", tables: ["FridaVar2018_1.png", "FridaVar2018_2.png"]},
-        { validFrom: "2018-10-01", validTo: "2018-12-31", tables: ["FridaVinter2018_1.png", "FridaVinter2018_2.png", "FridaVinter2018_3.png"]},
-    ],
-    avajurmo: [
-        { validFrom: "2018-01-01", validTo: "2018-04-29", tables: ["DoppingenVinter2018_1.png", "DoppingenVinter2018_2.png", "DoppingenVinter2018_3.png"]},
-        { validFrom: "2018-04-30", validTo: "2018-06-17", tables: ["DoppingenVar2018_1.png", "DoppingenVar2018_2.png", "DoppingenVar2018_3.png"]},
-        { validFrom: "2018-06-18", validTo: "2018-08-12", tables: ["DoppingenSommar2018_1.png", "DoppingenSommar2018_2.png", "DoppingenSommar2018_3.png"]},
-        { validFrom: "2018-08-13", validTo: "2018-09-30", tables: ["DoppingenVar2018_1.png", "DoppingenVar2018_2.png"]},
-        { validFrom: "2018-10-01", validTo: "2018-12-31", tables: ["DoppingenVinter2018_1.png", "DoppingenVinter2018_2.png", "DoppingenVinter2018_3.png"]},
-    ],  
-    osnasava: [
-        { validFrom: "2018-01-01", validTo: "2018-04-29", tables: ["ViggenVinter2018_1.png", "ViggenVinter2018_2.png", "ViggenVinter2018_3.png"]},
-        { validFrom: "2018-04-30", validTo: "2018-06-17", tables: ["ViggenVar2018_1.png", "ViggenVar2018_2.png"]},
-        { validFrom: "2018-06-18", validTo: "2018-08-12", tables: ["ViggenSommar2018_1.png", "ViggenSommar2018_2.png"]},
-        { validFrom: "2018-08-13", validTo: "2018-09-30", tables: ["ViggenVar2018_1.png"]},
-        { validFrom: "2018-10-01", validTo: "2018-12-31", tables: ["ViggenVinter2018_1.png", "ViggenVinter2018_2.png", "ViggenVinter2018_3.png"]},
-    ],
-    sodralinjen: [
-        { validFrom: "2018-01-03", validTo: "2018-04-29", tables: ["SodraVinter2018_1.png", "SodraVinter2018_2.png"]},
-        { validFrom: "2018-04-30", validTo: "2018-06-17", tables: ["SodraVar2018_1.png", "SodraVar2018_2.png"]},
-        { validFrom: "2018-06-18", validTo: "2018-08-12", tables: ["SodraSommar2018_1.png", "SodraSommar2018_2.png", "SodraSommar2018_3.png", "SodraSommar2018_4.png", "SodraSommar2018_5.png", "SodraSommar2018_6.png"]},
-        { validFrom: "2018-08-13", validTo: "2018-09-30", tables: ["SodraVar2018_1.png", "SodraVar2018_2.png"]},
-        { validFrom: "2018-10-01", validTo: "2018-12-31", tables: ["SodraVinter2018_1.png", "SodraVinter2018_2.png"]},
-    ],  
-    tvarlinjen: [
-        { validFrom: "2018-01-03", validTo: "2018-04-29", tables: ["OdinVinter2018_1.png", "OdinVinter2018_2.png"]},
-        { validFrom: "2018-04-30", validTo: "2018-06-17", tables: ["OdinVar2018_1.png", "OdinVar2018_2.png"]},
-        { validFrom: "2018-06-18", validTo: "2018-08-12", tables: ["OdinSommar2018_1.png", "OdinSommar2018_2.png", "OdinSommar2018_3.png"]},
-        { validFrom: "2018-08-13", validTo: "2018-09-30", tables: ["OdinVar2018_1.png", "OdinVar2018_2.png"]},
-        { validFrom: "2018-10-01", validTo: "2018-12-31", tables: ["OdinVinter2018_1.png", "OdinVinter2018_2.png"]},
-    ],  
-
-    iniokustavi: [
-        { validFrom: "2018-01-01", validTo: "2018-06-18", tables: ["AuraVinter2018.png"]},
-        { validFrom: "2018-06-19", validTo: "2018-08-14", tables: ["AuraSommar2018.png"]},
-        { validFrom: "2018-08-15", validTo: "2018-12-31", tables: ["AuraVinter2018.png"]},
-    ],
-    houtskarinio: [
-        { validFrom: "2018-05-25", validTo: "2018-08-26", tables: ["AntoniaSommar2018.png"]},
-    ],
-    nauvohanka: [
-        { validFrom: "2018-05-18", validTo: "2018-09-02", tables: ["Ostern2018_fisv.png"], tables_en: ["Ostern2018_ende.png"]},
-    ],
-    kasnashitis: [
-        { validFrom: "2018-01-01", validTo: "2018-12-31", tables: ["Aurora2018.png"]},
-    ],
-
-    velkuanreitti: [
-        { validFrom: "2017-09-01", validTo: "2018-05-31", tables: ["KivimoVinter2018_1.png", "KivimoVinter2018_2.png"]}
-    ],
-    rymattylanreitti: [
-        { validFrom: "2017-09-04", validTo: "2018-06-03", tables: ["IslaVinter2018_1.png", "IslaVinter2018_2.png"]}
-    ],
-    houtskarrutt: { name: "Houtskarin reitti", name_sv: "Houtskär rutt", name_en: "Houtskär Route", specifier: "",
-        link: "http://www.ferryway.fi/7",
-        tables: 
-        [
-            { validFrom: "2017-10-01", validTo: "2018-04-15", tables: ["KarolinaVinter2018_1.png", "KarolinaVinter2018_2.png"]}
+    foglolinjen: {
+        link: "http://www.alandstrafiken.ax/fi/aikataulut",
+        link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+        link_en: "http://www.alandstrafiken.ax/en/timetables",
+        tables: [
+        { validFrom: "2018-01-01", validTo: "2018-05-31", images: ["FoglolinjenVinter2018_1.png", "FoglolinjenVinter2018_2.png"]},
+        { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["FoglolinjenSommar2018_1.png", "FoglolinjenSommar2018_2.png"]},
+        { validFrom: "2018-09-01", validTo: "2018-12-31", images: ["FoglolinjenVinter2018_1.png", "FoglolinjenVinter2018_2.png"]}
         ],
     },
-    iniorutt: { name: "Iniön lisäreitti", name_sv: "Iniö tilläggsrutt", name_en: "Iniö Additional Route", specifier: "",
+    norralinjen: {
+        link: "http://www.alandstrafiken.ax/fi/aikataulut",
+        link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+        link_en: "http://www.alandstrafiken.ax/en/timetables",
+        tables: [
+        { validFrom: "2018-01-03", validTo: "2018-04-29", images: ["NorraVinter2018_1.png", "NorraVinter2018_2.png", "NorraVinter2018_3.png"]},
+        { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["NorraVar2018_1.png", "NorraVar2018_2.png", "NorraVar2018_3.png"]},
+        { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["NorraSommar2018_1.png", "NorraSommar2018_2.png"]},
+        { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["NorraVar2018_1.png", "NorraVar2018_2.png", "NorraVar2018_3.png"]},
+        { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["NorraVinter2018_1.png", "NorraVinter2018_2.png", "NorraVinter2018_3.png"]},
+        ],
+    },
+    enklingelinjen: {
+        link: "http://www.alandstrafiken.ax/fi/aikataulut",
+        link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+        link_en: "http://www.alandstrafiken.ax/en/timetables",
+        tables: [
+        { validFrom: "2018-01-01", validTo: "2018-04-29", images: ["EnklingeVinter2018.png"]},
+        { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["EnklingeVar2018.png"]},
+        { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["EnklingeSommar2018.png"]},
+        { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["EnklingeVar2018.png"]},
+        { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["EnklingeVinter2018.png"]},
+        ],
+    },
+    asterholmalinjen: {
+        link: "http://www.alandstrafiken.ax/fi/aikataulut",
+        link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+        link_en: "http://www.alandstrafiken.ax/en/timetables",
+        tables: [
+        { validFrom: "2018-01-01", validTo: "2018-04-29", images: ["FridaVinter2018_1.png", "FridaVinter2018_2.png", "FridaVinter2018_3.png"]},
+        { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["FridaVar2018_1.png", "FridaVar2018_2.png", "FridaVar2018_3.png"]},
+        { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["FridaSommar2018_1.png", "FridaSommar2018_2.png", "FridaSommar2018_3.png"]},
+        { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["FridaVar2018_1.png", "FridaVar2018_2.png"]},
+        { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["FridaVinter2018_1.png", "FridaVinter2018_2.png", "FridaVinter2018_3.png"]},
+        ],
+    },
+    avajurmo: {
+        link: "http://www.alandstrafiken.ax/fi/aikataulut",
+        link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+        link_en: "http://www.alandstrafiken.ax/en/timetables",
+        tables: [
+        { validFrom: "2018-01-01", validTo: "2018-04-29", images: ["DoppingenVinter2018_1.png", "DoppingenVinter2018_2.png", "DoppingenVinter2018_3.png"]},
+        { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["DoppingenVar2018_1.png", "DoppingenVar2018_2.png", "DoppingenVar2018_3.png"]},
+        { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["DoppingenSommar2018_1.png", "DoppingenSommar2018_2.png", "DoppingenSommar2018_3.png"]},
+        { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["DoppingenVar2018_1.png", "DoppingenVar2018_2.png"]},
+        { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["DoppingenVinter2018_1.png", "DoppingenVinter2018_2.png", "DoppingenVinter2018_3.png"]},
+        ],
+    },
+    osnasava: {
+        link: "http://www.alandstrafiken.ax/fi/aikataulut",
+        link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+        link_en: "http://www.alandstrafiken.ax/en/timetables",
+        tables: [
+        { validFrom: "2018-01-01", validTo: "2018-04-29", images: ["ViggenVinter2018_1.png", "ViggenVinter2018_2.png", "ViggenVinter2018_3.png"]},
+        { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["ViggenVar2018_1.png", "ViggenVar2018_2.png"]},
+        { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["ViggenSommar2018_1.png", "ViggenSommar2018_2.png"]},
+        { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["ViggenVar2018_1.png"]},
+        { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["ViggenVinter2018_1.png", "ViggenVinter2018_2.png", "ViggenVinter2018_3.png"]},
+        ],
+    },
+    sodralinjen: {
+        link: "http://www.alandstrafiken.ax/fi/aikataulut",
+        link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+        link_en: "http://www.alandstrafiken.ax/en/timetables",
+        tables: [
+        { validFrom: "2018-01-03", validTo: "2018-04-29", images: ["SodraVinter2018_1.png", "SodraVinter2018_2.png"]},
+        { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["SodraVar2018_1.png", "SodraVar2018_2.png"]},
+        { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["SodraSommar2018_1.png", "SodraSommar2018_2.png", "SodraSommar2018_3.png", "SodraSommar2018_4.png", "SodraSommar2018_5.png", "SodraSommar2018_6.png"]},
+        { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["SodraVar2018_1.png", "SodraVar2018_2.png"]},
+        { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["SodraVinter2018_1.png", "SodraVinter2018_2.png"]},
+        ],
+    },
+    tvarlinjen: {
+        link: "http://www.alandstrafiken.ax/fi/aikataulut",
+        link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+        link_en: "http://www.alandstrafiken.ax/en/timetables",
+        tables: [
+        { validFrom: "2018-01-03", validTo: "2018-04-29", images: ["OdinVinter2018_1.png", "OdinVinter2018_2.png"]},
+        { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["OdinVar2018_1.png", "OdinVar2018_2.png"]},
+        { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["OdinSommar2018_1.png", "OdinSommar2018_2.png", "OdinSommar2018_3.png"]},
+        { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["OdinVar2018_1.png", "OdinVar2018_2.png"]},
+        { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["OdinVinter2018_1.png", "OdinVinter2018_2.png"]},
+        ],  
+    },
+    iniokustavi: {
+        link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html#timetables",
+        link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/inio-gustavs-aura.html#timetables",
+        link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/inio-kustavi-aura.html#timetables",
+        tables: [
+        { validFrom: "2018-01-01", validTo: "2018-06-18", images: ["AuraVinter2018.png"]},
+        { validFrom: "2018-06-19", validTo: "2018-08-14", images: ["AuraSommar2018.png"]},
+        { validFrom: "2018-08-15", validTo: "2018-12-31", images: ["AuraVinter2018.png"]},
+        ],
+    },
+    houtskarinio: {
+        link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saariston-rengastie-houtskari-inio.html#timetables",
+        link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/skargardens-ringvag-houtskar-inio.html#timetables",
+        link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/the-archipelago-houtskari-inio.html#timetables",
+        tables: [
+        { validFrom: "2018-05-25", validTo: "2018-08-26", images: ["AntoniaSommar2018.png"]},
+        ],
+    },
+
+    korpohoutskar: {
+        link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-houtskari.html#timetables",
+        link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/korpo-houtskar.html#timetables",
+        link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/korppoo-houtskari.html#timetables",
+    },
+    korponorrskata: {
+        link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-norrskata.html#timetables",
+        link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/korpo-norrskata.html#timetables",
+        link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/korppoo-norrskata.html#timetables",
+    },
+    nagukorpo: {
+        link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html#timetables",
+        link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-korpo.html#timetables",
+        link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-korppoo.html#timetables",
+    },
+    pargasnagu: {
+        link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html#timetables",
+        link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-nagu.html#timetables",
+        link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-nauvo.html#timetables",        
+    },
+    velkuataivassalo: {
+        link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
+        link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
+        link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
+    },
+
+
+    nauvohanka: {
+        link: "http://www.ostern.fi/aikataulu",
+        link_sv: "http://www.ostern.fi/aikataulu",
+        link_en: "http://www.ostern.fi/en/schedule-fahrplan",
+        tables: [
+        { validFrom: "2018-05-18", validTo: "2018-09-02", images: ["Ostern2018_fisv.png"], tables_en: ["Ostern2018_ende.png"]},
+        ],
+    },
+    kasnashitis: {
+        link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kasnas-hiittinen-aurora.html#timetables",
+        link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kasnas-hitis-aurora.html#timetables",
+        link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kasnas-hiittinen-aurora.html#timetables",
+        tables: [
+        { validFrom: "2018-01-01", validTo: "2018-12-31", images: ["Aurora2018.png"]},
+        ],
+    },
+    velkuanreitti: {
+        link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
+        link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
+        link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
+        tables: [
+        { validFrom: "2017-09-01", validTo: "2018-05-31", images: ["KivimoVinter2018_1.png", "KivimoVinter2018_2.png"]}
+        ],
+    },
+    rymattylanreitti: {
+        link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
+        tables: [
+        { validFrom: "2017-09-04", validTo: "2018-06-03", images: ["IslaVinter2018_1.png", "IslaVinter2018_2.png"]}
+        ],
+    },
+    houtskarrutt: {
+        name: "Houtskarin reitti", name_sv: "Houtskär rutt", name_en: "Houtskär Route", specifier: "",
+        link: "http://www.ferryway.fi/7",
+        tables: [
+        { validFrom: "2017-10-01", validTo: "2018-04-15", images: ["KarolinaVinter2018_1.png", "KarolinaVinter2018_2.png"]}
+        ],
+    },
+    iniorutt: {
+        name: "Iniön lisäreitti", name_sv: "Iniö tilläggsrutt", name_en: "Iniö Additional Route", specifier: "",
         link: "http://www.ferryway.fi/8",
-        tables: 
-        [
-            { validFrom: "2017-14-08", validTo: "2018-05-13", tables: ["SatavaVinter2018_1.png", "SatavaVinter2018_2.png"]}
+        tables: [
+        { validFrom: "2017-14-08", validTo: "2018-05-13", images: ["SatavaVinter2018_1.png", "SatavaVinter2018_2.png"]}
         ],
     },
     utorutt: { 
         link: "http://www.rosita.fi/",
         link_sv: "http://www.rosita.fi/Hemsida",
         link_en: "http://www.rosita.fi/Hemsida",
-        tables: 
-        [
-            { validFrom: "2017-08-08", validTo: "2018-05-31", tables: ["EivorVinter2018_1.png", "EivorVinter2018_2.png", "EivorVinter2018_3.png"]}
+        tables: [
+        { validFrom: "2017-08-08", validTo: "2018-05-31", images: ["EivorVinter2018_1.png", "EivorVinter2018_2.png", "EivorVinter2018_3.png"]}
         ],
     },
-    korporutt: [
-        { validFrom: "2017-09-01", validTo: "2018-05-31", tables: ["FiskoVinter2018_1.png", "FiskoVinter2018_2.png"]},
-    ],
-    nagunorra: [
-        { validFrom: "2017-10-02", validTo: "2018-05-17", tables: ["FalkoVinter2018.png"]}
-    ],
-    nagutvar: { 
+    korporutt: {
+        link: "http://skargardslinjer.fi/Korpo_ruttomrade",
+        link_fi: "http://www.saaristolinjat.fi/Korppoon_reittialue",
+        tables: [
+        { validFrom: "2017-09-01", validTo: "2018-05-31", images: ["FiskoVinter2018_1.png", "FiskoVinter2018_2.png"]},
+        ],
+    },
+    nagunorra: {
+        link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables",
+        link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-norra-rutt-falko.html#timetables",
+        link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
+        tables: [
+        { validFrom: "2017-10-02", validTo: "2018-05-17", images: ["FalkoVinter2018.png"]}
+        ],
+    },
+    nagutvar: {
         link: "https://www.ferryway.fi/5",
         tables: 
         [
-            { validFrom: "2017-11-01", validTo: "2018-03-31", tables: ["MyrskylintuVinter2018.png"]}
+        { validFrom: "2017-11-01", validTo: "2018-03-31", images: ["MyrskylintuVinter2018.png"]}
         ],
     },
     nagusodra: { 
         link: "https://www.ferryway.fi/6",
         tables: 
         [
-            { validFrom: "2017-11-01", validTo: "2018-03-31", tables: ["NordepVinter2018.png"]}
+        { validFrom: "2017-11-01", validTo: "2018-03-31", images: ["NordepVinter2018.png"]}
         ],
     },
     hitisstella: {
@@ -1136,7 +1237,7 @@ timetables = {
         link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
         tables: 
         [
-            { validFrom: "2017-08-14", validTo: "2018-06-04", tables: ["StellaVinter2018_1.png", "StellaVinter2018_2.png"]}
+        { validFrom: "2017-08-14", validTo: "2018-06-04", images: ["StellaVinter2018_1.png", "StellaVinter2018_2.png"]}
         ],
     },
     hitisalva: { 
@@ -1144,26 +1245,26 @@ timetables = {
         link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
         tables: 
         [
-            { validFrom: "2017-08-14", validTo: null, tables: ["AlvaHost2017.png"]}
+        { validFrom: "2017-08-14", validTo: null, images: ["AlvaHost2017.png"]}
         ],
     },
     pargasrutt: {
-        
+
         link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/paraisten-reittialue-viken.html#timetables",
         link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-ruttomrade-viken.html#timetables",
         link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-route-viken.html#timetables",
         tables: [
-        { validFrom: "2017-11-01", validTo: "2018-03-31", tables: ["VikenVinter2018_1.png", "VikenVinter2018_2.png"]}
-        ],
-    },
+        { validFrom: "2017-11-01", validTo: "2018-03-31", images: ["VikenVinter2018_1.png", "VikenVinter2018_2.png"]}
+        ]
+    }
 
-}
+};
 
 pricelists = {
     alandstrafiken: [
         { validFrom: "2018-01-01", validTo: "2018-12-31", lists: ["AlandstrafikenPricelist2018_1.png", "AlandstrafikenPricelist2018_2.png"]}
     ]
-}
+};
 
 routes = {
     foglolinjen: {
@@ -1181,9 +1282,6 @@ routes = {
             duration_L: ["duration.minutes", "35"]
         },
         timetables: "foglolinjen",
-        timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
-        timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
-        timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
         pricelists: "alandstrafiken"
     },
     norralinjen: {
@@ -1200,9 +1298,6 @@ routes = {
             duration_L: ["duration.hours", "2.5"],
         },
         timetables: "norralinjen",
-        timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
-        timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
-        timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
         pricelists: "alandstrafiken"
     },
     enklingelinjen: {
@@ -1219,9 +1314,6 @@ routes = {
             duration_L: ["duration.minutes", "15"]
         },
         timetables: "enklingelinjen",
-        timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
-        timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
-        timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
         pricelists: "alandstrafiken"
     },
     asterholmalinjen: {
@@ -1238,9 +1330,6 @@ routes = {
             duration_L: ["duration.minutes", "35"]
         },
         timetables: "asterholmalinjen",
-        timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
-        timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
-        timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
         pricelists: "alandstrafiken"
     },
     avajurmo: {
@@ -1257,9 +1346,6 @@ routes = {
             duration_L: ["duration.minutes", "10"]
         },
         timetables: "avajurmo",
-        timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
-        timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
-        timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
         pricelists: "alandstrafiken"
     },
     osnasava: {
@@ -1277,9 +1363,6 @@ routes = {
             duration_L: ["duration.minutes", "40"]
         },
         timetables: "osnasava",
-        timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
-        timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
-        timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
         pricelists: "alandstrafiken"
     },
     sodralinjen: {
@@ -1298,9 +1381,6 @@ routes = {
             duration_sv: "Långnäs - Kökar 2,5&nbsp;timmar, Kökar - Galtby 2,5&nbsp;timmar",
         },
         timetables: "sodralinjen",
-        timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
-        timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
-        timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
         pricelists: "alandstrafiken"
     },
     tvarlinjen: {
@@ -1325,9 +1405,6 @@ routes = {
             }
         ],
         timetables: "tvarlinjen",
-        timetableslink: "http://www.alandstrafiken.ax/fi/aikataulut",
-        timetableslink_sv: "http://www.alandstrafiken.ax/sv/turlistor",
-        timetableslink_en: "http://www.alandstrafiken.ax/en/timetables",
         pricelists: "alandstrafiken"
     },
 
@@ -1343,9 +1420,6 @@ routes = {
             duration_L: ["duration.minutes", "25"],
         },
         timetables: "iniokustavi",
-        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html#timetables",
-        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/inio-gustavs-aura.html#timetables",
-        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/inio-kustavi-aura.html#timetables",
     },
 
     houtskarinio: {
@@ -1362,9 +1436,6 @@ routes = {
             cost_L: "cost.applies",
         },
         timetables: "houtskarinio",
-        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saariston-rengastie-houtskari-inio.html#timetables",
-        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/skargardens-ringvag-houtskar-inio.html#timetables",
-        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/the-archipelago-houtskari-inio.html#timetables",
     },
 
     korpohoutskar: {
@@ -1380,10 +1451,7 @@ routes = {
             duration_L: ["duration.minutes", "35"],
         },
 
-        timetables: null,
-        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-houtskari.html#timetables",
-        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/korpo-houtskar.html#timetables",
-        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/korppoo-houtskari.html#timetables",
+        timetables: "korpohoutskar",
     },
 
     korponorrskata: {
@@ -1399,10 +1467,7 @@ routes = {
             duration_L: ["duration.minutes", "15"],
         },
 
-        timetables: null,
-        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-norrskata.html#timetables",
-        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/korpo-norrskata.html#timetables",
-        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/korppoo-norrskata.html#timetables",
+        timetables: "korponorrskata",
     },
 
     nagukorpo: {
@@ -1417,10 +1482,7 @@ routes = {
             duration_L: ["duration.minutes", "5"],
         },
 
-        timetables: null,
-        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html#timetables",
-        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-korpo.html#timetables",
-        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-korppoo.html#timetables",
+        timetables: "nagukorpo",
     },
 
     pargasnagu: {
@@ -1435,10 +1497,7 @@ routes = {
             duration_L: ["duration.minutes", "10"],
         },
 
-        timetables: null,
-        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html#timetables",
-        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-nagu.html#timetables",
-        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-nauvo.html#timetables",
+        timetables: "pargasnagu",
     },
 
     nauvohanka: {
@@ -1456,11 +1515,7 @@ routes = {
             cost_L: "cost.applies",
         },
         timetables: "nauvohanka",
-        timetableslink: "http://www.ostern.fi/aikataulu",
-        timetableslink_sv: "http://www.ostern.fi/aikataulu",
-        timetableslink_en: "http://www.ostern.fi/en/schedule-fahrplan",
     },
-
     velkuataivassalo: {
         name: "Velkuan reitti",
         name_sv: "Velkua rutt",
@@ -1479,10 +1534,7 @@ routes = {
             limit_L: "limit.cars_mc_bikes_only"
         },
 
-        timetables: null,
-        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
-        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
-        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
+        timetables: "velkuataivassalo",
     },
 
     kasnashitis: {
@@ -1497,9 +1549,6 @@ routes = {
             duration_L: ["duration.minutes", "25"],
         },
         timetables: "kasnashitis",
-        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kasnas-hiittinen-aurora.html#timetables",
-        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kasnas-hitis-aurora.html#timetables",
-        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kasnas-hiittinen-aurora.html#timetables",
     },
     velkuanreitti: {
         name: "Velkuan reitti",
@@ -1519,9 +1568,6 @@ routes = {
             seealso: "#velkuataivassalo"
         },
         timetables: "velkuanreitti",
-        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
-        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
-        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
     },
     rymattylanreitti: {
         name: "Rymättylän reitti",
@@ -1539,7 +1585,6 @@ routes = {
             duration_en: "Haapala-Pakinainen 40 minutes",
         },
         timetables: "rymattylanreitti",
-        timetableslink: "https://kuljetus-savolainen.fi/yhteysalusliikenne/"
     },
     korporutt: {
         name: "Korppoon reitti",
@@ -1557,8 +1602,6 @@ routes = {
             duration_en: "Haapala-Pakinainen 40 minutes",
         },
         timetables: "korporutt",
-        timetableslink: "http://skargardslinjer.fi/Korpo_ruttomrade",
-        timetableslink_fi: "http://www.saaristolinjat.fi/Korppoon_reittialue"
     },
     houtskarrutt: {
         name: "Houtskarin reitti ja Iniön lisäreitti",
@@ -1617,9 +1660,6 @@ routes = {
             }
         ],
         timetables: "nagunorra",
-        timetableslink: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables",
-        timetableslink_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-norra-rutt-falko.html#timetables",
-        timetableslink_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
     },
 
     nagutvar: {
@@ -1706,19 +1746,11 @@ Object.keys(routes).forEach(function(key) {
     route.operator = operators[route.operator];
     route.pricelists = pricelists[route.pricelists];
 
-    if (route.timetables && !Array.isArray(route.timetables)) route.timetables = [route.timetables];
+    if (!Array.isArray(route.timetables)) route.timetables = [route.timetables];
 
-    if (route.timetables) route.timetables = route.timetables.map(function(timetable) {
-
-        timetable = timetables[timetable];
-
-        // Backward compatibility
-        if (Array.isArray(timetable) && timetable.length > 0 && timetable[0].validFrom) timetable = {link: route.timetableslink, name: route.name, specifier: route.specifier, tables: timetable};
-
-        return timetable;
+    route.timetables = route.timetables.map(function(timetable) {
+        return timetables[timetable];
     });
-
-    if (!route.timetables) route.timetables = [{ link: route.timetableslink }];
 
 });
 
@@ -1861,22 +1893,22 @@ function routeInfo(route, lang) {
     var index = 0;
     timetables.forEach(function(timetable) {
         timetable.buttonspecifier = timetables.length > 1? timetable.name? timetable.name: timetable.specifier: "";
-        timetable.name1 = timetable.name;
+        timetable.name = timetable.name? timetable.name: route.name;
+        timetable.specifier= timetable.specifier? timetable.specifier: route.specifier;
         timetable.index = index++;
+        timetable.exttimetables = timetable.tables? false: "external";
         var first = true;
         var id = 1;
         if (timetable.tables) timetable.tables.forEach(function(table) {
             table.dates = renderDates(table.validFrom, table.validTo, lang);
             table.active = first? "active": "";
             table.show = first? "show": "";
-            table.tabid = "tab" + id;
-            id++;
+            table.tabid = "tab" + id++;
             first = false;
         });
     });
 
     info.timetables = timetables;
-    info.exttimetables = timetables.tables? false: "external";
     
     info.pricelists = route.pricelists;
 

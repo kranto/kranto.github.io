@@ -1,6 +1,6 @@
 
 
-var route="korponorrskata";
+var route="houtskarrutt";
 var lang="fi";
 
 $(document).ready(function(){
