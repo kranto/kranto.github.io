@@ -3,6 +3,15 @@ $(document).ready(function(){
     $('#wrapper2').bind('scroll',toggleScrollIndicator); 
 });
 
+
+$(document).ready(function(){
+
+  $("#infopage").load("templates/infopage.html #infopagecontent", initInfoPage);
+  $("#menu").load("templates/menucontent.html #menucontent", initMenu);
+  $("#settings").load("templates/settingscontent.html #settingscontent", initSettings);
+
+});
+
 var scrollLimit = 22;
 
 function toggleScrollIndicator()
@@ -82,39 +91,68 @@ function cancelHeaderBarToggle() {
   headerBarTimeout = null;
 }
 
-$(".mapTypeSelect").bind('change', function() {
-  newValue = this.options[this.selectedIndex].value;
-  map.setMapTypeId(newValue);
-});
+function initInfoPage() {
+  $('#closeInfoPageButton').click(function() {
+    $('#infopage').fadeOut();
+    select(wasSelected);
+  });
 
-$('#setMapTypeMap').click(function() {
-  map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
-});
+  showLanguage(currentLang);
+}
 
-$('#setMapTypeSatellite').click(function() {
-  map.setMapTypeId('MMLTAUSTA'); //google.maps.MapTypeId.HYBRID);
-});
+function initMenu() {
+  console.log('initMenu');
 
-$('#resetViewButton').click(function() {
-  google.maps.event.addListenerOnce(map, 'idle', onMapIdle);
-  hideSettings();
-  resetMap();
-});
+  $('.box').click(function(event) {
+    console.log('click');
+    $('#infopage').fadeIn();
+    $(".infosection").hide();
+    $(this.getAttribute("data-target")) .show();
+    hideMenu();
+    wasSelected = selected.slice();
+    unselectAll();
+  });
+
+  showLanguage(currentLang);
+}
+
+function initSettings() {
+  $(".mapTypeSelect").bind('change', function() {
+    newValue = this.options[this.selectedIndex].value;
+    map.setMapTypeId(newValue);
+  });
+
+  $("#toggleFullscreen").click(toggleFullscreen);
+
+  for (var key in layers) {
+    $("input[type=checkbox][data-target=" +  key +"]").prop("checked", layers[key]);
+  }
+
+  $(".boxs input[type=checkbox]:not([data-target])").prop("disabled", true);
+
+  $("input[type=checkbox]").change(function() {
+    var layer = this.getAttribute("data-target");
+    layers[layer] = this.checked; 
+    localStorage.setItem("layers", JSON.stringify(layers));
+    rerender(map, true);
+  });
+
+  $(".lang-button[setlang=" + currentLang +"]").toggleClass('active', true);
+  $('.lang-button').click(function(event) {
+    setLanguage(event.currentTarget.getAttribute("setlang"));
+  });
+
+  $("#showLive").click(function() {
+    var liveMapUri =  "live.html?lng=" + map.getCenter().lng() + "&lat=" + map.getCenter().lat() + "&zoom=" + map.getZoom();
+    window.open(liveMapUri, "livemap");
+    $('.navbar-toggle').click();
+  });
+
+  showLanguage(currentLang);
+}
+
 
 var wasSelected = [];
-$('.box').click(function(event) {
-  $('#infopage').fadeIn();
-  $(".infosection").hide();
-  $(this.getAttribute("data-target")) .show();
-  hideMenu();
-  wasSelected = selected.slice();
-  unselectAll();
-});
-
-$('#closeInfoPageButton').click(function() {
-  $('#infopage').fadeOut();
-  select(wasSelected);
-});
 
 $('#closeInfoButton').click(function() {
   unselectAll();
@@ -136,10 +174,6 @@ function showLanguage(lang) {
       $(this).hide();
   })
 }
-
-$('.lang-button').click(function(event) {
-  setLanguage(event.currentTarget.getAttribute("setlang"));
-});
 
 var currentLang;
 
@@ -266,6 +300,35 @@ function onlyUnique(value, index, self) {
 }
 
 function setInfoContent(targets) {
+
+  var route = "houtskarrutt";
+
+  var template = document.getElementById('infocontenttemplate').innerHTML;
+  var data = routeInfo(fdata.routes[route], currentLang);
+  var output = Mustache.render(template, data);
+
+  $(".info").html(output);
+
+  $(".timetablebutton").click(function() {
+    if (this.getAttribute("linktype") === "external") {
+      window.open(this.getAttribute("href"), "info");
+    } else {
+      var index = parseInt(this.getAttribute("index"))
+      var tttemplate = document.getElementById('timetabletemplate').innerHTML;
+      data.selectedtimetable = data.timetables[index];
+      data.selectedtimetable.L = data.L;
+      var ttoutput = Mustache.render(tttemplate, data.selectedtimetable);
+      $("#timetabledialog").html(ttoutput);
+      $("#timetableModal").modal({backdrop: true});
+    }
+  });
+
+  $('#closeInfoButton').click(function() {
+    unselectAll();
+  });
+
+  $("#wrapper2").toggleClass("info-open", true);
+
   $(".infocontent:last #selectedTitle").html(targets.map(function(target) { return target.name; }).filter(onlyUnique).join('<br>'));
   $(".infocontent:last #selectedDescription").html(targets.map(function(target) { return (target.description? target.description: ' ') + (target.timetable? '<img class="timetable" src="' + target.timetable + '"/>': ''); }).map(function(desc) {
     return "<p>" + desc + "</p>";
@@ -304,9 +367,7 @@ function select(targets, mouseEvent) {
     var clientY = mouseEvent? latLng2Point(mouseEvent.latLng, map).y: 0;
     if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
     $(function() { 
-      $("#info").show();
-      $("#mapcontainer").animate({height: '80%'});
-      $("#info").animate({top: '80%'}, toggleScrollIndicator);
+//      $("#info").show();
     });
   } else { // swap content of #info
     
@@ -359,12 +420,11 @@ function latLng2Point(latLng, map) {
 }
 
 function unselectAll() {
+  $("#wrapper2").toggleClass("info-open", false);
   if (selected.length == 0) return;
   $(function() { 
-    $("#mapcontainer").animate({height: '100%'}, 100, function() {
-      selected.forEach(function(target) { target.highlight(false); });
-      selected = [];
-    });
+    selected.forEach(function(target) { target.highlight(false); });
+    selected = [];
     var scrolled = $("#wrapper")[0].scrollTop;
     $("#wrapper").animate({scrollTop: 0}, scrolled*2, function() {
       $("#info").animate({top: '100%'}, 100, function() {
@@ -414,8 +474,6 @@ function fullscreenchange(event) {
 document.onfullscreenchange = fullscreenchange;
 document.onwebkitfullscreenchange = fullscreenchange;
 
-$("#toggleFullscreen").click(toggleFullscreen);
-
 var localStorgageLayers = localStorage.getItem("layers");
 
 var layers = localStorgageLayers? JSON.parse(localStorgageLayers): {
@@ -427,36 +485,6 @@ var layers = localStorgageLayers? JSON.parse(localStorgageLayers): {
 };
 
 localStorage.setItem("layers", JSON.stringify(layers));
-
-for (var key in layers) {
-  $(".layercheckbox[data-target=" +  key +"]").toggleClass("active", layers[key]);
-  $("input[type=checkbox][data-target=" +  key +"]").prop("checked", layers[key]);
-}
-
-$(".layercheckbox:not([data-target])").prop("disabled", true);
-
-$(".boxs input[type=checkbox]:not([data-target])").prop("disabled", true);
-
-$(".layercheckbox").click(function() {
-  var layer = this.getAttribute("data-target");
-  layers[layer] = !layers[layer];
-  $(this).toggleClass("active", layers[layer]);
-  localStorage.setItem("layers", JSON.stringify(layers));
-  rerender(map, true);
-});
-
-$("input[type=checkbox]").change(function() {
-  var layer = this.getAttribute("data-target");
-  layers[layer] = this.checked; 
-  localStorage.setItem("layers", JSON.stringify(layers));
-  rerender(map, true);
-});
-
-$("#showLive").click(function() {
-  var liveMapUri =  "live.html?lng=" + map.getCenter().lng() + "&lat=" + map.getCenter().lat() + "&zoom=" + map.getZoom();
-  window.open(liveMapUri, "livemap");
-  $('.navbar-toggle').click();
-});
 
 var map;
 var tooltip;
@@ -1095,6 +1123,14 @@ function renderData(data, map) {
   });
 }
 
+function receiveFData(fdata, fgeojson, messages) {
+  console.log(fdata);
+  fgeojson.forEach(function(data) {
+    renderData(data, map);
+  });
+  console.log(messages);
+}
+
 var mapOptions = {
   center: {lat: 60.25, lng: 21.25},
   zoom: 9,
@@ -1136,21 +1172,7 @@ function initMap() {
   updateMapStyles();
   map.addListener('zoom_changed', updateMapStyles);
 
-  var loaded = 0;
-  $.get('/data/saaristo.json', function(data) {
-    renderData(data, map);
-    if (++loaded >= 3) rerender(map, true);
-  });
-
-  $.get('/data/roads.json', function(data) {
-    renderData(data, map);
-    if (++loaded >= 3) rerender(map, true);
-  });
-
-  $.get('/data/routes.json', function(data) {
-    renderData(data, map);
-    if (++loaded >= 3) rerender(map, true);
-  });
+  getFData(receiveFData);
 
   var oldZoom = map.getZoom();
   map.addListener('zoom_changed', function() {

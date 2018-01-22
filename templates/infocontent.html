@@ -56,7 +56,20 @@
 		</div>
 		<div class="spaceabove"><h4>{{#L}}contactinfo{{/L}}</h4></div>
 
-		<div id="contactslist" class=""></div>
+		<div id="contactslist" class="">
+			<div class="contactsbox">
+				{{ #contacts }}
+				<div class="contactformheader">
+					{{ name }}
+				</div>
+				{{ #items }}
+				<a href="{{uri}}" target="{{ target }}">
+					<button type="button" class="btn btn-outline-primary contactbutton {{class}}">{{ text }}{{ specifier }}</button>
+				</a>
+				{{ /items }}
+				{{ /contacts }}
+			</div>
+		</div>
 
 	</div>
 </div>

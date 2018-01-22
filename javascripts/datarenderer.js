@@ -1,0 +1,174 @@
+function sanitizePhone(num) {
+    return num.replace(/\(.*\)/g, "").replace(/[-]/g, " ");
+}
+
+function phoneUri(num) {
+    return "tel:" + num.replace(/\(.*\)/g, "").replace(/[ -]/g, "");
+}
+
+function getPhones(item) {
+    if (item.phones) {
+        var phones = Array.isArray(item.phones)? item.phones: [item.phones];
+        return phones.map(function(phone) {
+            if (typeof phone === 'object') {
+                return { class: "phone", specifier: " - " + phone.name, text: sanitizePhone(phone.tel), uri: phoneUri(phone.tel) };
+            } else {
+                return { class: "phone", specifier: "", text: sanitizePhone(phone), uri: phoneUri(phone) };
+            }
+        });
+    } else {
+        return [];
+    }
+}
+
+function getLocalizedItem(item, lang) {
+    
+    if (!(item instanceof Object)) {
+        if (typeof item === 'string' && item.startsWith("ref_")) {
+            console.log(item);
+            var parts = item.split("_");
+            var sub = ferrydata[parts[1]][parts[2]];
+            sub.id = parts[2];
+            return getLocalizedItem(deepCopy(sub), lang);
+        } else {
+            return item;
+        }
+    }
+
+    if (item instanceof Array) {
+        return item.map(function(i) { return getLocalizedItem(i, lang); });
+    }
+
+    var result = {}
+    for (let key of Object.keys(item)) {
+        if (key.endsWith("_L")) {
+            var key1 = key.substring(0, key.length - 2);
+            result[key1] = L(lang, item[key]);
+        } else if (key.endsWith("_" + lang)) {
+            var key1 = key.substring(0, key.length - 3);
+            result[key1] = item[key];
+        } else if (!/_..$/.test(key) && !result[key]) {
+            result[key] = getLocalizedItem(item[key], lang);
+        }
+    }
+    return result;
+}
+
+function getWww(item) {
+    return item.www? [{ class: "www", text: item.www.replace(/^http(s?):\/\//,"").replace(/\/$/, ""), specifier: "", uri: item.www, target: "info"}]: [];
+}
+
+function getEmail(item) {
+    return item.email? [{ class: "email", text: item.email, specifier: "", uri: "mailto:" + item.email}]: [];
+}
+
+function getFb(item) {
+    console.log(item);
+    return item.fb? [{ class: "facebook", text: item.name,  specifier: "", uri: item.fb, target:"facebook" }]: [];
+}
+
+function deepCopy(object) {
+    return JSON.parse(JSON.stringify(object));
+}
+
+function renderDate(date, lang) {
+    if (!date) return "";
+    var parts = date.split("-");
+    // var currentYear = new Date().getFullYear();
+    return parts[2]+"."+parts[1]+"."; //+(parts[0] != currentYear? parts[0]: "");
+}
+
+function renderDates(fromD, toD, lang) {
+    return renderDate(fromD, lang) + " - " + renderDate(toD, lang);
+}
+
+function flatten(array) {
+    return array.reduce(function(a, b) { return a.concat(b); }, []);
+}
+
+function routeInfo(route, lang) {
+    route = getLocalizedItem(deepCopy(route), lang);
+    var info = {};
+    var contacts = [];
+    info.name = route.name;
+    info.specifier = route.specifier? route.specifier: "";
+    
+    info.vessels = route.vessels;
+    info.vessels.forEach(function(vessel) {
+        vessel.contact.name = vessel.name;
+        contacts.push(vessel.contact);
+        var features = [];
+        if (vessel.capacity.cars) features.push({icon: "car", value: vessel.capacity.cars});
+        if (vessel.capacity.persons) features.push({icon: "user", value: vessel.capacity.persons});
+        if (vessel.features.cafe) features.push({icon: "coffee"});
+        if (vessel.features.access) features.push({icon: "wheelchair"});
+        vessel.features = features;
+    });
+
+    info.features =
+    ["interval", "duration", "order", "booking", "cost", "seasonal", "limit", "seealso"]
+        .filter(function(type) { return route.features[type]; })
+        .map(function(type) { return { class: type, value: route.features[type]}; });
+
+    var piers = route.piers;
+    piers.forEach(function(pier) {
+        console.log(pier);
+        pier.class = pier.type == 1? "mainpier": "";
+        pier.specifier = pier.type == 1 && pier.mun.name != pier.name ? "(" + pier.mun.name  + ")": "";
+        pier.link = "#" + pier.id;
+    });
+    piers[piers.length - 1].last = true;
+    info.piers = piers;
+
+    info.notes = route.notes;
+
+    info.operator = route.operator;
+    info.operator.contact.name = info.operator.name;
+    contacts.push(info.operator.contact);
+
+    var timetables = route.timetables;
+
+    var index = 0;
+    timetables.forEach(function(timetable) {
+        timetable.buttonspecifier = timetables.length > 1? timetable.name? timetable.name: timetable.specifier: "";
+        timetable.name = timetable.name? timetable.name: route.name;
+        timetable.specifier= timetable.specifier? timetable.specifier: route.specifier;
+        timetable.index = index++;
+        timetable.exttimetables = timetable.tables? false: "external";
+        var first = true;
+        var id = 1;
+        if (timetable.tables) timetable.tables.forEach(function(table) {
+            table.dates = renderDates(table.validFrom, table.validTo, lang);
+            table.active = first? "active": "";
+            table.show = first? "show": "";
+            table.tabid = "tab" + id++;
+            first = false;
+        });
+    });
+
+    info.timetables = timetables;
+    
+    info.pricelists = route.pricelists;
+
+    contacts = contacts.map(function(contact) {
+
+        var contactItems = flatten([getPhones, getEmail, getWww, getFb].map(function(f) { return f(contact); }));
+
+        return {
+            name: contact.name,
+            items: contactItems
+        };
+    });
+
+    info.contacts = contacts;
+
+    info.L = function () {
+        return function(val, render) {
+            return L(lang, render(val));
+        };
+    }
+
+    console.log(info);
+    
+    return info;
+}

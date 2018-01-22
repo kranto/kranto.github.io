@@ -24,14 +24,12 @@
 				{{ #tables }}
 				<div class="tab-pane fade {{show}} {{active}}" id="{{tabid}}" role="tabpanel">
 					{{ #images }}
-					<div>
-						<div class="timetablelink">
-							<a href="timetables/{{.}}" target="timetable">
-								<div>
-									<img class="timetable" src="timetables/{{.}}"/>
-								</div>
-							</a>
-						</div>
+					<div class="timetablelink">
+						<a href="timetables/{{.}}" target="timetable">
+							<div>
+								<img class="timetable" src="timetables/{{.}}"/>
+							</div>
+						</a>
 					</div>
 					{{ /images }}
 					<div class="alert alert-info center">
