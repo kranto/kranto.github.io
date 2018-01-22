@@ -817,10 +817,11 @@ div#wrapper2 {
   }
 
   @media screen and (min-width: 768px) {
+/*
     #wrapper2.info-open #mapcontainer {
       left: 400px;
     }
-
+*/
     #wrapper2.info-open .info {
       top: 50px;
       bottom: 0px;

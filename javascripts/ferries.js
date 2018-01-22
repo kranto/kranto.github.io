@@ -327,7 +327,21 @@ function setInfoContent(targets) {
     unselectAll();
   });
 
-  $("#wrapper2").toggleClass("info-open", true);
+  $(function() {
+    $("#wrapper2").toggleClass("info-open", true);
+    if ($("body").outerWidth() >= 768) {
+      $(".info").css({left: -300});
+      $(".info").animate({left: 0}, 'fast', function() {$(".info").css({left: "" }); });
+      // $("#mapcontainer").css({left: -100});
+      // $("#mapcontainer").animate({left: 400}, 'fast', function() {$("#mapcontainer").css({left: ""}); });
+    } else {
+      $(".info").css({top: '100%'});
+      $(".info").animate({top: '80%'}, 'fast', function() {$(".info").css({top: "" }); });
+      $("#mapcontainer").css({height: '100%'});
+      $("#mapcontainer").animate({height: '80%'}, 'fast', function() {$("#mapcontainer").css({height: ""});});
+    }
+  });
+
 
   $(".infocontent:last #selectedTitle").html(targets.map(function(target) { return target.name; }).filter(onlyUnique).join('<br>'));
   $(".infocontent:last #selectedDescription").html(targets.map(function(target) { return (target.description? target.description: ' ') + (target.timetable? '<img class="timetable" src="' + target.timetable + '"/>': ''); }).map(function(desc) {
