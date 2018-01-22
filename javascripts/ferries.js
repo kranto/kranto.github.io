@@ -312,6 +312,7 @@ function setInfoContent(targets) {
   var data = routeInfo(fdata.routes[route], currentLang);
   var output = Mustache.render(template, data);
 
+  $(".info").scrollTop(0);
   $(".info").html(output);
 
   $(".timetablebutton").click(function() {
