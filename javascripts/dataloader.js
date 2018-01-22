@@ -36,6 +36,7 @@ function prepareData(data) {
 
   Object.keys(data.piers).forEach(function(key) {
     var pier = data.piers[key];
+    pier.id = key;
     pier.name = pier.name? pier.name: key;
     pier.mun = data.mun[pier.mun];
     pier.type = pier.type? pier.type: "2";
@@ -43,6 +44,7 @@ function prepareData(data) {
 
   Object.keys(data.routes).forEach(function(key) {
     var route = data.routes[key];
+    route.id = key;
     route.piers = route.piers.map(function(pier) {
       return data.piers[pier];
     });

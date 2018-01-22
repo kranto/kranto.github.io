@@ -112,7 +112,6 @@ function routeInfo(route, lang) {
 
     var piers = route.piers;
     piers.forEach(function(pier) {
-        console.log(pier);
         pier.class = pier.type == 1? "mainpier": "";
         pier.specifier = pier.type == 1 && pier.mun.name != pier.name ? "(" + pier.mun.name  + ")": "";
         pier.link = "#" + pier.id;

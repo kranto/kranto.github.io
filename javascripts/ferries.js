@@ -67,6 +67,9 @@ function showHeaderbar() {
   $("#topbar").slideDown('fast');
 }
 
+window.onhashchange = function() {
+  // alert(location.hash);
+}
 
 function doToggleHeaderbar() {
   if (!inIframe()) {
@@ -301,7 +304,9 @@ function onlyUnique(value, index, self) {
 
 function setInfoContent(targets) {
 
-  var route = "houtskarrutt";
+  console.log(targets);
+  var route = targets[0].ref;
+  location.hash = route;
 
   var template = document.getElementById('infocontenttemplate').innerHTML;
   var data = routeInfo(fdata.routes[route], currentLang);
@@ -326,22 +331,6 @@ function setInfoContent(targets) {
   $('#closeInfoButton').click(function() {
     unselectAll();
   });
-
-  $(function() {
-    $("#wrapper2").toggleClass("info-open", true);
-    if ($("body").outerWidth() >= 768) {
-      $(".info").css({left: -300});
-      $(".info").animate({left: 0}, 'fast', function() {$(".info").css({left: "" }); });
-      // $("#mapcontainer").css({left: -100});
-      // $("#mapcontainer").animate({left: 400}, 'fast', function() {$("#mapcontainer").css({left: ""}); });
-    } else {
-      $(".info").css({top: '100%'});
-      $(".info").animate({top: '80%'}, 'fast', function() {$(".info").css({top: "" }); });
-      $("#mapcontainer").css({height: '100%'});
-      $("#mapcontainer").animate({height: '80%'}, 'fast', function() {$("#mapcontainer").css({height: ""});});
-    }
-  });
-
 
   $(".infocontent:last #selectedTitle").html(targets.map(function(target) { return target.name; }).filter(onlyUnique).join('<br>'));
   $(".infocontent:last #selectedDescription").html(targets.map(function(target) { return (target.description? target.description: ' ') + (target.timetable? '<img class="timetable" src="' + target.timetable + '"/>': ''); }).map(function(desc) {
@@ -372,10 +361,19 @@ function select(targets, mouseEvent) {
 
   if (selectedCountWas == 0) {
 
-    var newElem = $(".infocontent.template").clone(true);
-    newElem.removeClass("template");
-    newElem.appendTo($("#info"));
-    newElem.addClass("active-info");
+    $(function() {
+      $("#wrapper2").toggleClass("info-open", true);
+      if ($("body").outerWidth() >= 768) {
+        $(".info").css({left: -300});
+        $(".info").animate({left: 0}, 'fast', function() {$(".info").css({left: "" }); });
+      } else {
+        $(".info").css({top: '100%'});
+        $(".info").animate({top: '80%'}, 'fast', function() {$(".info").css({top: "" }); });
+        $("#mapcontainer").css({height: '100%'});
+        $("#mapcontainer").animate({height: '80%'}, 'fast', function() {$("#mapcontainer").css({height: ""});});
+      }
+    });
+
     setInfoContent(targets);
 
     var clientY = mouseEvent? latLng2Point(mouseEvent.latLng, map).y: 0;
@@ -434,8 +432,27 @@ function latLng2Point(latLng, map) {
 }
 
 function unselectAll() {
-  $("#wrapper2").toggleClass("info-open", false);
   if (selected.length == 0) return;
+  $(function() {
+    if ($("body").outerWidth() >= 768) {
+      $(".info").animate({left: -300}, 'fast', function() {
+        $(".info").css({left: "" });
+        $("#wrapper2").toggleClass("info-open", false);
+      });
+      // $("#mapcontainer").css({left: -100});
+      // $("#mapcontainer").animate({left: 400}, 'fast', function() {$("#mapcontainer").css({left: ""}); });
+    } else {
+      $("#wrapper2").animate({scrollTop: 0}, 'fast', function() {
+        $(".info").animate({top: '100%'}, 200, function() {
+          $(".info").css({top: "" }); 
+          $("#wrapper2").toggleClass("info-open", false);
+        });
+        $("#mapcontainer").animate({height: '80%'}, 'fast', function() {
+          $("#mapcontainer").css({height: ""});
+        }); 
+      });
+    }
+  });
   $(function() { 
     selected.forEach(function(target) { target.highlight(false); });
     selected = [];
@@ -467,7 +484,7 @@ function toggleFullscreen() {
       document.msExitFullscreen();
     }
   } else {
-    element = $('#wrapper').get(0);
+    element = $('body').get(0);
     if (element.requestFullscreen) {
       element.requestFullscreen();
     } else if (element.mozRequestFullScreen) {
@@ -910,7 +927,7 @@ function connection(connection, map) {
   };
 
   var legFeatures = connection.type === 'FeatureCollection'? connection.features: [connection];
-  var connectionObject = { name: shortName(connection.properties), description: connection.properties.description, timetable: connection.properties.timetable};
+  var connectionObject = { ref: connection.properties.ref, name: shortName(connection.properties), description: connection.properties.description, timetable: connection.properties.timetable};
   var legObjects = legFeatures.map(function(leg) {
 
     var coords = leg.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
