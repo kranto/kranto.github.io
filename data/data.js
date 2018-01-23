@@ -730,7 +730,10 @@ fdata = {
     Högsåra: { mun: "Kimitoön" },
     Kivimaa: { mun: "Kustavi" },
     Vartsala: { mun: "Vartsala" },
-
+    Våno: { mun: "Pargas" },
+    Mielisholm: { mun: "Pargas" },
+    Grännäs: { mun: "Nagu" },
+    Ängholm: { mun: "Nagu" },
   },
 
   timetables: {
@@ -983,7 +986,6 @@ fdata = {
       { validFrom: "2017-01-01", validTo: null, images: ["Hogsara.png"]}
       ]
     },
-
     vartsala: {
       link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vartsala.html#timetables",
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/vartsala.html#timetables",
@@ -991,6 +993,19 @@ fdata = {
       tables: [
       { validFrom: "2017-01-01", validTo: null, images: ["Vartsala.png"]}
       ]
+    },
+    vano: {
+      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vano.html#timetables",
+      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/vano.html#timetables",
+      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/vano.html#timetables",
+      tables: [
+      { validFrom: "2017-01-01", validTo: null, images: ["Vano2018_1.png", "Vano2018_2.png", "Vano2018_3.png"]}
+      ]
+    },
+    hogsar: {
+      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsar.html#timetables",
+      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/hogsar.html#timetables",
+      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/hogsar.html#timetables",
     },
 
   },
@@ -1471,6 +1486,26 @@ fdata = {
           interval_L: ["times.dayminutesnightondemand", "20-40"]
       },
       timetables: ["vartsala"]
+    },
+    vano: {
+      name: "Våno",
+      piers: ["Våno", "Mielisholm"],
+      operator: "finferries",
+      vessels: ["vano"],
+      features: {
+          interval_L: ["times.dayminutesnightondemand", "15-30"]
+      },
+      timetables: ["vano"]
+    },
+    hogsar: {
+      name: "Högsar",
+      piers: ["Grännäs", "Ängholm"],
+      operator: "finferries",
+      vessels: ["hogsar"],
+      features: {
+          interval_L: ["times.ondemandwithpauses", "9.00-9.20", "11.40-12.00", "17.00-17.20", "19.30-19.50"]
+      },
+      timetables: ["hogsar"]
     },
 
   }

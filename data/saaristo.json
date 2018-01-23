@@ -2599,6 +2599,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Våno",
+        "ref": "vano",
         "description": "<p><a class=\"tel\" href=\"tel:+358500827157\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0500 827 157</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 21</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Våno(mantere), Mielisholm(saari)</p><p>Liikennöi 15 minuutin välein (05.30-22.15), yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vano.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -4130,6 +4131,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Högsar",
+        "ref": "hogsar",
         "visibleFrom": 11,
         "description": "<p><a class=\"tel\" href=\"tel:+358405584412\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 558 4412</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 10</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Grännäs (pohjoinen), Ängholm (etelä)</p><p>Liikennöi tarvittaessa, tauot: 9.00-9.20, 11.40-12.00, 17.00-17.20, 19.30-19.50</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsar.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
