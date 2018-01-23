@@ -3,6 +3,9 @@ $(document).ready(function(){
     $('#wrapper2').bind('scroll',toggleScrollIndicator); 
 });
 
+$(window).resize(function() {
+    toggleScrollIndicator();
+});
 
 $(document).ready(function(){
 
@@ -18,6 +21,7 @@ function toggleScrollIndicator()
 {
   var elem = $("#wrapper2");
   var isBottom = (elem[0].scrollHeight - elem.scrollTop() - scrollLimit <= elem.outerHeight());
+  console.log('toggleScrollIndicator', isBottom, elem[0].scrollHeight, elem.outerHeight() , elem.scrollTop());
   $('#scrollIndicator').toggleClass('can-scroll', !isBottom);
 }
 
@@ -359,6 +363,8 @@ function select(targets, mouseEvent) {
   });
 
   showHeaderbar();
+  setInfoContent(targets);
+  toggleScrollIndicator();
 
   if (selectedCountWas == 0) {
 
@@ -368,61 +374,18 @@ function select(targets, mouseEvent) {
         $(".info").css({left: -300});
         $(".info").animate({left: 0}, 'fast', function() {$(".info").css({left: "" }); });
 
-        var clientX = mouseEvent? latLng2Point(mouseEvent.latLng, map).x: 0;
-        if (clientX < (400 + 50)) map.panBy(clientX - (($("#map").width() - 400)/2 +400), 0);
+        var clientX = mouseEvent? latLng2Point(mouseEvent.latLng, map).x: 500;
+        if (clientX < (400 + 50)) map.panBy(clientX - (($("#map").width() - 400)/3 +400), 0);
 
       } else {
         $(".info").css({top: '100%'});
         $(".info").animate({top: '80%'}, 'fast', function() {$(".info").css({top: "" }); });
         $("#mapcontainer").css({height: '100%'});
-        $("#mapcontainer").animate({height: '80%'}, 'fast', function() {$("#mapcontainer").css({height: ""});});
+        $("#mapcontainer").animate({height: '80%'}, 'fast', function() {$("#mapcontainer").css({height: ""}); toggleScrollIndicator(); });
         
         var clientY = mouseEvent? latLng2Point(mouseEvent.latLng, map).y: 0;
         if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
       }
-    });
-
-    setInfoContent(targets);
-
-
-  } else { // swap content of #info
-    
-    // all this just calculate needed scroll animation
-    var wrapper = $("#wrapper2");
-    var wrapperHeight0 = wrapper[0].scrollHeight;
-    var visibleHeight = wrapper.outerHeight();
-    var scrolled0 = wrapper.scrollTop();
-
-    var newElem = $(".infocontent.template").clone(true);
-    newElem.removeClass("template");
-    newElem.addClass("hidden-info");
-    newElem.appendTo($("#info"));
-    setInfoContent(targets);
-
-    var infoContentHeight0 = $(".infocontent.active-info")[0].scrollHeight;
-    var infoContentHeight1 = $(".infocontent.hidden-info")[0].scrollHeight;
-
-    var wrapperHeight1 = wrapperHeight0 + infoContentHeight1 - infoContentHeight0;
-    var maxScroll1 = wrapperHeight1 - visibleHeight;
-    var scrolled1 = Math.min(scrolled0, maxScroll1);
-
-    if (maxScroll1 + 25 > scrolled0) { // skip animations in certain conditions. This is needed to avoid jumping in Chrome.
-      newElem.removeClass("hidden-info") // show new infocontent
-      $(".infocontent.active-info").remove(); // remove old infocontent
-      newElem.addClass("active-info"); // make new infocontent active
-      wrapper.scrollTop(scrolled1);
-      toggleScrollIndicator();
-      return;
-    }
-    // scroll smoothly down;
-    wrapper.animate({scrollTop: scrolled1}, 1+(scrolled0 - scrolled1)*2, function() {
-      $("#info").animate({opacity: 0.3}, 'fast', function() { // hide info during the swap
-        newElem.removeClass("hidden-info") // show new infocontent
-        $(".infocontent.active-info").remove(); // remove old infocontent
-        newElem.addClass("active-info"); // make new infocontent active
-        toggleScrollIndicator();
-        $("#info").animate({opacity: 1}, 'fast'); // show info again
-      });
     });
   }
 }
@@ -443,32 +406,21 @@ function unselectAll() {
         $(".info").css({left: "" });
         $("#wrapper2").toggleClass("info-open", false);
       });
-      // $("#mapcontainer").css({left: -100});
-      // $("#mapcontainer").animate({left: 400}, 'fast', function() {$("#mapcontainer").css({left: ""}); });
     } else {
       $("#wrapper2").animate({scrollTop: 0}, 'fast', function() {
         $(".info").animate({top: '100%'}, 200, function() {
           $(".info").css({top: "" }); 
-          $("#wrapper2").toggleClass("info-open", false);
         });
-        $("#mapcontainer").animate({height: '80%'}, 'fast', function() {
+        $("#mapcontainer").animate({height: '100%'}, 'fast', function() {
           $("#mapcontainer").css({height: ""});
+          $("#wrapper2").toggleClass("info-open", false);
+          toggleScrollIndicator();
         }); 
       });
     }
   });
-  $(function() { 
-    selected.forEach(function(target) { target.highlight(false); });
-    selected = [];
-    var scrolled = $("#wrapper")[0].scrollTop;
-    $("#wrapper").animate({scrollTop: 0}, scrolled*2, function() {
-      $("#info").animate({top: '100%'}, 100, function() {
-        $("#info").hide();
-        $(".infocontent.active-info").remove();
-        toggleScrollIndicator();
-      });
-    });
-  });
+  selected.forEach(function(target) { target.highlight(false); });
+  selected = [];
 }
 
 function toggleFullscreen() {
