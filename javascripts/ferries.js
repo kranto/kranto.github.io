@@ -309,29 +309,39 @@ function onlyUnique(value, index, self) {
 function setInfoContent(targets) {
 
   console.log(targets);
-  var route = targets[0].ref;
-  location.hash = route;
 
-  var template = document.getElementById('infocontenttemplate').innerHTML;
-  var data = routeInfo(fdata.routes[route], currentLang);
-  var output = Mustache.render(template, data);
+  if (targets[0].ref) {
+    var route = targets[0].ref;
+    location.hash = route;
 
-  $(".info").scrollTop(0);
-  $(".info").html(output);
+    var template = document.getElementById('infocontenttemplate').innerHTML;
+    var data = routeInfo(fdata.routes[route], currentLang);
+    var output = Mustache.render(template, data);
 
-  $(".timetablebutton").click(function() {
-    if (this.getAttribute("linktype") === "external") {
-      window.open(this.getAttribute("href"), "info");
-    } else {
-      var index = parseInt(this.getAttribute("index"))
-      var tttemplate = document.getElementById('timetabletemplate').innerHTML;
-      data.selectedtimetable = data.timetables[index];
-      data.selectedtimetable.L = data.L;
-      var ttoutput = Mustache.render(tttemplate, data.selectedtimetable);
-      $("#timetabledialog").html(ttoutput);
-      $("#timetableModal").modal({backdrop: true});
-    }
-  });
+    $(".info").scrollTop(0);
+    $(".info").html(output);
+
+    $(".timetablebutton").click(function() {
+      if (this.getAttribute("linktype") === "external") {
+        window.open(this.getAttribute("href"), "info");
+      } else {
+        var index = parseInt(this.getAttribute("index"))
+        var tttemplate = document.getElementById('timetabletemplate').innerHTML;
+        data.selectedtimetable = data.timetables[index];
+        data.selectedtimetable.L = data.L;
+        var ttoutput = Mustache.render(tttemplate, data.selectedtimetable);
+        $("#timetabledialog").html(ttoutput);
+        $("#timetableModal").modal({backdrop: true});
+      }
+    });
+  } else {
+    var template = document.getElementById('infocontent2template').innerHTML;
+    var uniqueNames = targets.map(function(target) { return target.name; }).filter(onlyUnique);
+    var data = { names: uniqueNames, contents: targets };
+    var output = Mustache.render(template, data);
+    $(".info").scrollTop(0);
+    $(".info").html(output);
+  }
 
   $('#closeInfoButton').click(function() {
     unselectAll();
@@ -1370,6 +1380,13 @@ function initMap() {
         var op = operators[operator];
         return shortName(object) + ', ' + description(object) + '&nbsp;&nbsp; <a href="' + op.link + '" target="info"><img src="' + operators[operator].logo + '" height="' + op.height + '"/></a>' ;
       }).join(" ");
+
+      // --- new implementation --
+      this.name = shortName(object);
+      this.details = description(object);
+      this.operatorId = this.operators[0];
+      this.operator = operators[this.operatorId];
+
     }
     this.init();
   }
