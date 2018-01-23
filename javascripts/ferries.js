@@ -367,21 +367,24 @@ function select(targets, mouseEvent) {
       if ($("body").outerWidth() >= 768) {
         $(".info").css({left: -300});
         $(".info").animate({left: 0}, 'fast', function() {$(".info").css({left: "" }); });
+
+        var clientX = mouseEvent? latLng2Point(mouseEvent.latLng, map).x: 0;
+        if (clientX < (400 + 50)) map.panBy(clientX - (($("#map").width() - 400)/2 +400), 0);
+
       } else {
         $(".info").css({top: '100%'});
         $(".info").animate({top: '80%'}, 'fast', function() {$(".info").css({top: "" }); });
         $("#mapcontainer").css({height: '100%'});
         $("#mapcontainer").animate({height: '80%'}, 'fast', function() {$("#mapcontainer").css({height: ""});});
+        
+        var clientY = mouseEvent? latLng2Point(mouseEvent.latLng, map).y: 0;
+        if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
       }
     });
 
     setInfoContent(targets);
 
-    var clientY = mouseEvent? latLng2Point(mouseEvent.latLng, map).y: 0;
-    if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
-    $(function() { 
-//      $("#info").show();
-    });
+
   } else { // swap content of #info
     
     // all this just calculate needed scroll animation
