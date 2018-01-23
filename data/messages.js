@@ -30,6 +30,7 @@ messages = { // FI SV EN
         only: ["vain tilauksesta", "bara på beställning", "On demand only"],
         partly: ["osa vuoroista vain tilauksesta", "några turer bara på beställning", "Pre-order required for certain trips"],
         nighttime: ["Yöllä vain tilauksesta", "Nattetid bara på beställning", "Pre-order required in night time"],
+        extra: ["Lisävuoroja sopimuksen mukaan", "Ekstra turer enligt överenskommelse", "Additional tours by appointment"],
     },
     cost: {
         applies: [ "Maksullinen", "Avgiftsbelagd", "Fee applies" ],

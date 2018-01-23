@@ -528,9 +528,8 @@ fdata = {
     },
     silvana: {
       name: "M/S Silvana",
-      capacity: { bikes: 50,
-        persons: 50
-      },
+      features: { },
+      capacity: { bikes: 50, persons: 50 },
       contact: {
         phones: ['+358 400 229149']
       }
@@ -551,6 +550,16 @@ fdata = {
         www_fi: 'http://www.alandstrafiken.ax/fi',
         www_sv: 'http://www.alandstrafiken.ax/sv',
         www_en: 'http://www.alandstrafiken.ax/en',
+      },
+    },
+    skarpnato: {
+      name: "Skarpnåtö Turistanläggning",
+      contact: {
+        phones: ['+358 (0)18-37227'],
+        email: 'britta.h@aland.net',
+        www_fi: 'http://www.aland.com/fi/skarpnato',
+        www_sv: 'http://www.aland.com/se/skarpnato',
+        www_en: 'http://www.aland.com/en/skarpnato',
       },
     },
     finferries: {
@@ -805,18 +814,23 @@ fdata = {
     JumoE:  { name: "Jumo", mun: "Iniö" },
     Sorpo:  { mun: "Pargas" },
     Jermo:  { mun: "Pargas" },
+    Ulkoluoto:  { name_sv: "Utö", mun: "Salo" },
+    Pettu: { mun: "Salo" },
 
-    Sandö: { mun: "Vårdö" },
+    Sandö: { mun: "Vårdö", type: "1" },
     Simskäla: { mun: "Vårdö" },
-    Prästö: { mun: "Sund" },
-    Töftö: { mun: "Vårdö" },
+    Prästö: { mun: "Sund", type: "1" },
+    Töftö: { mun: "Vårdö", type: "1" },
     Finholma: { mun: "Föglö" },
     Jyddö: { mun: "Föglö" },
     Ängö: { mun: "Lumparland" },
-    Norrboda: { mun: "Lumparland" },
+    Norrboda: { mun: "Lumparland", type: "1" },
     Seglinge: { mun: "Kumlinge" },
-    LappoL: { name: "Lappo", mun: "Brändö" },
-    BjörköK: { name: "Björkö", mun: "Kumlinge" },
+    LappoL: { name: "Lappo", mun: "Brändö", type: "1" },
+    BjörköK: { name: "Björkö", mun: "Kumlinge", type: "1" },
+
+    Skarpnåtö: { mun: "Hammarland", type: "1" },
+    Hällö: { mun: "Geta", type: "1" },
     
   },
 
@@ -924,6 +938,15 @@ fdata = {
       ],
     },
     
+    skarpnatohallo: {
+      link: "http://www.aland.com/fi/skarpnato",
+      link_sv: "http://www.aland.com/se/skarpnato",
+      link_en: "http://www.aland.com/en/skarpnato",
+      tables: [
+      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_1.png", "Silvana2018_2.png", "Silvana2018_3.png"]},
+      ]
+
+    },
     iniokustavi: {
       link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html#timetables",
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/inio-gustavs-aura.html#timetables",
@@ -1785,6 +1808,23 @@ fdata = {
           interval_L: ["times.ondemandcheckpauses"],
       },
       timetables: ["alandsvajerfarjor"]
+    },
+
+    skarpnatohallo: {
+      name: "Polkupyörälautta Skarpnåtö - Hällö",
+      name_sv: "Cykelfärja Skarpnåtö - Hällö",
+      name_en: "Bicycle ferry Skarpnåtö - Hällö",
+      piers: ["Skarpnåtö", "Hällö"],
+      operator: "skarpnato",
+      vessels: ["silvana"],
+      features: {
+          interval_L: ["times.aday", "0-1"],
+          order_L: ["order.extra"],
+          duration_L: ["duration.minutes", "25"],
+          seasonal_L: ["seasonal.summers"],
+          cost_L: ["cost.applies"],
+      },
+      timetables: ["skarpnatohallo"]
     },
   }
 }

@@ -98,6 +98,7 @@ function routeInfo(route, lang) {
         vessel.contact.name = vessel.name;
         contacts.push(vessel.contact);
         var features = [];
+        if (vessel.capacity.bikes) features.push({icon: "bicycle", value: vessel.capacity.bikes});
         if (vessel.capacity.cars) features.push({icon: "car", value: vessel.capacity.cars});
         if (vessel.capacity.persons) features.push({icon: "user", value: vessel.capacity.persons});
         if (vessel.features.cafe) features.push({icon: "coffee"});
