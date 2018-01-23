@@ -52,7 +52,7 @@ function prepareData(data) {
       return data.ferries[vessel];
     });
 
-    route.operator = data.operators[route.operator];
+    route.operator = route.operator? data.operators[route.operator]: null;
     route.pricelists = data.pricelists[route.pricelists];
 
     if (!Array.isArray(route.timetables)) route.timetables = [route.timetables];

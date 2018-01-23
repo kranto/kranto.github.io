@@ -413,7 +413,8 @@ fdata = {
       features: { },
       capacity: { cars: 10 },
       contact: {
-        phones: ['+358 50 354 2488']
+        phones: ['+358 50 354 2488'],
+        email: "petunlossi@gmail.com",
       },
     },
     satava: {
@@ -1183,6 +1184,14 @@ fdata = {
       { validFrom: "2017-01-01", validTo: null, images: ["Skagen_en.png"]}
       ],
     },
+    sorpo: {
+      link: "http://lautta.net/db/aikataulut/sorpo/sorpo.php?lang=fi",
+      link_sv: "http://lautta.net/db/aikataulut/sorpo/sorpo.php?lang=sv",
+      link_en: "http://lautta.net/db/aikataulut/sorpo/sorpo.php?lang=en",
+    },
+    pettu: {
+      link: "http://www.petunlossi.com/lossi.html",
+    }
 
   },
 
@@ -1866,7 +1875,30 @@ fdata = {
       ],
       timetables: ["skagen"]
     },
-
+    sorpo: {
+      name: "Sorpo",
+      piers: ["Jermo", "Sorpo"],
+      operator: null,
+      vessels: ["sorpo"],
+      features: {
+        interval_fi: "Liikennöi tarvittessa ma-pe 6.00-22.00, la 7.00-22.00, su 8.00-22.00. Tauot 8.30-8.50, 11.00-11.30, 16.30-16.50, 19.00-19.30.",
+        interval_sv: "Trafikerar enligt behov må-fr 6.00-22.00, lö 7.00-22.00, sö 8.00-22.00. Pauser 8.30-8.50, 11.00-11.30, 16.30-16.50, 19.00-19.30.",
+        interval_en: "Runs when needed Mon-Fri 6AM-10PM, Sat 7AM-10PM, Sun 8AM-10PM. Breaks 8:30-8:50, 11:00-11:30, 16.:0-16:50, 19:00-19:30",
+      },
+      timetables: ["sorpo"]
+    },
+    pettu: {
+      name: "Pettu",
+      piers: ["Ulkoluoto", "Pettu"],
+      operator: null,
+      vessels: ["pettu"],
+      features: {
+        interval_fi: "Liikennöi 15 minuutin välein klo 7.30-19.30.",
+        interval_sv: "Trafikerar varje 15 minuter kl 7.30-19.30.",
+        interval_en: "Runs every 15 minutes between 7.30 AM and 7.30 PM",
+      },
+      timetables: ["pettu"]
+    },
   }
 }
 

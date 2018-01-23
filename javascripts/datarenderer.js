@@ -123,8 +123,10 @@ function routeInfo(route, lang) {
     info.notes = route.notes;
 
     info.operator = route.operator;
-    info.operator.contact.name = info.operator.name;
-    contacts.push(info.operator.contact);
+    if (info.operator) {
+        info.operator.contact.name = info.operator.name;
+        contacts.push(info.operator.contact);
+    }
 
     var timetables = route.timetables;
 
