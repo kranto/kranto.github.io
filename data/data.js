@@ -36,6 +36,8 @@ fdata = {
     Norrskata: { },
     Houtsala: { },
     Hanko: { name_sv: "Hangö"},
+    Salo: { },
+
   },
 
   ferries: {
@@ -729,11 +731,30 @@ fdata = {
     Svartnäs: { mun: "Kimitoön" },
     Högsåra: { mun: "Kimitoön" },
     Kivimaa: { mun: "Kustavi" },
-    Vartsala: { mun: "Vartsala" },
+    Vartsala: { mun: "Kustavi" },
     Våno: { mun: "Pargas" },
     Mielisholm: { mun: "Pargas" },
     Grännäs: { mun: "Nagu" },
     Ängholm: { mun: "Nagu" },
+
+    PalvaL: { name: "Palva", mun: "Velkua" },
+    PalvaI: { name: "Palva", mun: "Velkua" },
+    Velkuanmaa: {mun: "Velkua"},
+    Kivimo: { mun: "Houtskär" },
+    BjörköH: { mun: "Houtskär" },
+    MossalaE: { mun: "Houtskär" },
+    NäsbyI: { mun: "Houtskär" },
+    Saverkeit: { mun: "Houtskär" },
+    Airismaa: { mun: "Rymättylä" },
+    Aasla:  { mun: "Rymättylä" },
+    Kokkila:  { mun: "Salo" },
+    Angelniemi:  { mun: "Salo" },
+    Keistiö:  { mun: "Iniö" },
+    Skagen:  { mun: "Iniö" },
+    JumoE:  { name: "Jumo", mun: "Iniö" },
+    Sorpo:  { mun: "Pargas" },
+    Jermo:  { mun: "Pargas" },
+    
   },
 
   timetables: {
@@ -1006,6 +1027,46 @@ fdata = {
       link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsar.html#timetables",
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/hogsar.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/hogsar.html#timetables",
+    },
+    kokkila: {
+      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kokkila.html#timetables",
+      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kokkila.html#timetables",
+      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kokkila.html#timetables",
+    },
+    hammaronsalmi: {
+      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hammaronsalmi.html#timetables",
+      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/hammaronsalmi.html#timetables",
+      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/hammaronsalmi.html#timetables",
+    },
+    palva: {
+      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/palva.html#timetables",
+      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/palva.html#timetables",
+      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/palva.html#timetables",
+    },
+    velkuanmaa: {
+      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuanmaa.html#timetables",
+      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkuanmaa.html#timetables",
+      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkuanmaa.html#timetables",
+    },
+    kivimo: {
+      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kivimo.html#timetables",
+      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kivimo.html#timetables",
+      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kivimo.html#timetables",
+    },
+    saverkeit: {
+      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saverkeit.html#timetables",
+      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/saverkeit.html#timetables",
+      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/saverkeit.html#timetables",
+    },
+    mossala: {
+      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/mossala.html#timetables",
+      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/mossala.html#timetables",
+      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/mossala.html#timetables",
+    },
+    keistio: {
+      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/keistio.html#timetables",
+      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/keistio.html#timetables",
+      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/keistio.html#timetables",
     },
 
   },
@@ -1507,7 +1568,89 @@ fdata = {
       },
       timetables: ["hogsar"]
     },
-
+    kokkila: {
+      name: "Kokkila",
+      piers: ["Kokkila", "Angelniemi"],
+      operator: "finferries",
+      vessels: ["kokkila"],
+      features: {
+          interval_L: ["times.dayminutesnightondemand", "20-30"]
+      },
+      timetables: ["kokkila"]
+    },
+    hammaronsalmi: {
+      name: "Hämmärönsalmi",
+      piers: ["Airismaa", "Aasla"],
+      operator: "finferries",
+      vessels: ["hammaronsalmi"],
+      features: {
+          interval_L: ["times.dayminutesnightondemand", "20"]
+      },
+      timetables: ["hammaronsalmi"]
+    },
+    palva: {
+      name: "Palva",
+      piers: ["Teersalo", "PalvaI"],
+      operator: "finferries",
+      vessels: ["palva"],
+      features: {
+          interval_L: ["times.dayminutesnightonorder", "30-60"],
+          order_L: ["order.nighttime"]
+      },
+      timetables: ["palva"]
+    },
+    velkuanmaa: {
+      name: "Velkuanmaa",
+      piers: ["PalvaL", "Velkuanmaa"],
+      operator: "finferries",
+      vessels: ["velkuanmaa"],
+      features: {
+          interval_L: ["times.dayminutesnightonorder", "30-60"],
+          order_L: ["order.nighttime"]
+      },
+      timetables: ["velkuanmaa"]
+    },
+    kivimo: {
+      name: "Kivimo",
+      piers: ["Roslax", "Kivimo"],
+      operator: "finferries",
+      vessels: ["kivimolossi"],
+      features: {
+          interval_L: ["times.ondemandwithpauses", "9.10-9.30", "11.40-12.00", "17.10-17.30", "20.10-20.30"]
+      },
+      timetables: ["kivimo"]
+    },
+    saverkeit: {
+      name: "Saverkeit",
+      piers: ["NäsbyI", "Saverkeit"],
+      operator: "finferries",
+      vessels: ["saverkeit"],
+      features: {
+          interval_L: ["times.ondemandwithpauses", "9.10-9.30", "11.40-12.00", "17.10-17.30", "20.10-20.30"]
+      },
+      timetables: ["saverkeit"]
+    },
+    mossala: {
+      name: "Mossala",
+      piers: ["BjörköH", "MossalaE"],
+      operator: "finferries",
+      vessels: ["mossala"],
+      features: {
+          interval_L: ["times.ondemandwithpauses", "9.10-9.30", "11.40-12.00", "17.10-17.30", "20.10-20.30"]
+      },
+      timetables: ["mossala"]
+    },
+    keistio: {
+      name: "Keistiö",
+      piers: ["Dalen", "Keistiö"],
+      operator: "finferries",
+      vessels: ["keistio"],
+      features: {
+          interval_L: ["times.aday", "13-17"],
+          order_L: ["order.partly"],
+      },
+      timetables: ["keistio"]
+    },
   }
 }
 

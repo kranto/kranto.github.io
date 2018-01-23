@@ -663,6 +663,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Ängösundslinjen",
+        "ref": "angosundslinjen",
         "description": "<p><a class=\"tel\" href=\"tel:+3584575295082\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 529 5082</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Ängö (itä), Norrboda (länsi)</p><p>Liikennöi tarvittaessa 6.00-22.00, yöllä vain etukäteistilauksesta, tauot Ängössä: 11.00-11.30, 19.00-19.30</p><p><a target=\"ango\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -1292,6 +1293,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Embarsundslinjen",
+        "ref": "embarsunslinjen",
         "description": "<p><a class=\"tel\" href=\"tel:+3584573798871\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 379 8871</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Finholma (etelä), Jyddö (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot Finholmassa: 10.25–11.00, 17.50–18.25</p><p><a target=\"embarsund\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
        "geometry": {
@@ -2454,6 +2456,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Kivimo",
+        "ref": "kivimo",
         "description": "<p><a class=\"tel\" href=\"tel:+3580400292691\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 292 691</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Roslax (etelä), Kivimo (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot: 09.10–09.30, 11.40–12.00, 17.10–17.30, 20.10–20.30</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kivimo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -2725,6 +2728,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Keistiö",
+        "ref": "keistio",
         "description": "<p><a class=\"tel\" href=\"tel:+358408469500\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 846 9500</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 10</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Keistiö, Dalen(Iniö)</p><p>Liikennöi aikataulun mukaan, 13-17 vuoroa päivässä, osa vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/keistio.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -2983,6 +2987,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Kokkila",
+        "ref": "kokkila",
         "description": "<p><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358405684911\">+358 40 568 4911</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Kokkila (mantere), Angelniemi (saari)</p><p>Liikennöi 20-30 minuutin välein, yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kokkila.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
 
       },
@@ -3038,6 +3043,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Mossala",
+        "ref": "mossala",
         "description": "<p><a class=\"tel\" href=\"tel:+358405531534\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 553 1534</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Björkö (etelä), Mossala (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot: 09.10–09.30, 11.40–12.00, 17.10–17.30, 20.10–20.30</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/mossala.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -3065,6 +3071,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Palva",
+        "ref": "palva",
         "description": "<p><a class=\"tel\" href=\"tel:+358400525901\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 525 901</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 10</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Teersalo(itä), Palva(länsi)</p><p>Liikennöi 30-60 minuutin välein, yövuorot vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/palva.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -3166,6 +3173,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Pettu",
+        "ref": "pettu",
         "description": "<p><a class=\"tel\" href=\"tel:+358503542488\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i>+358 50 354 2488</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 10</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Ulkoluoto (länsi), Pettu (itä)</p><p>Liikennöi tarvittaessa 6.00-22.00, tauot: 08.30-08.50, 11.00-11.30, 16.30-16.50, 19.00-19.30</p><p><a target=\"info\" href=\"http://www.petunlossi.com/lossi.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -3179,6 +3187,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Sorpo",
+        "ref": "sorpo",  
         "description": "<p><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358405692620\">+358 40 569 2620</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> ?</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Sorpo (länsi), Jermo (itä)</p><p>Liikennöi n. 15 minuutin välein 7.30-19.30</p><p><a target=\"info\" href=\"http://lautta.net/db/aikataulut/sorpo/sorpo.php?lang=finferries\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -3964,6 +3973,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Seglingelinjen",
+        "ref": "seglingelinjen",
         "description": "<p><a class=\"tel\" href=\"tel:+358407685792\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 768 5792</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Snäckö (itä), Seglinge (länsi)</p><p>Liikennöi tarvittaessa, tarkista tauot aikataulusta</p><p><a target=\"Seglinge\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -4104,6 +4114,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Saverkeit",
+        "ref": "saverkeit",
         "description": "<p><a class=\"tel\" href=\"tel:+3580405531072\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 553 1072</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 10</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Näsby I (länsi), Saverkeit (itä)</p><p>Liikennöi tarvittaessa, tauot: 09.10–09.30, 11.40–12.00, 17.10–17.30, 20.10–20.30</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saverkeit.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -4319,6 +4330,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Björkölinjen",
+        "ref": "bjorkolinjen",
         "description": "<p><a class=\"tel\" href=\"tel:+3584575242854\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 524 2854</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Lappo (itä), Björkö (länsi)</p><p>Liikennöi tarvittaessa 6.00-22.00, yöllä vain etukäteistilauksesta, tauot Björkössä: 11.10–11.45, 17.30–18.05</p><p><a target=\"bjorko\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -4361,6 +4373,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Töftölinjen",
+        "ref": "toftolinjen",
         "description": "<p><a class=\"tel\" href=\"tel:+3584573421279\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 342 1279</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Prästö (länsi), Töftö (itä)</p><p>Liikennöi tarvittaessa, tarkista tauot aikataulusta</p><p><a target=\"tofto\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -4374,6 +4387,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Velkuanmaa",
+        "ref": "velkuanmaa",
         "description": "<p><a class=\"tel\" href=\"tel:+358400525902\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 525 902</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 10</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Palva(itä), Velkuanmaa(länsi)</p><p>Liikennöi 30-60 minuutin välein, yövuorot vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuanmaa.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -4901,6 +4915,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Skagen",
+        "ref": "skagen",
         "description": "<p><a class=\"tel\" href=\"tel:+358102717915\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 10 2717915</a></p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Skagen (etelä), Jumo E (pohjoinen)</p><p>Liikennöi tarvittaessa ma-to 6.00-22.00, pe 6.00-23.00, la 7.00-23.00, su 8.30-22.00. Tauot: 9.40 - 9.52, 11.58 - 12.10, 18.20 - 18.32. Lähtee lähtee Skagenista aina 15 ja 30 min ennen Auran lähtöä Kannvikistä Heponiemeen(Kustavi).</p><p><a target=\"info\" href=\"http://www.ncl.fi/fi/aikataulut\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -5029,6 +5044,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Hämmärönsalmi",
+        "ref": "hammaronsalmi",
         "description": "<p><a class=\"tel\" href=\"tel:+358405582773\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 558 2773</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Airismaa(pohjoinen), Aasla(etelä)</p><p>Liikennöi 20 minuutin välein (06.00-23.00), yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hammaronsalmi.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -5113,6 +5129,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Simskälalinjen",
+        "ref": "simskalalinjen",
         "description": "<p><a class=\"tel\" href=\"tel:+3584573798869\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 379 8869</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Sandö (etelä), Simskäla (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot Simskälassa: 11.30–12.05, 14.00–14.15, 17.00–17.35</p><p><a target=\"simskala\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {

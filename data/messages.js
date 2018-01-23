@@ -16,6 +16,9 @@ messages = { // FI SV EN
         dayminutesnightondemand: ["päivällä aikataulun mukaan {0} minuutin välein, yöllä tarvittaessa",
             "dagtid enligt tidtabellen varje {0} minuter, nattetid vid behov",
             "daytime with schedule every {0} minutes, nighttime runs on demand"],
+        dayminutesnightonorder: ["päivällä aikataulun mukaan {0} minuutin välein",
+            "dagtid enligt tidtabellen varje {0} minuter",
+            "daytime with schedule every {0} minutes"],
         ondemandwithpauses: ["Liikennöi tarvittaessa, tauot: {0} {1} {2} {3}", "Trafikerar vid behov, pauser: {0} {1} {2} {3}", "Runs when needed, breaks {0} {1} {2} {3}"] 
     },
     booking: {
@@ -25,6 +28,7 @@ messages = { // FI SV EN
         pieronly: ["{0} vain tilauksesta", "{0} bara på beställning", "{0} on demand only"],
         only: ["vain tilauksesta", "bara på beställning", "On demand only"],
         partly: ["osa vuoroista vain tilauksesta", "några turer bara på beställning", "Pre-order required for certain trips"],
+        nighttime: ["Yöllä vain tilauksesta", "Nattetid bara på beställning", "Pre-order required in night time"],
     },
     cost: {
         applies: [ "Maksullinen", "Avgiftsbelagd", "Fee applies" ],
