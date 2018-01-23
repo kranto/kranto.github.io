@@ -1293,7 +1293,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Embarsundslinjen",
-        "ref": "embarsunslinjen",
+        "ref": "embarsundslinjen",
         "description": "<p><a class=\"tel\" href=\"tel:+3584573798871\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 379 8871</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Finholma (etelä), Jyddö (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot Finholmassa: 10.25–11.00, 17.50–18.25</p><p><a target=\"embarsund\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
        "geometry": {

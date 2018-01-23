@@ -19,7 +19,8 @@ messages = { // FI SV EN
         dayminutesnightonorder: ["päivällä aikataulun mukaan {0} minuutin välein",
             "dagtid enligt tidtabellen varje {0} minuter",
             "daytime with schedule every {0} minutes"],
-        ondemandwithpauses: ["Liikennöi tarvittaessa, tauot: {0} {1} {2} {3}", "Trafikerar vid behov, pauser: {0} {1} {2} {3}", "Runs when needed, breaks {0} {1} {2} {3}"] 
+        ondemandwithpauses: ["Liikennöi tarvittaessa, tauot: {0} {1} {2} {3}", "Trafikerar vid behov, pauser: {0} {1} {2} {3}", "Runs when needed, breaks {0} {1} {2} {3}"],
+        ondemandcheckpauses: ["Liikennöi tarvittaessa, tarkista tauot aikataulusta", "Trafikerar vid behov, pauser i tidtabellen", "Runs when needed, check the breaks in the schedule"],
     },
     booking: {
         cannot: ["ei voi varata", "kan inte bokas", "booking not possible"],

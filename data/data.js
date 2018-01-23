@@ -129,6 +129,57 @@ fdata = {
         phones: ['+358 (0)40 4840 352']
       },
     },
+    angosundslinjen: {
+      name: "Ängösundslinjes färja",
+      features: { },
+      capacity: { cars: 14 },
+      contact: {
+        phones: ['+358 457 529 5082']
+      },
+    },
+    toftolinjen: {
+      name: "Töftölinjes färja",
+      features: { },
+      capacity: { cars: 14 },
+      contact: {
+        phones: ['+358 457 342 1279']
+      },
+    },
+    bjorkolinjen: {
+      name: "Björkölinjes färja",
+      features: { },
+      capacity: { cars: 14 },
+      contact: {
+        phones: ['+358 457 524 2854']
+      },
+    },
+    simskalalinjen: {
+      name: "Simskälälinjes färja",
+      features: { },
+      capacity: { cars: 14 },
+      contact: {
+        phones: ['+358 457 379 8869']
+      },
+    },
+    embarsundslinjen: {
+      name: "Embarsundslinjes färja",
+      features: { },
+      capacity: { cars: 14 },
+      contact: {
+        phones: ['+358 457 379 8871']
+      },
+    },
+    seglingelinjen: {
+      name: "Seglingelinjes färja",
+      features: { },
+      capacity: { cars: 14 },
+      contact: {
+        phones: ['+358 40 768 5792']
+      },
+    },
+
+
+
     hammaronsalmi: {
       name: "Lautta #185",
       features: { },
@@ -742,8 +793,8 @@ fdata = {
     Velkuanmaa: {mun: "Velkua"},
     Kivimo: { mun: "Houtskär" },
     BjörköH: { mun: "Houtskär" },
-    MossalaE: { mun: "Houtskär" },
-    NäsbyI: { mun: "Houtskär" },
+    MossalaE: { name: "Mossala", mun: "Houtskär" },
+    NäsbyI: { name: "Näsby", mun: "Houtskär" },
     Saverkeit: { mun: "Houtskär" },
     Airismaa: { mun: "Rymättylä" },
     Aasla:  { mun: "Rymättylä" },
@@ -754,6 +805,18 @@ fdata = {
     JumoE:  { name: "Jumo", mun: "Iniö" },
     Sorpo:  { mun: "Pargas" },
     Jermo:  { mun: "Pargas" },
+
+    Sandö: { mun: "Vårdö" },
+    Simskäla: { mun: "Vårdö" },
+    Prästö: { mun: "Sund" },
+    Töftö: { mun: "Vårdö" },
+    Finholma: { mun: "Föglö" },
+    Jyddö: { mun: "Föglö" },
+    Ängö: { mun: "Lumparland" },
+    Norrboda: { mun: "Lumparland" },
+    Seglinge: { mun: "Kumlinge" },
+    LappoL: { name: "Lappo", mun: "Brändö" },
+    BjörköK: { name: "Björkö", mun: "Kumlinge" },
     
   },
 
@@ -852,6 +915,15 @@ fdata = {
       { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["OdinVinter2018_1.png", "OdinVinter2018_2.png"]},
       ],  
     },
+    alandsvajerfarjor: {
+      link: "http://www.alandstrafiken.ax/fi/aikataulut",
+      link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+      link_en: "http://www.alandstrafiken.ax/en/timetables",
+      tables: [
+      { validFrom: "2018-01-01", validTo: "2018-12-31", images: ["AlandsVajerFarjor2018.png"]},
+      ],
+    },
+    
     iniokustavi: {
       link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html#timetables",
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/inio-gustavs-aura.html#timetables",
@@ -1404,7 +1476,7 @@ fdata = {
       features: {
         interval_L: ["times.adayaweek", "0-4", "Österskär", "2"],
         order_L: "order.only",
-        duration_L: ["duration.minutes", "Haapala-Pakinainen 40 minuuttia"],
+        duration_L: ["duration.minutes", "65", "Verkan - Berghamn"],
       },
       timetables: "korporutt",
     },
@@ -1650,6 +1722,69 @@ fdata = {
           order_L: ["order.partly"],
       },
       timetables: ["keistio"]
+    },
+
+    angosundslinjen: {
+      name: "Ängösundslinjen",
+      piers: ["Norrboda", "Ängö"],
+      operator: "alandstrafiken",
+      vessels: ["angosundslinjen"],
+      features: {
+          interval_L: ["times.ondemandcheckpauses"],
+          order_L: ["order.nighttime"]
+      },
+      timetables: ["alandsvajerfarjor"]
+    },
+    bjorkolinjen: {
+      name: "Björkölinjen",
+      piers: ["LappoL", "BjörköK"],
+      operator: "alandstrafiken",
+      vessels: ["bjorkolinjen"],
+      features: {
+          interval_L: ["times.ondemandcheckpauses"],
+          order_L: ["order.nighttime"]
+      },
+      timetables: ["alandsvajerfarjor"]
+    },
+    simskalalinjen: {
+      name: "Simskälalinjen",
+      piers: ["Sandö", "Simskäla"],
+      operator: "alandstrafiken",
+      vessels: ["simskalalinjen"],
+      features: {
+          interval_L: ["times.ondemandcheckpauses"],
+      },
+      timetables: ["alandsvajerfarjor"]
+    },
+    seglingelinjen: {
+      name: "Seglingelinjen",
+      piers: ["Snäckö", "Seglinge"],
+      operator: "alandstrafiken",
+      vessels: ["seglingelinjen"],
+      features: {
+          interval_L: ["times.ondemandcheckpauses"],
+      },
+      timetables: ["alandsvajerfarjor"]
+    },
+    toftolinjen: {
+      name: "Töftölinjen",
+      piers: ["Prästö", "Töftö"],
+      operator: "alandstrafiken",
+      vessels: ["toftolinjen"],
+      features: {
+          interval_L: ["times.ondemandcheckpauses"],
+      },
+      timetables: ["alandsvajerfarjor"]
+    },
+    embarsundslinjen: {
+      name: "Embarsundslinjen",
+      piers: ["Finholma", "Jyddö"],
+      operator: "alandstrafiken",
+      vessels: ["embarsundslinjen"],
+      features: {
+          interval_L: ["times.ondemandcheckpauses"],
+      },
+      timetables: ["alandsvajerfarjor"]
     },
   }
 }
