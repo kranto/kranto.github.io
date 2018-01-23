@@ -859,7 +859,7 @@ function cableferry(feature, map) {
   });
   var description = createDescription(feature.properties);
   line.addListener('click', function(event) {
-    select([{name: feature.properties.sname, description: description,
+    select([{ref: feature.properties.ref, name: feature.properties.sname, description: description,
       highlight: function(doHighlight) {
         line.setOptions({strokeOpacity: doHighlight? highlightOpacity: 0});
       }

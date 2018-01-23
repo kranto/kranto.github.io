@@ -532,6 +532,7 @@
         "stype": "cableferry",
         "sname": "Nagu - Korpo",
         "sname_fi": "Nauvo - Korppoo",
+        "ref": "nagukorpo",
         "visibleFrom": 8,
         "description": "<p><a class=\"tel\" href=\"tel:+358400864268\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 864 268</a> <a class=\"tel\" href=\"tel:+358400882614\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 882 614</a></p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Pärnäs/Pärnäinen (Nauvo), Retais (Korppoo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
@@ -772,6 +773,7 @@
         "stype": "cableferry",
         "sname": "Pargas - Nagu",
         "sname_fi": "Parainen - Nauvo",
+        "ref": "pargasnagu",
         "visibleFrom": 8,
         "description": "<p><a class=\"tel\" href=\"tel:+3580400127999\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 127 999</a>, <a class=\"tel\" href=\"tel:+358400110114\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 110 114</a>, <a class=\"tel\" href=\"tel:+3580400152326\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 152 326</a>, <a class=\"tel\" href=\"tel:+358400382114\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 382 114</a></p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Lillmälö (Parainen), Prostvik (Nauvo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
         "info1": {
@@ -4114,6 +4116,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Högsåra",
+        "ref": "hogsara",
         "description": "<p><a class=\"tel\" href=\"tel:+358407066291\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 706 6291</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Svartnäs (itä), Högsåra (länsi)</p><p>Liikennöi aikataulun mukaan, 4-11 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsara.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },
       "geometry": {
@@ -5037,6 +5040,7 @@
       "properties": {
         "stype": "cableferry",
         "sname": "Vartsala",
+        "ref": "vartsala",
         "visibleFrom": 8,
         "description": "<p><a class=\"tel\" href=\"tel:+358400138239\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 138 239</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 36</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Kivimaa (itä), Vartsala (länsi)</p><p>Liikennöi päivällä aikataulun mukaan n. 20-40 minuutin välein, yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vartsala.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
       },

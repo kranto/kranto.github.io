@@ -726,6 +726,11 @@ fdata = {
     Vänoxaby: { name: "Vänoxa by", mun: "Kimitoön"},
     Vänoxasläten: { name: "Vänoxa släten (Bergö)", mun: "Kimitoön"},
 
+    Svartnäs: { mun: "Kimitoön" },
+    Högsåra: { mun: "Kimitoön" },
+    Kivimaa: { mun: "Kustavi" },
+    Vartsala: { mun: "Vartsala" },
+
   },
 
   timetables: {
@@ -962,14 +967,31 @@ fdata = {
       ],
     },
     pargasrutt: {
-
       link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/paraisten-reittialue-viken.html#timetables",
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-ruttomrade-viken.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-route-viken.html#timetables",
       tables: [
       { validFrom: "2017-11-01", validTo: "2018-03-31", images: ["VikenVinter2018_1.png", "VikenVinter2018_2.png"]}
       ]
-    }
+    },
+
+    hogsara: {
+      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsara.html#timetables",
+      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/hogsara.html#timetables",
+      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/hogsara.html#timetables",
+      tables: [
+      { validFrom: "2017-01-01", validTo: null, images: ["Hogsara.png"]}
+      ]
+    },
+
+    vartsala: {
+      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vartsala.html#timetables",
+      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/vartsala.html#timetables",
+      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/vartsala.html#timetables",
+      tables: [
+      { validFrom: "2017-01-01", validTo: null, images: ["Vartsala.png"]}
+      ]
+    },
 
   },
 
@@ -1429,6 +1451,28 @@ fdata = {
       },
       timetables: ["hitisstella", "hitisalva"],
     },
+
+    hogsara: {
+      name: "Högsåra",
+      piers: ["Svartnäs", "Högsåra"],
+      operator: "finferries",
+      vessels: ["hogsara"],
+      features: {
+          interval_L: ["times.aday", "4-11"]
+      },
+      timetables: ["hogsara"]
+    },
+    vartsala: {
+      name: "Vartsala",
+      piers: ["Kivimaa", "Vartsala"],
+      operator: "finferries",
+      vessels: ["vartsala"],
+      features: {
+          interval_L: ["times.dayminutesnightondemand", "20-40"]
+      },
+      timetables: ["vartsala"]
+    },
+
   }
 }
 

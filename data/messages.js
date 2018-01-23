@@ -13,6 +13,9 @@ messages = { // FI SV EN
         anhour: ["{0} kertaa tunnissa", "{0} gånger om timme", "{0} times an hour"],
         adayaweek: ["{0} kertaa päivässä, {1} {2} kertaa viikossa",
                 "{0} gånger om dagen, {1} {2} gånger om vecka", "{0} times a day, {1} {2} times a week"],
+        dayminutesnightondemand: ["päivällä aikataulun mukaan {0} minuutin välein, yöllä tarvittaessa",
+            "dagtid enligt tidtabellen varje {0} minuter, nattetid vid behov",
+            "daytime with schedule every {0} minutes, nighttime runs on demand"],
     },
     booking: {
         cannot: ["ei voi varata", "kan inte bokas", "booking not possible"],

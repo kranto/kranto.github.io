@@ -1629,4 +1629,15 @@ routes = {
         },
         timetables: ["hitisstella", "hitisalva"],
     },
+
+    hogsara: {
+        name "Högsåra",
+        piers: ["Svartnäs", "Högsåra"],
+        operator: "finferries",
+        vessels: "hogsara",
+        features: {
+            interval_L: ["times.aday", "4-11"]
+        },
+        timetables: ["hogsara"]
+    },
 }
