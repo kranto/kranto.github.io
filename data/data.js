@@ -942,9 +942,15 @@ fdata = {
       link: "http://www.aland.com/fi/skarpnato",
       link_sv: "http://www.aland.com/se/skarpnato",
       link_en: "http://www.aland.com/en/skarpnato",
-      tables: [
-      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_1.png", "Silvana2018_2.png", "Silvana2018_3.png"]},
-      ]
+      tables_fi: [
+      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_1.png"]},
+      ],
+      tables_sv: [
+      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_2.png"]},
+      ],
+      tables_en: [
+      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_3.png"]},
+      ],
 
     },
     iniokustavi: {
@@ -1162,6 +1168,20 @@ fdata = {
       link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/keistio.html#timetables",
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/keistio.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/keistio.html#timetables",
+    },
+    skagen: {
+      link: "http://www.ncl.fi/fi/aikataulut",
+      link_sv: "http://www.ncl.fi/sv/tidtabeller",
+      link_en: "http://www.ncl.fi/en/time-schedules",
+      tables: [
+      { validFrom: "2017-01-01", validTo: null, images: ["Skagen_fi.png"]}
+      ],
+      tables_sv: [
+      { validFrom: "2017-01-01", validTo: null, images: ["Skagen_sv.png"]}
+      ],
+      tables_en: [
+      { validFrom: "2017-01-01", validTo: null, images: ["Skagen_en.png"]}
+      ],
     },
 
   },
@@ -1818,7 +1838,7 @@ fdata = {
       operator: "skarpnato",
       vessels: ["silvana"],
       features: {
-          interval_L: ["times.aday", "0-1"],
+          interval_L: ["times.aweek", "6"],
           order_L: ["order.extra"],
           duration_L: ["duration.minutes", "25"],
           seasonal_L: ["seasonal.summers"],
@@ -1826,6 +1846,27 @@ fdata = {
       },
       timetables: ["skarpnatohallo"]
     },
+
+    skagen: {
+      name: "Skagen",
+      piers: ["Skagen", "JumoE"],
+      operator: "ncl",
+      vessels: ["skagen"],
+      features: {
+        interval_fi: "Liikennöi tarvittessa ma-to 6.00-22.00, pe 6.00-23.00, la 7.00-23.00, su 8.30-20.00. Tauot 9.40-9.52, 11.58-12.10, 18.20-18.32.",
+        interval_sv: "Trafikerar enligt behov må-to 6.00-22.00, fr 6.00-23.00, lö 7.00-23.00, sö 8.30-20.00. Pauser 9.40-9.52, 11.58-12.10, 18.20-18.32.",
+        interval_en: "Runs when needed Mon-Thu 6AM-10PM, Fri 6AM-11PM, Sat 7AM-11PM, Sun 8:30AM-8PM. Breaks 9:40-9:52, 11:58-12:10, 18:20-18:32",
+      },
+      notes: [
+      { 
+        content_fi: "<div>Lossi lähtee Skagenista aina 15 ja 30 min ennen Auroran lähtöä Kannvikista Heponiemeen (Kustavi).</div>",
+        content_sv: "<div>Färjan  avgår från Skagen alltid 15 och 30 min före Auroras avgång från Kannvik till Heponimi (Gustavs).</div>",
+        content_en: "<div>The ferry departures from Skagen always 15 and 30 minutes before Aurora's departure from Kannvik till Heponiemi (Kustavi).</div>"
+      }
+      ],
+      timetables: ["skagen"]
+    },
+
   }
 }
 

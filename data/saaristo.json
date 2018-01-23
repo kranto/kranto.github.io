@@ -4257,7 +4257,7 @@
         "stype": "pier",
         "sname": "Hällö",
         "ssubtype": "4",
-        "labelAnchor": {"dir": "NE", "x":10 , "y":-10 }
+        "labelAnchor": {"dir": "SW", "x":-10 , "y":10 }
       },
       "geometry": {
         "coordinates": [19.768695, 60.366164 ],
