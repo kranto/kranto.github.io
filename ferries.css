@@ -47,17 +47,47 @@
       font-size: 24px;
     }
 
-    div#infopage {
+    .fmodal {
       position: fixed;
-      top: 50px;
+      top: 0px;
       width: 100%;
       text-align: center;
       bottom: 0px;
+      padding: 10px;
       background-color: rgba(0,0,0, 0.3);
       z-index: 110;
       overflow-y: scroll;
     }
+    #infopage {
+      top: 50px;
+    }
 
+    .fmodalcontent {
+      position: inline-block;
+      max-width: 630px;
+      min-height: 100%;
+      margin: auto;
+      text-align: left;
+      background-color: white;
+      padding: 15px;
+    }
+
+    .fmodalheader {
+      margin-bottom: 20px;
+    }
+
+    .timetablescontent {
+      max-width: 730px;
+    }
+
+    .timetablelink {
+      overflow-x: scroll;
+    }
+
+    .timetable {
+      max-width: 700px;
+    }
+    
     div#infopagecontent {
       position: inline-block;
       max-width:600px;
@@ -112,11 +142,6 @@
       color: #822928;
     }
 
-    .timetable {
-      max-width: 600px;
-      border-bottom: 1px solid;
-    }
-    
     .map div {
       text-shadow:
       -1px -1px 0px rgba(255, 255, 255, 0.3),
@@ -672,10 +697,6 @@ div#wrapper2 {
   #timetableModal .tab-pane div {
     overflow-x: scroll;
     margin-bottom: 10px;
-  }
-
-  .timetable {
-    max-width: 600px;
   }
 
   div.timetablelink {

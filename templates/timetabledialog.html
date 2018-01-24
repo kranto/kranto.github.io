@@ -1,13 +1,13 @@
 
 <div id="timetabletemplate">
-	<div class="modal-content">
-		<div class="modal-header">
+	<div class="fmodalcontent timetablescontent">
+		<button type="button" class="btn btn-secondary closeInfoButton" id="closeTimetablesButton"><i class="fa fa-times" aria-hidden="true"></i></button>
+		<div class="fmodalheader">
 			<div class="infotitle">
 				{{ name }}{{#specifier}}: {{/specifier}}<span class="specifier">{{ specifier }}</span>
 			</div>
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
 		</div>
-		<div class="modal-body">
+		<div class="fmodalbody">
 			<div class="alert alert-warning">
 				{{#L}}unofficialcopy{{/L}} <a target="info" href="{{ link }}">{{#L}}fromoriginal{{/L}} <i class="fa fa-external-link" aria-hidden="true"></i></a>.
 			</div>

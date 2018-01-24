@@ -55,7 +55,8 @@
   <div id="wrapper">
     <div id="wrapper2">
 
-      <div id="infopage" style="display: none;"></div>
+      <div id="infopage" class="fmodal" style="display: none;"></div>
+      <div id="timetables" class="fmodal" style="display: none;"></div>
       <div class="info"></div>
 
       <div id="mapcontainer">
@@ -65,28 +66,29 @@
 
     <div id="scrollIndicator"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
 
-  </div>
 
-  <div id="topbar">
-    <button id="menubutton" type="button" class="topbarbutton">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-    </button>
-    <div id="topbartitle">
-      Saaristolautat.fi
+    <div id="topbar">
+      <button id="menubutton" type="button" class="topbarbutton">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+      <div id="topbartitle">
+        Saaristolautat.fi
+      </div>
+      <button id="settingsbutton" type="button" class="topbarbutton right">
+        <i class="fa fa-sliders" aria-hidden="true"></i>
+      </button>
     </div>
-    <button id="settingsbutton" type="button" class="topbarbutton right">
-      <i class="fa fa-sliders" aria-hidden="true"></i>
-    </button>
+
+    <!-- Timetable Modal -->
+    <div class="modal fade" id="timetableModal" role="dialog">
+      <div id="timetabledialog" class="modal-dialog modal-lg"></div>
+    </div>
+
+    <div class="" id="menu"></div>
+
+    <div class="" id="settings"></div>
+
   </div>
-
-  <!-- Timetable Modal -->
-  <div class="modal fade" id="timetableModal" role="dialog">
-    <div id="timetabledialog" class="modal-dialog modal-lg"></div>
-  </div>
-
-  <div class="" id="menu"></div>
-
-  <div class="" id="settings"></div>
 
   <div id="templates" style="display: none;">
     <div id="infotemplateholder"></div>
@@ -98,6 +100,5 @@
   <canvas id="canvas" style="display: none;"/>
   <script src="/javascripts/ferries.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX_N6yFjHfac6v9-xiwA31yg1twAMMyGA&callback=initMap" async defer></script>
-
 </body>
 </html>

@@ -77,7 +77,9 @@ window.onhashchange = function() {
 
 function doToggleHeaderbar() {
   if (!inIframe()) {
-    if (selected.length > 0 || $("#topbar").is(":hidden")) {
+    if (selected.length > 0) {
+      unselectAll();
+    } else if ($("#topbar").is(":hidden")) {
       showHeaderbar();
     } else if (selected.length == 0 && $("#menu").is(":hidden") && $("#settings").is(":hidden")) {
       hideHeaderbar();
@@ -111,7 +113,6 @@ function initMenu() {
   console.log('initMenu');
 
   $('.box').click(function(event) {
-    console.log('click');
     $('#infopage').fadeIn();
     $(".infosection").hide();
     $(this.getAttribute("data-target")) .show();
@@ -306,9 +307,12 @@ function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
 }
 
-function setInfoContent(targets) {
+function closeTimetables() {
+  $('#timetables').fadeOut();
+  select(wasSelected);
+}
 
-  console.log(targets);
+function setInfoContent(targets) {
 
   if (targets[0].ref) {
     var route = targets[0].ref;
@@ -318,7 +322,6 @@ function setInfoContent(targets) {
     var data = routeInfo(fdata.routes[route], currentLang);
     var output = Mustache.render(template, data);
 
-    $(".info").scrollTop(0);
     $(".info").html(output);
 
     $(".timetablebutton").click(function() {
@@ -330,8 +333,14 @@ function setInfoContent(targets) {
         data.selectedtimetable = data.timetables[index];
         data.selectedtimetable.L = data.L;
         var ttoutput = Mustache.render(tttemplate, data.selectedtimetable);
-        $("#timetabledialog").html(ttoutput);
-        $("#timetableModal").modal({backdrop: true});
+        hideHeaderbar();
+        $('#timetables').fadeIn();
+        $("#timetables").html(ttoutput);
+        $("#timetables").click(function(event) { if (event.target == this) closeTimetables(); });
+        $('#closeTimetablesButton').click(closeTimetables);
+        hideMenu();
+        wasSelected = selected.slice();
+        unselectAll();
       }
     });
   } else {
@@ -339,7 +348,6 @@ function setInfoContent(targets) {
     var uniqueNames = targets.map(function(target) { return target.name; }).filter(onlyUnique);
     var data = { names: uniqueNames, contents: targets };
     var output = Mustache.render(template, data);
-    $(".info").scrollTop(0);
     $(".info").html(output);
   }
 
@@ -347,10 +355,6 @@ function setInfoContent(targets) {
     unselectAll();
   });
 
-  $(".infocontent:last #selectedTitle").html(targets.map(function(target) { return target.name; }).filter(onlyUnique).join('<br>'));
-  $(".infocontent:last #selectedDescription").html(targets.map(function(target) { return (target.description? target.description: ' ') + (target.timetable? '<img class="timetable" src="' + target.timetable + '"/>': ''); }).map(function(desc) {
-    return "<p>" + desc + "</p>";
-  }).filter(onlyUnique).join("\n"));
 } 
 
 var selected = [];
@@ -380,6 +384,7 @@ function select(targets, mouseEvent) {
 
     $(function() {
       $("#wrapper2").toggleClass("info-open", true);
+      $(".info").scrollTop(0);
       if ($("body").outerWidth() >= 768) {
         $(".info").css({left: -300});
         $(".info").animate({left: 0}, 'fast', function() {$(".info").css({left: "" }); });
@@ -450,7 +455,7 @@ function toggleFullscreen() {
       document.msExitFullscreen();
     }
   } else {
-    element = $('body').get(0);
+    element = $('#wrapper').get(0);
     if (element.requestFullscreen) {
       element.requestFullscreen();
     } else if (element.mozRequestFullScreen) {
