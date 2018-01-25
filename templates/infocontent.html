@@ -45,7 +45,7 @@
 
 		<div class="spaceabove pierrow">
 			{{ #piers }}
-				<a href="{{ link }}"><span class="pier {{ class }}">{{ name }}</span><span class="pierspecifier">{{ specifier }}</span></a>{{^last}}, {{/last}}
+				<a href="{{ link }}"><span class="pier {{ class }}">{{ name }}{{#name_local}}/{{/name_local}}{{name_local}}</span><span class="pierspecifier">{{ specifier }}</span></a>{{^last}}, {{/last}}
 			{{ /piers }}
 		</div>
 

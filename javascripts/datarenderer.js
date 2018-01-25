@@ -46,9 +46,14 @@ function getLocalizedItem(item, lang) {
             result[key1] = L(lang, item[key]);
         } else if (key.endsWith("_" + lang)) {
             var key1 = key.substring(0, key.length - 3);
+            if (result[key1]) result[key1 + "_local"] = result[key1];
             result[key1] = item[key];
-        } else if (!/_..$/.test(key) && !result[key]) {
-            result[key] = getLocalizedItem(item[key], lang);
+        } else if (!/_..$/.test(key)) {
+            if (result[key]) {
+                result[key + "_local"] = item[key];
+            } else {
+                result[key] = getLocalizedItem(item[key], lang);
+            }
         }
     }
     return result;

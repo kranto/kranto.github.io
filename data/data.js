@@ -682,7 +682,7 @@ fdata = {
     LångnäsH: { name: "Långnäs", mun: "Hitis", type: "1" }, 
     Haapala: { mun: "Rymättylä", type: "1" }, 
     Verkan: { mun: "Korpo", type: "1" }, 
-    Kirjais: { mun: "Nagu", type: "1" }, 
+    Kirjais: { name_fi: "Kirjainen", mun: "Nagu", type: "1" }, 
     Granvik: { mun: "Pargas", type: "1" }, 
     Prostvik: { mun: "Nagu", type: "1" }, 
     Lillmälö: { mun: "Pargas", type: "1" }, 
