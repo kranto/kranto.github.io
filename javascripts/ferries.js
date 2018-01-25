@@ -397,11 +397,12 @@ function select(targets, mouseEvent) {
   setInfoContent(targets);
   toggleScrollIndicator();
 
+  $(".info").scrollTop(0);
+
   if (selectedCountWas == 0) {
 
     $(function() {
       $("#wrapper2").toggleClass("info-open", true);
-      $(".info").scrollTop(0);
       if ($("body").outerWidth() >= 768) {
         $(".info").css({left: -300});
         $(".info").animate({left: 0}, 'fast', function() {$(".info").css({left: "" }); });
