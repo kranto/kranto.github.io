@@ -699,7 +699,7 @@ fdata = {
     Korvenmaa: { mun: "Rymättylä" },
     Pakinainen: { mun: "Rymättylä" },
     Pähkinäinen: { mun: "Rymättylä" },
-    Samsaari: { mun: "Rymättylä" },
+    Samsaari: { name_sv: "Samsor", mun: "Rymättylä" },
     Maisaari: { mun: "Rymättylä" },
     Finnö: { mun: "Korpo" },
     Käldersö: { mun: "Korpo" },
