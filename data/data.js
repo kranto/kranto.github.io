@@ -1050,7 +1050,7 @@ fdata = {
       link_sv: "http://www.rosita.fi/Hemsida",
       link_en: "http://www.rosita.fi/Hemsida",
       tables: [
-      { validFrom: "2017-08-08", validTo: "2018-05-31", images: ["EivorVinter2018_1.png", "EivorVinter2018_2.png", "EivorVinter2018_3.png"]}
+      { validFrom: "2017-08-08", validTo: "2018-05-31", images: ["EivorVinter2018_1b.png", "EivorVinter2018_2.png", "EivorVinter2018_3.png"]}
       ],
     },
     korporutt: {
