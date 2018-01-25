@@ -19,9 +19,12 @@ function rememberCenter() {
 }
 
 function keepCenter() {
-  if (map && mapCenter) map.setCenter(mapCenter);
-  if (leftInfo && $("#map").outerWidth() < 768) map.panBy(200, 0);
-  if (bottomInfo && $("#map").outerWidth() >= 768) map.panBy(-200, 0);
+  var oldCenter = mapCenter;
+  if (map && mapCenter) setTimeout(function() {
+    map.setCenter(oldCenter);
+    if (leftInfo && $("#map").outerWidth() < 768) map.panBy(200, 0);
+    if (bottomInfo && $("#map").outerWidth() >= 768) map.panBy(-200, 0);
+  }, 50);
 }
 
 $(document).ready(function(){
