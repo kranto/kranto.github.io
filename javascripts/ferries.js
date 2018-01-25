@@ -309,6 +309,7 @@ function onlyUnique(value, index, self) {
 
 function closeTimetables() {
   $('#timetables').fadeOut();
+  $('#timetables').scrollTop(0);
   select(wasSelected);
 }
 

@@ -847,6 +847,7 @@ fdata = {
       ],
     },
     norralinjen: {
+      specifier: "Hummelvik - Torsholma",
       link: "http://www.alandstrafiken.ax/fi/aikataulut",
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
@@ -859,6 +860,7 @@ fdata = {
       ],
     },
     enklingelinjen: {
+      specifier: "Enklinge - Kumlinge",
       link: "http://www.alandstrafiken.ax/fi/aikataulut",
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
@@ -1226,15 +1228,16 @@ fdata = {
       specifier: "Hummelvik - Enklinge - Kumlinge - Lappo - Torsholma",
       piers: ["Hummelvik", "Enklinge", "Kumlinge", "Lappo", "Torsholma"],
       operator: "alandstrafiken",
-      vessels: ["alfageln", "knipan"],
+      vessels: ["alfageln", "knipan", "rosala"],
       features: {
-        interval_L: ["times.aday", "3-4"],
+        interval_L: ["times.adaytworoutes", "", "3-4", "Enklinge - Kumlinge", "10"],
         cost_L: "cost.applies",
         duration_L: ["duration.hours", "2.5"],
       },
-      timetables: "norralinjen",
+      timetables: ["norralinjen", "enklingelinjen"],
       pricelists: "alandstrafiken"
     },
+    // enklingelinjen now incluced in norralinjen
     enklingelinjen: {
       name: "Norra linjen",
       name_fi: "Pohjoinen linja",

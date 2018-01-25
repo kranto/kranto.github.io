@@ -8,6 +8,7 @@ messages = { // FI SV EN
     },
     times: {
         aday: ["{0} kertaa päivässä", "{0} gånger om dagen", "{0} times a day"],
+        adaytworoutes: ["{0} {1} kertaa päivässä, {2} lisäksi {3} kertaa päivässä", "{0} {1} gånger om dagen, {2} ytterligare {3} gånger om dagen", "{0} {1} times a day, {2}  additional {3} times a day"],
         aweek: ["{0} kertaa viikossa", "{0} gånger om vecka", "{0} times a week"],
         onceaday: ["kerran päivässä", "en gång om dagen", "once a day"],
         anhour: ["{0} kertaa tunnissa", "{0} gånger om timme", "{0} times an hour"],
