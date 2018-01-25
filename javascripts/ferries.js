@@ -4,8 +4,25 @@ $(document).ready(function(){
 });
 
 $(window).resize(function() {
-    toggleScrollIndicator();
+  toggleScrollIndicator();
+  keepCenter();
 });
+
+var mapCenter;
+var leftInfo = false;
+var bottomInfo = false;
+
+function rememberCenter() {
+  mapCenter = map.getCenter();
+  leftInfo = $("body").outerWidth() >= 768 && selected.length > 0;
+  bottomInfo = $("body").outerWidth() < 768 && selected.length > 0;
+}
+
+function keepCenter() {
+  if (map && mapCenter) map.setCenter(mapCenter);
+  if (leftInfo && $("#map").outerWidth() < 768) map.panBy(200, 0);
+  if (bottomInfo && $("#map").outerWidth() >= 768) map.panBy(-200, 0);
+}
 
 $(document).ready(function(){
 
@@ -21,7 +38,6 @@ function toggleScrollIndicator()
 {
   var elem = $("#wrapper2");
   var isBottom = (elem[0].scrollHeight - elem.scrollTop() - scrollLimit <= elem.outerHeight());
-  console.log('toggleScrollIndicator', isBottom, elem[0].scrollHeight, elem.outerHeight() , elem.scrollTop());
   $('#scrollIndicator').toggleClass('can-scroll', !isBottom);
 }
 
@@ -37,7 +53,7 @@ function hideMenu(cb) {
 }
 
 function showSettings() {
-  hideMenu(function() {
+  hideMenu(function() { 
     $("#settings").slideDown("fast");
     $("#settings").scrollTop(0);
   });
@@ -110,7 +126,6 @@ function initInfoPage() {
 }
 
 function initMenu() {
-  console.log('initMenu');
 
   $('.box').click(function(event) {
     $('#infopage').fadeIn();
@@ -263,6 +278,7 @@ function addMapListeners(map) {
   });
 
   map.addListener('click', toggleHeaderbar);
+  map.addListener('idle', rememberCenter);
 
 }
 
@@ -291,7 +307,8 @@ if (window.location.hostname == "localhost") $("#loader").fadeOut(500);
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    //navigator.geolocation.getCurrentPosition(showPosition);
+    // disabled for now
   } else { 
     // "Geolocation is not supported by this browser.";
   }
@@ -1123,11 +1140,9 @@ function renderData(data, map) {
 }
 
 function receiveFData(fdata, fgeojson, messages) {
-  console.log(fdata);
   fgeojson.forEach(function(data) {
     renderData(data, map);
   });
-  console.log(messages);
 }
 
 var mapOptions = {
