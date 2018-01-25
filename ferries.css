@@ -54,7 +54,7 @@
       text-align: center;
       bottom: 0px;
       padding: 10px;
-      background-color: rgba(0,0,0, 0.3);
+      background-color: rgba(0,0,0, 0.6);
       z-index: 110;
       overflow-y: scroll;
     }
@@ -495,12 +495,6 @@
   color: #ddd; 
 }
 
-.modal-dialog {
-  max-width: 1000px;
-
-}
-
-
 html, body {
   height: 100%;
   margin: 0;
@@ -667,36 +661,6 @@ div#wrapper2 {
     font-family: FontAwesome;
     content: "\f13d";
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  .modal-dialog {
-    max-width: 1000px;
-  }
-
-  #timetableModal {
-    margin: auto;
-    max-width: 640px;
-  }
-
-  #timetableModal .modal-header {
-    font-size: 20px;
-  }
-
-  #timetableModal .modal-body {
-    overflow: hidden;
-  }
-
-  #timetableModal .nav-item {
-    font-size: 14px;
-  }
-
-  #timetableModal .nav-tabs {
-    overflow-x: scroll;
-  }
-
-  #timetableModal .tab-pane div {
-    overflow-x: scroll;
-    margin-bottom: 10px;
   }
 
   div.timetablelink {

@@ -310,7 +310,6 @@ function onlyUnique(value, index, self) {
 function closeTimetables() {
   $('#timetables').fadeOut();
   $('#timetables').scrollTop(0);
-  select(wasSelected);
 }
 
 function setInfoContent(targets) {
@@ -334,14 +333,11 @@ function setInfoContent(targets) {
         data.selectedtimetable = data.timetables[index];
         data.selectedtimetable.L = data.L;
         var ttoutput = Mustache.render(tttemplate, data.selectedtimetable);
-        hideHeaderbar();
         $('#timetables').fadeIn();
         $("#timetables").html(ttoutput);
         $("#timetables").click(function(event) { if (event.target == this) closeTimetables(); });
         $('#closeTimetablesButton').click(closeTimetables);
         hideMenu();
-        wasSelected = selected.slice();
-        unselectAll();
       }
     });
   } else {
