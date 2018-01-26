@@ -63,7 +63,6 @@
     }
 
     .fmodalcontent {
-      position: inline-block;
       max-width: 630px;
       min-height: 100%;
       margin: auto;
@@ -89,7 +88,7 @@
     }
     
     div#infopagecontent {
-      position: inline-block;
+      position: relative;
       max-width:600px;
       min-height: 100%;
       margin: auto;
@@ -105,7 +104,7 @@
     #infopagecontent .footer {
       position: absolute;
       bottom: 5px;
-      width: 80%;
+      width: 95%;
       color: #808080;
       border-top: 1px ridge #a0a0a0;
     }
