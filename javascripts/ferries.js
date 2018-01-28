@@ -382,7 +382,7 @@ function select(targets, mouseEvent) {
   if (!targets.length) return;
 
   var selectedCountWas = selected.length;
-  selected.forEach(function(target) { target.highlight(false); });
+  selected.forEach(function(target) { target.highlight(false);  if (target.rerender) target.rerender(map.getZoom(), map.getMapTypeId()); });
   selected = [];
 
   var bounds = null;
@@ -456,7 +456,7 @@ function unselectAll() {
       });
     }
   });
-  selected.forEach(function(target) { target.highlight(false); });
+  selected.forEach(function(target) { target.highlight(false); if (target.rerender) target.rerender(map.getZoom(), map.getMapTypeId()); });
   selected = [];
 }
 
@@ -831,6 +831,7 @@ function cableferry(feature, map) {
   var visibleFrom = feature.properties.visibleFrom || styler.visibleFrom;
 
   var coords = feature.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
+  var isSelected = false;
   var line = new google.maps.Polyline({
     path: new google.maps.MVCArray(coords),
     geodesic: false,
@@ -846,22 +847,24 @@ function cableferry(feature, map) {
     }],
     map: map
   });
-  var description = createDescription(feature.properties);
-  line.addListener('click', function(event) {
-    select([{ref: feature.properties.ref, name: feature.properties.sname, description: description,
-      highlight: function(doHighlight) {
-        line.setOptions({strokeOpacity: doHighlight? highlightOpacity: 0});
-      }
-    }], event);
-  });
-  return {
+  var connectionObject = {
+    ref: feature.properties.ref,
     hide: function(zoom, mapTypeId) {
-      line.setVisible(layers.roadferries && zoom >= visibleFrom);
+      line.setVisible(isSelected || (layers.roadferries && zoom >= visibleFrom));
     },
     rerender: function(zoom, mapTypeId) {
-      line.setVisible(layers.roadferries && zoom >= visibleFrom);
-    }
+      line.setVisible(isSelected || (layers.roadferries && zoom >= visibleFrom));
+    },
+    highlight: function(doHighlight) {
+      isSelected = doHighlight;
+      line.setOptions({strokeOpacity: doHighlight? highlightOpacity: 0});
+    },
   };
+  var description = createDescription(feature.properties);
+  line.addListener('click', function(event) {
+    select([connectionObject], event);
+  });
+  return connectionObject;
 }
 
 var lineWeightUnit = 1.5;
@@ -938,7 +941,7 @@ function connection(connection, map) {
     var highlightColor = leg.properties.highlightColor || legStyler.highlightColor || connection.properties.highlightColor || connectionStyler.highlightColor || baseStyler.highlightColor;
     var highlightWeight = leg.properties.highlightWeight || legStyler.highlightWeight || connection.properties.highlightWeight || connectionStyler.highlightWeight || baseStyler.highlightWeight;
     var highlightOpacity = leg.properties.highlightOpacity || legStyler.highlightOpacity || connection.properties.highlightOpacity || connectionStyler.highlightOpacity || baseStyler.highlightOpacity;
-
+    var isSelected = false;
     var line = new google.maps.Polyline({
       path: new google.maps.MVCArray(coords),
       geodesic: false,
@@ -960,14 +963,15 @@ function connection(connection, map) {
       map: map
     });
     var highlight = function(doHighlight) {
+      isSelected = doHighlight;
       lineb.setOptions({strokeOpacity: doHighlight? highlightOpacity: 0});
     };
     lineb.addListener('click', function(event) {
       select([connectionObject], event);
     });
     var rerender = function(zoom, mapTypeId) {
-      line.setVisible(layerSelector() && zoom >= visibleFrom && zoom <= visibleTo);
-      lineb.setVisible(layerSelector() && zoom >= visibleFrom && zoom <= visibleTo);
+      line.setVisible(isSelected || (layerSelector() && zoom >= visibleFrom && zoom <= visibleTo));
+      lineb.setVisible((layerSelector() && zoom >= visibleFrom && zoom <= visibleTo));
     }
     return {highlight: highlight, rerender: rerender };
   });
