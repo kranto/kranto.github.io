@@ -864,13 +864,13 @@ function cableferry(feature, map) {
   };
 }
 
-var lineWeightUnit = 1.2;
+var lineWeightUnit = 1.5;
 
 var connectionStylers = {
   "base": {
     visibleFrom: 8,
     visibleTo: 30,
-    weight: 3 * lineWeightUnit,
+    weight: 3.5 * lineWeightUnit,
     color: '#f08000',
     opacity: 0.7,
     zIndex: 10,
@@ -882,14 +882,15 @@ var connectionStylers = {
   "conn1": {
   },
   "conn1b": {
-    weight: 1.5 * lineWeightUnit,
+    weight: 2 * lineWeightUnit,
     zIndex: 9
   },
   "conn2": {
-    weight: 2 * lineWeightUnit,
+    weight: 2.5 * lineWeightUnit,
     color: '#005dd8'
   },
   "conn2m": {
+    weight: 2 * lineWeightUnit,
     color: '#ff7c0a',
   },
   "conn2b": {
@@ -898,13 +899,13 @@ var connectionStylers = {
   },
   "conn3": {
     // visibleFrom: 9,
-    weight: 2.5 * lineWeightUnit,
+    weight: 2 * lineWeightUnit,
     color: '#e7883e',
     opacity: 1
   },
   "conn4": {
     // visibleFrom: 9,
-    weight: 2 * lineWeightUnit,
+    weight: 1.5 * lineWeightUnit,
     color: '#7fb3e8',
     opacity: 0.8,
     zIndex: 8,
@@ -1335,12 +1336,12 @@ function initMap() {
     path: 'M 0,-1 0,1',
     strokeOpacity: 0.4,
     strokeColor: '#e08080',
-    scale: 1
+    scale: 1.5
   };
 
   var lauttaLineSymbolDimmed = {
     path: 'M 0,-1 0,1',
-    strokeOpacity: 0.25,
+    strokeOpacity: 0.4,
     strokeColor: '#d00000',
     scale: 1
   };
