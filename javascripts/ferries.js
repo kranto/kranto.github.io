@@ -92,6 +92,7 @@ function showHeaderbar() {
 
 window.onhashchange = function() {
   // alert(location.hash);
+  console.log("hash changed", location.hash);
 }
 
 function doToggleHeaderbar() {
@@ -404,11 +405,12 @@ function select(targets, mouseEvent) {
     $(function() {
       $("#wrapper2").toggleClass("info-open", true);
       if ($("body").outerWidth() >= 768) {
-        $(".info").css({left: -300});
+        $(".info").css({left: -400});
         $(".info").animate({left: 0}, 'fast', function() {$(".info").css({left: "" }); });
-
+        //$(".map").animate({left: 400}, 'fast');
         var clientX = mouseEvent? latLng2Point(mouseEvent.latLng, map).x: 500;
         if (clientX < (400 + 50)) map.panBy(clientX - (($("#map").width() - 400)/3 +400), 0);
+        //map.panBy(200,0);
 
       } else {
         $(".info").css({top: '100%'});
@@ -435,7 +437,9 @@ function unselectAll() {
   if (selected.length == 0) return;
   $(function() {
     if ($("body").outerWidth() >= 768) {
-      $(".info").animate({left: -300}, 'fast', function() {
+      //map.panBy(-200, 0);
+      //$("#map").animate({left: 0});
+      $(".info").animate({left: -400}, 'fast', function() {
         $(".info").css({left: "" });
         $("#wrapper2").toggleClass("info-open", false);
       });
