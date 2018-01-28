@@ -864,11 +864,13 @@ function cableferry(feature, map) {
   };
 }
 
+var lineWeightUnit = 1.2;
+
 var connectionStylers = {
   "base": {
     visibleFrom: 8,
     visibleTo: 30,
-    weight: 2.5,
+    weight: 3 * lineWeightUnit,
     color: '#f08000',
     opacity: 0.7,
     zIndex: 10,
@@ -880,29 +882,29 @@ var connectionStylers = {
   "conn1": {
   },
   "conn1b": {
-    weight: 1.5,
+    weight: 1.5 * lineWeightUnit,
     zIndex: 9
   },
   "conn2": {
-    weight: 2,
+    weight: 2 * lineWeightUnit,
     color: '#005dd8'
   },
   "conn2m": {
     color: '#ff7c0a',
   },
   "conn2b": {
-    weight: 1.5,
+    weight: 1.5 * lineWeightUnit,
     zIndex: 9
   },
   "conn3": {
     // visibleFrom: 9,
-    weight: 2,
+    weight: 2.5 * lineWeightUnit,
     color: '#e7883e',
     opacity: 1
   },
   "conn4": {
     // visibleFrom: 9,
-    weight: 1.5,
+    weight: 2 * lineWeightUnit,
     color: '#7fb3e8',
     opacity: 0.8,
     zIndex: 8,
@@ -950,7 +952,7 @@ function connection(connection, map) {
       path: new google.maps.MVCArray(coords),
       geodesic: false,
       strokeOpacity: 0,
-      strokeWeight: highlightWeight,
+      strokeWeight: highlightWeight + weight,
       strokeColor: highlightColor,
       zIndex: zIndex - 1,
       cursor: 'context-menu',
