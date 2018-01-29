@@ -96,17 +96,16 @@ window.onhashchange = function() {
 }
 
 function doToggleHeaderbar() {
-  if (!inIframe()) {
-    if (selected.length > 0) {
-      unselectAll();
-    } else if ($("#topbar").is(":hidden")) {
-      showHeaderbar();
-    } else if (selected.length == 0 && $("#menu").is(":hidden") && $("#settings").is(":hidden")) {
-      hideHeaderbar();
-    }
+  if (!$("#menu").is(":hidden") || !$("#settings").is(":hidden")) {
+    hideMenu();
+    hideSettings();
+  } else if (selected.length > 0) {
+    unselectAll();
+  } else if ($("#topbar").is(":hidden")) {
+    showHeaderbar();
+  } else if (!inIframe()) {
+    hideHeaderbar();
   }
-  hideMenu();
-  hideSettings();
 }
 
 var headerBarTimeout = null;
