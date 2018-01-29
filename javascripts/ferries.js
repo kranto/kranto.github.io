@@ -369,6 +369,13 @@ function setInfoContent(targets) {
     $(".info").html(output);
   }
 
+  if (targets[0].style) {
+    var style = targets[0].style;
+    $(".infotitle, .headerbox").css({borderBottom: style.weight + "px " + style.style + " " + style.color });
+  } else {
+    $(".infotitle, .headerbox").css({borderBottom: "none" });      
+  }
+  
   $('#closeInfoButton').click(function() {
     unselectAll();
   });
@@ -860,6 +867,7 @@ function cableferry(feature, map) {
       line.setOptions({strokeOpacity: doHighlight? highlightOpacity: 0});
     },
   };
+  connectionObject.style = { color: "#00a000", weight: 3, style: "dashed", opacity: 1 };
   var description = createDescription(feature.properties);
   line.addListener('click', function(event) {
     select([connectionObject], event);
@@ -886,7 +894,7 @@ var connectionStylers = {
   },
   "conn1b": {
     weight: 2 * lineWeightUnit,
-    zIndex: 9
+    zIndex: 12
   },
   "conn2": {
     weight: 2.5 * lineWeightUnit,
@@ -942,6 +950,7 @@ function connection(connection, map) {
     var highlightWeight = leg.properties.highlightWeight || legStyler.highlightWeight || connection.properties.highlightWeight || connectionStyler.highlightWeight || baseStyler.highlightWeight;
     var highlightOpacity = leg.properties.highlightOpacity || legStyler.highlightOpacity || connection.properties.highlightOpacity || connectionStyler.highlightOpacity || baseStyler.highlightOpacity;
     var isSelected = false;
+    connectionObject.style = { color: color, weight: weight, style: "solid", opacity: opacity };
     var line = new google.maps.Polyline({
       path: new google.maps.MVCArray(coords),
       geodesic: false,
@@ -1418,7 +1427,7 @@ function initMap() {
       this.details = description(object);
       this.operatorId = this.operators[0];
       this.operator = operators[this.operatorId];
-
+      this.style = { color: "#e08080", weight: 1.5, style: "dotted", opacity: .7 };
     }
     this.init();
   }
