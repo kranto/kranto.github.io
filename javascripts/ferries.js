@@ -865,7 +865,7 @@ function cableferry(feature, map) {
       line.setOptions({strokeOpacity: doHighlight? highlightOpacity: 0});
     },
   };
-  connectionObject.style = { color: "#00a000", weight: 3, style: "dashed", opacity: 1 };
+  connectionObject.style = { color: "#00a000", weight: 8, style: "dotted", opacity: 1 };
   var description = createDescription(feature.properties);
   line.addListener('click', function(event) {
     select([connectionObject], event);

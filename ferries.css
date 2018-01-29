@@ -101,6 +101,10 @@
       padding: 5px;
     }
 
+    #infopage h3, #infopage h4 {
+      margin-top: 30px;
+    }
+    
     #infopagecontent .footer {
       position: absolute;
       bottom: 5px;
@@ -861,4 +865,21 @@ div#wrapper2 {
   #wrapper2.info-open .info {
     top: 40px;
   }
+}
+
+.infopageroute {
+  display: inline-block;
+  width: 30px;
+  height: 7px;
+  border-top: 4px solid #000;
+  margin-right: 15px;
+}
+
+.ferrieslist {
+  list-style: none;
+  padding-left: 45px;
+}
+
+.ferrieslist li {
+  text-indent: -45px;
 }
