@@ -340,131 +340,131 @@
   }
 }
 
-  div#topbar {
-    position: fixed;
-    top: 0px;
-    height: 50px;
-    width: 100%;
-    background-color: white;
-    border-bottom: solid #aaa 1px;
-    z-index: 10;
-    box-shadow: 4px 4px grey;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
+#topbar {
+  position: fixed;
+  top: 0px;
+  height: 50px;
+  width: 100%;
+  background-color: white;
+  border-bottom: solid #aaa 1px;
+  z-index: 10;
+  box-shadow: 4px 4px grey;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
-    div#topbartitle {
-      font-size: 20px;
-      width: 100%;
-      text-align: center;
-      padding: 10px;
-      position: absolute;
-      background: transparent;
-      pointer-events: none;
-    }
+#topbartitle {
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  background: transparent;
+  pointer-events: none;
+}
 
-    .topbarbutton {
-      float: left;
-      margin: 3px;
-      margin-left: 5px;
-      margin-right: 5px;
-      border: none;
-      outline: 0;
-      font-size: 30px;
-      color: #444;
-      background: transparent;
-    }
+.topbarbutton {
+  float: left;
+  margin: 3px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: none;
+  outline: 0;
+  font-size: 30px;
+  color: #444;
+  background: transparent;
+}
 
-    .topbarbutton.right {
-      float: right;
-    }
+.topbarbutton.right {
+  float: right;
+}
 
-    #menu {
-      display: none;
-      position: fixed;
-      left: 0px;
-      top: 50px;
-      width: 200px;
-      max-height: 100%;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      box-shadow: 2px 2px #ddd;
-      z-index: 11;
-    }
+#menu {
+  display: none;
+  position: fixed;
+  left: 0px;
+  top: 50px;
+  width: 200px;
+  max-height: 90%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-shadow: 2px 2px #ddd;
+  z-index: 11;
+}
 
-    .menucontainer {
-      width: 100%;
-      background-color: white;
-      opacity: 1;
-      border: solid #aaa 1px;
-      padding: 10px;
-      padding-left: 20px;
-      padding-top: 5px;
-      margin-top: 0px;
-      background-color: white;
-    }
+.menucontainer {
+  width: 100%;
+  background-color: white;
+  opacity: 1;
+  border: solid #aaa 1px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-top: 5px;
+  margin-top: 0px;
+  background-color: white;
+}
 
-    #settings {
-      display: none;
-      position: fixed;
-      right: 0px;
-      top: 50px;
-      width: 200px;
-      max-height: 100%;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      box-shadow: -2px 2px #ddd;
-      box-shadow: 2px 2px #ddd;
-      z-index: 11;
-    }
+#settings {
+  display: none;
+  position: fixed;
+  right: 0px;
+  top: 50px;
+  width: 200px;
+  max-height: 90%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-shadow: -2px 2px #ddd;
+  box-shadow: 2px 2px #ddd;
+  z-index: 11;
+}
 
-    #menu .col-sm-3 {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+#menu .col-sm-3 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
-    .box {
-      margin: 5px;
-      height: 40px;
-      padding: 5px;
-      border-bottom: solid #ddd 1px;
-      overflow: hidden;
-      text-align: center;
-      cursor: pointer;
-    }
+.box {
+  margin: 5px;
+  height: 40px;
+  padding: 5px;
+  border-bottom: solid #ddd 1px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
 
-    .box:not([data-target]) {
-      cursor: inherit;
-      color: #ccc;
-      pointer-events: none;
-    }
+.box:not([data-target]) {
+  cursor: inherit;
+  color: #ccc;
+  pointer-events: none;
+}
 
-    .boxs {
-      user-select: none;
-      margin: 5px;
-      min-height: 40px;
-      border-bottom: solid #ddd 1px;
-      overflow: hidden;
-    }
+.boxs {
+  user-select: none;
+  margin: 5px;
+  min-height: 40px;
+  border-bottom: solid #ddd 1px;
+  overflow: hidden;
+}
 
-    .boxs button {
-      height: 30px;
-      padding-top: 4px;
-    }
+.boxs button {
+  height: 30px;
+  padding-top: 4px;
+}
 
-    .boxs h4 {
-      font-size: 18px; 
-    }
+.boxs h4 {
+  font-size: 18px; 
+}
 
-    .mapTypeSelect {
-      height: 30px;
-      width: 100%;
-      background-color: white;
-    }
+.mapTypeSelect {
+  height: 30px;
+  width: 100%;
+  background-color: white;
+}
 
-    .layerselector {
-      font-weight: normal;
-      cursor: pointer; 
-    }
+.layerselector {
+  font-weight: normal;
+  cursor: pointer; 
+}
 
 .layer input[type=checkbox] { display:none; }
 .layer input[type=checkbox] + label:before {
@@ -841,3 +841,24 @@ div#wrapper2 {
   font-weight: bold;
 }
 
+@media screen and (max-height: 500px) {
+  #topbar {
+    height: 40px;
+  }
+  .topbarbutton {
+    font-size: 25px;
+    margin: 2px;
+  }
+  #topbartitle {
+    padding: 5px;
+  }
+  #menu, #settings, #infopage {
+    top: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-height: 500px) {
+  #wrapper2.info-open .info {
+    top: 40px;
+  }
+}

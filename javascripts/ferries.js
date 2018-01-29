@@ -91,7 +91,6 @@ function showHeaderbar() {
 }
 
 window.onhashchange = function() {
-  // alert(location.hash);
   console.log("hash changed", location.hash);
 }
 
