@@ -1364,6 +1364,7 @@ function initMap() {
       var latLong = coord.split(","); 
       return new google.maps.LatLng(parseFloat(latLong[1]), parseFloat(latLong[0])); 
     });
+    this.isSelected = false;
     this.line = new google.maps.Polyline({
       path: new google.maps.MVCArray(this.path),
       zIndex: 1,
@@ -1392,7 +1393,7 @@ function initMap() {
       select(that.routes, event);
     });
     this.rerender = function(zoom, mapTypeId) {
-      this.line.setVisible(layers.longdistanceferries && zoom >= 7 && zoom <= 11);
+      this.line.setVisible(this.isSelected || (layers.longdistanceferries && zoom >= 7 && zoom <= 11));
       this.line.setOptions({icons: [{
         icon: zoom <= 9? lauttaLineSymbol: lauttaLineSymbolDimmed,
         offset: '4',
@@ -1403,6 +1404,7 @@ function initMap() {
   }
 
   Leg.prototype.highlight = function(doHighlight) {
+    this.isSelected = doHighlight;
     this.highlightLine.setVisible(doHighlight);
   }
 
@@ -1432,6 +1434,10 @@ function initMap() {
 
   Route.prototype.highlight = function(doHighlight) {
     this.legs.forEach(function(leg) { leg.highlight(doHighlight); });
+  }
+
+  Route.prototype.rerender = function(zoom, mapTypeId) {
+    this.legs.forEach(function(leg) { leg.rerender(zoom, mapTypeId); });
   }
 
   lauttaLegs =
