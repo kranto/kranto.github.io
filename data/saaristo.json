@@ -2571,10 +2571,26 @@
         "stype": "area", "ssubtype": "island1",
         "sname": "Töftö",
         "labelVisibleFrom": 10,
+        "labelVisibleTo": 12,
         "labelAnchor": {"dir": "E", "x":0 , "y":0 }
       },
       "geometry": {
         "coordinates": [20.296382, 60.208866 ],
+        "type": "Point"
+      },
+      "id": "4e3eff82e36855242f3dcb4643fd0a75"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "area", "ssubtype": "island1",
+        "sname": "Ängö",
+        "labelVisibleFrom": 11,
+        "labelVisibleTo": 12,
+        "labelAnchor": {"dir": "C", "x":0 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [20.304753, 60.155925],
         "type": "Point"
       },
       "id": "4e3eff82e36855242f3dcb4643fd0a75"
