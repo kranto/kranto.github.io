@@ -333,7 +333,7 @@ function closeTimetables() {
 
 function setInfoContent(targets) {
 
-
+  var output;
   $(".info .infocontent").addClass("removing");
   if (targets[0].ref) {
     var route = targets[0].ref;
@@ -341,7 +341,7 @@ function setInfoContent(targets) {
 
     var template = document.getElementById('infocontenttemplate').innerHTML;
     var data = routeInfo(fdata.routes[route], currentLang);
-    var output = Mustache.render(template, data);
+    output = Mustache.render(template, data);
 
     $(".info").append(output);
 
@@ -365,9 +365,11 @@ function setInfoContent(targets) {
     var template = document.getElementById('infocontent2template').innerHTML;
     var uniqueNames = targets.map(function(target) { return target.name; }).filter(onlyUnique);
     var data = { names: uniqueNames, contents: targets };
-    var output = Mustache.render(template, data);
-    $(".info").append(output);
+    output = Mustache.render(template, data);
   }
+
+  $(".info").append(output);
+  if ($(".infocontent.removing").length) $(".infocontent:not(.removing)").hide();
 
   if (targets[0].style) {
     var style = targets[0].style;
@@ -380,8 +382,10 @@ function setInfoContent(targets) {
     unselectAll();
   });
 
+
   $(".infocontent.removing").fadeOut('fast', function() {
     $(".infocontent.removing").remove();
+    $(".infocontent").fadeIn('fast');
   });
 } 
 
