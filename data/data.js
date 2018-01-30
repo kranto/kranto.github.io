@@ -116,7 +116,7 @@ fdata = {
     frida: {
       name: "M/S Frida II",
       features: { access: false, cafe: false },
-      capacity: { persons: 17, cars: 18, trucks: 2 },
+      capacity: { persons: 70, cars: 18, trucks: 2 },
       contact: {
         phones: ['+358 (0)457 3613 394']
       },
