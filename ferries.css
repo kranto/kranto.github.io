@@ -299,21 +299,6 @@
       background-color: #fbfcfd;
     }
 
-    .infocontent {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #fcfdfe;
-      padding: 0 5px;
-    }
-
-    .infocontent.hidden-info {
-      opacity: 0;
-    }
-
-    .infocontent.template {
-      display: none;
-    }
-
     .map {
       height: 100%;
       width: 100%; 
@@ -531,290 +516,277 @@ div#wrapper2 {
   padding: 0;
 }
 
-  .infocontent {
-    max-width: 640px;
-    margin: 0 auto;
-    background-color: #fcfdfe;
-    overflow: hidden;
+.infocontent {
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: #fcfdfe;
+  overflow: hidden;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.infocontent.removing {
+  z-index: 100;
+}
+
+.infotitle {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.infotitle .specifier {
+  font-size: 16px;
+}
+
+.spaceabove {
+  margin-top: 30px;
+}
+
+.vesselbox {
+  border: 0px solid;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  background-color: #eee;
+  padding: 3px 5px;
+  height: 40px;
+}
+
+.vesselname {
+  position: relative;
+  top: 8px;
+  left: 40px;
+  font-size: 18px;
+  padding-right: px;
+}
+
+.vesselname:before {
+  content: "\f21a";
+  font-family: FontAwesome;
+  -moz-osx-font-smoothing: grayscale;
+  left: -35px;
+  font-size: 25px;
+  position:absolute;
+  top:-10px;
+}
+
+.vesselfeatures {
+  padding-right: 5px;
+  font-size: 12px;
+  text-align: right;
+  position: absolute;
+  bottom: 6px;
+  right: 15px;
+}
+
+.routefeature {
+  position: relative;
+  left: 30px;
+}
+
+.routefeature:before {
+  font-family: FontAwesome;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  left: -15px;
+}
+
+.routefeature.negative:before {
+  color: #ccc;
+}
+
+.routefeature.interval:before {
+  content: "\f0ec";
+}
+
+.routefeature.duration:before {
+  content: "\f017";
+}
+
+.routefeature.cost:before {
+  content: "\f153";
+}
+
+.routefeature.booking:before {
+  content: "\f0f6";
+}
+
+.routefeature.order:before {
+  content: "\f095";
+}
+
+.routefeature.seasonal:before {
+  content: "\f185";
+}
+
+.routefeature.limit:before {
+  content: "\f256";
+}
+
+.routefeature.seealso:before {
+  content: "\f06e";
+}
+
+.timetablebutton {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.timetablebutton:before {
+  font-family: FontAwesome;
+  content: "\f017";
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.timetablebutton.external:after {
+  font-family: FontAwesome;
+  content: " \f08e";
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pierrow:before {
+  font-family: FontAwesome;
+  content: "\f13d";
+  -moz-osx-font-smoothing: grayscale;
+}
+
+div.timetablelink {
+  border-bottom: 2px solid black;
+}
+
+div.timetablelink:last-of-type {
+  border-bottom: none;
+}
+
+.contactsbox {
+  max-width: 400px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.contactformheader {
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 20px;
+}
+
+.contactbutton {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.contactbutton:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.contactbutton.phone:before {
+  content: "\f095\00a0\00a0";
+}
+
+.contactbutton.email:before {
+  content: "\f003\00a0\00a0";
+}
+
+.contactbutton.www:before {
+  content: "\f0ac\00a0\00a0";
+}
+
+.contactbutton.facebook:before {
+  content: "\f230\00a0\00a0";
+}
+
+.pier {
+
+}
+
+.mainpier {
+  font-weight: bold;
+}
+
+.pierspecifier {
+  font-size: -2px;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+.btn:focus, .btn.active:focus {outline:0;}
+
+.btn-default.active, .btn-default.active:focus {
+  background-color: #bbb;
+}
+
+.btn-default:focus {
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+@media (hover:hover) {
+  .btn:hover, .btn.active:hover { 
+    background-color: #8de;
   }
+}
 
-  .infocontent.hidden-info {
-    opacity: 0;
-  }
+.collapsing {
+    transition: height 0.4s;
+}
 
-  .infocontent.template {
-    display: none;
-  }
+.center {
+  text-align: center;
+}
 
-  .infotitle {
-    font-size: 20px;
-    font-weight: 500;
-  }
+.info {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 100%; 
+  min-height: 20%;
+  overflow-y: hidden; 
+  background-color: #fbfcfd;
+  border: 1px solid grey;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 110;
+}
 
-  .infotitle .specifier {
-    font-size: 16px;
-  }
+#wrapper2.info-open .info {
+  display: block;
+}
 
-  .spaceabove {
-    margin-top: 30px;
-  }
+#mapcontainer {
+  position: absolute;
+  height: 100%;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  z-index: 100;
+}
 
-  .vesselbox {
-    border: 0px solid;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    background-color: #eee;
-    padding: 3px 5px;
-    height: 40px;
-  }
-
-  .vesselname {
-    position: relative;
-    top: 8px;
-    left: 40px;
-    font-size: 18px;
-    padding-right: px;
-  }
-
-  .vesselname:before {
-    content: "\f21a";
-    font-family: FontAwesome;
-    -moz-osx-font-smoothing: grayscale;
-    left: -35px;
-    font-size: 25px;
-    position:absolute;
-    top:-10px;
-  }
-
-  .vesselfeatures {
-    padding-right: 5px;
-    font-size: 12px;
-    text-align: right;
-    position: absolute;
-    bottom: 6px;
-    right: 15px;
-  }
-
-  .routefeature {
-    position: relative;
-    left: 30px;
-  }
-
-  .routefeature:before {
-    font-family: FontAwesome;
-    -moz-osx-font-smoothing: grayscale;
-    position: absolute;
-    left: -15px;
-  }
-
-  .routefeature.negative:before {
-    color: #ccc;
-  }
-
-  .routefeature.interval:before {
-    content: "\f0ec";
-  }
-
-  .routefeature.duration:before {
-    content: "\f017";
-  }
-
-  .routefeature.cost:before {
-    content: "\f153";
-  }
-
-  .routefeature.booking:before {
-    content: "\f0f6";
-  }
-
-  .routefeature.order:before {
-    content: "\f095";
-  }
-
-  .routefeature.seasonal:before {
-    content: "\f185";
-  }
-
-  .routefeature.limit:before {
-    content: "\f256";
-  }
-
-  .routefeature.seealso:before {
-    content: "\f06e";
-  }
-
-  .timetablebutton {
-    width: 100%;
-    margin-top: 5px;
-  }
-
-  .timetablebutton:before {
-    font-family: FontAwesome;
-    content: "\f017";
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .timetablebutton.external:after {
-    font-family: FontAwesome;
-    content: " \f08e";
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .pierrow:before {
-    font-family: FontAwesome;
-    content: "\f13d";
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  div.timetablelink {
-    border-bottom: 2px solid black;
-  }
-
-  div.timetablelink:last-of-type {
-    border-bottom: none;
-  }
-
-  .contactsbox {
-    max-width: 400px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto; 
-  }
-
-  .contactformheader {
-    font-size: 18px;
-    font-weight: normal;
-    margin-top: 20px;
-  }
-
-  .contactbutton {
-    width: 100%;
-    max-width: 400px;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto; 
-  }
-
-  .contactbutton:before {
-    font-family: FontAwesome;
-    font-weight: normal;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .contactbutton.phone:before {
-    content: "\f095\00a0\00a0";
-  }
-
-  .contactbutton.email:before {
-    content: "\f003\00a0\00a0";
-  }
-
-  .contactbutton.www:before {
-    content: "\f0ac\00a0\00a0";
-  }
-
-  .contactbutton.facebook:before {
-    content: "\f230\00a0\00a0";
-  }
-
-  .pier {
-
-  }
-
-  .mainpier {
-    font-weight: bold;
-  }
-
-  .pierspecifier {
-    font-size: -2px;
-    font-weight: normal;
-  }
-
-  h4 {
-    font-size: 20px;
-  }
-
-  .btn:focus, .btn.active:focus {outline:0;}
-
-  .btn-default.active, .btn-default.active:focus {
-    background-color: #bbb;
-  }
-
-  .btn-default:focus {
-    background-color: #fff;
-    border-color: #ccc;
-  }
-
-  @media (hover:hover) {
-    .btn:hover, .btn.active:hover { 
-      background-color: #8de;
-    }
-  }
-
-  .collapsing {
-      transition: height 0.4s;
-  }
-
-  .center {
-    text-align: center;
-  }
-
-  .info {
-    overflow-y: hidden; 
-    width: 100%; 
-    min-height: 10%;
-    position: absolute;
-    top: 100%;
-    display: none;
-    padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 30px;
-    background-color: #fbfcfd;
-    border: 1px solid grey;
-    box-shadow: 5px 3 px 3px lightgray;
-  /*  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  */}
-
-  .info {
-    display: none;
-    z-index: 110;
+@media screen and (max-width: 767px) {
+  #wrapper2.info-open #mapcontainer {
+    height: 80%;
   }
 
   #wrapper2.info-open .info {
-    display: block;
+    top: 80%;
   }
+}
 
-  #mapcontainer {
-    position: absolute;
-    height: 100%;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    z-index: 100;
+@media screen and (min-width: 768px) {
+
+  #wrapper2.info-open .info {
+    top: 50px;
+    bottom: 0px;
+    width: 400px;
+    overflow-y: scroll;
   }
-
-  @media screen and (max-width: 767px) {
-    #wrapper2.info-open #mapcontainer {
-      height: 80%;
-    }
-
-    #wrapper2.info-open .info {
-      top: 80%;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-
-    #wrapper2.info-open .info {
-      top: 50px;
-      bottom: 0px;
-      width: 400px;
-      overflow-y: scroll;
-      padding: 20px;
-      padding-bottom: 40px;
-    }
-  }
+}
 
 .headerbox {
   font-size: 16px;

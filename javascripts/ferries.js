@@ -333,6 +333,8 @@ function closeTimetables() {
 
 function setInfoContent(targets) {
 
+
+  $(".info .infocontent").addClass("removing");
   if (targets[0].ref) {
     var route = targets[0].ref;
     location.hash = route;
@@ -341,7 +343,7 @@ function setInfoContent(targets) {
     var data = routeInfo(fdata.routes[route], currentLang);
     var output = Mustache.render(template, data);
 
-    $(".info").html(output);
+    $(".info").append(output);
 
     $(".timetablebutton").click(function() {
       if (this.getAttribute("linktype") === "external") {
@@ -364,20 +366,23 @@ function setInfoContent(targets) {
     var uniqueNames = targets.map(function(target) { return target.name; }).filter(onlyUnique);
     var data = { names: uniqueNames, contents: targets };
     var output = Mustache.render(template, data);
-    $(".info").html(output);
+    $(".info").append(output);
   }
 
   if (targets[0].style) {
     var style = targets[0].style;
-    $(".infotitle, .headerbox").css({borderBottom: style.weight + "px " + style.style + " " + style.color });
+    $(".infocontent:not(.removing)").find(".infotitle, .headerbox").css({borderBottom: style.weight + "px " + style.style + " " + style.color });
   } else {
-    $(".infotitle, .headerbox").css({borderBottom: "none" });      
+    $(".infocontent:not(.removing)").find(".infotitle, .headerbox").css({borderBottom: "none" });      
   }
   
-  $('#closeInfoButton').click(function() {
+  $('.closeInfoButton').click(function() {
     unselectAll();
   });
 
+  $(".infocontent.removing").fadeOut('fast', function() {
+    $(".infocontent.removing").remove();
+  });
 } 
 
 var selected = [];
@@ -447,6 +452,7 @@ function unselectAll() {
       $(".info").animate({left: -400}, 'fast', function() {
         $(".info").css({left: "" });
         $("#wrapper2").toggleClass("info-open", false);
+        $(".info .infocontent").remove();
       });
     } else {
       $("#wrapper2").animate({scrollTop: 0}, 'fast', function() {
@@ -456,6 +462,7 @@ function unselectAll() {
         $("#mapcontainer").animate({height: '100%'}, 'fast', function() {
           $("#mapcontainer").css({height: ""});
           $("#wrapper2").toggleClass("info-open", false);
+          $(".info .infocontent").remove();
           toggleScrollIndicator();
         }); 
       });

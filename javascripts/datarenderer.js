@@ -25,7 +25,6 @@ function getLocalizedItem(item, lang) {
     
     if (!(item instanceof Object)) {
         if (typeof item === 'string' && item.startsWith("ref_")) {
-            console.log(item);
             var parts = item.split("_");
             var sub = ferrydata[parts[1]][parts[2]];
             sub.id = parts[2];
@@ -68,7 +67,6 @@ function getEmail(item) {
 }
 
 function getFb(item) {
-    console.log(item);
     return item.fb? [{ class: "facebook", text: item.name,  specifier: "", uri: item.fb, target:"facebook" }]: [];
 }
 
@@ -175,7 +173,7 @@ function routeInfo(route, lang) {
         };
     }
 
-    console.log(info);
+    // console.log(info);
     
     return info;
 }
