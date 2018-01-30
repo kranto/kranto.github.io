@@ -1873,7 +1873,7 @@ fdata = {
       { 
         content_fi: "<div>Lossi lähtee Skagenista aina 15 ja 30 min ennen Auroran lähtöä Kannvikista Heponiemeen (Kustavi).</div>",
         content_sv: "<div>Färjan  avgår från Skagen alltid 15 och 30 min före Auroras avgång från Kannvik till Heponimi (Gustavs).</div>",
-        content_en: "<div>The ferry departures from Skagen always 15 and 30 minutes before Aurora's departure from Kannvik till Heponiemi (Kustavi).</div>"
+        content_en: "<div>The ferry departures from Skagen always 15 and 30 minutes before Aurora's departure from Kannvik to Heponiemi (Kustavi).</div>"
       }
       ],
       timetables: ["skagen"]
