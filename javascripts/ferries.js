@@ -1237,22 +1237,10 @@ function initMap() {
     disableAutoPan: true
   });
 
+  initMapTypes(map);
+}
 
-  //Define OSM map type pointing at the OpenStreetMap tile server
-  map.mapTypes.set("OSM", new google.maps.ImageMapType({
-    getTileUrl: function(coord, zoom) {
-      var tilesPerGlobe = 1 << zoom;
-      var x = coord.x % tilesPerGlobe;
-      if (x < 0) {
-        x = tilesPerGlobe+x;
-      }
-
-      return "http://tile.openstreetmap.org/" + zoom + "/" + x + "/" + coord.y + ".png";
-    },
-    tileSize: new google.maps.Size(256, 256),
-    name: "OpenStreetMap",
-    maxZoom: 15
-  }));
+function initMapTypes(map) {
 
   function createGetMMLTileUrl(tileDir) {
     return function(coord, zoom) {
@@ -1271,6 +1259,52 @@ function initMap() {
         return "http://tiles.saaristolautat.fi/" + tileDir + "/" + zoom + "/" + x + "/" + coord.y + ".png";
     }
   }
+
+  var copyrights = {
+    MML: 'Taustakartan aineisto <a href="http://www.maanmittauslaitos.fi/" target="_blank">Maanmittauslaitos</a> 12/2017',
+    OSM: '© <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+  }
+
+  var mapTypeCopyrights = {
+    MMLTAUSTA: copyrights.OSM + ", " + copyrights.MML,
+    MMLMAASTO: copyrights.OSM + ", " + copyrights.MML,
+    OSM: copyrights.OSM
+  }
+
+  function setCopyrights(innerHTML) {
+    if (!innerHTML) innerHTML = ""
+
+    var control = map.controls[google.maps.ControlPosition.BOTTOM_RIGHT];
+    if (control.getLength() > 0) control.pop();
+
+    var outerdiv = document.createElement("div");
+    outerdiv.style.fontSize = "11px";
+    outerdiv.style.whiteSpace = "nowrap";
+    outerdiv.style.padding = "2px";
+    var copyright = document.createElement("span");
+    copyright.style.color = "#000";
+    copyright.style.background="#fff";
+    copyright.style.opacity =0.8;
+    copyright.innerHTML = innerHTML;
+    outerdiv.appendChild(copyright);
+    control.push(outerdiv);
+  }  
+
+  //Define OSM map type pointing at the OpenStreetMap tile server
+  map.mapTypes.set("OSM", new google.maps.ImageMapType({
+    getTileUrl: function(coord, zoom) {
+      var tilesPerGlobe = 1 << zoom;
+      var x = coord.x % tilesPerGlobe;
+      if (x < 0) {
+        x = tilesPerGlobe+x;
+      }
+
+      return "http://tile.openstreetmap.org/" + zoom + "/" + x + "/" + coord.y + ".png";
+    },
+    tileSize: new google.maps.Size(256, 256),
+    name: "OpenStreetMap",
+    maxZoom: 15
+  }));
 
   //Define OSM map type pointing at the OpenStreetMap tile server
   map.mapTypes.set("MMLTAUSTA", new google.maps.ImageMapType({
@@ -1294,40 +1328,9 @@ function initMap() {
     copyright: "testi"
   }));
 
-  copyrights = {
-    MML: 'Taustakartan aineisto <a href="http://www.maanmittauslaitos.fi/" target="_blank">Maanmittauslaitos</a> 12/2017',
-    OSM: '© <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
-  }
-
-  mapTypeCopyrights = {
-    MMLTAUSTA: copyrights.OSM + ", " + copyrights.MML,
-    MMLMAASTO: copyrights.OSM + ", " + copyrights.MML,
-    OSM: copyrights.OSM
-  }
-
   map.addListener('maptypeid_changed', function() {
     setCopyrights(mapTypeCopyrights[map.getMapTypeId()]);
   });
-
-  function setCopyrights(innerHTML) {
-    if (!innerHTML) innerHTML = ""
-
-    var control = map.controls[google.maps.ControlPosition.BOTTOM_RIGHT];
-    if (control.getLength() > 0) control.pop();
-
-    var outerdiv = document.createElement("div");
-    outerdiv.style.fontSize = "11px";
-    outerdiv.style.whiteSpace = "nowrap";
-    outerdiv.style.padding = "2px";
-    var copyright = document.createElement("span");
-    copyright.style.color = "#000";
-    copyright.style.background="#fff";
-    copyright.style.opacity =0.8;
-    copyright.innerHTML = innerHTML;
-    outerdiv.appendChild(copyright);
-    control.push(outerdiv);
-  }
-
 }
 
 // ----------
