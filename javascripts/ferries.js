@@ -342,25 +342,6 @@ function setInfoContent(targets) {
     var template = document.getElementById('infocontenttemplate').innerHTML;
     var data = routeInfo(fdata.routes[route], currentLang);
     output = Mustache.render(template, data);
-
-    $(".info").append(output);
-
-    $(".timetablebutton").click(function() {
-      if (this.getAttribute("linktype") === "external") {
-        window.open(this.getAttribute("href"), "info");
-      } else {
-        var index = parseInt(this.getAttribute("index"))
-        var tttemplate = document.getElementById('timetabletemplate').innerHTML;
-        data.selectedtimetable = data.timetables[index];
-        data.selectedtimetable.L = data.L;
-        var ttoutput = Mustache.render(tttemplate, data.selectedtimetable);
-        $('#timetables').fadeIn();
-        $("#timetables").html(ttoutput);
-        $("#timetables").click(function(event) { if (event.target == this) closeTimetables(); });
-        $('#closeTimetablesButton').click(closeTimetables);
-        hideMenu();
-      }
-    });
   } else {
     var template = document.getElementById('infocontent2template').innerHTML;
     var uniqueNames = targets.map(function(target) { return target.name; }).filter(onlyUnique);
@@ -386,6 +367,23 @@ function setInfoContent(targets) {
   $(".infocontent.removing").fadeOut('fast', function() {
     $(".infocontent.removing").remove();
     $(".infocontent").fadeIn('fast');
+  });
+
+  $(".timetablebutton").click(function() {
+    if (this.getAttribute("linktype") === "external") {
+      window.open(this.getAttribute("href"), "info");
+    } else {
+      var index = parseInt(this.getAttribute("index"))
+      var tttemplate = document.getElementById('timetabletemplate').innerHTML;
+      data.selectedtimetable = data.timetables[index];
+      data.selectedtimetable.L = data.L;
+      var ttoutput = Mustache.render(tttemplate, data.selectedtimetable);
+      $('#timetables').fadeIn();
+      $("#timetables").html(ttoutput);
+      $("#timetables").click(function(event) { if (event.target == this) closeTimetables(); });
+      $('#closeTimetablesButton').click(closeTimetables);
+      hideMenu();
+    }
   });
 } 
 
