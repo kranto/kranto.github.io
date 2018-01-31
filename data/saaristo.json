@@ -1816,7 +1816,7 @@
       "properties": {
         "stype": "connection",
         "ref": "turkunauvo",
-        "ssubtype": "conn4"
+        "ssubtype": "conn5"
       },
       "features": [
         {
@@ -1838,7 +1838,7 @@
       "properties": {
         "stype": "connection",
         "ref": "hankooro",
-        "ssubtype": "conn4"
+        "ssubtype": "conn5"
       },
       "features": [
         {

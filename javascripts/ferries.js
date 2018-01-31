@@ -519,6 +519,7 @@ var layers = localStorgageLayers? JSON.parse(localStorgageLayers): {
   distances: true,
   roadferries: true,
   conn4: true,
+  conn5: true,
   longdistanceferries: true,
 };
 
@@ -928,8 +929,26 @@ var connectionStylers = {
     opacity: 0.8,
     zIndex: 8,
     layer: "conn4"
+  },
+  "conn5": {
+    visibleFrom: 9,
+    icons: [{
+        icon: {
+        path: 'M 0,-1.5 0,1.5',
+        strokeOpacity: 1,
+        strokeColor: 'ff7c0a',
+        strokeWeight: 1 * lineWeightUnit,
+        scale: 1
+      },
+      offset: '0',
+      repeat: '8px'
+    }],
+    zIndex: 8,
+    layer: "conn5",
+    style: { color: "#ff7c0a", weight: 2, style: "dashed", opacity: 1 }
   }
 };
+
 
 function connection(connection, map) {
   var baseStyler = connectionStylers["base"];
@@ -956,16 +975,18 @@ function connection(connection, map) {
     var highlightColor = leg.properties.highlightColor || legStyler.highlightColor || connection.properties.highlightColor || connectionStyler.highlightColor || baseStyler.highlightColor;
     var highlightWeight = leg.properties.highlightWeight || legStyler.highlightWeight || connection.properties.highlightWeight || connectionStyler.highlightWeight || baseStyler.highlightWeight;
     var highlightOpacity = leg.properties.highlightOpacity || legStyler.highlightOpacity || connection.properties.highlightOpacity || connectionStyler.highlightOpacity || baseStyler.highlightOpacity;
+    var icons = connectionStyler.icons || baseStyler.icons;
     var isSelected = false;
-    connectionObject.style = { color: color, weight: weight, style: "solid", opacity: opacity };
+    connectionObject.style = connectionStyler.style || { color: color, weight: weight, style: "solid", opacity: opacity };
     var line = new google.maps.Polyline({
       path: new google.maps.MVCArray(coords),
       geodesic: false,
       strokeColor: color,
-      strokeOpacity: opacity,
+      strokeOpacity: !icons? opacity: 0,
       strokeWeight: weight,
       zIndex: zIndex,
       clickable: false,
+      icons: icons,
       map: map
     });
     var lineb = new google.maps.Polyline({
@@ -1143,7 +1164,7 @@ function rerender(map, force) {
   var t0 = new Date().getTime();
   console.log('rerender started at', newRerender);
   objects.forEach(function(object){ object.rerender(zoom, mapTypeId); }); 
-  lauttaLegs.forEach(function(leg) { leg.rerender(zoom, mapTypeId); });
+  if (lauttaLegs) lauttaLegs.forEach(function(leg) { leg.rerender(zoom, mapTypeId); });
   console.log('rerender finished at', zoom, 'in', new Date().getTime() - t0, 'ms');
   hidden = false;
   prevRenderZoom = zoom;

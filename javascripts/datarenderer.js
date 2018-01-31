@@ -98,8 +98,12 @@ function routeInfo(route, lang) {
     
     info.vessels = route.vessels;
     info.vessels.forEach(function(vessel) {
-        vessel.contact.name = vessel.name;
-        contacts.push(vessel.contact);
+        console.log(vessel.contact);
+        console.log(Object.keys(vessel.contact));
+        if (vessel.contact && Object.keys(vessel.contact).length > 0) {
+            vessel.contact.name = vessel.name;
+            contacts.push(vessel.contact);
+        }
         var features = [];
         if (vessel.capacity.bikes) features.push({icon: "bicycle", value: vessel.capacity.bikes});
         if (vessel.capacity.cars) features.push({icon: "car", value: vessel.capacity.cars});

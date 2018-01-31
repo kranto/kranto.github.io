@@ -21,6 +21,8 @@ $.get('/data/routes.json', function(data) {
   sendDataIf();
 });
 
+var fdata;
+
 $.get('/data/data.json', function(data) {
   prepareData(data);
   fdata = data;

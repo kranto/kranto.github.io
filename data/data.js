@@ -534,6 +534,13 @@ fdata = {
       contact: {
         phones: ['+358 400 229149']
       }
+    },
+    norrskar: {
+      name: "M/S Norrskär",
+      features: { cafe: true },
+      capacity: { persons: 98, bikes: " " },
+      contact: {
+      }
     }
   },
 
@@ -642,6 +649,17 @@ fdata = {
         www_fi: 'http://www.rosita.fi/',
         www_sv: 'http://www.rosita.fi/Hemsida'
       },
+    },
+    vitharun: {
+      name: "Vitharun",
+      logo: "vitharun.png",
+      contact: {
+        phones: ['+358 400 176 684'],
+        email: 'sales@vitharun.fi',
+        www: 'https://vitharun.fi/fi/',
+        www_sv: 'https://vitharun.fi/sv/',
+        www_en: 'https://vitharun.fi/en/',
+      }
     }
   },
 
@@ -685,7 +703,7 @@ fdata = {
     Kirjais: { name_fi: "Kirjainen", mun: "Nagu", type: "1" }, 
     Granvik: { mun: "Pargas", type: "1" }, 
     Prostvik: { mun: "Nagu", type: "1" }, 
-    Lillmälö: { mun: "Pargas", type: "1" }, 
+    Lillmälö: { mun: "Pargas", type: "1" },
     Dalsbruk: { name_fi: "Taalintehdas", mun: "Kimitoön", type: "1" }, 
 
     Rauhala: { mun: "Velkua" },
@@ -786,9 +804,11 @@ fdata = {
     Bolax: { mun: "Kimitoön"},
     Botesö: { mun: "Kimitoön"},
     Djupö: { mun: "Kimitoön"},
+    Örö: { mun: "Kimitoön"},
     Vänoxaby: { name: "Vänoxa by", mun: "Kimitoön"},
     Vänoxasläten: { name: "Vänoxa släten (Bergö)", mun: "Kimitoön"},
 
+    Hanko: { name_sv: "Hangö", mun: "Hanko"},
     Svartnäs: { mun: "Kimitoön" },
     Högsåra: { mun: "Kimitoön" },
     Kivimaa: { mun: "Kustavi" },
@@ -1193,7 +1213,26 @@ fdata = {
     },
     pettu: {
       link: "http://www.petunlossi.com/lossi.html",
-    }
+    },
+    hankooro: {
+      link: "https://vitharun.fi/fi/aikataulut/oro/",
+      link_sv: "https://vitharun.fi/sv/tidtabeller/oro/",
+      link_en: "https://vitharun.fi/en/timetables/oro/",
+      tables: [
+      { validFrom: "2018-05-01", validTo: "2018-05-31", images: ["Norrskar2018_1.png", "Norrskar2018_4.png"]},
+      { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2.png", "Norrskar2018_4.png"]},
+      { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3.png", "Norrskar2018_4.png"]},
+      { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2.png", "Norrskar2018_4.png"]},
+      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1.png", "Norrskar2018_4.png"]},
+      ],
+      tables_en: [
+      { validFrom: "2018-05-01", validTo: "2018-05-31", images: ["Norrskar2018_1en.png", "Norrskar2018_4en.png"]},
+      { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2en.png", "Norrskar2018_4en.png"]},
+      { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3en.png", "Norrskar2018_4en.png"]},
+      { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2en.png", "Norrskar2018_4en.png"]},
+      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1en.png", "Norrskar2018_4en.png"]},
+      ],
+    },
 
   },
 
@@ -1901,6 +1940,21 @@ fdata = {
         interval_en: "Runs every 15 minutes between 7.30 AM and 7.30 PM",
       },
       timetables: ["pettu"]
+    },
+
+    hankooro: {
+      name: "Hanko - Kasnäs - Örö",
+      name_sv: "Hangö - Kasnäs - Örö",
+      piers: ["Hanko", "Kasnäs", "Örö"],
+      operator: "vitharun",
+      vessels: ["norrskar"],
+      features: {
+        interval_L: ["times.adayaweek", "2", "Hanko/Hangö", "5"],
+        cost_L: "cost.applies",
+        duration_L: ["duration.hours", "3 "],
+        seasonal_L: "seasonal.summers",
+      },
+      timetables: ["hankooro"]
     },
   },
 

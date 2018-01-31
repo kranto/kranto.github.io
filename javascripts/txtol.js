@@ -18,7 +18,7 @@ txtol.init = function() {
   }
 
   function initZoomOffsets(txtOverlay) {
-    if (txtOverlay.refOffsets != null) return;
+//    if (txtOverlay.refOffsets != null) return;
     var refOffsets = [];
     var zoom = txtOverlay.map.zoom;
     var overlayProjection = txtOverlay.getProjection();
