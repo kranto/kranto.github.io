@@ -541,7 +541,14 @@ fdata = {
       capacity: { persons: 98, bikes: " " },
       contact: {
       }
-    }
+    },
+    fanny: {
+      name: "M/S Fanny",
+      features: { cafe: true },
+      capacity: { persons: 98, bikes: " " },
+      contact: {
+      }
+    },
   },
 
   operators: {
@@ -656,6 +663,7 @@ fdata = {
       contact: {
         phones: ['+358 400 176 684'],
         email: 'sales@vitharun.fi',
+        fb: 'https://www.facebook.com/rederiabvitharun',
         www: 'https://vitharun.fi/fi/',
         www_sv: 'https://vitharun.fi/sv/',
         www_en: 'https://vitharun.fi/en/',
@@ -853,6 +861,7 @@ fdata = {
     Skarpnåtö: { mun: "Hammarland", type: "1" },
     Hällö: { mun: "Geta", type: "1" },
     
+    TurkuVitharun: { name: "Aurajoki", name_sv: "Aura å", name_en: "Aurajoki River", mun: "Turku", type: "1" },
   },
 
   timetables: {
@@ -1231,6 +1240,26 @@ fdata = {
       { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3en.png", "Norrskar2018_4en.png"]},
       { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2en.png", "Norrskar2018_4en.png"]},
       { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1en.png", "Norrskar2018_4en.png"]},
+      ],
+    },
+    turkunauvo: {
+      link: "https://vitharun.fi/fi/aikataulut/turku-seili-nauvo/",
+      link_sv: "https://vitharun.fi/sv/tidtabeller/abo-sjalo-nagu/",
+      link_en: "https://vitharun.fi/en/timetables/turku-seili-nagu/",
+      tables_fi: [
+      { validFrom: "2018-05-05", validTo: "2018-06-07", images: ["Fanny2018_1fi.png", "Fanny2018_3fi.png"]},
+      { validFrom: "2018-06-08", validTo: "2018-09-02", images: ["Fanny2018_2fi.png", "Fanny2018_3fi.png"]},
+      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1fi.png", "Fanny2018_3fi.png"]},
+      ],
+      tables_sv: [
+      { validFrom: "2018-05-05", validTo: "2018-06-07", images: ["Fanny2018_1sv.png", "Fanny2018_3sv.png"]},
+      { validFrom: "2018-06-08", validTo: "2018-09-02", images: ["Fanny2018_2sv.png", "Fanny2018_3sv.png"]},
+      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1sv.png", "Fanny2018_3sv.png"]},
+      ],
+      tables_en: [
+      { validFrom: "2018-05-05", validTo: "2018-06-07", images: ["Fanny2018_1en.png", "Fanny2018_3en.png"]},
+      { validFrom: "2018-06-08", validTo: "2018-09-02", images: ["Fanny2018_2en.png", "Fanny2018_3en.png"]},
+      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1en.png", "Fanny2018_3en.png"]},
       ],
     },
 
@@ -1955,6 +1984,21 @@ fdata = {
         seasonal_L: "seasonal.summers",
       },
       timetables: ["hankooro"]
+    },
+    turkunauvo: {
+      name: "Turku - Seili - Nauvo",
+      name_sv: "Åbo - Själö - Nagu",
+      name_en: "Turku - Själö - Nagu",
+      piers: ["TurkuVitharun", "Seili", "Nagu"],
+      operator: "vitharun",
+      vessels: ["fanny"],
+      features: {
+        interval_L: ["times.aday", "0 - 1"],
+        cost_L: "cost.applies",
+        duration_L: ["duration.hours", "2.5"],
+        seasonal_L: "seasonal.summers",
+      },
+      timetables: ["turkunauvo"]
     },
   },
 
