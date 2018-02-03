@@ -923,7 +923,7 @@ var connectionStylers = {
         icon: {
         path: 'M 0,-1.5 0,1.5',
         strokeOpacity: 1,
-        strokeColor: 'ff7c0a',
+        strokeColor: '#ff7c0a',
         strokeWeight: 1 * lineWeightUnit,
         scale: 1
       },
@@ -933,7 +933,26 @@ var connectionStylers = {
     zIndex: 8,
     layer: "conn5",
     style: { color: "#ff7c0a", weight: 2, style: "dashed", opacity: 1 }
+  },
+  "cableferry": {
+    visibleFrom: 9,
+    icons: [{
+        icon: {
+        path: 'M -1,0 0,1 1,0 0,-1 -1,0',
+        strokeOpacity: 1,
+        strokeColor: '#00a050',
+        strokeWeight: 1.5 * lineWeightUnit,
+        scale: 3
+      },
+      offset: '0',
+      repeat: '6px'
+    }],
+    highlightWeight: 10,
+    zIndex: 11,
+    layer: "roadferries",
+    style: { color: "#00a050", weight: 8, style: "dotted", opacity: 1 },
   }
+
 };
 
 
