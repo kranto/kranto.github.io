@@ -31,7 +31,7 @@ txtol.init = function() {
       refOffsets[z] = {x: Math.floor(x), y: Math.floor(y)};      
     }
     x = currentOffset.x; y = currentOffset.y;
-    for (var z = zoom + 1; z <= 30; z++ ) {
+    for (var z = zoom + 1; z <= 15; z++ ) {
       x = x*2; y = y*2;
       refOffsets[z] = {x: Math.floor(x), y: Math.floor(y)};      
     }
