@@ -826,18 +826,6 @@ function cableferrySymbol() {
   return _cableferrySymbol;
 }
 
-function createDescription(prop) {
-  if (!prop.info) {
-    return prop.description;
-  } else {
-    return "<p>" + prop.info.phone.map(
-      function(phone) { 
-        return '<i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:' + phone.replace(/ /g,'') + '">' + phone + '</a>';
-      }).join(", ") + "</p>" +
-      '<p><a target="info" href="' + prop.info.infolink + '">Aikataulut ja info <i class="fa fa-external-link" aria-hidden="true"></i></a></p>'
-  }
-}
-
 function cableferry(feature, map) {
   var styler = cableferryStyler;
   var highlightColor = feature.properties.highlightColor || styler.highlightColor;
@@ -876,7 +864,6 @@ function cableferry(feature, map) {
     },
   };
   connectionObject.style = { color: "#00a000", weight: 8, style: "dotted", opacity: 1 };
-  var description = createDescription(feature.properties);
   line.addListener('click', function(event) {
     select([connectionObject], event);
   });
@@ -960,7 +947,7 @@ function connection(connection, map) {
   };
 
   var legFeatures = connection.type === 'FeatureCollection'? connection.features: [connection];
-  var connectionObject = { ref: connection.properties.ref, name: shortName(connection.properties), description: connection.properties.description, timetable: connection.properties.timetable};
+  var connectionObject = { ref: connection.properties.ref };
   var legObjects = legFeatures.map(function(leg) {
 
     var coords = leg.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
@@ -1439,13 +1426,6 @@ function Route(object) {
   this.operators = object.operators;
   this.legs = object.legs.map(function(id) { return lauttaLegIndex[id]; });
   this.init = function() {
-    this.name = shortName(object);
-    this.description = this.operators.map(function(operator) {
-      var op = fdata.lauttaOperators[operator];
-      return shortName(object) + ', ' + description(object) + '&nbsp;&nbsp; <a href="' + op.link + '" target="info"><img src="' + op.logo + '" height="' + op.height + '"/></a>' ;
-    }).join(" ");
-
-    // --- new implementation --
     this.name = shortName(object);
     this.details = description(object);
     this.operatorId = this.operators[0];
