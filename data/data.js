@@ -1993,7 +1993,7 @@ fdata = {
       operator: "vitharun",
       vessels: ["fanny"],
       features: {
-        interval_L: ["times.aday", "0 - 1"],
+        interval_L: ["times.onceaday"],
         cost_L: "cost.applies",
         duration_L: ["duration.hours", "2.5"],
         seasonal_L: "seasonal.summers",
