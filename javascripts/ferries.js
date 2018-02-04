@@ -574,7 +574,7 @@ function createMapStyles(mapTypeId, zoom, settings) {
 
 function updateMapStyles() {
   map.setOptions({styles: createMapStyles(map.getMapTypeId(), map.getZoom(), {})});
-  $("div.gm-style").css({'font-size': map.getZoom()});
+  $("div.gm-style").css({'font-size': map.getZoom()+1});
 }
 
 function sanitizeZoomLevels(object) {
