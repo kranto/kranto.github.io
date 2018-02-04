@@ -890,6 +890,19 @@ var connectionStylers = {
 
 };
 
+function pickProperty(name, sources) {
+  for (var i in sources) {
+    if (typeof sources[i][name] !== 'undefined') return sources[i][name];
+  }
+}
+
+function pickProperties(names, sources) {
+  var result = {};
+  names.forEach(function(name) {
+    result[name] = pickProperty(name, sources);
+  });
+  return result;
+}
 
 function connection(connection, map) {
   var baseStyler = connectionStylers["base"];
@@ -905,50 +918,43 @@ function connection(connection, map) {
   var legObjects = legFeatures.map(function(leg) {
 
     var coords = leg.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
-
     var legStyler = leg.properties.ssubtype? connectionStylers[leg.properties.ssubtype]: {};
-    var weight = leg.properties.weight || legStyler.weight || connection.properties.weight || connectionStyler.weight || baseStyler.weight;
-    var opacity = leg.properties.opacity || legStyler.opacity || connection.properties.opacity || connectionStyler.opacity || baseStyler.opacity;
-    var color = leg.properties.color || legStyler.color || connection.properties.color || connectionStyler.color || baseStyler.color;
-    var zIndex = leg.properties.zIndex || legStyler.zIndex || connection.properties.zIndex || connectionStyler.zIndex || baseStyler.zIndex;
-    var visibleFrom = leg.properties.visibleFrom || legStyler.visibleFrom || connection.properties.visibleFrom || connectionStyler.visibleFrom || baseStyler.visibleFrom;
-    var visibleTo = leg.properties.visibleTo || legStyler.visibleTo || connection.properties.visibleTo || connectionStyler.visibleTo || baseStyler.visibleTo;
-    var highlightColor = leg.properties.highlightColor || legStyler.highlightColor || connection.properties.highlightColor || connectionStyler.highlightColor || baseStyler.highlightColor;
-    var highlightWeight = leg.properties.highlightWeight || legStyler.highlightWeight || connection.properties.highlightWeight || connectionStyler.highlightWeight || baseStyler.highlightWeight;
-    var highlightOpacity = leg.properties.highlightOpacity || legStyler.highlightOpacity || connection.properties.highlightOpacity || connectionStyler.highlightOpacity || baseStyler.highlightOpacity;
-    var icons = connectionStyler.icons || baseStyler.icons;
+    var propertyNames = ["weight", "opacity", "color", "zIndex", "visibleFrom", "visibleTo", "highlightColor", "highlightWeight", "highlightOpacity", "icons"];
+    var propertySources = [leg.properties, legStyler, connection.properties, connectionStyler, baseStyler]
+    var properties = pickProperties(propertyNames, propertySources);
     var isSelected = false;
-    connectionObject.style = connectionStyler.style || { color: color, weight: weight, style: "solid", opacity: opacity };
+    connectionObject.style = connectionStyler.style || { color: properties.color, weight: properties.weight, style: "solid", opacity: properties.opacity };
+
     var line = new google.maps.Polyline({
       path: new google.maps.MVCArray(coords),
       geodesic: false,
-      strokeColor: color,
-      strokeOpacity: !icons? opacity: 0,
-      strokeWeight: weight,
-      zIndex: zIndex,
+      strokeColor: properties.color,
+      strokeOpacity: !properties.icons? properties.opacity: 0,
+      strokeWeight: properties.weight,
+      zIndex: properties.zIndex,
       clickable: false,
-      icons: icons,
+      icons: properties.icons,
       map: map
     });
     var lineb = new google.maps.Polyline({
       path: new google.maps.MVCArray(coords),
       geodesic: false,
       strokeOpacity: 0,
-      strokeWeight: highlightWeight + weight,
-      strokeColor: highlightColor,
-      zIndex: zIndex - 1,
+      strokeWeight: properties.highlightWeight + properties.weight,
+      strokeColor: properties.highlightColor,
+      zIndex: properties.zIndex - 1,
       cursor: 'context-menu',
       map: map
     });
     var highlight = function(doHighlight) {
       isSelected = doHighlight;
-      lineb.setOptions({strokeOpacity: doHighlight? highlightOpacity: 0});
+      lineb.setOptions({strokeOpacity: doHighlight? properties.highlightOpacity: 0});
     };
     lineb.addListener('click', function(event) {
       select([connectionObject], event);
     });
     var rerender = function(zoom, mapTypeId) {
-      var lineIsVisible = isSelected || (layerSelector() && zoom >= visibleFrom && zoom <= visibleTo); 
+      var lineIsVisible = isSelected || (layerSelector() && zoom >= properties.visibleFrom && zoom <= properties.visibleTo); 
       line.setVisible(lineIsVisible);
       lineb.setVisible(lineIsVisible);
     }
