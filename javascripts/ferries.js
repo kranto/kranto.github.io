@@ -805,71 +805,6 @@ function pier(feature, map) {
   };
 }
 
-var cableferryStyler = {
-  highlightColor: '#f97cdc',
-  highlightWeight: 17,
-  highlightOpacity: .6,
-  visibleFrom: 9
-}
-
-var _cableferrySymbol;
-function cableferrySymbol() {
-  _cableferrySymbol = _cableferrySymbol || {
-    path: google.maps.SymbolPath.CIRCLE,
-    strokeOpacity: 1,
-    strokeColor: '#00a000',
-    strokeWeight: 2,
-    fillColor: '#00a000',
-    fillOpacity: 0.3,
-    scale: 2
-  };
-  return _cableferrySymbol;
-}
-
-function cableferry(feature, map) {
-  var styler = cableferryStyler;
-  var highlightColor = feature.properties.highlightColor || styler.highlightColor;
-  var highlightWeight = feature.properties.highlightWeight || styler.highlightWeight;
-  var highlightOpacity = feature.properties.highlightOpacity || styler.highlightOpacity;
-  var visibleFrom = feature.properties.visibleFrom || styler.visibleFrom;
-
-  var coords = feature.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
-  var isSelected = false;
-  var line = new google.maps.Polyline({
-    path: new google.maps.MVCArray(coords),
-    geodesic: false,
-    zIndex: 11,
-    strokeOpacity: 0,
-    strokeWeight: highlightWeight,
-    strokeColor: highlightColor,
-    cursor: 'context-menu',
-    icons: [{
-      icon: cableferrySymbol(),
-      offset: '0',
-      repeat: '5px'
-    }],
-    map: map
-  });
-  var connectionObject = {
-    ref: feature.properties.ref,
-    hide: function(zoom, mapTypeId) {
-      line.setVisible(isSelected || (layers.roadferries && zoom >= visibleFrom));
-    },
-    rerender: function(zoom, mapTypeId) {
-      line.setVisible(isSelected || (layers.roadferries && zoom >= visibleFrom));
-    },
-    highlight: function(doHighlight) {
-      isSelected = doHighlight;
-      line.setOptions({strokeOpacity: doHighlight? highlightOpacity: 0});
-    },
-  };
-  connectionObject.style = { color: "#00a000", weight: 8, style: "dotted", opacity: 1 };
-  line.addListener('click', function(event) {
-    select([connectionObject], event);
-  });
-  return connectionObject;
-}
-
 var lineWeightUnit = 1.5;
 
 var connectionStylers = {
@@ -1013,8 +948,9 @@ function connection(connection, map) {
       select([connectionObject], event);
     });
     var rerender = function(zoom, mapTypeId) {
-      line.setVisible(isSelected || (layerSelector() && zoom >= visibleFrom && zoom <= visibleTo));
-      lineb.setVisible((layerSelector() && zoom >= visibleFrom && zoom <= visibleTo));
+      var lineIsVisible = isSelected || (layerSelector() && zoom >= visibleFrom && zoom <= visibleTo); 
+      line.setVisible(lineIsVisible);
+      lineb.setVisible(lineIsVisible);
     }
     return {highlight: highlight, rerender: rerender };
   });
@@ -1150,7 +1086,6 @@ var renderers = {
   route: route,
   border: border,
   pier: pier,
-  cableferry: cableferry,
   connection: connection,
   area: area,
   box: box,
