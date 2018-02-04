@@ -98,8 +98,6 @@ function routeInfo(route, lang) {
     
     info.vessels = route.vessels;
     info.vessels.forEach(function(vessel) {
-        console.log(vessel.contact);
-        console.log(Object.keys(vessel.contact));
         if (vessel.contact && Object.keys(vessel.contact).length > 0) {
             vessel.contact.name = vessel.name;
             contacts.push(vessel.contact);

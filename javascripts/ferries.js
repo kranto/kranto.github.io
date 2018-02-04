@@ -179,10 +179,6 @@ function initSettings() {
 
 var wasSelected = [];
 
-$('#closeInfoButton').click(function() {
-  unselectAll();
-});
-
 function inIframe () {
     try {
         return window.self !== window.top;
@@ -326,6 +322,12 @@ function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
 }
 
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) { // escape key maps to keycode `27`
+    closeTimetables();
+  }
+});
+
 function closeTimetables() {
   $('#timetables').fadeOut();
   $('#timetables').scrollTop(0);
@@ -359,7 +361,7 @@ function setInfoContent(targets) {
     $(".infocontent:not(.removing)").find(".infotitle, .headerbox").css({borderBottom: "none" });      
   }
   
-  $('.closeInfoButton').click(function() {
+  $('.closeInfoButton:not(#closeInfoPageButton)').click(function() {
     unselectAll();
   });
 
