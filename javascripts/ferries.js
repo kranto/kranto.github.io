@@ -1015,29 +1015,32 @@ function pin(feature, map) {
 }
 
 var areaStylers = {
+  "base": {
+    labelVisibleFrom: 9,
+    labelVisibleTo: 30,
+    longNameFrom: 9
+  },
   "province": {
     labelVisibleFrom: 5,
     labelVisibleTo: 10
   },
   "mun1": {
     labelVisibleFrom: 1,
-    labelVisibleTo: 30
   },
   "mun2": {
     labelVisibleFrom: 8,
-    labelVisibleTo: 30
   },
   "island1": {
     labelVisibleFrom: 9,
-    labelVisibleTo: 30
   },
 };
 
 function area(feature, map) {
+  var baseStyler = areaStylers["base"];
   var styler = areaStylers[feature.properties.ssubtype];
-  var labelVisibleFrom = feature.properties.labelVisibleFrom || styler.labelVisibleFrom;
-  var labelVisibleTo = feature.properties.labelVisibleTo || styler.labelVisibleTo;
-  var longNameFrom = feature.properties.longNameFrom || styler.longNameFrom || 9;
+  var propertyNames = ["labelVisibleFrom", "labelVisibleTo", "longNameFrom"];
+  var propertySources = [feature.properties, styler, baseStyler];
+  var properties = pickProperties(propertyNames, propertySources);
   var coords = feature.geometry.coordinates;
   var position = new google.maps.LatLng(coords[1], coords[0]);
   var shortName_ = shortName(feature.properties);
@@ -1050,11 +1053,11 @@ function area(feature, map) {
       longName_ = longName(feature.properties).replace('/', '<br/>');
     },
     hide: function(zoom) {
-      if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo) label.show(); else label.hide();
+      if (zoom >= properties.labelVisibleFrom && zoom <= properties.labelVisibleTo) label.show(); else label.hide();
     },
     rerender: function(zoom, mapTypeId) {
-      label.setInnerHTML(zoom >= longNameFrom? longName_: shortName_);
-      if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo && ["roadmap", "hybrid", "terrain", "satellite"].indexOf(mapTypeId)>=0) label.show(); else label.hide();      
+      label.setInnerHTML(zoom >= properties.longNameFrom? longName_: shortName_);
+      if (zoom >= properties.labelVisibleFrom && zoom <= properties.labelVisibleTo && ["roadmap", "hybrid", "terrain", "satellite"].indexOf(mapTypeId)>=0) label.show(); else label.hide();      
     }
   };
 }
