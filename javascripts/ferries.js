@@ -875,19 +875,19 @@ var connectionStylers = {
     visibleFrom: 9,
     icons: [{
         icon: {
-        path: 'M -1,0 0,1 1,0 0,-1 -1,0',
+        path: 0, // circle. cannot refer to google.maps.SymbolPath.CIRCLE before map has been loaded
         strokeOpacity: 1,
         strokeColor: '#00a050',
         strokeWeight: 1.5 * lineWeightUnit,
-        scale: 3
+        scale: 1.5 * lineWeightUnit
       },
       offset: '0',
-      repeat: '6px'
+      repeat: (3*lineWeightUnit) + 'px'
     }],
     highlightWeight: 10,
     zIndex: 11,
     layer: "roadferries",
-    style: { color: "#00a050", weight: 8, style: "dotted", opacity: 1 },
+    style: { color: "#00a050", weight: 3*lineWeightUnit, style: "dotted", opacity: 1 },
   }
 
 };
