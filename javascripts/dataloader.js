@@ -30,6 +30,7 @@ $.get('/data/data.json', function(data) {
 });
 
 function prepareData(data) {
+  console.log(data);
   Object.keys(data.mun).forEach(function(key) {
     var m = data.mun[key];
     m.name = m.name? m.name: key;
@@ -60,6 +61,7 @@ function prepareData(data) {
     if (!Array.isArray(route.timetables)) route.timetables = [route.timetables];
 
     route.timetables = route.timetables.map(function(timetable) {
+      data.timetables[timetable].id = timetable;
       return data.timetables[timetable];
     });
 

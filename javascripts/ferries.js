@@ -334,17 +334,37 @@ function closeTimetables() {
   $('#timetables').scrollTop(0);
 }
 
-function setInfoContent(targets) {
+function openTimetable(id) {
+  var timetable = selectedRoute.timetables.filter(function(tt) { return tt.id == id; })[0];
+  console.log(selectedRoute, id, timetable);
+  var tttemplate = document.getElementById('timetabletemplate').innerHTML;
+  timetable.L = function () {
+    return function(val, render) {
+      return L(currentLang, render(val));
+    };
+  }
+  var ttoutput = Mustache.render(tttemplate, timetable);
+  $('#timetables').fadeIn();
+  $("#timetables").html(ttoutput);
+  $("#timetables").click(function(event) { if (event.target == this) history.back(); });
+  $('#closeTimetablesButton').click(function() { history.back(); });
+  hideMenu();
+}
+
+var selectedRoute = null;
+
+function setInfoContent(targets, dontPushState) {
 
   var output;
+  var route;
   $(".info .infocontent").addClass("removing");
   if (targets[0].ref) {
-    var route = targets[0].ref;
-    var hash = "/#/" + route;
-    if (hash.substring(1) !== location.hash) history.pushState(null, null, "/#/" + route);
+    route = targets[0].ref;
+    if (!dontPushState) history.pushState({route: route, timetables: null}, null, null);
 
     var template = document.getElementById('infocontenttemplate').innerHTML;
     var data = routeInfo(fdata.routes[route], currentLang);
+    selectedRoute = data;
     output = Mustache.render(template, data);
   } else {
     var template = document.getElementById('infocontent2template').innerHTML;
@@ -364,7 +384,7 @@ function setInfoContent(targets) {
   }
   
   $('.closeInfoButton:not(#closeInfoPageButton)').click(function() {
-    history.back();
+    unselectAll();
   });
 
 
@@ -377,30 +397,30 @@ function setInfoContent(targets) {
     if (this.getAttribute("linktype") === "external") {
       window.open(this.getAttribute("href"), "info");
     } else {
-      var index = parseInt(this.getAttribute("index"))
-      var tttemplate = document.getElementById('timetabletemplate').innerHTML;
-      data.selectedtimetable = data.timetables[index];
-      data.selectedtimetable.L = data.L;
-      var ttoutput = Mustache.render(tttemplate, data.selectedtimetable);
-      $('#timetables').fadeIn();
-      $("#timetables").html(ttoutput);
-      $("#timetables").click(function(event) { if (event.target == this) closeTimetables(); });
-      $('#closeTimetablesButton').click(function() { history.back(); });
-      hideMenu();
-      history.pushState(null, null, location.hash  + "/timetables");
+      var timetable = this.getAttribute("data-target");
+      history.pushState({route: route, timetable: timetable }, null, null);
+      openTimetable(timetable);
     }
   });
 }
 
-window.onpopstate = function() {
-  closeTimetables();
-  console.log(location.hash);
-  if (location.hash.length == 0) {
-    unselectAll();
+console.log(history.state);
+
+function navigateTo(state) {
+  if (state && state.route) {
+    selectByIds([state.route]);
+    if (state.timetable) {
+      openTimetable(state.timetable);
+    }
   } else {
-    var id = location.hash.substring(2);
-    selectByIds([id]);
+    unselectAll();
   }
+}
+
+window.onpopstate = function(event) {
+  console.log(event);
+  closeTimetables();
+  navigateTo(event.state);
 };
 
 var selected = [];
@@ -408,14 +428,14 @@ var selected = [];
 function selectByIds(ids) {
   var matching = objects.filter(function(o) { return o.ref && ids.indexOf(o.ref) >= 0; });
   if (matching.length) {
-    select(matching, null);
+    select(matching, null, true);
   } else {
     unselectAll();
   }
 
 }
 
-function select(targets, mouseEvent) {
+function select(targets, mouseEvent, dontPushState) {
 
   if (!targets.length) return;
 
@@ -433,7 +453,7 @@ function select(targets, mouseEvent) {
   });
 
   showHeaderbar();
-  setInfoContent(targets);
+  setInfoContent(targets, dontPushState);
   toggleScrollIndicator();
 
   $(".info").scrollTop(0);
@@ -473,6 +493,9 @@ function latLng2Point(latLng, map) {
 
 function unselectAll() {
   if (selected.length == 0) return;
+
+  history.pushState({}, null, null);
+
   $(function() {
     if ($("body").outerWidth() >= 768) {
       //map.panBy(-200, 0);

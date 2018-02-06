@@ -140,7 +140,6 @@ function routeInfo(route, lang) {
         timetable.buttonspecifier = timetables.length > 1? timetable.name? timetable.name: timetable.specifier: "";
         timetable.name = timetable.name? timetable.name: route.name;
         timetable.specifier= timetable.specifier? timetable.specifier: route.specifier;
-        timetable.index = index++;
         timetable.exttimetables = timetable.tables? false: "external";
         var first = true;
         var id = 1;
@@ -175,7 +174,7 @@ function routeInfo(route, lang) {
         };
     }
 
-    // console.log(info);
+    console.log(info);
     
     return info;
 }
