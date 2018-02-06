@@ -324,7 +324,8 @@ function onlyUnique(value, index, self) {
 
 $(document).keyup(function(e) {
   if (e.keyCode == 27) { // escape key maps to keycode `27`
-    closeTimetables();
+    //closeTimetables();
+    history.back();
   }
 });
 
@@ -339,7 +340,8 @@ function setInfoContent(targets) {
   $(".info .infocontent").addClass("removing");
   if (targets[0].ref) {
     var route = targets[0].ref;
-    location.hash = route;
+    var hash = "/#/" + route;
+    if (hash.substring(1) !== location.hash) history.pushState(null, null, "/#/" + route);
 
     var template = document.getElementById('infocontenttemplate').innerHTML;
     var data = routeInfo(fdata.routes[route], currentLang);
@@ -362,7 +364,7 @@ function setInfoContent(targets) {
   }
   
   $('.closeInfoButton:not(#closeInfoPageButton)').click(function() {
-    unselectAll();
+    history.back();
   });
 
 
@@ -383,13 +385,35 @@ function setInfoContent(targets) {
       $('#timetables').fadeIn();
       $("#timetables").html(ttoutput);
       $("#timetables").click(function(event) { if (event.target == this) closeTimetables(); });
-      $('#closeTimetablesButton').click(closeTimetables);
+      $('#closeTimetablesButton').click(function() { history.back(); });
       hideMenu();
+      history.pushState(null, null, location.hash  + "/timetables");
     }
   });
-} 
+}
+
+window.onpopstate = function() {
+  closeTimetables();
+  console.log(location.hash);
+  if (location.hash.length == 0) {
+    unselectAll();
+  } else {
+    var id = location.hash.substring(2);
+    selectByIds([id]);
+  }
+};
 
 var selected = [];
+
+function selectByIds(ids) {
+  var matching = objects.filter(function(o) { return o.ref && ids.indexOf(o.ref) >= 0; });
+  if (matching.length) {
+    select(matching, null);
+  } else {
+    unselectAll();
+  }
+
+}
 
 function select(targets, mouseEvent) {
 
