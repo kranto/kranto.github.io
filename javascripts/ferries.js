@@ -91,7 +91,11 @@ function showHeaderbar() {
 }
 
 window.onhashchange = function() {
-  console.log("hash changed", location.hash);
+  var route = location.hash.substring(1);
+  var newState = {route: route, timetable: null};
+  console.log('onhashchange: replacing state to', newState);
+  history.replaceState(newState, null, "/");
+  navigateTo(newState);
 }
 
 function doToggleHeaderbar() {
@@ -325,6 +329,7 @@ function onlyUnique(value, index, self) {
 $(document).keyup(function(e) {
   if (e.keyCode == 27) { // escape key maps to keycode `27`
     //closeTimetables();
+    console.log('esc -> back');
     history.back();
   }
 });
@@ -346,8 +351,8 @@ function openTimetable(id) {
   var ttoutput = Mustache.render(tttemplate, timetable);
   $('#timetables').fadeIn();
   $("#timetables").html(ttoutput);
-  $("#timetables").click(function(event) { if (event.target == this) history.back(); });
-  $('#closeTimetablesButton').click(function() { history.back(); });
+  $("#timetables").click(function(event) { if (event.target == this) {console.log('backdrop clicked -> back'); history.back(); }});
+  $('#closeTimetablesButton').click(function() { console.log('closeTimetables clicked -> back'); history.back(); });
   hideMenu();
 }
 
@@ -360,6 +365,7 @@ function setInfoContent(targets, dontPushState) {
   $(".info .infocontent").addClass("removing");
   if (targets[0].ref) {
     route = targets[0].ref;
+    console.log('setting info content, pushingState?', !dontPushState, 'route: ', route);
     if (!dontPushState) history.pushState({route: route, timetables: null}, null, null);
 
     var template = document.getElementById('infocontenttemplate').innerHTML;
@@ -398,13 +404,12 @@ function setInfoContent(targets, dontPushState) {
       window.open(this.getAttribute("href"), "info");
     } else {
       var timetable = this.getAttribute("data-target");
+      console.log('timetablebutton -> push state ', {route: route, timetable: timetable});
       history.pushState({route: route, timetable: timetable }, null, null);
       openTimetable(timetable);
     }
   });
 }
-
-console.log(history.state);
 
 function navigateTo(state) {
   if (state && state.route) {
@@ -413,12 +418,13 @@ function navigateTo(state) {
       openTimetable(state.timetable);
     }
   } else {
-    unselectAll();
+    unselectAll(false);
   }
 }
 
 window.onpopstate = function(event) {
-  console.log(event);
+  console.log('onpopstate', event, location.hash, history.length, history.state);
+  if (location.hash) return;
   closeTimetables();
   navigateTo(event.state);
 };
@@ -491,10 +497,12 @@ function latLng2Point(latLng, map) {
   return new google.maps.Point((worldPoint.x - bottomLeft.x) * scale, (worldPoint.y - topRight.y) * scale);
 }
 
-function unselectAll() {
+function unselectAll(pushState) {
   if (selected.length == 0) return;
+  if (typeof pushState === 'undefined') pushState = true;
 
-  history.pushState({}, null, null);
+  console.log('unselect -> pushState: null');
+  if (pushState) history.pushState({route: null}, null, null);
 
   $(function() {
     if ($("body").outerWidth() >= 768) {
