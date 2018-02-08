@@ -413,6 +413,9 @@ function setInfoContent(targets, dontPushState) {
 }
 
 function navigateTo(state) {
+  if (!state || !state.timetable) {
+    closeTimetables();
+  }
   if (state && state.route) {
     selectByIds([state.route]);
     if (state.timetable) {
@@ -426,8 +429,9 @@ function navigateTo(state) {
 window.onpopstate = function(event) {
   console.log('onpopstate', event, location.hash, history.length, history.state);
   if (location.hash) return;
-  closeTimetables();
-  navigateTo(event.state);
+  $("#wrapper2").animate({scrollTop: 0}, 'fast', function() {
+    navigateTo(event.state);
+  });
 };
 
 var selected = [];
@@ -440,6 +444,31 @@ function selectByIds(ids) {
     unselectAll();
   }
 
+}
+
+function actualBounds(map) {
+  return map.getBounds();
+  var mapWidth = $("#mapcontainer").outerWidth();
+  var mapHeight = $("#mapcontainer").outerWidth();
+  if (mapWidth >= 768) {
+    var bounds = 0;
+  }
+}
+
+function panTo(bounds) {
+  var center = {lat: (bounds.north + bounds.south)/2, lng: (bounds.west + bounds.east)/2};
+  map.panTo(center);
+  var mapWidth = $("#mapcontainer").outerWidth();
+  if (mapWidth >= 768) {
+    map.panBy(-200, -25);
+  } else {
+    map.panBy(0, -25);
+  }
+  var mapBounds = actualBounds(map);
+  if (map.getZoom() > 5 && !map.getBounds().contains({lat: bounds.south, lng: bounds.east})) {
+    map.setZoom(map.getZoom()-1);
+    panTo(bounds);
+  }
 }
 
 function select(targets, mouseEvent, dontPushState) {
@@ -486,12 +515,7 @@ function select(targets, mouseEvent, dontPushState) {
     });
   }
   if (!mouseEvent && targets[0].bounds) {
-    var bounds = Object.assign({}, targets[0].bounds);
-    var mapWidth = $("body").outerWidth();
-    if (mapWidth >= 768) {
-      bounds.west = bounds.east - 2*(bounds.east-bounds.west);
-    }
-    map.fitBounds(bounds);
+    panTo(targets[0].bounds);
   }
 }
 
@@ -1022,6 +1046,7 @@ function connection(connection, map) {
     var highlight = function(doHighlight) {
       isSelected = doHighlight;
       lineb.setOptions({strokeOpacity: doHighlight? properties.highlightOpacity: 0});
+      rerender(map.getZoom(), map.getMapTypeId());
     };
     lineb.addListener('click', function(event) {
       select([connectionObject], event);
