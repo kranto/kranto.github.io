@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    $('#wrapper2').bind('scroll',toggleScrollIndicator); 
+  $('#wrapper2').bind('scroll',toggleScrollIndicator);
 });
 
 $(window).resize(function() {
@@ -32,6 +32,8 @@ $(document).ready(function(){
   $("#infopage").load("templates/infopage.html #infopagecontent", initInfoPage);
   $("#menu").load("templates/menucontent.html #menucontent", initMenu);
   $("#settings").load("templates/settingscontent.html #settingscontent", initSettings);
+
+  $("#timetables").click(function(event) { if (event.target == this) {console.log('backdrop clicked -> back'); history.back(); }});
 
 });
 
@@ -351,7 +353,6 @@ function openTimetable(id) {
   var ttoutput = Mustache.render(tttemplate, timetable);
   $('#timetables').fadeIn();
   $("#timetables").html(ttoutput);
-  $("#timetables").click(function(event) { if (event.target == this) {console.log('backdrop clicked -> back'); history.back(); }});
   $('#closeTimetablesButton').click(function() { console.log('closeTimetables clicked -> back'); history.back(); });
   hideMenu();
 }
