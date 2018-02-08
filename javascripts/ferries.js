@@ -378,6 +378,7 @@ function setInfoContent(targets, dontPushState) {
     var uniqueNames = targets.map(function(target) { return target.name; }).filter(onlyUnique);
     var data = { names: uniqueNames, contents: targets };
     output = Mustache.render(template, data);
+    if (!dontPushState) history.pushState({route: targets.map(function(r) { return r.id; }), timetables: null}, null, null);
   }
 
   $(".info").append(output);
@@ -417,7 +418,12 @@ function navigateTo(state) {
     closeTimetables();
   }
   if (state && state.route) {
-    selectByIds([state.route]);
+    if (typeof state.route === 'string') {
+      selectByIds([state.route]);
+    } else if (Array.isArray(state.route)) {
+      console.log(lauttaRoutes);
+      select(lauttaRoutes.filter(function(lr) { return state.route.indexOf(lr.id) >= 0;  }), null, true);
+    }
     if (state.timetable) {
       openTimetable(state.timetable);
     }
@@ -443,28 +449,19 @@ function selectByIds(ids) {
   } else {
     unselectAll();
   }
-
-}
-
-function actualBounds(map) {
-  return map.getBounds();
-  var mapWidth = $("#mapcontainer").outerWidth();
-  var mapHeight = $("#mapcontainer").outerWidth();
-  if (mapWidth >= 768) {
-    var bounds = 0;
-  }
 }
 
 function panTo(bounds) {
+  // pan to center of the bounds, then pan according to the info window and headerbar
+  // and finally if bounds do not fit, zoom out and start over. 
   var center = {lat: (bounds.north + bounds.south)/2, lng: (bounds.west + bounds.east)/2};
   map.panTo(center);
   var mapWidth = $("#mapcontainer").outerWidth();
   if (mapWidth >= 768) {
-    map.panBy(-200, -25);
+    map.panBy(-200, -25); // half of info window & header bar
   } else {
-    map.panBy(0, -25);
+    map.panBy(0, -25); // half or header bar
   }
-  var mapBounds = actualBounds(map);
   if (map.getZoom() > 5 && !map.getBounds().contains({lat: bounds.south, lng: bounds.east})) {
     map.setZoom(map.getZoom()-1);
     panTo(bounds);
@@ -1486,6 +1483,7 @@ Leg.prototype.addRoute = function(route) {
 function Route(object) {
   this.operators = object.operators;
   this.legs = object.legs.map(function(id) { return lauttaLegIndex[id]; });
+  this.id = object.id;
   this.init = function() {
     this.name = shortName(object);
     this.details = description(object);

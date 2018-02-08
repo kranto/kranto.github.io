@@ -66,6 +66,10 @@ function prepareData(data) {
     });
 
   });
+
+  var i = 0;
+  data.lauttaRoutes.forEach(function(lr) { lr.id = i++; });
+  console.log(data);
 }
 
 var callback = null;
