@@ -450,13 +450,10 @@ function select(targets, mouseEvent, dontPushState) {
   selected.forEach(function(target) { target.highlight(false);  if (target.rerender) target.rerender(map.getZoom(), map.getMapTypeId()); });
   selected = [];
 
-  var bounds = null;
   targets = (targets.constructor === Array)? targets: [targets];
   targets.forEach(function(target) {
     target.highlight(true);
     selected.push(target);
-    if (!bounds) bounds = target.bounds;
-    if (bounds && target.bounds) bounds.union(target.bounds);
   });
 
   showHeaderbar();
@@ -487,6 +484,14 @@ function select(targets, mouseEvent, dontPushState) {
         if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
       }
     });
+  }
+  if (!mouseEvent && targets[0].bounds) {
+    var bounds = Object.assign({}, targets[0].bounds);
+    var mapWidth = $("body").outerWidth();
+    if (mapWidth >= 768) {
+      bounds.west = bounds.east - 2*(bounds.east-bounds.west);
+    }
+    map.fitBounds(bounds);
   }
 }
 
@@ -962,6 +967,15 @@ function pickProperties(names, sources) {
   return result;
 }
 
+function addToBounds(bounds, coords) {
+  coords.forEach(function(coord) {
+    bounds.west = bounds.west? Math.min(bounds.west, coord[0]): coord[0];
+    bounds.east = bounds.east? Math.max(bounds.east, coord[0]): coord[0];
+    bounds.south = bounds.south? Math.min(bounds.south, coord[1]): coord[1];
+    bounds.north = bounds.north? Math.max(bounds.north, coord[1]): coord[1];
+  });
+}
+
 function connection(connection, map) {
   var baseStyler = connectionStylers["base"];
   var subtype = connection.properties.ssubtype;
@@ -972,10 +986,11 @@ function connection(connection, map) {
   };
 
   var legFeatures = connection.type === 'FeatureCollection'? connection.features: [connection];
-  var connectionObject = { ref: connection.properties.ref };
+  var connectionObject = { ref: connection.properties.ref, bounds: {} };
   var legObjects = legFeatures.map(function(leg) {
 
     var coords = leg.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
+    addToBounds(connectionObject.bounds, leg.geometry.coordinates);
     var legStyler = leg.properties.ssubtype? connectionStylers[leg.properties.ssubtype]: {};
     var propertyNames = ["weight", "opacity", "color", "zIndex", "visibleFrom", "visibleTo", "highlightColor", "highlightWeight", "highlightOpacity", "icons"];
     var propertySources = [leg.properties, legStyler, connection.properties, connectionStyler, baseStyler]
@@ -1181,7 +1196,7 @@ function rerender(map, force) {
 function hideObjects(map) {
   if (hidden) return;
   var zoom = map.getZoom();
-  // if (zoom > prevRenderZoom) return; // hide only when zooming out
+  if (zoom == prevRenderZoom) return;
   var t0 = new Date().getTime();
   console.log('hide started');
   objects.forEach(function(object){ if (object.hide) object.hide(); }); 
