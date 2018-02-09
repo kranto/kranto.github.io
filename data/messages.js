@@ -49,7 +49,8 @@ messages = { // FI SV EN
         "Detta är en inofficiell kopia. Kontrollera om ändringar, undantag och ytterligare information",
         "This is an unofficial copy. Check for changes, exceptions, and additional information"],
     fromoriginal: ["alkuperäisestä aikataulusta", "från den ursprungliga tidtabellen", "in the original schedule"],
-    openzoomable: ["Avaa zoomattava aikataulu uuteen ikkunaan klikkaamalla", "Klicka för att öppna tidtabellen i ett nytt fönster", "Click a timetable image to open it in a new window"]
+    openzoomable: ["Avaa zoomattava aikataulu uuteen ikkunaan klikkaamalla", "Klicka för att öppna tidtabellen i ett nytt fönster", "Click a timetable image to open it in a new window"],
+    seealso: ['Katso myös <a href="{0}">{1}</a>', 'See also <a href="{0}">{1}</a>', 'See also <a href="{0}">{1}</a>'],
 }
 
 console.log(JSON.stringify(messages));

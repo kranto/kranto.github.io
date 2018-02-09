@@ -1301,6 +1301,7 @@ fdata = {
         interval_L: ["times.adaytworoutes", "", "3-4", "Enklinge - Kumlinge", "10"],
         cost_L: "cost.applies",
         duration_L: ["duration.hours", "2.5"],
+        seealso_L: ["seealso", "#asterholmalinjen", "Asterholma - Lappo - Torsholma"],
       },
       timetables: ["norralinjen", "enklingelinjen"],
       pricelists: "alandstrafiken"
@@ -1333,7 +1334,8 @@ fdata = {
       features: {
         interval_L: ["times.aday", "~ 10"],
         order_L: "order.partly",
-        duration_L: ["duration.minutes", "35"]
+        duration_L: ["duration.minutes", "35"],
+        seealso_L: ["seealso", "#norralinjen", "Hummelvik - Torsholma"],
       },
       timetables: "asterholmalinjen",
       pricelists: "alandstrafiken"
@@ -1569,7 +1571,7 @@ fdata = {
         order_L: "order.partly",
         duration_L: ["duration.hours", "1-2", "Teersalo - Teersalo"],
         seasonal_L: ["seasonal.summerspier", "Hakkenpää"],
-        seealso: "#velkuataivassalo"
+        seealso_L: ["seealso", "#velkuataivassalo", "Teersalo - Hakkenpää"],
       },
       timetables: "velkuanreitti",
     },
