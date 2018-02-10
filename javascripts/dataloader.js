@@ -30,7 +30,6 @@ $.get('/data/data.json', function(data) {
 });
 
 function prepareData(data) {
-  console.log(data);
   Object.keys(data.mun).forEach(function(key) {
     var m = data.mun[key];
     m.name = m.name? m.name: key;
@@ -69,7 +68,8 @@ function prepareData(data) {
 
   var i = 0;
   data.lauttaRoutes.forEach(function(lr) { lr.id = i++; });
-  console.log(data);
+
+  Object.keys(data.mun).forEach(function(key) { addFinnishInessiivi(data.mun[key]); });
 }
 
 var callback = null;
@@ -82,4 +82,16 @@ function sendDataIf() {
   if (fgeojson.length >= 3 && fdata && fmessages && callback) {
     callback(fdata, fgeojson, fmessages);
   }
+}
+
+function addFinnishInessiivi(mun) {
+  var vokaalit = "aeiouyåäö";
+  var etuvokaalit = "yäö";
+  if (mun.name_fi_in) return;
+  var name = mun.name_fi || mun.name;
+  var lastChar = name.slice(-1);
+  if (!vokaalit.includes(lastChar)) name += "i";
+  var isEtu = etuvokaalit.split("").map(function(ev) { return name.indexOf(ev) >= 0; }).reduce(function(x, y) { return x || y; }, false);
+  name += isEtu? "ssä": "ssa";
+  mun.name_fi_in = name;
 }
