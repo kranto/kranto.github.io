@@ -331,8 +331,11 @@ function onlyUnique(value, index, self) {
 $(document).keyup(function(e) {
   if (e.keyCode == 27) { // escape key maps to keycode `27`
     //closeTimetables();
-    console.log('esc -> back');
-    history.back();
+    if (history.state.timetable) {
+      history.back();
+    } else if (history.state.route) {
+      unselectAll();
+    }
   }
 });
 
