@@ -332,7 +332,6 @@ function onlyUnique(value, index, self) {
 
 $(document).keyup(function(e) {
   if (e.keyCode == 27) { // escape key maps to keycode `27`
-    //closeTimetables();
     if (history.state.timetable) {
       history.back();
     } else if (history.state.route) {
@@ -371,7 +370,6 @@ function setInfoContent(targets, dontPushState) {
   $(".info .infocontent").addClass("removing");
   if (targets[0].ref) {
     route = targets[0].ref;
-    console.log('setting info content, pushingState?', !dontPushState, 'route: ', route);
     if (!dontPushState) history.pushState({route: route, timetables: null}, null, null);
 
     var template = document.getElementById('infocontenttemplate').innerHTML;
@@ -388,6 +386,15 @@ function setInfoContent(targets, dontPushState) {
 
   $(".info").append(output);
   if ($(".infocontent.removing").length) $(".infocontent:not(.removing)").hide();
+
+  $("a.pierlink").mouseover(function(event) {
+    var dataTarget = this.getAttribute("data-target").substring(1);
+    objects.filter(function(o) { return o.id == dataTarget; })[0].showTooltip(false);
+  });
+
+  $("a.pierlink").mouseout(function(event) {
+    tooltip.close();
+  });
 
   if (targets[0].style) {
     var style = targets[0].style;
@@ -873,15 +880,17 @@ function pier(feature, map) {
   var longName_ = longName(fdataObject).replace('/', '<br/>');
   var label = new txtol.TxtOverlay(position, longName_, "pier pier-" + feature.properties.ssubtype, map, feature.properties.labelAnchor);
 
-  function showTooltip() {
-    latestHandledMapClickAt = new Date().getTime();
+  function showTooltip(pan) {
     tooltip.setPosition(marker.getPosition());
     tooltip.setContent(longName_);
     tooltip.open(map, marker);
+    if (pan) {
+      map.panTo(marker.getPosition());
+    }
   }
 
-  marker.addListener('click', showTooltip);
-  label.addEventListener('click', function(event) { event.stopPropagation(); event.preventDefault(); showTooltip(); });
+  marker.addListener('click', function() { latestHandledMapClickAt = new Date().getTime(); showTooltip(); });
+  label.addEventListener('click', function(event) { event.stopPropagation(); event.preventDefault(); latestHandledMapClickAt = new Date().getTime(); showTooltip(); });
   return {
     ref: ref,
     init: function() {
@@ -898,7 +907,9 @@ function pier(feature, map) {
       marker.setClickable(styler.clickable(zoom));
       marker.setVisible(zoom >= markerVisibleFrom);
       if (zoom >= labelVisibleFrom) label.show(); else label.hide();
-    }
+    },
+    showTooltip: showTooltip,
+    id: fdataObject.id
   };
 }
 

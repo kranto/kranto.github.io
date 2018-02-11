@@ -487,13 +487,433 @@
     {
       "type": "Feature",
       "properties": {
+        "stype": "pier",
+        "ref": "Seglinge",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.710151, 60.215518 ],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Finholma",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.526409, 60.074604 ],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Jyddö",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.527128, 60.076483 ],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Norrboda",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.289602, 60.153104],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Ängö",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.294537, 60.154129],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Prästö",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.2722, 60.207997],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Töftö",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.277661, 60.20571],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Sandö",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.372257, 60.322485],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Simskäla",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.365369, 60.331536],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "LappoL",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.952172, 60.311419],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "BjörköK",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.941593, 60.311052],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "BjörköH",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.405916, 60.265682],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "MossalaE",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.406002, 60.268705],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Kivimo",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.335631, 60.235044],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "NäsbyI",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.39553, 60.217457 ],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Saverkeit",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.403148, 60.216807],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "PalvaI",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.67566, 60.46787],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "PalvaL",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.648259, 60.461174],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Velkuanmaa",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.6365, 60.455059],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Högsåra",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.369194, 59.954602],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Våno",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.303866, 60.216839],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Mielisholm",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.306484, 60.215294],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Ängholm",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.880308, 60.167007],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Grännäs",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.878919, 60.169672],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Sorpo",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.281830, 60.150910],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Jermo",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.285522, 60.150366],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Angelniemi",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.943916, 60.312752],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    }, 
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Kokkila",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.943401, 60.318236],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Ulkoluoto",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.915098, 60.041173],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Pettu",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.92293, 60.038488],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Björkö",
         "labelVisibleTo": -1,
         "labelAnchor": {"dir": "N", "x":0 , "y":0 }
       },
       "geometry": {
-        "coordinates": [21.687526, 59.908264 ],
+        "coordinates": [21.687526, 59.908264],
         "type": "Point"
       },
       "id": "07833a142f87bc21bfb438e637b53ddf"
@@ -2444,7 +2864,7 @@
         "ref": "kivimo"
       },
       "geometry": {
-        "coordinates": [[21.334794, 60.233712 ], [21.335631, 60.235044 ] ],
+        "coordinates": [[21.334794, 60.233712 ], [21.335631, 60.235044]],
         "type": "LineString"
       },
       "id": "416311a945a2845324aaf6c43c46d271"
@@ -4180,13 +4600,13 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "pier_obsolete",
+        "stype": "pier",
         "ref": "Keistiö",
-        "ssubtype": "4",
-        "labelAnchor": {"dir": "SW", "x":0 , "y":5 }
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
       },
       "geometry": {
-        "coordinates": [21.34929, 60.372377 ],
+        "coordinates": [21.34945, 60.372322 ],
         "type": "Point"
       },
       "id": "c2aac87b557c1d494117065543d10059"
@@ -4356,7 +4776,7 @@
         "ref": "bjorkolinjen"
       },
       "geometry": {
-        "coordinates": [[20.941593, 60.311052 ], [20.952172, 60.311419 ] ],
+        "coordinates": [[20.941593, 60.311052], [20.952172, 60.311419 ] ],
         "type": "LineString"
       },
       "id": "c845d37615020a45b3827c9bf43bf9d0"
@@ -4398,7 +4818,7 @@
         "ref": "toftolinjen"
       },
       "geometry": {
-        "coordinates": [[20.2722, 60.207997 ], [20.277661, 60.20571 ] ],
+        "coordinates": [[20.2722, 60.207997 ], [20.277661, 60.20571]],
         "type": "LineString"
       },
       "id": "ca346693fff007af6dbebc1eade3a5f0"
@@ -5143,7 +5563,7 @@
         "ref": "simskalalinjen"
       },
       "geometry": {
-        "coordinates": [[20.372257, 60.322485 ], [20.365369, 60.331536 ] ],
+        "coordinates": [[20.372257, 60.322485], [20.365369, 60.331536]],
         "type": "LineString"
       },
       "id": "f5fce26195061a9790e873a6b5eba5e3"
