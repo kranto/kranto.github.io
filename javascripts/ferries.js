@@ -246,15 +246,17 @@ $(document).ready(function() {
 
 
 function shortName(props) {
-  return props["sname_" + currentLang] || props.sname;
+  var value = props["sname_" + currentLang] || props.sname || props["name_" + currentLang] || props.name;
+  console.log(props, value);
+  return props["sname_" + currentLang] || props.sname || props["name_" + currentLang] || props.name;
 }
 
 function longName(props) {
-  var localName = props.sname;
-  var currLocaleName = props["sname_" + currentLang];
+  var localName = props.sname || props.name;
+  var currLocaleName = props["sname_" + currentLang] || props["name_" + currentLang];
   var firstName = currLocaleName? currLocaleName: localName;
   var otherNames = ["", "_fi", "_sv", "_en"].map(function(l) {
-    return props["sname" + l];
+    return props["sname" + l] || props["name" + l];
   }).filter(function(name) { return typeof name !== 'undefined' && name != firstName; }).filter(onlyUnique);
   return firstName + ((otherNames.length > 0)? "/" + otherNames.join("/"): "");
 }
@@ -860,8 +862,15 @@ function pier(feature, map) {
   var position = new google.maps.LatLng(coords[1], coords[0]);
   var icon = getPierIcons().a1_30;
   var marker = createMarker(position, true, icon, map);
-  var shortName_ = shortName(feature.properties);
-  var longName_ = longName(feature.properties).replace('/', '<br/>');
+  var ref = null;
+  var fdataObject = null;
+  if (feature.properties.ref) {
+    ref = feature.properties.ref;
+    fdataObject = fdata.piers[ref];    
+  }
+  console.log(feature.properties);
+  var shortName_ = shortName(fdataObject);
+  var longName_ = longName(fdataObject).replace('/', '<br/>');
   var label = new txtol.TxtOverlay(position, longName_, "pier pier-" + feature.properties.ssubtype, map, feature.properties.labelAnchor);
 
   function showTooltip() {
@@ -874,9 +883,10 @@ function pier(feature, map) {
   marker.addListener('click', showTooltip);
   label.addEventListener('click', function(event) { event.stopPropagation(); event.preventDefault(); showTooltip(); });
   return {
+    ref: ref,
     init: function() {
-      shortName_ = shortName(feature.properties);
-      longName_ = longName(feature.properties).replace('/', '<br/>');
+      shortName_ = shortName(fdataObject);
+      longName_ = longName(fdataObject).replace('/', '<br/>');
       label.setInnerHTML(longName_);
     },
     hide: function() {
