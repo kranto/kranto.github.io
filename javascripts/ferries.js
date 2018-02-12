@@ -93,11 +93,16 @@ function showHeaderbar() {
 }
 
 window.onhashchange = function() {
-  var route = location.hash.substring(1);
-  var newState = {route: route, timetable: null};
-  console.log('onhashchange: replacing state to', newState);
-  history.replaceState(newState, null, "/");
-  navigateTo(newState);
+  var hash = location.hash.substring(1);
+  if (fdata.routes[hash]) {
+    var newState = {route: hash, timetable: null};
+    console.log('onhashchange: replacing state to', newState);
+    history.replaceState(newState, null, "/");
+    navigateTo(newState);
+  } else if (fdata.piers[hash]) {
+    history.go(-1);
+    objects.filter(function(o) { return o.id == hash; })[0].showTooltip(true);
+  }
 }
 
 function doToggleHeaderbar() {
