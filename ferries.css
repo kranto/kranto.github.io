@@ -649,6 +649,19 @@ div#wrapper2 {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.pierlink {
+  display: inline-block;
+  border: 1px solid darkgrey;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin-right: 3px;
+  margin-bottom: 3px;
+}
+
+.pierlink:hover {
+  background-color: #8de;
+}
+
 div.timetablelink {
   border-bottom: 2px solid black;
 }
@@ -704,7 +717,7 @@ div.timetablelink:last-of-type {
 
 }
 
-.mainpier {
+.mainpier .pier {
   font-weight: bold;
 }
 

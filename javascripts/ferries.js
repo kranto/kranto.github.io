@@ -392,12 +392,12 @@ function setInfoContent(targets, dontPushState) {
   $(".info").append(output);
   if ($(".infocontent.removing").length) $(".infocontent:not(.removing)").hide();
 
-  $("a.pierlink").mouseover(function(event) {
-    var dataTarget = this.getAttribute("data-target").substring(1);
+  $("div.pierlink").mouseover(function(event) {
+    var dataTarget = this.getAttribute("data-target");
     objects.filter(function(o) { return o.id == dataTarget; })[0].showTooltip(false);
   });
 
-  $("a.pierlink").mouseout(function(event) {
+  $("div.pierlink").mouseout(function(event) {
     tooltip.close();
   });
 

@@ -120,7 +120,6 @@ function routeInfo(route, lang) {
     piers.forEach(function(pier) {
         pier.class = pier.type == 1? "mainpier": "";
         pier.specifier = pier.type == 1 && pier.mun.name != pier.name ? "(" + pier.mun.name  + ")": "";
-        pier.link = "#" + pier.id;
     });
     piers[piers.length - 1].last = true;
     info.piers = piers;

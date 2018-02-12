@@ -1624,7 +1624,7 @@ fdata = {
       name_sv: "Houtskär rutt och Iniö tilläggsrutt",
       name_en: "Houtskär Route and Iniö Additional Route",
       specifier: "",
-      piers: ["Näsby","Roslax","Ytterstö","Lempmo","Salmis","Lammholm","Norrby","Sördö","Lempnäs","Äpplö","Nåtö","TorsholmaI","Själö","Härklot","Kvarnholm","Åselholm","Perkala","Kolko","Kannvik"],
+      piers: ["Näsby","Roslax","Ytterstö","Lempmo","Salmis","Lammholm","Norrby","Sördö","Lempnäs","Äpplö","Bockholm", "Södö", "Nåtö","TorsholmaI","Själö","Härklot","Kvarnholm","Åselholm","Perkala","Kolko","Kannvik"],
       operator: "ferryway",
       vessels: ["karolina", "satava"],
       features: {
