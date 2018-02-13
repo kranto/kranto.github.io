@@ -368,6 +368,8 @@ function openTimetable(id) {
 
 var selectedRoute = null;
 
+
+
 function setInfoContent(targets, dontPushState) {
 
   var output;
@@ -392,13 +394,32 @@ function setInfoContent(targets, dontPushState) {
   $(".info").append(output);
   if ($(".infocontent.removing").length) $(".infocontent:not(.removing)").hide();
 
+  var pierlinkDown = false;
   $("div.pierlink").mouseover(function(event) {
     var dataTarget = this.getAttribute("data-target");
     objects.filter(function(o) { return o.id == dataTarget; })[0].showTooltip(false);
   });
 
   $("div.pierlink").mouseout(function(event) {
-    tooltip.close();
+    if (!pierlinkDown) tooltip.close();
+  });
+
+  $("div.pierlink").mousedown(function(event) {
+    $(".info").fadeOut();
+    pierlinkDown = true;
+  });
+
+  $("div.pierlink").mouseup(function(event) {
+    $(".info").fadeIn();
+    pierlinkDown = false;
+  });
+
+  $("body").mouseup(function(event) {
+    console.log("up");
+    if (pierlinkDown) {
+      $(".info").fadeIn();
+      pierlinkDown = false;
+    }
   });
 
   if (targets[0].style) {
