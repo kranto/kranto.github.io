@@ -1,6 +1,17 @@
 
 $(document).ready(function(){
   $('#wrapper2').bind('scroll',toggleScrollIndicator);
+
+  $("#wrapper2").on("wheel", function(e) {
+    setTimeout(function() { $("#wrapper2").css({pointerEvents: "none"}); }, 200);
+  });
+
+  $(".info").on("wheel", function(e) {
+    console.log('wheel', e);
+    $("#wrapper2").css({pointerEvents: "auto"});
+    $("#wrapper2").trigger("wheel", e);
+  });
+
 });
 
 $(window).resize(function() {
@@ -368,8 +379,6 @@ function openTimetable(id) {
 
 var selectedRoute = null;
 
-
-
 function setInfoContent(targets, dontPushState) {
 
   var output;
@@ -405,19 +414,19 @@ function setInfoContent(targets, dontPushState) {
   });
 
   $("div.pierlink").mousedown(function(event) {
-    $(".info").fadeOut();
+    $(".info").animate({ opacity: 0 });
     pierlinkDown = true;
   });
 
   $("div.pierlink").mouseup(function(event) {
-    $(".info").fadeIn();
+    $(".info").animate({ opacity: 1 });
     pierlinkDown = false;
   });
 
   $("body").mouseup(function(event) {
     console.log("up");
     if (pierlinkDown) {
-      $(".info").fadeIn();
+      $(".info").animate({ opacity: 1 });
       pierlinkDown = false;
     }
   });
