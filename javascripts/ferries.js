@@ -2,14 +2,50 @@
 $(document).ready(function(){
   $('#wrapper2').bind('scroll',toggleScrollIndicator);
 
-  $("#wrapper2").on("wheel", function(e) {
-    setTimeout(function() { $("#wrapper2").css({pointerEvents: "none"}); }, 200);
+  $(".info").on("mouseleave", function(e) {
+    $("#wrapper2").css({pointerEvents: "none"});
+    $(".mapoverlay").css({pointerEvents: "none"});
   });
 
-  $(".info").on("wheel", function(e) {
-    console.log('wheel', e);
+  $(".info").on("mouseenter mousedown touchstart", function(e) {
     $("#wrapper2").css({pointerEvents: "auto"});
-    $("#wrapper2").trigger("wheel", e);
+    $(".mapoverlay").css({pointerEvents: "auto"});
+    $("#wrapper2").trigger(e.type, e);
+  });
+
+  // $("#wrapper2").bind('touchstart', function(e) {
+  //   $("#wrapper2").css({pointerEvents: "none"});
+  // });
+
+  // $(".mapoverlay").bind('touchstart', function(e) {
+  //   $("#wrapper2").css({pointerEvents: "none"});
+  //   $(".mapoverlay").css({pointerEvents: "none"});
+  //   $("#mapcontainer").trigger('touchstart', e);
+  // });
+
+  // $(".mapoverlay").bind('pointerenter', function(e) {
+  //   $("#wrapper2").css({pointerEvents: "none"});
+  //   $(".mapoverlay").css({pointerEvents: "none"});
+  //   $("#map").trigger('pointerenter', e);
+  // });
+
+  function getAllEvents(element) {
+    var result = [];
+    for (var key in element) {
+        if (key.indexOf('on') === 0) {
+            result.push(key.slice(2));
+        }
+    }
+    return result.join(' ');
+  }
+
+  var el = $(".mapoverlay");
+  el.bind(getAllEvents(el[0]), function(e) {
+    $("#wrapper2").css({pointerEvents: "none"});
+    $(".mapoverlay").css({pointerEvents: "none"});
+    $("#mapcontainer").trigger(e.type, e);
+    console.log(e);
+    //alert(e.type);  /* insert your code */
   });
 
 });
@@ -263,7 +299,6 @@ $(document).ready(function() {
 
 function shortName(props) {
   var value = props["sname_" + currentLang] || props.sname || props["name_" + currentLang] || props.name;
-  console.log(props, value);
   return props["sname_" + currentLang] || props.sname || props["name_" + currentLang] || props.name;
 }
 
@@ -363,7 +398,6 @@ function closeTimetables() {
 
 function openTimetable(id) {
   var timetable = selectedRoute.timetables.filter(function(tt) { return tt.id == id; })[0];
-  console.log(selectedRoute, id, timetable);
   var tttemplate = document.getElementById('timetabletemplate').innerHTML;
   timetable.L = function () {
     return function(val, render) {
@@ -373,7 +407,7 @@ function openTimetable(id) {
   var ttoutput = Mustache.render(tttemplate, timetable);
   $('#timetables').fadeIn();
   $("#timetables").html(ttoutput);
-  $('#closeTimetablesButton').click(function() { console.log('closeTimetables clicked -> back'); history.back(); });
+  $('#closeTimetablesButton').click(function() { history.back(); });
   hideMenu();
 }
 
@@ -453,7 +487,6 @@ function setInfoContent(targets, dontPushState) {
       window.open(this.getAttribute("href"), "info");
     } else {
       var timetable = this.getAttribute("data-target");
-      console.log('timetablebutton -> push state ', {route: route, timetable: timetable});
       history.pushState({route: route, timetable: timetable }, null, null);
       openTimetable(timetable);
     }
@@ -468,7 +501,6 @@ function navigateTo(state) {
     if (typeof state.route === 'string') {
       selectByIds([state.route]);
     } else if (Array.isArray(state.route)) {
-      console.log(lauttaRoutes);
       select(lauttaRoutes.filter(function(lr) { return state.route.indexOf(lr.id) >= 0;  }), null, true);
     }
     if (state.timetable) {
@@ -572,10 +604,12 @@ function latLng2Point(latLng, map) {
 }
 
 function unselectAll(pushState) {
+  $("#wrapper2").css({pointerEvents: "none"});
+  $(".mapverlay").css({pointerEvents: "none"});
+
   if (selected.length == 0) return;
   if (typeof pushState === 'undefined') pushState = true;
 
-  console.log('unselect -> pushState: null');
   if (pushState) history.pushState({route: null}, null, null);
 
   $(function() {
@@ -910,7 +944,6 @@ function pier(feature, map) {
     ref = feature.properties.ref;
     fdataObject = fdata.piers[ref];    
   }
-  console.log(feature.properties);
   var shortName_ = shortName(fdataObject);
   var longName_ = longName(fdataObject).replace('/', '<br/>');
   var label = new txtol.TxtOverlay(position, longName_, "pier pier-" + feature.properties.ssubtype, map, feature.properties.labelAnchor);
