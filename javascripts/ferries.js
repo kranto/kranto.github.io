@@ -48,6 +48,14 @@ $(document).ready(function(){
     //alert(e.type);  /* insert your code */
   });
 
+  $("body").mouseup(function(event) {
+    console.log("up");
+    if (pierlinkDown) {
+      $(".info").animate({ opacity: 1 });
+      pierlinkDown = false;
+    }
+  });
+
 });
 
 $(window).resize(function() {
@@ -413,6 +421,55 @@ function openTimetable(id) {
 
 var selectedRoute = null;
 
+var pierlinkDown = false;
+
+function initPierLinks() {
+  var isTouch = false;
+
+  $("div.pierlink").mouseover(function(event) {
+    if (!isTouch) {
+      var dataTarget = this.getAttribute("data-target");
+      objects.filter(function(o) { return o.id == dataTarget; })[0].showTooltip(false);
+    }
+  });
+
+  $("div.pierlink").mouseout(function(event) {
+    if (!pierlinkDown) tooltip.close();
+  });
+
+  $("div.pierlink").mousedown(function(event) {
+    if (!isTouch) {
+      $(".info").animate({ opacity: 0 });
+      pierlinkDown = true;
+    }
+  });
+
+  $("div.pierlink").mouseup(function(event) {
+    if (!isTouch) {
+      $(".info").animate({ opacity: 1 });
+      pierlinkDown = false;
+    }
+  });
+
+  var touchstartTimeout = null;
+  $("div.pierlink").bind("touchstart", function(event) {
+    isTouch = true;
+    var dataTarget = this.getAttribute("data-target");
+    objects.filter(function(o) { return o.id == dataTarget; })[0].showTooltip(false);
+    touchstartTimeout = setTimeout(function() {
+      $(".info").animate({ opacity: 0 });
+      pierlinkDown = true;
+    }, 200);
+  });
+
+  $("div.pierlink").bind("touchend", function(event) {
+    if (touchstartTimeout) clearTimeout(touchstartTimeout);
+    touchstartTimeout = null;
+    $(".info").animate({ opacity: 1 });
+    pierlinkDown = false;
+  });
+}
+
 function setInfoContent(targets, dontPushState) {
 
   var output;
@@ -437,34 +494,6 @@ function setInfoContent(targets, dontPushState) {
   $(".info").append(output);
   if ($(".infocontent.removing").length) $(".infocontent:not(.removing)").hide();
 
-  var pierlinkDown = false;
-  $("div.pierlink").mouseover(function(event) {
-    var dataTarget = this.getAttribute("data-target");
-    objects.filter(function(o) { return o.id == dataTarget; })[0].showTooltip(false);
-  });
-
-  $("div.pierlink").mouseout(function(event) {
-    if (!pierlinkDown) tooltip.close();
-  });
-
-  $("div.pierlink").mousedown(function(event) {
-    $(".info").animate({ opacity: 0 });
-    pierlinkDown = true;
-  });
-
-  $("div.pierlink").mouseup(function(event) {
-    $(".info").animate({ opacity: 1 });
-    pierlinkDown = false;
-  });
-
-  $("body").mouseup(function(event) {
-    console.log("up");
-    if (pierlinkDown) {
-      $(".info").animate({ opacity: 1 });
-      pierlinkDown = false;
-    }
-  });
-
   if (targets[0].style) {
     var style = targets[0].style;
     $(".infocontent:not(.removing)").find(".infotitle, .headerbox").css({borderBottom: style.weight + "px " + style.style + " " + style.color });
@@ -476,6 +505,7 @@ function setInfoContent(targets, dontPushState) {
     unselectAll();
   });
 
+  initPierLinks();
 
   $(".infocontent.removing").fadeOut('fast', function() {
     $(".infocontent.removing").remove();

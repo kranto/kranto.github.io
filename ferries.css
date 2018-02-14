@@ -660,10 +660,20 @@ div#wrapper2 {
   margin-right: 3px;
   margin-bottom: 3px;
   user-select: none;
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
 }
 
 .pierlink:hover {
   background-color: #8de;
+}
+
+.info h4 {
+  user-select: none;
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
 }
 
 div.timetablelink {
