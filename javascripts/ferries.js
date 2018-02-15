@@ -614,8 +614,8 @@ function select(targets, mouseEvent, dontPushState) {
       } else {
         $(".info").css({top: '100%'});
         $(".info").animate({top: '80%'}, 'fast', function() {$(".info").css({top: "" }); });
-        $("#mapcontainer").css({height: '100%'});
-        $("#mapcontainer").animate({height: '80%'}, 'fast', function() {$("#mapcontainer").css({height: ""}); toggleScrollIndicator(); });
+        //$("#mapcontainer").css({height: '100%'});
+        //$("#mapcontainer").animate({height: '80%'}, 'fast', function() {$("#mapcontainer").css({height: ""}); toggleScrollIndicator(); });
         
         var clientY = mouseEvent? latLng2Point(mouseEvent.latLng, map).y: 0;
         if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
@@ -658,12 +658,12 @@ function unselectAll(pushState) {
         $(".info").animate({top: '100%'}, 200, function() {
           $(".info").css({top: "" }); 
         });
-        $("#mapcontainer").animate({height: '100%'}, 'fast', function() {
-          $("#mapcontainer").css({height: ""});
+        // $("#mapcontainer").animate({height: '100%'}, 'fast', function() {
+        //   $("#mapcontainer").css({height: ""});
           $("#wrapper2").toggleClass("info-open", false);
           $(".info .infocontent").remove();
           toggleScrollIndicator();
-        }); 
+        // }); 
       });
     }
   });
