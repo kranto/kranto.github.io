@@ -465,8 +465,10 @@ function initPierLinks() {
   $("div.pierlink").bind("touchend", function(event) {
     if (touchstartTimeout) clearTimeout(touchstartTimeout);
     touchstartTimeout = null;
-    $(".info").animate({ opacity: 1 });
-    pierlinkDown = false;
+    setTimeout(function() {
+      $(".info").animate({ opacity: 1 });
+      pierlinkDown = false;
+    }, 700);
   });
 }
 

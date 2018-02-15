@@ -770,11 +770,11 @@ h4 {
 }
 
 .mapoverlay {
-  display: block;
+  display: none;
   position: fixed;
   top: 0px;
   width: 100%; 
-  height: 100%;
+  height: 80%;
   background-color: transparent;
   z-index: 110;
   pointer-events: none;
@@ -813,7 +813,7 @@ h4 {
   }
 
   #wrapper2.info-open .mapoverlay {
-    height: 80%;
+    display: block;
   }
 
   #wrapper2.info-open .info {
