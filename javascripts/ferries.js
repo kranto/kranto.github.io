@@ -1065,7 +1065,7 @@ var connectionStylers = {
     icons: [{
         icon: {
         path: 'M 0,-1.5 0,1.5',
-        strokeOpacity: 1,
+        strokeOpacity: 0.4,
         strokeColor: '#ff7c0a',
         strokeWeight: 1 * lineWeightUnit,
         scale: 1
@@ -1082,7 +1082,7 @@ var connectionStylers = {
     icons: [{
         icon: {
         path: 0, // circle. cannot refer to google.maps.SymbolPath.CIRCLE before map has been loaded
-        strokeOpacity: 1,
+        strokeOpacity: 0.4,
         strokeColor: '#00a050',
         strokeWeight: 1.5 * lineWeightUnit,
         scale: 1.5 * lineWeightUnit
@@ -1173,6 +1173,7 @@ function connection(connection, map) {
       select([connectionObject], event);
     });
     var rerender = function(zoom, mapTypeId) {
+      line.setOptions({strokeOpacity: !properties.icons? 0.2: 0});
       var lineIsVisible = isSelected || (layerSelector() && zoom >= properties.visibleFrom && zoom <= properties.visibleTo); 
       line.setVisible(lineIsVisible);
       lineb.setVisible(lineIsVisible);
@@ -1316,8 +1317,8 @@ var renderers = {
   pier: pier,
   connection: connection,
   area: area,
-  box: box,
-  pin: pin
+  // box: box,
+  // pin: pin
 };
 
 var objects = [];
@@ -1437,6 +1438,60 @@ function initMap() {
   });
 
   initMapTypes(map);
+
+  map.data.loadGeoJson('/livedata.json', {idPropertyName: "mmsi"});
+  map.data.loadGeoJson('/livehistory.json');
+  setInterval(function() {
+    map.data.loadGeoJson('/livedata.json', {idPropertyName: "mmsi"});
+    map.data.loadGeoJson('/livehistory.json');
+  }, 10000);
+
+
+  map.data.setStyle(function(feature) {
+    var isVessel = feature.getGeometry().getType() == 'Point';
+    return {
+      strokeColor: '#a0a0a0',
+      strokeWeight: 0.5,
+      icon: createVesselIcon(feature),
+      zIndex: isVessel? 100: 99,
+      clickable: isVessel,
+    };
+  });
+
+  map.data.addListener('mouseover', function(event) {
+    if (!event.feature.getProperty("vessel")) return;
+    tooltip.setPosition(event.latLng);
+    tooltip.setContent(createVesselTooltip(event.feature));
+    tooltip.open(map);
+  });
+}
+
+function createVesselTooltip(feature) {
+  var vessel = feature.getProperty("vessel");
+  var result = "";
+  result += vessel.name;
+  if (vessel.destination) result += "<br>" + vessel.destination;
+  result += "<br>" + vessel.mmsi;
+  var age = Date.now() - feature.getProperty("timestampExternal");
+  result += "<br>" + Math.floor(age/1000) + " s";
+  return result;
+}
+
+function createVesselIcon(feature) {
+  var speed = feature.getProperty("sog");
+  var hasSpeed = speed > 0.1;
+  var scale = hasSpeed? 3: 2;
+  var rotation = hasSpeed? feature.getProperty("cog"): 45;
+  var path = hasSpeed? "M -1 2 L -1 -2 0 -3 1 -2 1 2 0 1 -1 2": "M -1 -1 L 1 -1 1 1 -1 1 -1 -1";
+  return {
+    path: path,
+    rotation: rotation,
+    strokeWeight: 1,
+    strokeColor: '#a030ff',
+    fillColor: '#a030ff',
+    fillOpacity: 0.6,
+    scale: scale
+  };
 }
 
 function initMapTypes(map) {
