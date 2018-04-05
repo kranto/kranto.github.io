@@ -812,6 +812,7 @@ fdata = {
     Knivskär: { mun: "Nagu"},
     Kopparholm: { mun: "Nagu"},
     Träskholm: { mun: "Nagu"},
+    Bodö: { mun: "Nagu"},
     Björkö: { mun: "Nagu"},
     Gloskär: { mun: "Nagu"},
     Trunsö: { mun: "Nagu"},
@@ -1699,7 +1700,7 @@ fdata = {
       name_sv: "Nagu södra rutt",
       name_en: "Nagu Southern Route",
       specifier: "",
-      piers: ["Kirjais", "PensarL", "Peno", "Brännskär", "Stenskär", "Gullkrona", "Grötö", "Knivskär", "Kopparholm", "Träskholm", "Björkö", "Gloskär", "Trunsö", "Sandholm", "Lökholm", "Borstö"],
+      piers: ["Kirjais", "PensarL", "Peno", "Brännskär", "Stenskär", "Gullkrona", "Grötö", "Knivskär", "Kopparholm", "Träskholm", "Bodö", "Björkö", "Gloskär", "Trunsö", "Sandholm", "Lökholm", "Borstö"],
       operator: "ferryway",
       vessels: ["nordep"],
       features: {

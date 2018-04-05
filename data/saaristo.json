@@ -3254,6 +3254,20 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
+        "ref": "Gloskär",
+        "ssubtype": "4",
+        "labelAnchor": {"dir": "SE", "x":7 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [21.775197, 59.880943],
+        "type": "Point"
+      },
+      "id": "5e39f54ae6b61d45fabf1c2aa5fe8174"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
         "ref": "Ytterstö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "SE", "x":-10 , "y":5 }
@@ -5023,6 +5037,20 @@
       },
       "geometry": {
         "coordinates": [21.742222, 59.913374 ],
+        "type": "Point"
+      },
+      "id": "d8ead50eef05e68bfc098b58a50df8e5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Bodö",
+        "ssubtype": "4",
+        "labelAnchor": {"dir": "E", "x":10 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [21.750245, 59.908368],
         "type": "Point"
       },
       "id": "d8ead50eef05e68bfc098b58a50df8e5"
