@@ -1122,7 +1122,7 @@ fdata = {
     nagusodra: { 
       link: "https://www.ferryway.fi/6",
       tables: [
-      { validFrom: "2017-11-01", validTo: "2018-03-31", images: ["NordepVinter2018.png"]}
+      { validFrom: "2018-04-01", validTo: "2018-06-03", images: ["NordepVar2018_1.png", "NordepVar2018_2.png"]}
       ],
     },
     hitisstella: {
@@ -1144,7 +1144,8 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-ruttomrade-viken.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-route-viken.html#timetables",
       tables: [
-      { validFrom: "2017-11-01", validTo: "2018-03-31", images: ["VikenVinter2018_1.png", "VikenVinter2018_2.png"]}
+      { validFrom: "2018-04-06", validTo: "2018-05-31", images: ["VikenVar2018_1.png", "VikenVar2018_2.png"]},
+      { validFrom: "2018-09-01", validTo: "2018-10-31", images: ["VikenVar2018_1.png", "VikenVar2018_2.png"]},
       ]
     },
 
