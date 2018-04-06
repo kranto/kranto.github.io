@@ -511,7 +511,7 @@ fdata = {
       },
       contact: {
         phones: ['+358 44 5000 503', {name: 'Café', tel: '+358 44 5000 506'}],
-        email: 'eivor@rosita.fi',
+//        email: 'eivor@rosita.fi',
         fb: 'https://www.facebook.com/mseivor/'
       }
     },
@@ -655,6 +655,19 @@ fdata = {
         www: 'http://www.rosita.fi/',
         www_fi: 'http://www.rosita.fi/',
         www_sv: 'http://www.rosita.fi/Hemsida'
+      },
+    },
+    meritie: {
+      name: "Saariston Meritie Oy",
+      logo: "meritie.png",
+      contact: {
+        phones: ['+358 45 124 5551'],
+//        email: 'info@rosita.fi',
+        address: 'Pansiontie 48, 20240 Turku',
+        address_sv: 'Pansiovägen 48, 20240 Åbo',
+        www: 'https://www.meritie.fi/',
+        www_fi: 'https://www.meritie.fi/',
+        www_sv: 'https://meritie.fi/?lang=sv'
       },
     },
     vitharun: {
@@ -1645,7 +1658,7 @@ fdata = {
       name_en: "Utö Route",
       specifier: "",
       piers: ["Pärnäs", "Berghamn", "Nötö", "Aspö", "Jurmo", "Utö"],
-      operator: "rosita",
+      operator: "meritie",
       vessels: ["eivor"],
       features: {
         interval_L: ["times.aweek", "5"],
