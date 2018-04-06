@@ -1324,7 +1324,8 @@ var renderers = {
 var objects = [];
 var prevRerender = "";
 var hidden = true;
-var prevRenderZoom = 0; 
+var prevRenderZoom = 0;
+
 function rerender(map, force) {
   var zoom = map.getZoom();
   var mapTypeId = map.getMapTypeId();
@@ -1449,10 +1450,12 @@ function initMap() {
 
   map.data.setStyle(function(feature) {
     var isVessel = feature.getGeometry().getType() == 'Point';
+    var isVisible = map.getZoom() >= 9;
     return {
+      visible: isVisible,
       strokeColor: '#a0a0a0',
       strokeWeight: 0.5,
-      icon: createVesselIcon(feature),
+      icon: isVisible && isVessel? createVesselIcon(feature): null,
       zIndex: isVessel? 100: 99,
       clickable: isVessel,
     };
@@ -1464,6 +1467,7 @@ function initMap() {
     tooltip.setContent(createVesselTooltip(event.feature));
     tooltip.open(map);
   });
+
 }
 
 function createVesselTooltip(feature) {
@@ -1490,7 +1494,7 @@ function createVesselIcon(feature) {
     strokeColor: '#a030ff',
     fillColor: '#a030ff',
     fillOpacity: 0.6,
-    scale: scale
+    scale: scale * (map.getZoom())/10
   };
 }
 
