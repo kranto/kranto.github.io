@@ -1105,11 +1105,12 @@ fdata = {
       ],
     },
     utorutt: { 
-      link: "http://www.rosita.fi/",
-      link_sv: "http://www.rosita.fi/Hemsida",
-      link_en: "http://www.rosita.fi/Hemsida",
+      link: "https://meritie.fi/aikataulut-reitti/",
+      link_sv: "https://meritie.fi/tidtabell-rutt/?lang=sv",
+      link_en: "https://meritie.fi/tidtabell-rutt/?lang=sv",
       tables: [
-      { validFrom: "2017-08-08", validTo: "2018-05-31", images: ["EivorVinter2018_1b.png", "EivorVinter2018_2.png", "EivorVinter2018_3.png"]}
+      { validFrom: "2017-08-08", validTo: "2018-05-31", images: ["EivorVinter2018_1.png", "EivorVinter2018_2.png"]},
+      { validFrom: "2018-06-01", validTo: "2018-08-06", images: ["EivorSommar2018_1.png", "EivorSommar2018_2.png"]}
       ],
     },
     korporutt: {
@@ -1661,7 +1662,7 @@ fdata = {
       operator: "meritie",
       vessels: ["eivor"],
       features: {
-        interval_L: ["times.aweek", "5"],
+        interval_L: ["times.aweek", "5-6"],
         duration_L: ["duration.hours", "4.5-5.5"],
       },
       notes: [ {content: "Bus connection in Pärnäs", content_sv: "Bussförbindelse i Pärnäs", content_fi: "Linja-autoyhteys Pärnäisissä" }],
