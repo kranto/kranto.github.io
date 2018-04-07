@@ -1397,7 +1397,6 @@ var latestHandledMapClickAt = 0;
 function initMap() {
 
   var data = {};
-  lbls.init('canvas');
   txtol.init();
 
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -1593,7 +1592,6 @@ function initMapTypes(map) {
 
 // ----------
 
-// Define a symbol using SVG path notation, with an opacity of 1.
 var lauttaLineSymbol = {
   path: 'M 0,-1 0,1',
   strokeOpacity: 0.4,
