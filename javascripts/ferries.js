@@ -225,6 +225,7 @@ function initSettings() {
     var layer = this.getAttribute("data-target");
     layers[layer] = this.checked; 
     localStorage.setItem("layers", JSON.stringify(layers));
+    if (onLayersChange[layer]) onLayersChange[layer](layer, this.checked);
     rerender(map, true);
   });
 
@@ -718,9 +719,14 @@ var layers = localStorgageLayers? JSON.parse(localStorgageLayers): {
   conn4: true,
   conn5: true,
   longdistanceferries: true,
+  live: false,
 };
 
 localStorage.setItem("layers", JSON.stringify(layers));
+
+onLayersChange = {
+  live: function(layer, enable) { toggleLiveLayer(enable); }
+}
 
 var map;
 var tooltip;
@@ -1065,7 +1071,7 @@ var connectionStylers = {
     icons: [{
         icon: {
         path: 'M 0,-1.5 0,1.5',
-        strokeOpacity: 0.4,
+        strokeOpacity: 1,
         strokeColor: '#ff7c0a',
         strokeWeight: 1 * lineWeightUnit,
         scale: 1
@@ -1082,7 +1088,7 @@ var connectionStylers = {
     icons: [{
         icon: {
         path: 0, // circle. cannot refer to google.maps.SymbolPath.CIRCLE before map has been loaded
-        strokeOpacity: 0.4,
+        strokeOpacity: 1,
         strokeColor: '#00a050',
         strokeWeight: 1.5 * lineWeightUnit,
         scale: 1.5 * lineWeightUnit
@@ -1173,7 +1179,12 @@ function connection(connection, map) {
       select([connectionObject], event);
     });
     var rerender = function(zoom, mapTypeId) {
-      line.setOptions({strokeOpacity: !properties.icons? 0.2: 0});
+      if (properties.icons) {
+        properties.icons[0].icon.strokeOpacity = layers.live? 0.4: 1;
+        line.setOptions({icons: properties.icons});
+      } else {
+        line.setOptions({strokeOpacity: layers.live? 0.2: properties.opacity});
+      }
       var lineIsVisible = isSelected || (layerSelector() && zoom >= properties.visibleFrom && zoom <= properties.visibleTo); 
       line.setVisible(lineIsVisible);
       lineb.setVisible(lineIsVisible);
@@ -1439,13 +1450,45 @@ function initMap() {
 
   initMapTypes(map);
 
-  map.data.loadGeoJson('/livedata.json', {idPropertyName: "mmsi"});
-  map.data.loadGeoJson('/livehistory.json');
-  setInterval(function() {
+  initLayers(map);
+
+  map.data.addListener('mouseover', function(event) {
+    if (!event.feature.getProperty("vessel")) return;
+    tooltip.setPosition(event.latLng);
+    tooltip.setContent(createVesselTooltip(event.feature));
+    tooltip.open(map);
+  });
+
+}
+
+function initLayers(map) {
+  console.log(layers);
+  for (var layer in layers) {
+    if (layers.hasOwnProperty(layer) && layers[layer] && onLayersChange[layer]) onLayersChange[layer](map, true);
+  }
+}
+
+var liveInterval = null;
+
+function toggleLiveLayer(enable) {
+  console.log('toggleLiveLayer', enable);
+
+  if (liveInterval) {
+    clearInterval(liveInterval);
+  }
+
+  if (enable) {
     map.data.loadGeoJson('/livedata.json', {idPropertyName: "mmsi"});
     map.data.loadGeoJson('/livehistory.json');
-  }, 10000);
-
+    liveInterval = setInterval(function() {
+      map.data.loadGeoJson('/livedata.json', {idPropertyName: "mmsi"});
+      map.data.loadGeoJson('/livehistory.json');
+    }, 10000);
+  } else {
+    map.data.forEach(function(feature) {
+      map.data.remove(feature);
+    });
+  }
 
   map.data.setStyle(function(feature) {
     var isVessel = feature.getGeometry().getType() == 'Point';
@@ -1458,13 +1501,6 @@ function initMap() {
       zIndex: isVessel? 100: 99,
       clickable: isVessel,
     };
-  });
-
-  map.data.addListener('mouseover', function(event) {
-    if (!event.feature.getProperty("vessel")) return;
-    tooltip.setPosition(event.latLng);
-    tooltip.setContent(createVesselTooltip(event.feature));
-    tooltip.open(map);
   });
 
 }
