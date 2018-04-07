@@ -1328,8 +1328,8 @@ var renderers = {
   pier: pier,
   connection: connection,
   area: area,
-  // box: box,
-  // pin: pin
+  box: box,
+  pin: pin
 };
 
 var objects = [];
