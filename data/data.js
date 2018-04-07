@@ -1058,6 +1058,9 @@ fdata = {
       link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
+      tables: [
+      { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.png", "KivimoSommar2018_2.png"]}
+      ],
     },
 
     nauvohanka: {
@@ -1081,7 +1084,8 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
       tables: [
-      { validFrom: "2017-09-01", validTo: "2018-05-31", images: ["KivimoVinter2018_1.png", "KivimoVinter2018_2.png"]}
+      { validFrom: "2017-09-01", validTo: "2018-05-31", images: ["KivimoVinter2018_1.png", "KivimoVinter2018_2.png"]},
+      { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.png", "KivimoSommar2018_2.png"]}
       ],
     },
     rymattylanreitti: {
@@ -1571,7 +1575,7 @@ fdata = {
         seealso_fi: 'Osa <a href="#velkuanreitti">Velkuan reittiä</a>',
         seealso_sv: 'Del av <a href="#velkuanreitti">Velkua rutt</a>',
         seealso_en: 'Part of <a href="#velkuanreitti">Velkua route</a>',
-        limit_L: "limit.cars_mc_bikes_only"
+        limit_L: "limit.mc_bikes_only"
       },
 
       timetables: "velkuataivassalo",

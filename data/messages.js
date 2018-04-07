@@ -41,7 +41,7 @@ messages = { // FI SV EN
         summerspier: [ "{0} vain kesäisin", "{0} bara på sommaren", "{0} only in summer"]
     },
     limit: {
-        cars_mc_bikes_only: ["Vain henkilöautoja, moottoripyöriä ja polkupyöriä", "Bara personbilar, motorcyklar och cyklar", "Only cars, motorcycles, and bicycles"],
+        mc_bikes_only: ["Vain moottoripyöriä ja polkupyöriä", "Bara motorcyklar och cyklar", "Only motorcycles and bicycles"],
     },
     contactinfo: [ "Yhteystiedot", "Kontaktuppgifter", "Contact Information"],
     timetables: [ "Aikataulut", "Tidtabeller", "Schedules"],
