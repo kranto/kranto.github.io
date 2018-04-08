@@ -418,6 +418,7 @@ function openTimetable(id) {
   $("#timetables").html(ttoutput);
   $('#closeTimetablesButton').click(function() { history.back(); });
   hideMenu();
+  hideSettings();
 }
 
 var selectedRoute = null;
