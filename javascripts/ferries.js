@@ -198,10 +198,18 @@ function initMenu() {
   $('.box').click(function(event) {
     $('#infopage').fadeIn();
     $(".infosection").hide();
-    $(this.getAttribute("data-target")) .show();
+    if (this.getAttribute("data-target") != "none") {
+      $(this.getAttribute("data-target")).show();
+      wasSelected = selected.slice();
+      unselectAll();
+    }
     hideMenu();
-    wasSelected = selected.slice();
-    unselectAll();
+  });
+
+  $("#showLive").click(function() {
+    var liveMapUri =  "live.html?lng=" + map.getCenter().lng() + "&lat=" + map.getCenter().lat() + "&zoom=" + map.getZoom();
+    window.open(liveMapUri, "livemap");
+    $('.navbar-toggle').click();
   });
 
   showLanguage(currentLang);
@@ -232,12 +240,6 @@ function initSettings() {
   $(".lang-button[setlang=" + currentLang +"]").toggleClass('active', true);
   $('.lang-button').click(function(event) {
     setLanguage(event.currentTarget.getAttribute("setlang"));
-  });
-
-  $("#showLive").click(function() {
-    var liveMapUri =  "live.html?lng=" + map.getCenter().lng() + "&lat=" + map.getCenter().lat() + "&zoom=" + map.getZoom();
-    window.open(liveMapUri, "livemap");
-    $('.navbar-toggle').click();
   });
 
   showLanguage(currentLang);
