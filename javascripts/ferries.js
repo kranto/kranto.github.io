@@ -1457,9 +1457,9 @@ function initMap() {
 
   map.data.addListener('mouseover', function(event) {
     if (!event.feature.getProperty("vessel")) return;
-    tooltip.setPosition(event.latLng);
-    tooltip.setContent(createVesselTooltip(event.feature));
-    tooltip.open(map);
+    // tooltip.setPosition(event.latLng);
+    // tooltip.setContent(createVesselTooltip(event.feature));
+    // tooltip.open(map);
   });
 
 }
@@ -1481,12 +1481,8 @@ function toggleLiveLayer(enable) {
   }
 
   if (enable) {
-    map.data.loadGeoJson('/livedata.json', {idPropertyName: "mmsi"});
-    map.data.loadGeoJson('/livehistory.json');
-    liveInterval = setInterval(function() {
-      map.data.loadGeoJson('/livedata.json', {idPropertyName: "mmsi"});
-      map.data.loadGeoJson('/livehistory.json');
-    }, 10000);
+    loadLiveData(map);
+    liveInterval = setInterval(function() { loadLiveData(map); }, 10000);
   } else {
     map.data.forEach(function(feature) {
       map.data.remove(feature);
@@ -1496,6 +1492,7 @@ function toggleLiveLayer(enable) {
   map.data.setStyle(function(feature) {
     var isVessel = feature.getGeometry().getType() == 'Point';
     var isVisible = map.getZoom() >= 9;
+    if (isVessel) updateVesselLabel(map, feature, isVisible);
     return {
       visible: isVisible,
       strokeColor: '#a0a0a0',
@@ -1508,15 +1505,31 @@ function toggleLiveLayer(enable) {
 
 }
 
-function createVesselTooltip(feature) {
-  var vessel = feature.getProperty("vessel");
-  var result = "";
-  result += vessel.name;
-  if (vessel.destination) result += "<br>" + vessel.destination;
-  result += "<br>" + vessel.mmsi;
-  var age = Date.now() - feature.getProperty("timestampExternal");
-  result += "<br>" + Math.floor(age/1000) + " s";
-  return result;
+vesselLabels = {};
+
+function loadLiveData(map) {
+  map.data.loadGeoJson('/livedata.json', {idPropertyName: "mmsi"});
+  map.data.loadGeoJson('/livehistory.json');
+}
+
+function updateVesselLabel(map, feature, isVisible) {
+    var vessel = feature.getProperty("vessel");
+    var speed = feature.getProperty("sog");
+    var name = vessel.name;
+    var mmsi = vessel.mmsi;
+    var position = feature.getGeometry().get();
+    var classes = "vessel" + (speed <= 0.1? " stopped": "");
+    var label;
+    if (vesselLabels[mmsi]) {
+      label = vesselLabels[mmsi];
+      label.setPosition(position);
+      label.setClass(classes);
+      label.draw();
+    } else {
+      label = new txtol.TxtOverlay(position, name, classes, map, {dir: 'NW', x: -5, y: -5});
+      vesselLabels[mmsi] = label;
+    }
+    if (isVisible) label.show(); else label.hide();
 }
 
 function createVesselIcon(feature) {

@@ -118,5 +118,14 @@ txtol.init = function() {
       this.draw();
     }
 
+    TxtOverlay.prototype.setPosition = function(pos) {
+      this.pos = pos;
+    }
+
+    TxtOverlay.prototype.setClass = function(cls) {
+      this.cls_ = cls;
+      this.div_.className = "txtol " + this.cls_;
+    }
+
     txtol.TxtOverlay = TxtOverlay;
 }
