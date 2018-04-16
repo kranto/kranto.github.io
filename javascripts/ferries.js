@@ -1487,6 +1487,7 @@ function toggleLiveLayer(enable) {
     map.data.forEach(function(feature) {
       map.data.remove(feature);
     });
+    Object.values(vesselLabels).forEach(function(l) { l.hide(); });
   }
 
   map.data.setStyle(function(feature) {
