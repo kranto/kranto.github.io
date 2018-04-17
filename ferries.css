@@ -271,6 +271,14 @@
     .map .vessel {
       color: #800080;
       font-size: 1.1em;
+      font-weight: 600;
+      background-color: rgba(255,255,255,0.3);
+      padding: 1px;
+    }
+
+    .map.satellite .vessel {
+      color: #80b0a0;
+      background-color: initial;
     }
 
     .map .vessel.stopped {

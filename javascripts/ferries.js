@@ -1471,6 +1471,7 @@ function initLayers(map) {
   }
 }
 
+LIVE_MIN_ZOOM = 9;
 var liveInterval = null;
 
 function toggleLiveLayer(enable) {
@@ -1478,6 +1479,7 @@ function toggleLiveLayer(enable) {
 
   if (liveInterval) {
     clearInterval(liveInterval);
+    liveInterval = null;
   }
 
   if (enable) {
@@ -1492,7 +1494,7 @@ function toggleLiveLayer(enable) {
 
   map.data.setStyle(function(feature) {
     var isVessel = feature.getGeometry().getType() == 'Point';
-    var isVisible = map.getZoom() >= 9;
+    var isVisible = map.getZoom() >= LIVE_MIN_ZOOM;
     if (isVessel) updateVesselLabel(map, feature, isVisible);
     return {
       visible: isVisible,
@@ -1500,7 +1502,7 @@ function toggleLiveLayer(enable) {
       strokeWeight: 0.5,
       icon: isVisible && isVessel? createVesselIcon(feature): null,
       zIndex: isVessel? 100: 99,
-      clickable: isVessel,
+      clickable: false
     };
   });
 
@@ -1535,6 +1537,7 @@ function updateVesselLabel(map, feature, isVisible) {
 
 function createVesselIcon(feature) {
   var speed = feature.getProperty("sog");
+  var color = map.getMapTypeId() == 'satellite'? '#80b0a0': '#a030ff';
   var hasSpeed = speed > 0.1;
   var scale = hasSpeed? 3: 2;
   var rotation = hasSpeed? feature.getProperty("cog"): 45;
@@ -1543,8 +1546,8 @@ function createVesselIcon(feature) {
     path: path,
     rotation: rotation,
     strokeWeight: 1,
-    strokeColor: '#a030ff',
-    fillColor: '#a030ff',
+    strokeColor: color,
+    fillColor: color,
     fillOpacity: 0.6,
     scale: scale * (map.getZoom())/10
   };
