@@ -3721,7 +3721,7 @@
         "stype": "pier",
         "ref": "Granvik",
         "ssubtype": "3",
-        "labelAnchor": {"dir": "W", "x":-7 , "y":-10 }
+        "labelAnchor": {"dir": "SE", "x":3 , "y":3 }
       },
       "geometry": {
         "coordinates": [22.261401, 60.196518 ],
@@ -4373,7 +4373,7 @@
         "stype": "pier",
         "ref": "Lillmälö",
         "ssubtype": "5",
-        "labelAnchor": {"dir": "NW", "x":-5 , "y":-5 }
+        "labelAnchor": {"dir": "SE", "x":7 , "y":0 }
       },
       "geometry": {
         "coordinates": [22.112581, 60.235417 ],
@@ -4387,7 +4387,7 @@
         "stype": "pier",
         "ref": "Prostvik",
         "ssubtype": "5",
-        "labelAnchor": {"dir": "SE", "x":5 , "y":5 }
+        "labelAnchor": {"dir": "SE", "x":7 , "y":0 }
       },
       "geometry": {
         "coordinates": [22.097969, 60.222557 ],
