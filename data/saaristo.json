@@ -3171,7 +3171,7 @@
         "stype": "pier",
         "ref": "Haapala",
         "ssubtype": "3",
-        "labelAnchor": {"dir": "NW", "x":10 , "y":-5 }
+        "labelAnchor": {"dir": "SE", "x":5 , "y":5 }
       },
       "geometry": {
         "coordinates": [21.809438, 60.394565 ],
