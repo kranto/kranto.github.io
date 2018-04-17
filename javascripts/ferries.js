@@ -617,7 +617,7 @@ function select(targets, mouseEvent, dontPushState) {
 
       } else {
         $(".info").css({top: '100%'});
-        $(".info").animate({top: '80%'}, 'fast', function() {$(".info").css({top: "" }); });
+        $(".info").animate({top: '80%'}, 'fast', function() {$(".info").css({top: "" }); toggleScrollIndicator()});
         //$("#mapcontainer").css({height: '100%'});
         //$("#mapcontainer").animate({height: '80%'}, 'fast', function() {$("#mapcontainer").css({height: ""}); toggleScrollIndicator(); });
         
