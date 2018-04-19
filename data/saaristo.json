@@ -1331,7 +1331,7 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "pier_obsolete",
+        "stype": "pier",
         "ref": "PerkalaP",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
