@@ -855,7 +855,7 @@ function route(feature, map) {
     path: new google.maps.MVCArray(coords),
     geodesic: false,
     strokeColor: '#202020',
-    strokeOpacity: 0.6,
+    strokeOpacity: 0.4,
     strokeWeight: 1,
     zIndex: 0,
     map: map,
