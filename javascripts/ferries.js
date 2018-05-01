@@ -854,9 +854,9 @@ function route(feature, map) {
   var object = new google.maps.Polyline({
     path: new google.maps.MVCArray(coords),
     geodesic: false,
-    strokeColor: '#a16bc4',
-    strokeOpacity: 0.7,
-    strokeWeight: 4,
+    strokeColor: '#202020',
+    strokeOpacity: 0.6,
+    strokeWeight: 1,
     zIndex: 0,
     map: map,
     cursor: 'context-menu',
@@ -865,7 +865,7 @@ function route(feature, map) {
   return {
     rerender: function(zoom, mapTypeId) {
       object.setVisible(layers.ringroads && zoom >= 8);
-      object.setOptions({strokeWeight: (zoom<=8? 4: zoom<=9? 5: 6)});
+      object.setOptions({strokeWeight: (zoom<=8? 2: zoom<=9? 2.5: 3)});
     }
   };
 }
