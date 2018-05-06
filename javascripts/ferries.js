@@ -1471,7 +1471,8 @@ function initLayers(map) {
   }
 }
 
-LIVE_MIN_ZOOM = 9;
+LIVE_MIN_ZOOM = 8;
+LIVE_LABEL_MIN_ZOOM = 9;
 var liveInterval = null;
 
 function toggleLiveLayer(enable) {
@@ -1495,7 +1496,8 @@ function toggleLiveLayer(enable) {
   map.data.setStyle(function(feature) {
     var isVessel = feature.getGeometry().getType() == 'Point';
     var isVisible = map.getZoom() >= LIVE_MIN_ZOOM;
-    if (isVessel) updateVesselLabel(map, feature, isVisible);
+    var isLabelVisible = map.getZoom() >= LIVE_LABEL_MIN_ZOOM;
+    if (isVessel) updateVesselLabel(map, feature, isLabelVisible);
     return {
       visible: isVisible,
       strokeColor: '#a0a0a0',
@@ -1549,7 +1551,7 @@ function createVesselIcon(feature) {
     strokeColor: color,
     fillColor: color,
     fillOpacity: 0.6,
-    scale: scale * (map.getZoom())/10
+    scale: scale * (map.getZoom() < 9? 0.6: map.getZoom()/10) 
   };
 }
 
