@@ -1092,21 +1092,22 @@ fdata = {
     rymattylanreitti: {
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2017-09-04", validTo: "2018-06-03", images: ["IslaVinter2018_1.png", "IslaVinter2018_2.png"]}
+      { validFrom: "2018-05-07", validTo: "2018-09-30", images: ["IslaSommar2018_1.png", "IslaSommar2018_1r2018_2.png"]}
       ],
     },
     houtskarrutt: {
       name: "Houtskarin reitti", name_sv: "Houtskär rutt", name_en: "Houtskär Route", specifier: "",
       link: "http://www.ferryway.fi/7",
       tables: [
-      { validFrom: "2017-10-01", validTo: "2018-04-15", images: ["KarolinaVinter2018_1.png", "KarolinaVinter2018_2.png"]}
+      { validFrom: "2018-04-15", validTo: "2018-09-30", images: ["KarolinaSommar2018_1.png", "KarolinaSommar2018_2.png"]}
       ],
     },
     iniorutt: {
       name: "Iniön lisäreitti", name_sv: "Iniö tilläggsrutt", name_en: "Iniö Additional Route", specifier: "",
       link: "http://www.ferryway.fi/8",
       tables: [
-      { validFrom: "2017-14-08", validTo: "2018-05-13", images: ["SatavaVinter2018_1.png", "SatavaVinter2018_2.png"]}
+      { validFrom: "2017-08-14", validTo: "2018-05-13", images: ["SatavaVinter2018_1.png", "SatavaVinter2018_2.png"]},
+      { validFrom: "2018-05-14", validTo: "2018-08-12", images: ["SatavaSommar2018_1.png", "SatavaeSommar2018_2.png"]}
       ],
     },
     utorutt: { 
@@ -1123,6 +1124,7 @@ fdata = {
       link_fi: "http://www.saaristolinjat.fi/Korppoon_reittialue",
       tables: [
       { validFrom: "2017-09-01", validTo: "2018-05-31", images: ["FiskoVinter2018_1.png", "FiskoVinter2018_2.png"]},
+      { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["FiskoSommar2018_1.png", "FiskoSommar2018_2.png"]},
       ],
     },
     nagunorra: {
@@ -1130,13 +1132,14 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-norra-rutt-falko.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
       tables: [
-      { validFrom: "2017-10-02", validTo: "2018-05-17", images: ["FalkoVinter2018.png"]}
+      { validFrom: "2017-10-02", validTo: "2018-05-17", images: ["FalkoVinter2018.png"]},
+      { validFrom: "2018-05-18", validTo: "2018-09-02", images: ["FalkoSommar2018.png"]}
       ],
     },
     nagutvar: {
       link: "https://www.ferryway.fi/5",
       tables: [
-      { validFrom: "2017-11-01", validTo: "2018-03-31", images: ["MyrskylintuVinter2018.png"]}
+      { validFrom: "2018-04-01", validTo: "2018-10-31", images: ["MyrskylintuSommar2018_1.png", "MyrskylintuSommar2018_2.png"]}
       ],
     },
     nagusodra: { 
@@ -1165,6 +1168,7 @@ fdata = {
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-route-viken.html#timetables",
       tables: [
       { validFrom: "2018-04-06", validTo: "2018-05-31", images: ["VikenVar2018_1.png", "VikenVar2018_2.png"]},
+      { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["VikenSommar2018_1.png", "VikenSommar2018_2.png"]},
       { validFrom: "2018-09-01", validTo: "2018-10-31", images: ["VikenVar2018_1.png", "VikenVar2018_2.png"]},
       ]
     },
