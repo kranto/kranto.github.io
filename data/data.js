@@ -789,7 +789,7 @@ fdata = {
     Aspö: { mun: "Nagu" },
     Jurmo: { mun: "Nagu" },
     Utö: { mun: "Nagu" },
-    Keso: { name: "Keso varvet", name_fi: "Keson telakka", mun: "Nagu", type: "1" }, 
+//    Keso: { name: "Keso varvet", name_fi: "Keson telakka", mun: "Nagu", type: "1" }, 
     Seili: { name: "Själö", name_fi: "Seili", mun: "Nagu" },
     Innamo: { mun: "Nagu" },
     Järvsor: { mun: "Nagu" },
@@ -1132,7 +1132,6 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-norra-rutt-falko.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
       tables: [
-      { validFrom: "2017-10-02", validTo: "2018-05-17", images: ["FalkoVinter2018.png"]},
       { validFrom: "2018-05-18", validTo: "2018-09-02", images: ["FalkoSommar2018.png"]}
       ],
     },
@@ -1683,7 +1682,7 @@ fdata = {
       name_fi: "Nauvon pohjoinen reitti",
       name_en: "Nagu Northern Route",
       specifier: "",
-      piers: ["Nagu", "Keso", "Seili", "Innamo", "Järvsor", "Maskinnamo", "Åvensor", "Lavarn"],
+      piers: ["Nagu", "Seili", "Innamo", "Järvsor", "Maskinnamo", "Åvensor", "Lavarn"],
       operator: "finferries",
       vessels: ["falko"],
       features: {
@@ -1692,13 +1691,13 @@ fdata = {
         duration_L: ["duration.hours", "2", "Nagu - Åvensor"],
         duration_fi: "Nauvo - Ahvensaari 2 tuntia",
       },
-      notes: [
-      { 
-        content: "<div class=\"alert alert-danger\"><strong>Note!</strong> During the re-construction of Nagu harbour (spring 2018), Keso Varvet is used instead</div>",
-        content_fi: "<div class=\"alert alert-danger\"><strong>Huom!</strong> Nauvon sataman muutostöiden ajan (kevät 2018) liikennöidään Keson telakalta</div>",
-        content_sv: "<div class=\"alert alert-danger\"><strong>Obs!</strong> Under Nagu hamns renovering (vår 2018), används Keso varvet i stället</div>",
-      }
-      ],
+      // notes: [
+      // { 
+      //   content: "<div class=\"alert alert-danger\"><strong>Note!</strong> During the re-construction of Nagu harbour (spring 2018), Keso Varvet is used instead</div>",
+      //   content_fi: "<div class=\"alert alert-danger\"><strong>Huom!</strong> Nauvon sataman muutostöiden ajan (kevät 2018) liikennöidään Keson telakalta</div>",
+      //   content_sv: "<div class=\"alert alert-danger\"><strong>Obs!</strong> Under Nagu hamns renovering (vår 2018), används Keso varvet i stället</div>",
+      // }
+      // ],
       timetables: "nagunorra",
     },
 

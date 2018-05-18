@@ -1403,7 +1403,6 @@
       "properties": {
         "stype": "pier",
         "ref": "Nagu",
-        "labelVisibleFrom": 12,
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -1416,7 +1415,7 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "pier",
+        "stype": "pier_obsolete",
         "ref": "Keso",
         "labelVisibleFrom": 10,
         "ssubtype": "3",
@@ -2814,17 +2813,6 @@
       },
       "features": [
       {
-        "type": "Feature",
-        "properties": {
-          "stype": "leg",
-          "sname": "Keson telakka"
-        },
-        "geometry": {
-          "coordinates": [[21.941702, 60.192928 ], [21.932614, 60.195711], [21.914394, 60.197389 ] ],
-          "type": "LineString"
-        },
-        "id": "02781c9deff3c1e8515aead6c3e8bb1c"
-      },{
         "type": "Feature",
         "properties": {
           "stype": "leg",
