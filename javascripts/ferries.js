@@ -13,22 +13,6 @@ $(document).ready(function(){
     $("#wrapper2").trigger(e.type, e);
   });
 
-  // $("#wrapper2").bind('touchstart', function(e) {
-  //   $("#wrapper2").css({pointerEvents: "none"});
-  // });
-
-  // $(".mapoverlay").bind('touchstart', function(e) {
-  //   $("#wrapper2").css({pointerEvents: "none"});
-  //   $(".mapoverlay").css({pointerEvents: "none"});
-  //   $("#mapcontainer").trigger('touchstart', e);
-  // });
-
-  // $(".mapoverlay").bind('pointerenter', function(e) {
-  //   $("#wrapper2").css({pointerEvents: "none"});
-  //   $(".mapoverlay").css({pointerEvents: "none"});
-  //   $("#map").trigger('pointerenter', e);
-  // });
-
   function getAllEvents(element) {
     var result = [];
     for (var key in element) {
@@ -610,17 +594,11 @@ function select(targets, mouseEvent, dontPushState) {
       if ($("body").outerWidth() >= 768) {
         $(".info").css({left: -400});
         $(".info").animate({left: 0}, 'fast', function() {$(".info").css({left: "" }); });
-        //$(".map").animate({left: 400}, 'fast');
         var clientX = mouseEvent? latLng2Point(mouseEvent.latLng, map).x: 500;
         if (clientX < (400 + 50)) map.panBy(clientX - (($("#map").width() - 400)/3 +400), 0);
-        //map.panBy(200,0);
-
       } else {
         $(".info").css({top: '100%'});
         $(".info").animate({top: '80%'}, 'fast', function() {$(".info").css({top: "" }); toggleScrollIndicator()});
-        //$("#mapcontainer").css({height: '100%'});
-        //$("#mapcontainer").animate({height: '80%'}, 'fast', function() {$("#mapcontainer").css({height: ""}); toggleScrollIndicator(); });
-        
         var clientY = mouseEvent? latLng2Point(mouseEvent.latLng, map).y: 0;
         if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
       }
@@ -650,8 +628,6 @@ function unselectAll(pushState) {
 
   $(function() {
     if ($("body").outerWidth() >= 768) {
-      //map.panBy(-200, 0);
-      //$("#map").animate({left: 0});
       $(".info").animate({left: -400}, 'fast', function() {
         $(".info").css({left: "" });
         $("#wrapper2").toggleClass("info-open", false);
@@ -662,12 +638,9 @@ function unselectAll(pushState) {
         $(".info").animate({top: '100%'}, 200, function() {
           $(".info").css({top: "" }); 
         });
-        // $("#mapcontainer").animate({height: '100%'}, 'fast', function() {
-        //   $("#mapcontainer").css({height: ""});
           $("#wrapper2").toggleClass("info-open", false);
           $(".info .infocontent").remove();
           toggleScrollIndicator();
-        // }); 
       });
     }
   });
@@ -734,8 +707,6 @@ onLayersChange = {
 var map;
 var tooltip;
 
-//var roadColor = '#91755d';
-//var roadColor = '#696d4b';
 var roadColor = '#8a7d6a';
 var roadColorSatellite = '#c0c0c0';
 
@@ -819,7 +790,6 @@ function createMarker(position, clickable, icon, map) {
 }
 
 function getLabelColor(mapTypeId) {
-  //return '#002080';
   return mapTypeId == 'hybrid' || mapTypeId == 'satellite'? '#aaaa00': '#002080';
 }
 
@@ -1454,14 +1424,6 @@ function initMap() {
   initMapTypes(map);
 
   initLayers(map);
-
-  map.data.addListener('mouseover', function(event) {
-    if (!event.feature.getProperty("vessel")) return;
-    // tooltip.setPosition(event.latLng);
-    // tooltip.setContent(createVesselTooltip(event.feature));
-    // tooltip.open(map);
-  });
-
 }
 
 function initLayers(map) {
@@ -1755,4 +1717,3 @@ function initRoutes() {
     return route;
   });  
 }
-
