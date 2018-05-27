@@ -490,10 +490,10 @@
         "stype": "pier",
         "ref": "Ängesö",
         "ssubtype": "4",
-        "labelAnchor": {"dir": "N", "x":-15 , "y":-5 }
+        "labelAnchor": {"dir": "NW", "x":-5 , "y":-5 }
       },
       "geometry": {
-        "coordinates": [22.505796, 59.949906 ],
+        "coordinates": [22.506408, 59.949735],
         "type": "Point"
       },
       "id": "07550b11ceb54e368bb405ce2d50cd42"
@@ -2300,7 +2300,7 @@
             "sname": "Stora Ängesö"
           },
           "geometry": {
-            "coordinates": [[22.565879, 59.939472 ], [22.527721, 59.942446 ], [22.509235, 59.951151 ], [22.505589, 59.94992 ] ],
+            "coordinates": [[22.565879, 59.939472 ], [22.527721, 59.942446 ], [22.509235, 59.951151 ], [22.506408, 59.949735] ],
             "type": "LineString"
           },
           "id": "3f4efae3e9f3041c11f0cdb8886a7cb0"
