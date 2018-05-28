@@ -68,9 +68,9 @@ function keepCenter() {
 
 $(document).ready(function(){
 
-  $("#infopage").load("templates/infopage.html #infopagecontent", initInfoPage);
-  $("#menu").load("templates/menucontent.html #menucontent", initMenu);
-  $("#settings").load("templates/settingscontent.html #settingscontent", initSettings);
+  $("#infopage").load("templates/infopage.html?v=1 #infopagecontent", initInfoPage);
+  $("#menu").load("templates/menucontent.html?v=1 #menucontent", initMenu);
+  $("#settings").load("templates/settingscontent.html?v=1 #settingscontent", initSettings);
 
   $("#timetables").click(function(event) { if (event.target == this) {console.log('backdrop clicked -> back'); history.back(); }});
 
