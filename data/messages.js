@@ -53,4 +53,4 @@ messages = { // FI SV EN
     seealso: ['Katso myös <a href="{0}">{1}</a>', 'See also <a href="{0}">{1}</a>', 'See also <a href="{0}">{1}</a>'],
 }
 
-console.log(JSON.stringify(messages));
+// console.log(JSON.stringify(messages));

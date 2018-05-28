@@ -173,7 +173,5 @@ function routeInfo(route, lang) {
         };
     }
 
-    console.log(info);
-    
     return info;
 }

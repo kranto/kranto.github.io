@@ -394,6 +394,7 @@ function closeTimetables() {
 function openTimetable(id) {
   var timetable = selectedRoute.timetables.filter(function(tt) { return tt.id == id; })[0];
   var tttemplate = document.getElementById('timetabletemplate').innerHTML;
+  tttemplate = tttemplate.replace(/tmplsrc/g, "src");
   timetable.L = function () {
     return function(val, render) {
       return L(currentLang, render(val));
@@ -481,6 +482,7 @@ function setInfoContent(targets, dontPushState) {
     if (!dontPushState) history.pushState({route: targets.map(function(r) { return r.id; }), timetables: null}, null, null);
   }
 
+  output = output.replace(/tmplsrc/g, "src");
   $(".info").append(output);
   if ($(".infocontent.removing").length) $(".infocontent:not(.removing)").hide();
 
