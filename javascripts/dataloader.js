@@ -1,29 +1,29 @@
 
 fgeojson = [];
 
-$.get("/data/messages.json", function(data) {
+$.get("/data/messages.json?v=1", function(data) {
   fmessages = data;
   sendDataIf();
 });
 
-$.get('/data/saaristo.json', function(data) {
+$.get('/data/saaristo.json?v=1', function(data) {
   fgeojson.push(data);
   sendDataIf();
 });
 
-$.get('/data/roads.json', function(data) {
+$.get('/data/roads.json?v=1', function(data) {
   fgeojson.push(data);
   sendDataIf();
 });
 
-$.get('/data/routes.json', function(data) {
+$.get('/data/routes.json?v=1', function(data) {
   fgeojson.push(data);
   sendDataIf();
 });
 
 var fdata;
 
-$.get('/data/data.json', function(data) {
+$.get('/data/data.json?v=1', function(data) {
   prepareData(data);
   fdata = data;
   sendDataIf();
