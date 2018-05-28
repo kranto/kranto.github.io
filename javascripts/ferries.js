@@ -28,12 +28,12 @@ $(document).ready(function(){
     $("#wrapper2").css({pointerEvents: "none"});
     $(".mapoverlay").css({pointerEvents: "none"});
     $("#mapcontainer").trigger(e.type, e);
-    console.log(e);
+    // console.log(e);
     //alert(e.type);  /* insert your code */
   });
 
   $("body").mouseup(function(event) {
-    console.log("up");
+    // console.log("up");
     if (pierlinkDown) {
       $(".info").animate({ opacity: 1 });
       pierlinkDown = false;
@@ -72,7 +72,7 @@ $(document).ready(function(){
   $("#menu").load("templates/menucontent.html?v=1 #menucontent", initMenu);
   $("#settings").load("templates/settingscontent.html?v=1 #settingscontent", initSettings);
 
-  $("#timetables").click(function(event) { if (event.target == this) {console.log('backdrop clicked -> back'); history.back(); }});
+  $("#timetables").click(function(event) { if (event.target == this) {history.back(); }});
 
 });
 
@@ -135,7 +135,7 @@ window.onhashchange = function() {
   var hash = location.hash.substring(1);
   if (fdata.routes[hash]) {
     var newState = {route: hash, timetable: null};
-    console.log('onhashchange: replacing state to', newState);
+    // console.log('onhashchange: replacing state to', newState);
     history.replaceState(newState, null, "/");
     navigateTo(newState);
   } else if (fdata.piers[hash]) {
@@ -532,7 +532,7 @@ function navigateTo(state) {
 }
 
 window.onpopstate = function(event) {
-  console.log('onpopstate', event, location.hash, history.length, history.state);
+  // console.log('onpopstate', event, location.hash, history.length, history.state);
   if (location.hash) return;
   $("#wrapper2").animate({scrollTop: 0}, 'fast', function() {
     navigateTo(event.state);
@@ -1317,10 +1317,10 @@ function rerender(map, force) {
   if (prevRerender === newRerender && !force) return;
   prevRerender = newRerender;
   var t0 = new Date().getTime();
-  console.log('rerender started at', newRerender);
+  // console.log('rerender started at', newRerender);
   objects.forEach(function(object){ object.rerender(zoom, mapTypeId); }); 
   if (lauttaLegs) lauttaLegs.forEach(function(leg) { leg.rerender(zoom, mapTypeId); });
-  console.log('rerender finished at', zoom, 'in', new Date().getTime() - t0, 'ms');
+  // console.log('rerender finished at', zoom, 'in', new Date().getTime() - t0, 'ms');
   hidden = false;
   prevRenderZoom = zoom;
 }
@@ -1330,9 +1330,9 @@ function hideObjects(map) {
   var zoom = map.getZoom();
   if (zoom == prevRenderZoom) return;
   var t0 = new Date().getTime();
-  console.log('hide started');
+  // console.log('hide started');
   objects.forEach(function(object){ if (object.hide) object.hide(); }); 
-  console.log('hide finished in', new Date().getTime() - t0, 'ms');
+  // console.log('hide finished in', new Date().getTime() - t0, 'ms');
   hidden = true;
 }
 
@@ -1398,7 +1398,7 @@ function initMap() {
   var oldZoom = map.getZoom();
   map.addListener('zoom_changed', function() {
     var newZoom = map.getZoom();
-    console.log('zoom_changed: ', oldZoom, newZoom);
+    // console.log('zoom_changed: ', oldZoom, newZoom);
     oldZoom = newZoom;
   });
   
@@ -1427,7 +1427,7 @@ function initMap() {
 }
 
 function initLayers(map) {
-  console.log(layers);
+  // console.log(layers);
   for (var layer in layers) {
     if (layers.hasOwnProperty(layer) && layers[layer] && onLayersChange[layer]) onLayersChange[layer](map, true);
   }
@@ -1438,7 +1438,7 @@ LIVE_LABEL_MIN_ZOOM = 9;
 var liveInterval = null;
 
 function toggleLiveLayer(enable) {
-  console.log('toggleLiveLayer', enable);
+  // console.log('toggleLiveLayer', enable);
 
   if (liveInterval) {
     clearInterval(liveInterval);
