@@ -38,7 +38,6 @@ $(document).ready(function(){
     }
   });
 
-  $('#myModal').modal({});
 
 });
 
@@ -124,6 +123,7 @@ $('#settingsbutton').click(function() {
 });
 
 function hideHeaderbar() {
+  // don't hide for now
   // $("#topbar").slideUp('fast');
 }
 
@@ -352,6 +352,7 @@ function hideLoader() {
   if (timeout && mapInitialized ) {
     rerender(map, true);
     $("#loader").fadeOut(1000);
+    setTimeout(function() {$('#myModal').modal({});}, 1000);
   }
 }
 
