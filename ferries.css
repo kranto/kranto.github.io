@@ -121,6 +121,7 @@
       width: 40px;
       height: 40px;
       padding: 0;
+      color: #000;
     }
 
     #scrollIndicator {
@@ -349,6 +350,14 @@
   .btn:hover, .btn.active:hover { 
     background-color: #8de;
   }
+}
+
+#dont-show-again {
+  margin-right: 50px;
+}
+
+#dont-show-again input {
+  margin-right: 10px;
 }
 
 #topbar {

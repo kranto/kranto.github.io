@@ -28,8 +28,6 @@ $(document).ready(function(){
     $("#wrapper2").css({pointerEvents: "none"});
     $(".mapoverlay").css({pointerEvents: "none"});
     $("#mapcontainer").trigger(e.type, e);
-    // console.log(e);
-    //alert(e.type);  /* insert your code */
   });
 
   $("body").mouseup(function(event) {
@@ -39,6 +37,8 @@ $(document).ready(function(){
       pierlinkDown = false;
     }
   });
+
+  $('#myModal').modal({});
 
 });
 
@@ -124,7 +124,7 @@ $('#settingsbutton').click(function() {
 });
 
 function hideHeaderbar() {
-  $("#topbar").slideUp('fast');
+  // $("#topbar").slideUp('fast');
 }
 
 function showHeaderbar() {
