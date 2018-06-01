@@ -901,7 +901,6 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-01-01", validTo: "2018-05-31", images: ["FoglolinjenVinter2018_1.png", "FoglolinjenVinter2018_2.png"]},
       { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["FoglolinjenSommar2018_1.png", "FoglolinjenSommar2018_2.png"]},
       { validFrom: "2018-09-01", validTo: "2018-12-31", images: ["FoglolinjenVinter2018_1.png", "FoglolinjenVinter2018_2.png"]}
       ],
@@ -912,7 +911,6 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-01-03", validTo: "2018-04-29", images: ["NorraVinter2018_1.png", "NorraVinter2018_2.png", "NorraVinter2018_3.png"]},
       { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["NorraVar2018_1.png", "NorraVar2018_2.png", "NorraVar2018_3.png"]},
       { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["NorraSommar2018_1.png", "NorraSommar2018_2.png"]},
       { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["NorraVar2018_1.png", "NorraVar2018_2.png", "NorraVar2018_3.png"]},
@@ -925,7 +923,6 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-01-01", validTo: "2018-04-29", images: ["EnklingeVinter2018.png"]},
       { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["EnklingeVar2018.png"]},
       { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["EnklingeSommar2018.png"]},
       { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["EnklingeVar2018.png"]},
@@ -937,7 +934,6 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-01-01", validTo: "2018-04-29", images: ["FridaVinter2018_1.png", "FridaVinter2018_2.png", "FridaVinter2018_3.png"]},
       { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["FridaVar2018_1.png", "FridaVar2018_2.png", "FridaVar2018_3.png"]},
       { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["FridaSommar2018_1.png", "FridaSommar2018_2.png", "FridaSommar2018_3.png"]},
       { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["FridaVar2018_1.png", "FridaVar2018_2.png"]},
@@ -949,7 +945,6 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-01-01", validTo: "2018-04-29", images: ["DoppingenVinter2018_1.png", "DoppingenVinter2018_2.png", "DoppingenVinter2018_3.png"]},
       { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["DoppingenVar2018_1.png", "DoppingenVar2018_2.png", "DoppingenVar2018_3.png"]},
       { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["DoppingenSommar2018_1.png", "DoppingenSommar2018_2.png", "DoppingenSommar2018_3.png"]},
       { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["DoppingenVar2018_1.png", "DoppingenVar2018_2.png"]},
@@ -961,7 +956,6 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-01-01", validTo: "2018-04-29", images: ["ViggenVinter2018_1.png", "ViggenVinter2018_2.png", "ViggenVinter2018_3.png"]},
       { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["ViggenVar2018_1.png", "ViggenVar2018_2.png"]},
       { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["ViggenSommar2018_1.png", "ViggenSommar2018_2.png"]},
       { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["ViggenVar2018_1.png"]},
@@ -973,7 +967,6 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-01-03", validTo: "2018-04-29", images: ["SodraVinter2018_1.png", "SodraVinter2018_2.png"]},
       { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["SodraVar2018_1.png", "SodraVar2018_2.png"]},
       { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["SodraSommar2018_1.png", "SodraSommar2018_2.png", "SodraSommar2018_3.png", "SodraSommar2018_4.png", "SodraSommar2018_5.png", "SodraSommar2018_6.png"]},
       { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["SodraVar2018_1.png", "SodraVar2018_2.png"]},
@@ -985,7 +978,6 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-01-03", validTo: "2018-04-29", images: ["OdinVinter2018_1.png", "OdinVinter2018_2.png"]},
       { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["OdinVar2018_1.png", "OdinVar2018_2.png"]},
       { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["OdinSommar2018_1.png", "OdinSommar2018_2.png", "OdinSommar2018_3.png"]},
       { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["OdinVar2018_1.png", "OdinVar2018_2.png"]},
@@ -1085,7 +1077,6 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
       tables: [
-      { validFrom: "2017-09-01", validTo: "2018-05-31", images: ["KivimoVinter2018_1.png", "KivimoVinter2018_2.png"]},
       { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.png", "KivimoSommar2018_2.png"]}
       ],
     },
@@ -1106,7 +1097,6 @@ fdata = {
       name: "Iniön lisäreitti", name_sv: "Iniö tilläggsrutt", name_en: "Iniö Additional Route", specifier: "",
       link: "http://www.ferryway.fi/8",
       tables: [
-      { validFrom: "2017-08-14", validTo: "2018-05-13", images: ["SatavaVinter2018_1.png", "SatavaVinter2018_2.png"]},
       { validFrom: "2018-05-14", validTo: "2018-08-12", images: ["SatavaSommar2018_1.png", "SatavaeSommar2018_2.png"]}
       ],
     },
@@ -1115,7 +1105,6 @@ fdata = {
       link_sv: "https://meritie.fi/tidtabell-rutt/?lang=sv",
       link_en: "https://meritie.fi/tidtabell-rutt/?lang=sv",
       tables: [
-      { validFrom: "2017-08-08", validTo: "2018-05-31", images: ["EivorVinter2018_1.png", "EivorVinter2018_2.png"]},
       { validFrom: "2018-06-01", validTo: "2018-08-06", images: ["EivorSommar2018_1.png", "EivorSommar2018_2.png"]}
       ],
     },
@@ -1123,7 +1112,6 @@ fdata = {
       link: "http://skargardslinjer.fi/Korpo_ruttomrade",
       link_fi: "http://www.saaristolinjat.fi/Korppoon_reittialue",
       tables: [
-      { validFrom: "2017-09-01", validTo: "2018-05-31", images: ["FiskoVinter2018_1.png", "FiskoVinter2018_2.png"]},
       { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["FiskoSommar2018_1.png", "FiskoSommar2018_2.png"]},
       ],
     },
@@ -1166,7 +1154,6 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-ruttomrade-viken.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-route-viken.html#timetables",
       tables: [
-      { validFrom: "2018-04-06", validTo: "2018-05-31", images: ["VikenVar2018_1.png", "VikenVar2018_2.png"]},
       { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["VikenSommar2018_1.png", "VikenSommar2018_2.png"]},
       { validFrom: "2018-09-01", validTo: "2018-10-31", images: ["VikenVar2018_1.png", "VikenVar2018_2.png"]},
       ]
@@ -1268,7 +1255,6 @@ fdata = {
       link_sv: "https://vitharun.fi/sv/tidtabeller/oro/",
       link_en: "https://vitharun.fi/en/timetables/oro/",
       tables: [
-      { validFrom: "2018-05-01", validTo: "2018-05-31", images: ["Norrskar2018_1.png", "Norrskar2018_4.png"]},
       { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2.png", "Norrskar2018_4.png"]},
       { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3.png", "Norrskar2018_4.png"]},
       { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2.png", "Norrskar2018_4.png"]},
