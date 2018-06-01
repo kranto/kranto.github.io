@@ -190,6 +190,8 @@ function initMenu() {
     hideMenu();
   });
 
+  console.log('showLive', $('#showLive'));
+  
   $("#showLive").click(function() {
     var liveMapUri =  "live.html?lng=" + map.getCenter().lng() + "&lat=" + map.getCenter().lat() + "&zoom=" + map.getZoom();
     console.log(liveMapUri);
