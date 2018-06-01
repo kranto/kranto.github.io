@@ -348,15 +348,27 @@ function onMapIdle() {
   hideLoader();
 }
 
+var dontShowAgainVersion = localStorage.getItem("dontShowAgainVersion");
+dontShowAgainVersion = dontShowAgainVersion? dontShowAgainVersion: 0;
+var currentBannerVersion = $("#dont-show-again-cb").attr("version");
+
 function hideLoader() {
   if (timeout && mapInitialized ) {
     rerender(map, true);
     $("#loader").fadeOut(1000);
-    setTimeout(function() {$('#myModal').modal({});}, 1000);
+    if (dontShowAgainVersion < currentBannerVersion) {
+      setTimeout(function() {$('#bannerModal').modal({});}, 500);      
+    }
   }
 }
 
-// if (window.location.hostname == "localhost") $("#loader").fadeOut(500);
+$("#bannerModal").on('hidden.bs.modal', function () {
+  if ($("#dont-show-again-cb").is(":checked")) {
+    localStorage.setItem("dontShowAgainVersion", currentBannerVersion);
+  }
+})
+
+if (window.location.hostname == "localhost") $("#loader").fadeOut(500);
 
 function getLocation() {
   if (navigator.geolocation) {

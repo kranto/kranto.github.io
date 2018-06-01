@@ -354,6 +354,8 @@
 
 #dont-show-again {
   margin-right: 30px;
+  position: relative;
+  top: 4px;
 }
 
 #dont-show-again input {
