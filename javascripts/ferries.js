@@ -192,6 +192,7 @@ function initMenu() {
 
   $("#showLive").click(function() {
     var liveMapUri =  "live.html?lng=" + map.getCenter().lng() + "&lat=" + map.getCenter().lat() + "&zoom=" + map.getZoom();
+    console.log(liveMapUri);
     window.open(liveMapUri, "livemap");
     $('.navbar-toggle').click();
   });
