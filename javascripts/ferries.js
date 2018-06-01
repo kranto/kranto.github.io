@@ -106,6 +106,12 @@ function hideSettings(cb) {
   $("#settings").slideUp("fast", cb);
 }
 
+function hideMenuAndSettings() {
+  hideMenu();
+  hideSettings();
+  return $("#menu").is(":visible") || $("#settings").is(":visible");
+}
+
 $('#menubutton').click(function() {
   if ($("#menu").is(":hidden")) {
     showMenu();
@@ -390,7 +396,9 @@ function onlyUnique(value, index, self) {
 
 $(document).keyup(function(e) {
   if (e.keyCode == 27) { // escape key maps to keycode `27`
-    if (history.state.timetable) {
+    if (hideMenuAndSettings()) {
+      // nothing
+    } else if (history.state.timetable) {
       history.back();
     } else if (history.state.route) {
       unselectAll();
