@@ -675,7 +675,7 @@ div#wrapper2 {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.timetablebutton.external:after {
+.timetablebutton.external:after, .linkbutton.external:after {
   font-family: FontAwesome;
   content: " \f08e";
   -moz-osx-font-smoothing: grayscale;
