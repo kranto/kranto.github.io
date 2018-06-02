@@ -63,25 +63,25 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" style="background-image: url('img/mapsample.png');">
           <h5>
           <span lang="fi">Klikkaa reittiä kartalla nähdäksesi reitin tiedot</span>
           <span lang="sv">Klicka en rutt på kartan för information</span>
           <span lang="en">Click a route on map to see more information</span>
-          <i style="position: relative; top: 50px; left: 20px;" class="fa fa-mouse-pointer faa-tada animated" aria-hidden="true"></i>
           </h5>
-          <ul>
+          <i style="position: fixed; top: 50%; right: 20%; font-size: 30px; color: #304070;" class="fa fa-mouse-pointer faa-tada animated" aria-hidden="true"></i>
+          <ul style="position: relative; left: 30px;">
           <li><span lang="fi">Reitit</span><span lang="sv">Rutter</span><span lang="en">Routes</span></li>
           <li><span lang="fi">Aikataulut</span><span lang="sv">Tidtabeller</span><span lang="en">Schedules</span></li>
           <li><span lang="fi">Yhteystiedot</span><span lang="sv">Kontaktuppgifter</span><span lang="en">Contact information</span></li>
           </ul>
-        </div>
-        <div class="modal-footer">
-    <div class="btn-group" style="width: 150px; position:absolute; left: 10px;">
+    <div class="btn-group" style="width: 150px; margin-top: 20px;">
       <button type="button" class="btn btn-secondary lang-button" setlang="fi" style="width:33%;">FI</button>
       <button type="button" class="btn btn-secondary lang-button" setlang="sv" style="width:34%;">SV</button>
       <button type="button" class="btn btn-secondary lang-button" setlang="en" style="width:33%;">EN</button>
     </div>
+        </div>
+        <div class="modal-footer">
           <div class="checkbox dont-show-again" id="dont-show-again">
             <input id="dont-show-again-cb" type="checkbox" value="false" version="1"/>
             <label for="dont-show-again-cb">

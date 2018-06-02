@@ -174,12 +174,13 @@ function cancelHeaderBarToggle() {
   headerBarTimeout = null;
 }
 
-function initInfoPage() {
-  $('#closeInfoPageButton').click(function() {
+function closeInfoPage() {
     $('#infopage').fadeOut();
     select(wasSelected);
-  });
+}
 
+function initInfoPage() {
+  $('#closeInfoPageButton').click(closeInfoPage);
   showLanguage(currentLang);
 }
 
@@ -371,7 +372,7 @@ $("#bannerModal").on('hidden.bs.modal', function () {
   if ($("#dont-show-again-cb").is(":checked")) {
     localStorage.setItem("dontShowAgainVersion", currentBannerVersion);
   }
-})
+});
 
 if (window.location.hostname == "localhost") $("#loader").fadeOut(500);
 
@@ -398,6 +399,8 @@ $(document).keyup(function(e) {
   if (e.keyCode == 27) { // escape key maps to keycode `27`
     if (hideMenuAndSettings()) {
       // nothing
+    } else if ($('#infopage').is(":visible")) {
+      closeInfoPage();
     } else if (history.state.timetable) {
       history.back();
     } else if (history.state.route) {
