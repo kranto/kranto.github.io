@@ -181,6 +181,8 @@ function closeInfoPage() {
 
 function initInfoPage() {
   $('#closeInfoPageButton').click(closeInfoPage);
+  $('#infopage').click(closeInfoPage);
+  $('#infopagecontent').click(function(event) { event.stopPropagation(); });
   showLanguage(currentLang);
 }
 
