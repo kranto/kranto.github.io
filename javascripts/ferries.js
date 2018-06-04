@@ -1,52 +1,245 @@
 
 $(document).ready(function(){
-    $('#wrapper').bind('scroll',toggleScrollIndicator); 
+  $('#wrapper2').bind('scroll',toggleScrollIndicator);
+
+  $(".info").on("mouseleave", function(e) {
+    $("#wrapper2").css({pointerEvents: "none"});
+    $(".mapoverlay").css({pointerEvents: "none"});
+  });
+
+  $(".info").on("mouseenter mousedown touchstart", function(e) {
+    $("#wrapper2").css({pointerEvents: "auto"});
+    $(".mapoverlay").css({pointerEvents: "auto"});
+    $("#wrapper2").trigger(e.type, e);
+  });
+
+  function getAllEvents(element) {
+    var result = [];
+    for (var key in element) {
+        if (key.indexOf('on') === 0) {
+            result.push(key.slice(2));
+        }
+    }
+    return result.join(' ');
+  }
+
+  var el = $(".mapoverlay");
+  el.bind(getAllEvents(el[0]), function(e) {
+    $("#wrapper2").css({pointerEvents: "none"});
+    $(".mapoverlay").css({pointerEvents: "none"});
+    $("#mapcontainer").trigger(e.type, e);
+  });
+
+  $("body").mouseup(function(event) {
+    // console.log("up");
+    if (pierlinkDown) {
+      $(".info").animate({ opacity: 1 });
+      pierlinkDown = false;
+    }
+  });
+
+
+});
+
+$(window).resize(function() {
+  toggleScrollIndicator();
+  keepCenter();
+});
+
+var mapCenter;
+var leftInfo = false;
+var bottomInfo = false;
+
+function rememberCenter() {
+  mapCenter = map.getCenter();
+  leftInfo = $("body").outerWidth() >= 768 && selected.length > 0;
+  bottomInfo = $("body").outerWidth() < 768 && selected.length > 0;
+}
+
+function keepCenter() {
+  var oldCenter = mapCenter;
+  if (map && mapCenter) setTimeout(function() {
+    map.setCenter(oldCenter);
+    if (leftInfo && $("#map").outerWidth() < 768) map.panBy(200, 0);
+    if (bottomInfo && $("#map").outerWidth() >= 768) map.panBy(-200, 0);
+  }, 50);
+}
+
+$(document).ready(function(){
+
+  $("#infopage").load("templates/infopage.html?v=1.2 #infopagecontent", initInfoPage);
+  $("#menu").load("templates/menucontent.html?v=1 #menucontent", initMenu);
+  $("#settings").load("templates/settingscontent.html?v=1 #settingscontent", initSettings);
+
+  $("#timetables").click(function(event) { if (event.target == this) {history.back(); }});
+
 });
 
 var scrollLimit = 22;
 
 function toggleScrollIndicator()
 {
-  var elem = $("#wrapper");
+  var elem = $("#wrapper2");
   var isBottom = (elem[0].scrollHeight - elem.scrollTop() - scrollLimit <= elem.outerHeight());
   $('#scrollIndicator').toggleClass('can-scroll', !isBottom);
 }
 
-$('div#map').click(function() { // close menu when map clicked
-  $('.navbar-toggle[aria-expanded="true"]').click();
+function showMenu() {
+  hideSettings(function() {
+    $("#menu").slideDown("fast");
+    $("#menu").scrollTop(0);
+  });
+}
+
+function hideMenu(cb) {
+  $("#menu").slideUp("fast", cb);
+}
+
+function showSettings() {
+  hideMenu(function() { 
+    $("#settings").slideDown("fast");
+    $("#settings").scrollTop(0);
+  });
+}
+
+function hideSettings(cb) {
+  $("#settings").slideUp("fast", cb);
+}
+
+function hideMenuAndSettings() {
+  hideMenu();
+  hideSettings();
+  return $("#menu").is(":visible") || $("#settings").is(":visible");
+}
+
+$('#menubutton').click(function() {
+  if ($("#menu").is(":hidden")) {
+    showMenu();
+  } else {
+    hideMenu();
+  }
 });
 
-$('#setMapTypeMap').click(function() {
-  map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+$('#settingsbutton').click(function() {
+  if ($("#settings").is(":hidden")) {
+    showSettings();
+  } else {
+    hideSettings();
+  }
 });
 
-$('#setMapTypeSatellite').click(function() {
-  map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
-});
+function hideHeaderbar() {
+  // don't hide for now
+  // $("#topbar").slideUp('fast');
+}
 
-$('#resetViewButton').click(function() {
-  google.maps.event.addListenerOnce(map, 'idle', onMapIdle);
-  $('.navbar-toggle').click();
-  resetMap();
-});
+function showHeaderbar() {
+  $("#topbar").slideDown('fast');
+}
+
+window.onhashchange = function() {
+  var hash = location.hash.substring(1);
+  if (fdata.routes[hash]) {
+    var newState = {route: hash, timetable: null};
+    // console.log('onhashchange: replacing state to', newState);
+    history.replaceState(newState, null, "/");
+    navigateTo(newState);
+  } else if (fdata.piers[hash]) {
+    history.go(-1);
+    objects.filter(function(o) { return o.id == hash; })[0].showTooltip(true);
+  }
+}
+
+function doToggleHeaderbar() {
+  if (!$("#menu").is(":hidden") || !$("#settings").is(":hidden")) {
+    hideMenu();
+    hideSettings();
+  } else if (selected.length > 0) {
+    unselectAll();
+  } else if ($("#topbar").is(":hidden")) {
+    showHeaderbar();
+  } else if (!inIframe()) {
+    hideHeaderbar();
+  }
+}
+
+var headerBarTimeout = null;
+function toggleHeaderbar() {
+  if (new Date().getTime() - latestHandledMapClickAt < 200) return; // too short time since a label was clicked
+  headerBarTimeout = setTimeout(doToggleHeaderbar, 200);
+}
+
+function cancelHeaderBarToggle() {
+  if (headerBarTimeout) clearTimeout(headerBarTimeout);
+  headerBarTimeout = null;
+}
+
+function closeInfoPage() {
+    $('#infopage').fadeOut();
+    select(wasSelected);
+}
+
+function initInfoPage() {
+  $('#closeInfoPageButton').click(closeInfoPage);
+  $('#infopage').click(closeInfoPage);
+  $('#infopagecontent').click(function(event) { event.stopPropagation(); });
+  showLanguage(currentLang);
+}
+
+function initMenu() {
+
+  $('.box').click(function(event) {
+    $('#infopage').fadeIn();
+    $("#infopage").scrollTop(0);
+    $(".infosection").hide();
+    if (this.getAttribute("data-target") != "none") {
+      $(this.getAttribute("data-target")).show();
+      wasSelected = selected.slice();
+      unselectAll();
+      $("#showLive").click(function() {
+        var liveMapUri =  "live.html?lng=" + map.getCenter().lng() + "&lat=" + map.getCenter().lat() + "&zoom=" + map.getZoom();
+        window.open(liveMapUri, "livemap");
+        $('.navbar-toggle').click();
+      });
+    }
+    hideMenu();
+  });
+
+  showLanguage(currentLang);
+}
+
+function initSettings() {
+  $(".mapTypeSelect").bind('change', function() {
+    newValue = this.options[this.selectedIndex].value;
+    map.setMapTypeId(newValue);
+  });
+
+  $("#toggleFullscreen").click(toggleFullscreen);
+
+  for (var key in layers) {
+    $("input[type=checkbox][data-target=" +  key +"]").prop("checked", layers[key]);
+  }
+
+  $(".boxs input[type=checkbox]:not([data-target])").prop("disabled", true);
+
+  $("input[type=checkbox]").change(function() {
+    var layer = this.getAttribute("data-target");
+    layers[layer] = this.checked; 
+    localStorage.setItem("layers", JSON.stringify(layers));
+    if (onLayersChange[layer]) onLayersChange[layer](layer, this.checked);
+    rerender(map, true);
+  });
+
+  $(".lang-button[setlang=" + currentLang +"]").toggleClass('active', true);
+  $('.lang-button').click(function(event) {
+    setLanguage(event.currentTarget.getAttribute("setlang"));
+  });
+
+  showLanguage(currentLang);
+}
+
 
 var wasSelected = [];
-$('#showInfoPageButton').click(function() {
-  $('#infopage').fadeIn();
-  $('.navbar-toggle[aria-expanded="true"]').click();
-  wasSelected = selected.slice();
-  unselectAll();
-});
-
-$('#closeInfoPageButton').click(function() {
-  $('#infopage').fadeOut();
-  select(wasSelected);
-});
-
-
-$('#closeInfoButton').click(function() {
-  unselectAll();
-});
 
 function inIframe () {
     try {
@@ -56,7 +249,6 @@ function inIframe () {
     }
 }
 
-
 function showLanguage(lang) {
   $("[lang]").each(function () {
     if ($(this).attr("lang") == lang)
@@ -65,10 +257,6 @@ function showLanguage(lang) {
       $(this).hide();
   })
 }
-
-$('.lang-button').click(function(event) {
-  setLanguage(event.currentTarget.getAttribute("setlang"));
-});
 
 var currentLang;
 
@@ -114,15 +302,16 @@ $(document).ready(function() {
 
 
 function shortName(props) {
-  return props["sname_" + currentLang] || props.sname;
+  var value = props["sname_" + currentLang] || props.sname || props["name_" + currentLang] || props.name;
+  return props["sname_" + currentLang] || props.sname || props["name_" + currentLang] || props.name;
 }
 
 function longName(props) {
-  var localName = props.sname;
-  var currLocaleName = props["sname_" + currentLang];
+  var localName = props.sname || props.name;
+  var currLocaleName = props["sname_" + currentLang] || props["name_" + currentLang];
   var firstName = currLocaleName? currLocaleName: localName;
   var otherNames = ["", "_fi", "_sv", "_en"].map(function(l) {
-    return props["sname" + l];
+    return props["sname" + l] || props["name" + l];
   }).filter(function(name) { return typeof name !== 'undefined' && name != firstName; }).filter(onlyUnique);
   return firstName + ((otherNames.length > 0)? "/" + otherNames.join("/"): "");
 }
@@ -135,15 +324,11 @@ $(document).ready(function() {
   var hostname = window.location.hostname;
   var framed = inIframe();
   var title = framed? '<a href="https://' + hostname + '" target="saaristolautat">' + hostname + '</a>': hostname;
-  $("#navbartitle").html(title);
-  if (!framed) {
-    setTimeout(function() { $("#navbartitle").hide(); }, 15000);
-  }
 });
 
 function addMapListeners(map) {
   google.maps.event.addListener(map,'maptypeid_changed',function () {
-    var isSatellite = map.getMapTypeId() === 'satellite';
+    var isSatellite = map.getMapTypeId() === 'satellite' || map.getMapTypeId() == 'hybrid';
     if (isSatellite) {
       $('#setMapTypeMap').removeClass('active');
       $('#setMapTypeSatellite').addClass('active');
@@ -152,6 +337,10 @@ function addMapListeners(map) {
       $('#setMapTypeSatellite').removeClass('active');          
     }
   });
+
+  map.addListener('click', toggleHeaderbar);
+  map.addListener('idle', rememberCenter);
+
 }
 
 var timeout = false;
@@ -168,16 +357,32 @@ function onMapIdle() {
   hideLoader();
 }
 
+var dontShowAgainVersion = localStorage.getItem("dontShowAgainVersion");
+dontShowAgainVersion = dontShowAgainVersion? dontShowAgainVersion: 0;
+var currentBannerVersion = $("#dont-show-again-cb").attr("version");
+
 function hideLoader() {
   if (timeout && mapInitialized ) {
     rerender(map, true);
     $("#loader").fadeOut(1000);
+    if (dontShowAgainVersion < currentBannerVersion) {
+      setTimeout(function() {$('#bannerModal').modal({});}, 500);      
+    }
   }
 }
 
+$("#bannerModal").on('hidden.bs.modal', function () {
+  if ($("#dont-show-again-cb").is(":checked")) {
+    localStorage.setItem("dontShowAgainVersion", currentBannerVersion);
+  }
+});
+
+if (window.location.hostname == "localhost") $("#loader").fadeOut(500);
+
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    //navigator.geolocation.getCurrentPosition(showPosition);
+    // disabled for now
   } else { 
     // "Geolocation is not supported by this browser.";
   }
@@ -193,86 +398,242 @@ function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
 }
 
-function setInfoContent(targets) {
-  $(".infocontent:last #selectedTitle").html(targets.map(function(target) { return target.name; }).filter(onlyUnique).join('<br>'));
-  $(".infocontent:last #selectedDescription").html(targets.map(function(target) { return target.description? target.description: ' '; }).map(function(desc) {
-    return "<p>" + desc + "</p>";
-  }).filter(onlyUnique).join("\n"));
-} 
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) { // escape key maps to keycode `27`
+    if (hideMenuAndSettings()) {
+      // nothing
+    } else if ($('#infopage').is(":visible")) {
+      closeInfoPage();
+    } else if (history.state.timetable) {
+      history.back();
+    } else if (history.state.route) {
+      unselectAll();
+    }
+  }
+});
+
+function closeTimetables() {
+  $('#timetables').fadeOut();
+  $('#timetables').scrollTop(0);
+}
+
+function openTimetable(id) {
+  var timetable = selectedRoute.timetables.filter(function(tt) { return tt.id == id; })[0];
+  var tttemplate = document.getElementById('timetabletemplate').innerHTML;
+  tttemplate = tttemplate.replace(/tmplsrc/g, "src");
+  timetable.L = function () {
+    return function(val, render) {
+      return L(currentLang, render(val));
+    };
+  }
+  var ttoutput = Mustache.render(tttemplate, timetable);
+  $('#timetables').fadeIn();
+  $("#timetables").html(ttoutput);
+  $('#closeTimetablesButton').click(function() { history.back(); });
+  hideMenu();
+  hideSettings();
+}
+
+var selectedRoute = null;
+
+var pierlinkDown = false;
+
+function initPierLinks() {
+  var isTouch = false;
+
+  $("div.pierlink").mouseover(function(event) {
+    if (!isTouch) {
+      var dataTarget = this.getAttribute("data-target");
+      objects.filter(function(o) { return o.id == dataTarget; })[0].showTooltip(false);
+    }
+  });
+
+  $("div.pierlink").mouseout(function(event) {
+    if (!pierlinkDown) tooltip.close();
+  });
+
+  $("div.pierlink").mousedown(function(event) {
+    if (!isTouch) {
+      $(".info").animate({ opacity: 0 });
+      pierlinkDown = true;
+    }
+  });
+
+  $("div.pierlink").mouseup(function(event) {
+    if (!isTouch) {
+      $(".info").animate({ opacity: 1 });
+      pierlinkDown = false;
+    }
+  });
+
+  var touchstartTimeout = null;
+  $("div.pierlink").bind("touchstart", function(event) {
+    isTouch = true;
+    var dataTarget = this.getAttribute("data-target");
+    objects.filter(function(o) { return o.id == dataTarget; })[0].showTooltip(false);
+    touchstartTimeout = setTimeout(function() {
+      $(".info").animate({ opacity: 0 });
+      pierlinkDown = true;
+    }, 200);
+  });
+
+  $("div.pierlink").bind("touchend", function(event) {
+    if (touchstartTimeout) clearTimeout(touchstartTimeout);
+    touchstartTimeout = null;
+    setTimeout(function() {
+      $(".info").animate({ opacity: 1 });
+      pierlinkDown = false;
+    }, 700);
+  });
+}
+
+function setInfoContent(targets, dontPushState) {
+
+  var output;
+  var route;
+  $(".info .infocontent").addClass("removing");
+  if (targets[0].ref) {
+    route = targets[0].ref;
+    if (!dontPushState) history.pushState({route: route, timetables: null}, null, null);
+
+    var template = document.getElementById('infocontenttemplate').innerHTML;
+    var data = routeInfo(fdata.routes[route], currentLang);
+    selectedRoute = data;
+    output = Mustache.render(template, data);
+  } else {
+    var template = document.getElementById('infocontent2template').innerHTML;
+    var uniqueNames = targets.map(function(target) { return target.name; }).filter(onlyUnique);
+    var data = { names: uniqueNames, contents: targets };
+    output = Mustache.render(template, data);
+    if (!dontPushState) history.pushState({route: targets.map(function(r) { return r.id; }), timetables: null}, null, null);
+  }
+
+  output = output.replace(/tmplsrc/g, "src");
+  $(".info").append(output);
+  if ($(".infocontent.removing").length) $(".infocontent:not(.removing)").hide();
+
+  if (targets[0].style) {
+    var style = targets[0].style;
+    $(".infocontent:not(.removing)").find(".infotitle, .headerbox").css({borderBottom: style.weight + "px " + style.style + " " + style.color });
+  } else {
+    $(".infocontent:not(.removing)").find(".infotitle, .headerbox").css({borderBottom: "none" });      
+  }
+  
+  $('.closeInfoButton:not(#closeInfoPageButton)').click(function() {
+    unselectAll();
+  });
+
+  initPierLinks();
+
+  $(".infocontent.removing").fadeOut('fast', function() {
+    $(".infocontent.removing").remove();
+    $(".infocontent").fadeIn('fast');
+  });
+
+  $(".timetablebutton").click(function() {
+    if (this.getAttribute("linktype") === "external") {
+      window.open(this.getAttribute("href"), "info");
+    } else {
+      var timetable = this.getAttribute("data-target");
+      history.pushState({route: route, timetable: timetable }, null, null);
+      openTimetable(timetable);
+    }
+  });
+}
+
+function navigateTo(state) {
+  if (!state || !state.timetable) {
+    closeTimetables();
+  }
+  if (state && state.route) {
+    if (typeof state.route === 'string') {
+      selectByIds([state.route]);
+    } else if (Array.isArray(state.route)) {
+      select(lauttaRoutes.filter(function(lr) { return state.route.indexOf(lr.id) >= 0;  }), null, true);
+    }
+    if (state.timetable) {
+      openTimetable(state.timetable);
+    }
+  } else {
+    unselectAll(false);
+  }
+}
+
+window.onpopstate = function(event) {
+  // console.log('onpopstate', event, location.hash, history.length, history.state);
+  if (location.hash) return;
+  $("#wrapper2").animate({scrollTop: 0}, 'fast', function() {
+    navigateTo(event.state);
+  });
+};
 
 var selected = [];
 
-function select(targets, mouseEvent) {
+function selectByIds(ids) {
+  var matching = objects.filter(function(o) { return o.ref && ids.indexOf(o.ref) >= 0; });
+  if (matching.length) {
+    select(matching, null, true);
+  } else {
+    unselectAll();
+  }
+}
+
+function panTo(bounds) {
+  // pan to center of the bounds, then pan according to the info window and headerbar
+  // and finally if bounds do not fit, zoom out and start over. 
+  var center = {lat: (bounds.north + bounds.south)/2, lng: (bounds.west + bounds.east)/2};
+  map.panTo(center);
+  var mapWidth = $("#mapcontainer").outerWidth();
+  if (mapWidth >= 768) {
+    map.panBy(-200, -25); // half of info window & header bar
+  } else {
+    map.panBy(0, -25); // half or header bar
+  }
+  if (map.getZoom() > 5 && !map.getBounds().contains({lat: bounds.south, lng: bounds.east})) {
+    map.setZoom(map.getZoom()-1);
+    panTo(bounds);
+  }
+}
+
+function select(targets, mouseEvent, dontPushState) {
 
   if (!targets.length) return;
 
   var selectedCountWas = selected.length;
-  selected.forEach(function(target) { target.highlight(false); });
+  selected.forEach(function(target) { target.highlight(false);  if (target.rerender) target.rerender(map.getZoom(), map.getMapTypeId()); });
   selected = [];
 
-  var bounds = null;
   targets = (targets.constructor === Array)? targets: [targets];
   targets.forEach(function(target) {
     target.highlight(true);
     selected.push(target);
-    if (!bounds) bounds = target.bounds;
-    if (bounds && target.bounds) bounds.union(target.bounds);
   });
+
+  showHeaderbar();
+  setInfoContent(targets, dontPushState);
+  toggleScrollIndicator();
+
+  $(".info").scrollTop(0);
 
   if (selectedCountWas == 0) {
 
-    var newElem = $(".infocontent.template").clone(true);
-    newElem.removeClass("template");
-    newElem.appendTo($("#info"));
-    newElem.addClass("active-info");
-    setInfoContent(targets);
-
-    var clientY = mouseEvent? latLng2Point(mouseEvent.latLng, map).y: 0;
-    if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
-    $(function() { 
-      $("#info").show();
-      $("#mapcontainer").animate({height: '80%'});
-      $("#info").animate({top: '80%'}, toggleScrollIndicator);
+    $(function() {
+      $("#wrapper2").toggleClass("info-open", true);
+      if ($("body").outerWidth() >= 768) {
+        $(".info").css({left: -400});
+        $(".info").animate({left: 0}, 'fast', function() {$(".info").css({left: "" }); });
+        var clientX = mouseEvent? latLng2Point(mouseEvent.latLng, map).x: 500;
+        if (clientX < (400 + 50)) map.panBy(clientX - (($("#map").width() - 400)/3 +400), 0);
+      } else {
+        $(".info").css({top: '100%'});
+        $(".info").animate({top: '80%'}, 'fast', function() {$(".info").css({top: "" }); toggleScrollIndicator()});
+        var clientY = mouseEvent? latLng2Point(mouseEvent.latLng, map).y: 0;
+        if ($("#map").height()*0.80 < clientY) map.panBy(0, $("#map").height()*0.2);
+      }
     });
-  } else { // swap content of #info
-    
-    // all this just calculate needed scroll animation
-    var wrapper = $("#wrapper");
-    var wrapperHeight0 = wrapper[0].scrollHeight;
-    var visibleHeight = wrapper.outerHeight();
-    var scrolled0 = wrapper.scrollTop();
-
-    var newElem = $(".infocontent.template").clone(true);
-    newElem.removeClass("template");
-    newElem.addClass("hidden-info");
-    newElem.appendTo($("#info"));
-    setInfoContent(targets);
-
-    var infoContentHeight0 = $(".infocontent.active-info")[0].scrollHeight;
-    var infoContentHeight1 = $(".infocontent.hidden-info")[0].scrollHeight;
-
-    var wrapperHeight1 = wrapperHeight0 + infoContentHeight1 - infoContentHeight0;
-    var maxScroll1 = wrapperHeight1 - visibleHeight;
-    var scrolled1 = Math.min(scrolled0, maxScroll1);
-
-    if (maxScroll1 + 25 > scrolled0) { // skip animations in certain conditions. This is needed to avoid jumping in Chrome.
-      newElem.removeClass("hidden-info") // show new infocontent
-      $(".infocontent.active-info").remove(); // remove old infocontent
-      newElem.addClass("active-info"); // make new infocontent active
-      wrapper.scrollTop(scrolled1);
-      toggleScrollIndicator();
-      return;
-    }
-    // scroll smoothly down;
-    wrapper.animate({scrollTop: scrolled1}, 1+(scrolled0 - scrolled1)*2, function() {
-      $("#info").animate({opacity: 0.3}, 'fast', function() { // hide info during the swap
-        newElem.removeClass("hidden-info") // show new infocontent
-        $(".infocontent.active-info").remove(); // remove old infocontent
-        newElem.addClass("active-info"); // make new infocontent active
-        toggleScrollIndicator();
-        $("#info").animate({opacity: 1}, 'fast'); // show info again
-      });
-    });
+  }
+  if (!mouseEvent && targets[0].bounds) {
+    panTo(targets[0].bounds);
   }
 }
 
@@ -284,22 +645,35 @@ function latLng2Point(latLng, map) {
   return new google.maps.Point((worldPoint.x - bottomLeft.x) * scale, (worldPoint.y - topRight.y) * scale);
 }
 
-function unselectAll() {
+function unselectAll(pushState) {
+  $("#wrapper2").css({pointerEvents: "none"});
+  $(".mapverlay").css({pointerEvents: "none"});
+
   if (selected.length == 0) return;
-  $(function() { 
-    $("#mapcontainer").animate({height: '100%'}, 100, function() {
-      selected.forEach(function(target) { target.highlight(false); });
-      selected = [];
-    });
-    var scrolled = $("#wrapper")[0].scrollTop;
-    $("#wrapper").animate({scrollTop: 0}, scrolled*2, function() {
-      $("#info").animate({top: '100%'}, 100, function() {
-        $("#info").hide();
-        $(".infocontent.active-info").remove();
-        toggleScrollIndicator();
+  if (typeof pushState === 'undefined') pushState = true;
+
+  if (pushState) history.pushState({route: null}, null, null);
+
+  $(function() {
+    if ($("body").outerWidth() >= 768) {
+      $(".info").animate({left: -400}, 'fast', function() {
+        $(".info").css({left: "" });
+        $("#wrapper2").toggleClass("info-open", false);
+        $(".info .infocontent").remove();
       });
-    });
+    } else {
+      $("#wrapper2").animate({scrollTop: 0}, 'fast', function() {
+        $(".info").animate({top: '100%'}, 200, function() {
+          $(".info").css({top: "" }); 
+        });
+          $("#wrapper2").toggleClass("info-open", false);
+          $(".info .infocontent").remove();
+          toggleScrollIndicator();
+      });
+    }
   });
+  selected.forEach(function(target) { target.highlight(false); if (target.rerender) target.rerender(map.getZoom(), map.getMapTypeId()); });
+  selected = [];
 }
 
 function toggleFullscreen() {
@@ -340,26 +714,29 @@ function fullscreenchange(event) {
 document.onfullscreenchange = fullscreenchange;
 document.onwebkitfullscreenchange = fullscreenchange;
 
-$("#toggleFullscreen").click(toggleFullscreen);
+var localStorgageLayers = localStorage.getItem("layers");
 
-var rengastieShown = false;
-$("#toggleRengastie").click(function() {
-  $(this).toggleClass("active");
-  rengastieShown = $(this).hasClass("active");
-  rerender(map, true);
-});
+var layers = localStorgageLayers? JSON.parse(localStorgageLayers): {
+  ringroads: false,
+  distances: true,
+  roadferries: true,
+  conn4: true,
+  conn5: true,
+  longdistanceferries: true,
+  live: false,
+};
 
-$("#showLive").click(function() {
-  var liveMapUri =  "live.html?lng=" + map.getCenter().lng() + "&lat=" + map.getCenter().lat() + "&zoom=" + map.getZoom();
-  window.open(liveMapUri, "livemap");
-  $('.navbar-toggle').click();
-});
+localStorage.setItem("layers", JSON.stringify(layers));
+
+onLayersChange = {
+  live: function(layer, enable) { toggleLiveLayer(enable); }
+}
 
 var map;
 var tooltip;
 
-//var roadColor = '#91755d';
-var roadColor = '#696d4b';
+var roadColor = '#8a7d6a';
+var roadColorSatellite = '#c0c0c0';
 
 function createMapStyles(mapTypeId, zoom, settings) {
   return [
@@ -387,20 +764,22 @@ function createMapStyles(mapTypeId, zoom, settings) {
     { featureType: 'road', elementType: 'labels', stylers: [{visibility: 'on'}]},
     { featureType: 'road', elementType: 'labels.text.stroke', stylers: [{color: '#ffffff'}, {weight: 3}]},
     { featureType: 'road', elementType: 'labels.text.fill', stylers: [{color: '#000000'}]},
-    { featureType: 'road', elementType: 'geometry.fill', stylers: [{color: roadColor}]},
-    { featureType: 'road', elementType: 'geometry.stroke', stylers: [{color: roadColor}]},
-    { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{visibility: "on"}, {weight: zoom <= 8? 0: Math.max(1.5, (zoom-5)*0.4)}]},
-    { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{visibility: "simplified"}, {weight: zoom <= 6? 0: 1}]},
-    { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{visibility: "on"}, {weight: zoom <= 8? 0: Math.max(1.3, (zoom-5)*0.4)}]},
-    { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{visibility: "on"}, {weight: 0.5}]},
-    { featureType: 'road.arterial', elementType: 'geometry', stylers: [{weight: Math.max(1, (zoom-7)*0.4)}]},
-    { featureType: 'road.local', elementType: 'geometry', stylers: [{weight: 1}, {lightness: (zoom-12)*0}]},
+    { featureType: 'road', elementType: 'geometry.fill', stylers: [{color: mapTypeId == google.maps.MapTypeId.ROADMAP? roadColor: roadColorSatellite}]},
+    { featureType: 'road', elementType: 'geometry.stroke', stylers: [{color: mapTypeId == google.maps.MapTypeId.ROADMAP? roadColor: roadColorSatellite}]},
+    { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{visibility: "simplified"}, {weight: zoom <= 7? 0.5: Math.max(0.6, 0.6 + (zoom-7)*0.4)}]},
+    { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{visibility: "simplified"}, {weight: 0.1}]},
+    { featureType: 'road.highway.controlled_access', elementType: 'geometry.fill', stylers: [{visibility: "simplified"}, {weight: zoom <= 6? 0.7: Math.max(0.8, 0.8 + (zoom-6)*0.55)}]},
+    { featureType: 'road.highway.controlled_access', elementType: 'geometry.stroke', stylers: [{visibility: "simplified"}, {weight: 0.2}]},
+    { featureType: 'road.arterial', elementType: 'geometry.fill', stylers: [{visiblity: "simplified"}, {weight: Math.max(0.8, 0.8 + (zoom-9)*0.3)}]},
+    { featureType: 'road.arterial', elementType: 'geometry.stroke', stylers: [{visiblity: "simplified"}, {weight: 0.1}]},
+    { featureType: 'road.local', elementType: 'geometry.fill', stylers: [{visiblity: "simplified"}, {weight: 0.8}]},
+    { featureType: 'road.local', elementType: 'geometry.stroke', stylers: [{visiblity: "simplified"}, {weight: 0.1}]}
   ];
 }
 
 function updateMapStyles() {
   map.setOptions({styles: createMapStyles(map.getMapTypeId(), map.getZoom(), {})});
-  $("div.gm-style").css({'font-size': map.getZoom()});
+  $("div.gm-style").css({'font-size': map.getZoom()+1});
 }
 
 function sanitizeZoomLevels(object) {
@@ -439,7 +818,6 @@ function createMarker(position, clickable, icon, map) {
 }
 
 function getLabelColor(mapTypeId) {
-  return '#002080';
   return mapTypeId == 'hybrid' || mapTypeId == 'satellite'? '#aaaa00': '#002080';
 }
 
@@ -462,7 +840,9 @@ function road(feature, map) {
   var maxZ = feature.properties.maxZ || 8;
   return {
     rerender: function(zoom, mapTypeId) {
-      roadObject.setVisible(zoom >= minZ && zoom <= maxZ);
+      var addZ = mapTypeId == 'hybrid'? 2: 0;
+      roadObject.setVisible(zoom >= minZ + addZ && zoom <= maxZ + addZ);
+      roadObject.setOptions({strokeColor: mapTypeId == google.maps.MapTypeId.ROADMAP? roadColor: roadColorSatellite});
     }
   };
 }
@@ -472,9 +852,9 @@ function route(feature, map) {
   var object = new google.maps.Polyline({
     path: new google.maps.MVCArray(coords),
     geodesic: false,
-    strokeColor: '#5040c0',
+    strokeColor: '#202020',
     strokeOpacity: 0.4,
-    strokeWeight: 4,
+    strokeWeight: 1,
     zIndex: 0,
     map: map,
     cursor: 'context-menu',
@@ -482,8 +862,8 @@ function route(feature, map) {
   });
   return {
     rerender: function(zoom, mapTypeId) {
-      object.setVisible(rengastieShown && zoom >= 8);
-      object.setOptions({strokeWeight: (zoom<=8? 4: zoom<=9? 5: 6)});
+      object.setVisible(layers.ringroads && zoom >= 8);
+      object.setOptions({strokeWeight: (zoom<=8? 2: zoom<=9? 2.5: 3)});
     }
   };
 }
@@ -597,23 +977,32 @@ function pier(feature, map) {
   var position = new google.maps.LatLng(coords[1], coords[0]);
   var icon = getPierIcons().a1_30;
   var marker = createMarker(position, true, icon, map);
-  var shortName_ = shortName(feature.properties);
-  var longName_ = longName(feature.properties).replace('/', '<br/>');
+  var ref = null;
+  var fdataObject = null;
+  if (feature.properties.ref) {
+    ref = feature.properties.ref;
+    fdataObject = fdata.piers[ref];    
+  }
+  var shortName_ = shortName(fdataObject);
+  var longName_ = longName(fdataObject).replace('/', '<br/>');
   var label = new txtol.TxtOverlay(position, longName_, "pier pier-" + feature.properties.ssubtype, map, feature.properties.labelAnchor);
 
-  function showTooltip() {
-    tooltip.openedAt = new Date().getTime();
+  function showTooltip(pan) {
     tooltip.setPosition(marker.getPosition());
     tooltip.setContent(longName_);
     tooltip.open(map, marker);
+    if (pan) {
+      map.panTo(marker.getPosition());
+    }
   }
 
-  marker.addListener('click', showTooltip);
-  label.addEventListener('click', function(event) { event.stopPropagation(); event.preventDefault(); showTooltip(); });
+  marker.addListener('click', function() { latestHandledMapClickAt = new Date().getTime(); showTooltip(); });
+  label.addEventListener('click', function(event) { event.stopPropagation(); event.preventDefault(); latestHandledMapClickAt = new Date().getTime(); showTooltip(); });
   return {
+    ref: ref,
     init: function() {
-      shortName_ = shortName(feature.properties);
-      longName_ = longName(feature.properties).replace('/', '<br/>');
+      shortName_ = shortName(fdataObject);
+      longName_ = longName(fdataObject).replace('/', '<br/>');
       label.setInnerHTML(longName_);
     },
     hide: function() {
@@ -625,178 +1014,181 @@ function pier(feature, map) {
       marker.setClickable(styler.clickable(zoom));
       marker.setVisible(zoom >= markerVisibleFrom);
       if (zoom >= labelVisibleFrom) label.show(); else label.hide();
-    }
-  };
-}
-
-var cableferryStyler = {
-  highlightColor: '#f97cdc',
-  highlightWeight: 17,
-  highlightOpacity: .6,
-  visibleFrom: 9
-}
-
-var _cableferrySymbol;
-function cableferrySymbol() {
-  _cableferrySymbol = _cableferrySymbol || {
-    path: google.maps.SymbolPath.CIRCLE,
-    strokeOpacity: 1,
-    strokeColor: '#00a000',
-    strokeWeight: 2,
-    fillColor: '#00a000',
-    fillOpacity: 0.3,
-    scale: 2
-  };
-  return _cableferrySymbol;
-}
-
-function createDescription(prop) {
-  if (!prop.info) {
-    return prop.description;
-  } else {
-    return "<p>" + prop.info.phone.map(
-      function(phone) { 
-        return '<i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:' + phone.replace(/ /g,'') + '">' + phone + '</a>';
-      }).join(", ") + "</p>" +
-      '<p><a target="info" href="' + prop.info.infolink + '">Aikataulut ja info <i class="fa fa-external-link" aria-hidden="true"></i></a></p>'
-  }
-}
-
-function cableferry(feature, map) {
-  var styler = cableferryStyler;
-  var highlightColor = feature.properties.highlightColor || styler.highlightColor;
-  var highlightWeight = feature.properties.highlightWeight || styler.highlightWeight;
-  var highlightOpacity = feature.properties.highlightOpacity || styler.highlightOpacity;
-  var visibleFrom = feature.properties.visibleFrom || styler.visibleFrom;
-
-  var coords = feature.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
-  var line = new google.maps.Polyline({
-    path: new google.maps.MVCArray(coords),
-    geodesic: false,
-    zIndex: 11,
-    strokeOpacity: 0,
-    strokeWeight: highlightWeight,
-    strokeColor: highlightColor,
-    cursor: 'context-menu',
-    icons: [{
-      icon: cableferrySymbol(),
-      offset: '0',
-      repeat: '5px'
-    }],
-    map: map
-  });
-  var description = createDescription(feature.properties);
-  line.addListener('click', function(event) {
-    select([{name: feature.properties.sname, description: description,
-      highlight: function(doHighlight) {
-        line.setOptions({strokeOpacity: doHighlight? highlightOpacity: 0});
-      }
-    }], event);
-  });
-  return {
-    hide: function(zoom, mapTypeId) {
-      line.setVisible(zoom >= visibleFrom);
     },
-    rerender: function(zoom, mapTypeId) {
-      line.setVisible(zoom >= visibleFrom);
-    }
+    showTooltip: showTooltip,
+    id: fdataObject.id
   };
 }
+
+var lineWeightUnit = 1.5;
 
 var connectionStylers = {
   "base": {
     visibleFrom: 8,
     visibleTo: 30,
-    weight: 2.5,
+    weight: 3.5 * lineWeightUnit,
     color: '#f08000',
     opacity: 0.7,
     zIndex: 10,
     highlightColor: '#f97cdc',
-    highlightWeight: 10,
-    highlightOpacity: .6
+    highlightWeight: 8,
+    highlightOpacity: .7,
+    layer: "roadferries"
   },
   "conn1": {
   },
   "conn1b": {
-    weight: 1.5,
-    zIndex: 9
+    weight: 2 * lineWeightUnit,
+    zIndex: 12
   },
   "conn2": {
-    weight: 2,
-    color: '#005dd8',
+    weight: 2.5 * lineWeightUnit,
+    color: '#005dd8'
   },
   "conn2m": {
+    weight: 2 * lineWeightUnit,
     color: '#ff7c0a',
   },
   "conn2b": {
-    weight: 1.5,
+    weight: 1.5 * lineWeightUnit,
     zIndex: 9
   },
   "conn3": {
     // visibleFrom: 9,
-    weight: 2,
+    weight: 2 * lineWeightUnit,
     color: '#e7883e',
     opacity: 1
   },
   "conn4": {
     // visibleFrom: 9,
-    weight: 1.5,
+    weight: 1.5 * lineWeightUnit,
     color: '#7fb3e8',
     opacity: 0.8,
-    zIndex: 8
+    zIndex: 8,
+    layer: "conn4"
+  },
+  "conn5": {
+    visibleFrom: 9,
+    icons: [{
+        icon: {
+        path: 'M 0,-1.5 0,1.5',
+        strokeOpacity: 1,
+        strokeColor: '#ff7c0a',
+        strokeWeight: 1 * lineWeightUnit,
+        scale: 1
+      },
+      offset: '0',
+      repeat: '8px'
+    }],
+    zIndex: 8,
+    layer: "conn5",
+    style: { color: "#ff7c0a", weight: 2, style: "dashed", opacity: 1 }
+  },
+  "cableferry": {
+    visibleFrom: 9,
+    icons: [{
+        icon: {
+        path: 0, // circle. cannot refer to google.maps.SymbolPath.CIRCLE before map has been loaded
+        strokeOpacity: 1,
+        strokeColor: '#00a050',
+        strokeWeight: 1.5 * lineWeightUnit,
+        scale: 1.5 * lineWeightUnit
+      },
+      offset: '0',
+      repeat: (3*lineWeightUnit) + 'px'
+    }],
+    highlightWeight: 10,
+    zIndex: 11,
+    layer: "roadferries",
+    style: { color: "#00a050", weight: 3*lineWeightUnit, style: "dotted", opacity: 1 },
   }
+
 };
+
+function pickProperty(name, sources) {
+  for (var i in sources) {
+    if (typeof sources[i][name] !== 'undefined') return sources[i][name];
+  }
+}
+
+function pickProperties(names, sources) {
+  var result = {};
+  names.forEach(function(name) {
+    result[name] = pickProperty(name, sources);
+  });
+  return result;
+}
+
+function addToBounds(bounds, coords) {
+  coords.forEach(function(coord) {
+    bounds.west = bounds.west? Math.min(bounds.west, coord[0]): coord[0];
+    bounds.east = bounds.east? Math.max(bounds.east, coord[0]): coord[0];
+    bounds.south = bounds.south? Math.min(bounds.south, coord[1]): coord[1];
+    bounds.north = bounds.north? Math.max(bounds.north, coord[1]): coord[1];
+  });
+}
 
 function connection(connection, map) {
   var baseStyler = connectionStylers["base"];
-  var connectionStyler = connection.properties.ssubtype? connectionStylers[connection.properties.ssubtype]: baseStyler;
+  var subtype = connection.properties.ssubtype;
+  var connectionStyler = subtype? connectionStylers[subtype]: baseStyler;
+  var layer = connectionStyler.layer || baseStyler.layer;
+  var layerSelector = function() {
+    return layers[layer]; 
+  };
 
   var legFeatures = connection.type === 'FeatureCollection'? connection.features: [connection];
-  var connectionObject = { name: shortName(connection.properties), description: connection.properties.description};
+  var connectionObject = { ref: connection.properties.ref, bounds: {} };
   var legObjects = legFeatures.map(function(leg) {
 
     var coords = leg.geometry.coordinates.map(function(coord) { return new google.maps.LatLng(coord[1], coord[0]); });
-
+    addToBounds(connectionObject.bounds, leg.geometry.coordinates);
     var legStyler = leg.properties.ssubtype? connectionStylers[leg.properties.ssubtype]: {};
-    var weight = leg.properties.weight || legStyler.weight || connection.properties.weight || connectionStyler.weight || baseStyler.weight;
-    var opacity = leg.properties.opacity || legStyler.opacity || connection.properties.opacity || connectionStyler.opacity || baseStyler.opacity;
-    var color = leg.properties.color || legStyler.color || connection.properties.color || connectionStyler.color || baseStyler.color;
-    var zIndex = leg.properties.zIndex || legStyler.zIndex || connection.properties.zIndex || connectionStyler.zIndex || baseStyler.zIndex;
-    var visibleFrom = leg.properties.visibleFrom || legStyler.visibleFrom || connection.properties.visibleFrom || connectionStyler.visibleFrom || baseStyler.visibleFrom;
-    var visibleTo = leg.properties.visibleTo || legStyler.visibleTo || connection.properties.visibleTo || connectionStyler.visibleTo || baseStyler.visibleTo;
-    var highlightColor = leg.properties.highlightColor || legStyler.highlightColor || connection.properties.highlightColor || connectionStyler.highlightColor || baseStyler.highlightColor;
-    var highlightWeight = leg.properties.highlightWeight || legStyler.highlightWeight || connection.properties.highlightWeight || connectionStyler.highlightWeight || baseStyler.highlightWeight;
-    var highlightOpacity = leg.properties.highlightOpacity || legStyler.highlightOpacity || connection.properties.highlightOpacity || connectionStyler.highlightOpacity || baseStyler.highlightOpacity;
+    var propertyNames = ["weight", "opacity", "color", "zIndex", "visibleFrom", "visibleTo", "highlightColor", "highlightWeight", "highlightOpacity", "icons"];
+    var propertySources = [leg.properties, legStyler, connection.properties, connectionStyler, baseStyler]
+    var properties = pickProperties(propertyNames, propertySources);
+    var isSelected = false;
+    connectionObject.style = connectionStyler.style || { color: properties.color, weight: properties.weight, style: "solid", opacity: properties.opacity };
 
     var line = new google.maps.Polyline({
       path: new google.maps.MVCArray(coords),
       geodesic: false,
-      strokeColor: color,
-      strokeOpacity: opacity,
-      strokeWeight: weight,
-      zIndex: zIndex,
+      strokeColor: properties.color,
+      strokeOpacity: !properties.icons? properties.opacity: 0,
+      strokeWeight: properties.weight,
+      zIndex: properties.zIndex,
       clickable: false,
+      icons: properties.icons,
       map: map
     });
     var lineb = new google.maps.Polyline({
       path: new google.maps.MVCArray(coords),
       geodesic: false,
       strokeOpacity: 0,
-      strokeWeight: highlightWeight,
-      strokeColor: highlightColor,
-      zIndex: zIndex - 1,
+      strokeWeight: properties.highlightWeight + properties.weight,
+      strokeColor: properties.highlightColor,
+      zIndex: properties.zIndex - 1,
       cursor: 'context-menu',
       map: map
     });
     var highlight = function(doHighlight) {
-      lineb.setOptions({strokeOpacity: doHighlight? highlightOpacity: 0});
+      isSelected = doHighlight;
+      lineb.setOptions({strokeOpacity: doHighlight? properties.highlightOpacity: 0});
+      rerender(map.getZoom(), map.getMapTypeId());
     };
     lineb.addListener('click', function(event) {
       select([connectionObject], event);
     });
     var rerender = function(zoom, mapTypeId) {
-      line.setVisible(zoom >= visibleFrom && zoom <= visibleTo);
-      lineb.setVisible(zoom >= visibleFrom && zoom <= visibleTo);
+      if (properties.icons) {
+        properties.icons[0].icon.strokeOpacity = layers.live? 0.4: 1;
+        line.setOptions({icons: properties.icons});
+      } else {
+        line.setOptions({strokeOpacity: layers.live? 0.2: properties.opacity});
+      }
+      var lineIsVisible = isSelected || (layerSelector() && zoom >= properties.visibleFrom && zoom <= properties.visibleTo); 
+      line.setVisible(lineIsVisible);
+      lineb.setVisible(lineIsVisible);
     }
     return {highlight: highlight, rerender: rerender };
   });
@@ -849,35 +1241,38 @@ function pin(feature, map) {
       marker.setVisible(false);
     },
     rerender: function(zoom, mapTypeId) {
-      marker.setVisible(zoom >= 11);
+      marker.setVisible(layers.distances && zoom >= 11);
     }
   };
 }
 
 var areaStylers = {
+  "base": {
+    labelVisibleFrom: 9,
+    labelVisibleTo: 30,
+    longNameFrom: 9
+  },
   "province": {
-    labelVisibleFrom: 1,
+    labelVisibleFrom: 5,
     labelVisibleTo: 10
   },
   "mun1": {
     labelVisibleFrom: 1,
-    labelVisibleTo: 30
   },
   "mun2": {
     labelVisibleFrom: 8,
-    labelVisibleTo: 30
   },
   "island1": {
     labelVisibleFrom: 9,
-    labelVisibleTo: 30
   },
 };
 
 function area(feature, map) {
+  var baseStyler = areaStylers["base"];
   var styler = areaStylers[feature.properties.ssubtype];
-  var labelVisibleFrom = feature.properties.labelVisibleFrom || styler.labelVisibleFrom;
-  var labelVisibleTo = feature.properties.labelVisibleTo || styler.labelVisibleTo;
-  var longNameFrom = feature.properties.longNameFrom || styler.longNameFrom || 9;
+  var propertyNames = ["labelVisibleFrom", "labelVisibleTo", "longNameFrom"];
+  var propertySources = [feature.properties, styler, baseStyler];
+  var properties = pickProperties(propertyNames, propertySources);
   var coords = feature.geometry.coordinates;
   var position = new google.maps.LatLng(coords[1], coords[0]);
   var shortName_ = shortName(feature.properties);
@@ -890,11 +1285,11 @@ function area(feature, map) {
       longName_ = longName(feature.properties).replace('/', '<br/>');
     },
     hide: function(zoom) {
-      if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo) label.show(); else label.hide();
+      if (zoom >= properties.labelVisibleFrom && zoom <= properties.labelVisibleTo) label.show(); else label.hide();
     },
     rerender: function(zoom, mapTypeId) {
-      label.setInnerHTML(zoom >= longNameFrom? longName_: shortName_);
-      if (zoom >= labelVisibleFrom && zoom <= labelVisibleTo) label.show(); else label.hide();      
+      label.setInnerHTML(zoom >= properties.longNameFrom? longName_: shortName_);
+      if (zoom >= properties.labelVisibleFrom && zoom <= properties.labelVisibleTo && ["roadmap", "hybrid", "terrain", "satellite"].indexOf(mapTypeId)>=0) label.show(); else label.hide();      
     }
   };
 }
@@ -922,7 +1317,7 @@ function box(feature, map) {
       box.hide();
     },
     rerender: function(zoom, mapTypeId) {
-      if (zoom >= visibleFrom && zoom <= visibleTo) box.show(); else box.hide();
+      if (layers.distances && zoom >= visibleFrom && zoom <= visibleTo) box.show(); else box.hide();
     }
   };
 }
@@ -932,7 +1327,6 @@ var renderers = {
   route: route,
   border: border,
   pier: pier,
-  cableferry: cableferry,
   connection: connection,
   area: area,
   box: box,
@@ -942,7 +1336,8 @@ var renderers = {
 var objects = [];
 var prevRerender = "";
 var hidden = true;
-var prevRenderZoom = 0; 
+var prevRenderZoom = 0;
+
 function rerender(map, force) {
   var zoom = map.getZoom();
   var mapTypeId = map.getMapTypeId();
@@ -950,9 +1345,10 @@ function rerender(map, force) {
   if (prevRerender === newRerender && !force) return;
   prevRerender = newRerender;
   var t0 = new Date().getTime();
-  console.log('rerender started at', newRerender);
+  // console.log('rerender started at', newRerender);
   objects.forEach(function(object){ object.rerender(zoom, mapTypeId); }); 
-  console.log('rerender finished at', zoom, 'in', new Date().getTime() - t0, 'ms');
+  if (lauttaLegs) lauttaLegs.forEach(function(leg) { leg.rerender(zoom, mapTypeId); });
+  // console.log('rerender finished at', zoom, 'in', new Date().getTime() - t0, 'ms');
   hidden = false;
   prevRenderZoom = zoom;
 }
@@ -960,11 +1356,11 @@ function rerender(map, force) {
 function hideObjects(map) {
   if (hidden) return;
   var zoom = map.getZoom();
-  // if (zoom > prevRenderZoom) return; // hide only when zooming out
+  if (zoom == prevRenderZoom) return;
   var t0 = new Date().getTime();
-  console.log('hide started');
+  // console.log('hide started');
   objects.forEach(function(object){ if (object.hide) object.hide(); }); 
-  console.log('hide finished in', new Date().getTime() - t0, 'ms');
+  // console.log('hide finished in', new Date().getTime() - t0, 'ms');
   hidden = true;
 }
 
@@ -978,13 +1374,19 @@ function renderData(data, map) {
   });
 }
 
+function receiveFData(fdata, fgeojson, messages) {
+  fgeojson.forEach(function(data) {
+    renderData(data, map);
+  });
+  initRoutes();
+}
+
 var mapOptions = {
   center: {lat: 60.25, lng: 21.25},
   zoom: 9,
   minZoom: 4,
-  maxZoom: 17,
+  maxZoom: 15,
   mapTypeControl: false,
-  // mapTypeId: google.maps.MapTypeId.TERRAIN,
   fullscreenControl: false,
   streetViewControl: false,
   gestureHandling: 'greedy',
@@ -1000,11 +1402,13 @@ function resetMap() {
 }
 
 var lauttaRoutes;
+var lauttaLegs;
+
+var latestHandledMapClickAt = 0;
 
 function initMap() {
 
   var data = {};
-  lbls.init('canvas');
   txtol.init();
 
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -1017,36 +1421,25 @@ function initMap() {
   updateMapStyles();
   map.addListener('zoom_changed', updateMapStyles);
 
-  var loaded = 0;
-  $.get('/data/saaristo.json', function(data) {
-    renderData(data, map);
-    if (++loaded >= 3) rerender(map, true);
-  });
-
-  $.get('/data/roads.json', function(data) {
-    renderData(data, map);
-    if (++loaded >= 3) rerender(map, true);
-  });
-
-  $.get('/data/routes.json', function(data) {
-    renderData(data, map);
-    if (++loaded >= 3) rerender(map, true);
-  });
+  getFData(receiveFData);
 
   var oldZoom = map.getZoom();
   map.addListener('zoom_changed', function() {
     var newZoom = map.getZoom();
-    console.log('zoom_changed: ', oldZoom, newZoom);
+    // console.log('zoom_changed: ', oldZoom, newZoom);
     oldZoom = newZoom;
   });
   
   map.addListener('zoom_changed',function() {
+    cancelHeaderBarToggle();
     hideObjects(map);
     setTimeout(function() { rerender(map); }, 50);
   });
 
   map.addListener('maptypeid_changed',function () {
-    rerender(map);
+    $(".map").toggleClass("satellite", map.getMapTypeId() == 'satellite' || map.getMapTypeId() == 'hybrid');
+    updateMapStyles();
+    rerender(map, true);
   });
 
   addMapListeners(map);
@@ -1056,211 +1449,299 @@ function initMap() {
     disableAutoPan: true
   });
 
-  map.addListener('click', function() {
-    // hack to prevent closing tooltip or unselecting when opening tooltip. event.stopPropagation had no desired effect.
-    var now = new Date().getTime();
-    if (!tooltip.openedAt || now - tooltip.openedAt > 200) {
-      tooltip.close();
-      unselectAll();
-    }
+  initMapTypes(map);
+
+  initLayers(map);
+}
+
+function initLayers(map) {
+  // console.log(layers);
+  for (var layer in layers) {
+    if (layers.hasOwnProperty(layer) && layers[layer] && onLayersChange[layer]) onLayersChange[layer](map, true);
+  }
+}
+
+LIVE_MIN_ZOOM = 8;
+LIVE_LABEL_MIN_ZOOM = 9;
+var liveInterval = null;
+
+function toggleLiveLayer(enable) {
+  // console.log('toggleLiveLayer', enable);
+
+  if (liveInterval) {
+    clearInterval(liveInterval);
+    liveInterval = null;
+  }
+
+  if (enable) {
+    loadLiveData(map);
+    liveInterval = setInterval(function() { loadLiveData(map); }, 10000);
+  } else {
+    map.data.forEach(function(feature) {
+      map.data.remove(feature);
+    });
+    Object.values(vesselLabels).forEach(function(l) { l.hide(); });
+  }
+
+  map.data.setStyle(function(feature) {
+    var isVessel = feature.getGeometry().getType() == 'Point';
+    var isVisible = map.getZoom() >= LIVE_MIN_ZOOM;
+    var isLabelVisible = map.getZoom() >= LIVE_LABEL_MIN_ZOOM;
+    if (isVessel) updateVesselLabel(map, feature, isLabelVisible);
+    return {
+      visible: isVisible,
+      strokeColor: '#a0a0a0',
+      strokeWeight: 0.5,
+      icon: isVisible && isVessel? createVesselIcon(feature): null,
+      zIndex: isVessel? 100: 99,
+      clickable: false
+    };
   });
 
-  // ----------
+}
 
-  var lauttaLegs = [
-  { id: 1, name: 'Naantali - Airisto', 
-  path: "22.0399475,60.4572178,0.0 22.0845795,60.4426562,0.0 22.077713,60.4307989,0.0 22.1003723,60.3836657,0.0" },
-  { id: 2, name: "Turku - Airisto",
-  path: "22.219162,60.4370668,0.0 22.1728134,60.420971,0.0 22.1525574,60.4218183,0.0 22.1285248,60.4143609,0.0 22.1003723,60.3836657,0.0" },
-  { id: 3, name: "Airisto - Järsö",
-  path: "22.1003723,60.3836657,0.0 22.0124817,60.2759193,0.0 21.5132904,60.1995684,0.0 21.2255859,60.1001145,0.0 20.6433105,60.1014836,0.0 20.5176544,60.1309056,0.0 20.3768921,60.0949798,0.0" },
-  { id: 4, name: "Järsö - Långnäs",
-  path: "20.3768921,60.0949798,0.0 20.2997518,60.1170478,0.0" },
-  { id: 5, name: "Järsö - Herröskatan",
-  path: "20.1375961,59.9568151,0.0 20.185318,59.9679858,0.0 20.2611923,60.0075683,0.0 20.3768921,60.0949798,0.0" },
-  { id: 6, name: "Herröskatan - Mariehamn",
-  path: "19.9276543,60.0920271,0.0 19.9265383,60.0896932,0.0 19.9267959,60.0724635,0.0 19.9263668,60.0541738,0.0 19.9403572,60.0321012,0.0 19.9405289,60.0009602,0.0 20.0013828,59.971551,0.0 20.0325394,59.9568581,0.0 20.1375961,59.9568151,0.0" },
-  { id: 7, name: "Herröskatan - Helsinki",
-  path: "20.1375961,59.9568151,0.0 20.1618004,59.9589636,0.0 20.1935577,59.9587917,0.0 20.3082275,59.9231945,0.0 20.5149078,59.8009796,0.0 21.6616058,59.7044776,0.0 23.6027527,59.7256004,0.0 24.8881531,59.9869673,0.0 24.9904633,60.1510752,0.0 24.9568176,60.1661089,0.0" },
-  { id: 8, name: "Herröskatan - Fejan",
-  path: "19.1717434,59.7310521,0.0 19.342804,59.7643486,0.0 20.1375961,59.9568151,0.0" },
-  { id: 9, name: "Mariehamn - Fejan",
-  path: "19.1717434,59.7310521,0.0 19.3379974,59.766596,0.0 19.5910263,59.8808408,0.0 19.8796749,60.0355309,0.0 19.9230194,60.0727205,0.0 19.924907,60.090806,0.0 19.9276543,60.0920271,0.0" },
-  { id: 10, name: "Fejan - Kapellskär",
-  path: "19.0666008,59.722831,0.0 19.0717506,59.7218789,0.0 19.1717434,59.7310521,0.0" },
-  { id: 11, name: "Fejan - Stockholm",
-  path: "18.2084656,59.3335396,0.0 18.2654572,59.3583959,0.0 18.2984161,59.3772885,0.0 18.3746338,59.3695928,0.0 18.4384918,59.3531461,0.0 18.4501648,59.3580459,0.0 18.4501648,59.3975688,0.0 18.3904266,59.4325064,0.0 18.3952332,59.4391405,0.0 18.4309387,59.4461223,0.0 18.453598,59.4841479,0.0 18.5572815,59.5336217,0.0 18.6602783,59.5684189,0.0 18.7447357,59.5826754,0.0 18.9541626,59.6698211,0.0 19.0447998,59.6975491,0.0 19.1717434,59.7310521,0.0" },
-  { id: 12, name: "Stockholm Värtan",
-  path: "18.108902,59.3503459,0.0 18.1281281,59.3505209,0.0 18.1614304,59.3380922,0.0 18.2084656,59.3335396,0.0" },
-  { id: 13, name: "Stockholm Stadsgården",
-  path: "18.0965424,59.3170755,0.0 18.1075287,59.318477,0.0 18.1597137,59.3205792,0.0 18.2084656,59.3335396,0.0" },
-  { id: 14, name: "Grisslehamn - Eckerö",
-  path: "19.5357513,60.2258341,0.0 19.5304298,60.2283061,0.0 19.5201302,60.226857,0.0 19.4531822,60.1805383,0.0 18.8297379,60.094225,0.0 18.8154602,60.0981463,0.0" },
-  ];
+vesselLabels = {};
 
-  var lauttaRoutesList = [
-  { sname: "Turku - Maarianhamina/Långnäs - Tukholma", 
-    sname_sv: "Åbo - Mariehamn/Långnäs - Stockholm",
-    sname_en: "Turku - Mariehamn/Långnäs - Stockholm",
-    operators: ["Viking"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 13],
-    description_fi: "2 kertaa päivässä, kesto n. 11 tuntia",
-    description_sv: "2 gånger om dagen, längd ca 11 timmar",
-    description_en: "twice a day, duration about 11 hours"},
-  { sname: "Turku - Maarianhamina/Långnäs - Tukholma", 
-    sname_sv: "Åbo - Mariehamn/Långnäs - Stockholm",
-    sname_en: "Turku - Mariehamn/Långnäs - Stockholm",
-    operators: ["Silja"], legs: [2, 3, 4, 5, 6, 8, 9, 11, 12],
-    description_fi: "2 kertaa päivässä, kesto n. 11 tuntia",
-    description_sv: "2 gånger om dagen, längd ca 11 timmar",
-    description_en: "twice a day, duration about 11 hours"},
-  { sname: "Helsinki - Maarianhamina - Tukholma",
-    sname_sv: "Helsingfors - Mariehamn - Stockholm",
-    sname_en: "Helsinki - Mariehamn - Stockholm",
-    operators: ["Viking"], legs: [7, 6, 9, 11, 13],
-    description_fi: "kerran päivässä, kesto n. 17,5 tuntia",
-    description_sv: "en gång om dagen, längd ca 17,5 timmar",
-    description_en: "once a day, duration about 17,5 hours"},
-  { sname: "Helsinki - Maarianhamina - Tukholma",
-    sname_sv: "Helsingfors - Mariehamn - Stockholm",
-    sname_en: "Helsinki - Mariehamn - Stockholm",
-    operators: ["Silja"], legs: [7, 6, 9, 11, 12],
-    description_fi: "kerran päivässä, kesto n. 17,5 tuntia",
-    description_sv: "en gång om dagen, längd ca 17,5 timmar",
-    description_en: "once a day, duration about 17,5 hours"},
-  { sname: "Mariehamn - Stockholm",
-    sname_fi: "Maarianhamina - Tukholma",
-    operators: ["Viking"], legs: [9, 11, 13],
-    description_fi: "kerran päivässä, kesto 7-12 tuntia",
-    description_sv: "en gång om dagen, längd 7-12 timmar",
-    description_en: "once a day, duration 7-12 hours"},
-  { sname: "Kapellskär - Mariehamn",
-    sname_fi: "Kapellskär - Maarianhamina",
-    operators: ["Viking"], legs: [9, 10],
-    description_fi: "2-3 kertaa päivässä, kesto n. 2,5 tuntia, linja-autoyhteys Tukholmaan",
-    description_sv: "2-3 gånger om dagen, längd ca 2,5 timmar, bussförbindelse till Stockholm",
-    description_en: "2-3 times a day, duration about 2.5 hours, bus connection to Stockholm"},
-  { sname: "Eckerö - Grisslehamn", operators: ["Eckerolinjen"], legs: [14],
-    description_fi: "2-3 kertaa päivässä, kesto n. 2 tuntia",
-    description_sv: "2-3 gånger om dagen, längd ca 2 timmar",
-    description_en: "2-3 times a day, duration about 2 hours"},
-  { sname: "Naantali - Långnäs - Kapellskär",
-    sname_sv: "Nådendal - Långnäs - Kapellskär",
-    operators: ["Finnlines"], legs: [1, 3, 4, 5, 8, 10],
-    description_fi: "2 kertaa päivässä, kesto n. 8,5 tuntia",
-    description_sv: "2 gånger om dagen, längd ca 8,5 timmar",
-    description_en: "twice a day, duration about 8.5 hours"},
-  ];
+function loadLiveData(map) {
+  map.data.loadGeoJson('/livedata.json', {idPropertyName: "mmsi"});
+  map.data.loadGeoJson('/livehistory.json');
+}
 
-  var operators = {
-    Viking: {name: "Viking Line", logo: "img/vikingline.png", height: 15, link: "https://www.vikingline.fi/"},
-    Silja: {name: "Tallink / Silja Line", logo: "img/siljaline.png", height: 20, link: "https://www.tallinksilja.fi/"},
-    Finnlines: {name: "Tallink / Silja Line", logo: "img/finnlines.png", height: 20, link: "https://www.finnlines.com/"},
-    Eckerolinjen: {name: "Eckerölinjen", logo: "img/eckerolinjen.png", height: 20, link: "https://www.eckerolinjen.ax/"}
+function updateVesselLabel(map, feature, isVisible) {
+    var vessel = feature.getProperty("vessel");
+    var speed = feature.getProperty("sog");
+    var name = vessel.name;
+    var mmsi = vessel.mmsi;
+    var position = feature.getGeometry().get();
+    var classes = "vessel" + (speed <= 0.1? " stopped": "");
+    var label;
+    if (vesselLabels[mmsi]) {
+      label = vesselLabels[mmsi];
+      label.setPosition(position);
+      label.setClass(classes);
+      label.draw();
+    } else {
+      label = new txtol.TxtOverlay(position, name, classes, map, {dir: 'NW', x: -5, y: -5});
+      vesselLabels[mmsi] = label;
+    }
+    if (isVisible) label.show(); else label.hide();
+}
+
+function createVesselIcon(feature) {
+  var speed = feature.getProperty("sog");
+  var color = map.getMapTypeId() == 'satellite'? '#80b0a0': '#a030ff';
+  var hasSpeed = speed > 0.1;
+  var scale = hasSpeed? 3: 2;
+  var rotation = hasSpeed? feature.getProperty("cog"): 45;
+  var path = hasSpeed? "M -1 2 L -1 -2 0 -3 1 -2 1 2 0 1 -1 2": "M -1 -1 L 1 -1 1 1 -1 1 -1 -1";
+  return {
+    path: path,
+    rotation: rotation,
+    strokeWeight: 1,
+    strokeColor: color,
+    fillColor: color,
+    fillOpacity: 0.6,
+    scale: scale * (map.getZoom() < 9? 0.6: map.getZoom()/10) 
   };
+}
 
-  // Define a symbol using SVG path notation, with an opacity of 1.
-  var lauttaLineSymbol = {
-    path: 'M 0,-1 0,1',
-    strokeOpacity: 0.4,
-    strokeColor: '#d00000',
-    scale: 1
-  };
+function initMapTypes(map) {
 
-  var lauttaLineSymbolDimmed = {
-    path: 'M 0,-1 0,1',
-    strokeOpacity: 0.25,
-    strokeColor: '#d00000',
-    scale: 1
-  };
+  function createGetMMLTileUrl(tileDir) {
+    return function(coord, zoom) {
+      var tilesPerGlobe = 1 << zoom;
+      var x = coord.x % tilesPerGlobe;
+      if (x < 0) x = tilesPerGlobe+x;
 
-  function Leg(object) {
-    this.id = object.id;
-    this.name = object.name;
-    this.path = object.path.split(" ").map(function(coord) {
-      var latLong = coord.split(","); 
-      return new google.maps.LatLng(parseFloat(latLong[1]), parseFloat(latLong[0])); 
-    });
-    this.line = new google.maps.Polyline({
-      path: new google.maps.MVCArray(this.path),
-      zIndex: 1,
-      strokeOpacity: 0,
-      strokeWeight: 15,
-      icons: [{
-        icon: lauttaLineSymbol,
-        offset: '4',
-        repeat: '4px'
-      }],
-      cursor: 'context-menu',
-      map: map
-    });
-    this.highlightLine = new google.maps.Polyline({
-      path: new google.maps.MVCArray(this.path),
-      zIndex: 0,
-      strokeOpacity: 0.7,
-      strokeWeight: 7,
-      strokeColor: '#e0b0d0',
-      visible: false,
-      map: map,
-    });
-    this.routes = [];
-    var that = this;
-    this.line.addListener('click', function(event) {
-      select(that.routes, event);
-    });
-    this.rerender = function(zoom, mapTypeId) {
-      this.line.setVisible(zoom >= 7 && zoom <= 11);
-      this.line.setOptions({icons: [{
-        icon: zoom <= 9? lauttaLineSymbol: lauttaLineSymbolDimmed,
-        offset: '4',
-        repeat: '4px'
-      }]})
-      if (!this.line.getVisible()) this.highlightLine.setVisible(false);
+      x0 = ((x+1) << (15-zoom)) - 1
+      x1 = x << (15-zoom)
+      y0 = ((coord.y+1) << (15 - zoom)) - 1
+      y1 = coord.y << (15 - zoom)
+
+      if (zoom < 8 || x0 < 18154 || x1 >= 18528 || y0 < 9376 || y1 >= 9568)
+        return "http://tile.openstreetmap.org/" + zoom + "/" + x + "/" + coord.y + ".png";
+      else
+        return "http://tiles.saaristolautat.fi/" + tileDir + "/" + zoom + "/" + x + "/" + coord.y + ".png";
     }
   }
 
-  Leg.prototype.highlight = function(doHighlight) {
-    this.highlightLine.setVisible(doHighlight);
+  var copyrights = {
+    MML: 'Taustakartan aineisto <a href="http://www.maanmittauslaitos.fi/" target="_blank">Maanmittauslaitos</a> 12/2017',
+    OSM: '© <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
   }
 
-  Leg.prototype.addRoute = function(route) {
-    this.routes.push(route);
+  var mapTypeCopyrights = {
+    MMLTAUSTA: copyrights.OSM + ", " + copyrights.MML,
+    MMLMAASTO: copyrights.OSM + ", " + copyrights.MML,
+    OSM: copyrights.OSM
   }
 
-  function Route(object) {
-    this.operators = object.operators;
-    this.legs = object.legs.map(function(id) { return lauttaLegIndex[id]; });
-    this.init = function() {
-      this.name = shortName(object);
-      this.description = this.operators.map(function(operator) {
-        var op = operators[operator];
-        return shortName(object) + ', ' + description(object) + '&nbsp;&nbsp; <a href="' + op.link + '" target="info"><img src="' + operators[operator].logo + '" height="' + op.height + '"/></a>' ;
-      }).join(" ");
-    }
-    this.init();
-  }
+  function setCopyrights(innerHTML) {
+    if (!innerHTML) innerHTML = ""
 
-  Route.prototype.highlight = function(doHighlight) {
-    this.legs.forEach(function(leg) { leg.highlight(doHighlight); });
-  }
+    var control = map.controls[google.maps.ControlPosition.BOTTOM_RIGHT];
+    if (control.getLength() > 0) control.pop();
 
-  var lauttaLegs =
-  lauttaLegs.map(function(leg) {
+    var outerdiv = document.createElement("div");
+    outerdiv.style.fontSize = "11px";
+    outerdiv.style.whiteSpace = "nowrap";
+    outerdiv.style.padding = "2px";
+    var copyright = document.createElement("span");
+    copyright.style.color = "#000";
+    copyright.style.background="#fff";
+    copyright.style.opacity =0.8;
+    copyright.innerHTML = innerHTML;
+    outerdiv.appendChild(copyright);
+    control.push(outerdiv);
+  }  
+
+  //Define OSM map type pointing at the OpenStreetMap tile server
+  map.mapTypes.set("OSM", new google.maps.ImageMapType({
+    getTileUrl: function(coord, zoom) {
+      var tilesPerGlobe = 1 << zoom;
+      var x = coord.x % tilesPerGlobe;
+      if (x < 0) {
+        x = tilesPerGlobe+x;
+      }
+
+      return "http://tile.openstreetmap.org/" + zoom + "/" + x + "/" + coord.y + ".png";
+    },
+    tileSize: new google.maps.Size(256, 256),
+    name: "OpenStreetMap",
+    maxZoom: 15
+  }));
+
+  //Define OSM map type pointing at the OpenStreetMap tile server
+  map.mapTypes.set("MMLTAUSTA", new google.maps.ImageMapType({
+    getTileUrl: createGetMMLTileUrl("taustakartta"),
+    tileSize: new google.maps.Size(256, 256),
+    name: "MML tausta",
+    minZoom: 4,
+    maxZoom: 15,
+    opacity: 1
+  }));
+
+
+  //Define OSM map type pointing at the OpenStreetMap tile server
+  map.mapTypes.set("MMLMAASTO", new google.maps.ImageMapType({
+    getTileUrl: createGetMMLTileUrl("peruskartta"),
+    tileSize: new google.maps.Size(256, 256),
+    name: "MML maasto",
+    minZoom: 4,
+    maxZoom: 15,
+    opacity: 1,
+    copyright: "testi"
+  }));
+
+  map.addListener('maptypeid_changed', function() {
+    setCopyrights(mapTypeCopyrights[map.getMapTypeId()]);
+  });
+}
+
+// ----------
+
+var lauttaLineSymbol = {
+  path: 'M 0,-1 0,1',
+  strokeOpacity: 0.4,
+  strokeColor: '#e08080',
+  scale: 1.5
+};
+
+var lauttaLineSymbolDimmed = {
+  path: 'M 0,-1 0,1',
+  strokeOpacity: 0.4,
+  strokeColor: '#d00000',
+  scale: 1
+};
+
+function Leg(object) {
+  this.id = object.id;
+  this.name = object.name;
+  this.path = object.path.split(" ").map(function(coord) {
+    var latLong = coord.split(","); 
+    return new google.maps.LatLng(parseFloat(latLong[1]), parseFloat(latLong[0])); 
+  });
+  this.isSelected = false;
+  this.line = new google.maps.Polyline({
+    path: new google.maps.MVCArray(this.path),
+    zIndex: 1,
+    strokeOpacity: 0,
+    strokeWeight: 15,
+    icons: [{
+      icon: lauttaLineSymbol,
+      offset: '4',
+      repeat: '4px'
+    }],
+    cursor: 'context-menu',
+    map: map
+  });
+  this.highlightLine = new google.maps.Polyline({
+    path: new google.maps.MVCArray(this.path),
+    zIndex: 0,
+    strokeOpacity: 0.7,
+    strokeWeight: 7,
+    strokeColor: '#f97cdc',
+    visible: false,
+    map: map,
+  });
+  this.routes = [];
+  var that = this;
+  this.line.addListener('click', function(event) {
+    select(that.routes, event);
+  });
+  this.rerender = function(zoom, mapTypeId) {
+    this.line.setVisible(this.isSelected || (layers.longdistanceferries && zoom >= 7 && zoom <= 11));
+    this.line.setOptions({icons: [{
+      icon: zoom <= 9? lauttaLineSymbol: lauttaLineSymbolDimmed,
+      offset: '4',
+      repeat: '4px'
+    }]})
+    if (!this.line.getVisible()) this.highlightLine.setVisible(false);
+  }
+}
+
+Leg.prototype.highlight = function(doHighlight) {
+  this.isSelected = doHighlight;
+  this.highlightLine.setVisible(doHighlight);
+}
+
+Leg.prototype.addRoute = function(route) {
+  this.routes.push(route);
+}
+
+function Route(object) {
+  this.operators = object.operators;
+  this.legs = object.legs.map(function(id) { return lauttaLegIndex[id]; });
+  this.id = object.id;
+  this.init = function() {
+    this.name = shortName(object);
+    this.details = description(object);
+    this.operatorId = this.operators[0];
+    this.operator = fdata.lauttaOperators[this.operatorId];
+    this.style = { color: "#e08080", weight: 1.5, style: "dotted", opacity: .7 };
+  }
+  this.init();
+}
+
+Route.prototype.highlight = function(doHighlight) {
+  this.legs.forEach(function(leg) { leg.highlight(doHighlight); });
+}
+
+Route.prototype.rerender = function(zoom, mapTypeId) {
+  this.legs.forEach(function(leg) { leg.rerender(zoom, mapTypeId); });
+}
+
+function initRoutes() {
+  lauttaLegs = fdata.lauttaLegs.map(function(leg) {
     return new Leg(leg);
-  });
-
-  map.addListener('zoom_changed', function() {
-    var zoom = map.getZoom();
-    var mapTypeId = map.getMapTypeId();
-    lauttaLegs.forEach(function(leg) { leg.rerender(zoom, mapTypeId); });
   });
 
   lauttaLegIndex = {};
   lauttaLegs.forEach(function(leg) { lauttaLegIndex[leg.id] = leg});
 
-  lauttaRoutes = lauttaRoutesList.map(function(route) {
+  lauttaRoutes = fdata.lauttaRoutes.map(function(route) {
     route = new Route(route);
     route.legs.forEach(function(leg) { leg.addRoute(route); });
     return route;
-  });
-
+  });  
 }

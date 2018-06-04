@@ -18,6 +18,24 @@
     {
       "type": "Feature",
       "properties": {
+        "sname": "Turun<br>saaristo",
+        "sname_sv": "Åbolands<br>skärgård",
+        "sname_en": "Turku<br>Archipelago",
+        "stype": "area",
+        "ssubtype": "mun1",
+        "labelVisibleFrom": 6,
+        "labelVisibleTo": 7,
+        "labelAnchor": {"dir": "C", "x":0 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [21.625112, 60.064714],
+        "type": "Point"
+      },
+      "id": "200bcc3e536038d6624ff8ccc5513627"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stype": "border",
         "sname": "Ahvenanmaa"
       },
@@ -43,7 +61,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Krok",
+        "ref": "Krok",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
       },
@@ -330,7 +348,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Innamo",
+        "ref": "Innamo",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -344,7 +362,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Aspholm",
+        "ref": "Aspholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "SE", "x":5 , "y":5 }
       },
@@ -358,7 +376,21 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Åva",
+        "ref": "Stenholm",
+        "ssubtype": "4",
+        "labelAnchor": {"dir": "W", "x":-5 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [22.164897, 60.170458],
+        "type": "Point"
+      },
+      "id": "01e9e9543673b7a31c933ad76cbdf3f7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Åva",
         "ssubtype": "2",
         "labelAnchor": {"dir": "W", "x":-10 , "y":0 }
       },
@@ -372,7 +404,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Svinö",
+        "ref": "Svinö",
         "ssubtype": "2",
         "labelAnchor": {"dir": "S", "x":0 , "y":7 }
       },
@@ -386,7 +418,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Vänoxa släten (Bergö)",
+        "ref": "Vänoxasläten",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -400,7 +432,7 @@
       "type": "Feature",
       "properties": {
         "stype": "area", "ssubtype": "island1",
-        "sname": "Kopparholm",
+        "ref": "Kopparholm",
         "labelVisibleTo": -1,
         "labelAnchor": {"dir": "N", "x":0 , "y":0 }
       },
@@ -414,7 +446,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Degerby",
+        "ref": "Degerby",
         "ssubtype": "2",
         "labelAnchor": {"dir": "SW", "x":5 , "y":7 }
       },
@@ -428,7 +460,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Grötö",
+        "ref": "Grötö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -456,12 +488,432 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Stora Ängesö",
+        "ref": "Ängesö",
         "ssubtype": "4",
-        "labelAnchor": {"dir": "N", "x":-15 , "y":-5 }
+        "labelAnchor": {"dir": "NW", "x":-5 , "y":-5 }
       },
       "geometry": {
-        "coordinates": [22.505796, 59.949906 ],
+        "coordinates": [22.506408, 59.949735],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Seglinge",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.710151, 60.215518 ],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Finholma",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.526409, 60.074604 ],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Jyddö",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.527128, 60.076483 ],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Norrboda",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.289602, 60.153104],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Ängö",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.294537, 60.154129],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Prästö",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.2722, 60.207997],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Töftö",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.277661, 60.20571],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Sandö",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.372257, 60.322485],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Simskäla",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.365369, 60.331536],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "LappoL",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.952172, 60.311419],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "BjörköK",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [20.941593, 60.311052],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "BjörköH",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.405916, 60.265682],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "MossalaE",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.406002, 60.268705],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Kivimo",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.335631, 60.235044],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "NäsbyI",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.39553, 60.217457 ],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Saverkeit",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.403148, 60.216807],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "PalvaI",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.67566, 60.46787],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "PalvaL",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.648259, 60.461174],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Velkuanmaa",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.6365, 60.455059],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Högsåra",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.369194, 59.954602],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Våno",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.303866, 60.216839],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Mielisholm",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.306484, 60.215294],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Ängholm",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.880308, 60.167007],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Grännäs",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [21.878919, 60.169672],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Sorpo",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.281830, 60.150910],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Jermo",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.285522, 60.150366],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Angelniemi",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.943916, 60.312752],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    }, 
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Kokkila",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.943401, 60.318236],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Ulkoluoto",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.915098, 60.041173],
+        "type": "Point"
+      },
+      "id": "07550b11ceb54e368bb405ce2d50cd42"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Pettu",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
+      },
+      "geometry": {
+        "coordinates": [22.92293, 60.038488],
         "type": "Point"
       },
       "id": "07550b11ceb54e368bb405ce2d50cd42"
@@ -475,7 +927,7 @@
         "labelAnchor": {"dir": "N", "x":0 , "y":0 }
       },
       "geometry": {
-        "coordinates": [21.687526, 59.908264 ],
+        "coordinates": [21.687526, 59.908264],
         "type": "Point"
       },
       "id": "07833a142f87bc21bfb438e637b53ddf"
@@ -484,7 +936,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Berghamn",
+        "ref": "Berghamn",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -511,11 +963,10 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Nagu - Korpo",
-        "sname_fi": "Nauvo - Korppoo",
-        "visibleFrom": 8,
-        "description": "<p><a class=\"tel\" href=\"tel:+358400864268\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 864 268</a> <a class=\"tel\" href=\"tel:+358400882614\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 882 614</a></p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Pärnäs/Pärnäinen (Nauvo), Retais (Korppoo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "nagukorpo",
+        "visibleFrom": 8
       },
       "geometry": {
         "coordinates": [[21.69141, 60.165927 ], [21.704714, 60.163792 ] ],
@@ -526,7 +977,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Kälö",
+        "ref": "Kälö",
         "stype": "pier",
         "ssubtype": "4",
         "labelVisibleFrom": 10,
@@ -572,7 +1023,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Biskopsö",
+        "ref": "Biskopsö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -586,7 +1037,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Södö",
+        "ref": "Södö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -600,7 +1051,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Botesö",
+        "ref": "Botesö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "SW", "x":0 , "y":5 }
       },
@@ -614,7 +1065,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Talosmeri",
+        "ref": "Talosmeri",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
       },
@@ -642,27 +1093,15 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Ängösundslinjen",
-        "description": "<p><a class=\"tel\" href=\"tel:+3584575295082\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 529 5082</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Ängö (itä), Norrboda (länsi)</p><p>Liikennöi tarvittaessa 6.00-22.00, yöllä vain etukäteistilauksesta, tauot Ängössä: 11.00-11.30, 19.00-19.30</p><p><a target=\"ango\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "angosundslinjen"
       },
       "geometry": {
         "coordinates": [[20.289602, 60.153104 ], [20.294537, 60.154129 ] ],
         "type": "LineString"
       },
       "id": "1541b9d959ee77b186407b1b7bfa22b1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "stype": "",
-        "sname": "Kemiöns1"
-      },
-      "geometry": {
-        "coordinates": [22.607116, 60.114145 ],
-        "type": "Point"
-      },
-      "id": "160d3613cc69b9f08dd1f710c012fb8b"
     },
     {
       "type": "Feature",
@@ -695,7 +1134,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Pensar I",
+        "ref": "PensarI",
         "ssubtype": "4",
         "labelAnchor": {"dir": "S", "x":-10 , "y":5 }
       },
@@ -709,7 +1148,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Teersalo",
+        "ref": "Teersalo",
         "ssubtype": "3",
         "markerVisibleFrom": 12,
         "labelAnchor": {"dir": "E", "x":7 , "y":3 }
@@ -724,7 +1163,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Pähkinäinen",
+        "ref": "Pähkinäinen",
         "ssubtype": "4",
         "labelAnchor": {"dir": "S", "x":0 , "y":5 }
       },
@@ -751,17 +1190,10 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Pargas - Nagu",
-        "sname_fi": "Parainen - Nauvo",
-        "visibleFrom": 8,
-        "description": "<p><a class=\"tel\" href=\"tel:+3580400127999\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 127 999</a>, <a class=\"tel\" href=\"tel:+358400110114\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 110 114</a>, <a class=\"tel\" href=\"tel:+3580400152326\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 152 326</a>, <a class=\"tel\" href=\"tel:+358400382114\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 382 114</a></p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Lillmälö (Parainen), Prostvik (Nauvo)</p><p>Liikennöi aikataulun mukaan 15-60 minuutin välein.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
-        "info1": {
-          "name": "Parainen - Nauvo",
-          "phone": ["+358 400 127999", "+358 400 110114", "+358 400 152326", "+358 400 382114"],
-          "descr": "<i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Lillmälö (Parainen), Prostvitk (Nauvo)<br>Liikennöi aikataulun mukaan 15-60 minuutin välein.",
-          "infolink": "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html"        
-        }
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "pargasnagu",
+        "visibleFrom": 8
       },
       "geometry": {
         "coordinates": [[22.097969, 60.222557 ], [22.112581, 60.235417 ] ],
@@ -801,7 +1233,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Galtby",
+        "ref": "Galtby",
         "ssubtype": "2",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -815,7 +1247,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Pensar L",
+        "ref": "PensarL",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":5 , "y":-5 }
       },
@@ -843,7 +1275,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Österskär",
+        "ref": "Österskär",
         "stype": "pier",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
@@ -858,7 +1290,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Bockholm",
+        "ref": "Bockholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "SW", "x":5 , "y":5 }
       },
@@ -872,7 +1304,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Nåtö",
+        "ref": "Nåtö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NW", "x":-7 , "y":-5 }
       },
@@ -886,12 +1318,12 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Utö",
+        "ref": "Utö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
       "geometry": {
-        "coordinates": [21.370918, 59.782442 ],
+        "coordinates": [21.368236, 59.786521],
         "type": "Point"
       },
       "id": "26e636bf15b68c6ca454a908eccb83d2"
@@ -900,7 +1332,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Perkala",
+        "ref": "PerkalaP",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -914,7 +1346,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Lempmo",
+        "ref": "Lempmo",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":-5 , "y":-5 }
       },
@@ -928,7 +1360,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Mattnäs",
+        "ref": "Mattnäs",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -956,7 +1388,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Härklot",
+        "ref": "Härklot",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NE", "x":-10 , "y":-5 }
       },
@@ -970,9 +1402,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Nagu",
-        "sname_fi": "Nauvo",
-        "labelVisibleFrom": 12,
+        "ref": "Nagu",
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -985,9 +1415,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "pier",
-        "sname": "Keso varvet",
-        "sname_fi": "Keson telakka",
+        "stype": "pier_obsolete",
+        "ref": "Keso",
         "labelVisibleFrom": 10,
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
@@ -1030,7 +1459,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Salmis",
+        "ref": "Salmis",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NE", "x":0 , "y":-5 }
       },
@@ -1044,7 +1473,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Åselholm",
+        "ref": "Åselholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -1086,7 +1515,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Pakinainen",
+        "ref": "Pakinainen",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -1100,7 +1529,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Vänö",
+        "ref": "Vänö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
       },
@@ -1114,7 +1543,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Hummelvik",
+        "ref": "Hummelvik",
         "ssubtype": "2",
         "labelAnchor": {"dir": "SE", "x":-15 , "y":7 }
       },
@@ -1142,7 +1571,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Munninmaa",
+        "ref": "Munninmaa",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -1156,7 +1585,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Snäckö",
+        "ref": "Snäckö",
         "ssubtype": "2",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 },
         "markerVisibleFrom": 10
@@ -1199,7 +1628,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Heponiemi",
+        "ref": "Heponiemi",
         "ssubtype": "3",
         "labelAnchor": {"dir": "NW", "x":-10 , "y":-5 }
       },
@@ -1227,8 +1656,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Åvensor",
-        "sname_fi": "Ahvensaari",
+        "ref": "Åvensor",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NE", "x":7 , "y":-4 }
       },
@@ -1242,7 +1670,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Ruotsalainen",
+        "ref": "Ruotsalainen",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-10 }
       },
@@ -1270,9 +1698,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Embarsundslinjen",
-        "description": "<p><a class=\"tel\" href=\"tel:+3584573798871\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 379 8871</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Finholma (etelä), Jyddö (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot Finholmassa: 10.25–11.00, 17.50–18.25</p><p><a target=\"embarsund\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "embarsundslinjen"
       },
        "geometry": {
         "coordinates": [[20.526409, 60.074604 ], [20.527128, 60.076483 ] ],
@@ -1284,10 +1712,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Södra linjen: Långnäs - Överö - Sottunga - Kökar - Galtby",
-        "sname_fi": "Eteläinen linja: Långnäs - Överö - Sottunga - Kökar - Galtby",
-        "sname_en": "Southern line: Långnäs - Överö - Sottunga - Kökar - Galtby",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Gudingen, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358407693687\"> +358 40 769 3687</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 25<br/><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Skiftet, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400350265\"> +358 400 350 265</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 25</p><p>3-4 vuoroa päivässä, Överö vain tilauksesta, Galtby 0-2 vuoroa päivässä, maksullinen</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Långnäs, Överö(Föglö), Sottunga, Kökar, Galtby(Korppoo)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/sodralinjen_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 18 25 600</a></p>",
+        "ref": "sodralinjen",
         "ssubtype": "conn2",
         "color": "#00a000"
       },
@@ -1373,10 +1798,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Föglölinjen: Svinö - Degerby",
-        "sname_fi": "Föglön linja: Svinö - Degerby",
-        "sname_en": "Föglö line: Svinö - Degerby",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Skarven, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358401733600\"> +358 40 173 3600</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 60</p><p>8-12 vuoroa päivässä, maksullinen</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Svinö(Lumparland), Degerby(Föglö)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/foglolinjen.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 18 25 600</a></p>",
+        "ref": "foglolinjen",
         "ssubtype": "conn2",
         "color": "#004d9d"
       },
@@ -1400,10 +1822,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Norra linjen: Osnäs - Åva",
-        "sname_fi": "Pohjoinen linja: Vuosnainen/Osnäs - Åva",
-        "sname_en": "Northern line: Osnäs - Åva",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Viggen, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400330455\"> +358 400 330 455</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 50</p><p>3-4 vuoroa päivässä, maksullinen</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Osnäs/Vuosnainen(Kustavi/Gustavs), Åva(Brändö)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/osnas-ava_2.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 18 25 600</a></p>",
+        "ref": "osnasava",
         "ssubtype": "conn2",
         "color": "#db0a00"
       },
@@ -1415,7 +1834,7 @@
             "sname": "Åva - Osnäs"
           },
           "geometry": {
-            "coordinates": [[21.058141, 60.503277 ], [21.063194, 60.503145 ], [21.066627, 60.502532 ], [21.069459, 60.501698 ], [21.073451, 60.50024 ], [21.077098, 60.498274 ], [21.079566, 60.496488 ], [21.083764, 60.493556 ], [21.088991, 60.491385 ], [21.097213, 60.49017 ], [21.11005, 60.489769 ], [21.136065, 60.490062 ], [21.183976, 60.493085 ], [21.223742, 60.497025 ], [21.235563, 60.499795 ], [21.244993, 60.503377 ], [21.246793, 60.504632 ], [21.247735, 60.505971 ], [21.247215, 60.507128 ] ],
+            "coordinates": [[21.058141, 60.503277 ], [21.063, 60.503 ], [21.066, 60.502 ], [21.069, 60.501 ], [21.078, 60.498 ], [21.090, 60.491 ], [21.097, 60.490 ], [21.149, 60.486], [21.215, 60.487], [21.228, 60.491], [21.245, 60.503], [21.247, 60.505], [21.248, 60.506], [21.247215, 60.507128 ] ],
             "type": "LineString"
           },
           "id": "1c007ab4010cf471774a01bf8e3b0e0c"
@@ -1427,10 +1846,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Norra linjen: Åva - Jurmo",
-        "sname_fi": "Pohjoinen linja: Åva - Jurmo",
-        "sname_en": "Northern line: Åva - Jurmo",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Doppingen, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358407082136\"> +358 40 708 2136</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 18</p><p>10-15 vuoroa päivässä, osa vain tilauksesta lautalle</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Åva(Brändö), Jurmo(Brändö)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/ava-jurmo.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 18 25 600</a></p>",
+        "ref": "avajurmo",
         "ssubtype": "conn2",
         "color": "#db0a00"
       },
@@ -1443,7 +1859,7 @@
             "ssubtype": "conn2b"
           },
           "geometry": {
-            "coordinates": [[21.058141, 60.503277 ], [21.062121, 60.50361 ], [21.064267, 60.504371 ], [21.064181, 60.507498 ], [21.065254, 60.511681 ], [21.06873, 60.513371 ], [21.074051, 60.515948 ] ],
+            "coordinates": [[21.058141, 60.503277 ], [21.056109, 60.506985], [21.06873, 60.513371 ], [21.074051, 60.515948 ] ],
             "type": "LineString"
           },
           "id": "34f646dd0447e5be6c957dba27d7e908"
@@ -1455,10 +1871,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Norra linjen: Hummelvik - Enklinge - Kumlinge - Lappo - Torsholma",
-        "sname_fi": "Pohjoinen linja: Hummelvik - Enklinge - Kumlinge - Lappo - Torsholma",
-        "sname_en": "Northern line: Hummelvik - Enklinge - Kumlinge - Lappo - Torsholma",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Alfågeln, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358407682108\"> +358 40 768 2108</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 50<br/><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Knipan, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400229261\"> +358 400 229 261</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 25</p><p>3-4 vuoroa päivässä, Enklinge - Kumlinge välillä lisäksi n. 10 vuoroa päivässä</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Hummelvik(Vårdö), Enklinge, Kumlinge, Lappo, Torsholma(Brändö)</p><p>Aikataulut ja info: <a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/hummelvik-torsholma_1.pdf\">Hummelvik - Torsholma <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/enklinge-kumlinge.pdf\">Enklinge - Kumlinge <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 18 25 600</a></p>",
+        "ref": "norralinjen",
         "ssubtype": "conn2",
         "color": "#db0a00"
       },
@@ -1518,10 +1931,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Norra linjen: Asterholma - Lappo - Torsholma",
-        "sname_fi": "Pohjoinen linja: Asterholma - Lappo - Torsholma",
-        "sname_en": "Northern line: Asterholma - Lappo - Torsholma",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Frida, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+3584573613394\"> +358 457 3613 394</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 16</p><p>n. 10 vuoroa päivässä, osa vain tilauksesta lautalle</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Asterholma, Lappo, Torsholma(Brändö)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/asterholmalinjen_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 18 25 600</a></p>",
+        "ref": "asterholmalinjen",
         "ssubtype": "conn2",
         "color": "#db0a00"
       },
@@ -1559,14 +1969,23 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Tvärgående linjen: Långnäs - Överö - Snäckö",
-        "sname_fi": "Poikittainen linja: Långnäs - Överö - Snäckö",
-        "sname_en": "Cross line: Långnäs - Överö - Snäckö",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Odin, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358404840352\"> +358 40 484 0352</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 45</p><p>1-2 vuoroa päivässä, Överö vain tilauksesta, Bergö ja Sottunga harvoin</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Långnäs, Överö(Föglö), Snäckö(Kumlinge)</p><p><a target=\"info\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/tvargaendelinjen_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><p>Tiedustelut ja varaukset: <a target=\"info\" href=\"http://www.alandstrafiken.ax/fi\">Ålandstrafiken <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a class=\"tel\" href=\"tel:+3581825600\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 18 25 600</a></p>",
+        "ref": "tvarlinjen",
         "ssubtype": "conn2",
         "color": "#f7c71a"
       },
       "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Långnäs - Överö (tvärg)"
+          },
+          "geometry": {
+            "coordinates": [[20.300213, 60.117069 ], [20.308399, 60.117053 ], [20.322132, 60.11577 ], [20.355777, 60.115342 ], [20.395774, 60.112348 ], [20.437316, 60.102938 ], [20.451393, 60.102339 ], [20.462722, 60.104221 ], [20.470447, 60.111493 ], [20.490875, 60.116368 ], [20.508384, 60.115941 ], [20.510718, 60.111536 ] ],
+            "type": "LineString"
+          },
+          "id": "a959e6d2688f7350079804ec76c33296"
+        },
         {
           "type": "Feature",
           "properties": {
@@ -1597,13 +2016,14 @@
           "type": "Feature",
           "properties": {
             "stype": "leg",
-            "sname": "Långnäs - Överö (tvärg)"
+            "sname": "Långnäs - Bergö",
+            "ssubtype": "conn2b"
           },
           "geometry": {
-            "coordinates": [[20.300213, 60.117069 ], [20.308399, 60.117053 ], [20.322132, 60.11577 ], [20.355777, 60.115342 ], [20.395774, 60.112348 ], [20.437316, 60.102938 ], [20.451393, 60.102339 ], [20.462722, 60.104221 ], [20.470447, 60.111493 ], [20.490875, 60.116368 ], [20.508384, 60.115941 ], [20.510718, 60.111536 ] ],
+            "coordinates": [[20.300213, 60.117069 ], [20.298442, 60.128853 ], [20.301876, 60.142017 ], [20.350112, 60.159105 ], [20.36642, 60.160472 ], [20.383243, 60.15919 ], [20.390292, 60.163002 ], [20.392738, 60.162682 ] ],
             "type": "LineString"
           },
-          "id": "a959e6d2688f7350079804ec76c33296"
+          "id": "d904501bdea86a915eef6160190cad8e"
         },
         {
           "type": "Feature",
@@ -1616,19 +2036,6 @@
             "type": "LineString"
           },
           "id": "6292eca6a3f0f86b944807d1bf78657f"
-        },
-        {
-          "type": "Feature",
-          "properties": {
-            "stype": "leg",
-            "sname": "Långnäs - Bergö",
-            "ssubtype": "conn2b"
-          },
-          "geometry": {
-            "coordinates": [[20.300213, 60.117069 ], [20.298442, 60.128853 ], [20.301876, 60.142017 ], [20.350112, 60.159105 ], [20.36642, 60.160472 ], [20.383243, 60.15919 ], [20.390292, 60.163002 ], [20.392738, 60.162682 ] ],
-            "type": "LineString"
-          },
-          "id": "d904501bdea86a915eef6160190cad8e"
         }
       ],
       "id": "1c007ab4010cf471774a01bf8e3b0e0c"
@@ -1637,10 +2044,8 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "ssubtype": "conn2",
-        "sname": "Iniö - Kustavi",
-        "sname_sv": "Iniö - Gustavs",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Aura, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320093\">+358 400 320 093</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 52</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Kannvik(Iniö), Heponiemi(Kustavi)</p><p>Aikataulun mukaan, 5-8 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "ref": "iniokustavi",
+        "ssubtype": "conn2"
       },
       "features": [
         {
@@ -1662,10 +2067,8 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "ssubtype": "conn2m",
-        "sname": "Houtskär - Iniö",
-        "sname_fi": "Houtskari - Iniö",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Antonia, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320049\">+358 400 320 049</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 27</p><p>Vain kesäisin, maksullinen</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Mossala(Houtskari), Dalen(Iniö)</p><p>Aikataulun mukaan, 3-4 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saariston-rengastie-houtskari-inio.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><pre>Aikataulu 25.5. - 27.8.2017\n\nMossalasta\n\nma-la  9.00 12.15 14.15 16.15\nsu    12.15 15.15 17.15\n\nDalenista\n\nma-la 11.15 13.15 15.15 17.45\nsu    13.15 16.15 18.15\n\nHinnasto (ajoneuvot matkustajineen)\n\nhenkilöauto              40e\nasuntoauto               75e\nlinja-auto, kuorma-auto 140e\nmoottoripyörä, mopo      25e\npolkupyörä               15e\naikuinen                 10e\nlapsi                     5e</pre>"
+        "ref": "houtskarinio",
+        "ssubtype": "conn2m"
       },
       "features": [
         {
@@ -1687,10 +2090,8 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "ssubtype": "conn2",
-        "sname": "Korpo - Houtskär",
-        "sname_fi": "Korppoo - Houtskari",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Stella, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400114291\">+358 400 114 291</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 65<br/><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Mergus, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400533461\">+358 400 533 461</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 27</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Galtby(Korppoo), Kittuis(Houtskari)</p><p>Aikataulun mukaan, 11-12 päivittäin, osa vuoroista vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-houtskari.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "ref": "korpohoutskar",
+        "ssubtype": "conn2"
       },
       "features": [
         {
@@ -1712,10 +2113,8 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "ssubtype": "conn2",
-        "sname": "Korpo - Norrskata",
-        "sname_fi": "Korppoo - Norrskata",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Stella, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400114291\">+358 400 114 291</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 65<br/><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Mergus, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400533461\">+358 400 533 461</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 27</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Galtby(Korppoo), Olofsnäs(Norrskata)</p><p>Aikataulun mukaan, 13-14 päivittäin, osa vuoroista vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-norrskata.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "ref": "korponorrskata",
+        "ssubtype": "conn2"
       },
       "features": [
         {
@@ -1737,9 +2136,8 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "ssubtype": "conn2",
-        "sname": "Hakkenpää - Teersalo",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Kivimo, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320095\">+358 400 320 095</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8</p><p>Vain kesäisin, osa Velkuan reittiä</p><p>Vain henkilöautoja, moottoripyöriä ja polkupyöriä</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Teersalo(Velkua), Hakkenpää(Taivassalo)</p><p>Aikataulun mukaan, 1-2 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/finferries.png\" height=\"20\" alt=\"FinFerries\"/></p><pre>Aikataulu 1.6.-31.8.2017\n\nTeersalo - Hakkenpää  päivät\n\n  8.15   -   9.00     12345..\n 15.00   -  15.45     1234567\n\nHakkenpää - Teersalo  päivät\n\n  9.15   -  10.30     12345..\n 16.00   -  17.00     1234567</pre>"
+        "ref": "velkuataivassalo",
+        "ssubtype": "conn4"
       },
       "features": [
         {
@@ -1762,9 +2160,7 @@
       "properties": {
         "stype": "connection",
         "ssubtype": "conn2m",
-        "sname": "Nagu - Själö - Hanka",
-        "sname_fi": "Nauvo - Seili - Hanka",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Östern, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400720606\">+358 400 720606</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 15 <i class=\"fa fa-user\" aria-hidden=\"true\"></i> 146</p><p>Vain kesäisin <i class=\"fa fa-calendar\" aria-hidden=\"true\"></i>, maksullinen <i class=\"fa fa-eur\" aria-hidden=\"true\"></i></p><p>Aikataulun mukaan, 3 päivittäin</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Nauvo, Seili, Hanka(Aaslaluoto, Rymättylä)</p><p><a target=\"info\" href=\"http://www.ostern.fi/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><pre>Aikataulu 18.5.-2.9.2018\n\nNauvo - Seili - Hanka   päivät\n\n 8.40    9.10    9.40   12345..\n 9.00    9.30   10.00   .....67\n12.10   12.40   13.10   1234567\n15.25   15.55   16.25   123456.\n16.20   16.50   17.20   ......7\n\nHanka - Seili - Nauvo   päivät\n\n10.20   10.50   11.20   1234567\n13.50   14.20   14.50   1234567\n16.55   17.25   17.55   12.4.6.\n17.35   18.05   18.35   ..3.5..\n17.40   18.10   18.40   ......7\n\nHinnasto\n\nAikuinen                      7 €\nLapsi (4-11 v.)               3 €\nPolkupyörä                    3 €\nMoottoripyörä/mopedi          8 €\nHenkilöauto                  12 €\nMatkailuauto/Iso pakettiauto 20 €\nHenkilöauto+asuntovaunu      32 €\nLinja-auto                   70 €\n\nVaraukset vain linja-autoille</pre>"
+        "ref": "nauvohanka"
       },
       "features": [
         {
@@ -1799,9 +2195,7 @@
       "properties": {
         "stype": "connection",
         "ssubtype": "conn2",
-        "sname": "Kasnäs - Hitis",
-        "sname_fi": "Kasnäs - Hiittinen",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Aurora, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320092\">+358 400 320 092</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 52</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Kasnäs</strong>, <strong>Långnäs</strong>(Hitis/Hiittinen)</p><p>Aikataulun mukaan, 4-8 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kasnas-hiittinen-aurora.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "ref": "kasnashitis"
       },
       "features": [
         {
@@ -1821,12 +2215,81 @@
       "id": "1c007ab4010cf471774a01bf8e3b0e0c"
     },
     {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ssubtype": "4",
+        "ref": "TurkuVitharun",
+        "labelVisibleFrom": 12,
+        "labelAnchor": {"dir": "N", "x":0 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [22.250924800019448,60.443111402972306],
+        "type": "Point"
+      },
+      "id": "28c164602cad1e725ecf2d61511f3984"
+    },
+    {
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Hitis rutt",
-        "sname_fi": "Hiittisten reitti",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Stella, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358406756441\"> +358 40 675 6441</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8<br/><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Alva, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358404131574\"> +358 40 413 1574</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 0</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Kasnäs</strong>, Tunnhamn, Vänö, Holma, Helsingholm, Ängesö, Bolax, Botesö, Djupö, Vänoxa by, Vänoxa släten (Bergö), <strong>Taalintehdas/Dalsbruk</strong></p><p>Osa vuoroista vain tilauksesta. Käsnäs - Vänö n. 1 tunti</p><p><a target=\"info\" href=\"https://kuljetus-savolainen.fi/yhteysalusliikenne/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/kuljetussavolainen.png\" height=\"20\" alt=\"Kuljetus Savolainen Oy\"/></p>",
+        "ref": "turkunauvo",
+        "ssubtype": "conn5"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Turku-Seili-Nauvo"
+          },
+          "geometry": {
+            "coordinates": [[22.250924800019448,60.443111402972306],[22.250991783390788,60.442659825044615],[22.238827486862817,60.4365146876319],[22.228069856950242,60.43249087357708],[22.22434432590765,60.4322729623222],[22.214594122943026,60.43353905803795],[22.19971223421814,60.432083043711344],[22.17379722102953,60.42087588153839],[22.16532993950503,60.42214242114548],[22.14198076925547,60.41973595371175],[22.121325734039345,60.40757423722383],[22.100837072733214,60.37420850419426],[22.017011762558553,60.28793331146656],[21.980677357353755,60.2733406141748],[21.95403898103055,60.25322746782422],[21.94704171294626,60.245205389253016],[21.946800427840543,60.237780222526794],[21.9552454065591,60.236462678444695],[21.946076572523395,60.228556301244],[21.909159951275285,60.21765195567363],[21.907953525746734,60.214655621212785],[21.91036637680375,60.20410634570496],[21.91905264062794,60.19715155897583],[21.911814087456946,60.19403341742898]],
+            "type": "LineString"
+          },
+          "id": "3f4efae3e9f3041c11f0cdb8886a7cb0"
+        }
+      ]
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "ref": "hankooro",
+        "ssubtype": "conn5"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "HankoOro"
+          },
+          "geometry": {
+            "coordinates": [[22.9637498,59.8192902],[22.964151,59.819219],[22.964272,59.818672],[22.962531,59.817553],[22.916424,59.806823],[22.905141,59.807854],[22.892272,59.806776],[22.882262,59.808543],[22.875028,59.816727],[22.893474,59.834905],[22.866348,59.859068],[22.671043,59.907885],[22.601963,59.915319],[22.547496,59.914949],[22.476245,59.895181],[22.411144,59.874857],[22.40174,59.867232],[22.376784,59.863782],[22.369913,59.846709],[22.359156,59.816035],[22.337143,59.811043]],
+            "type": "LineString"
+          },
+          "id": "3f4efae3e9f3041c11f0cdb8886a7cb0"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Kasnas"
+          },
+          "geometry": {
+            "coordinates": [[22.457958,59.889513],[22.440519,59.896412],[22.423169,59.899703],[22.411394,59.908448],[22.408068,59.913856],[22.412113,59.92129]],
+            "type": "LineString"
+          },
+          "id": "20c4d5ff5eeba42b66292fc84f067f12"
+        }
+      ]
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "ref": "hitisrutt",
         "ssubtype": "conn4"
       },
       "features": [
@@ -1837,7 +2300,7 @@
             "sname": "Stora Ängesö"
           },
           "geometry": {
-            "coordinates": [[22.565879, 59.939472 ], [22.527721, 59.942446 ], [22.509235, 59.951151 ], [22.505589, 59.94992 ] ],
+            "coordinates": [[22.565879, 59.939472 ], [22.527721, 59.942446 ], [22.509235, 59.951151 ], [22.506408, 59.949735] ],
             "type": "LineString"
           },
           "id": "3f4efae3e9f3041c11f0cdb8886a7cb0"
@@ -1909,9 +2372,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Houtskär och Iniö rutt",
-        "sname_fi": "Houtskarin ja Iniön reitti",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Karolina, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358407173455\"> +358 40 717 3455</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 0<br/><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Satava, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358408495140\"> +358 40 849 5140</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Näsby</strong>(Houtskär/Houtskari), <strong>Roslax</strong>(Houtskär/Houtskari), Ytterstö, Lempmo, Salmis, Lammholm, <strong>Norrby</strong>(Iniö), Sördö, Lempnäs, Äpplö, Bockholm, Sövdö, Nåtö, <strong>Torsholma</strong>(Brändö), Själö, Härklot, Kvarnholm, Åselholm, Perkala, Kolko, <strong>Kannvik</strong>(Iniö)</p><p>Aikataulut ja info: <a target=\"info\" href=\"http://www.ferryway.fi/7\">Houtskarin reitti <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a>, <a target=\"info\" href=\"http://www.ferryway.fi/8\">Iniön lisäreitti <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/ferryway.png\" height=\"20\" alt=\"JS Ferryway Ltd Oy\"/></p>",
+        "ref": "houtskarrutt",
         "ssubtype": "conn4"
       },
       "features": [
@@ -1958,7 +2419,7 @@
             "sname": "Perkala"
           },
           "geometry": {
-            "coordinates": [[21.382087, 60.412578 ], [21.415426, 60.398378 ], [21.465435, 60.377682 ], [21.475437, 60.379124 ], [21.465643, 60.377682 ], [21.473978, 60.367381 ] ],
+            "coordinates": [[21.382087, 60.412578 ], [21.415426, 60.398378 ], [21.465435, 60.377682 ], [21.473978, 60.367381 ] ],
             "type": "LineString"
           },
           "id": "81f2511a29b77c6bfdadae184801b876"
@@ -1970,9 +2431,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Utö rutt",
-        "sname_fi": "Utön reitti",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Eivor, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358445000503\">+358 44 5000 503</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 19</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Pärnäs/Pärnäinen</strong>, Berghamn, Nötö, Aspo, Jurmo, Utö</p><p>5 kertaa viikossa. Pärnäs - Utö 4,5 - 5,5 tuntia. Linja-autoyhteys Pärnäisissä.</p><p><a target=\"info\" href=\"http://www.rosita.fi/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/rosita.png\" height=\"20\" alt=\"Rosita\"/></p>",
+        "ref": "utorutt",
         "ssubtype": "conn4"
       },
       "features": [
@@ -1983,7 +2442,7 @@
             "sname": "Utön reitti"
           },
           "geometry": {
-            "coordinates": [[21.704714, 60.163792 ], [21.696109, 60.161838 ], [21.675682, 60.119618 ], [21.704521, 60.094551 ], [21.701774, 60.079228 ], [21.806316, 60.058843 ], [21.807346, 60.054388 ], [21.801638, 60.054398 ], [21.805629, 60.052931 ], [21.808033, 60.048217 ], [21.785202, 60.002247 ], [21.731987, 59.97082 ], [21.741943, 59.956213 ], [21.746406, 59.952173 ], [21.75574, 59.95385 ], [21.72512, 59.947618 ], [21.673107, 59.945296 ], [21.618518, 59.949595 ], [21.614291, 59.951518 ], [21.618518, 59.949509 ], [21.646156, 59.94736 ], [21.652851, 59.943921 ], [21.650276, 59.938418 ], [21.635341, 59.925775 ], [21.634998, 59.90693 ], [21.573886, 59.829548 ], [21.582469, 59.826183 ], [21.584765, 59.827089 ], [21.582298, 59.826183 ], [21.497154, 59.849988 ], [21.430378, 59.844987 ], [21.398963, 59.839295 ], [21.336307, 59.813929 ], [21.358966, 59.791221 ], [21.372184, 59.785865 ], [21.370918, 59.782442 ] ],
+            "coordinates": [[21.704714, 60.163792 ], [21.696109, 60.161838 ], [21.675682, 60.119618 ], [21.704521, 60.094551 ], [21.701774, 60.079228 ], [21.806316, 60.058843 ], [21.807346, 60.054388 ], [21.801638, 60.054398 ], [21.805629, 60.052931 ], [21.808033, 60.048217 ], [21.785202, 60.002247 ], [21.731987, 59.97082 ], [21.741943, 59.956213 ], [21.746406, 59.952173 ], [21.75574, 59.95385 ], [21.72512, 59.947618 ], [21.673107, 59.945296 ], [21.618518, 59.949595 ], [21.614291, 59.951518 ], [21.618518, 59.949509 ], [21.646156, 59.94736 ], [21.652851, 59.943921 ], [21.650276, 59.938418 ], [21.635341, 59.925775 ], [21.634998, 59.90693 ], [21.573886, 59.829548 ], [21.582469, 59.826183 ], [21.584765, 59.827089 ], [21.582298, 59.826183 ], [21.497154, 59.849988 ], [21.430378, 59.844987 ], [21.398963, 59.839295 ], [21.336307, 59.813929 ], [21.358966, 59.791221 ], [21.368290, 59.787235], [21.368236, 59.786521]],
             "type": "LineString"
           },
           "id": "84cb77b243180857a00798db6d31bbec"
@@ -1995,9 +2454,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Pargas rutt",
-        "sname_fi": "Paraisten reitti",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Viken, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320099\">+358 400 320 099</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Granvik</strong>, Heisala, Björkholm, Ramsholm, Aspholm, Östra Tallholm, Kuggö, Pensar</p><p>3-8 lähtöä päivittäin, osa tilauksesta. Granvik - Pensar n. 60 minuuttia.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/paraisten-reittialue-viken.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/finferries.png\" height=\"20\" alt=\"FinFerries\"/></p>",
+        "ref": "pargasrutt",
         "ssubtype": "conn4"
       },
       "features": [
@@ -2008,7 +2465,31 @@
             "sname": "Pensarin reitti"
           },
           "geometry": {
-            "coordinates": [[22.261347, 60.196369 ], [22.262463, 60.181007 ], [22.258966, 60.177134 ], [22.259416, 60.180666 ], [22.235212, 60.182672 ], [22.233796, 60.184272 ], [22.23607, 60.185211 ], [22.201738, 60.182117 ], [22.1841, 60.169994 ], [22.173757, 60.16961 ], [22.170839, 60.167603 ], [22.175431, 60.165596 ], [22.165346, 60.165383 ], [22.16423, 60.163546 ], [22.1632, 60.161198 ], [22.16423, 60.160215 ], [22.161655, 60.159489 ], [22.159595, 60.151459 ], [22.159338, 60.149409 ], [22.161226, 60.147871 ], [22.155475, 60.151374 ], [22.136839, 60.147967 ] ],
+            "coordinates": [[22.261347, 60.196369 ], [22.261346, 60.194957], [22.262463, 60.181007 ], [22.258966, 60.177134 ], [22.259416, 60.180666 ], [22.235212, 60.182672 ], [22.233796, 60.184272 ], [22.23607, 60.185211 ], [22.201738, 60.182117 ], [22.1841, 60.169994 ], [22.173757, 60.16961 ], [22.170839, 60.167603 ], [22.175431, 60.165596 ], [22.165346, 60.165383 ], [22.16423, 60.163546 ], [22.1632, 60.161198 ], [22.16423, 60.160215 ], [22.161655, 60.159489 ], [22.159595, 60.151459 ], [22.159338, 60.149409 ], [22.161226, 60.147871 ], [22.155475, 60.151374 ], [22.136839, 60.147967 ] ],
+            "type": "LineString"
+          },
+          "id": "b12d5cdd3ebafd870f60e11419d86d02"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Granholmen"
+          },
+          "geometry": {
+            "coordinates": [ [22.261346, 60.194957], [22.250394, 60.193442], [22.248032, 60.191670], [22.249604, 60.190669] ],
+            "type": "LineString"
+          },
+          "id": "b12d5cdd3ebafd870f60e11419d86d02"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Stenholm"
+          },
+          "geometry": {
+            "coordinates": [ [22.173757, 60.16961 ], [22.167543, 60.171112], [22.165406, 60.171140],  [22.164897, 60.170458]] ,
             "type": "LineString"
           },
           "id": "b12d5cdd3ebafd870f60e11419d86d02"
@@ -2020,9 +2501,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Nagu södra rutt",
-        "sname_fi": "Nauvon eteläinen reitti",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Nordep, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358451294779\">+358 45 129 4779</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 2</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Kirjais/Kirjainen</strong>, Pensar, Peno, Brännskär, Stenskär, Gullkrona, Grötö, Knivskär, Kopparholm, Träskholm, Björkö, Gloskär, Trunsö, Sandholm, Lökholm, Borstö.</p><p>Lähisaariin 1-3 kertaa päivässä, Borstö 4 kertaa viikossa. Kirjais - Borstö 3-5 tuntia. Vain tilauksesta.</p><p><a target=\"info\" href=\"https://www.ferryway.fi/6\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/ferryway.png\" height=\"20\" alt=\"JS Ferryway Ltd Oy\"/></p>",
+        "ref": "nagusodra",
         "ssubtype": "conn4"
       },
       "features": [
@@ -2093,9 +2572,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Nagu tvär rutt",
-        "sname_fi": "Nauvon poikittainen reitti",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Myrskylintu, m/s Cheri, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400217053\">+358 400 217 053</a>, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400227722\">+358 400 227 722</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 0</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Pärnäs/Pärnäinen</strong>, <strong>Kirjais/Kirjainen</strong>, Krok, Mattnäs, Lånholm, Fagerholm, Killingholm, Ängsö, Tveskiftsholm, Berghamn, Hummelholm, Rockelholm, Ytterstholm, Byskär, Brännskär, Grötö, Stenskär, Gullkrona </p><p>3 kertaa viikossa (ma, ke, pe), vain tilauksesta</p><p><a target=\"info\" href=\"https://www.ferryway.fi/5\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/ferryway.png\" height=\"20\" alt=\"JS Ferryway Ltd Oy\"/></p>",
+        "ref": "nagutvar",
         "ssubtype": "conn4"
       },
       "features": [
@@ -2106,7 +2583,7 @@
             "sname": "Pärnäs - Berghamn"
           },
           "geometry": {
-            "coordinates": [[21.70495, 60.16376 ], [21.703899, 60.163154 ], [21.682854, 60.124005 ], [21.731579, 60.125697 ], [21.735627, 60.127517 ], [21.741452, 60.121369 ], [21.698206, 60.112071 ], [21.693763, 60.11094 ], [21.703933, 60.1041 ], [21.723779, 60.104346 ], [21.736121, 60.103608 ], [21.747673, 60.104641 ], [21.753202, 60.104346 ], [21.752511, 60.105675 ], [21.749746, 60.105773 ], [21.753004, 60.105625 ], [21.753893, 60.104247 ], [21.772653, 60.095831 ], [21.769789, 60.087413 ], [21.806815, 60.059237 ], [21.808198, 60.054752 ], [21.801681, 60.054456 ] ],
+            "coordinates": [[21.70495, 60.16376 ], [21.703899, 60.163154 ], [21.686491, 60.131646], [21.731579, 60.125697 ], [21.735627, 60.127517 ], [21.741452, 60.121369 ], [21.698206, 60.112071 ], [21.693763, 60.11094 ], [21.703933, 60.1041 ], [21.723779, 60.104346 ], [21.736121, 60.103608 ], [21.747673, 60.104641 ], [21.753202, 60.104346 ], [21.752511, 60.105675 ], [21.749746, 60.105773 ], [21.753004, 60.105625 ], [21.753893, 60.104247 ], [21.772653, 60.095831 ], [21.769789, 60.087413 ], [21.806815, 60.059237 ], [21.808198, 60.054752 ], [21.801681, 60.054456 ] ],
             "type": "LineString"
           },
           "id": "2989142a40b9e3426fff7f765df6f519"
@@ -2122,6 +2599,30 @@
             "type": "LineString"
           },
           "id": "9a1bd2e1c64a910da664afb661b3253b"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "sname": "Killingholm",
+            "stype": "leg"
+          },
+          "geometry": {
+            "coordinates": [[21.698287, 60.112033 ], [21.678449, 60.111646], [21.678341, 60.111031]],
+            "type": "LineString"
+          },
+          "id": "9a1bd2e1c64a910da664afb661b3253b"
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "Kirjais - Brännskär - Stenskär - Gullkrona"
+          },
+          "geometry": {
+            "coordinates": [[22.018189, 60.121275 ], [22.023468, 60.120046 ], [22.022953, 60.118592 ], [21.982526, 60.085949 ], [21.979093, 60.085478 ], [21.975939, 60.086345 ], [21.982784, 60.084665 ], [22.014029, 60.078395 ], [22.015421, 60.079999 ], [22.022438, 60.076659 ], [22.029991, 60.076745 ], [22.036428, 60.075889 ], [22.048895, 60.071307 ], [22.045784, 60.073277 ], [22.046642, 60.075546 ], [22.054452, 60.074733 ], [22.061576, 60.077387 ], [22.066984, 60.081882 ], [22.070245, 60.087961 ], [22.075395, 60.089459 ], [22.081747, 60.089074 ], [22.083056, 60.088282 ], [22.081661, 60.089587 ], [22.059516, 60.092069 ], [22.053852, 60.097076 ], [22.024412, 60.120132 ] ],
+            "type": "LineString"
+          },
+          "id": "67395601a6aacaa62a594b65208ce337"
         },
         {
           "type": "Feature",
@@ -2154,9 +2655,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Korpo rutt",
-        "sname_fi": "Korppoon reitti",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> y/a Fiskö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358447618000\">+358 44 761 8000</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 2</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Verkan</strong>(Korpo/Korppoo), Finnö, Käldersö, Elvsö, Berghamn(Korpo/Korppoo), <strong>Kittuis</strong>(Houtskari/Houtskär), Lillpensor, Storpensor, <strong>Havträsk</strong>(Norrskata), Brunskär, Österskär, Kälö</p><p>0-4 lähtöä Korppoosta päivittäin. Österskär 2 kertaa viikossa. Vain tilauksesta.</p><p><a target=\"info\" href=\"http://www.saaristolinjat.fi/Korppoon_reittialue\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/archipelagolines.jpg\" height=\"20\" alt=\"Archipelago lines Oy\"/></p>",
+        "ref": "korporutt",
         "ssubtype": "conn4"
       },
       "features": [
@@ -2191,9 +2690,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Velkuan reitti",
-        "sname_sv": "Velkua rutt",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Kivimo, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320095\">+358 400 320 095</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Teersalo</strong>(Velkua), Rauhala, Lailuoto, Talosmeri, Munninmaa, Tammisluoto, Liettinen, Kettumaa, kesäisin myös <strong>Hakkenpää</strong>(Taivassalo)</p><p>3-9 lähtöä päivässä. Osa vain tilauksesta.</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/finferries.png\" height=\"20\" alt=\"FinFerries\"/></p>",
+        "ref": "velkuanreitti",
         "ssubtype": "conn4"
       },
       "features": [
@@ -2240,9 +2737,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Rymättylän reitti",
-        "sname_sv": "Rimito rutt",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Isla, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358406736697\">+358 40 673 6697</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Haapala</strong>(Rymättylä), Ruotsalainen, Korvenmaa, Pakinainen, Pähkinäinen, Samsaari, Maisaari</p><p>3-5 lähtöä päivässä. Osa vain tilauksesta.</p><p><a target=\"info\" href=\"https://kuljetus-savolainen.fi/yhteysalusliikenne/\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/kuljetussavolainen.png\" height=\"20\" alt=\"Kuljetus Savolainen Oy\"/></p><p><a target=\"other\" href=\"https://www.facebook.com/MS-Isla-401567819993437/\"> m/s Islan Facebook <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>",
+        "ref": "rymattylanreitti",
         "ssubtype": "conn4"
       },
       "features": [
@@ -2313,24 +2808,11 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Nagu norra rutt",
-        "sname_fi": "Nauvon pohjoinen reitti",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Falkö, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400320097\">+358 400 320097</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 8</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> <strong>Nauvo/Nagu</strong>, Seili/Själö, Innamo, Järvsor, Maskinnamo, Åvensor/Ahvensaari, <strong>Lavarn</strong>(Houtsala).</p><div class=\"alert alert-danger\"><strong>Huom!</strong> Nauvon sataman muutostöiden ajan (-> kevät 2018) liikennöidään Keson telakalta</div><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a> <img src=\"img/finferries.png\" height=\"20\" alt=\"FinFerries\"/></p>",
+        "ref": "nagunorra",
         "ssubtype": "conn4"
       },
       "features": [
       {
-        "type": "Feature",
-        "properties": {
-          "stype": "leg",
-          "sname": "Keson telakka"
-        },
-        "geometry": {
-          "coordinates": [[21.941702, 60.192928 ], [21.932614, 60.195711], [21.914394, 60.197389 ] ],
-          "type": "LineString"
-        },
-        "id": "02781c9deff3c1e8515aead6c3e8bb1c"
-      },{
         "type": "Feature",
         "properties": {
           "stype": "leg",
@@ -2381,10 +2863,7 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
-        "sname": "Cykelfärja Skarpnåtö - Hällö",
-        "sname_fi": "Polkupyörälautta Skarpnåtö - Hällö",
-        "sname_en": "Bicycle ferry Skarpnåtö - Hällö",
-        "description": "<p><i class=\"fa fa-ship\" aria-hidden=\"true\"></i> m/s Silvana, <i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358400229149\">+358 400 229 149</a>, 50 <i class=\"fa fa-bicycle\" aria-hidden=\"true\"></i></p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Skarpnåtö(Hammarland), Hällö(Geta)</p><p><a target=\"info\" href=\"http://www.visitaland.com/fi/search-results/?q=silvana\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p><pre>Aikataulu 20.6.-20.8.2018\n\nSkarpnåtöstä klo 11.00 ja\nHällöstä klo 11.30\n\nHuom! Ei sunnuntaisin\n\nExtra vuoroja tilauksesta.\n\nHinta:\n15 euroa / henkilö / pyörä\n7 euroa alle 12 vuotta\n7 euroa / kärry</pre>",
+        "ref": "skarpnatohallo",
         "ssubtype": "conn3"
       },
       "features": [
@@ -2406,12 +2885,12 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Kivimo",
-        "description": "<p><a class=\"tel\" href=\"tel:+3580400292691\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 292 691</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Roslax (etelä), Kivimo (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot: 09.10–09.30, 11.40–12.00, 17.10–17.30, 20.10–20.30</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kivimo.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "kivimo"
       },
       "geometry": {
-        "coordinates": [[21.334794, 60.233712 ], [21.335631, 60.235044 ] ],
+        "coordinates": [[21.334794, 60.233712 ], [21.335631, 60.235044]],
         "type": "LineString"
       },
       "id": "416311a945a2845324aaf6c43c46d271"
@@ -2420,14 +2899,13 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Berghamn",
-        "sname1": "Eckerö",
+        "ref": "BerghamnE",
         "ssubtype": "1",
         "labelVisibleFrom": 12,
         "labelAnchor": {"dir": "NW", "x":-10 , "y":-10 }
       },
       "geometry": {
-        "coordinates": [19.536266, 60.225407 ],
+        "coordinates": [19.535583,60.225623],
         "type": "Point"
       },
       "id": "4292d7588f34e564447cc936d11388ce"
@@ -2448,7 +2926,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Rauhala",
+        "ref": "Rauhala",
         "ssubtype": "4",
         "labelAnchor": {"dir": "S", "x":-5 , "y":5 }
       },
@@ -2462,7 +2940,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Liettinen",
+        "ref": "Liettinen",
         "ssubtype": "4",
         "labelAnchor": {"dir": "SE", "x":-10 , "y":5 }
       },
@@ -2476,7 +2954,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Själö",
+        "ref": "Själö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NW", "x":0 , "y":-5 }
       },
@@ -2551,9 +3029,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Våno",
-        "description": "<p><a class=\"tel\" href=\"tel:+358500827157\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> 0500 827 157</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 21</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Våno(mantere), Mielisholm(saari)</p><p>Liikennöi 15 minuutin välein (05.30-22.15), yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vano.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "vano"
       },
       "geometry": {
         "coordinates": [[22.303866, 60.216839 ], [22.306484, 60.215294 ] ],
@@ -2565,7 +3043,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Byskär",
+        "ref": "Byskär",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -2579,7 +3057,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Maisaari",
+        "ref": "Maisaari",
         "ssubtype": "4",
         "labelAnchor": {"dir": "S", "x":0 , "y":5 }
       },
@@ -2593,7 +3071,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Helsingholm",
+        "ref": "Helsingholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -2609,6 +3087,7 @@
         "stype": "area", "ssubtype": "island1",
         "sname": "Töftö",
         "labelVisibleFrom": 10,
+        "labelVisibleTo": 12,
         "labelAnchor": {"dir": "E", "x":0 , "y":0 }
       },
       "geometry": {
@@ -2620,8 +3099,23 @@
     {
       "type": "Feature",
       "properties": {
+        "stype": "area", "ssubtype": "island1",
+        "sname": "Ängö",
+        "labelVisibleFrom": 11,
+        "labelVisibleTo": 12,
+        "labelAnchor": {"dir": "C", "x":0 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [20.304753, 60.155925],
+        "type": "Point"
+      },
+      "id": "4e3eff82e36855242f3dcb4643fd0a75"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "stype": "pier",
-        "sname": "Perkala E",
+        "ref": "Perkala",
         "ssubtype": "4",
         "labelAnchor": {"dir": "SE", "x":-5 , "y":5 }
       },
@@ -2635,7 +3129,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Ängsö",
+        "ref": "Ängsö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
       },
@@ -2649,7 +3143,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Aspö",
+        "ref": "Aspö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":5 , "y":0 }
       },
@@ -2663,9 +3157,9 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Haapala",
+        "ref": "Haapala",
         "ssubtype": "3",
-        "labelAnchor": {"dir": "NW", "x":10 , "y":-5 }
+        "labelAnchor": {"dir": "SE", "x":5 , "y":5 }
       },
       "geometry": {
         "coordinates": [21.809438, 60.394565 ],
@@ -2676,9 +3170,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Keistiö",
-        "description": "<p><a class=\"tel\" href=\"tel:+358408469500\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 846 9500</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 10</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Keistiö, Dalen(Iniö)</p><p>Liikennöi aikataulun mukaan, 13-17 vuoroa päivässä, osa vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/keistio.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "keistio"
       },
       "geometry": {
         "coordinates": [[21.371358, 60.381576 ], [21.34945, 60.372322 ] ],
@@ -2689,8 +3183,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Berghamn",
-        "sname1": "Korppoo",
+        "ref": "BerghamnK",
         "stype": "pier",
         "ssubtype": "4",
         "labelVisibleFrom ": 10,
@@ -2706,7 +3199,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Torsholma I",
+        "ref": "TorsholmaI",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NE", "x":-10 , "y":-5 }
       },
@@ -2735,7 +3228,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Trunsö",
+        "ref": "Trunsö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -2749,7 +3242,21 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Ytterstö",
+        "ref": "Gloskär",
+        "ssubtype": "4",
+        "labelAnchor": {"dir": "SE", "x":7 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [21.775197, 59.880943],
+        "type": "Point"
+      },
+      "id": "5e39f54ae6b61d45fabf1c2aa5fe8174"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Ytterstö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "SE", "x":-10 , "y":5 }
       },
@@ -2778,9 +3285,9 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Ramsholm",
+        "ref": "Ramsholm",
         "ssubtype": "4",
-        "labelAnchor": {"dir": "NW", "x":0 , "y":-5 }
+        "labelAnchor": {"dir": "N", "x":10 , "y":-10 }
       },
       "geometry": {
         "coordinates": [22.1841, 60.169994 ],
@@ -2792,7 +3299,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Tammisluoto",
+        "ref": "Tammisluoto",
         "ssubtype": "4",
         "labelAnchor": {"dir": "SE", "x":-10 , "y":5 }
       },
@@ -2806,7 +3313,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Rockelholm",
+        "ref": "Rockelholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -2820,7 +3327,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Hanka",
+        "ref": "Hanka",
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -2834,7 +3341,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Holma",
+        "ref": "Holma",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
       },
@@ -2848,7 +3355,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Näsby",
+        "ref": "Näsby",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -2862,7 +3369,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Hakkenpää",
+        "ref": "Hakkenpää",
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":10 , "y":0 }
       },
@@ -2876,7 +3383,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Äpplö",
+        "ref": "Äpplö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -2890,7 +3397,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Roslax",
+        "ref": "Roslax",
         "ssubtype": "4",
         "labelAnchor": {"dir": "S", "x":0 , "y":7 },
         "markerVisibleFrom": 12,
@@ -2907,7 +3414,7 @@
       "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Örö",
-        "labelVisibleTo": 12,
+        "labelVisibleTo": 10,
         "labelAnchor": {"dir": "SW", "x":0 , "y":0 }
       },
       "geometry": {
@@ -2934,10 +3441,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Kokkila",
-        "description": "<p><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358405684911\">+358 40 568 4911</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Kokkila (mantere), Angelniemi (saari)</p><p>Liikennöi 20-30 minuutin välein, yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kokkila.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
-
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "kokkila"
       },
       "geometry": {
         "coordinates": [[22.943401, 60.318236 ], [22.943916, 60.312752 ] ],
@@ -2962,7 +3468,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Lempnäs",
+        "ref": "Lempnäs",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NE", "x":-5 , "y":-5 }
       },
@@ -2989,9 +3495,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Mossala",
-        "description": "<p><a class=\"tel\" href=\"tel:+358405531534\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 553 1534</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Björkö (etelä), Mossala (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot: 09.10–09.30, 11.40–12.00, 17.10–17.30, 20.10–20.30</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/mossala.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "mossala"
       },
       "geometry": {
         "coordinates": [[21.405916, 60.265682 ], [21.406002, 60.268705 ] ],
@@ -3003,7 +3509,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kökar",
+        "ref": "Kökar",
         "ssubtype": "3",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -3016,9 +3522,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Palva",
-        "description": "<p><a class=\"tel\" href=\"tel:+358400525901\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 525 901</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 10</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Teersalo(itä), Palva(länsi)</p><p>Liikennöi 30-60 minuutin välein, yövuorot vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/palva.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "palva"
       },
       "geometry": {
         "coordinates": [[21.67566, 60.46787 ], [21.69362, 60.467426 ] ],
@@ -3030,10 +3536,10 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Björkholm",
+        "ref": "Björkholm",
         "ssubtype": "4",
         "labelVisibleTo": -1,
-        "labelAnchor": {"dir": "NW", "x":-7 , "y":-5 }
+        "labelAnchor": {"dir": "NW", "x":-7 , "y":0 }
       },
       "geometry": {
         "coordinates": [22.23607, 60.185211 ],
@@ -3103,7 +3609,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Knivskär",
+        "ref": "Knivskär",
         "ssubtype": "4",
         "labelVisibleFrom": 10,
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
@@ -3117,9 +3623,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Pettu",
-        "description": "<p><a class=\"tel\" href=\"tel:+358503542488\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i>+358 50 354 2488</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 10</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Ulkoluoto (länsi), Pettu (itä)</p><p>Liikennöi tarvittaessa 6.00-22.00, tauot: 08.30-08.50, 11.00-11.30, 16.30-16.50, 19.00-19.30</p><p><a target=\"info\" href=\"http://www.petunlossi.com/lossi.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "pettu"
       },
       "geometry": {
         "coordinates": [[22.915098, 60.041173 ], [22.92293, 60.038488 ] ],
@@ -3130,9 +3636,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Sorpo",
-        "description": "<p><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> <a class=\"tel\" href=\"tel:+358405692620\">+358 40 569 2620</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> ?</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Sorpo (länsi), Jermo (itä)</p><p>Liikennöi n. 15 minuutin välein 7.30-19.30</p><p><a target=\"info\" href=\"http://lautta.net/db/aikataulut/sorpo/sorpo.php?lang=finferries\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "sorpo"
       },
       "geometry": {
         "coordinates": [[22.285522, 60.150366], [22.281830, 60.150910] ],
@@ -3187,7 +3693,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Lavarn",
+        "ref": "Lavarn",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
       },
@@ -3201,12 +3707,26 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Granvik",
+        "ref": "Granvik",
         "ssubtype": "3",
-        "labelAnchor": {"dir": "W", "x":-10 , "y":0 }
+        "labelAnchor": {"dir": "SE", "x":3 , "y":3 }
       },
       "geometry": {
         "coordinates": [22.261401, 60.196518 ],
+        "type": "Point"
+      },
+      "id": "8363ae723fdf9fe0784a0359a96eeff2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Granholmen",
+        "ssubtype": "4",
+        "labelAnchor": {"dir": "W", "x":-10 , "y":-7 }
+      },
+      "geometry": {
+        "coordinates": [22.249604, 60.190669],
         "type": "Point"
       },
       "id": "8363ae723fdf9fe0784a0359a96eeff2"
@@ -3229,7 +3749,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kasnäs",
+        "ref": "Kasnäs",
         "ssubtype": "3",
         "labelVisibleFrom": 9,
         "labelAnchor": {"dir": "E", "x":6 , "y":-5 }
@@ -3274,7 +3794,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Torsholma",
+        "ref": "Torsholma",
         "ssubtype": "2",
         "labelAnchor": {"dir": "NW", "x":-5 , "y":-5 }
       },
@@ -3288,7 +3808,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Brännskär",
+        "ref": "Brännskär",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -3316,7 +3836,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Bolax",
+        "ref": "Bolax",
         "ssubtype": "4",
         "labelVisibleFrom": 10,
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
@@ -3331,7 +3851,37 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Borstö",
+        "ssubtype": "4",
+        "ref": "Hanko",
+        "labelVisibleFrom": 10,
+        "labelAnchor": {"dir": "W", "x":0 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [22.9637498,59.8192902],
+        "type": "Point"
+      },
+      "id": "28c164602cad1e725ecf2d61511f3984"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ssubtype": "4",
+        "ref": "Örö",
+        "labelVisibleFrom": 11,
+        "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [22.337143,59.811043],
+        "type": "Point"
+      },
+      "id": "28c164602cad1e725ecf2d61511f3984"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Borstö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":5 , "y":0 }
       },
@@ -3359,7 +3909,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kvarnholm",
+        "ref": "Kvarnholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NW", "x":-7 , "y":-5 }
       },
@@ -3373,7 +3923,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Maskinnamo",
+        "ref": "Maskinnamo",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NE", "x":7 , "y":-5 }
       },
@@ -3387,7 +3937,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Asterholma",
+        "ref": "Asterholma",
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -3401,8 +3951,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Samsaari",
-        "sname_sv": "Samsor",
+        "ref": "Samsaari",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":5 , "y":-5 }
       },
@@ -3416,7 +3965,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Sottunga",
+        "ref": "Sottunga",
         "ssubtype": "3",
         "labelVisibleFrom": 11,
         "labelAnchor": {"dir": "NE", "x":7 , "y":0 }
@@ -3473,7 +4022,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Lånholm",
+        "ref": "Lånholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -3487,7 +4036,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Sördö",
+        "ref": "Sördö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
       },
@@ -3514,7 +4063,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Storpensor",
+        "ref": "Storpensor",
         "stype": "pier",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
@@ -3529,8 +4078,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Dalsbruk",
-        "sname_fi": "Taalintehdas",
+        "ref": "Dalsbruk",
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -3544,8 +4092,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Turku",
-        "sname_sv": "Åbo",
+        "ref": "Turku",
         "ssubtype": "1",
         "labelAnchor": {"dir": "SE", "x":10 , "y":0 },
         "labelVisibleFrom": 30
@@ -3575,8 +4122,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Jurmo",
-        "sname1": "Korppoo",
+        "ref": "Jurmo",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -3590,8 +4136,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Jurmo",
-        "sname1": "Brändö",
+        "ref": "JurmoB",
         "ssubtype": "3",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
       },
@@ -3605,7 +4150,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Enklinge",
+        "ref": "Enklinge",
         "ssubtype": "3",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -3632,7 +4177,7 @@
      {
        "type": "Feature",
        "properties": {
-        "sname": "Luk",
+        "ref": "Luk",
         "stype": "pier",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
@@ -3646,7 +4191,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Östra Tallholm",
+        "ref": "ÖstraTallholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "SE", "x":5 , "y":5 }
       },
@@ -3674,7 +4219,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kettumaa",
+        "ref": "Kettumaa",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -3688,7 +4233,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Korvenmaa",
+        "ref": "Korvenmaa",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
       },
@@ -3730,7 +4275,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Norrby",
+        "ref": "Norrby",
         "ssubtype": "4",
         "labelAnchor": {"dir": "SE", "x":3 , "y":3 }
       },
@@ -3744,7 +4289,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Lammholm",
+        "ref": "Lammholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
       },
@@ -3772,9 +4317,9 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Fagerholm",
+        "ref": "Fagerholm",
         "ssubtype": "4",
-        "labelAnchor": {"dir": "W", "x":-10 , "y":0 }
+        "labelAnchor": {"dir": "NW", "x":10 , "y":-5 }
       },
       "geometry": {
         "coordinates": [21.698287, 60.112033 ],
@@ -3786,7 +4331,21 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kivimaa",
+        "ref": "Killingholm",
+        "ssubtype": "4",
+        "labelAnchor": {"dir": "SW", "x":-5 , "y":5 }
+      },
+      "geometry": {
+        "coordinates": [21.678341, 60.111031],
+        "type": "Point"
+      },
+      "id": "b73da7c6e563f7b0bebc2672e9c7cbb8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Kivimaa",
         "ssubtype": "5",
         "labelAnchor": {"dir": "SE", "x":5 , "y":5 }
       },
@@ -3800,9 +4359,9 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Lillmälö",
+        "ref": "Lillmälö",
         "ssubtype": "5",
-        "labelAnchor": {"dir": "NW", "x":-5 , "y":-5 }
+        "labelAnchor": {"dir": "SE", "x":7 , "y":0 }
       },
       "geometry": {
         "coordinates": [22.112581, 60.235417 ],
@@ -3814,9 +4373,9 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Prostvik",
+        "ref": "Prostvik",
         "ssubtype": "5",
-        "labelAnchor": {"dir": "SE", "x":5 , "y":5 }
+        "labelAnchor": {"dir": "SE", "x":7 , "y":0 }
       },
       "geometry": {
         "coordinates": [22.097969, 60.222557 ],
@@ -3828,7 +4387,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Svartnäs",
+        "ref": "Svartnäs",
         "ssubtype": "5",
         "labelAnchor": {"dir": "N", "x":10 , "y":-10 }
       },
@@ -3842,7 +4401,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Retais",
+        "ref": "Retais",
         "ssubtype": "5",
         "labelAnchor": {"dir": "SW", "x":-5 , "y":5 }
       },
@@ -3856,7 +4415,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Skagen",
+        "ref": "Skagen",
         "ssubtype": "5",
         "labelVisibleFrom": 12,
         "labelAnchor": {"dir": "SE", "x":-5 , "y":5 }
@@ -3871,7 +4430,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Jumo E",
+        "ref": "JumoE",
         "ssubtype": "5",
         "labelVisibleFrom": 12,
         "labelAnchor": {"dir": "NW", "x":-5 , "y":-5 }
@@ -3886,7 +4445,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Aasla",
+        "ref": "Aasla",
         "ssubtype": "5",
         "labelVisibleFrom": 13,
         "labelAnchor": {"dir": "E", "x":10 , "y":0 }
@@ -3901,7 +4460,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Airismaa",
+        "ref": "Airismaa",
         "ssubtype": "5",
         "labelVisibleFrom": 13,
         "labelAnchor": {"dir": "W", "x":-10 , "y":0 }
@@ -3915,9 +4474,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Seglingelinjen",
-        "description": "<p><a class=\"tel\" href=\"tel:+358407685792\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 768 5792</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Snäckö (itä), Seglinge (länsi)</p><p>Liikennöi tarvittaessa, tarkista tauot aikataulusta</p><p><a target=\"Seglinge\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "seglingelinjen"
       },
       "geometry": {
         "coordinates": [[20.710151, 60.215518 ], [20.72575, 60.219291 ] ],
@@ -3929,7 +4488,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Sandholm",
+        "ref": "Sandholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-10 , "y":0 }
       },
@@ -3957,7 +4516,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Lappo",
+        "ref": "Lappo",
         "ssubtype": "3",
         "labelAnchor": {"dir": "NW", "x":-7 , "y":0 }
       },
@@ -3971,7 +4530,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Lökholm",
+        "ref": "Lökholm",
         "ssubtype": "4",
         "labelVisibleFrom": 10,
         "labelAnchor": {"dir": "E", "x":10 , "y":0 }
@@ -3986,7 +4545,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Långnäs",
+        "ref": "Långnäs",
         "ssubtype": "1",
         "labelAnchor": {"dir": "NE", "x":3 , "y":-7 }
       },
@@ -4028,7 +4587,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kuggö",
+        "ref": "Kuggö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -4042,7 +4601,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Överö",
+        "ref": "Överö",
         "ssubtype": "3",
         "labelAnchor": {"dir": "SE", "x":10 , "y":3 }
       },
@@ -4055,9 +4614,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Saverkeit",
-        "description": "<p><a class=\"tel\" href=\"tel:+3580405531072\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 553 1072</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 10</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Näsby I (länsi), Saverkeit (itä)</p><p>Liikennöi tarvittaessa, tauot: 09.10–09.30, 11.40–12.00, 17.10–17.30, 20.10–20.30</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saverkeit.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "saverkeit"
       },
       "geometry": {
         "coordinates": [[21.39553, 60.217457 ], [21.403148, 60.216807 ] ],
@@ -4068,9 +4627,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Högsåra",
-        "description": "<p><a class=\"tel\" href=\"tel:+358407066291\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 706 6291</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Svartnäs (itä), Högsåra (länsi)</p><p>Liikennöi aikataulun mukaan, 4-11 päivittäin</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsara.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "hogsara"
       },
       "geometry": {
         "coordinates": [[22.369194, 59.954602 ], [22.3952, 59.9491 ] ],
@@ -4081,10 +4640,10 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Högsar",
-        "visibleFrom": 11,
-        "description": "<p><a class=\"tel\" href=\"tel:+358405584412\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 558 4412</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 10</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Grännäs (pohjoinen), Ängholm (etelä)</p><p>Liikennöi tarvittaessa, tauot: 9.00-9.20, 11.40-12.00, 17.00-17.20, 19.30-19.50</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsar.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "hogsar",
+        "visibleFrom": 11
       },
       "geometry": {
         "coordinates": [[21.878919, 60.169672], [21.880308, 60.167007] ],
@@ -4095,13 +4654,13 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "pier_obsolete",
-        "sname": "Keistiö",
-        "ssubtype": "4",
-        "labelAnchor": {"dir": "SW", "x":0 , "y":5 }
+        "stype": "pier",
+        "ref": "Keistiö",
+        "ssubtype": "5",
+        "labelVisibleFrom": 30
       },
       "geometry": {
-        "coordinates": [21.34929, 60.372377 ],
+        "coordinates": [21.34945, 60.372322 ],
         "type": "Point"
       },
       "id": "c2aac87b557c1d494117065543d10059"
@@ -4110,8 +4669,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Långnäs",
-        "sname1": "Hiittinen",
+        "ref": "LångnäsH",
         "ssubtype": "3",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -4125,7 +4683,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kumlinge",
+        "ref": "Kumlinge",
         "ssubtype": "3",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -4139,7 +4697,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Heisala",
+        "ref": "Heisala",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -4153,7 +4711,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Gullkrona",
+        "ref": "Gullkrona",
         "ssubtype": "4",
         "labelVisibleFrom": 10,
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
@@ -4168,7 +4726,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Ytterstholm",
+        "ref": "Ytterstholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "N", "x":0 , "y":-5 }
       },
@@ -4195,9 +4753,9 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Hällö",
+        "ref": "Hällö",
         "ssubtype": "4",
-        "labelAnchor": {"dir": "NE", "x":10 , "y":-10 }
+        "labelAnchor": {"dir": "SW", "x":-10 , "y":10 }
       },
       "geometry": {
         "coordinates": [19.768695, 60.366164 ],
@@ -4209,7 +4767,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kopparholm",
+        "ref": "Kopparholm",
         "ssubtype": "4",
         "labelVisibleFrom": 10,
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
@@ -4224,8 +4782,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Naantali",
-        "sname_sv": "Nådendal",
+        "ref": "Naantali",
         "ssubtype": "1",
         "labelAnchor": {"dir": "E", "x":10 , "y":0 },
         "labelVisibleFrom": 30
@@ -4239,7 +4796,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Brunskär",
+        "ref": "Brunskär",
         "stype": "pier",
         "ssubtype": "4",
         "labelVisibleFrom": 10,
@@ -4268,12 +4825,12 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Björkölinjen",
-        "description": "<p><a class=\"tel\" href=\"tel:+3584575242854\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 524 2854</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Lappo (itä), Björkö (länsi)</p><p>Liikennöi tarvittaessa 6.00-22.00, yöllä vain etukäteistilauksesta, tauot Björkössä: 11.10–11.45, 17.30–18.05</p><p><a target=\"bjorko\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "bjorkolinjen"
       },
       "geometry": {
-        "coordinates": [[20.941593, 60.311052 ], [20.952172, 60.311419 ] ],
+        "coordinates": [[20.941593, 60.311052], [20.952172, 60.311419 ] ],
         "type": "LineString"
       },
       "id": "c845d37615020a45b3827c9bf43bf9d0"
@@ -4282,7 +4839,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Tveskiftsholm",
+        "ref": "Tveskiftsholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":10 , "y":0 }
       },
@@ -4310,12 +4867,12 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Töftölinjen",
-        "description": "<p><a class=\"tel\" href=\"tel:+3584573421279\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 342 1279</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Prästö (länsi), Töftö (itä)</p><p>Liikennöi tarvittaessa, tarkista tauot aikataulusta</p><p><a target=\"tofto\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "toftolinjen"
       },
       "geometry": {
-        "coordinates": [[20.2722, 60.207997 ], [20.277661, 60.20571 ] ],
+        "coordinates": [[20.2722, 60.207997 ], [20.277661, 60.20571]],
         "type": "LineString"
       },
       "id": "ca346693fff007af6dbebc1eade3a5f0"
@@ -4323,9 +4880,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Velkuanmaa",
-        "description": "<p><a class=\"tel\" href=\"tel:+358400525902\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 525 902</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 10</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Palva(itä), Velkuanmaa(länsi)</p><p>Liikennöi 30-60 minuutin välein, yövuorot vain tilauksesta</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuanmaa.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "velkuanmaa"
       },
       "geometry": {
         "coordinates": [[21.6365, 60.455059 ], [21.648259, 60.461174 ] ],
@@ -4337,7 +4894,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Nötö",
+        "ref": "Nötö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":5 , "y":0 }
       },
@@ -4351,7 +4908,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kolko",
+        "ref": "Kolko",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -4365,7 +4922,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kittuis",
+        "ref": "Kittuis",
         "ssubtype": "3",
         "labelAnchor": {"dir": "W", "x":-10 , "y":0 }
       },
@@ -4406,7 +4963,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Elvsö",
+        "ref": "Elvsö",
         "stype": "pier",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-10 , "y":0 }
@@ -4447,7 +5004,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Havträsk",
+        "ref": "Havträsk",
         "stype": "pier",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
@@ -4462,7 +5019,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Träskholm",
+        "ref": "Träskholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":10 , "y":0 }
       },
@@ -4476,7 +5033,21 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Lailuoto",
+        "ref": "Bodö",
+        "ssubtype": "4",
+        "labelAnchor": {"dir": "E", "x":10 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [21.750245, 59.908368],
+        "type": "Point"
+      },
+      "id": "d8ead50eef05e68bfc098b58a50df8e5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "Lailuoto",
         "ssubtype": "4",
         "labelAnchor": {"dir": "SW", "x":10 , "y":5 }
       },
@@ -4504,7 +5075,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Verkan",
+        "ref": "Verkan",
         "ssubtype": "3",
         "labelAnchor": {"dir": "SW", "x":10 , "y":5 }
       },
@@ -4518,7 +5089,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Hummelholm",
+        "ref": "Hummelholm",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -4559,7 +5130,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Skarpnåtö",
+        "ref": "Skarpnåtö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NW", "x":-7 , "y":0 }
       },
@@ -4572,7 +5143,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Olofsnäs",
+        "ref": "Olofsnäs",
         "stype": "pier",
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 },
@@ -4588,8 +5159,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Mariehamn",
-        "sname_fi": "Maarianhamina",
+        "ref": "Mariehamn",
         "ssubtype": "1",
         "labelVisibleFrom": 30,
         "labelAnchor": {"dir": "W", "x":-10 , "y":0 }
@@ -4604,7 +5174,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Grisslehamn",
+        "ref": "Grisslehamn",
         "ssubtype": "1",
         "labelAnchor": {"dir": "SE", "x":5 , "y":5 }
       },
@@ -4618,7 +5188,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kapellskär",
+        "ref": "Kapellskär",
         "ssubtype": "1",
         "labelAnchor": {"dir": "N", "x":0 , "y":-10 }
       },
@@ -4632,7 +5202,22 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Stockholm Stadsgården",
+        "ref": "Tallinn",
+        "labelVisibleFrom": 30,
+        "ssubtype": "1",
+        "labelAnchor": {"dir": "N", "x":0 , "y":-10 }
+      },
+      "geometry": {
+        "coordinates": [24.770607,59.443868],
+        "type": "Point"
+      },
+      "id": "e1a55ccaf401d6f64b3765eeb5cbf211"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ref": "StockholmStadsgården",
         "ssubtype": "1",
         "labelVisibleFrom": 30,
         "labelAnchor": { }
@@ -4647,7 +5232,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Stockholm Värtan",
+        "ref": "StockholmVärtan",
         "ssubtype": "1",
         "labelVisibleFrom": 30,
         "labelAnchor": { }
@@ -4662,7 +5247,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Tunnhamn",
+        "ref": "Tunnhamn",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -4690,8 +5275,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Vuosnainen",
-        "sname_sv": "Osnäs",
+        "ref": "Vuosnainen",
         "ssubtype": "2",
         "labelAnchor": {"dir": "NW", "x":20 , "y":0 }
       },
@@ -4719,7 +5303,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Stenskär",
+        "ref": "Stenskär",
         "ssubtype": "4",
         "labelVisibleFrom": 10,
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
@@ -4733,7 +5317,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Lillpensor",
+        "ref": "Lillpensor",
         "stype": "pier",
         "ssubtype": "4",
         "labelAnchor": {"dir": "NW", "x":5 , "y":-5 }
@@ -4748,8 +5332,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Själö",
-        "sname_fi": "Seili",
+        "ref": "Seili",
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -4763,8 +5346,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Bergö",
-        "sname1": "Lumparland",
+        "ref": "Bergö",
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -4778,7 +5360,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Husö",
+        "ref": "Husö",
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -4792,7 +5374,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kyrkogårdsö",
+        "ref": "Kyrkogårdsö",
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -4806,7 +5388,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Dalen",
+        "ref": "Dalen",
         "ssubtype": "3",
         "markerVisibleFrom": 12,
         "labelAnchor": {"dir": "SE", "x":7 , "y":0 }
@@ -4821,7 +5403,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Mossala",
+        "ref": "Mossala",
         "ssubtype": "3",
         "labelAnchor": {"dir": "NE", "x":7 , "y":0 }
       },
@@ -4834,9 +5416,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Skagen",
-        "description": "<p><a class=\"tel\" href=\"tel:+358102717915\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 10 2717915</a></p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Skagen (etelä), Jumo E (pohjoinen)</p><p>Liikennöi tarvittaessa ma-to 6.00-22.00, pe 6.00-23.00, la 7.00-23.00, su 8.30-22.00. Tauot: 9.40 - 9.52, 11.58 - 12.10, 18.20 - 18.32. Lähtee lähtee Skagenista aina 15 ja 30 min ennen Auran lähtöä Kannvikistä Heponiemeen(Kustavi).</p><p><a target=\"info\" href=\"http://www.ncl.fi/fi/aikataulut\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "skagen"
       },
       "geometry": {
         "coordinates": [[21.368536, 60.406191 ], [21.369953, 60.411532 ] ],
@@ -4848,7 +5430,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Djupö",
+        "ref": "Djupö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -4905,8 +5487,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Pärnäs",
-        "sname_fi": "Pärnäinen",
+        "ref": "Pärnäs",
         "ssubtype": "3",
         "markerVisibleFrom": 12,
         "labelAnchor": {"dir": "NE", "x":-3 , "y":-8 }
@@ -4935,7 +5516,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Vartsala",
+        "ref": "Vartsala",
         "ssubtype": "5",
         "labelAnchor": {"dir": "W", "x":-5 , "y":0 }
       },
@@ -4949,7 +5530,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Peno",
+        "ref": "Peno",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -4962,9 +5543,9 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Hämmärönsalmi",
-        "description": "<p><a class=\"tel\" href=\"tel:+358405582773\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 40 558 2773</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Airismaa(pohjoinen), Aasla(etelä)</p><p>Liikennöi 20 minuutin välein (06.00-23.00), yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hammaronsalmi.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "hammaronsalmi"
       },
       "geometry": {
         "coordinates": [[21.963268, 60.316201 ], [21.961557, 60.313804 ] ],
@@ -4975,10 +5556,10 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Vartsala",
-        "visibleFrom": 8,
-        "description": "<p><a class=\"tel\" href=\"tel:+358400138239\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 400 138 239</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 36</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Kivimaa (itä), Vartsala (länsi)</p><p>Liikennöi päivällä aikataulun mukaan n. 20-40 minuutin välein, yöllä tarvittaessa</p><p><a target=\"info\" href=\"http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vartsala.html\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "vartsala",
+        "visibleFrom": 8
       },
       "geometry": {
         "coordinates": [[21.320343, 60.541058 ], [21.335878, 60.542561 ] ],
@@ -5004,7 +5585,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Björkö",
+        "ref": "Björkö",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
       },
@@ -5032,7 +5613,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Vänoxa by",
+        "ref": "Vänoxaby",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -5045,12 +5626,12 @@
     {
       "type": "Feature",
       "properties": {
-        "stype": "cableferry",
-        "sname": "Simskälalinjen",
-        "description": "<p><a class=\"tel\" href=\"tel:+3584573798869\"><i class=\"fa fa-phone\" aria-hidden=\"true\"></i> +358 457 379 8869</a>, <i class=\"fa fa-car\" aria-hidden=\"true\"></i> 14</p><p><i class=\"fa fa-anchor\" aria-hidden=\"true\"></i> Sandö (etelä), Simskäla (pohjoinen)</p><p>Liikennöi tarvittaessa, tauot Simskälassa: 11.30–12.05, 14.00–14.15, 17.00–17.35</p><p><a target=\"simskala\" href=\"http://www.alandstrafiken.ax/sites/www.alandstrafiken.ax/files/farjinfo2017_23.11.2017_0.pdf\">Aikataulut ja info <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i></a></p>"
+        "stype": "connection",
+        "ssubtype": "cableferry",
+        "ref": "simskalalinjen"
       },
       "geometry": {
-        "coordinates": [[20.372257, 60.322485 ], [20.365369, 60.331536 ] ],
+        "coordinates": [[20.372257, 60.322485], [20.365369, 60.331536]],
         "type": "LineString"
       },
       "id": "f5fce26195061a9790e873a6b5eba5e3"
@@ -5073,7 +5654,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Grönvik",
+        "ref": "Grönvik",
         "ssubtype": "4",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -5101,7 +5682,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Järvsor",
+        "ref": "Järvsor",
         "ssubtype": "4",
         "labelAnchor": {"dir": "S", "x":0 , "y":5 }
       },
@@ -5114,7 +5695,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Käldersö",
+        "ref": "Käldersö",
         "stype": "pier",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-10 , "y":0 }
@@ -5129,7 +5710,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kannvik",
+        "ref": "Kannvik",
         "ssubtype": "3",
         "labelAnchor": {"dir": "E", "x":7 , "y":0 }
       },
@@ -5156,7 +5737,7 @@
     {
       "type": "Feature",
       "properties": {
-        "sname": "Finnö",
+        "ref": "Finnö",
         "stype": "pier",
         "ssubtype": "4",
         "labelAnchor": {"dir": "W", "x":-7 , "y":0 }
@@ -5219,8 +5800,7 @@
       "type": "Feature",
       "properties": {
         "stype": "pier",
-        "sname": "Kirjais",
-        "sname_fi": "Kirjainen",
+        "ref": "Kirjais",
         "ssubtype": "3",
         "labelAnchor": {"dir": "SW", "x":-7 , "y":0 }
       },
@@ -6376,6 +6956,22 @@
         "labelAnchor": {"dir": "NE", "x": 10, "y": 0 },
         "labelVisibleFrom": 8,
         "background": "white"
+      }
+    },
+    {
+      "id": "9e752a9b1c3d3478c083913ad7d0001e",
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [24.757,59.5],
+        "type": "Point"
+      },
+      "properties": {
+        "stype": "area",
+        "ssubtype": "mun1",
+        "sname": "Tallinn",
+        "sname_fi": "Tallinna",
+        "labelAnchor": {"dir": "C", "x": 0, "y": 0 },
+        "labelVisibleFrom": 8
       }
     },
     {
