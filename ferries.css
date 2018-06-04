@@ -114,7 +114,7 @@
       border-top: 1px ridge #a0a0a0;
     }
 
-    .infosection h1, .infosection h2, .infosection h3, .infosection h4, .infosection h5 {
+    .infosection h1, .infosection h2 {
       margin-bottom: 30px;
     }
     .closeInfoButton {
