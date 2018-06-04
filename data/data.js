@@ -619,9 +619,9 @@ fdata = {
       contact: {
         phones: ['+358 41 456 4828', '+358 45 124 5551'],
         email: 'info@a-lines.fi',
-        www: 'http://www.saaristolinjat.fi/',
-        www_fi: 'http://saaristolinjat.fi/',
-        www_sv: 'http://skargardslinjer.fi/'
+        www: 'https://saaristolinjat.fi/',
+        www_fi: 'https://saaristolinjat.fi/',
+        www_sv: 'https://saaristolinjat.fi/?lang=sv'
       },
     },
     savolainen: {
@@ -1109,8 +1109,7 @@ fdata = {
       ],
     },
     korporutt: {
-      link: "http://skargardslinjer.fi/Korpo_ruttomrade",
-      link_fi: "http://www.saaristolinjat.fi/Korppoon_reittialue",
+      link: "https://saaristolinjat.fi/#reittialue",
       tables: [
       { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["FiskoSommar2018_1.png", "FiskoSommar2018_2.png"]},
       ],
