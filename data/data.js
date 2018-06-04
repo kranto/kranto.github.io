@@ -1132,21 +1132,21 @@ fdata = {
     nagusodra: { 
       link: "https://www.ferryway.fi/6",
       tables: [
-      { validFrom: "2018-04-01", validTo: "2018-06-03", images: ["NordepVar2018_1.png", "NordepVar2018_2.png"]}
+      { validFrom: "2018-06-04", validTo: "2018-08-12", images: ["NordepSommar2018_1.png", "NordepSommar2018_2.png"]}
       ],
     },
     hitisstella: {
       name: "M/S Stella",
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2017-08-14", validTo: "2018-06-04", images: ["StellaVinter2018_1.png", "StellaVinter2018_2.png"]}
+      { validFrom: "2018-06-02", validTo: "2018-08-12", images: ["StellaSommar2018_1.png", "StellaSommar2018_2.png"]}
       ],
     },
     hitisalva: { 
       name: "M/S Alva",
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2017-08-14", validTo: null, images: ["AlvaHost2017.png"]}
+      { validFrom: "2018-06-04", validTo: "2018-08-12", images: ["AlvaSommar2018.png"]}
       ],
     },
     pargasrutt: {
