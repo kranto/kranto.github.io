@@ -151,7 +151,14 @@ function routeInfo(route, lang) {
         });
     });
 
-    info.timetables = timetables;
+    info.timetables = timetables.map(function(timetable) {
+        timetable.tables.forEach(function(table) {
+            table.images = table.images.map(function(image) {
+                return image.replace(".png", ".jpeg");
+            });
+        });
+        return timetable;
+    });
     
     info.pricelists = route.pricelists;
 
