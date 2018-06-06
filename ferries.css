@@ -762,6 +762,8 @@ div.timetablelink:last-of-type {
 }
 
 .contactbutton.facebook:before {
+  color: #3B5998;
+  font-size: 1.2em;
   content: "\f230\00a0\00a0";
 }
 
