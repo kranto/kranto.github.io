@@ -901,8 +901,8 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["FoglolinjenSommar2018_1.png", "FoglolinjenSommar2018_2.png"]},
-      { validFrom: "2018-09-01", validTo: "2018-12-31", images: ["FoglolinjenVinter2018_1.png", "FoglolinjenVinter2018_2.png"]}
+      { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["FoglolinjenSommar2018_1.jpeg", "FoglolinjenSommar2018_2.jpeg"]},
+      { validFrom: "2018-09-01", validTo: "2018-12-31", images: ["FoglolinjenVinter2018_1.jpeg", "FoglolinjenVinter2018_2.jpeg"]}
       ],
     },
     norralinjen: {
@@ -911,10 +911,10 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["NorraVar2018_1.png", "NorraVar2018_2.png", "NorraVar2018_3.png"]},
-      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["NorraSommar2018_1.png", "NorraSommar2018_2.png"]},
-      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["NorraVar2018_1.png", "NorraVar2018_2.png", "NorraVar2018_3.png"]},
-      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["NorraVinter2018_1.png", "NorraVinter2018_2.png", "NorraVinter2018_3.png"]},
+      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["NorraVar2018_1.jpeg", "NorraVar2018_2.jpeg", "NorraVar2018_3.jpeg"]},
+      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["NorraSommar2018_1.jpeg", "NorraSommar2018_2.jpeg"]},
+      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["NorraVar2018_1.jpeg", "NorraVar2018_2.jpeg", "NorraVar2018_3.jpeg"]},
+      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["NorraVinter2018_1.jpeg", "NorraVinter2018_2.jpeg", "NorraVinter2018_3.jpeg"]},
       ],
     },
     enklingelinjen: {
@@ -923,10 +923,10 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["EnklingeVar2018.png"]},
-      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["EnklingeSommar2018.png"]},
-      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["EnklingeVar2018.png"]},
-      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["EnklingeVinter2018.png"]},
+      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["EnklingeVar2018.jpeg"]},
+      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["EnklingeSommar2018.jpeg"]},
+      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["EnklingeVar2018.jpeg"]},
+      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["EnklingeVinter2018.jpeg"]},
       ],
     },
     asterholmalinjen: {
@@ -934,10 +934,10 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["FridaVar2018_1.png", "FridaVar2018_2.png", "FridaVar2018_3.png"]},
-      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["FridaSommar2018_1.png", "FridaSommar2018_2.png", "FridaSommar2018_3.png"]},
-      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["FridaVar2018_1.png", "FridaVar2018_2.png"]},
-      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["FridaVinter2018_1.png", "FridaVinter2018_2.png", "FridaVinter2018_3.png"]},
+      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["FridaVar2018_1.jpeg", "FridaVar2018_2.jpeg", "FridaVar2018_3.jpeg"]},
+      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["FridaSommar2018_1.jpeg", "FridaSommar2018_2.jpeg", "FridaSommar2018_3.jpeg"]},
+      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["FridaVar2018_1.jpeg", "FridaVar2018_2.jpeg"]},
+      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["FridaVinter2018_1.jpeg", "FridaVinter2018_2.jpeg", "FridaVinter2018_3.jpeg"]},
       ],
     },
     avajurmo: {
@@ -945,10 +945,10 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["DoppingenVar2018_1.png", "DoppingenVar2018_2.png", "DoppingenVar2018_3.png"]},
-      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["DoppingenSommar2018_1.png", "DoppingenSommar2018_2.png", "DoppingenSommar2018_3.png"]},
-      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["DoppingenVar2018_1.png", "DoppingenVar2018_2.png"]},
-      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["DoppingenVinter2018_1.png", "DoppingenVinter2018_2.png", "DoppingenVinter2018_3.png"]},
+      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["DoppingenVar2018_1.jpeg", "DoppingenVar2018_2.jpeg", "DoppingenVar2018_3.jpeg"]},
+      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["DoppingenSommar2018_1.jpeg", "DoppingenSommar2018_2.jpeg", "DoppingenSommar2018_3.jpeg"]},
+      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["DoppingenVar2018_1.jpeg", "DoppingenVar2018_2.jpeg"]},
+      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["DoppingenVinter2018_1.jpeg", "DoppingenVinter2018_2.jpeg", "DoppingenVinter2018_3.jpeg"]},
       ],
     },
     osnasava: {
@@ -956,10 +956,10 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["ViggenVar2018_1.png", "ViggenVar2018_2.png"]},
-      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["ViggenSommar2018_1.png", "ViggenSommar2018_2.png"]},
-      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["ViggenVar2018_1.png"]},
-      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["ViggenVinter2018_1.png", "ViggenVinter2018_2.png", "ViggenVinter2018_3.png"]},
+      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["ViggenVar2018_1.jpeg", "ViggenVar2018_2.jpeg"]},
+      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["ViggenSommar2018_1.jpeg", "ViggenSommar2018_2.jpeg"]},
+      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["ViggenVar2018_1.jpeg"]},
+      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["ViggenVinter2018_1.jpeg", "ViggenVinter2018_2.jpeg", "ViggenVinter2018_3.jpeg"]},
       ],
     },
     sodralinjen: {
@@ -967,10 +967,10 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["SodraVar2018_1.png", "SodraVar2018_2.png"]},
-      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["SodraSommar2018_1.png", "SodraSommar2018_2.png", "SodraSommar2018_3.png", "SodraSommar2018_4.png", "SodraSommar2018_5.png", "SodraSommar2018_6.png"]},
-      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["SodraVar2018_1.png", "SodraVar2018_2.png"]},
-      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["SodraVinter2018_1.png", "SodraVinter2018_2.png"]},
+      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["SodraVar2018_1.jpeg", "SodraVar2018_2.jpeg"]},
+      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["SodraSommar2018_1.jpeg", "SodraSommar2018_2.jpeg", "SodraSommar2018_3.jpeg", "SodraSommar2018_4.jpeg", "SodraSommar2018_5.jpeg", "SodraSommar2018_6.jpeg"]},
+      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["SodraVar2018_1.jpeg", "SodraVar2018_2.jpeg"]},
+      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["SodraVinter2018_1.jpeg", "SodraVinter2018_2.jpeg"]},
       ],
     },
     tvarlinjen: {
@@ -978,10 +978,10 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["OdinVar2018_1.png", "OdinVar2018_2.png"]},
-      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["OdinSommar2018_1.png", "OdinSommar2018_2.png", "OdinSommar2018_3.png"]},
-      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["OdinVar2018_1.png", "OdinVar2018_2.png"]},
-      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["OdinVinter2018_1.png", "OdinVinter2018_2.png"]},
+      { validFrom: "2018-04-30", validTo: "2018-06-17", images: ["OdinVar2018_1.jpeg", "OdinVar2018_2.jpeg"]},
+      { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["OdinSommar2018_1.jpeg", "OdinSommar2018_2.jpeg", "OdinSommar2018_3.jpeg"]},
+      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["OdinVar2018_1.jpeg", "OdinVar2018_2.jpeg"]},
+      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["OdinVinter2018_1.jpeg", "OdinVinter2018_2.jpeg"]},
       ],  
     },
     alandsvajerfarjor: {
@@ -989,7 +989,7 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2018-01-01", validTo: "2018-12-31", images: ["AlandsVajerFarjor2018.png"]},
+      { validFrom: "2018-01-01", validTo: "2018-12-31", images: ["AlandsVajerFarjor2018.jpeg"]},
       ],
     },
     
@@ -998,13 +998,13 @@ fdata = {
       link_sv: "http://www.aland.com/se/skarpnato",
       link_en: "http://www.aland.com/en/skarpnato",
       tables_fi: [
-      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_1.png"]},
+      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_1.jpeg"]},
       ],
       tables_sv: [
-      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_2.png"]},
+      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_2.jpeg"]},
       ],
       tables_en: [
-      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_3.png"]},
+      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_3.jpeg"]},
       ],
 
     },
@@ -1013,9 +1013,9 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/inio-gustavs-aura.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/inio-kustavi-aura.html#timetables",
       tables: [
-      { validFrom: "2018-01-01", validTo: "2018-06-18", images: ["AuraVinter2018.png"]},
-      { validFrom: "2018-06-19", validTo: "2018-08-14", images: ["AuraSommar2018.png"]},
-      { validFrom: "2018-08-15", validTo: "2018-12-31", images: ["AuraVinter2018.png"]},
+      { validFrom: "2018-01-01", validTo: "2018-06-18", images: ["AuraVinter2018.jpeg"]},
+      { validFrom: "2018-06-19", validTo: "2018-08-14", images: ["AuraSommar2018.jpeg"]},
+      { validFrom: "2018-08-15", validTo: "2018-12-31", images: ["AuraVinter2018.jpeg"]},
       ],
     },
     houtskarinio: {
@@ -1023,7 +1023,7 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/skargardens-ringvag-houtskar-inio.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/the-archipelago-houtskari-inio.html#timetables",
       tables: [
-      { validFrom: "2018-05-25", validTo: "2018-08-26", images: ["AntoniaSommar2018.png"]},
+      { validFrom: "2018-05-25", validTo: "2018-08-26", images: ["AntoniaSommar2018.jpeg"]},
       ],
     },
 
@@ -1052,7 +1052,7 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
       tables: [
-      { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.png", "KivimoSommar2018_2.png"]}
+      { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.jpeg", "KivimoSommar2018_2.jpeg"]}
       ],
     },
 
@@ -1061,7 +1061,7 @@ fdata = {
       link_sv: "http://www.ostern.fi/aikataulu",
       link_en: "http://www.ostern.fi/en/schedule-fahrplan",
       tables: [
-      { validFrom: "2018-05-18", validTo: "2018-09-02", images: ["Ostern2018_fisv.png"], tables_en: ["Ostern2018_ende.png"]},
+      { validFrom: "2018-05-18", validTo: "2018-09-02", images: ["Ostern2018_fisv.jpeg"], tables_en: ["Ostern2018_ende.jpeg"]},
       ],
     },
     kasnashitis: {
@@ -1069,7 +1069,7 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kasnas-hitis-aurora.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kasnas-hiittinen-aurora.html#timetables",
       tables: [
-      { validFrom: "2018-01-01", validTo: "2018-12-31", images: ["Aurora2018.png"]},
+      { validFrom: "2018-01-01", validTo: "2018-12-31", images: ["Aurora2018.jpeg"]},
       ],
     },
     velkuanreitti: {
@@ -1077,27 +1077,27 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
       tables: [
-      { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.png", "KivimoSommar2018_2.png"]}
+      { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.jpeg", "KivimoSommar2018_2.jpeg"]}
       ],
     },
     rymattylanreitti: {
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2018-05-07", validTo: "2018-09-30", images: ["IslaSommar2018_1.png", "IslaSommar2018_1r2018_2.png"]}
+      { validFrom: "2018-05-07", validTo: "2018-09-30", images: ["IslaSommar2018_1.jpeg", "IslaSommar2018_1r2018_2.jpeg"]}
       ],
     },
     houtskarrutt: {
       name: "Houtskarin reitti", name_sv: "Houtskär rutt", name_en: "Houtskär Route", specifier: "",
       link: "http://www.ferryway.fi/7",
       tables: [
-      { validFrom: "2018-04-15", validTo: "2018-09-30", images: ["KarolinaSommar2018_1.png", "KarolinaSommar2018_2.png"]}
+      { validFrom: "2018-04-15", validTo: "2018-09-30", images: ["KarolinaSommar2018_1.jpeg", "KarolinaSommar2018_2.jpeg"]}
       ],
     },
     iniorutt: {
       name: "Iniön lisäreitti", name_sv: "Iniö tilläggsrutt", name_en: "Iniö Additional Route", specifier: "",
       link: "http://www.ferryway.fi/8",
       tables: [
-      { validFrom: "2018-05-14", validTo: "2018-08-12", images: ["SatavaSommar2018_1.png", "SatavaeSommar2018_2.png"]}
+      { validFrom: "2018-05-14", validTo: "2018-08-12", images: ["SatavaSommar2018_1.jpeg", "SatavaeSommar2018_2.jpeg"]}
       ],
     },
     utorutt: { 
@@ -1105,13 +1105,13 @@ fdata = {
       link_sv: "https://meritie.fi/tidtabell-rutt/?lang=sv",
       link_en: "https://meritie.fi/tidtabell-rutt/?lang=sv",
       tables: [
-      { validFrom: "2018-06-01", validTo: "2018-08-06", images: ["EivorSommar2018_1.png", "EivorSommar2018_2.png"]}
+      { validFrom: "2018-06-01", validTo: "2018-08-06", images: ["EivorSommar2018_1.jpeg", "EivorSommar2018_2.jpeg"]}
       ],
     },
     korporutt: {
       link: "https://saaristolinjat.fi/#reittialue",
       tables: [
-      { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["FiskoSommar2018_1.png", "FiskoSommar2018_2.png"]},
+      { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["FiskoSommar2018_1.jpeg", "FiskoSommar2018_2.jpeg"]},
       ],
     },
     nagunorra: {
@@ -1119,33 +1119,33 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-norra-rutt-falko.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
       tables: [
-      { validFrom: "2018-05-18", validTo: "2018-09-02", images: ["FalkoSommar2018.png"]}
+      { validFrom: "2018-05-18", validTo: "2018-09-02", images: ["FalkoSommar2018.jpeg"]}
       ],
     },
     nagutvar: {
       link: "https://www.ferryway.fi/5",
       tables: [
-      { validFrom: "2018-04-01", validTo: "2018-10-31", images: ["MyrskylintuSommar2018_1.png", "MyrskylintuSommar2018_2.png"]}
+      { validFrom: "2018-04-01", validTo: "2018-10-31", images: ["MyrskylintuSommar2018_1.jpeg", "MyrskylintuSommar2018_2.jpeg"]}
       ],
     },
     nagusodra: { 
       link: "https://www.ferryway.fi/6",
       tables: [
-      { validFrom: "2018-06-04", validTo: "2018-08-12", images: ["NordepSommar2018_1.png", "NordepSommar2018_2.png"]}
+      { validFrom: "2018-06-04", validTo: "2018-08-12", images: ["NordepSommar2018_1.jpeg", "NordepSommar2018_2.jpeg"]}
       ],
     },
     hitisstella: {
       name: "M/S Stella",
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2018-06-02", validTo: "2018-08-12", images: ["StellaSommar2018_1.png", "StellaSommar2018_2.png"]}
+      { validFrom: "2018-06-02", validTo: "2018-08-12", images: ["StellaSommar2018_1.jpeg", "StellaSommar2018_2.jpeg"]}
       ],
     },
     hitisalva: { 
       name: "M/S Alva",
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2018-06-04", validTo: "2018-08-12", images: ["AlvaSommar2018.png"]}
+      { validFrom: "2018-06-04", validTo: "2018-08-12", images: ["AlvaSommar2018.jpeg"]}
       ],
     },
     pargasrutt: {
@@ -1153,8 +1153,8 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-ruttomrade-viken.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-route-viken.html#timetables",
       tables: [
-      { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["VikenSommar2018_1.png", "VikenSommar2018_2.png"]},
-      { validFrom: "2018-09-01", validTo: "2018-10-31", images: ["VikenVar2018_1.png", "VikenVar2018_2.png"]},
+      { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["VikenSommar2018_1.jpeg", "VikenSommar2018_2.jpeg"]},
+      { validFrom: "2018-09-01", validTo: "2018-10-31", images: ["VikenVar2018_1.jpeg", "VikenVar2018_2.jpeg"]},
       ]
     },
 
@@ -1163,7 +1163,7 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/hogsara.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/hogsara.html#timetables",
       tables: [
-      { validFrom: "2017-01-01", validTo: null, images: ["Hogsara.png"]}
+      { validFrom: "2017-01-01", validTo: null, images: ["Hogsara.jpeg"]}
       ]
     },
     vartsala: {
@@ -1171,7 +1171,7 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/vartsala.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/vartsala.html#timetables",
       tables: [
-      { validFrom: "2017-01-01", validTo: null, images: ["Vartsala.png"]}
+      { validFrom: "2017-01-01", validTo: null, images: ["Vartsala.jpeg"]}
       ]
     },
     vano: {
@@ -1179,7 +1179,7 @@ fdata = {
       link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/vano.html#timetables",
       link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/vano.html#timetables",
       tables: [
-      { validFrom: "2017-01-01", validTo: null, images: ["Vano2018_1.png", "Vano2018_2.png", "Vano2018_3.png"]}
+      { validFrom: "2017-01-01", validTo: null, images: ["Vano2018_1.jpeg", "Vano2018_2.jpeg", "Vano2018_3.jpeg"]}
       ]
     },
     hogsar: {
@@ -1232,13 +1232,13 @@ fdata = {
       link_sv: "http://www.ncl.fi/sv/tidtabeller",
       link_en: "http://www.ncl.fi/en/time-schedules",
       tables: [
-      { validFrom: "2017-01-01", validTo: null, images: ["Skagen_fi.png"]}
+      { validFrom: "2017-01-01", validTo: null, images: ["Skagen_fi.jpeg"]}
       ],
       tables_sv: [
-      { validFrom: "2017-01-01", validTo: null, images: ["Skagen_sv.png"]}
+      { validFrom: "2017-01-01", validTo: null, images: ["Skagen_sv.jpeg"]}
       ],
       tables_en: [
-      { validFrom: "2017-01-01", validTo: null, images: ["Skagen_en.png"]}
+      { validFrom: "2017-01-01", validTo: null, images: ["Skagen_en.jpeg"]}
       ],
     },
     sorpo: {
@@ -1254,17 +1254,17 @@ fdata = {
       link_sv: "https://vitharun.fi/sv/tidtabeller/oro/",
       link_en: "https://vitharun.fi/en/timetables/oro/",
       tables: [
-      { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2.png", "Norrskar2018_4.png"]},
-      { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3.png", "Norrskar2018_4.png"]},
-      { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2.png", "Norrskar2018_4.png"]},
-      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1.png", "Norrskar2018_4.png"]},
+      { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2.jpeg", "Norrskar2018_4.jpeg"]},
+      { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3.jpeg", "Norrskar2018_4.jpeg"]},
+      { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2.jpeg", "Norrskar2018_4.jpeg"]},
+      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1.jpeg", "Norrskar2018_4.jpeg"]},
       ],
       tables_en: [
-      { validFrom: "2018-05-01", validTo: "2018-05-31", images: ["Norrskar2018_1en.png", "Norrskar2018_4en.png"]},
-      { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2en.png", "Norrskar2018_4en.png"]},
-      { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3en.png", "Norrskar2018_4en.png"]},
-      { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2en.png", "Norrskar2018_4en.png"]},
-      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1en.png", "Norrskar2018_4en.png"]},
+      { validFrom: "2018-05-01", validTo: "2018-05-31", images: ["Norrskar2018_1en.jpeg", "Norrskar2018_4en.jpeg"]},
+      { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
+      { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3en.jpeg", "Norrskar2018_4en.jpeg"]},
+      { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
+      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1en.jpeg", "Norrskar2018_4en.jpeg"]},
       ],
     },
     turkunauvo: {
@@ -1272,19 +1272,19 @@ fdata = {
       link_sv: "https://vitharun.fi/sv/tidtabeller/abo-sjalo-nagu/",
       link_en: "https://vitharun.fi/en/timetables/turku-seili-nagu/",
       tables_fi: [
-      { validFrom: "2018-05-05", validTo: "2018-06-07", images: ["Fanny2018_1fi.png", "Fanny2018_3fi.png"]},
-      { validFrom: "2018-06-08", validTo: "2018-09-02", images: ["Fanny2018_2fi.png", "Fanny2018_3fi.png"]},
-      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1fi.png", "Fanny2018_3fi.png"]},
+      { validFrom: "2018-05-05", validTo: "2018-06-07", images: ["Fanny2018_1fi.jpeg", "Fanny2018_3fi.jpeg"]},
+      { validFrom: "2018-06-08", validTo: "2018-09-02", images: ["Fanny2018_2fi.jpeg", "Fanny2018_3fi.jpeg"]},
+      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1fi.jpeg", "Fanny2018_3fi.jpeg"]},
       ],
       tables_sv: [
-      { validFrom: "2018-05-05", validTo: "2018-06-07", images: ["Fanny2018_1sv.png", "Fanny2018_3sv.png"]},
-      { validFrom: "2018-06-08", validTo: "2018-09-02", images: ["Fanny2018_2sv.png", "Fanny2018_3sv.png"]},
-      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1sv.png", "Fanny2018_3sv.png"]},
+      { validFrom: "2018-05-05", validTo: "2018-06-07", images: ["Fanny2018_1sv.jpeg", "Fanny2018_3sv.jpeg"]},
+      { validFrom: "2018-06-08", validTo: "2018-09-02", images: ["Fanny2018_2sv.jpeg", "Fanny2018_3sv.jpeg"]},
+      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1sv.jpeg", "Fanny2018_3sv.jpeg"]},
       ],
       tables_en: [
-      { validFrom: "2018-05-05", validTo: "2018-06-07", images: ["Fanny2018_1en.png", "Fanny2018_3en.png"]},
-      { validFrom: "2018-06-08", validTo: "2018-09-02", images: ["Fanny2018_2en.png", "Fanny2018_3en.png"]},
-      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1en.png", "Fanny2018_3en.png"]},
+      { validFrom: "2018-05-05", validTo: "2018-06-07", images: ["Fanny2018_1en.jpeg", "Fanny2018_3en.jpeg"]},
+      { validFrom: "2018-06-08", validTo: "2018-09-02", images: ["Fanny2018_2en.jpeg", "Fanny2018_3en.jpeg"]},
+      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1en.jpeg", "Fanny2018_3en.jpeg"]},
       ],
     },
 
@@ -1292,7 +1292,7 @@ fdata = {
 
   pricelists: {
     alandstrafiken: [
-    { validFrom: "2018-01-01", validTo: "2018-12-31", lists: ["AlandstrafikenPricelist2018_1.png", "AlandstrafikenPricelist2018_2.png"]}
+    { validFrom: "2018-01-01", validTo: "2018-12-31", lists: ["AlandstrafikenPricelist2018_1.jpeg", "AlandstrafikenPricelist2018_2.jpeg"]}
     ]
   },
 
