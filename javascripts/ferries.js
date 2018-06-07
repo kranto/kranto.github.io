@@ -207,8 +207,8 @@ function initMenu() {
 
   $('.box').click(function() {
     var infoPage = this.getAttribute("data-target");
-    if (history.state.infoPage == infoPage) return;
-    var newState = {infoPage: infoPage, depth: history.state.depth? history.state.depth + 1: 1};
+    if (history.state && history.state.infoPage == infoPage) return;
+    var newState = {infoPage: infoPage, depth: history.state && history.state.depth? history.state.depth + 1: 1};
     history.pushState(newState, null, null);
     navigateTo(newState);
   });
