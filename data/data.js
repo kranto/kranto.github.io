@@ -667,7 +667,8 @@ fdata = {
         address_sv: 'Pansiovägen 48, 20240 Åbo',
         www: 'https://www.meritie.fi/',
         www_fi: 'https://www.meritie.fi/',
-        www_sv: 'https://meritie.fi/?lang=sv'
+        www_sv: 'https://meritie.fi/?lang=sv',
+        fb: 'https://www.facebook.com/Archipelagoway/'
       },
     },
     vitharun: {
