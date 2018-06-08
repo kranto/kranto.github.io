@@ -347,7 +347,7 @@ fdata = {
       features: { },
       capacity: { cars: 27 },
       contact: {
-        phones: ['+358 400 320 049']
+        phones: ['+358 40 738 3002']
       },
     },
     saverkeit: {
@@ -583,10 +583,10 @@ fdata = {
       contact: {
         phones: ['+358 207 118 750', {name: "Timetables", name_fi: "Aikatauluneuvonta", name_sv: "Tidtabellsinformation", tel: '+358 400 117 123'}],
         address: 'Puutarhakatu 55-57, PL 252, 20101 Turku',
-        www: 'http://www.finferries.fi/',
-        www_fi: 'http://www.finferries.fi/',
-        www_sv: 'http://www.finferries.fi/sv',
-        www_en: 'http://www.finferries.fi/en'
+        www: 'https://www.finferries.fi/',
+        www_fi: 'https://www.finferries.fi/',
+        www_sv: 'https://www.finferries.fi/sv',
+        www_en: 'https://www.finferries.fi/en'
       },
     },
     ncl: {
@@ -1010,9 +1010,9 @@ fdata = {
 
     },
     iniokustavi: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/inio-gustavs-aura.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/inio-kustavi-aura.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/inio-kustavi-aura.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/inio-gustavs-aura.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/inio-kustavi-aura.html#timetables",
       tables: [
       { validFrom: "2018-01-01", validTo: "2018-06-18", images: ["AuraVinter2018.jpeg"]},
       { validFrom: "2018-06-19", validTo: "2018-08-14", images: ["AuraSommar2018.jpeg"]},
@@ -1020,38 +1020,38 @@ fdata = {
       ],
     },
     houtskarinio: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saariston-rengastie-houtskari-inio.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/skargardens-ringvag-houtskar-inio.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/the-archipelago-houtskari-inio.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saariston-rengastie-houtskari-inio.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/skargardens-ringvag-houtskar-inio.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/the-archipelago-houtskari-inio.html#timetables",
       tables: [
       { validFrom: "2018-05-25", validTo: "2018-08-26", images: ["AntoniaSommar2018.jpeg"]},
       ],
     },
 
     korpohoutskar: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-houtskari.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/korpo-houtskar.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/korppoo-houtskari.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-houtskari.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/korpo-houtskar.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/korppoo-houtskari.html#timetables",
     },
     korponorrskata: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-norrskata.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/korpo-norrskata.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/korppoo-norrskata.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/korppoo-norrskata.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/korpo-norrskata.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/korppoo-norrskata.html#timetables",
     },
     nagukorpo: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-korpo.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-korppoo.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvo-korppoo.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-korpo.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-korppoo.html#timetables",
     },
     pargasnagu: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-nagu.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-nauvo.html#timetables",        
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/parainen-nauvo.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-nagu.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-nauvo.html#timetables",        
     },
     velkuataivassalo: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
       tables: [
       { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.jpeg", "KivimoSommar2018_2.jpeg"]}
       ],
@@ -1066,17 +1066,17 @@ fdata = {
       ],
     },
     kasnashitis: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kasnas-hiittinen-aurora.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kasnas-hitis-aurora.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kasnas-hiittinen-aurora.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kasnas-hiittinen-aurora.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kasnas-hitis-aurora.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kasnas-hiittinen-aurora.html#timetables",
       tables: [
       { validFrom: "2018-01-01", validTo: "2018-12-31", images: ["Aurora2018.jpeg"]},
       ],
     },
     velkuanreitti: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuan-reitti-kivimo.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
       tables: [
       { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.jpeg", "KivimoSommar2018_2.jpeg"]}
       ],
@@ -1116,9 +1116,9 @@ fdata = {
       ],
     },
     nagunorra: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-norra-rutt-falko.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/nauvon-pohjoinen-reitti-falko.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-norra-rutt-falko.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
       tables: [
       { validFrom: "2018-05-18", validTo: "2018-09-02", images: ["FalkoSommar2018.jpeg"]}
       ],
@@ -1150,9 +1150,9 @@ fdata = {
       ],
     },
     pargasrutt: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/paraisten-reittialue-viken.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-ruttomrade-viken.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-route-viken.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/paraisten-reittialue-viken.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-ruttomrade-viken.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-route-viken.html#timetables",
       tables: [
       { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["VikenSommar2018_1.jpeg", "VikenSommar2018_2.jpeg"]},
       { validFrom: "2018-09-01", validTo: "2018-10-31", images: ["VikenVar2018_1.jpeg", "VikenVar2018_2.jpeg"]},
@@ -1160,73 +1160,73 @@ fdata = {
     },
 
     hogsara: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsara.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/hogsara.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/hogsara.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsara.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/hogsara.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/hogsara.html#timetables",
       tables: [
       { validFrom: "2017-01-01", validTo: null, images: ["Hogsara.jpeg"]}
       ]
     },
     vartsala: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vartsala.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/vartsala.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/vartsala.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vartsala.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/vartsala.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/vartsala.html#timetables",
       tables: [
       { validFrom: "2017-01-01", validTo: null, images: ["Vartsala.jpeg"]}
       ]
     },
     vano: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vano.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/vano.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/vano.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/vano.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/vano.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/vano.html#timetables",
       tables: [
       { validFrom: "2017-01-01", validTo: null, images: ["Vano2018_1.jpeg", "Vano2018_2.jpeg", "Vano2018_3.jpeg"]}
       ]
     },
     hogsar: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsar.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/hogsar.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/hogsar.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hogsar.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/hogsar.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/hogsar.html#timetables",
     },
     kokkila: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kokkila.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kokkila.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kokkila.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kokkila.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kokkila.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kokkila.html#timetables",
     },
     hammaronsalmi: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hammaronsalmi.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/hammaronsalmi.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/hammaronsalmi.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/hammaronsalmi.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/hammaronsalmi.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/hammaronsalmi.html#timetables",
     },
     palva: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/palva.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/palva.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/palva.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/palva.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/palva.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/palva.html#timetables",
     },
     velkuanmaa: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuanmaa.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkuanmaa.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkuanmaa.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/velkuanmaa.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkuanmaa.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkuanmaa.html#timetables",
     },
     kivimo: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kivimo.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kivimo.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kivimo.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/kivimo.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/kivimo.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/kivimo.html#timetables",
     },
     saverkeit: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saverkeit.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/saverkeit.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/saverkeit.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/saverkeit.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/saverkeit.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/saverkeit.html#timetables",
     },
     mossala: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/mossala.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/mossala.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/mossala.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/mossala.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/mossala.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/mossala.html#timetables",
     },
     keistio: {
-      link: "http://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/keistio.html#timetables",
-      link_sv: "http://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/keistio.html#timetables",
-      link_en: "http://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/keistio.html#timetables",
+      link: "https://www.finferries.fi/lauttaliikenne/lauttapaikat-ja-aikataulut/keistio.html#timetables",
+      link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/keistio.html#timetables",
+      link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/keistio.html#timetables",
     },
     skagen: {
       link: "http://www.ncl.fi/fi/aikataulut",
