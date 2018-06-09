@@ -1261,7 +1261,6 @@ fdata = {
       { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1.jpeg", "Norrskar2018_4.jpeg"]},
       ],
       tables_en: [
-      { validFrom: "2018-05-01", validTo: "2018-05-31", images: ["Norrskar2018_1en.jpeg", "Norrskar2018_4en.jpeg"]},
       { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
       { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3en.jpeg", "Norrskar2018_4en.jpeg"]},
       { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
@@ -1273,17 +1272,14 @@ fdata = {
       link_sv: "https://vitharun.fi/sv/tidtabeller/abo-sjalo-nagu/",
       link_en: "https://vitharun.fi/en/timetables/turku-seili-nagu/",
       tables_fi: [
-      { validFrom: "2018-05-05", validTo: "2018-06-07", images: ["Fanny2018_1fi.jpeg", "Fanny2018_3fi.jpeg"]},
       { validFrom: "2018-06-08", validTo: "2018-09-02", images: ["Fanny2018_2fi.jpeg", "Fanny2018_3fi.jpeg"]},
       { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1fi.jpeg", "Fanny2018_3fi.jpeg"]},
       ],
       tables_sv: [
-      { validFrom: "2018-05-05", validTo: "2018-06-07", images: ["Fanny2018_1sv.jpeg", "Fanny2018_3sv.jpeg"]},
       { validFrom: "2018-06-08", validTo: "2018-09-02", images: ["Fanny2018_2sv.jpeg", "Fanny2018_3sv.jpeg"]},
       { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1sv.jpeg", "Fanny2018_3sv.jpeg"]},
       ],
       tables_en: [
-      { validFrom: "2018-05-05", validTo: "2018-06-07", images: ["Fanny2018_1en.jpeg", "Fanny2018_3en.jpeg"]},
       { validFrom: "2018-06-08", validTo: "2018-09-02", images: ["Fanny2018_2en.jpeg", "Fanny2018_3en.jpeg"]},
       { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1en.jpeg", "Fanny2018_3en.jpeg"]},
       ],
