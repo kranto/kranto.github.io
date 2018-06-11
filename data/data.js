@@ -1088,17 +1088,17 @@ fdata = {
       ],
     },
     houtskarrutt: {
-      name: "Houtskarin reitti", name_sv: "Houtskär rutt", name_en: "Houtskär Route", specifier: "",
+      name: "Houtskarin reitti - M/S Karolina", name_sv: "Houtskär rutt - M/S Karolina", name_en: "Houtskär Route - M/S Karolina", specifier: "",
       link: "http://www.ferryway.fi/7",
       tables: [
       { validFrom: "2018-04-15", validTo: "2018-09-30", images: ["KarolinaSommar2018_1.jpeg", "KarolinaSommar2018_2.jpeg"]}
       ],
     },
     iniorutt: {
-      name: "Iniön lisäreitti", name_sv: "Iniö tilläggsrutt", name_en: "Iniö Additional Route", specifier: "",
+      name: "Iniön lisäreitti - M/S Satava", name_sv: "Iniö tilläggsrutt - M/S Satava", name_en: "Iniö Additional Route - M/S Satava", specifier: "",
       link: "http://www.ferryway.fi/8",
       tables: [
-      { validFrom: "2018-05-14", validTo: "2018-08-12", images: ["SatavaSommar2018_1.jpeg", "SatavaeSommar2018_2.jpeg"]}
+      { validFrom: "2018-05-14", validTo: "2018-08-12", images: ["SatavaSommar2018_1.jpeg", "SatavaSommar2018_2.jpeg"]}
       ],
     },
     utorutt: { 
