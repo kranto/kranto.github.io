@@ -11,6 +11,7 @@ messages = { // FI SV EN
         adaytworoutes: ["{0} {1} kertaa päivässä, {2} lisäksi {3} kertaa päivässä", "{0} {1} gånger om dagen, {2} ytterligare {3} gånger om dagen", "{0} {1} times a day, {2}  additional {3} times a day"],
         aweek: ["{0} kertaa viikossa", "{0} gånger om vecka", "{0} times a week"],
         onceaday: ["kerran päivässä", "en gång om dagen", "once a day"],
+        twiceaweek: ["kahdesti viikossa", "twå gånger om vecka", "twice a week"],
         anhour: ["{0} kertaa tunnissa", "{0} gånger om timme", "{0} times an hour"],
         adayaweek: ["{0} kertaa päivässä, {1} {2} kertaa viikossa",
                 "{0} gånger om dagen, {1} {2} gånger om vecka", "{0} times a day, {1} {2} times a week"],
