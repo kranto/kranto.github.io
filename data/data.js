@@ -511,8 +511,17 @@ fdata = {
       },
       contact: {
         phones: ['+358 44 5000 503', {name: 'Café', tel: '+358 44 5000 506'}],
-//        email: 'eivor@rosita.fi',
         fb: 'https://www.facebook.com/mseivor/'
+      }
+    },
+    kokar: {
+      name: "M/S Kökar",
+      features: { cafe: true },
+      capacity: { cars: 6,
+        persons: 150
+      },
+      contact: {
+        phones: ['+358 400 290 561', {name: 'Café', tel: '+358 400 290 541'}]
       }
     },
     ostern: {
@@ -1284,6 +1293,14 @@ fdata = {
       { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Fanny2018_1en.jpeg", "Fanny2018_3en.jpeg"]},
       ],
     },
+    turkuuto: {
+      link: "https://meritie.fi/aikataulut-reitti/",
+      link_sv: "https://meritie.fi/tidtabell-rutt/?lang=sv",
+      link_en: "https://meritie.fi/tidtabell-rutt/?lang=sv",
+      tables: [
+      { validFrom: "2018-06-16", validTo: "2018-08-19", images: ["Kokar2018.jpeg"]}
+      ],
+    },
 
   },
 
@@ -2023,6 +2040,21 @@ fdata = {
         seasonal_L: "seasonal.summers",
       },
       timetables: ["turkunauvo"]
+    },
+    turkuuto: {
+      name: "Turku - Nauvo - Pärnäinen - Utö",
+      name_sv: "Åbo - Nagu - Pärnäs - Utö",
+      name_en: "Turku - Nagu - Pärnäs - Utö",
+      piers: ["TurkuVitharun", "Nagu", "Pärnäs", "Utö"],
+      operator: "meritie",
+      vessels: ["kokar"],
+      features: {
+        interval_L: ["times.twiceaweek"],
+        cost_L: "cost.applies",
+        duration_L: ["duration.hoursminutes", "5", "45"],
+        seasonal_L: "seasonal.summers",
+      },
+      timetables: ["turkuuto"]
     },
   },
 
