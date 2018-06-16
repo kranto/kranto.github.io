@@ -24,6 +24,7 @@ fdata = {
     Kaarina: { name_sv: "S:t Karins"},
     Turku: { name_sv: "Åbo", name_fi_in: "Turussa"},
     Raisio: { name_sv: "Reso"},
+    Naantali: { name_sv: "Nådendal"},
     Rymättylä: { name_sv: "Rimito"},
     Merimasku: { },
     Askainen: { name_sv: "Villnäs", name_fi_in: "Askaisissa"},
@@ -558,6 +559,14 @@ fdata = {
       contact: {
       }
     },
+    aavatar: {
+      name: "M/S Aavatar",
+      features: { cafe: true },
+      capacity: { persons: 52, bikes: " " },
+      contact: {
+        phones: ['+358 400 468 567']
+      }
+    },
   },
 
   operators: {
@@ -690,6 +699,17 @@ fdata = {
         www: 'https://vitharun.fi/fi/',
         www_sv: 'https://vitharun.fi/sv/',
         www_en: 'https://vitharun.fi/en/',
+      }
+    },
+    airistonvesibussit: {
+      name: "Airiston Vesibussit Oy",
+      logo: "aavatar.png",
+      contact: {
+        phones: [{name: 'Turku Touring', tel:'+358 2 262 7444'}, {name: 'Visit Naantali', tel:'+358 2 435 9800'}],
+        email: 'myynti@vesibussiaavatar.fi',
+        www: 'http://www.vesibussiaavatar.fi/',
+        www_sv: 'http://www.vesibussiaavatar.fi/sv/',
+        www_en: 'http://www.vesibussiaavatar.fi/en/',
       }
     }
   },
@@ -903,6 +923,13 @@ fdata = {
     Hällö: { mun: "Geta", type: "1" },
     
     TurkuVitharun: { name: "Aurajoki", name_sv: "Aura å", name_en: "Aurajoki River", mun: "Turku", type: "1" },
+
+//    NaantaliVanhakaupunki: { name: "Naantalin vanhakaupunki", name_sv: "Nådendals gamla stan", name_en: "Naantali Old Town", mun: "Naantali" },
+    NaantaliVanhakaupunki: { name: "Naantali", name_sv: "Nådendal", mun: "Naantali", type: "1" },
+    Merimasku: { mun: "Merimasku", type: "1" },
+    Parattula: { mun: "Kustavi", type: "1" },
+    Kivimaa2: { name: "Kivimaa", mun: "Kustavi", type: "1" },
+    Katanpää: { mun: "Kustavi" },
   },
 
   timetables: {
@@ -1299,6 +1326,13 @@ fdata = {
       link_en: "https://meritie.fi/tidtabell-rutt/?lang=sv",
       tables: [
       { validFrom: "2018-06-16", validTo: "2018-08-19", images: ["Kokar2018.jpeg"]}
+      ],
+    },
+    naantalikustavi: {
+      link: "https://www.visitnaantali.com/fi/saaristoreitti-kustaviin",
+      link_en: "https://www.visitnaantali.com/en/archipelago-route-to-kustavi",
+      tables: [
+      { validFrom: "2018-07-07", validTo: "2018-08-04", images: ["Aavatar2018_fi.jpeg"], images_en: ["Aavatar2018_en.jpeg"]}
       ],
     },
 
@@ -2055,6 +2089,22 @@ fdata = {
         seasonal_L: "seasonal.summers",
       },
       timetables: ["turkuuto"]
+    },
+    naantalikustavi: {
+      name: "Naantali - Velkua - Taivassalo - Kustavi",
+      name_sv: "Nådendal - Velkua - Tövsala - Gustavs",
+      piers: ["NaantaliVanhakaupunki", "Merimasku", "Teersalo", "Hakkenpää", "Parattula", "Kivimaa2"],
+      operator: "airistonvesibussit",
+      vessels: ["aavatar"],
+      features: {
+        interval_fi: "Liikennöi kolmena lauantaina: 7.7., 14.7., 4.8.",
+        interval_sv: "Trafikerar på tre lördagar: 7.7., 14.7., 4.8.",
+        interval_en: "Operates on three Saturdays: Jul 7, Jul 14, Aug 4",
+        cost_L: "cost.applies",
+        duration_L: ["duration.hoursminutes", "3", "15"],
+//        seasonal_L: "seasonal.summers",
+      },
+      timetables: ["naantalikustavi"]
     },
   },
 
