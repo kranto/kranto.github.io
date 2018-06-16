@@ -1094,7 +1094,7 @@ var connectionStylers = {
       offset: '0',
       repeat: '8px'
     }],
-    zIndex: 8,
+    zIndex: 7,
     layer: "conn5",
     style: { color: "#ff7c0a", weight: 2, style: "dashed", opacity: 1 }
   },
