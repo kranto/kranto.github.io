@@ -718,6 +718,7 @@ fdata = {
         www: 'http://www.vesibussiaavatar.fi/',
         www_sv: 'http://www.vesibussiaavatar.fi/sv/',
         www_en: 'http://www.vesibussiaavatar.fi/en/',
+        fb: 'https://www.facebook.com/vesibussiaavatar/'
       }
     },
     aspocharter: {
