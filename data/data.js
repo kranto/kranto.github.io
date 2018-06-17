@@ -567,6 +567,14 @@ fdata = {
         phones: ['+358 400 468 567']
       }
     },
+    amanda: {
+      name: "M/S Amanda",
+      features: { cafe: false },
+      capacity: { persons: 34, bikes: " " },
+      contact: {
+        phones: ['+358 400 669865']
+      }
+    },
   },
 
   operators: {
@@ -710,6 +718,19 @@ fdata = {
         www: 'http://www.vesibussiaavatar.fi/',
         www_sv: 'http://www.vesibussiaavatar.fi/sv/',
         www_en: 'http://www.vesibussiaavatar.fi/en/',
+        fb: 'https://www.facebook.com/vesibussiaavatar/'
+      }
+    },
+    aspocharter: {
+      name: "Aspö Charter",
+      logo: "aspocharter.png",
+      contact: {
+        phones: [{name: "Tore Johansson", tel: "+358 400 669865"}, {name: "Suomen Saaristovaraus", tel: "+358 2 410 6600"}],
+        email: 'tore@aspocharter.com',
+        www: 'https://sites.google.com/aspocharter.com/home',
+        www_sv: 'https://sites.google.com/aspocharter.com/sve',
+        www_en: 'https://sites.google.com/aspocharter.com/eng',
+        fb: ['https://www.facebook.com/aspocharter/'],
       }
     }
   },
@@ -782,6 +803,7 @@ fdata = {
     Pähkinäinen: { mun: "Rymättylä" },
     Samsaari: { name_sv: "Samsor", mun: "Rymättylä" },
     Maisaari: { mun: "Rymättylä" },
+    Korpoström: { mun: "Korpo", type: "1" },
     Finnö: { mun: "Korpo" },
     Käldersö: { mun: "Korpo" },
     Elvsö: { mun: "Korpo" },
@@ -1333,6 +1355,14 @@ fdata = {
       link_en: "https://www.visitnaantali.com/en/archipelago-route-to-kustavi",
       tables: [
       { validFrom: "2018-07-07", validTo: "2018-08-04", images: ["Aavatar2018_fi.jpeg"], images_en: ["Aavatar2018_en.jpeg"]}
+      ],
+    },
+    korpostromoro: {
+      link: "https://sites.google.com/aspocharter.com/home/reittiliikenne",
+      link_sv: "https://sites.google.com/aspocharter.com/sve/utsk%C3%A4rs-tv%C3%A4rtrafik",
+      link_en: "https://sites.google.com/aspocharter.com/eng/route-traffic",
+      tables: [
+      { validFrom: "2018-05-24", validTo: "2018-08-07", images: ["Amanda2018_1fi.jpeg", "Amanda2018_3fi.jpeg"], images_sv: ["Amanda2018_1sv.jpeg", "Amanda2018_3sv.jpeg"], images_en: ["Amanda2018_1en.jpeg", "Amanda2018_2en.jpeg", "Amanda2018_3en.jpeg"]}
       ],
     },
 
@@ -2102,9 +2132,25 @@ fdata = {
         interval_en: "Operates on three Saturdays: Jul 7, Jul 14, Aug 4",
         cost_L: "cost.applies",
         duration_L: ["duration.hoursminutes", "3", "15"],
-//        seasonal_L: "seasonal.summers",
+        seasonal_L: "seasonal.summers",
       },
       timetables: ["naantalikustavi"]
+    },
+    korpostromoro: {
+      name: "Korpoström - Aspö - Vänö - Örö",
+      piers: ["Korpoström", "Aspö", "Nötö", "Bodö", "Vänö", "Örö"],
+      operator: "aspocharter",
+      vessels: ["amanda"],
+      features: {
+        interval_fi: "Liikennöi tiistaisin ja perjantaisin 26.6.-7.8.",
+        interval_sv: "Trafikerar på tisdagar och fredagar mellan 26.6. och 7.8.",
+        interval_en: "Operates on Tuesdays and Fridays between Jun 26 and Aug 7",
+        cost_L: "cost.applies",
+        duration_L: ["duration.hours", "3 - 3.5"],
+        order_L: "order.only",
+        seasonal_L: "seasonal.summers",
+      },
+      timetables: ["korpostromoro"]
     },
   },
 
