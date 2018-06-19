@@ -114,6 +114,37 @@
       border-top: 1px ridge #a0a0a0;
     }
 
+    #appinfo #followbox {
+      margin-top: 30px;
+    }
+
+    #appinfo ul {
+      list-style-type: none;
+      margin-top: 25px;
+      margin-bottom: 30px;
+    }
+
+    #appinfo ul li i {
+      font-size: 1.5em;
+      margin-right: 20px;
+      margin-top: 5px;
+    }
+
+    #appinfo #licensebox {
+      border-top: solid 1px;
+      border-color: #bbb;
+      margin-top: 40px;
+      padding-top: 10px;
+    }
+
+    .fbcolor {
+      color: #3B5998;
+    }
+
+    .twittercolor {
+      color: #00aced;
+    }
+
     .infosection h1, .infosection h2 {
       margin-bottom: 30px;
     }

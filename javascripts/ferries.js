@@ -38,7 +38,7 @@ $(document).ready(function(){
     }
   });
 
-
+  history.replaceState({}, null);
 });
 
 $(window).resize(function() {
@@ -67,7 +67,7 @@ function keepCenter() {
 
 $(document).ready(function(){
 
-  $("#infopage").load("templates/infopage.html?v=1.3 #infopagecontent", initInfoPage);
+  $("#infopage").load("templates/infopage.html?v=1.4 #infopagecontent", initInfoPage);
   $("#menu").load("templates/menucontent.html?v=1 #menucontent", initMenu);
   $("#settings").load("templates/settingscontent.html?v=1 #settingscontent", initSettings);
 
