@@ -67,7 +67,15 @@ function getEmail(item) {
 }
 
 function getFb(item) {
-    return item.fb? [{ class: "facebook", text: item.name,  specifier: "", uri: item.fb, target:"facebook" }]: [];
+    fb = item.fb;
+    if (typeof fb === 'object') {
+        return [{ class: "facebook", text: fb.name || item.name, specifier: "", uri: fb.uri, target: "facebook"}];
+    } else if (fb) {
+        return [{ class: "facebook", text: item.name,  specifier: "", uri: item.fb, target:"facebook" }];
+    } else {
+        return [];
+    }
+
 }
 
 function deepCopy(object) {
