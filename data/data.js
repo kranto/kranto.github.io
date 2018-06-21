@@ -251,10 +251,12 @@ fdata = {
     },
     stellakorppoo: {
       name: "M/S Stella",
-      features: { },
+      features: { cafe: true },
       capacity: { cars: 65 },
       contact: {
-        phones: ['+358 400 114 291']
+        phones: ['+358 400 114 291', { name: "Café Stella", tel: "+358 400 611 994"}],
+
+        fb: { name: "Café Stella", uri: "https://www.facebook.com/cafestellakorpo" }
       },
     },
     mergus: {
