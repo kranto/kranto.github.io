@@ -1065,7 +1065,7 @@ var connectionStylers = {
   },
   "conn2b": {
     weight: 1.5 * lineWeightUnit,
-    zIndex: 9
+    zIndex: 10
   },
   "conn3": {
     // visibleFrom: 9,
@@ -1078,7 +1078,7 @@ var connectionStylers = {
     weight: 1.5 * lineWeightUnit,
     color: '#7fb3e8',
     opacity: 0.8,
-    zIndex: 8,
+    zIndex: 9,
     layer: "conn4"
   },
   "conn5": {
@@ -1096,6 +1096,13 @@ var connectionStylers = {
     }],
     zIndex: 7,
     layer: "conn5",
+    style: { color: "#ff7c0a", weight: 2, style: "dashed", opacity: 1 }
+  },
+  "conn50": {
+    visibleFrom: 9,
+    zIndex: 8,
+    layer: "conn5",
+    opacity: 0,
     style: { color: "#ff7c0a", weight: 2, style: "dashed", opacity: 1 }
   },
   "cableferry": {
@@ -1198,7 +1205,7 @@ function connection(connection, map) {
         properties.icons[0].icon.strokeOpacity = layers.live? 0.4: 1;
         line.setOptions({icons: properties.icons});
       } else {
-        line.setOptions({strokeOpacity: layers.live? 0.2: properties.opacity});
+        line.setOptions({strokeOpacity: Math.min(properties.opacity, layers.live? 0.2: 1)});
       }
       var lineIsVisible = isSelected || (layerSelector() && zoom >= properties.visibleFrom && zoom <= properties.visibleTo); 
       line.setVisible(lineIsVisible);

@@ -554,6 +554,27 @@ fdata = {
       contact: {
       }
     },
+    summersea: {
+      name: "M/S Summersea",
+      features: { cafe: true },
+      capacity: { persons: 155 },
+      contact: {
+      }
+    },
+    sissel: {
+      name: "M/S Sissel",
+      features: { },
+      capacity: { persons: 80 },
+      contact: {
+      }
+    },
+    minandra: {
+      name: "M/S Minandra",
+      features: { },
+      capacity: { persons: 40 },
+      contact: {
+      }
+    },
     fanny: {
       name: "M/S Fanny",
       features: { cafe: true },
@@ -690,7 +711,6 @@ fdata = {
       logo: "meritie.png",
       contact: {
         phones: ['+358 45 124 5551'],
-//        email: 'info@rosita.fi',
         address: 'Pansiontie 48, 20240 Turku',
         address_sv: 'Pansiovägen 48, 20240 Åbo',
         www: 'https://www.meritie.fi/',
@@ -733,6 +753,29 @@ fdata = {
         www_sv: 'https://sites.google.com/aspocharter.com/sve',
         www_en: 'https://sites.google.com/aspocharter.com/eng',
         fb: ['https://www.facebook.com/aspocharter/'],
+      }
+    },
+    wilsoncharter: {
+      name: "Wilson Charter",
+      logo: "wilsoncharter.png",
+      contact: {
+        phones: [{name: "Virpi Heino", tel: "+358 50 5514 266"}, {name: "Daniel Wilson", tel: "+358 50 5636 575"}],
+        email: 'info@wilsoncharter.fi',
+        www: 'https://www.wilsoncharter.fi/',
+        www_sv: 'https://www.wilsoncharter.fi/se',
+        www_en: 'https://www.wilsoncharter.fi/en',
+        address: 'Båtmansvägen 18, 25950 Rosala',
+        fb: "https://www.facebook.com/wilsoncharterFI/"
+      }
+    },
+    marinelines: {
+      name: "Marine Lines",
+      logo: "marinelines.png",
+      contact: {
+        phones: ["+358 400 536 930", "+358 400 689 387"],
+        email: 'myynti@marinelines.fi',
+        www: 'https://marinelines.fi/fi',
+        address: 'Korkeavuorenkatu 10 B 11, 10900 HANKO',
       }
     }
   },
@@ -898,6 +941,8 @@ fdata = {
     Botesö: { mun: "Kimitoön"},
     Djupö: { mun: "Kimitoön"},
     Örö: { mun: "Kimitoön"},
+    Rosala: { mun: "Kimitoön"},
+    Bengtskär: { mun: "Kimitoön"},
     Vänoxaby: { name: "Vänoxa by", mun: "Kimitoön"},
     Vänoxasläten: { name: "Vänoxa släten (Bergö)", mun: "Kimitoön"},
 
@@ -1307,16 +1352,53 @@ fdata = {
       link_sv: "https://vitharun.fi/sv/tidtabeller/oro/",
       link_en: "https://vitharun.fi/en/timetables/oro/",
       tables: [
-      { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2.jpeg", "Norrskar2018_4.jpeg"]},
       { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3.jpeg", "Norrskar2018_4.jpeg"]},
       { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2.jpeg", "Norrskar2018_4.jpeg"]},
       { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1.jpeg", "Norrskar2018_4.jpeg"]},
       ],
       tables_en: [
-      { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
       { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3en.jpeg", "Norrskar2018_4en.jpeg"]},
       { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
       { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1en.jpeg", "Norrskar2018_4en.jpeg"]},
+      ],
+    },
+    kasnasorovitharun: {
+      link: "https://vitharun.fi/fi/aikataulut/oro/",
+      link_sv: "https://vitharun.fi/sv/tidtabeller/oro/",
+      link_en: "https://vitharun.fi/en/timetables/oro/",
+      name: "Vitharun",
+      tables: [
+      { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3.jpeg", "Norrskar2018_4.jpeg"]},
+      { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2.jpeg", "Norrskar2018_4.jpeg"]},
+      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1.jpeg", "Norrskar2018_4.jpeg"]},
+      ],
+      tables_en: [
+      { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3en.jpeg", "Norrskar2018_4en.jpeg"]},
+      { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
+      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1en.jpeg", "Norrskar2018_4en.jpeg"]},
+      ],
+    },
+    kasnasorowilson: {
+      link: "https://www.wilsoncharter.fi/oron-linnake-ja-kansallispuisto",
+      link_sv: "https://www.wilsoncharter.fi/se/oro-fort-och-nationalpark",
+      link_en: "https://www.wilsoncharter.finferries/en/oro-fortress-tours",
+      name: "Wilson Charter",
+      tables: [
+      { validFrom: "2018-06-25", validTo: "2018-08-12", images_fi: ["SisselOro2018_fi.jpeg"], images_sv: ["SisselOro2018_sv.jpeg"], images_en: ["SisselOro2018_en.jpeg"]},
+      ],
+    },
+    kasnasbengtskar: {
+      link: "https://www.wilsoncharter.fi/bengtskar",
+      link_sv: "https://www.wilsoncharter.fi/se/bengtskar",
+      link_en: "https://www.wilsoncharter.fi/en/bengtskar",
+      tables: [
+      { validFrom: "2018-06-02", validTo: "2018-08-26", images_fi: ["SisselBengtskar2018_fi.jpeg"], images_sv: ["SisselBengtskar2018_sv.jpeg"], images_en: ["SisselBengtskar2018_en.jpeg"]},
+      ],
+    },
+    hankobengtskar: {
+      link: "https://marinelines.fi/fi/risteilyt/bengtskar",
+      tables: [
+      { validFrom: "2018-06-19", validTo: "2018-08-25", images: ["Summersea2018.jpeg"]},
       ],
     },
     turkunauvo: {
@@ -2081,8 +2163,50 @@ fdata = {
         cost_L: "cost.applies",
         duration_L: ["duration.hours", "3 "],
         seasonal_L: "seasonal.summers",
+        seealso_L: ["seealso", "#kasnasoro", "Kasnäs - Örö"],
       },
       timetables: ["hankooro"]
+    },
+    kasnasoro: {
+      name: "Kasnäs - Örö",
+      piers: ["Kasnäs", "Örö"],
+      operator: ["vitharun", "wilsoncharter"],
+      vessels: ["norrskar", "sissel", "minandra"],
+      features: {
+        interval_L: ["times.aday", "3"],
+        cost_L: "cost.applies",
+        duration_L: ["duration.minutes", "45"],
+        seasonal_L: "seasonal.summers",
+        seealso_L: ["seealso", "#hankooro", "Hanko - Kasnäs - Örö"],
+      },
+      timetables: ["kasnasorovitharun", "kasnasorowilson"]
+    },
+    kasnasbengtskar: {
+      name: "Kasnäs - Bengtskär",
+      piers: ["Kasnäs", "Rosala", "Bengtskär"],
+      operator: "wilsoncharter",
+      vessels: ["sissel", "minandra"],
+      features: {
+        interval_L: "times.onceaday",
+        cost_L: "cost.applies",
+        duration_L: ["duration.hourminutes", "10"],
+        seasonal_L: "seasonal.summers",
+      },
+      timetables: ["kasnasbengtskar"]
+    },
+    hankobengtskar: {
+      name: "Hanko - Bengtskär",
+      name_sv: "Hangö - Bengtskär",
+      piers: ["Hanko", "Bengtskär"],
+      operator: "marinelines",
+      vessels: ["summersea"],
+      features: {
+        interval_L: "times.onceaday",
+        cost_L: "cost.applies",
+        duration_L: ["duration.hourminutes", "30"],
+        seasonal_L: "seasonal.summers",
+      },
+      timetables: ["hankobengtskar"]
     },
     turkunauvo: {
       name: "Turku - Seili - Nauvo",
@@ -2162,7 +2286,7 @@ fdata = {
   { id: 6, name: "Herröskatan - Mariehamn",
   path: "19.9276543,60.0920271,0.0 19.9265383,60.0896932,0.0 19.9267959,60.0724635,0.0 19.9263668,60.0541738,0.0 19.9403572,60.0321012,0.0 19.9405289,60.0009602,0.0 20.0013828,59.971551,0.0 20.0325394,59.9568581,0.0 20.1375961,59.9568151,0.0" },
   { id: 7, name: "Herröskatan - Hanko",
-  path: "20.1375961,59.9568151,0.0 20.1618004,59.9589636,0.0 20.1935577,59.9587917,0.0 20.3082275,59.9231945,0.0 20.5149078,59.8009796,0.0 21.6616058,59.7044776,0.0 23.6027527,59.7256004,0.0" },
+  path: "20.1375961,59.9568151,0.0 20.1618004,59.9589636,0.0 20.1935577,59.9587917,0.0 20.3082275,59.9231945,0.0 20.5149078,59.8009796,0.0 21.6616058,59.70,0.0 23.6027527,59.70,0.0" },
   { id: 8, name: "Herröskatan - Fejan",
   path: "19.1717434,59.7310521,0.0 19.342804,59.7643486,0.0 20.1375961,59.9568151,0.0" },
   { id: 9, name: "Mariehamn - Fejan",
@@ -2178,9 +2302,9 @@ fdata = {
   { id: 14, name: "Grisslehamn - Eckerö",
   path: "19.535583,60.225623,0.0 19.5304298,60.2283061,0.0 19.5201302,60.226857,0.0 19.4531822,60.1805383,0.0 18.8297379,60.094225,0.0 18.8154602,60.0981463,0.0" },
   { id: 15, name: "Hanko - Helsinki",
-  path: "23.6027527,59.7256004,0.0 24.8881531,59.9869673,0.0 24.9904633,60.1510752,0.0 24.9568176,60.1661089,0.0" },
+  path: "23.6027527,59.70,0.0 24.8881531,59.9869673,0.0 24.9904633,60.1510752,0.0 24.9568176,60.1661089,0.0" },
   { id: 16, name: "Hanko - Tallinn",
-  path: "23.6027527,59.7256004,0.0 24.555864,59.632669,0.0 24.784230,59.456251,0.0 24.770607,59.443868,0.0" },
+  path: "23.6027527,59.70,0.0 24.555864,59.632669,0.0 24.784230,59.456251,0.0 24.770607,59.443868,0.0" },
   ],
 
   lauttaRoutes: [
