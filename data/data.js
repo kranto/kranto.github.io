@@ -1150,7 +1150,7 @@ fdata = {
       link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
       link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
       tables: [
-      { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.jpeg", "KivimoSommar2018_2.jpeg"]}
+      { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.jpeg?v=1.1", "KivimoSommar2018_2.jpeg?v=1.1"]}
       ],
     },
 
@@ -1175,7 +1175,7 @@ fdata = {
       link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
       link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
       tables: [
-      { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.jpeg", "KivimoSommar2018_2.jpeg"]}
+      { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.jpeg?v=1.1", "KivimoSommar2018_2.jpeg?v=1.1"]}
       ],
     },
     rymattylanreitti: {
