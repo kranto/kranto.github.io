@@ -6,7 +6,7 @@ $.get("/data/messages.json?v=1.2", function(data) {
   sendDataIf();
 });
 
-$.get('/data/saaristo.json?v=1.3', function(data) {
+$.get('/data/saaristo.json?v=1.4', function(data) {
   fgeojson.push(data);
   sendDataIf();
 });
@@ -23,7 +23,7 @@ $.get('/data/routes.json?v=1', function(data) {
 
 var fdata;
 
-$.get('/data/data.json?v=1.11', function(data) {
+$.get('/data/data.json?v=1.12', function(data) {
   prepareData(data);
   fdata = data;
   sendDataIf();
@@ -54,7 +54,9 @@ function prepareData(data) {
       return data.ferries[vessel];
     });
 
-    route.operator = route.operator? data.operators[route.operator]: null;
+    if (!route.operator) route.operator = [];
+    if (!Array.isArray(route.operator)) route.operator = [route.operator];
+    route.operator = route.operator.map(function(op) { return data.operators[op] });
     route.pricelists = data.pricelists[route.pricelists];
 
     if (!Array.isArray(route.timetables)) route.timetables = [route.timetables];

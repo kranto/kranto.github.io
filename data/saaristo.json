@@ -2311,6 +2311,72 @@
       "type": "FeatureCollection",
       "properties": {
         "stype": "connection",
+        "ref": "kasnasoro",
+        "ssubtype": "conn50"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "KasnäsÖrö"
+          },
+          "geometry": {
+            "coordinates": [[22.412073,59.921307],[22.408324,59.914031],[22.411304,59.908633],[22.422841,59.899715],[22.440722,59.896436],[22.433416,59.881678],[22.41092,59.874924],[22.401595,59.867155],[22.376888,59.863873],[22.359199,59.816104],[22.337152,59.811061]],
+            "type": "LineString"
+          },
+          "id": "3f4efae3e9f3041c11f0cdb8886a7cb0"
+        }
+      ]
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "ref": "kasnasbengtskar",
+        "ssubtype": "conn5"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "KasnäsBengtskär"
+          },
+          "geometry": {
+            "coordinates": [[22.41215,59.921362],[22.408092,59.914016],[22.411361,59.908421],[22.423085,59.899715],[22.440784,59.896436],[22.433344,59.881676],[22.41091,59.874944],[22.40131,59.866914],[22.408689,59.857541],[22.415102,59.854007],[22.410202,59.854535],[22.403262,59.828995],[22.456613,59.799793],[22.500497,59.725214],[22.500117,59.723477]],
+            "type": "LineString"
+          },
+          "id": "3f4efae3e9f3041c11f0cdb8886a7cb0"
+        }
+      ]
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
+        "ref": "hankobengtskar",
+        "ssubtype": "conn5"
+      },
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "stype": "leg",
+            "sname": "HankoBengtskär"
+          },
+          "geometry": {
+            "coordinates": [[22.963559,59.819513],[22.964155,59.819243],[22.964254,59.818635],[22.962567,59.817547],[22.916328,59.806808],[22.905303,59.807832],[22.892421,59.806808],[22.877382,59.800208],[22.859347,59.8028],[22.50611,59.730526],[22.500117,59.723477]],
+            "type": "LineString"
+          },
+          "id": "3f4efae3e9f3041c11f0cdb8886a7cb0"
+        }
+      ]
+    },
+    {
+      "type": "FeatureCollection",
+      "properties": {
+        "stype": "connection",
         "ref": "turkuuto",
         "ssubtype": "conn5"
       },
@@ -3618,10 +3684,10 @@
       "properties": {
         "stype": "area", "ssubtype": "island1",
         "sname": "Bengtskär",
-        "labelAnchor": {"dir": "N", "x":0 , "y":0 }
+        "labelAnchor": {"dir": "S", "x":0 , "y":0 }
       },
       "geometry": {
-        "coordinates": [22.49854, 59.723718 ],
+        "coordinates": [22.498, 59.721 ],
         "type": "Point"
       },
       "id": "6a5f4fa69fa525ff7b8043ae40e1d04a"
@@ -4020,6 +4086,36 @@
       },
       "geometry": {
         "coordinates": [22.9637498,59.8192902],
+        "type": "Point"
+      },
+      "id": "28c164602cad1e725ecf2d61511f3984"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ssubtype": "4",
+        "ref": "Rosala",
+        "labelVisibleFrom": 30,
+        "labelAnchor": {"dir": "W", "x":0 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [22.415102,59.854007],
+        "type": "Point"
+      },
+      "id": "28c164602cad1e725ecf2d61511f3984"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stype": "pier",
+        "ssubtype": "4",
+        "ref": "Bengtskär",
+        "labelVisibleFrom": 30,
+        "labelAnchor": {"dir": "W", "x":0 , "y":0 }
+      },
+      "geometry": {
+        "coordinates": [22.500117,59.723477],
         "type": "Point"
       },
       "id": "28c164602cad1e725ecf2d61511f3984"

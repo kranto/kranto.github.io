@@ -134,11 +134,10 @@ function routeInfo(route, lang) {
 
     info.notes = route.notes;
 
-    info.operator = route.operator;
-    if (info.operator) {
-        info.operator.contact.name = info.operator.name;
-        contacts.push(info.operator.contact);
-    }
+    route.operator.forEach(function(op) {
+        op.contact.name = op.name;
+        contacts.push(op.contact);
+    });
 
     var timetables = route.timetables;
 

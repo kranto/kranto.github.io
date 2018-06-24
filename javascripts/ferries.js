@@ -1065,7 +1065,7 @@ var connectionStylers = {
   },
   "conn2b": {
     weight: 1.5 * lineWeightUnit,
-    zIndex: 9
+    zIndex: 10
   },
   "conn3": {
     // visibleFrom: 9,
@@ -1078,7 +1078,7 @@ var connectionStylers = {
     weight: 1.5 * lineWeightUnit,
     color: '#7fb3e8',
     opacity: 0.8,
-    zIndex: 8,
+    zIndex: 9,
     layer: "conn4"
   },
   "conn5": {
@@ -1096,6 +1096,13 @@ var connectionStylers = {
     }],
     zIndex: 7,
     layer: "conn5",
+    style: { color: "#ff7c0a", weight: 2, style: "dashed", opacity: 1 }
+  },
+  "conn50": {
+    visibleFrom: 9,
+    zIndex: 8,
+    layer: "conn5",
+    opacity: 0,
     style: { color: "#ff7c0a", weight: 2, style: "dashed", opacity: 1 }
   },
   "cableferry": {
