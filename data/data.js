@@ -1352,13 +1352,11 @@ fdata = {
       link_sv: "https://vitharun.fi/sv/tidtabeller/oro/",
       link_en: "https://vitharun.fi/en/timetables/oro/",
       tables: [
-      { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2.jpeg", "Norrskar2018_4.jpeg"]},
       { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3.jpeg", "Norrskar2018_4.jpeg"]},
       { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2.jpeg", "Norrskar2018_4.jpeg"]},
       { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1.jpeg", "Norrskar2018_4.jpeg"]},
       ],
       tables_en: [
-      { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
       { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3en.jpeg", "Norrskar2018_4en.jpeg"]},
       { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
       { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1en.jpeg", "Norrskar2018_4en.jpeg"]},
@@ -1370,13 +1368,11 @@ fdata = {
       link_en: "https://vitharun.fi/en/timetables/oro/",
       name: "Vitharun",
       tables: [
-      { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2.jpeg", "Norrskar2018_4.jpeg"]},
       { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3.jpeg", "Norrskar2018_4.jpeg"]},
       { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2.jpeg", "Norrskar2018_4.jpeg"]},
       { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1.jpeg", "Norrskar2018_4.jpeg"]},
       ],
       tables_en: [
-      { validFrom: "2018-06-01", validTo: "2018-06-24", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
       { validFrom: "2018-06-25", validTo: "2018-08-05", images: ["Norrskar2018_3en.jpeg", "Norrskar2018_4en.jpeg"]},
       { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
       { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1en.jpeg", "Norrskar2018_4en.jpeg"]},
