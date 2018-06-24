@@ -1205,7 +1205,7 @@ function connection(connection, map) {
         properties.icons[0].icon.strokeOpacity = layers.live? 0.4: 1;
         line.setOptions({icons: properties.icons});
       } else {
-        line.setOptions({strokeOpacity: layers.live? 0.2: properties.opacity});
+        line.setOptions({strokeOpacity: Math.min(properties.opacity, layers.live? 0.2: 1)});
       }
       var lineIsVisible = isSelected || (layerSelector() && zoom >= properties.visibleFrom && zoom <= properties.visibleTo); 
       line.setVisible(lineIsVisible);
