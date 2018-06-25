@@ -1529,27 +1529,30 @@ function loadLiveData(map) {
 }
 
 function updateVesselLabel(map, feature, isVisible) {
-    var vessel = feature.getProperty("vessel");
-    var speed = feature.getProperty("sog");
-    var name = vessel.name;
-    var mmsi = vessel.mmsi;
-    var position = feature.getGeometry().get();
-    var classes = "vessel" + (speed <= 0.1? " stopped": "");
-    var label;
-    if (vesselLabels[mmsi]) {
-      label = vesselLabels[mmsi];
-      label.setPosition(position);
-      label.setClass(classes);
-      label.draw();
-    } else {
-      label = new txtol.TxtOverlay(position, name, classes, map, {dir: 'NW', x: -5, y: -5});
-      vesselLabels[mmsi] = label;
-    }
-    if (isVisible) label.show(); else label.hide();
+  var vessel = feature.getProperty("vessel");
+  var ageClass = vesselIsCurrent(vessel)? "current": "old";
+  var speed = feature.getProperty("sog");
+  var name = vessel.name;
+  var mmsi = vessel.mmsi;
+  var position = feature.getGeometry().get();
+  var classes = "vessel " + ageClass + (speed <= 0.1? " stopped": "");
+  var label;
+  if (vesselLabels[mmsi]) {
+    label = vesselLabels[mmsi];
+    label.setPosition(position);
+    label.setClass(classes);
+    label.draw();
+  } else {
+    label = new txtol.TxtOverlay(position, name, classes, map, {dir: 'NW', x: -5, y: -5});
+    vesselLabels[mmsi] = label;
+  }
+  if (isVisible) label.show(); else label.hide();
 }
 
 function createVesselIcon(feature) {
   var speed = feature.getProperty("sog");
+  var vessel = feature.getProperty("vessel");
+  var relOpacity = vesselIsCurrent(vessel)? 1: 0.4;
   var color = map.getMapTypeId() == 'satellite'? '#80b0a0': '#a030ff';
   var hasSpeed = speed > 0.1;
   var scale = hasSpeed? 3: 2;
@@ -1560,10 +1563,15 @@ function createVesselIcon(feature) {
     rotation: rotation,
     strokeWeight: 1,
     strokeColor: color,
+    strokeOpacity: 1 * relOpacity,
     fillColor: color,
-    fillOpacity: 0.6,
+    fillOpacity: 0.6 * relOpacity,
     scale: scale * (map.getZoom() < 9? 0.6: map.getZoom()/10) 
   };
+}
+
+function vesselIsCurrent(vessel) {
+  return vessel && vessel.timestamp && vessel.timestamp > Date.now() - 300000;  
 }
 
 function initMapTypes(map) {
