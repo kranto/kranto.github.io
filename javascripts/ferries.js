@@ -1552,7 +1552,7 @@ function updateVesselLabel(map, feature, isVisible) {
 function createVesselIcon(feature) {
   var speed = feature.getProperty("sog");
   var vessel = feature.getProperty("vessel");
-  var relOpacity = vesselIsCurrent(vessel)? 1: 0.4;
+  var relOpacity = Math.max(0.3, 1 - Math.max(0, getVesselAge(vessel)-180)/600);
   var color = map.getMapTypeId() == 'satellite'? '#80b0a0': '#a030ff';
   var hasSpeed = speed > 0.1;
   var scale = hasSpeed? 3: 2;
@@ -1571,7 +1571,14 @@ function createVesselIcon(feature) {
 }
 
 function vesselIsCurrent(vessel) {
-  return vessel && vessel.timestamp && vessel.timestamp > Date.now() - 300000;  
+  return getVesselAge(vessel) < 600;
+}
+
+function getVesselAge(vessel) {
+  if (vessel && vessel.timestamp)
+    return Math.max(0, Date.now() - vessel.timestamp) / 1000;
+  else
+    return 86400;
 }
 
 function initMapTypes(map) {
