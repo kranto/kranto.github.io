@@ -1530,7 +1530,7 @@ function loadLiveData(map) {
 
 function updateVesselLabel(map, feature, isVisible) {
   var vessel = feature.getProperty("vessel");
-  var ageClass = vesselIsCurrent(vessel)? "current": "old";
+  var ageClass = vesselIsCurrent(feature)? "current": "old";
   var speed = feature.getProperty("sog");
   var name = vessel.name;
   var mmsi = vessel.mmsi;
@@ -1551,8 +1551,7 @@ function updateVesselLabel(map, feature, isVisible) {
 
 function createVesselIcon(feature) {
   var speed = feature.getProperty("sog");
-  var vessel = feature.getProperty("vessel");
-  var relOpacity = vesselIsCurrent(vessel)? 1: 0.4;
+  var relOpacity = Math.max(0.3, 1 - 0.7*Math.max(0, getVesselAge(feature)-180)/600);
   var color = map.getMapTypeId() == 'satellite'? '#80b0a0': '#a030ff';
   var hasSpeed = speed > 0.1;
   var scale = hasSpeed? 3: 2;
@@ -1570,8 +1569,16 @@ function createVesselIcon(feature) {
   };
 }
 
-function vesselIsCurrent(vessel) {
-  return vessel && vessel.timestamp && vessel.timestamp > Date.now() - 300000;  
+function vesselIsCurrent(feature) {
+  return getVesselAge(feature) < 600;
+}
+
+function getVesselAge(feature) {
+  var timestamp = feature.getProperty("timestampExternal")
+  if (timestamp)
+    return Math.max(0, Date.now() - timestamp) / 1000;
+  else
+    return 86400;
 }
 
 function initMapTypes(map) {
