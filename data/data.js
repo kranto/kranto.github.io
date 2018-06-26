@@ -592,7 +592,7 @@ fdata = {
     },
     amanda: {
       name: "M/S Amanda",
-      features: { cafe: false },
+      features: { cafe: true },
       capacity: { persons: 34, bikes: " " },
       contact: {
         phones: ['+358 400 669865']
@@ -752,7 +752,7 @@ fdata = {
         www: 'https://sites.google.com/aspocharter.com/home',
         www_sv: 'https://sites.google.com/aspocharter.com/sve',
         www_en: 'https://sites.google.com/aspocharter.com/eng',
-        fb: ['https://www.facebook.com/aspocharter/'],
+        fb: 'https://www.facebook.com/aspocharter/',
       }
     },
     wilsoncharter: {
