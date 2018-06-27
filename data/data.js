@@ -2220,6 +2220,9 @@ fdata = {
         cost_L: "cost.applies",
         duration_L: ["duration.hours", "2.5"],
         seasonal_L: "seasonal.summers",
+        seealso_fi: 'Katso myös <a href="#turkuuto">Turku - Nauvo - Utö</a>',
+        seealso_sv: 'Se också <a href="#turkuuto">Åbo - Nagu - Utö</a>',
+        seealso_en: 'See also <a href="#turkuuto">Turku - Nagu - Utö</a>',
       },
       timetables: ["turkunauvo"]
     },
@@ -2235,6 +2238,9 @@ fdata = {
         cost_L: "cost.applies",
         duration_L: ["duration.hoursminutes", "5", "45"],
         seasonal_L: "seasonal.summers",
+        seealso_fi: 'Katso myös <a href="#turkunauvo">Turku - Seili - Nauvo</a>',
+        seealso_sv: 'Se också <a href="#turkunauvo">Åbo - Själö - Nagu</a>',
+        seealso_en: 'See also <a href="#turkunauvo">Turku - Själö - Nagu</a>',
       },
       timetables: ["turkuuto"]
     },
