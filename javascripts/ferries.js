@@ -1524,8 +1524,8 @@ function toggleLiveLayer(enable) {
 vesselLabels = {};
 
 function loadLiveData(map) {
-  map.data.loadGeoJson('/livedata.json', {idPropertyName: "mmsi"});
-  map.data.loadGeoJson('/livehistory.json');
+  map.data.loadGeoJson('https://live.saaristolautat.fi/livedata.json', {idPropertyName: "mmsi"});
+  map.data.loadGeoJson('https://live.saaristolautat.fi/livehistory.json');
 }
 
 function updateVesselLabel(map, feature, isVisible) {
