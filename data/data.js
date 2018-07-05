@@ -1475,7 +1475,7 @@ fdata = {
       specifier: "Hummelvik - Enklinge - Kumlinge - Lappo - Torsholma",
       piers: ["Hummelvik", "Enklinge", "Kumlinge", "Lappo", "Torsholma"],
       operator: "alandstrafiken",
-      vessels: ["alfageln", "knipan", "rosala"],
+      vessels: ["alfageln", "ejdern", "rosala"],
       features: {
         interval_L: ["times.adaytworoutes", "", "3-4", "Enklinge - Kumlinge", "10"],
         cost_L: "cost.applies",
@@ -1559,7 +1559,7 @@ fdata = {
       specifier: "Långnäs - Överö - Sottunga - Kökar - Galtby",
       piers: ["Långnäs", "Överö", "Sottunga", "Husö", "Kyrkogårdsö", "Kökar", "Galtby"],
       operator: "alandstrafiken",
-      vessels: ["gudingen", "skiftet"],
+      vessels: ["gudingen", "skiftet", "knipan"],
       features: {
         interval_L: ["times.aday", "Långnäs - Kökar 3-4, Kökar - Galtby 0-2 "],
         cost_L: "cost.applies",

@@ -38,7 +38,6 @@ $(document).ready(function(){
     }
   });
 
-  history.replaceState({}, null);
 });
 
 $(window).resize(function() {
@@ -72,6 +71,9 @@ $(document).ready(function(){
   $("#settings").load("templates/settingscontent.html?v=1 #settingscontent", initSettings);
 
   $("#timetables").click(function(event) { if (event.target == this) {history.back(); }});
+
+  if (window.location.hash) setTimeout(function() { onhashchange(); }, 2000);
+  else history.replaceState({}, null);
 
 });
 
@@ -373,7 +375,7 @@ function hideLoader() {
   if (timeout && mapInitialized ) {
     rerender(map, true);
     $("#loader").fadeOut(1000);
-    if (dontShowAgainVersion < currentBannerVersion) {
+    if (dontShowAgainVersion < currentBannerVersion && !location.hash && !selected) {
       setTimeout(function() {$('#bannerModal').modal({});}, 500);      
     }
   }
