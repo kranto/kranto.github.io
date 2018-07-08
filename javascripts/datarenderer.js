@@ -97,10 +97,11 @@ function flatten(array) {
     return array.reduce(function(a, b) { return a.concat(b); }, []);
 }
 
-function routeInfo(route, lang) {
+routeInfo = function(route, lang) {
     route = getLocalizedItem(deepCopy(route), lang);
     var info = {};
     var contacts = [];
+    info.id = route.id;
     info.name = route.name;
     info.specifier = route.specifier? route.specifier: "";
     
