@@ -29,7 +29,7 @@ $.get('/data/data.json?v=1.15', function(data) {
   sendDataIf();
 });
 
-function prepareData(data) {
+prepareData = function(data) {
   Object.keys(data.mun).forEach(function(key) {
     var m = data.mun[key];
     m.name = m.name? m.name: key;
