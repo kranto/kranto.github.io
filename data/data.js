@@ -347,7 +347,7 @@ fdata = {
     },
     antonia: {
       name: "M/S Antonia",
-      features: { },
+      features: { cafe: true },
       capacity: { cars: 27 },
       contact: {
         phones: ['+358 40 738 3002']
@@ -443,7 +443,7 @@ fdata = {
     karolina: {
       name: "M/S Karolina",
       features: { },
-      capacity: { persons: 30 },
+      capacity: { persons: 30, bikes: " " },
       contact: {
         phones: ['+358 40 717 3455 ']
       },
