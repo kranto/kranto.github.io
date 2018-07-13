@@ -1091,6 +1091,16 @@ fdata = {
       { validFrom: "2018-01-01", validTo: "2018-12-31", images: ["AlandsVajerFarjor2018.jpeg"]},
       ],
     },
+    seglingelinjen: {
+      link: "http://www.alandstrafiken.ax/fi/aikataulut",
+      link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+      link_en: "http://www.alandstrafiken.ax/en/timetables",
+      tables: [
+      { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["SeglingeSommar2018_1.jpeg", "SeglingeSommar2018_2.jpeg", "SeglingeSommar2018_3.jpeg"]},
+      { validFrom: "2018-09-01", validTo: "2018-12-31", images: ["AlandsVajerFarjor2018.jpeg"]},
+      ],
+    },
+    
     
     skarpnatohallo: {
       link: "http://www.aland.com/fi/skarpnato",
@@ -2067,8 +2077,14 @@ fdata = {
       vessels: ["seglingelinjen"],
       features: {
           interval_L: ["times.ondemandcheckpauses"],
+          duration_L: ["duration.minutes", "7"],
       },
-      timetables: ["alandsvajerfarjor"]
+      notes: [{
+        content: "<div class=\"alert alert-warning\"><strong>Note!</strong> From Jun 1 to Aug 31 runs between 6 AM and 10 PM with schedule every ~30 minutes, nighttime runs on demand</div>",
+        content_fi: "<div class=\"alert alert-warning\"><strong>Huom!</strong> 1.6.-31.8. liikennöidään päivällä klo 6-22 aikataulun mukaan n. 30 minuutin välein, yöllä tarvittaessa</div>",
+        content_sv: "<div class=\"alert alert-warning\"><strong>Obs!</strong> 1.6.-31.8. trafikeras dagtid kl 6-22 enligt tidtabellen varje ca. 30 minuter, nattetid vid behov</div>",
+      }],
+      timetables: ["seglingelinjen"]
     },
     toftolinjen: {
       name: "Töftölinjen",
