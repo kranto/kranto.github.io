@@ -375,8 +375,8 @@ function hideLoader() {
   if (timeout && mapInitialized ) {
     rerender(map, true);
     $("#loader").fadeOut(1000);
-    if (dontShowAgainVersion < currentBannerVersion && !location.hash && !selected) {
-      setTimeout(function() {$('#bannerModal').modal({});}, 500);      
+    if (dontShowAgainVersion < currentBannerVersion && !location.hash && !selected.length) {
+      setTimeout(function() {$('#bannerModal').modal({});}, 500);
     }
   }
 }
