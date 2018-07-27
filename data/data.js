@@ -1100,6 +1100,14 @@ fdata = {
       { validFrom: "2018-09-01", validTo: "2018-12-31", images: ["AlandsVajerFarjor2018.jpeg"]},
       ],
     },
+    toftolinjen: {
+      link: "http://www.alandstrafiken.ax/fi/aikataulut",
+      link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
+      link_en: "http://www.alandstrafiken.ax/en/timetables",
+      tables: [
+      { validFrom: "2018-02-01", validTo: null, images: ["Toftolinjen2018_1.jpeg", "Toftolinjen2018_2.jpeg", "Toftolinjen2018_3.jpeg"]},
+      ],
+    },
     
     
     skarpnatohallo: {
@@ -2092,9 +2100,10 @@ fdata = {
       operator: "alandstrafiken",
       vessels: ["toftolinjen"],
       features: {
-          interval_L: ["times.ondemandcheckpauses"],
+        interval_L: ["times.dayminutesnightondemand", "10-50"],
+        duration_L: ["duration.minutes", "4"],
       },
-      timetables: ["alandsvajerfarjor"]
+      timetables: ["toftolinjen"]
     },
     embarsundslinjen: {
       name: "Embarsundslinjen",
