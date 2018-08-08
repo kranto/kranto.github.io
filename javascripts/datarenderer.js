@@ -24,7 +24,7 @@ function getPhones(item) {
 function getLocalizedItem(item, lang) {
     
     if (!(item instanceof Object)) {
-        if (typeof item === 'string' && item.startsWith("ref_")) {
+        if (typeof item === 'string' && item.indexOf("ref_") == 0) {
             var parts = item.split("_");
             var sub = ferrydata[parts[1]][parts[2]];
             sub.id = parts[2];
@@ -38,16 +38,18 @@ function getLocalizedItem(item, lang) {
         return item.map(function(i) { return getLocalizedItem(i, lang); });
     }
 
-    var result = {}
-    for (let key of Object.keys(item)) {
-        if (key.endsWith("_L")) {
+    var result = {};
+    var keys = Object.keys(item);
+    for (let index in keys) {
+        var key = keys[index];
+        if (ew(key, "_L")) {
             var key1 = key.substring(0, key.length - 2);
             result[key1] = L(lang, item[key]);
-        } else if (key.endsWith("_" + lang)) {
+        } else if (ew(key, "_" + lang)) {
             var key1 = key.substring(0, key.length - 3);
             if (result[key1]) result[key1 + "_local"] = result[key1];
             result[key1] = item[key];
-        } else if (!/_..$/.test(key)) {
+        } else if (!RegExp('_..$').test(key)) {
             if (result[key]) {
                 result[key + "_local"] = item[key];
             } else {
@@ -56,6 +58,11 @@ function getLocalizedItem(item, lang) {
         }
     }
     return result;
+}
+
+function ew(target, needle) {
+    if (target.endsWith) return target.endsWith(needle);
+    return target.length >= needle.length && target.lastIndexOf(needle) == target.length - needle.length;
 }
 
 function getWww(item) {

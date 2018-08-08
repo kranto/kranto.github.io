@@ -92,7 +92,7 @@ function addFinnishInessiivi(mun) {
   if (mun.name_fi_in) return;
   var name = mun.name_fi || mun.name;
   var lastChar = name.slice(-1);
-  if (!vokaalit.includes(lastChar)) name += "i";
+  if (vokaalit.indexOf(lastChar) < 0) name += "i";
   var isEtu = etuvokaalit.split("").map(function(ev) { return name.indexOf(ev) >= 0; }).reduce(function(x, y) { return x || y; }, false);
   name += isEtu? "ssä": "ssa";
   mun.name_fi_in = name;
