@@ -1193,7 +1193,8 @@ fdata = {
       link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
       link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
       tables: [
-      { validFrom: "2017-06-01", validTo: "2018-08-31", images: ["KivimoSommar2018_1.jpeg?v=1.1", "KivimoSommar2018_2.jpeg?v=1.1"]}
+      { validFrom: "2017-06-01", validTo: "2018-09-02", images: ["KivimoSommar2018_1.jpeg?v=1.1", "KivimoSommar2018_2.jpeg?v=1.1"]},
+      { validFrom: "2018-09-03", validTo: "2019-05-31", images: ["KivimoVinter2019.jpeg"]}
       ],
     },
     rymattylanreitti: {
@@ -1206,14 +1207,16 @@ fdata = {
       name: "Houtskarin reitti - M/S Karolina", name_sv: "Houtskär rutt - M/S Karolina", name_en: "Houtskär Route - M/S Karolina", specifier: "",
       link: "http://www.ferryway.fi/7",
       tables: [
-      { validFrom: "2018-04-15", validTo: "2018-09-30", images: ["KarolinaSommar2018_1.jpeg", "KarolinaSommar2018_2.jpeg"]}
+      { validFrom: "2018-04-15", validTo: "2018-10-14", images: ["KarolinaSommar2018_1.jpeg?v=1.1", "KarolinaSommar2018_2.jpeg?v=1.1"]},
+      { validFrom: "2018-10-15", validTo: "2019-04-07", images: ["KarolinaVinter2019_1.jpeg", "KarolinaVinter2019_2.jpeg"]}
       ],
     },
     iniorutt: {
       name: "Iniön lisäreitti - M/S Satava", name_sv: "Iniö tilläggsrutt - M/S Satava", name_en: "Iniö Additional Route - M/S Satava", specifier: "",
       link: "http://www.ferryway.fi/8",
       tables: [
-      { validFrom: "2018-05-14", validTo: "2018-08-12", images: ["SatavaSommar2018_1.jpeg", "SatavaSommar2018_2.jpeg"]}
+      { validFrom: "2018-05-14", validTo: "2018-08-12", images: ["SatavaSommar2018_1.jpeg", "SatavaSommar2018_2.jpeg"]},
+      { validFrom: "2018-08-13", validTo: "2019-05-12", images: ["SatavaVinter2019_1.jpeg", "SatavaVinter2019_2.jpeg"]}
       ],
     },
     utorutt: { 
@@ -1221,7 +1224,6 @@ fdata = {
       link_sv: "https://meritie.fi/tidtabell-rutt/?lang=sv",
       link_en: "https://meritie.fi/tidtabell-rutt/?lang=sv",
       tables: [
-      { validFrom: "2018-06-01", validTo: "2018-08-06", images: ["EivorSommar2018_1.jpeg", "EivorSommar2018_2.jpeg"]},
       { validFrom: "2018-08-07", validTo: "2019-05-31", images: ["EivorVinter2019.jpeg"]}
       ],
     },
@@ -1248,21 +1250,24 @@ fdata = {
     nagusodra: { 
       link: "https://www.ferryway.fi/6",
       tables: [
-      { validFrom: "2018-06-04", validTo: "2018-08-12", images: ["NordepSommar2018_1.jpeg", "NordepSommar2018_2.jpeg"]}
+      { validFrom: "2018-06-04", validTo: "2018-08-12", images: ["NordepSommar2018_1.jpeg", "NordepSommar2018_2.jpeg"]},
+      { validFrom: "2018-08-13", validTo: "2018-10-31", images: ["NordepHost2018.jpeg"]}
       ],
     },
     hitisstella: {
       name: "M/S Stella",
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2018-06-02", validTo: "2018-08-12", images: ["StellaSommar2018_1.jpeg", "StellaSommar2018_2.jpeg"]}
+      { validFrom: "2018-06-02", validTo: "2018-08-12", images: ["StellaSommar2018_1.jpeg", "StellaSommar2018_2.jpeg"]},
+      { validFrom: "2018-08-13", validTo: "2019-06-04", images: ["StellaVinter2019.jpeg"]}
       ],
     },
     hitisalva: { 
       name: "M/S Alva",
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2018-06-04", validTo: "2018-08-12", images: ["AlvaSommar2018.jpeg"]}
+      { validFrom: "2018-06-04", validTo: "2018-08-12", images: ["AlvaSommar2018.jpeg"]},
+      { validFrom: "2018-08-14", validTo: null, images: ["AlvaHost2018.jpeg"]},
       ],
     },
     pargasrutt: {
