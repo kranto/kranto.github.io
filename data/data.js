@@ -1069,8 +1069,8 @@ fdata = {
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
       { validFrom: "2018-06-18", validTo: "2018-08-12", images: ["SodraSommar2018_1.jpeg", "SodraSommar2018_2.jpeg", "SodraSommar2018_3.jpeg", "SodraSommar2018_4.jpeg", "SodraSommar2018_5.jpeg", "SodraSommar2018_6.jpeg"]},
-      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["SodraVar2018_1.jpeg", "SodraVar2018_2.jpeg"]},
-      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["SodraVinter2018_1.jpeg", "SodraVinter2018_2.jpeg"]},
+      { validFrom: "2018-08-13", validTo: "2018-09-30", images: ["SodraVar2018_1.jpeg?v=1.1", "SodraVar2018_2.jpeg"]},
+      { validFrom: "2018-10-01", validTo: "2018-12-31", images: ["SodraVinter2018_1.jpeg?v=1.1", "SodraVinter2018_2.jpeg"]},
       ],
     },
     tvarlinjen: {
