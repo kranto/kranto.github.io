@@ -1485,7 +1485,7 @@ fdata = {
       specifier: "Hummelvik - Enklinge - Kumlinge - Lappo - Torsholma",
       piers: ["Hummelvik", "Enklinge", "Kumlinge", "Lappo", "Torsholma"],
       operator: "alandstrafiken",
-      vessels: ["alfageln", "knipane", "rosala"],
+      vessels: ["alfageln", "knipan", "rosala"],
       features: {
         interval_L: ["times.adaytworoutes", "", "3-4", "Enklinge - Kumlinge", "10"],
         cost_L: "cost.applies",
