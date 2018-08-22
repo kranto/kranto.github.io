@@ -98,7 +98,7 @@ txtol.init = function() {
       if (!this.visible) return;
       var overlayProjection = this.getProjection();
       if (!overlayProjection) return;
-      var position = getPosition(this);
+      var position = overlayProjection.fromLatLngToDivPixel(this.pos);
       var div = this.div_;
       var offset = this.offset_;
       div.style.left = (position.x + offset.kx * div.offsetWidth + offset.x)+ 'px';
