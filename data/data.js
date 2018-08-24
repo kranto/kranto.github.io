@@ -1107,15 +1107,15 @@ fdata = {
       link: "http://www.aland.com/fi/skarpnato",
       link_sv: "http://www.aland.com/se/skarpnato",
       link_en: "http://www.aland.com/en/skarpnato",
-      tables_fi: [
-      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_1.jpeg"]},
-      ],
-      tables_sv: [
-      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_2.jpeg"]},
-      ],
-      tables_en: [
-      { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_3.jpeg"]},
-      ],
+      // tables_fi: [
+      // { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_1.jpeg"]},
+      // ],
+      // tables_sv: [
+      // { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_2.jpeg"]},
+      // ],
+      // tables_en: [
+      // { validFrom: "2018-06-20", validTo: "2018-08-20", images: ["Silvana2018_3.jpeg"]},
+      // ],
 
     },
     iniokustavi: {
@@ -1123,7 +1123,6 @@ fdata = {
       link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/inio-gustavs-aura.html#timetables",
       link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/inio-kustavi-aura.html#timetables",
       tables: [
-      { validFrom: "2018-06-19", validTo: "2018-08-14", images: ["AuraSommar2018.jpeg"]},
       { validFrom: "2018-08-15", validTo: "2018-12-31", images: ["AuraVinter2018.jpeg"]},
       ],
     },
@@ -1257,7 +1256,6 @@ fdata = {
       name: "M/S Alva",
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2018-06-04", validTo: "2018-08-13", images: ["AlvaSommar2018.jpeg"]},
       { validFrom: "2018-08-14", validTo: null, images: ["AlvaHost2018.jpeg"]},
       ],
     },
@@ -1433,9 +1431,9 @@ fdata = {
       link: "https://meritie.fi/aikataulut-reitti/",
       link_sv: "https://meritie.fi/tidtabell-rutt/?lang=sv",
       link_en: "https://meritie.fi/tidtabell-rutt/?lang=sv",
-      tables: [
-      { validFrom: "2018-06-16", validTo: "2018-08-19", images: ["Kokar2018.jpeg"]}
-      ],
+      // tables: [
+      // { validFrom: "2018-06-16", validTo: "2018-08-19", images: ["Kokar2018.jpeg"]}
+      // ],
     },
     naantalikustavi: {
       link: "https://www.visitnaantali.com/fi/saaristoreitti-kustaviin",
