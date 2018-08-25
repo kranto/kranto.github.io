@@ -104,6 +104,13 @@ function flatten(array) {
     return array.reduce(function(a, b) { return a.concat(b); }, []);
 }
 
+function filterTimetables(tables) {
+    if (!tables) return null;
+    var today = new Date().toISOString().substring(0,10);
+    tables = tables.filter(function(table) { return !table.validTo || table.validTo >= today; });
+    return tables.length? tables: null;
+}
+
 routeInfo = function(route, lang) {
     route = getLocalizedItem(deepCopy(route), lang);
     var info = {};
@@ -154,6 +161,7 @@ routeInfo = function(route, lang) {
         timetable.buttonspecifier = timetables.length > 1? timetable.name? timetable.name: timetable.specifier: "";
         timetable.name = timetable.name? timetable.name: route.name;
         timetable.specifier= timetable.specifier? timetable.specifier: route.specifier;
+        timetable.tables = filterTimetables(timetable.tables);
         timetable.exttimetables = timetable.tables? false: "external";
         var first = true;
         var id = 1;
