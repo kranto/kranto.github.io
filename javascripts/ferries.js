@@ -356,12 +356,18 @@ function addMapListeners(map) {
 var timeout = false;
 var mapInitialized = false;
 
-setTimeout(function() { timeout = true; hideLoader(); }, 4000);
+if (window.location.hostname == "localhost") $("#loader").fadeOut(500);
+
+setTimeout(function() { timeout = true; hideLoader(); }, 3000);
 
 function onMapIdle() {
   if (map.getZoom() < 8) {
     map.setZoom(8);
     map.panToBounds({south: 60, west: 21.4, east: 22.4, north: 60.5});
+  } else {
+    var z = map.getZoom();
+    map.setZoom(z-1);
+    setTimeout(function() { map.setZoom(z); }, 100);
   }
   mapInitialized = true;
   hideLoader();
@@ -386,8 +392,6 @@ $("#bannerModal").on('hidden.bs.modal', function () {
     localStorage.setItem("dontShowAgainVersion", currentBannerVersion);
   }
 });
-
-if (window.location.hostname == "localhost") $("#loader").fadeOut(500);
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -1209,9 +1213,9 @@ function connection(connection, map) {
       } else {
         line.setOptions({strokeOpacity: Math.min(properties.opacity, layers.live? 0.2: 1)});
       }
-      var lineIsVisible = isSelected || (layerSelector() && zoom >= properties.visibleFrom && zoom <= properties.visibleTo); 
+      var lineIsVisible = isSelected || (layerSelector() && zoom >= properties.visibleFrom && zoom <= properties.visibleTo);
       line.setVisible(lineIsVisible);
-      lineb.setVisible(lineIsVisible);
+      lineb.setVisible(lineIsVisible);        
     }
     return {highlight: highlight, rerender: rerender };
   });
