@@ -1533,7 +1533,11 @@ function toggleLiveLayer(enable) {
 }
 
 function vesselIsVisible(feature) {
+  if (feature.getGeometry().getType() == 'Point') {
     return map.getZoom() >= LIVE_MIN_ZOOM && vesselIsCurrent(feature);
+  } else {
+    return map.getZoom() >= LIVE_MIN_ZOOM;
+  }
 }
 
 var vesselLabels = {};
