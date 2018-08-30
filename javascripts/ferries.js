@@ -350,6 +350,7 @@ function addMapListeners(map) {
 
   map.addListener('click', toggleHeaderbar);
   map.addListener('idle', rememberCenter);
+  map.addListener('idle', updateLiveInd);
 
 }
 
@@ -1501,6 +1502,7 @@ function toggleLiveLayer(enable) {
   }
 
   if (enable) {
+    $("#liveind").show();
     $("#liveind").animate({left: '0px'});
     document.getElementById("liveindtxt").innerHTML="Ladataan...";
     loadLiveData(map);
@@ -1508,6 +1510,7 @@ function toggleLiveLayer(enable) {
   } else {
     $("#liveind").animate({left: '-100px'}, function() { 
       document.getElementById("liveindtxt").innerHTML="";
+      $("#liveind").hide();
     });
     map.data.forEach(function(feature) {
       map.data.remove(feature);
