@@ -1501,9 +1501,14 @@ function toggleLiveLayer(enable) {
   }
 
   if (enable) {
+    $("#liveind").animate({left: '0px'});
+    document.getElementById("liveindtxt").innerHTML="Ladataan...";
     loadLiveData(map);
     liveInterval = setInterval(function() { loadLiveData(map); }, 10000);
   } else {
+    $("#liveind").animate({left: '-100px'}, function() { 
+      document.getElementById("liveindtxt").innerHTML="";
+    });
     map.data.forEach(function(feature) {
       map.data.remove(feature);
     });
@@ -1512,8 +1517,8 @@ function toggleLiveLayer(enable) {
 
   map.data.setStyle(function(feature) {
     var isVessel = feature.getGeometry().getType() == 'Point';
-    var isVisible = map.getZoom() >= LIVE_MIN_ZOOM;
-    var isLabelVisible = map.getZoom() >= LIVE_LABEL_MIN_ZOOM;
+    var isVisible = vesselIsVisible(feature);
+    var isLabelVisible = map.getZoom() >= LIVE_LABEL_MIN_ZOOM && isVisible;
     if (isVessel) updateVesselLabel(map, feature, isLabelVisible);
     return {
       visible: isVisible,
@@ -1527,11 +1532,50 @@ function toggleLiveLayer(enable) {
 
 }
 
-vesselLabels = {};
+function vesselIsVisible(feature) {
+    return map.getZoom() >= LIVE_MIN_ZOOM && vesselIsCurrent(feature);
+}
+
+var vesselLabels = {};
 
 function loadLiveData(map) {
-  map.data.loadGeoJson('https://live.saaristolautat.fi/livedata.json', {idPropertyName: "mmsi"});
+  map.data.loadGeoJson('https://live.saaristolautat.fi/livedata.json', {idPropertyName: "mmsi"}, updateLiveInd);
   map.data.loadGeoJson('https://live.saaristolautat.fi/livehistory.json');
+}
+
+function updateLiveInd(a) {
+  var sumCurrentInBounds = 0;
+  var countCurrentInBounds = 0;
+  var countInBounds = 0;
+  var countCurrentTotal = 0;
+  map.data.forEach(function(feature) {
+    var isVessel = feature.getGeometry().getType() == 'Point';
+    if (isVessel) {
+      var isCurrent = vesselIsCurrent(feature);
+      if (isCurrent) countCurrentTotal++; 
+      if (map.getBounds().contains(feature.getGeometry().get())) {
+        countInBounds++;
+        if (isCurrent) {
+          sumCurrentInBounds += getVesselAge(feature);
+          countCurrentInBounds++;
+        }
+      }
+    }
+  });
+
+  if (countCurrentTotal > 0) {
+    if (map.getZoom() < LIVE_MIN_ZOOM) {
+      document.getElementById("liveindtxt").innerHTML = "Zoom in for live";      
+    } else if (countCurrentInBounds > 0) {
+      var avg = Math.round(sumCurrentInBounds/countCurrentInBounds);
+      var msg = avg < 60? " < 1 min": "~ " + Math.round(avg/60) + " min";
+      document.getElementById("liveindtxt").innerHTML = "Viive " + msg;
+    } else {
+      document.getElementById("liveindtxt").innerHTML = "Ei aluksia kartan alueella";
+    }
+  } else {
+    document.getElementById("liveindtxt").innerHTML = "Alusten paikkatiedot ei saatavilla.";
+  }
 }
 
 function updateVesselLabel(map, feature, isVisible) {
