@@ -1559,6 +1559,8 @@ function updateLiveInd(a) {
   var countCurrentInBounds = 0;
   var countInBounds = 0;
   var countCurrentTotal = 0;
+  var minCurrentInBounds = 1000;
+  var maxCurrentInBounds = -1;
   map.data.forEach(function(feature) {
     var isVessel = feature.getGeometry().getType() == 'Point';
     if (isVessel) {
@@ -1567,8 +1569,11 @@ function updateLiveInd(a) {
       if (map.getBounds().contains(feature.getGeometry().get())) {
         countInBounds++;
         if (isCurrent) {
-          sumCurrentInBounds += getVesselAge(feature);
+          var age = getVesselAge(feature);
+          sumCurrentInBounds += age;
           countCurrentInBounds++;
+          maxCurrentInBounds = Math.max(maxCurrentInBounds, age);
+          minCurrentInBounds = Math.min(minCurrentInBounds, age);
         }
       }
     }
@@ -1578,8 +1583,11 @@ function updateLiveInd(a) {
     if (map.getZoom() < LIVE_MIN_ZOOM) {
       document.getElementById("liveindtxt").innerHTML = "Zoom in for live";      
     } else if (countCurrentInBounds > 0) {
-      var avg = Math.round(sumCurrentInBounds/countCurrentInBounds);
-      var msg = avg < 60? " < 1 min": "~ " + Math.round(avg/60) + " min";
+      // var avg = Math.round(sumCurrentInBounds/countCurrentInBounds);
+      // var msg = avg < 60? " < 1 min": "~ " + Math.round(avg/60) + " min";
+      var min = Math.round(minCurrentInBounds/60);
+      var max = Math.round(maxCurrentInBounds/60);
+      var msg = min == max? "~ " + min + " min": min + " - " + max + " min";
       document.getElementById("liveindtxt").innerHTML = "Viive " + msg;
     } else {
       document.getElementById("liveindtxt").innerHTML = "Ei aluksia kartan alueella";
