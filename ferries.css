@@ -992,6 +992,7 @@ h4 {
 
 #liveind {
   position: relative;
+  left: -100px;
   background: rgba(0,0,0,.5);
   border-radius: 5px;
   padding: 5px;

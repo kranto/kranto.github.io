@@ -1551,6 +1551,10 @@ function loadLiveData(map) {
 }
 
 function updateLiveInd(a) {
+  if (!layers.live) {
+    document.getElementById("liveindtxt").innerHTML = "";
+    return;
+  }
   var sumCurrentInBounds = 0;
   var countCurrentInBounds = 0;
   var countInBounds = 0;
