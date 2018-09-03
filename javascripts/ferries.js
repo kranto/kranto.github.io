@@ -265,7 +265,8 @@ function showLanguage(lang) {
       $(this).show();
     else
       $(this).hide();
-  })
+  });
+  updateLiveInd();
 }
 
 var currentLang;
@@ -1504,7 +1505,7 @@ function toggleLiveLayer(enable) {
   if (enable) {
     $("#liveind").show();
     $("#liveind").animate({left: '0px'});
-    document.getElementById("liveindtxt").innerHTML="Ladataan...";
+    document.getElementById("liveindtxt").innerHTML = L(currentLang, "live.loading");
     loadLiveData(map);
     liveInterval = setInterval(function() { loadLiveData(map); }, 10000);
   } else {
@@ -1550,8 +1551,8 @@ function loadLiveData(map) {
   map.data.loadGeoJson('https://live.saaristolautat.fi/livehistory.json');
 }
 
-function updateLiveInd(a) {
-  if (!layers.live) {
+function updateLiveInd() {
+  if (!layers || !layers.live) {
     document.getElementById("liveindtxt").innerHTML = "";
     return;
   }
@@ -1579,22 +1580,19 @@ function updateLiveInd(a) {
     }
   });
 
+  var msg = ["live.notavailable"];
   if (countCurrentTotal > 0) {
     if (map.getZoom() < LIVE_MIN_ZOOM) {
-      document.getElementById("liveindtxt").innerHTML = "Zoom in for live";      
+      msg = [ "live.zoomin"];
     } else if (countCurrentInBounds > 0) {
-      // var avg = Math.round(sumCurrentInBounds/countCurrentInBounds);
-      // var msg = avg < 60? " < 1 min": "~ " + Math.round(avg/60) + " min";
       var min = Math.round(minCurrentInBounds/60);
       var max = Math.round(maxCurrentInBounds/60);
-      var msg = min == max? "~ " + min + " min": min + " - " + max + " min";
-      document.getElementById("liveindtxt").innerHTML = "Viive " + msg;
+      msg = min == max? ["live.delay1", min]: ["live.delay2", min, max];
     } else {
-      document.getElementById("liveindtxt").innerHTML = "Ei aluksia kartan alueella";
+      msg = ["live.notvisible"];
     }
-  } else {
-    document.getElementById("liveindtxt").innerHTML = "Alusten paikkatiedot ei saatavilla.";
   }
+  document.getElementById("liveindtxt").innerHTML = L(currentLang, msg);
 }
 
 function updateVesselLabel(map, feature, isVisible) {

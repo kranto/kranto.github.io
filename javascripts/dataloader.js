@@ -1,7 +1,7 @@
 
 fgeojson = [];
 
-$.get("/data/messages.json?v=1.3", function(data) {
+$.get("/data/messages.json?v=1.4", function(data) {
   fmessages = data;
   sendDataIf();
 });
