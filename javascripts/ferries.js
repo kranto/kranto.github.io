@@ -1493,6 +1493,7 @@ function initLayers(map) {
 LIVE_MIN_ZOOM = 8;
 LIVE_LABEL_MIN_ZOOM = 9;
 var liveInterval = null;
+var liveLoadCount = 0;
 
 function toggleLiveLayer(enable) {
   // console.log('toggleLiveLayer', enable);
@@ -1517,6 +1518,7 @@ function toggleLiveLayer(enable) {
       map.data.remove(feature);
     });
     Object.values(vesselLabels).forEach(function(l) { l.hide(); });
+    liveLoadCount = 0;
   }
 
   map.data.setStyle(function(feature) {
@@ -1547,11 +1549,17 @@ function vesselIsVisible(feature) {
 var vesselLabels = {};
 
 function loadLiveData(map) {
-  map.data.loadGeoJson('https://live.saaristolautat.fi/livedata.json', {idPropertyName: "mmsi"}, updateLiveInd);
+  map.data.loadGeoJson('https://live.saaristolautat.fi/livedata.json',
+    {idPropertyName: "mmsi"},
+    function () {
+      liveLoadCount++;
+      updateLiveInd();
+    });
   map.data.loadGeoJson('https://live.saaristolautat.fi/livehistory.json');
 }
 
 function updateLiveInd() {
+  if (!liveLoadCount) return;
   if (!layers || !layers.live) {
     document.getElementById("liveindtxt").innerHTML = "";
     return;
