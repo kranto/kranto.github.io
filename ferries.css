@@ -981,3 +981,20 @@ h4 {
 .ferrieslist li {
   text-indent: -45px;
 }
+
+#liveindpos {
+  position: absolute;
+  left: 3px;
+  top: 53px;
+  z-index: 101;
+  overflow: visible;
+}
+
+#liveind {
+  position: relative;
+  left: -100px;
+  background: rgba(0,0,0,.5);
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}

@@ -265,7 +265,8 @@ function showLanguage(lang) {
       $(this).show();
     else
       $(this).hide();
-  })
+  });
+  updateLiveInd();
 }
 
 var currentLang;
@@ -350,6 +351,7 @@ function addMapListeners(map) {
 
   map.addListener('click', toggleHeaderbar);
   map.addListener('idle', rememberCenter);
+  map.addListener('idle', updateLiveInd);
 
 }
 
@@ -1491,6 +1493,7 @@ function initLayers(map) {
 LIVE_MIN_ZOOM = 8;
 LIVE_LABEL_MIN_ZOOM = 9;
 var liveInterval = null;
+var liveLoadCount = 0;
 
 function toggleLiveLayer(enable) {
   // console.log('toggleLiveLayer', enable);
@@ -1501,19 +1504,27 @@ function toggleLiveLayer(enable) {
   }
 
   if (enable) {
+    $("#liveind").show();
+    $("#liveind").animate({left: '0px'});
+    document.getElementById("liveindtxt").innerHTML = L(currentLang, "live.loading");
     loadLiveData(map);
     liveInterval = setInterval(function() { loadLiveData(map); }, 10000);
   } else {
+    $("#liveind").animate({left: '-100px'}, function() { 
+      document.getElementById("liveindtxt").innerHTML="";
+      $("#liveind").hide();
+    });
     map.data.forEach(function(feature) {
       map.data.remove(feature);
     });
     Object.values(vesselLabels).forEach(function(l) { l.hide(); });
+    liveLoadCount = 0;
   }
 
   map.data.setStyle(function(feature) {
     var isVessel = feature.getGeometry().getType() == 'Point';
-    var isVisible = map.getZoom() >= LIVE_MIN_ZOOM;
-    var isLabelVisible = map.getZoom() >= LIVE_LABEL_MIN_ZOOM;
+    var isVisible = vesselIsVisible(feature);
+    var isLabelVisible = map.getZoom() >= LIVE_LABEL_MIN_ZOOM && isVisible;
     if (isVessel) updateVesselLabel(map, feature, isLabelVisible);
     return {
       visible: isVisible,
@@ -1527,11 +1538,69 @@ function toggleLiveLayer(enable) {
 
 }
 
-vesselLabels = {};
+function vesselIsVisible(feature) {
+  if (feature.getGeometry().getType() == 'Point') {
+    return map.getZoom() >= LIVE_MIN_ZOOM && vesselIsCurrent(feature);
+  } else {
+    return map.getZoom() >= LIVE_MIN_ZOOM;
+  }
+}
+
+var vesselLabels = {};
 
 function loadLiveData(map) {
-  map.data.loadGeoJson('https://live.saaristolautat.fi/livedata.json', {idPropertyName: "mmsi"});
+  map.data.loadGeoJson('https://live.saaristolautat.fi/livedata.json',
+    {idPropertyName: "mmsi"},
+    function () {
+      liveLoadCount++;
+      updateLiveInd();
+    });
   map.data.loadGeoJson('https://live.saaristolautat.fi/livehistory.json');
+}
+
+function updateLiveInd() {
+  if (!liveLoadCount) return;
+  if (!layers || !layers.live) {
+    document.getElementById("liveindtxt").innerHTML = "";
+    return;
+  }
+  var sumCurrentInBounds = 0;
+  var countCurrentInBounds = 0;
+  var countInBounds = 0;
+  var countCurrentTotal = 0;
+  var minCurrentInBounds = 1000;
+  var maxCurrentInBounds = -1;
+  map.data.forEach(function(feature) {
+    var isVessel = feature.getGeometry().getType() == 'Point';
+    if (isVessel) {
+      var isCurrent = vesselIsCurrent(feature);
+      if (isCurrent) countCurrentTotal++; 
+      if (map.getBounds().contains(feature.getGeometry().get())) {
+        countInBounds++;
+        if (isCurrent) {
+          var age = getVesselAge(feature);
+          sumCurrentInBounds += age;
+          countCurrentInBounds++;
+          maxCurrentInBounds = Math.max(maxCurrentInBounds, age);
+          minCurrentInBounds = Math.min(minCurrentInBounds, age);
+        }
+      }
+    }
+  });
+
+  var msg = ["live.notavailable"];
+  if (countCurrentTotal > 0) {
+    if (map.getZoom() < LIVE_MIN_ZOOM) {
+      msg = [ "live.zoomin"];
+    } else if (countCurrentInBounds > 0) {
+      var min = Math.round(minCurrentInBounds/60);
+      var max = Math.round(maxCurrentInBounds/60);
+      msg = min == max? ["live.delay1", min]: ["live.delay2", min, max];
+    } else {
+      msg = ["live.notvisible"];
+    }
+  }
+  document.getElementById("liveindtxt").innerHTML = L(currentLang, msg);
 }
 
 function updateVesselLabel(map, feature, isVisible) {

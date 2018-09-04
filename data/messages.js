@@ -52,6 +52,14 @@ messages = { // FI SV EN
     fromoriginal: ["alkuperäisestä aikataulusta", "från den ursprungliga tidtabellen", "in the original schedule"],
     openzoomable: ["Avaa zoomattava aikataulu uuteen ikkunaan klikkaamalla", "Klicka för att öppna tidtabellen i ett nytt fönster", "Click a timetable image to open it in a new window"],
     seealso: ['Katso myös <a href="{0}">{1}</a>', 'Se också <a href="{0}">{1}</a>', 'See also <a href="{0}">{1}</a>'],
+    live: {
+        loading: ['Ladataan...', 'Laddas...', 'Loading...'],
+        notavailable: ['Data ei saatavilla', 'Data icke tillgängliga', 'Data not available'],
+        notvisible: ['Ei aluksia kartan alueella', 'Inga fartyg på kartan', 'No vessels within the map bounds'],
+        zoomin: ['Lähennä nähdäksesi alusten sijainnit', 'Zooma in för att se fartygens lägen', "Zoom in for vessels' positions"],
+        delay1: ['Viive ~ {0} min', 'Försening ~ {0} min', "Delay ~ {0} min"],
+        delay2: ['Viive {0} - {1} min', 'Försening {0} - {1} min', "Delay {0} - {1} min"],
+    }
 }
 
 console.log(JSON.stringify(messages));

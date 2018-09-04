@@ -20,12 +20,12 @@
 
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/font-awesome-animation.min.css" rel="stylesheet">
-  <link href="/ferries.css?v=1.6" rel="stylesheet">
+  <link href="/ferries.css?v=1.8" rel="stylesheet">
   <script src="/js/jquery.min.js"></script>
   <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script> 
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/mustache.min.js"></script>
-  <script src="/javascripts/dataloader.js?v=1.24"></script>
+  <script src="/javascripts/dataloader.js?v=1.25"></script>
   <script src="/javascripts/datarenderer.js?v=1.6"></script>
   <script src="/javascripts/localizer.js?v=1"></script>
   <script src="/javascripts/partialloader.js?v=1.4"></script>
@@ -138,6 +138,12 @@
       <button id="settingsbutton" type="button" class="topbarbutton right">
         <i class="fa fa-sliders" aria-hidden="true"></i>
       </button>
+    </div>
+
+    <div id="liveindpos">
+      <div id="liveind">
+        <span id="liveindtxt"></span>
+      </div>
     </div>
 
     <div class="" id="menu"></div>
@@ -986,7 +992,7 @@
 </div>
 
   <canvas id="canvas" style="display: none;"></canvas>
-  <script src="/javascripts/ferries.js?v=1.17"></script>
+  <script src="/javascripts/ferries.js?v=1.20"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX_N6yFjHfac6v9-xiwA31yg1twAMMyGA&callback=initMap" async defer></script>
 </body>
 </html>
