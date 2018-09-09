@@ -54,7 +54,7 @@ messages = { // FI SV EN
     seealso: ['Katso myös <a href="{0}">{1}</a>', 'Se också <a href="{0}">{1}</a>', 'See also <a href="{0}">{1}</a>'],
     live: {
         loading: ['Ladataan...', 'Laddas...', 'Loading...'],
-        notavailable: ['Data ei saatavilla', 'Data icke tillgängliga', 'Data not available'],
+        notavailable: ['Livedata ei saatavilla', 'Livedata icke tillgängliga', 'Live data not available'],
         notvisible: ['Ei aluksia kartan alueella', 'Inga fartyg på kartan', 'No vessels within the map bounds'],
         zoomin: ['Lähennä nähdäksesi alusten sijainnit', 'Zooma in för att se fartygens lägen', "Zoom in for vessels' positions"],
         delay1: ['Viive ~ {0} min', 'Försening ~ {0} min', "Delay ~ {0} min"],

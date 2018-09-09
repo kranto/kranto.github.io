@@ -1566,6 +1566,7 @@ function updateLiveInd() {
   }
   var sumCurrentInBounds = 0;
   var countCurrentInBounds = 0;
+  var countCurrentInBoundsEncourse = 0;
   var countInBounds = 0;
   var countCurrentTotal = 0;
   var minCurrentInBounds = 1000;
@@ -1581,8 +1582,11 @@ function updateLiveInd() {
           var age = getVesselAge(feature);
           sumCurrentInBounds += age;
           countCurrentInBounds++;
-          maxCurrentInBounds = Math.max(maxCurrentInBounds, age);
-          minCurrentInBounds = Math.min(minCurrentInBounds, age);
+          if (feature.getProperty("sog") > 0.1) {
+            maxCurrentInBounds = Math.max(maxCurrentInBounds, age);
+            minCurrentInBounds = Math.min(minCurrentInBounds, age);
+            countCurrentInBoundsEncourse++;
+          }
         }
       }
     }
@@ -1593,9 +1597,13 @@ function updateLiveInd() {
     if (map.getZoom() < LIVE_MIN_ZOOM) {
       msg = [ "live.zoomin"];
     } else if (countCurrentInBounds > 0) {
-      var min = Math.round(minCurrentInBounds/60);
-      var max = Math.round(maxCurrentInBounds/60);
-      msg = min == max? ["live.delay1", min]: ["live.delay2", min, max];
+      if (countCurrentInBoundsEncourse > 0) {
+        var min = Math.round(minCurrentInBounds/60);
+        var max = Math.round(maxCurrentInBounds/60);
+        msg = min == max? ["live.delay1", min]: ["live.delay2", min, max];
+      } else {
+        msg = ["live.delay1", Math.round(sumCurrentInBounds/countCurrentInBounds/60)]
+      }
     } else {
       msg = ["live.notvisible"];
     }
