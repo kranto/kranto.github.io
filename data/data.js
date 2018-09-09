@@ -1222,7 +1222,7 @@ fdata = {
     korporutt: {
       link: "https://saaristolinjat.fi/#reittialue",
       tables: [
-      { validFrom: "2018-06-01", validTo: "2018-08-31", images: ["FiskoSommar2018_1.jpeg", "FiskoSommar2018_2.jpeg"]},
+      { validFrom: "2018-09-01", validTo: "2019-05-31", images: ["FiskoVinter2019.jpeg"]},
       ],
     },
     nagunorra: {
@@ -1230,7 +1230,7 @@ fdata = {
       link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-norra-rutt-falko.html#timetables",
       link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
       tables: [
-      { validFrom: "2018-05-18", validTo: "2018-09-02", images: ["FalkoSommar2018.jpeg"]}
+      { validFrom: "2018-09-03", validTo: "2019-05-16", images: ["FalkoVinter2019.jpeg"]}
       ],
     },
     nagutvar: {
