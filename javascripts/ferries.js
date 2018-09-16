@@ -66,7 +66,7 @@ function keepCenter() {
 
 $(document).ready(function(){
 
-  $("#infopage").load("templates/infopage.html?v=1.5 #infopagecontent", initInfoPage);
+  $("#infopage").load("templates/infopage.html?v=1.6 #infopagecontent", initInfoPage);
   $("#menu").load("templates/menucontent.html?v=1 #menucontent", initMenu);
   $("#settings").load("templates/settingscontent.html?v=1 #settingscontent", initSettings);
 
@@ -189,7 +189,8 @@ function openInfoPage(target) {
     $(target).show();
     wasSelected = selected.slice();
     unselectAll(false);
-    $("#showLive").click(function() {
+    $(".showLive").off("click");
+    $(".showLive").click(function() {
       var liveMapUri =  "live.html?lng=" + map.getCenter().lng() + "&lat=" + map.getCenter().lat() + "&zoom=" + map.getZoom();
       window.open(liveMapUri, "livemap");
       $('.navbar-toggle').click();
