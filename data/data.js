@@ -1193,7 +1193,7 @@ fdata = {
     rymattylanreitti: {
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2018-05-07", validTo: "2018-09-30", images: ["IslaSommar2018_1.jpeg", "IslaSommar2018_2.jpeg"]}
+      { validFrom: "2018-10-01", validTo: "2019-05-05", images: ["IslaVinter2019_1.jpeg", "IslaVinter2019_2.jpeg"]}
       ],
     },
     houtskarrutt: {
