@@ -847,11 +847,12 @@ function renderData(data, map) {
   });
 }
 
-function receiveFData(fdata, fgeojson, messages) {
-  fgeojson.forEach(function(data) {
-    objectRenderer.render(data);
-  });
-  initRoutes();
+var fdata;
+function receiveFData(data, geojson, messages) {
+  fdata = data;
+  L = initLocalizer(messages);
+  objectRenderer.renderData(geojson, data, objects);
+  initRoutes(map, data);
 }
 
 var mapOptions = {
@@ -892,7 +893,7 @@ function initMap() {
   map.addListener('zoom_changed', updateMapStyles);
 
   objectRenderer = initObjectRenderer(map);
-  getFData(receiveFData);
+  loadFerriesData(receiveFData);
 
   var oldZoom = map.getZoom();
   map.addListener('zoom_changed', function() {

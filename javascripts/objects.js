@@ -1,5 +1,5 @@
 function initObjectRenderer(map) {
-  
+
   function createCircleIcon(color, opacity, scale, labelOrigin) {
     return {
       path: google.maps.SymbolPath.CIRCLE,
@@ -173,7 +173,7 @@ function initObjectRenderer(map) {
     }
   };
 
-  function pier(feature, map) {
+  function pier(feature, map, data) {
     var styler = pierStylers[feature.properties.ssubtype];
     var markerVisibleFrom = feature.properties.markerVisibleFrom || styler.markerVisibleFrom;
     var labelVisibleFrom = feature.properties.labelVisibleFrom || styler.labelVisibleFrom;
@@ -182,13 +182,13 @@ function initObjectRenderer(map) {
     var icon = getPierIcons().a1_30;
     var marker = createMarker(position, true, icon, map);
     var ref = null;
-    var fdataObject = null;
+    var dataObject = null;
     if (feature.properties.ref) {
       ref = feature.properties.ref;
-      fdataObject = fdata.piers[ref];    
+      dataObject = data.piers[ref];    
     }
-    var shortName_ = shortName(fdataObject);
-    var longName_ = longName(fdataObject).replace('/', '<br/>');
+    var shortName_ = shortName(dataObject);
+    var longName_ = longName(dataObject).replace('/', '<br/>');
     var label = new txtol.TxtOverlay(position, longName_, "pier pier-" + feature.properties.ssubtype, map, feature.properties.labelAnchor);
 
     function showTooltip(pan) {
@@ -205,8 +205,8 @@ function initObjectRenderer(map) {
     return {
       ref: ref,
       init: function() {
-        shortName_ = shortName(fdataObject);
-        longName_ = longName(fdataObject).replace('/', '<br/>');
+        shortName_ = shortName(dataObject);
+        longName_ = longName(dataObject).replace('/', '<br/>');
         label.setInnerHTML(longName_);
       },
       hide: function() {
@@ -220,7 +220,7 @@ function initObjectRenderer(map) {
         if (zoom >= labelVisibleFrom) label.show(); else label.hide();
       },
       showTooltip: showTooltip,
-      id: fdataObject.id
+      id: dataObject.id
     };
   }
 
@@ -544,14 +544,20 @@ function initObjectRenderer(map) {
     pin: pin
   };
 
+  function renderFeatureCollection(featureCollection, data, objects) {
+    var features = featureCollection.features;
+    features.forEach(function(feature) {
+      var type = feature.properties.stype;
+      if (typeof renderers[type] !== 'undefined') {
+        objects.push(renderers[type](feature, map, data));
+      }
+    });
+  }
+
   return {
-    render: function(data) {
-      var features = data.features;
-      features.forEach(function(feature) {
-        var type = feature.properties.stype;
-        if (typeof renderers[type] !== 'undefined') {
-          objects.push(renderers[type](feature, map));
-        }
+    renderData: function(geojson, data, objects) {
+      geojson.forEach(function(featureCollection) {
+        renderFeatureCollection(featureCollection, data, objects);
       });
     }
   }
