@@ -849,11 +849,13 @@ function renderData(data, map) {
 
 var fdata;
 function receiveFData(data, geojson, messages) {
-  fdata = data;
-  L = initLocalizer(messages);
-  objectRenderer.renderData(geojson, data, objects);
-  initRoutes(map, data);
-}
+  setTimeout(function() {
+    fdata = data;
+    L = initLocalizer(messages);
+    objectRenderer.renderData(geojson, data, objects);
+    initRoutes(map, data);
+  }, 1000);
+} 
 
 var mapOptions = {
   center: {lat: 60.25, lng: 21.25},
