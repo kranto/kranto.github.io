@@ -1496,91 +1496,6 @@ LIVE_LABEL_MIN_ZOOM = 9;
 var liveInterval = null;
 var liveLoadCount = 0;
 
-
-var otherVessels = [
-230629000, // Viking Grace
-230172000, // Amorella
-230361000, // Gabriella
-230181000, // Mariella
-230180000, // Rosella
-266027000, // Viking Cinderella
-
-230639000, // Baltic Princess
-266301000, // Galaxy
-230184000, // Silja Serenade
-265004000, // Silja Symphony
-276779000, // Baltic Queen
-276519000, // Victoria I
-
-230671000, // Finnswan
-230637000, // Finnfellow
-266308000, // Eckerö
-266314000, // Birka Stockholm
-276817000, // Sailor
-
-230942840, // Otava
-];
-
-var client;
-function connect() {
-  console.log('trying to connect...');
-  client = new Paho.MQTT.Client("", 61619, '');
-
-  client.onConnectionLost = function (response) {
-    console.info('Connection lost:' + response.errorMessage);
-  }
-
-  client.onMessageArrived = function(message) {
-    handleMessage(message);
-  };
-
-  client.connect({hosts:["b-afca9ce3-f38d-459d-b495-43d879decdaa-1.mq.eu-west-1.amazonaws.com","b-afca9ce3-f38d-459d-b495-43d879decdaa-2.mq.eu-west-1.amazonaws.com"],
-    ports:[61619,61619],
-    onSuccess:onConnect,
-    mqttVersion:4,
-    useSSL:true,
-    userName:"marine", password:"digitraffic_marine"});
-}
-
-function onConnect() {
-    console.info('Connection open');
-    otherVessels.forEach(function(mmsi) {
-      client.subscribe("vessels/" + mmsi + "/#");
-    });
-}
-
-function handleMessage(message) {
-  var content = message.payloadString;
-  var data = JSON.parse(content);
-
-  if (data && data.shipType) { // is metadata
-    handleMetadata(data);
-  }
-
-  if (data && data.geometry) { // is location geojson
-    handleLocation(data);
-  }
-}
-
-function handleMetadata(metadata) {
-  var fea = map.data.getFeatureById(metadata.mmsi);
-  if (fea) fea.setProperty('vessel', metadata);
-}
-
-function handleLocation(feature) {
-  var fea = map.data.getFeatureById(feature.mmsi);
-  feature.properties.vessel = fea? fea.getProperty('vessel'): { name: "UNKNOWN" };
-  feature.id = feature.mmsi;
-  map.data.addGeoJson(feature);
-
-  var hfea = map.data.getFeatureById("h" + feature.mmsi);
-  if (hfea) hfea.toGeoJson(function(geoJson) { 
-    geoJson.geometry.coordinates[0].unshift(feature.geometry.coordinates);
-    map.data.addGeoJson(geoJson);
-  });
-}
-
-
 function toggleLiveLayer(enable) {
   // console.log('toggleLiveLayer', enable);
 
@@ -1595,7 +1510,6 @@ function toggleLiveLayer(enable) {
     document.getElementById("liveindtxt").innerHTML = L(currentLang, "live.loading");
     loadLiveData(map);
     liveInterval = setInterval(function() { loadLiveData(map); }, 10000);
-    connect();
   } else {
     $("#liveind").animate({left: '-100px'}, function() { 
       document.getElementById("liveindtxt").innerHTML="";
@@ -1636,7 +1550,6 @@ function vesselIsVisible(feature) {
 var vesselLabels = {};
 
 function loadLiveData(map) {
-  if (liveLoadCount > 0) return;
   map.data.loadGeoJson('https://live.saaristolautat.fi/livedata.json',
     {idPropertyName: "mmsi"},
     function () {
@@ -1701,7 +1614,6 @@ function updateLiveInd() {
 
 function updateVesselLabel(map, feature, isVisible) {
   var vessel = feature.getProperty("vessel");
-  if (!vessel) return;
   var ageClass = vesselIsCurrent(feature)? "current": "old";
   var speed = feature.getProperty("sog");
   var name = vessel.name;
