@@ -1405,10 +1405,12 @@ function renderData(data, map) {
 }
 
 function receiveFData(fdata, fgeojson, messages) {
-  fgeojson.forEach(function(data) {
-    renderData(data, map);
-  });
-  initRoutes();
+  setTimeout(function() {
+    fgeojson.forEach(function(data) {
+      renderData(data, map);
+    });
+    initRoutes();  
+  }, 1000);
 }
 
 var mapOptions = {
