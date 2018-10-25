@@ -1237,7 +1237,6 @@ fdata = {
       link: "https://www.ferryway.fi/5",
       tables: [
       { validFrom: "2018-04-01", validTo: "2018-10-31", images: ["MyrskylintuSommar2018_1.jpeg", "MyrskylintuSommar2018_2.jpeg"]},
-      { validFrom: "2018-11-01", validTo: "2019-03-31", images: ["MyrskylintuVinter2019.jpeg"]}
       ],
     },
     nagusodra: { 
