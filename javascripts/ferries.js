@@ -1465,8 +1465,9 @@ function initMap() {
   map.addListener('zoom_changed',function() {
     cancelHeaderBarToggle();
     hideObjects(map);
-    setTimeout(function() { rerender(map); }, 50);
   });
+
+  map.addListener('idle', function() { rerender(map); });
 
   map.addListener('maptypeid_changed',function () {
     $(".map").toggleClass("satellite", map.getMapTypeId() == 'satellite' || map.getMapTypeId() == 'hybrid');
