@@ -558,14 +558,14 @@ fdata = {
     summersea: {
       name: "M/S Summersea",
       features: { cafe: true },
-      capacity: { persons: 155 },
+      capacity: { persons: 155, bikes: " " },
       contact: {
       }
     },
     sissel: {
       name: "M/S Sissel",
       features: { },
-      capacity: { persons: 80 },
+      capacity: { persons: 80, bikes: " " },
       contact: {
       }
     },
@@ -952,6 +952,7 @@ fdata = {
     Djupö: { mun: "Kimitoön"},
     Örö: { mun: "Kimitoön"},
     Rosala: { mun: "Kimitoön"},
+    Vikare: { mun: "Kimitoön"},
     Bengtskär: { mun: "Kimitoön"},
     Vänoxaby: { name: "Vänoxa by", mun: "Kimitoön"},
     Vänoxasläten: { name: "Vänoxa släten (Bergö)", mun: "Kimitoön"},
@@ -1151,9 +1152,9 @@ fdata = {
       link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/inio-gustavs-aura.html#timetables",
       link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/inio-kustavi-aura.html#timetables",
       tables: [
-      { validFrom: "2019-01-01", validTo: "2019-06-16", images: ["inio-kustavi-aura-talvi-2019-1.jpg"]},
-      { validFrom: "2019-06-17", validTo: "2019-08-11", images: ["AuraSommar2019.jpeg"]},
-      { validFrom: "2019-08-12", validTo: "2019-12-31", images: ["inio-kustavi-aura-talvi-2019-1.jpg"]},
+        { validFrom: "2019-01-01", validTo: "2019-06-16", images: ["inio-kustavi-aura-talvi-2019-1.jpg"]},
+        { validFrom: "2019-06-17", validTo: "2019-08-11", images: ["AuraSommar2019.jpeg"]},
+        { validFrom: "2019-08-12", validTo: "2019-12-31", images: ["inio-kustavi-aura-talvi-2019-1.jpg"]},
       ],
     },
     houtskarinio: {
@@ -1416,30 +1417,11 @@ fdata = {
       link: "http://www.petunlossi.com/lossi.html",
     },
     hankooro: {
-      link: "https://vitharun.fi/fi/aikataulut/oro/",
-      link_sv: "https://vitharun.fi/sv/tidtabeller/oro/",
-      link_en: "https://vitharun.fi/en/timetables/oro/",
+      link: "https://www.wilsoncharter.fi/hanko-kasnas-ja-kasnas-oro",
+      link_sv: "https://www.wilsoncharter.fi/se/hango-kasnas-och-kasnas-oro",
+      link_en: "https://www.wilsoncharter.fi/en/hanko-kasnas-and-kasnas-oro",
       tables: [
-      { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2.jpeg", "Norrskar2018_4.jpeg"]},
-      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1.jpeg", "Norrskar2018_4.jpeg"]},
-      ],
-      tables_en: [
-      { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
-      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1en.jpeg", "Norrskar2018_4en.jpeg"]},
-      ],
-    },
-    kasnasorovitharun: {
-      link: "https://vitharun.fi/fi/aikataulut/oro/",
-      link_sv: "https://vitharun.fi/sv/tidtabeller/oro/",
-      link_en: "https://vitharun.fi/en/timetables/oro/",
-      name: "Vitharun",
-      tables: [
-      { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2.jpeg", "Norrskar2018_4.jpeg"]},
-      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1.jpeg", "Norrskar2018_4.jpeg"]},
-      ],
-      tables_en: [
-      { validFrom: "2018-08-06", validTo: "2018-09-02", images: ["Norrskar2018_2en.jpeg", "Norrskar2018_4en.jpeg"]},
-      { validFrom: "2018-09-03", validTo: "2018-09-30", images: ["Norrskar2018_1en.jpeg", "Norrskar2018_4en.jpeg"]},
+        { validFrom: "2019-06-30", validTo: "2019-08-11", images_fi: ["Kustrutten2019_fi.jpg"], images: ["Kustrutten2019_sv.jpg"]},
       ],
     },
     kasnasorowilson: {
@@ -1447,16 +1429,16 @@ fdata = {
       link_sv: "https://www.wilsoncharter.fi/se/oro-fort-och-nationalpark",
       link_en: "https://www.wilsoncharter.fi/en/oro-fortress-tours",
       name: "Wilson Charter",
-//      tables: [
-//      { validFrom: "2018-06-25", validTo: "2018-08-12", images_fi: ["SisselOro2018_fi.jpeg"], images_sv: ["SisselOro2018_sv.jpeg"], images_en: ["SisselOro2018_en.jpeg"]},
-//      ],
+     tables: [
+     { validFrom: "2019-06-01 ", validTo: "2019-08-11", images_fi: ["SisselOro2019_fi.jpeg"], images: ["SisselOro2019_sv.jpeg"], images_en: ["SisselOro2019_en.jpeg"]},
+     ],
     },
     kasnasbengtskar: {
       link: "https://www.wilsoncharter.fi/bengtskar",
       link_sv: "https://www.wilsoncharter.fi/se/bengtskar",
       link_en: "https://www.wilsoncharter.fi/en/bengtskar",
       tables: [
-      { validFrom: "2018-06-02", validTo: "2018-08-26", images_fi: ["SisselBengtskar2018_fi.jpeg"], images_sv: ["SisselBengtskar2018_sv.jpeg"], images_en: ["SisselBengtskar2018_en.jpeg"]},
+      { validFrom: "2018-06-01", validTo: "2018-08-25", images_fi: ["SisselBengtskar2018_fi.jpeg"], images_sv: ["SisselBengtskar2018_sv.jpeg"], images_en: ["SisselBengtskar2018_en.jpeg"]},
       ],
     },
     hankobengtskar: {
@@ -1623,7 +1605,7 @@ fdata = {
       specifier: "Långnäs - Överö - Sottunga - Kökar - Galtby",
       piers: ["Långnäs", "Överö", "Sottunga", "Husö", "Kyrkogårdsö", "Kökar", "Galtby"],
       operator: "alandstrafiken",
-      vessels: ["gudingen", "skiftet"],
+      vessels: ["gudingen", "skiftet", "knipan"],
       features: {
         interval_L: ["times.aday", "Långnäs - Kökar 3-4, Kökar - Galtby 0-2 "],
         cost_L: "cost.applies",
@@ -2228,13 +2210,13 @@ fdata = {
     hankooro: {
       name: "Hanko - Kasnäs - Örö",
       name_sv: "Hangö - Kasnäs - Örö",
-      piers: ["Hanko", "Kasnäs", "Örö"],
-      operator: "vitharun",
-      vessels: ["norrskar"],
+      piers: ["Hanko", "Vikare", "Kasnäs", "Örö"],
+      operator: "wilsoncharter",
+      vessels: ["sissel"],
       features: {
-        interval_L: ["times.adayaweek", "2", "Hanko/Hangö", "5"],
+        interval_L: ["times.adayaweek", "1", "Hanko/Hangö", "3"],
         cost_L: "cost.applies",
-        duration_L: ["duration.hours", "3 "],
+        duration_L: ["duration.hours", "3"],
         seasonal_L: "seasonal.summers",
         seealso_L: ["seealso", "#kasnasoro", "Kasnäs - Örö"],
       },
@@ -2243,16 +2225,16 @@ fdata = {
     kasnasoro: {
       name: "Kasnäs - Örö",
       piers: ["Kasnäs", "Örö"],
-      operator: ["vitharun", "wilsoncharter"],
-      vessels: ["norrskar", "sissel", "minandra"],
+      operator: ["wilsoncharter"],
+      vessels: ["sissel", "minandra"],
       features: {
-        interval_L: ["times.aday", "3"],
+        interval_L: ["times.aday", "1"],
         cost_L: "cost.applies",
         duration_L: ["duration.minutes", "45"],
         seasonal_L: "seasonal.summers",
         seealso_L: ["seealso", "#hankooro", "Hanko - Kasnäs - Örö"],
       },
-      timetables: ["kasnasorovitharun", "kasnasorowilson"]
+      timetables: ["kasnasorowilson"]
     },
     kasnasbengtskar: {
       name: "Kasnäs - Bengtskär",
