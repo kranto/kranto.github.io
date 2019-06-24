@@ -1152,6 +1152,7 @@ fdata = {
       link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/inio-kustavi-aura.html#timetables",
       tables: [
       { validFrom: "2019-01-01", validTo: "2019-06-16", images: ["inio-kustavi-aura-talvi-2019-1.jpg"]},
+      { validFrom: "2019-06-17", validTo: "2019-08-11", images: ["AuraSommar2019.jpeg"]},
       { validFrom: "2019-08-12", validTo: "2019-12-31", images: ["inio-kustavi-aura-talvi-2019-1.jpg"]},
       ],
     },
