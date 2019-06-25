@@ -6,7 +6,7 @@ $.get("/data/messages.json?v=1.5", function(data) {
   sendDataIf();
 });
 
-$.get('/data/saaristo.json?v=1.7', function(data) {
+$.get('/data/saaristo.json?v=1.8', function(data) {
   fgeojson.push(data);
   sendDataIf();
 });
