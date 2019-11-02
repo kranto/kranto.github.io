@@ -428,7 +428,8 @@ fdata = {
         persons: 80,
       },
       contact: {
-        phones: ['+358 40 849 5140']
+        phones: ['+358 40 849 5140'],
+        email: "satava@ferentes.fi"
       },
     },
     nordep: {
@@ -438,7 +439,8 @@ fdata = {
         persons: 78,
       },
       contact: {
-        phones: ['+358 45 129 4779']
+        phones: ['+358 45 129 4779'],
+        email: "nordep@ferentes.fi"
       },
     },
     karolina: {
@@ -446,7 +448,8 @@ fdata = {
       features: { },
       capacity: { persons: 30, bikes: " " },
       contact: {
-        phones: ['+358 40 717 3455 ']
+        phones: ['+358 40 717 3455 '],
+        email: "karolina@ferentes.fi"
       },
     },
     cheri: {
@@ -670,6 +673,15 @@ fdata = {
         email: 'info@ferryway.fi',
         address: 'Äpplö, 21760 Houtskari',
         www: 'https://www.ferryway.fi/'
+      },
+    },
+    ferentes: {
+      name: "Ferentes Oy",
+      logo: "ferentes.png",
+      contact: {
+        phones: [],
+        email: 'info@ferentes.fi',
+        www: 'https://www.ferentes.fi/'
       },
     },
     al: {
@@ -1018,46 +1030,34 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2019-01-01", validTo: "2019-05-31", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-28.jpg"]},
-      { validFrom: "2019-06-01", validTo: "2019-08-31", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-29.jpg"]},
-      { validFrom: "2019-09-01", validTo: "2019-12-31", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-28.jpg"]},
-      ],
+      { validFrom: "2019-09-01", validTo: "2019-12-31", images:["foglo_sid_26-27_9okt-1.jpg"] },
+    ],
     },
     norralinjen: {
-      specifier: "Hummelvik - Torsholma",
+      specifier: "Hummelvik - Torsholma, M/S Alfågeln",
       link: "http://www.alandstrafiken.ax/fi/aikataulut",
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2019-01-02", validTo: "2019-04-28", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-30.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-31.jpg"]},
-      { validFrom: "2019-04-29", validTo: "2019-06-16", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-32.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-33.jpg"]},
-      { validFrom: "2019-06-17", validTo: "2019-06-19", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-34.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-35.jpg"]},
-      { validFrom: "2019-06-20", validTo: "2019-06-23", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-36.jpg"]},
-      { validFrom: "2019-06-24", validTo: "2019-08-11", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-34.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-35.jpg"]},
-      { validFrom: "2019-08-12", validTo: "2019-08-31", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-32.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-33.jpg"]},
-      ],
+      { validFrom: "2019-09-30", validTo: "2020-01-02", images:["alfageln_host_16.8-2.jpg"] },
+    ],
     },
     enklingelinjen: {
-      specifier: "Enklinge - Kumlinge",
+      specifier: "Enklinge - Kumlinge, M/S Rosala II",
       link: "http://www.alandstrafiken.ax/fi/aikataulut",
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2019-01-02", validTo: "2019-04-28", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-54.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-57.jpg"]},
-      { validFrom: "2019-04-29", validTo: "2019-06-16", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-55.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-57.jpg"]},
-      { validFrom: "2019-06-17", validTo: "2019-08-11", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-56.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-57.jpg"]},
-      { validFrom: "2019-08-12", validTo: "2019-08-31", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-55.jpg"]},
+        { validFrom: "2019-10-04", validTo: "2020-01-01", images:["enklinge_from_4.10.2019-1.jpg"] },
       ],
     },
-    asterholmalinjen: {
+    brandokumlingelinjen: {
+      specifier: "Enklinge - Torsholma, M/S Ejdern",
       link: "http://www.alandstrafiken.ax/fi/aikataulut",
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2019-01-02", validTo: "2019-04-28", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-48.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-49.jpg"]},
-      { validFrom: "2019-04-29", validTo: "2019-06-16", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-50.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-51.jpg"]},
-      { validFrom: "2019-06-17", validTo: "2019-08-11", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-52.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-53.jpg"]},
-      { validFrom: "2019-08-12", validTo: "2019-08-31", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-50.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-51.jpg"]},
+        { validFrom: "2019-09-30", validTo: "2020-01-02", images:["ejdern_host_16.8-3.jpg", "ejdern_host_16.8-4.jpg"] },
       ],
     },
     avajurmo: {
@@ -1065,10 +1065,7 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2019-01-02", validTo: "2019-04-28", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-42.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-43.jpg"]},
-      { validFrom: "2019-04-29", validTo: "2019-06-16", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-44.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-45.jpg"]},
-      { validFrom: "2019-06-17", validTo: "2019-08-11", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-46.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-47.jpg"]},
-      { validFrom: "2019-08-12", validTo: "2019-08-31", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-44.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-45.jpg"]},
+        { validFrom: "2019-09-30", validTo: "2020-01-01", images:["doppingen_host_16.8-2.jpg", "doppingen_host_16.8-3.jpg"] },
       ],
     },
     osnasava: {
@@ -1087,11 +1084,10 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2019-01-01", validTo: "2019-04-28", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-16.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-17.jpg"]},
-      { validFrom: "2019-04-29", validTo: "2019-06-16", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-18.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-19.jpg"]},
-      { validFrom: "2019-06-17", validTo: "2019-08-11", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-20.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-21.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-22.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-23.jpg"]},
-      { validFrom: "2019-08-12", validTo: "2019-09-29", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-18.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-19.jpg"]},
-      { validFrom: "2019-09-30", validTo: "2019-12-31", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-16.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-17.jpg"]},
+        { validFrom: "2019-09-30", validTo: "2019-12-22", images:["sodra_sid_14-23_8okt-01.jpg", "sodra_sid_14-23_8okt-02.jpg"] },
+        { validFrom: "2019-12-23", validTo: "2019-12-26", images:["sodra_sid_14-23_8okt-10.jpg"] },
+        { validFrom: "2019-12-27", validTo: "2019-12-30", images:["sodra_sid_14-23_8okt-01.jpg", "sodra_sid_14-23_8okt-02.jpg"] },
+        { validFrom: "2019-12-31", validTo: "2020-01-01", images:["sodra_sid_14-23_8okt-10.jpg"] },
       ],
     },
     tvarlinjen: {
@@ -1099,10 +1095,7 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2019-01-01", validTo: "2019-04-28", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-10.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-11.jpg"]},
-      { validFrom: "2019-04-29", validTo: "2019-06-16", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-12.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-13.jpg"]},
-      { validFrom: "2019-06-17", validTo: "2019-08-11", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-14.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-15.jpg"]},
-      { validFrom: "2019-08-12", validTo: "2019-08-31", images: ["Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-12.jpg", "Skargardsguiden_TURLISTOR_GUIDE_2019_25jan-13.jpg"]},
+        { validFrom: "2019-09-30", validTo: "2020-01-02", images:["odin_host_16.8_0-2.jpg"] },
       ],  
     },
     alandsvajerfarjor: {
@@ -1127,7 +1120,7 @@ fdata = {
       link_sv: "http://www.alandstrafiken.ax/sv/turlistor",
       link_en: "http://www.alandstrafiken.ax/en/timetables",
       tables: [
-      { validFrom: "2019-01-01", validTo: null, images: ["toftolinjen_vajerfarja_2019_v1.0_low-2.jpg", "toftolinjen_vajerfarja_2019_v1.0_low-3.jpg", "toftolinjen_vajerfarja_2019_v1.0_low-4.jpg"]},
+        { validFrom: "2019-01-01", validTo: null, images:["toftolinjen_vajerfarja_2019_v1.1_low-2.jpg", "toftolinjen_vajerfarja_2019_v1.1_low-3.jpg", "toftolinjen_vajerfarja_2019_v1.1_low-4.jpg"] },
       ],
     },
     
@@ -1244,27 +1237,31 @@ fdata = {
       link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/velkua-rutt-kivimo.html#timetables",
       link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/velkua-route-kivimo.html#timetables",
       tables: [
-      { validFrom: "2019-06-01", validTo: "2019-09-01", images: ["KivimoSommar2019.jpeg"]}
+        { validFrom: "2019-09-02", validTo: "2020-04-30", images: ["velkuan-reittialue-talvi-2019_2020-kivimo-1.jpg"]}
       ],
     },
     rymattylanreitti: {
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2019-05-06", validTo: "2019-09-29", images: ["IslaSommar2019_1.jpeg", "IslaSommar2019_2.jpeg"]}
+        { validFrom: "2019-09-30", validTo: "2020-05-03", images:["Rymättylä-Syksy-2019-Talvi-Kevät-2020-1.jpg", "Rymättylä-Syksy-2019-Talvi-Kevät-2020-2.jpg"] },
       ],
     },
     houtskarrutt: {
       name: "Houtskarin reitti - M/S Karolina", name_sv: "Houtskär rutt - M/S Karolina", name_en: "Houtskär Route - M/S Karolina", specifier: "",
-      link: "http://www.ferryway.fi/7",
+      link: "ferentes.fi/yhteysalusliikenne/houtskarin-reitti.html",
+      link_sv: "https://www.ferentes.fi/sv/forbindelsefartygstrafik/houtskar-rutten.html",
+      link_en: "https://www.ferentes.fi/en/ferry-traffic/the-houtskari-route.html",
       tables: [
-      { validFrom: "2019-04-08", validTo: "2019-09-29", images: ["KarolinaSommar2019_1.jpeg", "KarolinaSommar2019_2.jpeg"]}
+        { validFrom: "2019-09-30", validTo: "2020-04-05", images:["houtskari-talvi-2019-20-1.jpg", "houtskari-talvi-2019-20-2.jpg"] },
       ],
     },
     iniorutt: {
       name: "Iniön lisäreitti - M/S Satava", name_sv: "Iniö tilläggsrutt - M/S Satava", name_en: "Iniö Additional Route - M/S Satava", specifier: "",
-      link: "http://www.ferryway.fi/8",
+      link: "ferentes.fi/yhteysalusliikenne/inion-lisareitti.html",
+      link_sv: "ferentes.fi/sv/forbindelsefartygstrafik/inios-tillaggsrutt.html",
+      link_en: "https://www.ferentes.fi/en/ferry-traffic/the-inio-additional-route.html",
       tables: [
-      { validFrom: "2019-05-13", validTo: "2019-08-11", images: ["SatavaSommar2019_1.jpeg", "SatavaSommar2019_2.jpeg"]}
+        { validFrom: "2019-08-12", validTo: "2020-05-18", images:["inio-syys-talvi-kevat-2019-2020-1.jpg", "inio-syys-talvi-kevat-2019-2020-2.jpg"] },
       ],
     },
     utorutt: { 
@@ -1272,13 +1269,13 @@ fdata = {
       link_sv: "https://meritie.fi/tidtabell-rutt/?lang=sv",
       link_en: "https://meritie.fi/tidtabell-rutt/?lang=sv",
       tables: [
-      { validFrom: "2019-06-07", validTo: "2019-08-31", images: ["EivorSommar2019.jpeg"]}
+        { validFrom: "2019-09-01", validTo: "2020-06-05", images:["Eivor-talvi-2019-2020-1-1.jpg"] },
       ],
     },
     korporutt: {
       link: "https://saaristolinjat.fi/#reittialue",
       tables: [
-      { validFrom: "2019-05-31", validTo: "2019-08-31", images: ["FiskoSommar2019.jpeg"]},
+        { validFrom: "2019-09-01", validTo: "2020-05-31", images:["Fiskö-talviaikataulu-1.9.2019-31.5.2020-1.jpg"] },
       ],
     },
     nagunorra: {
@@ -1286,33 +1283,37 @@ fdata = {
       link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/nagu-norra-rutt-falko.html#timetables",
       link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/nauvo-northern-route-falko.html#timetables",
       tables: [
-        { validFrom: "2019-05-17", validTo: "2019-09-01", images: ["FalkoSommar2019.jpeg"]}
+        { validFrom: "2019-09-02", validTo: "2020-05-14", images:["falko-talviaikataulu-2019-2020-1.jpg"] },
       ],
     },
     nagutvar: {
-      link: "https://www.ferryway.fi/5",
+      link: "https://www.ferentes.fi/yhteysalusliikenne/nauvon-poikittainen-reitti.html",
+      link_sv: "https://www.ferentes.fi/sv/forbindelsefartygstrafik/nagu-tvartrafik.html",
+      link_en: "https://www.ferentes.fi/en/ferry-traffic/the-nauvo-transverse-route.html",
       tables: [
-      { validFrom: "2019-04-01", validTo: "2019-10-31", images: ["Myrskylintu2019.jpeg"]},
+        { validFrom: "2019-11-01", validTo: "2020-03-31", images:["cheri-vinter-2019-20-1.jpg"] },
       ],
     },
     nagusodra: { 
-      link: "https://www.ferryway.fi/6",
+      link: "https://www.ferentes.fi/yhteysalusliikenne/nauvon-etelainen-reitti.html",
+      link_sv: "https://www.ferentes.fi/sv/forbindelsefartygstrafik/nagu-sodra-rutten.html",
+      link_en: "https://www.ferentes.fi/en/ferry-traffic/the-nauvo-southern-route.html",
       tables: [
-      { validFrom: "2019-06-03", validTo: "2019-08-11", images: ["NordepSommar2019.jpeg"]}
+        { validFrom: "2019-11-01", validTo: "2020-03-31", images:["nauvon-etelainen-talvi-vinter-2019-20-1.jpg"] },
       ],
     },
     hitisstella: {
       name: "M/S Stella",
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2019-06-02", validTo: "2019-08-09", images: ["StellaSommar2019_1.jpeg", "StellaSommar2019_2.jpeg"]}
+        { validFrom: "2019-08-10", validTo: "2020-06-01", images:["Hiittinen-Syksy-2019-Talvi-Kevät-2020-1-1-1.jpg", "Hiittinen-Syksy-2019-Talvi-Kevät-2020-1-1-2.jpg"] },
       ],
     },
     hitisalva: { 
       name: "M/S Alva",
       link: "https://kuljetus-savolainen.fi/yhteysalusliikenne/",
       tables: [
-      { validFrom: "2018-06-02", validTo: "2019-08-09", images: ["AlvaSommar2019.jpeg"]},
+        { validFrom: "2019-08-12", validTo: null, images:["Alva-syksy-19-1.jpg",]},
       ],
     },
     pargasrutt: {
@@ -1320,8 +1321,7 @@ fdata = {
       link_sv: "https://www.finferries.fi/sv/farjetrafik/farjplatserna-och-tidtabellerna/pargas-ruttomrade-viken.html#timetables",
       link_en: "https://www.finferries.fi/en/ferry-traffic/ferries-and-schedules/parainen-route-viken.html#timetables",
       tables: [
-      { validFrom: "2019-06-01", validTo: "2019-08-31", images: ["VikenSommar2019.jpeg"]},
-      { validFrom: "2019-09-01", validTo: "2019-10-31", images: ["VikenVar2019.jpeg"]},
+      { validFrom: "2019-11-01", validTo: "2020-03-31", images: ["viken-talvi-2019-2020-vinter-pargas-ruttomrade-1.jpg"]},
       ]
     },
 
@@ -1501,34 +1501,16 @@ fdata = {
       name: "Norra linjen",
       name_fi: "Pohjoinen linja",
       name_en: "Northern line",
-      specifier: "Hummelvik - Enklinge - Kumlinge - Lappo - Torsholma",
-      piers: ["Hummelvik", "Enklinge", "Kumlinge", "Lappo", "Torsholma"],
+      specifier: "Hummelvik - Torsholma",
+      piers: ["Hummelvik", "Enklinge", "Kumlinge", "Asterholma", "Lappo", "Torsholma"],
       operator: "alandstrafiken",
-      vessels: ["alfageln", "knipan", "rosala"],
+      vessels: ["alfageln", "ejdern", "rosala"],
       features: {
-        interval_L: ["times.adaytworoutes", "", "3-4", "Enklinge - Kumlinge", "10"],
+        interval_L: ["times.adaytworoutes", "", "2-4", "Enklinge - Kumlinge", "10"],
         cost_L: "cost.applies",
         duration_L: ["duration.hours", "2.5"],
-        seealso_L: ["seealso", "#asterholmalinjen", "Asterholma - Lappo - Torsholma"],
       },
-      timetables: ["norralinjen", "enklingelinjen"],
-      pricelists: "alandstrafiken"
-    },
-    asterholmalinjen: {
-      name: "Norra linjen",
-      name_fi: "Pohjoinen linja",
-      name_en: "Northern line",
-      specifier: "Asterholma - Lappo - Torsholma",
-      piers: ["Asterholma", "Lappo", "Torsholma"],
-      operator: "alandstrafiken",
-      vessels: ["frida"],
-      features: {
-        interval_L: ["times.aday", "~ 10"],
-        order_L: "order.partly",
-        duration_L: ["duration.minutes", "35"],
-        seealso_L: ["seealso", "#norralinjen", "Hummelvik - Torsholma"],
-      },
-      timetables: "asterholmalinjen",
+      timetables: ["norralinjen", "brandokumlingelinjen", "enklingelinjen"],
       pricelists: "alandstrafiken"
     },
     avajurmo: {
@@ -1802,7 +1784,7 @@ fdata = {
       name_en: "Houtskär Route and Iniö Additional Route",
       specifier: "",
       piers: ["Näsby","Roslax","Ytterstö","Lempmo","Salmis","Lammholm","Norrby","Sördö","Lempnäs","Äpplö","Bockholm", "Södö", "Nåtö","TorsholmaI","Själö","Härklot","Kvarnholm","Åselholm","Perkala","PerkalaP","Kolko","Kannvik"],
-      operator: "ferryway",
+      operator: "ferentes",
       vessels: ["karolina", "satava"],
       features: {
         interval_L: ["times.aday", "1-4"],
@@ -1858,7 +1840,7 @@ fdata = {
       name_en: "Nagu Cross Route",
       specifier: "",
       piers: ["Pärnäs", "Krok", "Mattnäs", "Lånholm", "Fagerholm", "Killingholm", "Ängsö", "Tveskiftsholm", "Berghamn", "Hummelholm", "Rockelholm", "Ytterstholm", "Byskär", "Brännskär", "Grötö", "Stenskär", "Gullkrona", "Kirjais"],
-      operator: "ferryway",
+      operator: "ferentes",
       vessels: ["myrskylintu", "cheri"],
       features: {
         interval_L: ["times.aweek", "3"],
@@ -1874,7 +1856,7 @@ fdata = {
       name_en: "Nagu Southern Route",
       specifier: "",
       piers: ["Kirjais", "PensarL", "Peno", "Brännskär", "Stenskär", "Gullkrona", "Grötö", "Knivskär", "Kopparholm", "Träskholm", "Bodö", "Björkö", "Gloskär", "Trunsö", "Sandholm", "Lökholm", "Borstö"],
-      operator: "ferryway",
+      operator: "ferentes",
       vessels: ["nordep"],
       features: {
         interval_L: ["times.adayaweek", "1-3", "Borstö", "4"],
