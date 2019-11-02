@@ -23,7 +23,7 @@ $.get('/data/routes.json?v=1', function(data) {
 
 var fdata;
 
-$.get('/data/data.json?v=1.30', function(data) {
+$.get('/data/data.json?v=1.31', function(data) {
   prepareData(data);
   fdata = data;
   sendDataIf();
