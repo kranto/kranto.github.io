@@ -6,7 +6,7 @@ $.get("/data/messages.json?v=1.5", function(data) {
   sendDataIf();
 });
 
-$.get('/data/saaristo.json?v=1.8', function(data) {
+$.get('/data/saaristo.json?v=1.9', function(data) {
   fgeojson.push(data);
   sendDataIf();
 });
@@ -23,7 +23,7 @@ $.get('/data/routes.json?v=1', function(data) {
 
 var fdata;
 
-$.get('/data/data.json?v=1.29', function(data) {
+$.get('/data/data.json?v=1.30', function(data) {
   prepareData(data);
   fdata = data;
   sendDataIf();
